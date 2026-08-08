@@ -97,7 +97,7 @@ console.log("\n[未发布天占位]");
 setSearch("?day=01");
 runApp();
 let page = appEl.innerHTML;
-assert(page.includes("正在准备") || page.includes("待发布"), "未发布天显示占位而非空白");
+assert(page.includes("还在开发中"), "未发布天显示开发中占位而非空白");
 
 console.log("\n[错题复习空状态]");
 setSearch("?view=review");
@@ -105,9 +105,15 @@ runApp();
 page = appEl.innerHTML;
 assert(page.includes("当前没有待复习的错题"), "空队列显示复习空状态");
 
-// 复习页有数据：写入一条错题记录后重新渲染（渲染是异步的，等待微任务）。
+// 复习页有数据：注入最小内容桩（空骨架阶段内容未内联），写入一条错题记录后重新渲染。
+context.window.ChemLabContentS2 = {
+  "day-01": { dayNumber: "01", title: "金属材料", sections: [], coreQuestion: "x" }
+};
+context.window.ChemLabQuizS2 = {
+  "day-01": { questions: [{ prompt: "金属活动性顺序中氢之前的金属能与酸反应", options: ["对", "错"], answer: "0", explanation: "x", topic: "金属活动性", difficulty: "基础" }] }
+};
 localStorageStub._d["chemlab-g9:v4:s2:review"] = JSON.stringify([
-  { day: "01", questionIndex: 2, prompt: "金属活动性顺序中氢之前的金属能与酸反应", answeredAt: new Date().toISOString() }
+  { day: "01", questionIndex: 0, prompt: "金属活动性顺序中氢之前的金属能与酸反应", answeredAt: new Date().toISOString() }
 ]);
 runApp();
 await new Promise((r) => setTimeout(r, 0));
