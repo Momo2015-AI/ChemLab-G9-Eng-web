@@ -51,7 +51,7 @@ window.ChemLabManifestS2 = (function () {
     "36": "综合提升：全册知识网络"
   };
 
-  const readyDays = [];
+  const readyDays = ["01", "02", "03", "04", "05", "06"];
 
   function pad(n) {
     return String(n).padStart(2, "0");

@@ -803,7 +803,7 @@ h2 .day-badge { font-size: .78rem; font-weight: 700; margin-right: 6px; padding:
     "36": "综合提升：全册知识网络"
   };
 
-  const readyDays = [];
+  const readyDays = ["01", "02", "03", "04", "05", "06"];
 
   function pad(n) {
     return String(n).padStart(2, "0");
@@ -823,6 +823,1454 @@ h2 .day-badge { font-size: .78rem; font-weight: 700; margin-right: 6px; padding:
 
   return { modules: modules, days: days };
 }());
+</script>
+<script>window.ChemLabContentS2 = window.ChemLabContentS2 || {};
+window.ChemLabContentS2["day-01"] = {
+  dayNumber: "01",
+  title: "金属材料",
+  duration: "45--60 分钟",
+  difficulty: "⭐",
+  coreQuestion: "为什么我们身边的金属制品，很多用的是合金而不是纯金属？",
+  knowledgeIds: ["V2-K101", "V2-K102", "V2-K103"],
+  experimentIds: ["V2-E101"],
+  mistakeTypes: ["M-CONCEPT-CONFUSION"],
+  learningObjectives: [
+    "能说出金属的物理性质共性与不同金属的差异。",
+    "能解释合金的概念及合金性能优于纯金属的原因。",
+    "能区分生铁与钢，并联系实际用途说明「性质决定用途」。"
+  ],
+  sections: [
+    {
+      title: "今天解决什么问题？",
+      body: [
+        "从家门钥匙、铝锅、不锈钢餐具、首饰到高铁车厢、飞机机身，金属无处不在。但细心观察会发现：很多金属制品并不是纯金属做的。",
+        "今天我们从金属的物理性质出发，认识「合金」这个概念，并搞明白为什么把金属做成合金，往往比用纯金属更划算、更好用。"
+      ]
+    },
+    {
+      title: "金属的物理性质：共性",
+      body: [
+        "大多数金属具有共同的物理性质：有金属光泽、能导电、能导热、有延展性（能拉成丝、压成片）。这些性质让金属广泛用于做导线、炊具和机械部件。",
+        "为什么铜被用作导线？因为铜导电性良好。为什么铝被做成锅？因为铝导热性好且密度小。性质决定用途，用途反映性质。",
+        { text: "金属共性口诀：有光泽，导电导热，能延展。", kind: "takeaway" }
+      ]
+    },
+    {
+      title: "金属物理性质的差异",
+      body: [
+        "不同金属也有明显差异：大多数金属呈银白色，但金呈黄色，铜呈紫红色；金属的密度、硬度、熔点差异很大。",
+        "例如铁较硬，铅较软；钨的熔点极高，所以能做灯丝；汞在常温下是液体，是唯一常温呈液态的金属。",
+        "这些差异决定了不同金属各有适合的用途：金化学性质稳定又有延展性，适合做首饰；钨熔点高，适合做灯泡灯丝。"
+      ]
+    },
+    {
+      title: "探究：观察金属的物理性质",
+      safety: "supervised",
+      figure: { type: "science-inquiry", caption: "整理「观察—比较—结论」的顺序：先如实记录现象，再比较异同，最后归纳金属的物理性质。" },
+      body: [
+        "实验目的：观察铁片、铜丝、铝箔的颜色、光泽与延展性，体会「性质决定用途」。",
+        "操作提示：观察颜色光泽；轻轻弯折感受延展性；用导线接入简单电路观察导电性。实验简单安全，仍建议在成人或教师陪同下完成。",
+        "结论：金属有金属光泽、能导电、能延展；铜呈紫红色、金呈黄色，是少数特例。"
+      ]
+    },
+    {
+      title: "合金：什么是合金？",
+      body: [
+        "合金是在金属中加热熔合某些金属或非金属，制成的具有金属特性的物质。例如钢就是铁与碳的合金，焊锡是锡和铅的合金。",
+        "合金是混合物，不是纯金属，也不是化合物。它保留了金属光泽和导电性等「金属特性」，但性能往往更优秀。"
+      ]
+    },
+    {
+      title: "合金为什么更优越？",
+      body: [
+        "一般说来，合金的硬度比组成它的纯金属更大，熔点比组成它的纯金属更低，抗腐蚀性能也更好。",
+        "正因为这些优点，日常金属制品大量使用合金：不锈钢比纯铁更耐腐蚀，铝合金比纯铝更硬更耐用，钛合金强度高且与人体相容性好，用于制造人造关节。",
+        { text: "合金三优势：硬度更大、熔点更低、抗腐蚀更好。", kind: "takeaway" }
+      ]
+    },
+    {
+      title: "生铁与钢",
+      body: [
+        "生铁和钢都是铁的合金，主要区别在于含碳量：生铁含碳量为 2%~4.3%，钢的含碳量为 0.03%~2%。",
+        "含碳量不同导致性质不同：生铁硬而脆，适合铸造铁锅、铁锭等；钢韧性强，适合做刀具、建筑用钢等。",
+        "同样是铁和碳的合金，只因为碳的「量」不同，性能就完全不同——这正是化学中「组成决定性质」的体现。"
+      ]
+    },
+    {
+      title: "生活中的合金",
+      body: [
+        "不锈钢（铁铬镍合金）做餐具和医疗器械；铝合金做门窗、飞机外壳；黄铜（铜锌合金）做乐器、水龙头；焊锡（锡铅合金）用于焊接电路板。",
+        "可以这样记忆：需要「更硬」「更耐腐蚀」「熔点合适」的场景，往往就是合金出场的时候。"
+      ]
+    },
+    {
+      title: "中考链接",
+      body: [
+        "本课高频考点：金属物理性质的共性与差异、合金是混合物、合金性能优于纯金属、生铁与钢含碳量比较。",
+        "解题提醒：看到「合金」相关选项，先问一句——它是混合物吗？性质比纯金属更硬更耐腐蚀吗？选项里若说「合金是化合物」或「合金熔点更高」，就是错的。"
+      ]
+    },
+    {
+      title: "今日知识卡片",
+      body: [
+        "金属共性：有光泽、导电导热、能延展。差异：多数银白，金黄铜紫红；密度硬度熔点不同。合金=金属中熔合金属或非金属，是混合物；硬度更大、熔点更低、抗腐蚀更好。生铁（2%~4.3% 碳）硬而脆，钢（0.03%~2% 碳）韧性强。性质决定用途。"
+      ]
+    }
+  ],
+  checkpoint: {
+    title: "情境自测：这些说法哪些对？",
+    items: [
+      {
+        statement: "所有金属都是银白色的。",
+        verdict: "错",
+        explanation: "大多数金属呈银白色，但金呈黄色、铜呈紫红色，它们是特例。"
+      },
+      {
+        statement: "钨的熔点很高，所以适合做灯泡的灯丝。",
+        verdict: "对",
+        explanation: "钨熔点高达 3400℃ 以上，通电发热也不易熔化，适合做灯丝，体现了性质决定用途。"
+      },
+      {
+        statement: "合金是由金属和金属或非金属熔合而成的具有金属特性的物质，属于混合物。",
+        verdict: "对",
+        explanation: "合金是混合物而非化合物，它保留了金属光泽、导电性等金属特性。"
+      },
+      {
+        statement: "合金的熔点通常比组成它的纯金属更高。",
+        verdict: "错",
+        explanation: "合金的熔点通常比纯金属更低，而硬度通常更大、抗腐蚀性更好。"
+      },
+      {
+        statement: "生铁和钢都是铁的合金，主要区别是含碳量不同。",
+        verdict: "对",
+        explanation: "生铁含碳 2%~4.3%，钢含碳 0.03%~2%，含碳量不同导致硬度和韧性不同。"
+      },
+      {
+        statement: "钢的含碳量比生铁高，所以钢更硬。",
+        verdict: "错",
+        explanation: "生铁含碳量（2%~4.3%）比钢（0.03%~2%）高；生铁硬而脆，钢的韧性更好。"
+      }
+    ]
+  }
+};
+</script>
+<script>window.ChemLabQuizS2 = window.ChemLabQuizS2 || {};
+window.ChemLabQuizS2["day-01"] = {
+  questions: [
+    {
+      prompt: "下列金属中，常温下呈液态的是（ ）。",
+      options: ["铁", "汞", "铜", "银"],
+      answer: "1",
+      difficulty: "基础",
+      topic: "金属物理性质",
+      knowledgeIds: ["V2-K101"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      explanation: "汞（水银）是常温下唯一呈液态的金属。铁、铜、银在常温下都是固体。"
+    },
+    {
+      prompt: "下列有关金属物理性质的说法，正确的是（ ）。",
+      options: [
+        "所有金属都是银白色的固体",
+        "金属都具有良好的导电性和导热性",
+        "金属的密度、硬度、熔点都相同",
+        "常温下金属都不能导电"
+      ],
+      answer: "1",
+      difficulty: "基础",
+      topic: "金属物理性质",
+      knowledgeIds: ["V2-K101"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      explanation: "大多数金属有良好的导电性和导热性。金呈黄色、铜呈紫红色，汞常温呈液态，不同金属密度硬度熔点差异很大。"
+    },
+    {
+      prompt: "铝常被用来制作炊具，主要是因为铝（ ）。",
+      options: ["有延展性", "导热性好", "导电性好", "有金属光泽"],
+      answer: "1",
+      difficulty: "基础",
+      topic: "性质决定用途",
+      knowledgeIds: ["V2-K101"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      explanation: "做炊具需要快速传热，铝导热性好，所以适合做炊具，体现了性质决定用途。"
+    },
+    {
+      prompt: "关于合金的说法，正确的是（ ）。",
+      options: [
+        "合金是金属单质",
+        "合金是化合物",
+        "合金是混合物",
+        "合金中不含非金属元素"
+      ],
+      answer: "2",
+      difficulty: "基础",
+      topic: "合金概念",
+      knowledgeIds: ["V2-K102"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      explanation: "合金是在金属中加热熔合某些金属或非金属形成的、具有金属特性的物质，属于混合物。"
+    },
+    {
+      prompt: "与组成它的纯金属相比，合金的优点是（ ）。",
+      options: [
+        "硬度更大、熔点更低、抗腐蚀性更好",
+        "硬度更小、熔点更高",
+        "一定比纯金属轻",
+        "一定比纯金属便宜"
+      ],
+      answer: "0",
+      difficulty: "提升",
+      topic: "合金性能",
+      knowledgeIds: ["V2-K102"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      explanation: "合金一般硬度更大、熔点更低、抗腐蚀性更好。密度和价格需具体合金具体分析，不能一概而论。"
+    },
+    {
+      prompt: "生铁和钢都是铁的合金，二者的主要区别是（ ）。",
+      options: [
+        "铁的纯度不同",
+        "含碳量不同",
+        "含铁量相同",
+        "状态不同"
+      ],
+      answer: "1",
+      difficulty: "基础",
+      topic: "生铁与钢",
+      knowledgeIds: ["V2-K103"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      explanation: "生铁含碳 2%~4.3%，钢含碳 0.03%~2%，区别在于含碳量不同，进而导致硬度和韧性不同。"
+    },
+    {
+      prompt: "下列关于生铁和钢的比较，错误的是（ ）。",
+      options: [
+        "生铁的含碳量比钢高",
+        "生铁硬而脆，钢的韧性较好",
+        "钢的含碳量高于生铁",
+        "它们都属于铁的合金"
+      ],
+      answer: "2",
+      difficulty: "提升",
+      topic: "生铁与钢",
+      knowledgeIds: ["V2-K103"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      explanation: "生铁含碳量（2%~4.3%）高于钢（0.03%~2%），选项说「钢含碳量高于生铁」正好说反了。"
+    },
+    {
+      prompt: "下列用途中，利用了金属导电性的是（ ）。",
+      options: [
+        "用铝做锅",
+        "用铜做导线",
+        "用金做首饰",
+        "用钨做灯丝"
+      ],
+      answer: "1",
+      difficulty: "基础",
+      topic: "性质决定用途",
+      knowledgeIds: ["V2-K101"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      explanation: "铜做导线利用了导电性；铝做锅利用导热性；金做首饰利用化学稳定和延展性；钨做灯丝利用高熔点。"
+    },
+    {
+      prompt: "下列属于铁的合金、且在人体内相容性好、可用于制造人造骨的是（ ）。",
+      options: ["铝合金", "黄铜", "不锈钢", "钛合金"],
+      answer: "3",
+      difficulty: "挑战",
+      topic: "常见合金用途",
+      knowledgeIds: ["V2-K102"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      explanation: "钛合金强度高、密度小、与人体相容性好，常用于制造人造关节等植入物。"
+    }
+  ]
+};
+</script>
+<script>window.ChemLabContentS2 = window.ChemLabContentS2 || {};
+window.ChemLabContentS2["day-02"] = {
+  dayNumber: "02",
+  title: "金属的化学性质（一）：金属与氧气、酸的反应",
+  duration: "45--60 分钟",
+  difficulty: "⭐⭐",
+  coreQuestion: "为什么镁能剧烈燃烧，而金却「百毒不侵」？",
+  knowledgeIds: ["V2-K104", "V2-K105", "V2-K107"],
+  experimentIds: ["V2-E102", "V2-E103"],
+  mistakeTypes: ["M-PHENOMENON-JUDGE", "M-PATTERN-OVERAPPLY", "M-CHEMICAL-FORMULA"],
+  learningObjectives: [
+    "能描述镁、铝、铁、铜、金与氧气反应的现象与难易差异。",
+    "能写出金属与稀盐酸、稀硫酸反应的化学方程式（铁为 +2 价）。",
+    "能根据金属与氧气、酸反应的难易程度比较金属的活泼性。"
+  ],
+  sections: [
+    {
+      title: "今天解决什么问题？",
+      body: [
+        "黄金被埋在地下几千年依然光亮如新，而铁器放在户外很快锈迹斑斑。同样是金属，为什么「性格」差异这么大？",
+        "今天从两组反应入手：金属与氧气、金属与酸，用反应的难易程度来给金属排一排「活泼性」的顺序。"
+      ]
+    },
+    {
+      title: "金属与氧气的反应（一）：镁、铝",
+      body: [
+        "镁：常温下表面变暗（生成氧化镁），点燃时剧烈燃烧，发出耀眼白光，生成白色固体。反应：2Mg + O₂ →(点燃) 2MgO。",
+        "铝：常温下与氧气反应，表面生成一层致密的氧化铝薄膜，这层膜阻止铝继续被氧化，所以铝制品即使被刮花也不容易继续腐蚀。",
+        "把铝箔用砂纸打磨后再看，会发现它依然很亮——因为很快又生成新的氧化膜。这层「保护膜」是中考常考考点。"
+      ]
+    },
+    {
+      title: "金属与氧气的反应（二）：铁、铜、金",
+      body: [
+        "铁：常温下在干燥空气中不易反应，但在纯氧气中点燃会剧烈燃烧、火星四射，生成黑色的四氧化三铁：3Fe + 2O₂ →(点燃) Fe₃O₄。注意产物是 Fe₃O₄，不是 Fe₂O₃。",
+        "铜：常温下几乎不与氧气反应，但加热时表面变黑，生成黑色的氧化铜：2Cu + O₂ →(加热) 2CuO。",
+        "金：即使在高温下也不与氧气反应，所以金能长久保存，化学性质极不活泼。"
+      ]
+    },
+    {
+      title: "从与氧气的反应看活泼性",
+      body: [
+        "按与氧气反应的难易，可以得到一个初步顺序：Mg、Al 在常温就能反应，Fe、Cu 需要加热或点燃，Au 高温也不反应。",
+        "反应越容易发生，说明金属越活泼。这个顺序和我们接下来用酸验证的结果是一致的。",
+        { text: "与氧气反应越容易，金属越活泼：Mg/Al > Fe/Cu > Au。", kind: "takeaway" }
+      ]
+    },
+    {
+      title: "金属与稀盐酸、稀硫酸的反应",
+      body: [
+        "把镁、锌、铁、铜分别放入等量稀盐酸，现象差异明显：镁反应最剧烈，产生大量气泡；锌较快；铁较慢，溶液变成浅绿色；铜没有气泡。",
+        "反应的实质：位于氢前面的金属能置换出酸中的氢，生成氢气。例如：Mg + 2HCl → MgCl₂ + H₂↑，Zn + H₂SO₄ → ZnSO₄ + H₂↑，Fe + 2HCl → FeCl₂ + H₂↑。",
+        "关键易错点：铁与酸反应生成的是 +2 价的氯化亚铁（FeCl₂）、硫酸亚铁（FeSO₄），溶液呈浅绿色，不是 +3 价的 FeCl₃。"
+      ]
+    },
+    {
+      title: "从与酸的反应看活泼性",
+      body: [
+        "氢之前的金属（如 Mg、Zn、Fe）能与酸反应放出氢气，氢之后的金属（如 Cu、Hg、Ag）不能与酸反应。",
+        "反应剧烈程度排序：Mg > Zn > Fe > Cu（Cu 不反应）。铜排在氢的后面，所以铜不与稀盐酸、稀硫酸反应，不是所有金属都「怕酸」。",
+        "这个规律是金属活动性顺序的核心，我们明天会完整学习这张顺序表。"
+      ]
+    },
+    {
+      title: "探究：金属与稀盐酸反应",
+      safety: "supervised",
+      figure: { type: "science-inquiry", caption: "比较反应快慢时必须控制变量：金属颗粒大小相近、酸浓度和体积相同、温度相同。" },
+      body: [
+        "实验目的：比较镁、锌、铁、铜与稀盐酸反应的剧烈程度。用品：四种金属、稀盐酸、试管。须在教师或成人监护下操作，稀酸有腐蚀性，勿溅到皮肤。",
+        "操作：取四支试管各加等量稀盐酸，再分别放入大小相近的金属，同时观察产生气泡的快慢。",
+        "观察要点：谁的表面气泡最快最多？铁的溶液变成什么颜色？铜有没有反应？对比时金属大小、酸的浓度体积必须一致，否则比较没有意义。"
+      ]
+    },
+    {
+      title: "中考链接",
+      body: [
+        "高频考点：金属与氧气反应的方程式与现象、金属与酸反应的方程式书写（特别是铁生成 +2 价盐）、利用反应难易比较金属活泼性。",
+        "常见陷阱：把铁丝燃烧产物写成 Fe₂O₃（应为 Fe₃O₄）；把铁与盐酸产物写成 FeCl₃（应为 FeCl₂）；说「铜也能与稀盐酸反应放氢气」（错，铜在氢之后）。"
+      ]
+    },
+    {
+      title: "今日知识卡片",
+      body: [
+        "金属与氧气：Mg 常温变暗、点燃耀眼白光；Al 表面致密氧化膜起保护作用；Fe 点燃火星四射生成 Fe₃O₄；Cu 加热变黑生成 CuO；Au 高温不反应。金属与酸：氢前金属置换出氢气，Mg>Zn>Fe 由快到慢，Cu 不反应。铁与酸生成 +2 价 FeCl₂/FeSO₄（浅绿色）。反应越容易，金属越活泼。"
+      ]
+    }
+  ],
+  checkpoint: {
+    title: "情境自测：这些说法哪些对？",
+    items: [
+      {
+        statement: "铁丝在氧气中燃烧生成 Fe₂O₃。",
+        verdict: "错",
+        explanation: "铁丝在氧气中剧烈燃烧，火星四射，生成的是黑色的四氧化三铁 Fe₃O₄，不是 Fe₂O₃。"
+      },
+      {
+        statement: "铝制品表面氧化生成的致密氧化膜，能阻止铝继续被腐蚀。",
+        verdict: "对",
+        explanation: "铝表面生成的氧化铝薄膜致密，能隔绝氧气，保护内部铝不被继续氧化，所以铝制品耐腐蚀。"
+      },
+      {
+        statement: "铁与稀盐酸反应生成 FeCl₃ 和氢气。",
+        verdict: "错",
+        explanation: "铁与酸反应生成 +2 价的 FeCl₂（氯化亚铁）和氢气：Fe + 2HCl → FeCl₂ + H₂↑。"
+      },
+      {
+        statement: "铜不能与稀盐酸反应产生氢气，因为铜在金属活动性顺序中位于氢之后。",
+        verdict: "对",
+        explanation: "只有氢前面的金属才能置换出酸中的氢，铜位于氢之后，不与稀盐酸反应。"
+      },
+      {
+        statement: "金即使在高温下也不与氧气反应，所以化学性质极不活泼。",
+        verdict: "对",
+        explanation: "金的化学性质非常稳定，高温下也不与氧气反应，这是它长久保存不变化的原因。"
+      },
+      {
+        statement: "镁、锌、铁、铜与等量稀盐酸反应时，产生气泡越快说明金属越活泼。",
+        verdict: "对",
+        explanation: "在控制变量（金属大小、酸浓度体积相同）的前提下，产生气泡越快说明反应越剧烈、金属越活泼。"
+      }
+    ]
+  }
+};
+</script>
+<script>window.ChemLabQuizS2 = window.ChemLabQuizS2 || {};
+window.ChemLabQuizS2["day-02"] = {
+  questions: [
+    {
+      prompt: "铁丝在氧气中燃烧的现象是（ ）。",
+      options: [
+        "发出耀眼白光，生成白色固体",
+        "剧烈燃烧，火星四射，生成黑色固体",
+        "安静燃烧，生成红色固体",
+        "无明显现象"
+      ],
+      answer: "1",
+      difficulty: "基础",
+      topic: "金属与氧气反应",
+      knowledgeIds: ["V2-K104"],
+      mistakeTypes: ["M-PHENOMENON-JUDGE"],
+      explanation: "铁丝在纯氧中剧烈燃烧、火星四射，生成黑色的 Fe₃O₄。发出耀眼白光生成白色固体是镁燃烧的现象。"
+    },
+    {
+      prompt: "下列金属中，常温下就能与氧气反应且生成的氧化膜能起保护作用的是（ ）。",
+      options: ["铁", "铜", "铝", "金"],
+      answer: "2",
+      difficulty: "基础",
+      topic: "金属与氧气反应",
+      knowledgeIds: ["V2-K104"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      explanation: "铝常温下与氧气反应生成致密的氧化铝薄膜，阻止内部铝继续氧化，起保护作用。"
+    },
+    {
+      prompt: "铁丝在氧气中燃烧的化学方程式正确的是（ ）。",
+      options: [
+        "3Fe + 2O₂ →(点燃) Fe₃O₄",
+        "2Fe + O₂ →(点燃) 2FeO",
+        "Fe + O₂ →(点燃) Fe₂O₃",
+        "4Fe + 3O₂ →(点燃) 2Fe₂O₃"
+      ],
+      answer: "0",
+      difficulty: "提升",
+      topic: "化学方程式书写",
+      knowledgeIds: ["V2-K104"],
+      mistakeTypes: ["M-CHEMICAL-FORMULA"],
+      explanation: "铁在氧气中燃烧生成四氧化三铁：3Fe + 2O₂ →(点燃) Fe₃O₄。铁和氧气反应不生成 Fe₂O₃。"
+    },
+    {
+      prompt: "下列金属中，不与稀盐酸反应放出氢气的是（ ）。",
+      options: ["镁", "锌", "铁", "铜"],
+      answer: "3",
+      difficulty: "基础",
+      topic: "金属与酸反应",
+      knowledgeIds: ["V2-K105", "V2-K107"],
+      mistakeTypes: ["M-PATTERN-OVERAPPLY"],
+      explanation: "铜位于金属活动性顺序中氢之后，不能置换出酸中的氢，所以铜不与稀盐酸反应放出氢气。"
+    },
+    {
+      prompt: "铁与稀硫酸反应的化学方程式正确的是（ ）。",
+      options: [
+        "2Fe + 3H₂SO₄ → Fe₂(SO₄)₃ + 3H₂↑",
+        "Fe + H₂SO₄ → FeSO₄ + H₂↑",
+        "Fe + H₂SO₄ → FeSO₄ + H₂O",
+        "Fe + 2H₂SO₄ → Fe(SO₄)₂ + H₂↑"
+      ],
+      answer: "1",
+      difficulty: "提升",
+      topic: "化学方程式书写",
+      knowledgeIds: ["V2-K105"],
+      mistakeTypes: ["M-CHEMICAL-FORMULA"],
+      explanation: "铁与酸反应生成 +2 价的硫酸亚铁：Fe + H₂SO₄ → FeSO₄ + H₂↑，溶液呈浅绿色，不是 Fe₂(SO₄)₃。"
+    },
+    {
+      prompt: "镁、锌、铁、铜四种金属放入等量稀盐酸中，产生气泡最快的是（ ）。",
+      options: ["镁", "锌", "铁", "铜"],
+      answer: "0",
+      difficulty: "提升",
+      topic: "金属与酸反应比较",
+      knowledgeIds: ["V2-K105", "V2-K107"],
+      mistakeTypes: ["M-OBSERVATION-COMPARE"],
+      explanation: "在控制变量的条件下，镁与酸反应最剧烈、产生气泡最快；铜不与稀盐酸反应。"
+    },
+    {
+      prompt: "铁与稀盐酸反应时，铁元素的化合价变为（ ）。",
+      options: ["0 价", "+2 价", "+3 价", "+4 价"],
+      answer: "1",
+      difficulty: "基础",
+      topic: "铁与酸反应的价态",
+      knowledgeIds: ["V2-K105"],
+      mistakeTypes: ["M-CHEMICAL-FORMULA"],
+      explanation: "铁与酸、盐反应时生成 +2 价的亚铁盐（FeCl₂、FeSO₄），溶液呈浅绿色。"
+    },
+    {
+      prompt: "下列有关金属与氧气反应的描述，正确的是（ ）。",
+      options: [
+        "所有金属都能在常温下与氧气反应",
+        "金在高温下也能与氧气反应",
+        "铜加热时表面变黑，生成氧化铜",
+        "镁燃烧生成的氧化膜能保护镁不再被腐蚀"
+      ],
+      answer: "2",
+      difficulty: "挑战",
+      topic: "金属与氧气反应",
+      knowledgeIds: ["V2-K104"],
+      mistakeTypes: ["M-PATTERN-OVERAPPLY", "M-PHENOMENON-JUDGE"],
+      explanation: "铜加热变黑生成 CuO 正确。金高温也不反应；镁的氧化膜疏松不成膜不保护镁；并非所有金属常温都与氧气反应。"
+    }
+  ]
+};
+</script>
+<script>window.ChemLabContentS2 = window.ChemLabContentS2 || {};
+window.ChemLabContentS2["day-03"] = {
+  dayNumber: "03",
+  title: "金属活动性顺序",
+  duration: "45--60 分钟",
+  difficulty: "⭐⭐",
+  coreQuestion: "怎么用一个顺序表，直接预测金属能不能与酸、盐反应？",
+  knowledgeIds: ["V2-K107", "V2-K105", "V2-K106"],
+  experimentIds: [],
+  mistakeTypes: ["M-PATTERN-OVERAPPLY", "M-CONDITION-OMISSION"],
+  learningObjectives: [
+    "能熟练默写金属活动性顺序。",
+    "能利用金属活动性顺序判断金属与酸、盐溶液能否反应。",
+    "能设计实验比较两种或三种金属的活动性强弱。"
+  ],
+  sections: [
+    {
+      title: "今天解决什么问题？",
+      body: [
+        "昨天我们从反应现象中发现金属有「活泼」和「不活泼」之分。今天要把这些分散的现象归纳成一张顺序表。",
+        "有了这张表，判断反应能否发生就不再靠死记，而是靠「查表」+「推理」。这是初中化学最重要的规律之一。"
+      ]
+    },
+    {
+      title: "金属活动性顺序表",
+      body: [
+        "常见金属的活动性由强到弱：K Ca Na Mg Al Zn Fe Sn Pb (H) Cu Hg Ag Pt Au。",
+        "记忆口诀（谐音）：钾钙钠镁铝，锌铁锡铅氢，铜汞银铂金。其中「氢」不是金属，是作为分界点——它把金属分成「能置换酸中氢」和「不能」两类。",
+        "注意顺序里的小位置：Cu 与 Hg 之间、Pt 与 Au 之间，都是常考的易错点，别把铜和汞的顺序记反。"
+      ]
+    },
+    {
+      title: "顺序表怎么用（一）：判断与酸反应",
+      body: [
+        "位置在氢前面的金属（K Ca Na Mg Al Zn Fe Sn Pb），能与稀盐酸、稀硫酸反应放出氢气；氢后面的金属（Cu Hg Ag Pt Au）不能。",
+        "例如：Zn 在 H 前，Zn + H₂SO₄ → ZnSO₄ + H₂↑；Cu 在 H 后，Cu 不与稀盐酸反应。",
+        "注意：浓硫酸、硝酸与金属的反应规律特殊（浓硫酸、硝酸有强氧化性，反应不放氢气，通常生成水和气体如 SO₂、NO₂），不适用这条「氢前放氢」规律。"
+      ]
+    },
+    {
+      title: "顺序表怎么用（二）：判断与盐溶液反应",
+      body: [
+        "位于前面的金属可以把位于后面的金属从它的盐溶液中置换出来。例如：Fe + CuSO₄ → FeSO₄ + Cu，铜把银从 AgNO₃ 中置换出来：Cu + 2AgNO₃ → Cu(NO₃)₂ + 2Ag。",
+        "判断要点：先把两种金属在顺序表中的位置找出来，前面的能置换后面的；反过来的不行。例如把铜放入硫酸亚铁溶液，因为 Fe 在 Cu 前面，铜不能置换出铁，所以不反应。"
+      ]
+    },
+    {
+      title: "三种金属活动性怎么比较？",
+      body: [
+        "核心思路：让「中间金属」的盐溶液分别与两边金属反应，或者让中间金属分别与两边金属的盐溶液反应。",
+        "例：比较 Fe、Cu、Ag 的活动性，可设计：把 Cu 分别放入 FeSO₄（不反应，说明 Cu < Fe）和 AgNO₃（反应，说明 Cu > Ag），从而得出 Fe > Cu > Ag。",
+        "更简单的验证方式：Fe 能置换 CuSO₄ 中的 Cu，Cu 能置换 AgNO₃ 中的 Ag，Cu 不能置换 FeSO₄ 中的 Fe，即可确定 Fe > Cu > Ag。"
+      ]
+    },
+    {
+      title: "应用：预测反应的「先与后」",
+      body: [
+        "若把金属放入含多种盐的溶液中，活动性弱的金属先被置换出来（越靠后的越先析出）。",
+        "例如向 Cu(NO₃)₂ 和 AgNO₃ 混合溶液中加入铁粉，铁先置换 Ag（Ag 更靠后），AgNO₃ 反应完后再置换 Cu。这类「先后顺序」题是中考高频题。",
+        "推理时以金属活动性顺序为唯一依据，不要凭感觉猜。"
+      ]
+    },
+    {
+      title: "易错点提醒",
+      body: [
+        "误区一：认为所有金属都能与酸反应放氢气——只有氢前的金属可以。",
+        "误区二：认为「前面的金属能把后面金属从任何盐溶液中置换出来」——必须是可溶性盐溶液，且钾钙钠太活泼，常温下会先与水反应，不用于置换实验。",
+        "误区三：比较反应快慢时忽略控制变量——金属大小、酸的浓度体积必须相同，否则现象不能说明活泼性。"
+      ]
+    },
+    {
+      title: "中考链接",
+      body: [
+        "金属活动性顺序的应用是中考必考：判断反应能否发生、比较活动性强弱、设计验证实验、判断置换先后。",
+        "做题三步：①背准顺序表；②在表上标出涉及的金属位置；③逐条判断「前面能否置换后面的」。"
+      ]
+    },
+    {
+      title: "今日知识卡片",
+      body: [
+        "金属活动性顺序：K Ca Na Mg Al Zn Fe Sn Pb (H) Cu Hg Ag Pt Au。氢前金属能与酸反应放氢气（浓硫酸、硝酸除外）；前金属能置换后金属的盐溶液中的金属；置换先后：越靠后的越先析出。验证三种金属活动性用「中间金属法」。"
+      ]
+    }
+  ],
+  checkpoint: {
+    title: "情境自测：这些说法哪些对？",
+    items: [
+      {
+        statement: "在金属活动性顺序中，氢是一个分界点，氢前的金属才能与酸反应放出氢气。",
+        verdict: "对",
+        explanation: "氢前金属（K 到 Pb）能置换酸中的氢，氢后金属（Cu 到 Au）不能。"
+      },
+      {
+        statement: "把铁放入硫酸铜溶液中，铁能把铜置换出来，说明铁比铜活泼。",
+        verdict: "对",
+        explanation: "Fe 在 Cu 前面，前面金属能置换后面金属，Fe + CuSO₄ → FeSO₄ + Cu，铁比铜活泼。"
+      },
+      {
+        statement: "铜能把铁从硫酸亚铁溶液中置换出来。",
+        verdict: "错",
+        explanation: "Fe 在 Cu 前面，后面的铜不能置换前面的铁，铜与硫酸亚铁不反应。"
+      },
+      {
+        statement: "浓硫酸与金属反应也能放出氢气。",
+        verdict: "错",
+        explanation: "浓硫酸、硝酸有强氧化性，与金属反应不放氢气，这条规律只适用于稀盐酸、稀硫酸。"
+      },
+      {
+        statement: "比较 Fe、Cu、Ag 的活动性，可以把铜分别放入 FeSO₄ 和 AgNO₃ 溶液中观察。",
+        verdict: "对",
+        explanation: "铜不与 FeSO₄ 反应说明 Cu 弱于 Fe，铜能置换 Ag 说明 Cu 强于 Ag，可得 Fe > Cu > Ag。"
+      },
+      {
+        statement: "金属活动性顺序中，铜和汞的位置是 Cu Hg，铜在汞前面。",
+        verdict: "对",
+        explanation: "顺序是 ...Cu Hg Ag Pt Au，铜在汞前、汞在银前。"
+      }
+    ]
+  }
+};
+</script>
+<script>window.ChemLabQuizS2 = window.ChemLabQuizS2 || {};
+window.ChemLabQuizS2["day-03"] = {
+  questions: [
+    {
+      prompt: "下列金属活动性顺序中，排列正确的是（ ）。",
+      options: [
+        "K Ca Na Mg Al Zn Fe Sn Pb (H) Cu Hg Ag Pt Au",
+        "K Na Ca Mg Al Zn Fe Sn Pb (H) Cu Ag Hg Pt Au",
+        "K Ca Na Mg Zn Al Fe Sn Pb (H) Cu Hg Ag Pt Au",
+        "K Ca Na Mg Al Fe Zn Sn Pb (H) Cu Hg Ag Pt Au"
+      ],
+      answer: "0",
+      difficulty: "基础",
+      topic: "金属活动性顺序记忆",
+      knowledgeIds: ["V2-K107"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      explanation: "正确顺序：K Ca Na Mg Al Zn Fe Sn Pb (H) Cu Hg Ag Pt Au。注意 Na 在 Ca 后、Fe 在 Zn 后、Hg 在 Cu 后、Ag 在 Hg 后。"
+    },
+    {
+      prompt: "下列金属中，能与稀盐酸反应放出氢气的是（ ）。",
+      options: ["铜", "汞", "锌", "银"],
+      answer: "2",
+      difficulty: "基础",
+      topic: "金属与酸反应判断",
+      knowledgeIds: ["V2-K107", "V2-K105"],
+      mistakeTypes: ["M-PATTERN-OVERAPPLY"],
+      explanation: "锌在氢前，能与稀盐酸反应放出氢气；铜、汞、银都在氢后，不与稀盐酸反应。"
+    },
+    {
+      prompt: "把锌粒放入硫酸铜溶液中，观察到的现象是（ ）。",
+      options: [
+        "无明显现象",
+        "锌粒表面出现红色固体，溶液蓝色变浅",
+        "产生大量气泡",
+        "溶液变成浅绿色"
+      ],
+      answer: "1",
+      difficulty: "基础",
+      topic: "金属与盐溶液反应",
+      knowledgeIds: ["V2-K106"],
+      mistakeTypes: ["M-PHENOMENON-JUDGE"],
+      explanation: "锌比铜活泼，Zn + CuSO₄ → ZnSO₄ + Cu，锌表面析出红色铜，蓝色硫酸铜溶液逐渐变浅（变成无色 ZnSO₄）。"
+    },
+    {
+      prompt: "下列反应中，不能发生的是（ ）。",
+      options: [
+        "Fe + CuSO₄ → FeSO₄ + Cu",
+        "Cu + 2AgNO₃ → Cu(NO₃)₂ + 2Ag",
+        "Zn + H₂SO₄ → ZnSO₄ + H₂↑",
+        "Cu + FeSO₄ → CuSO₄ + Fe"
+      ],
+      answer: "3",
+      difficulty: "提升",
+      topic: "判断反应能否发生",
+      knowledgeIds: ["V2-K107", "V2-K106"],
+      mistakeTypes: ["M-PATTERN-OVERAPPLY"],
+      explanation: "Cu 在 Fe 后面，后面的金属不能置换前面的金属，铜不能把铁从 FeSO₄ 中置换出来，此反应不发生。"
+    },
+    {
+      prompt: "将铁粉放入 Cu(NO₃)₂ 和 AgNO₃ 的混合溶液中，铁粉先置换出来的是（ ）。",
+      options: ["铜", "银", "铁", "无法确定"],
+      answer: "1",
+      difficulty: "挑战",
+      topic: "置换先后顺序",
+      knowledgeIds: ["V2-K107"],
+      mistakeTypes: ["M-PATTERN-OVERAPPLY", "M-CONDITION-OMISSION"],
+      explanation: "金属活动性越靠后的越先被置换。Ag 比 Cu 更靠后，所以铁先置换 AgNO₃ 中的银，AgNO₃ 反应完再置换铜。"
+    },
+    {
+      prompt: "要比较 Fe、Cu、Ag 三种金属的活动性，下列方案可行的是（ ）。",
+      options: [
+        "把铁分别放入硫酸铜和硝酸银溶液",
+        "把铜分别放入硫酸亚铁和硝酸银溶液",
+        "把银分别放入硫酸亚铁和硫酸铜溶液",
+        "把三种金属都放入稀盐酸观察"
+      ],
+      answer: "1",
+      difficulty: "挑战",
+      topic: "设计实验比较活动性",
+      knowledgeIds: ["V2-K107"],
+      mistakeTypes: ["M-CONDITION-OMISSION", "M-OBSERVATION-COMPARE"],
+      explanation: "Cu 不与 FeSO₄ 反应说明 Cu < Fe；Cu 能置换 AgNO₃ 中的银说明 Cu > Ag，从而得 Fe > Cu > Ag。"
+    },
+    {
+      prompt: "关于金属活动性顺序的运用，下列说法正确的是（ ）。",
+      options: [
+        "氢后的金属能与稀硫酸反应放出氢气",
+        "浓硫酸与金属反应放氢气，规律与稀硫酸相同",
+        "前金属能把后金属从其可溶性盐溶液中置换出来",
+        "钾钙钠可以直接放入盐溶液中置换金属"
+      ],
+      answer: "2",
+      difficulty: "提升",
+      topic: "金属活动性应用",
+      knowledgeIds: ["V2-K107"],
+      mistakeTypes: ["M-PATTERN-OVERAPPLY", "M-CONDITION-OMISSION"],
+      explanation: "前面的金属能置换后面金属的可溶性盐溶液中的金属。氢后金属不与稀酸反应放氢气；浓硫酸硝酸反应不放氢气；钾钙钠太活泼先与水反应，不用来做置换实验。"
+    }
+  ]
+};
+</script>
+<script>window.ChemLabContentS2 = window.ChemLabContentS2 || {};
+window.ChemLabContentS2["day-04"] = {
+  dayNumber: "04",
+  title: "金属的化学性质（二）：置换反应",
+  duration: "45--60 分钟",
+  difficulty: "⭐⭐",
+  coreQuestion: "怎么一眼认出置换反应，并准确写出它的化学方程式？",
+  knowledgeIds: ["V2-K108", "V2-K106", "V2-K105"],
+  experimentIds: ["V2-E104"],
+  mistakeTypes: ["M-CONCEPT-CONFUSION", "M-CHEMICAL-FORMULA"],
+  learningObjectives: [
+    "能判断一个反应是否属于置换反应。",
+    "能正确书写铁与酸、铁与铜盐溶液反应的方程式（铁为 +2 价）。",
+    "能用置换反应的规律解释金属与盐溶液反应的现象。"
+  ],
+  sections: [
+    {
+      title: "今天解决什么问题？",
+      body: [
+        "前三天我们看到的金属与酸、金属与盐溶液反应，其实都属同一大类反应——置换反应。",
+        "今天把这类反应「看清」：它长什么样、怎么判断、书写时有哪些坑。理解了置换反应，前面学的规律就能串成一条线。"
+      ]
+    },
+    {
+      title: "什么是置换反应？",
+      body: [
+        "一种单质与一种化合物反应，生成另一种单质与另一种化合物的反应，叫置换反应。",
+        "用式子表示：A + BC → B + AC。单质 A 把化合物 BC 里的 B 「顶替」出来，自己跟 C 结合。",
+        "例如：Fe + CuSO₄ → FeSO₄ + Cu。铁（单质）和硫酸铜（化合物）反应，生成硫酸亚铁（化合物）和铜（单质）。"
+      ]
+    },
+    {
+      title: "怎么判断置换反应？",
+      body: [
+        "判断三步：①反应物是不是「一种单质 + 一种化合物」；②生成物是不是「一种单质 + 一种化合物」；③化合价有无变化（置换反应中元素化合价一般会变化，属于氧化还原反应）。",
+        "常见置换反应：金属 + 酸 → 盐 + 氢气；金属 + 盐溶液 → 新金属 + 新盐；碳/氢气 + 金属氧化物 → 金属 + 二氧化碳/水（如 C + 2CuO →(高温) 2Cu + CO₂↑）。",
+        "注意区分：两种化合物互相交换成分生成另两种化合物的反应是复分解反应（如 NaCl + AgNO₃ → AgCl↓ + NaNO₃），不是置换反应。明天单元里还会见到复分解反应。"
+      ]
+    },
+    {
+      title: "铁参与的置换反应（重点易错）",
+      body: [
+        "铁与酸：Fe + 2HCl → FeCl₂ + H₂↑，Fe + H₂SO₄ → FeSO₄ + H₂↑。生成的是 +2 价亚铁盐，溶液浅绿色。",
+        "铁与铜盐：Fe + CuSO₄ → FeSO₄ + Cu。现象：铁钉表面出现红色固体，溶液蓝色变浅。",
+        "易错：铁参与置换反应时一律生成 +2 价（Fe²⁺），绝不写成 FeCl₃ 或 Fe₂(SO₄)₃——那是 +3 价的铁盐，只在特殊条件下生成。"
+      ]
+    },
+    {
+      title: "探究：铁钉与硫酸铜溶液的反应",
+      safety: "supervised",
+      figure: { type: "science-inquiry", caption: "观察铁钉表面和溶液颜色的变化，写出现象对应的化学方程式。" },
+      body: [
+        "实验目的：观察铁能否从硫酸铜溶液中置换出铜，并练习书写方程式。用品：洁净铁钉、硫酸铜溶液、试管。须在教师或成人监护下操作，硫酸铜溶液有腐蚀性。",
+        "操作：把洁净铁钉放入盛有硫酸铜溶液的试管中，静置几分钟后观察。",
+        "现象与结论：铁钉表面附着一层红色物质（铜），溶液由蓝色逐渐变浅（硫酸铜减少，生成无色的硫酸亚铁）。方程式：Fe + CuSO₄ → FeSO₄ + Cu，铁比铜活泼。"
+      ]
+    },
+    {
+      title: "置换反应的规律回顾",
+      body: [
+        "金属与酸：只有氢前的金属才能置换出氢气。",
+        "金属与盐：前面的金属才能置换后面的金属（盐须可溶，且钾钙钠不用作置换剂）。",
+        "这些规律都由金属活动性顺序决定——顺序表是判断置换反应能否发生的「裁判」。"
+      ]
+    },
+    {
+      title: "中考链接",
+      body: [
+        "高频考点：置换反应概念判断、金属与酸/盐反应方程式书写（铁的价态）、反应现象描述、利用活动性顺序判断置换能否发生。",
+        "书写方程式先配平再写条件：金属与酸反应生成氢气要标 ↑，置换反应一般不需要写反应条件。"
+      ]
+    },
+    {
+      title: "今日知识卡片",
+      body: [
+        "置换反应：单质 + 化合物 → 单质 + 化合物（A + BC → B + AC）。判断看反应物生成物是否各含一种单质。金属 + 酸 → 盐 + H₂↑（氢前金属）；金属 + 盐溶液 → 新金属 + 新盐（前金属置换后金属）。铁参与置换一律 +2 价。"
+      ]
+    }
+  ],
+  checkpoint: {
+    title: "情境自测：这些说法哪些对？",
+    items: [
+      {
+        statement: "置换反应的反应物和生成物中都含有单质。",
+        verdict: "对",
+        explanation: "置换反应是单质 + 化合物 → 另一种单质 + 另一种化合物，反应物生成物各含一种单质。"
+      },
+      {
+        statement: "2H₂O →(通电) 2H₂↑ + O₂↑ 属于置换反应。",
+        verdict: "错",
+        explanation: "该反应反应物只有一种化合物（水），属于分解反应，不是置换反应。"
+      },
+      {
+        statement: "铁与硫酸铜溶液反应生成 Fe₂(SO₄)₃ 和铜。",
+        verdict: "错",
+        explanation: "铁参与置换反应生成 +2 价硫酸亚铁：Fe + CuSO₄ → FeSO₄ + Cu，不是 Fe₂(SO₄)₃。"
+      },
+      {
+        statement: "把铁钉放入硫酸铜溶液中，铁钉表面出现红色固体。",
+        verdict: "对",
+        explanation: "铁把铜从硫酸铜中置换出来，铁钉表面析出红色铜，溶液蓝色变浅。"
+      },
+      {
+        statement: "碳与氧化铜在高温下反应生成铜和二氧化碳，属于置换反应。",
+        verdict: "对",
+        explanation: "C + 2CuO →(高温) 2Cu + CO₂↑，反应物是单质碳和化合物氧化铜，生成物是单质铜和化合物 CO₂，符合置换反应定义。"
+      }
+    ]
+  }
+};
+</script>
+<script>window.ChemLabQuizS2 = window.ChemLabQuizS2 || {};
+window.ChemLabQuizS2["day-04"] = {
+  questions: [
+    {
+      prompt: "下列反应中，属于置换反应的是（ ）。",
+      options: [
+        "2H₂O →(通电) 2H₂↑ + O₂↑",
+        "Fe + CuSO₄ → FeSO₄ + Cu",
+        "CaO + H₂O → Ca(OH)₂",
+        "2H₂ + O₂ →(点燃) 2H₂O"
+      ],
+      answer: "1",
+      difficulty: "基础",
+      topic: "置换反应判断",
+      knowledgeIds: ["V2-K108"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      explanation: "Fe + CuSO₄ → FeSO₄ + Cu 符合「单质 + 化合物 → 单质 + 化合物」，是置换反应。电解水是分解反应，CaO 与水是化合反应，H₂ 燃烧是化合反应。"
+    },
+    {
+      prompt: "下列反应中，不属于置换反应的是（ ）。",
+      options: [
+        "Zn + H₂SO₄ → ZnSO₄ + H₂↑",
+        "C + 2CuO →(高温) 2Cu + CO₂↑",
+        "Cu + 2AgNO₃ → Cu(NO₃)₂ + 2Ag",
+        "2H₂O₂ →(MnO₂) 2H₂O + O₂↑"
+      ],
+      answer: "3",
+      difficulty: "提升",
+      topic: "置换反应判断",
+      knowledgeIds: ["V2-K108"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      explanation: "过氧化氢分解是「一种化合物生成两种物质」的分解反应，不是置换反应。其余三个都是单质 + 化合物 → 单质 + 化合物的置换反应。"
+    },
+    {
+      prompt: "铁与硫酸铜溶液反应的化学方程式正确的是（ ）。",
+      options: [
+        "2Fe + 3CuSO₄ → Fe₂(SO₄)₃ + 3Cu",
+        "Fe + CuSO₄ → FeSO₄ + Cu",
+        "Fe + CuSO₄ → Cu + FeSO₄↑",
+        "3Fe + 2CuSO₄ → Fe₃(SO₄)₂ + 2Cu"
+      ],
+      answer: "1",
+      difficulty: "基础",
+      topic: "方程式书写",
+      knowledgeIds: ["V2-K106"],
+      mistakeTypes: ["M-CHEMICAL-FORMULA"],
+      explanation: "铁置换铜生成 +2 价硫酸亚铁：Fe + CuSO₄ → FeSO₄ + Cu。铁不生成 Fe₂(SO₄)₃，铜也不能标 ↑（铜是固体析出）。"
+    },
+    {
+      prompt: "把铁钉放入硫酸铜溶液中，观察到的现象是（ ）。",
+      options: [
+        "铁钉表面出现红色固体，溶液由蓝色变为浅绿色",
+        "铁钉表面变黑，溶液变浑浊",
+        "产生大量气泡",
+        "无明显现象"
+      ],
+      answer: "0",
+      difficulty: "基础",
+      topic: "反应现象",
+      knowledgeIds: ["V2-K106"],
+      mistakeTypes: ["M-PHENOMENON-JUDGE"],
+      explanation: "铁钉表面析出红色铜；硫酸铜蓝色逐渐变浅，生成的无色硫酸亚铁使溶液呈浅绿色。"
+    },
+    {
+      prompt: "反应 Fe + X(NO₃)₂ → Fe(NO₃)₂ + X 能发生，则金属 X 的活动性比铁（ ）。",
+      options: ["强", "弱", "相同", "无法判断"],
+      answer: "1",
+      difficulty: "提升",
+      topic: "活动性顺序应用",
+      knowledgeIds: ["V2-K107", "V2-K108"],
+      mistakeTypes: ["M-PATTERN-OVERAPPLY"],
+      explanation: "铁能把 X 从 X(NO₃)₂ 中置换出来，说明铁比 X 活泼，即 X 的活动性比铁弱，X 在铁后面。"
+    },
+    {
+      prompt: "下列置换反应中，化学方程式书写正确的是（ ）。",
+      options: [
+        "Zn + 2HCl → ZnCl₂ + H₂↑",
+        "2Fe + 6HCl → 2FeCl₃ + 3H₂↑",
+        "Cu + H₂SO₄ → CuSO₄ + H₂↑",
+        "Fe + H₂SO₄ → FeSO₄ + H₂O"
+      ],
+      answer: "0",
+      difficulty: "提升",
+      topic: "方程式书写",
+      knowledgeIds: ["V2-K105", "V2-K108"],
+      mistakeTypes: ["M-CHEMICAL-FORMULA"],
+      explanation: "Zn + 2HCl → ZnCl₂ + H₂↑ 正确。铁与酸生成 FeCl₂ 不是 FeCl₃；铜不与稀硫酸反应；铁与酸生成氢气不是水。"
+    },
+    {
+      prompt: "下列有关置换反应的叙述，正确的是（ ）。",
+      options: [
+        "置换反应中一定有元素化合价发生改变",
+        "置换反应的生成物都是单质",
+        "酸和碱反应一定是置换反应",
+        "置换反应一定放出氢气"
+      ],
+      answer: "0",
+      difficulty: "挑战",
+      topic: "置换反应概念",
+      knowledgeIds: ["V2-K108"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      explanation: "置换反应中单质的元素被置换出来，化合价一定改变。生成物是一种单质 + 一种化合物；酸碱反应是复分解；置换反应不一定放氢气（如金属置换金属）。"
+    }
+  ]
+};
+</script>
+<script>window.ChemLabContentS2 = window.ChemLabContentS2 || {};
+window.ChemLabContentS2["day-05"] = {
+  dayNumber: "05",
+  title: "金属资源的利用与保护",
+  duration: "60--75 分钟",
+  difficulty: "⭐⭐⭐",
+  coreQuestion: "铁是怎么从矿石里炼出来的？为什么铁制品总爱生锈，又该怎么防？",
+  knowledgeIds: ["V2-K109", "V2-K110", "V2-K111", "V2-K112"],
+  experimentIds: ["V2-E105", "V2-E106"],
+  mistakeTypes: ["M-CONDITION-OMISSION", "M-CHEMICAL-FORMULA"],
+  learningObjectives: [
+    "能说出金属在自然界中的存在形式与活泼性的关系。",
+    "能书写炼铁原理的化学方程式，并解释高炉炼铁中各原料的作用。",
+    "能用控制变量法探究铁锈蚀的条件，说出防锈原理与方法。"
+  ],
+  sections: [
+    {
+      title: "今天解决什么问题？",
+      body: [
+        "金、银能挖出来直接用，铁、铝却要从矿石里「炼」出来。为什么差别这么大？",
+        "今天沿着两条线走：一是「金属从哪里来」——存在形式与炼铁原理；二是「金属怎么保护」——铁锈蚀的条件与防锈方法。这两条都是中考高频考点。"
+      ]
+    },
+    {
+      title: "金属在自然界中的存在",
+      body: [
+        "自然界中，化学性质不活泼的金属以单质形式存在，如金、银；化学性质活泼的金属多以化合物形式存在，需要从矿石中提取。",
+        "地球上的金属绝大多数以化合物形式存在。这是因为活泼金属容易与氧气等反应，自然界中很少有它们的单质。",
+        "金能以单质存在，正因为它的化学性质极不活泼——这正好呼应 Day02 的结论。"
+      ]
+    },
+    {
+      title: "常见的矿石",
+      body: [
+        "工业上用来提取金属的矿石：赤铁矿（主要成分 Fe₂O₃，红棕色）、磁铁矿（主要成分 Fe₃O₄，黑色，有磁性）、铝土矿（主要成分 Al₂O₃）。",
+        "矿石不是纯净物，是含金属化合物的混合物。炼铁原料是铁矿石、焦炭、石灰石和空气，其中石灰石的作用是把矿石中的杂质变成炉渣除去。",
+        "注意化学式书写：赤铁矿 Fe₂O₃、磁铁矿 Fe₃O₄，别混淆——Fe₃O₄ 是铁的燃烧产物，也是磁铁矿的主要成分。"
+      ]
+    },
+    {
+      title: "炼铁原理",
+      body: [
+        "工业炼铁的核心反应：一氧化碳在高温下把铁从铁矿石中还原出来。",
+        "Fe₂O₃ + 3CO →(高温) 2Fe + 3CO₂。注意：是 CO 还原 Fe₂O₃，产物是铁和二氧化碳，不是氢气还原，也不是 Fe 直接与 O₂ 反应。",
+        "焦炭的作用：燃烧提供热量，并与 CO₂ 反应生成还原剂 CO。CO 有毒，高炉尾气必须收集处理或点燃，不能直接排放。"
+      ]
+    },
+    {
+      title: "实验原理：CO 还原 Fe₂O₃",
+      safety: "supervised",
+      figure: { type: "science-inquiry", caption: "整理「通 CO→排空气→加热→观察→先停火后停 CO」的操作顺序，并说明尾气处理的原因。" },
+      body: [
+        "实验目的：验证 CO 在高温下能把 Fe₂O₃ 还原为铁。用品：CO、氧化铁粉末、硬质玻璃管、酒精灯、石灰水。CO 有毒，必须通风并在成人或教师指导下进行。",
+        "操作顺序：先通 CO 排尽装置内空气，再加热（防止 CO 与空气混合加热爆炸）；观察到红棕色粉末变黑、澄清石灰水变浑浊；实验结束先停止加热、继续通 CO 至冷却，尾气点燃或收集。",
+        "结论：红棕色 Fe₂O₃ 被还原为黑色铁粉，生成的 CO₂ 使石灰水变浑浊，方程式 Fe₂O₃ + 3CO →(高温) 2Fe + 3CO₂。"
+      ]
+    },
+    {
+      title: "铁锈蚀的条件：氧气和水缺一不可",
+      body: [
+        "铁生锈是铁与空气中的氧气和水共同作用的结果，两者缺一不可。铁锈的主要成分是 Fe₂O₃·xH₂O，疏松多孔，会吸附水分和氧气，让锈蚀向内部蔓延。",
+        "用控制变量法证明：①铁钉只接触干燥空气（放干燥剂）→ 不生锈；②铁钉只接触水（水面上加植物油隔绝空气）→ 不生锈；③铁钉同时接触水和空气 → 明显生锈。",
+        "结论：只有同时具备氧气和水，铁才会生锈。"
+      ]
+    },
+    {
+      title: "防锈方法：原理都是隔绝氧气或水",
+      body: [
+        "既然生锈需要氧气和水，防锈就从「隔绝」入手：",
+        "保持表面干燥（擦干）、涂油（在金属表面形成保护膜）、刷漆、电镀（镀锌、镀铬）、制成不锈钢等合金（改变金属内部结构，增强抗腐蚀性）。",
+        "解题时先判断措施「隔绝了什么」：涂油刷漆镀层都是隔绝氧气和水，保持干燥是隔绝水，制成合金是从改变材料本身入手。"
+      ]
+    },
+    {
+      title: "保护金属资源的三条途径",
+      body: [
+        "金属资源是有限的，保护途径：①防止金属锈蚀，延长使用寿命；②回收利用废旧金属，变废为宝；③合理开采矿物，寻找金属的代用品。",
+        "回收利用不仅有资源意义，还能节约能源、减少污染，是环保与资源战略的重要部分。"
+      ]
+    },
+    {
+      title: "中考链接",
+      body: [
+        "本课高频考点：金属存在形式与活泼性关系、矿石主要成分化学式、炼铁原理方程式、高炉原料作用、尾气处理、铁锈蚀条件探究（控制变量）、防锈原理与方法、金属资源保护途径。",
+        "常考陷阱：说「铁生锈只需要水」或「只需要氧气」（错，缺一不可）；说「高炉尾气可以直接排放」（错，CO 有毒）；把磁铁矿写成 Fe₂O₃（错，是 Fe₃O₄）。"
+      ]
+    },
+    {
+      title: "今日知识卡片",
+      body: [
+        "不活泼金属以单质存在（金、银），活泼金属以化合物形式存在于矿石中。赤铁矿 Fe₂O₃、磁铁矿 Fe₃O₄。炼铁：Fe₂O₃ + 3CO →(高温) 2Fe + 3CO₂，尾气含 CO 需处理。铁锈蚀需氧气和水共同作用（缺一不可），铁锈疏松多孔。防锈原理是隔绝氧气或水：干燥、涂油、刷漆、镀层、制合金。保护金属资源：防锈、回收、合理开采、找代用品。"
+      ]
+    }
+  ],
+  checkpoint: {
+    title: "情境自测：这些说法哪些对？",
+    items: [
+      {
+        statement: "金在自然界中以单质形式存在，是因为金的化学性质极不活泼。",
+        verdict: "对",
+        explanation: "化学性质不活泼的金属能以单质形式存在，金高温下也不与氧气反应，所以能以单质存在。"
+      },
+      {
+        statement: "赤铁矿的主要成分是 Fe₃O₄。",
+        verdict: "错",
+        explanation: "赤铁矿主要成分是 Fe₂O₃；Fe₃O₄ 是磁铁矿的主要成分。"
+      },
+      {
+        statement: "高炉炼铁的还原剂是一氧化碳，反应为 Fe₂O₃ + 3CO →(高温) 2Fe + 3CO₂。",
+        verdict: "对",
+        explanation: "CO 在高温下把铁从氧化铁中还原出来，同时生成 CO₂。"
+      },
+      {
+        statement: "高炉炼铁产生的尾气中可能含有一氧化碳，可以直接排放到空气中。",
+        verdict: "错",
+        explanation: "CO 有毒，会污染空气，尾气必须收集或点燃处理后再排放。"
+      },
+      {
+        statement: "铁生锈需要氧气和水共同作用，两者缺一不可。",
+        verdict: "对",
+        explanation: "控制变量实验证明：只接触干燥空气或只接触水都不生锈，同时接触氧气和水才生锈。"
+      },
+      {
+        statement: "铁制品表面涂油，其防锈原理是隔绝了氧气和水。",
+        verdict: "对",
+        explanation: "涂油在铁表面形成保护膜，把铁与氧气、水隔离开，从而防止生锈。"
+      },
+      {
+        statement: "回收利用废旧金属，既是保护金属资源的途径，又能节约能源、减少污染。",
+        verdict: "对",
+        explanation: "回收废旧金属可以减少冶炼新金属的矿石消耗和能源消耗，也减少废弃物污染。"
+      }
+    ]
+  }
+};
+</script>
+<script>window.ChemLabQuizS2 = window.ChemLabQuizS2 || {};
+window.ChemLabQuizS2["day-05"] = {
+  questions: [
+    {
+      prompt: "在自然界中以单质形式存在的金属是（ ）。",
+      options: ["铁", "铝", "金", "锌"],
+      answer: "2",
+      difficulty: "基础",
+      topic: "金属存在形式",
+      knowledgeIds: ["V2-K109"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      explanation: "化学性质极不活泼的金以单质形式存在于自然界；铁、铝、锌化学性质活泼，以化合物形式存在于矿石中。"
+    },
+    {
+      prompt: "赤铁矿的主要成分是（ ）。",
+      options: ["Fe₃O₄", "Fe₂O₃", "FeO", "Al₂O₃"],
+      answer: "1",
+      difficulty: "基础",
+      topic: "常见矿石",
+      knowledgeIds: ["V2-K110"],
+      mistakeTypes: ["M-CHEMICAL-FORMULA"],
+      explanation: "赤铁矿主要成分是 Fe₂O₃（红棕色）；Fe₃O₄ 是磁铁矿的主要成分。"
+    },
+    {
+      prompt: "工业炼铁的反应原理是（ ）。",
+      options: [
+        "Fe₂O₃ + 3CO →(高温) 2Fe + 3CO₂",
+        "2Fe₂O₃ →(高温) 4Fe + 3O₂↑",
+        "Fe₂O₃ + 3H₂ →(高温) 2Fe + 3H₂O",
+        "3Fe + 2O₂ →(点燃) Fe₃O₄"
+      ],
+      answer: "0",
+      difficulty: "基础",
+      topic: "炼铁原理",
+      knowledgeIds: ["V2-K110"],
+      mistakeTypes: ["M-CHEMICAL-FORMULA", "M-CONDITION-OMISSION"],
+      explanation: "工业炼铁用一氧化碳在高温下还原氧化铁：Fe₂O₃ + 3CO →(高温) 2Fe + 3CO₂。炼铁用 CO 还原，不是 Fe₂O₃ 受热分解。"
+    },
+    {
+      prompt: "高炉炼铁中，尾气必须处理后才可排放，主要原因是尾气中含有（ ）。",
+      options: ["氧气", "氮气", "一氧化碳", "二氧化碳"],
+      answer: "2",
+      difficulty: "基础",
+      topic: "炼铁尾气处理",
+      knowledgeIds: ["V2-K110"],
+      mistakeTypes: ["M-CONDITION-OMISSION"],
+      explanation: "高炉尾气中含有未反应完的 CO（有毒），会污染空气、危害人体，必须点燃或收集处理。"
+    },
+    {
+      prompt: "铁生锈需要的条件是（ ）。",
+      options: [
+        "只需要氧气",
+        "只需要水",
+        "氧气和水共同作用",
+        "高温加热"
+      ],
+      answer: "2",
+      difficulty: "基础",
+      topic: "铁锈蚀条件",
+      knowledgeIds: ["V2-K111"],
+      mistakeTypes: ["M-CONDITION-OMISSION"],
+      explanation: "铁生锈是铁与氧气和水共同作用的结果，两者缺一不可，与温度无直接因果关系。"
+    },
+    {
+      prompt: "探究铁锈蚀条件时，用植物油把试管中的水与空气隔开，是为了（ ）。",
+      options: [
+        "防止水分蒸发",
+        "隔绝空气中的氧气",
+        "防止试管破裂",
+        "让水更纯净"
+      ],
+      answer: "1",
+      difficulty: "提升",
+      topic: "控制变量探究",
+      knowledgeIds: ["V2-K111"],
+      mistakeTypes: ["M-CONDITION-OMISSION", "M-OBSERVATION-COMPARE"],
+      explanation: "植物油浮在水面，把水与空气隔开，使该试管中的铁钉只接触水、不接触氧气，用于对照「只接触水不生锈」。"
+    },
+    {
+      prompt: "下列防锈措施中，其原理与另外三项明显不同的是（ ）。",
+      options: ["给铁栏杆刷漆", "铁刀擦干后放置", "在铁制品表面镀锌", "给机器零件涂油"],
+      answer: "1",
+      difficulty: "提升",
+      topic: "防锈方法",
+      knowledgeIds: ["V2-K112"],
+      mistakeTypes: ["M-CONDITION-OMISSION"],
+      explanation: "刷漆、镀锌、涂油都是在表面形成保护膜隔绝氧气和水；擦干是去除水、保持干燥，隔绝的对象是水，原理本质相同但着眼点不同。"
+    },
+    {
+      prompt: "保护金属资源的途径包括（ ）。",
+      options: [
+        "防止金属锈蚀、回收利用废旧金属、合理开采并寻找代用品",
+        "大量开采矿石、加快冶炼速度",
+        "只用不锈钢、不用其他金属",
+        "把金属深埋地下保存"
+      ],
+      answer: "0",
+      difficulty: "基础",
+      topic: "金属资源保护",
+      knowledgeIds: ["V2-K112"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      explanation: "保护金属资源：防止锈蚀、回收废旧金属、合理开采、寻找代用品。"
+    },
+    {
+      prompt: "把洁净的铁钉分别放入下列环境中，最不容易生锈的是（ ）。",
+      options: [
+        "一半浸在蒸馏水中、敞口放置",
+        "完全浸没在蒸馏水中、水面上加一层植物油",
+        "放在盛有干燥剂的密闭试管中",
+        "放在潮湿的空气中"
+      ],
+      answer: "2",
+      difficulty: "挑战",
+      topic: "铁锈蚀条件应用",
+      knowledgeIds: ["V2-K111", "V2-K112"],
+      mistakeTypes: ["M-CONDITION-OMISSION"],
+      explanation: "铁生锈需要氧气和水共同作用。放在干燥剂密闭试管中，铁钉既不接触水也不接触氧气，最不易生锈。"
+    }
+  ]
+};
+</script>
+<script>window.ChemLabContentS2 = window.ChemLabContentS2 || {};
+window.ChemLabContentS2["day-06"] = {
+  dayNumber: "06",
+  title: "单元复习：金属和金属材料",
+  duration: "60--75 分钟",
+  difficulty: "⭐⭐⭐",
+  coreQuestion: "金属单元的知识如何织成一张网，遇到综合题怎么一步步拆？",
+  knowledgeIds: ["V2-K101", "V2-K102", "V2-K103", "V2-K104", "V2-K105", "V2-K106", "V2-K107", "V2-K108", "V2-K109", "V2-K110", "V2-K111", "V2-K112"],
+  experimentIds: ["V2-E101", "V2-E102", "V2-E103", "V2-E104", "V2-E105", "V2-E106"],
+  mistakeTypes: ["M-CHEMICAL-FORMULA", "M-CONCEPT-CONFUSION", "M-PATTERN-OVERAPPLY", "M-CONDITION-OMISSION", "M-PHENOMENON-JUDGE"],
+  learningObjectives: [
+    "能梳理金属单元的知识网络，说出各知识点之间的联系。",
+    "能综合运用金属活动性顺序、置换反应、锈蚀条件解决综合题。",
+    "能识别本单元常见的易错陷阱并避免重犯。"
+  ],
+  sections: [
+    {
+      title: "今天解决什么问题？",
+      body: [
+        "五天学下来，金属单元的知识点很多：物理性质、合金、活动性顺序、置换反应、炼铁、防锈……如果只零散记忆，做题时容易顾此失彼。",
+        "今天把这单元织成一张知识网络，再通过综合题检验自己能不能「见招拆招」。"
+      ]
+    },
+    {
+      title: "知识网络：金属单元一张图",
+      body: [
+        "主线一条：性质 → 决定用途 → 决定存在与冶炼方式。",
+        "金属的物理性质（光泽、导电导热、延展性）决定用途；金属的化学性质（活动性顺序）决定能否与氧气、酸、盐溶液反应；活动性又决定金属在自然界的存在形式（不活泼的以单质存在，活泼的以化合物存在）和冶炼方法。",
+        "支线两条：一是「活动性顺序」贯穿金属与氧气/酸/盐溶液三组反应；二是「保护」从锈蚀条件（氧气+水）到防锈方法（隔绝）。"
+      ]
+    },
+    {
+      title: "易错点汇总（一）：化学用语",
+      body: [
+        "铁与酸、盐反应生成 +2 价亚铁盐：FeCl₂、FeSO₄，溶液浅绿色，绝不写成 FeCl₃、Fe₂(SO₄)₃。",
+        "铁的燃烧产物是 Fe₃O₄（黑色），不是 Fe₂O₃；赤铁矿是 Fe₂O₃，磁铁矿是 Fe₃O₄，分清「产物」与「矿石」。",
+        "反应条件别漏：铁燃烧标点燃，炼铁标高温。"
+      ]
+    },
+    {
+      title: "易错点汇总（二）：规律应用",
+      body: [
+        "误区「所有金属都能与酸反应」——只有氢前金属能放氢气。",
+        "误区「前金属一定能置换后金属」——盐须可溶，且钾钙钠太活泼不作置换剂。",
+        "误区「铁生锈只要水」——氧气和水缺一不可。",
+        "误区「合金是化合物/熔点更高」——合金是混合物、熔点更低、硬度更大。"
+      ]
+    },
+    {
+      title: "综合题思路示范：判断反应能否发生",
+      body: [
+        "遇到「判断反应能否发生」的题，按三步走：①写出涉及的金属，在活动性顺序表上定位；②判断是金属与酸还是与盐溶液反应；③氢前金属放氢、前金属置换后金属，符合就发生，不符合就不发生。",
+        "例：Ag 与 Cu(NO₃)₂ 溶液能否反应？Ag 在 Cu 后面，后面的不能置换前面的，所以不反应。",
+        "例：Zn 与 FeSO₄ 能否反应？Zn 在 Fe 前面，前面的能置换后面的，能反应：Zn + FeSO₄ → ZnSO₄ + Fe。"
+      ]
+    },
+    {
+      title: "综合题思路示范：设计实验比较活动性",
+      body: [
+        "验证两种金属活动性：把一种金属放入另一种金属的盐溶液。能置换说明前面的活泼，不能说明后面的不活泼。",
+        "验证三种金属（如 Fe、Cu、Ag）：用「中间金属法」——把中间金属 Cu 分别放入 FeSO₄ 和 AgNO₃。Cu 不与 FeSO₄ 反应（Cu < Fe），Cu 能置换 Ag（Cu > Ag），即可排出 Fe > Cu > Ag。",
+        "一句话：让「中间的」当裁判，两边各验一次。"
+      ]
+    },
+    {
+      title: "综合题思路示范：含杂质计算（衔接中考）",
+      body: [
+        "炼铁计算常带「含杂质」条件：先用纯度换算纯净物质量，再按方程式比例式计算。",
+        "核心：方程式里的质量关系只对纯净物成立，杂质不参与反应。这一步算错，整题报废，务必先「提纯」再列比例。",
+        "详细计算规范将在 Day33-34 中考计算专练系统训练。"
+      ]
+    },
+    {
+      title: "本单元实验回顾",
+      body: [
+        "六个实验：物理性质观察、金属与氧气反应、金属与酸反应（比较剧烈程度）、铁与硫酸铜反应（置换）、CO 还原 Fe₂O₃（炼铁原理+尾气处理）、铁钉锈蚀条件探究（控制变量）。",
+        "复习时关注每个实验的「观察什么、控制什么、结论是什么」：比较反应快慢要控制变量；CO 实验要先通 CO 再加热、先停火后停 CO；锈蚀实验用三支试管对照。"
+      ]
+    },
+    {
+      title: "中考链接",
+      body: [
+        "金属单元综合题是中考压轴常客，常把活动性顺序、置换反应、锈蚀、计算放在一个情境里。",
+        "应对策略：先背熟顺序表和常见方程式，再练「拆解」——把综合题拆成「判断反应」「书写方程式」「比较活动性」「计算」几个子任务逐个解决。"
+      ]
+    },
+    {
+      title: "今日知识卡片",
+      body: [
+        "金属单元网络：物理性质→用途；化学性质（活动性顺序 K Ca Na Mg Al Zn Fe Sn Pb (H) Cu Hg Ag Pt Au）→ 与氧气/酸/盐溶液的反应 → 存在形式与冶炼；锈蚀（氧气+水缺一不可）→ 防锈（隔绝）。铁置换一律 +2 价；铁燃烧生成 Fe₃O₄；炼铁 Fe₂O₃ + 3CO →(高温) 2Fe + 3CO₂。综合题三步：定位→判断→书写。"
+      ]
+    }
+  ],
+  checkpoint: {
+    title: "情境自测：这些说法哪些对？",
+    items: [
+      {
+        statement: "金属的活动性越强，在自然界中越容易以单质形式存在。",
+        verdict: "错",
+        explanation: "正相反：活动性越强的金属越容易与氧气等反应，多以化合物形式存在；活动性弱的（如金）才以单质存在。"
+      },
+      {
+        statement: "把铜放入硫酸亚铁溶液中，能观察到铜表面析出铁。",
+        verdict: "错",
+        explanation: "Fe 在 Cu 前面，后面的铜不能置换前面的铁，铜与硫酸亚铁溶液不反应，无现象。"
+      },
+      {
+        statement: "铁生锈后生成的铁锈疏松多孔，会加速铁的进一步锈蚀。",
+        verdict: "对",
+        explanation: "铁锈疏松多孔，能吸附水分和氧气，使锈蚀向内部蔓延。"
+      },
+      {
+        statement: "合金的硬度通常比组成它的纯金属大，熔点通常比纯金属低。",
+        verdict: "对",
+        explanation: "这是合金的两大优点，正因为如此合金应用更广泛。"
+      },
+      {
+        statement: "铁与稀盐酸反应的方程式为 Fe + 2HCl → FeCl₂ + H₂↑。",
+        verdict: "对",
+        explanation: "铁与酸反应生成 +2 价 FeCl₂ 和氢气，溶液呈浅绿色。"
+      }
+    ]
+  }
+};
+</script>
+<script>window.ChemLabQuizS2 = window.ChemLabQuizS2 || {};
+window.ChemLabQuizS2["day-06"] = {
+  questions: [
+    {
+      prompt: "下列金属中，活动性最强的是（ ）。",
+      options: ["铁", "锌", "铜", "铝"],
+      answer: "3",
+      difficulty: "基础",
+      topic: "金属活动性顺序",
+      knowledgeIds: ["V2-K107"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      explanation: "活动性顺序：...Al Zn Fe...(H) Cu...，铝在锌、铁、铜之前，活动性最强。"
+    },
+    {
+      prompt: "下列各组物质中，能发生置换反应的是（ ）。",
+      options: [
+        "铁和硫酸镁溶液",
+        "铜和硝酸银溶液",
+        "银和稀盐酸",
+        "铜和硫酸亚铁溶液"
+      ],
+      answer: "1",
+      difficulty: "提升",
+      topic: "置换反应判断",
+      knowledgeIds: ["V2-K107", "V2-K108"],
+      mistakeTypes: ["M-PATTERN-OVERAPPLY"],
+      explanation: "Cu 在 Ag 前面，能把银从硝酸银中置换出来：Cu + 2AgNO₃ → Cu(NO₃)₂ + 2Ag。铁比镁不活泼不反应；银不与稀盐酸反应；铜不能置换硫酸亚铁中的铁。"
+    },
+    {
+      prompt: "为验证 Fe、Cu、Ag 三种金属的活动性顺序，下列方案可行的是（ ）。",
+      options: [
+        "把铁放入硫酸铜溶液，把铜放入硝酸银溶液，把银放入硫酸亚铁溶液",
+        "把三种金属分别放入稀盐酸",
+        "把银放入硫酸亚铁和硫酸铜溶液",
+        "把铁放入稀盐酸，把铜放入稀盐酸，把银放入稀盐酸"
+      ],
+      answer: "0",
+      difficulty: "挑战",
+      topic: "设计实验比较活动性",
+      knowledgeIds: ["V2-K107"],
+      mistakeTypes: ["M-CONDITION-OMISSION", "M-OBSERVATION-COMPARE"],
+      explanation: "Fe 置换 Cu 得 Fe>Cu；Cu 置换 Ag 得 Cu>Ag；Ag 不与 FeSO₄ 反应得 Ag<Fe，综合得 Fe>Cu>Ag。"
+    },
+    {
+      prompt: "铁钉在下列环境中，锈蚀最快的是（ ）。",
+      options: [
+        "干燥的空气中",
+        "隔绝空气的蒸馏水中",
+        "同时接触水和空气的潮湿环境",
+        "装满氮气的密闭容器中"
+      ],
+      answer: "2",
+      difficulty: "基础",
+      topic: "铁锈蚀条件",
+      knowledgeIds: ["V2-K111"],
+      mistakeTypes: ["M-CONDITION-OMISSION"],
+      explanation: "铁生锈需要氧气和水共同作用，同时接触水和空气的潮湿环境锈蚀最快。"
+    },
+    {
+      prompt: "下列防锈措施中，原理是隔绝氧气和水的是（ ）。",
+      options: ["保持铁制品表面干燥", "在铁制品表面刷油漆", "把铁制品存放在干燥处", "降低环境温度"],
+      answer: "1",
+      difficulty: "基础",
+      topic: "防锈方法",
+      knowledgeIds: ["V2-K112"],
+      mistakeTypes: ["M-CONDITION-OMISSION"],
+      explanation: "刷油漆在表面形成保护膜，隔绝氧气和水。保持干燥只是除去水，不隔绝氧气。"
+    },
+    {
+      prompt: "下列化学方程式书写正确的是（ ）。",
+      options: [
+        "Fe + CuSO₄ → Fe₂(SO₄)₃ + Cu",
+        "3Fe + 2O₂ →(点燃) Fe₃O₄",
+        "Fe + 2HCl → FeCl₃ + H₂↑",
+        "Cu + H₂SO₄ → CuSO₄ + H₂↑"
+      ],
+      answer: "1",
+      difficulty: "提升",
+      topic: "化学方程式书写",
+      knowledgeIds: ["V2-K104", "V2-K105", "V2-K106"],
+      mistakeTypes: ["M-CHEMICAL-FORMULA"],
+      explanation: "铁丝燃烧生成 Fe₃O₄ 正确。铁与盐、酸反应生成 +2 价盐；铜不与稀硫酸反应。"
+    },
+    {
+      prompt: "工业炼铁中，焦炭的作用是（ ）。",
+      options: [
+        "直接与氧化铁反应生成铁",
+        "燃烧提供热量并生成还原剂一氧化碳",
+        "把杂质变成炉渣",
+        "防止尾气污染"
+      ],
+      answer: "1",
+      difficulty: "提升",
+      topic: "炼铁原料作用",
+      knowledgeIds: ["V2-K110"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION", "M-CONDITION-OMISSION"],
+      explanation: "焦炭燃烧提供高温热量，并与 CO₂ 反应生成还原剂 CO；CO 再还原 Fe₂O₃。"
+    },
+    {
+      prompt: "在硝酸银和硝酸铜的混合溶液中加入足量铁粉，充分反应后过滤，滤渣中一定含有（ ）。",
+      options: ["银和铜", "银", "铜", "铁和银"],
+      answer: "1",
+      difficulty: "挑战",
+      topic: "置换先后顺序",
+      knowledgeIds: ["V2-K107", "V2-K106"],
+      mistakeTypes: ["M-PATTERN-OVERAPPLY", "M-CONDITION-OMISSION"],
+      explanation: "Ag 比 Cu 更靠后，铁先置换银，AgNO₃ 耗尽后再置换铜。「足量铁粉」说明银一定被置换出来（滤渣一定含银）；是否含铜取决于铁是否足量到把铜也置换出。"
+    },
+    {
+      prompt: "下列关于金属材料的说法，正确的是（ ）。",
+      options: [
+        "合金是纯净物",
+        "生铁的含碳量低于钢",
+        "铝合金比纯铝硬度更大",
+        "铁锈是致密的，能保护内部的铁"
+      ],
+      answer: "2",
+      difficulty: "提升",
+      topic: "金属材料综合",
+      knowledgeIds: ["V2-K102", "V2-K103", "V2-K111"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      explanation: "合金硬度比纯金属大，铝合金比纯铝更硬。合金是混合物；生铁含碳量高于钢；铁锈疏松多孔不保护内部。"
+    },
+    {
+      prompt: "把一定量的锌粉放入 Fe(NO₃)₂ 和 AgNO₃ 的混合溶液中，充分反应后过滤，滤液为浅绿色。下列说法正确的是（ ）。",
+      options: [
+        "滤渣中一定含有银和铁",
+        "滤液中一定含有 Zn(NO₃)₂ 和 Fe(NO₃)₂",
+        "滤渣中一定含有锌",
+        "滤液中不可能含有 AgNO₃"
+      ],
+      answer: "1",
+      difficulty: "挑战",
+      topic: "置换反应综合分析",
+      knowledgeIds: ["V2-K107", "V2-K106", "V2-K108"],
+      mistakeTypes: ["M-CONDITION-OMISSION", "M-PATTERN-OVERAPPLY"],
+      explanation: "滤液浅绿色说明含 Fe(NO₃)₂（+2 价亚铁），说明锌把部分铁置换出来但没把铁全部置换（若全部置换则滤液无色）。滤液必含 Zn(NO₃)₂。滤渣是否含铁不确定，可能仍有铁剩余。"
+    }
+  ]
+};
 </script>
 <script>window.ChemLabKnowledgeS2 = (function () {
   "use strict";
