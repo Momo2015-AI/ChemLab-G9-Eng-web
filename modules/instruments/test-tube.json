@@ -1,0 +1,10 @@
+{
+  "id": "test-tube",
+  "name": "试管",
+  "category": "glassware",
+  "icon": "test-tube",
+  "image": "",
+  "usage": ["small volume reaction", "heating"],
+  "safety": ["avoid sudden heating", "use holder when hot"],
+  "experiments": []
+}
