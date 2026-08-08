@@ -1,0 +1,64 @@
+name: ChemLab-G9-S2 Build Check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-build:
+    name: Validate chemistry learning package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+          else
+            echo "No package.json found, skip npm install"
+          fi
+
+      - name: Validate content
+        run: |
+          if [ -f scripts/validate-content.mjs ]; then
+            node scripts/validate-content.mjs
+          else
+            echo "Content validator not found, skip"
+          fi
+
+      - name: Check chemistry correctness
+        run: |
+          if [ -f scripts/check-science.mjs ]; then
+            node scripts/check-science.mjs --fatal
+          else
+            echo "Science checker not found, skip"
+          fi
+
+      - name: Build offline single HTML
+        run: |
+          if [ -f scripts/build-single.mjs ]; then
+            node scripts/build-single.mjs
+          else
+            echo "Single HTML builder not found, skip"
+          fi
+
+      - name: Smoke test
+        run: |
+          if [ -f tests/smoke.mjs ]; then
+            node tests/smoke.mjs
+          else
+            echo "Smoke test not found, skip"
+          fi
