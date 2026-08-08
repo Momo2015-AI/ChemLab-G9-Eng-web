@@ -746,6 +746,9 @@ h2 .day-badge { font-size: .78rem; font-weight: 700; margin-right: 6px; padding:
     </main>
     <noscript>请启用 JavaScript 后学习 ChemLab-G9 下册。</noscript>
     
+    <script src="content-s2/knowledge/knowledge.js"></script>
+    <script src="content-s2/experiments/experiments.js"></script>
+    <script src="content-s2/mistakes/mistakes.js"></script>
     
   <script>window.ChemLabManifestS2 = (function () {
   "use strict";
@@ -819,6 +822,359 @@ h2 .day-badge { font-size: .78rem; font-weight: 700; margin-right: 6px; padding:
   }
 
   return { modules: modules, days: days };
+}());
+</script>
+<script>window.ChemLabKnowledgeS2 = (function () {
+  "use strict";
+
+  // 知识图谱：单元一（金属和金属材料）。ID 命名空间：V2-K1xx。
+  // prerequisite / related 引用其他知识点 ID；experiments 引用实验 ID；
+  // mistakeTypes 引用错误分类 ID（见 content-s2/mistakes/mistakes.js）。
+  const knowledge = [
+    {
+      id: "V2-K101",
+      name: "金属的物理性质",
+      concept: "多数金属有金属光泽、良好导电导热性、延展性；多数呈银白色，金呈黄色、铜呈紫红色。",
+      prerequisite: [],
+      related: ["V2-K102"],
+      experiments: ["V2-E101"],
+      mistakeTypes: ["M-OBSERVATION-COMPARE"],
+      examPoints: ["金属的物理共性与特性", "由用途推断性质"],
+      applications: ["铜做导线（导电性）、铝做炊具（导热）、金做首饰（化学稳定+延展性）"]
+    },
+    {
+      id: "V2-K102",
+      name: "合金",
+      concept: "在金属中加热熔合某些金属或非金属而制得的、具有金属特性的物质。合金一般硬度比纯金属大、熔点比纯金属低，抗腐蚀性更好。",
+      prerequisite: ["V2-K101"],
+      related: ["V2-K103"],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["合金是混合物", "合金性能优于纯金属", "常见合金及用途"],
+      applications: ["不锈钢（抗腐蚀）、铝合金（轻而硬）、钛合金（人体植入）"]
+    },
+    {
+      id: "V2-K103",
+      name: "生铁与钢",
+      concept: "生铁和钢都是铁的合金，区别在于含碳量不同：生铁含碳 2%~4.3%，钢含碳 0.03%~2%。",
+      prerequisite: ["V2-K102"],
+      related: [],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["生铁与钢的含碳量比较", "性质差异源于组成不同"],
+      applications: ["生铁铸造、钢做结构材料"]
+    },
+    {
+      id: "V2-K104",
+      name: "金属与氧气的反应",
+      concept: "镁、铝在常温即可与氧气反应（铝表面生成致密氧化膜起保护作用）；铁、铜需加热或点燃；金即使在高温下也不与氧气反应。由此体现金属活泼性的差异。",
+      prerequisite: ["V2-K101"],
+      related: ["V2-K105", "V2-K107"],
+      experiments: ["V2-E102"],
+      mistakeTypes: ["M-PHENOMENON-JUDGE"],
+      examPoints: ["Mg/Al 常温氧化", "Fe 燃烧生成 Fe₃O₄", "Al 氧化膜的保护作用"],
+      applications: ["铝制品的耐腐蚀性源于氧化膜"]
+    },
+    {
+      id: "V2-K105",
+      name: "金属与酸的反应",
+      concept: "在金属活动性顺序中，位于氢之前的金属（K Ca Na Mg Al Zn Fe Sn Pb）能与稀盐酸、稀硫酸等反应生成氢气；位于氢之后的金属（Cu Hg Ag Pt Au）不能。反应的剧烈程度体现金属活动性。",
+      prerequisite: ["V2-K104"],
+      related: ["V2-K106", "V2-K107", "V2-K108"],
+      experiments: ["V2-E103"],
+      mistakeTypes: ["M-CHEMICAL-FORMULA", "M-PATTERN-OVERAPPLY", "M-OBSERVATION-COMPARE"],
+      examPoints: ["氢前金属与酸反应生成氢气", "铁与酸生成 +2 价铁盐", "比较反应速率判断活泼性"],
+      applications: ["实验室用锌与稀硫酸制氢气"]
+    },
+    {
+      id: "V2-K106",
+      name: "金属与盐溶液的反应",
+      concept: "位于前面的金属能把位于后面的金属从其盐溶液中置换出来，如 Fe + CuSO₄ → FeSO₄ + Cu、Cu + 2AgNO₃ → Cu(NO₃)₂ + 2Ag。",
+      prerequisite: ["V2-K105"],
+      related: ["V2-K107", "V2-K108"],
+      experiments: ["V2-E104"],
+      mistakeTypes: ["M-CHEMICAL-FORMULA", "M-PATTERN-OVERAPPLY"],
+      examPoints: ["活动性强的置换弱的", "铁置换铜生成 FeSO₄（+2 价）", "现象描述：银白色固体表面析出红色固体"],
+      applications: ["湿法炼铜原理"]
+    },
+    {
+      id: "V2-K107",
+      name: "金属活动性顺序",
+      concept: "K Ca Na Mg Al Zn Fe Sn Pb (H) Cu Hg Ag Pt Au。金属的位置越靠前，活动性越强；位于氢之前的能与酸反应放出氢气，位于前面的金属能把后面的从其盐溶液中置换出来。",
+      prerequisite: ["V2-K104", "V2-K105", "V2-K106"],
+      related: [],
+      experiments: [],
+      mistakeTypes: ["M-PATTERN-OVERAPPLY", "M-CONDITION-OMISSION"],
+      examPoints: ["顺序表的记忆", "判断反应能否发生", "设计实验比较三种金属活动性"],
+      applications: ["预测置换反应", "比较金属的活泼性强弱"]
+    },
+    {
+      id: "V2-K108",
+      name: "置换反应",
+      concept: "一种单质与一种化合物反应，生成另一种单质与另一种化合物的反应。通式：A + BC → B + AC。",
+      prerequisite: ["V2-K105", "V2-K106"],
+      related: ["V2-K107"],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["置换反应判断", "与化合/分解反应的区分", "铁参与的置换反应方程式"],
+      applications: ["金属活动性应用的总框架"]
+    },
+    {
+      id: "V2-K109",
+      name: "金属在自然界中的存在",
+      concept: "少数化学性质不活泼的金属以单质形式存在（金、银等）；多数金属以化合态存在，存在于矿石中。",
+      prerequisite: ["V2-K107"],
+      related: ["V2-K110"],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["存在形式与活泼性关系"],
+      applications: ["解释金为什么能以单质存在"]
+    },
+    {
+      id: "V2-K110",
+      name: "常见矿石与炼铁原理",
+      concept: "赤铁矿（主要成分 Fe₂O₃）、磁铁矿（Fe₃O₄）、铝土矿（Al₂O₃）等。工业炼铁原理：一氧化碳在高温下把铁从铁矿石中还原出来：Fe₂O₃ + 3CO →(高温) 2Fe + 3CO₂。CO 有毒，尾气需处理。",
+      prerequisite: ["V2-K109"],
+      related: [],
+      experiments: ["V2-E105"],
+      mistakeTypes: ["M-CHEMICAL-FORMULA", "M-CONDITION-OMISSION"],
+      examPoints: ["矿石主要成分", "高炉炼铁原理与原料作用", "尾气处理（CO 有毒）", "含杂质计算"],
+      applications: ["钢铁工业原理"]
+    },
+    {
+      id: "V2-K111",
+      name: "铁锈蚀的条件",
+      concept: "铁生锈是铁与空气中的氧气和水共同作用的结果（两者缺一不可）。铁锈的主要成分是 Fe₂O₃·xH₂O，疏松多孔。",
+      prerequisite: ["V2-K110"],
+      related: ["V2-K112"],
+      experiments: ["V2-E106"],
+      mistakeTypes: ["M-CONDITION-OMISSION", "M-OBSERVATION-COMPARE"],
+      examPoints: ["铁生锈需要氧气和水共同作用", "控制变量探究锈蚀条件"],
+      applications: ["解释干燥地区铁制品不易生锈"]
+    },
+    {
+      id: "V2-K112",
+      name: "防锈方法与金属资源保护",
+      concept: "防锈原理：隔绝氧气或水。常用方法：保持表面干燥、涂油、刷漆、镀锌/铬、制成不锈钢（合金）。保护金属资源的途径：防止锈蚀、回收利用废旧金属、合理开采、寻找代用品。",
+      prerequisite: ["V2-K111"],
+      related: [],
+      experiments: [],
+      mistakeTypes: ["M-CONDITION-OMISSION"],
+      examPoints: ["防锈原理与方法的对应", "保护金属资源的三条途径"],
+      applications: ["不锈钢炊具、涂油防锈、废旧金属回收"]
+    }
+  ];
+
+  const byId = {};
+  knowledge.forEach((k) => { byId[k.id] = k; });
+
+  // 依赖倒序：每个知识点依赖的 prerequisite 必须是已定义的（拓扑可构造）。
+  return { knowledge: knowledge, byId: byId };
+}());
+</script>
+<script>window.ChemLabExperimentsS2 = (function () {
+  "use strict";
+
+  // 实验模型：单元一（金属和金属材料）。ID 命名空间：V2-E1xx。
+  // commonErrors 引用错误分类 ID；knowledgeIds 引用知识点 ID。
+  const experiments = [
+    {
+      id: "V2-E101",
+      name: "金属物理性质的观察",
+      day: "01",
+      type: "observation",
+      purpose: "通过观察与简单操作，认识金属的物理性质共性与特性。",
+      materials: ["铁片", "铜丝", "铝箔", "导线", "小锤"],
+      setup: "金属样品摆放在桌面，供观察颜色、光泽、导电性与延展性。",
+      steps: [
+        "观察铁片、铜丝、铝箔的颜色和光泽，用手折弯感受硬度与延展性。",
+        "用导线把铜丝接入简单电路，观察小灯泡是否发光。",
+        "记录比较：三种金属在颜色、导电性上的异同。"
+      ],
+      observations: ["多数金属有金属光泽", "铜呈紫红色，铁、铝呈银白色", "金属能导电、能被弯曲"],
+      conclusion: "金属具有金属光泽、导电导热性和延展性；不同金属在颜色、硬度上存在差异。",
+      safety: "supervised",
+      commonErrors: ["M-OBSERVATION-COMPARE"],
+      knowledgeIds: ["V2-K101"],
+      examPoints: ["金属物理共性", "由用途推断性质"]
+    },
+    {
+      id: "V2-E102",
+      name: "金属与氧气的反应（演示）",
+      day: "02",
+      type: "demonstration",
+      purpose: "比较镁、铝、铁、铜与氧气反应的难易，建立金属活泼性差异的直观认识。",
+      materials: ["镁条", "铝箔", "铁钉", "铜丝", "酒精灯", "坩埚钳"],
+      setup: "坩埚钳夹持金属样品，酒精灯加热，注意防护与通风。",
+      steps: [
+        "用砂纸打磨镁条表面，观察其在常温下的变化。",
+        "加热铝箔、铁钉、铜丝，分别观察燃烧或变色的剧烈程度。",
+        "金在加热条件下无明显变化，可对比说明其化学性质极不活泼。"
+      ],
+      observations: ["镁条常温表面变暗，点燃剧烈燃烧发出耀眼白光", "铝箔表面生成致密氧化膜", "铁丝在氧气中剧烈燃烧火星四射生成黑色固体", "铜丝加热表面变黑（CuO）"],
+      conclusion: "不同金属与氧气反应难易不同，镁铝较活泼、铁铜次之、金极不活泼。",
+      safety: "supervised",
+      commonErrors: ["M-PHENOMENON-JUDGE"],
+      knowledgeIds: ["V2-K104"],
+      examPoints: ["铁燃烧生成 Fe₃O₄ 而非 Fe₂O₃", "铝氧化膜保护作用", "通过反应难易比较活泼性"]
+    },
+    {
+      id: "V2-E103",
+      name: "金属与稀盐酸、稀硫酸的反应（探究）",
+      day: "02",
+      type: "inquiry",
+      purpose: "探究不同金属与稀酸反应的剧烈程度，归纳金属活动性差异。",
+      materials: ["镁条", "锌粒", "铁钉", "铜片", "稀盐酸", "稀硫酸", "试管"],
+      setup: "四支试管分别加入等量稀盐酸，再分别放入镁、锌、铁、铜。",
+      steps: [
+        "取四支试管，各加入等体积、等浓度的稀盐酸。",
+        "分别放入大小相近的镁条、锌粒、铁钉、铜片。",
+        "观察产生气泡的快慢，比较反应的剧烈程度。",
+        "（对照组）铜片放回另一支装稀盐酸的试管，确认不反应。"
+      ],
+      observations: ["镁反应最剧烈，快速产生大量气泡", "锌反应较快", "铁反应缓慢，气泡较少，溶液变浅绿色", "铜无明显现象"],
+      conclusion: "Mg > Zn > Fe > Cu（Cu 不反应），金属与酸反应的剧烈程度反映其活动性强弱。",
+      safety: "supervised",
+      commonErrors: ["M-OBSERVATION-COMPARE", "M-PATTERN-OVERAPPLY", "M-CHEMICAL-FORMULA"],
+      knowledgeIds: ["V2-K105", "V2-K107"],
+      examPoints: ["氢前金属与酸反应生成氢气", "铁与酸生成 FeSO₄/FeCl₂（+2 价）", "比较反应速率判断活泼性"]
+    },
+    {
+      id: "V2-E104",
+      name: "铁钉与硫酸铜溶液的反应（探究）",
+      day: "04",
+      type: "inquiry",
+      purpose: "观察铁能否把铜从硫酸铜溶液中置换出来，认识金属与盐溶液的反应。",
+      materials: ["铁钉", "硫酸铜溶液", "试管"],
+      setup: "洁净铁钉放入盛有硫酸铜溶液的试管，静置观察。",
+      steps: [
+        "将洁净铁钉放入硫酸铜溶液中。",
+        "观察铁钉表面和溶液颜色的变化。",
+        "数分钟后取出观察，并写出反应的化学方程式。"
+      ],
+      observations: ["铁钉表面出现红色固体", "溶液蓝色逐渐变浅"],
+      conclusion: "铁能把铜从硫酸铜溶液中置换出来：Fe + CuSO₄ → FeSO₄ + Cu，铁比铜活泼。",
+      safety: "supervised",
+      commonErrors: ["M-CHEMICAL-FORMULA", "M-PATTERN-OVERAPPLY"],
+      knowledgeIds: ["V2-K106", "V2-K108"],
+      examPoints: ["置换反应判断", "生成 FeSO₄ 而非 Fe₂(SO₄)₃", "现象描述（析出红色固体、溶液变浅）"]
+    },
+    {
+      id: "V2-E105",
+      name: "高炉炼铁原理（CO 还原 Fe₂O₃，演示）",
+      day: "05",
+      type: "demonstration",
+      purpose: "理解一氧化碳在高温下把铁从氧化铁中还原出来的原理及尾气处理。",
+      materials: ["一氧化碳", "氧化铁粉末", "硬质玻璃管", "酒精灯", "石灰水"],
+      setup: "CO 通入盛有 Fe₂O₃ 粉末的硬质玻璃管，高温加热，尾气通入石灰水后点燃或收集。",
+      steps: [
+        "先通入 CO 排尽装置内空气，再点燃酒精灯加热（防爆炸）。",
+        "观察红色氧化铁粉末的变化与石灰水的变化。",
+        "实验结束后先停止加热，继续通 CO 至冷却，处理尾气。"
+      ],
+      observations: ["红棕色粉末逐渐变为黑色（铁）", "澄清石灰水变浑浊（CO₂）"],
+      conclusion: "Fe₂O₃ + 3CO →(高温) 2Fe + 3CO₂。CO 有毒，尾气必须处理。",
+      safety: "supervised",
+      commonErrors: ["M-CONDITION-OMISSION", "M-CHEMICAL-FORMULA"],
+      knowledgeIds: ["V2-K110"],
+      examPoints: ["炼铁原理方程式", "先通 CO 再加热的原因", "尾气处理方式"]
+    },
+    {
+      id: "V2-E106",
+      name: "铁钉锈蚀条件的探究",
+      day: "05",
+      type: "inquiry",
+      purpose: "用控制变量的方法探究铁生锈是否需要氧气和水，两者缺一不可。",
+      materials: ["铁钉", "试管", "水", "干燥剂（氯化钙）", "植物油", "蒸馏水"],
+      setup: "三支试管：①铁钉接触干燥空气（放干燥剂）；②铁钉一半浸入蒸馏水（水面上加植物油隔绝空气）；③铁钉一半浸入蒸馏水，敞口同时接触空气和水。",
+      steps: [
+        "按上述条件分别组装三支试管，标记清楚。",
+        "放置数天后观察三支试管中铁钉的变化。",
+        "对比分析：哪个条件组合使铁钉生锈？"
+      ],
+      observations: ["①干燥空气中的铁钉不生锈", "②只接触水（隔绝空气）的铁钉不生锈", "③同时接触水和空气的铁钉明显生锈"],
+      conclusion: "铁生锈需要氧气和水同时存在，缺一不可。",
+      safety: "supervised",
+      commonErrors: ["M-CONDITION-OMISSION", "M-OBSERVATION-COMPARE"],
+      knowledgeIds: ["V2-K111", "V2-K112"],
+      examPoints: ["锈蚀条件控制变量设计", "对比实验结论", "防锈原理的对应"]
+    }
+  ];
+
+  const byId = {};
+  experiments.forEach((e) => { byId[e.id] = e; });
+
+  return { experiments: experiments, byId: byId };
+}());
+</script>
+<script>window.ChemLabMistakesS2 = (function () {
+  "use strict";
+
+  // 错误分类表（跨单元共享的通用错误类型 + 单元一具体表现）。
+  // ID 命名空间：M-*。knowledgeIds 指向错误对应缺失/混淆的知识点。
+  const mistakes = [
+    {
+      id: "M-CHEMICAL-FORMULA",
+      name: "化学用语错误",
+      description: "化学式、化合价、方程式书写错误。典型：铁与酸/盐反应误写 FeCl₃、Fe₂(SO₄)₃（应为 +2 价 FeCl₂/FeSO₄）。",
+      remediation: "复习金属与酸、盐反应时铁的化合价固定为 +2；对比 Fe₂O₃（+3）与 FeCl₂/FeSO₄（+2）的差异。",
+      knowledgeIds: ["V2-K105", "V2-K106", "V2-K110"]
+    },
+    {
+      id: "M-CONCEPT-CONFUSION",
+      name: "概念混淆",
+      description: "对合金、生铁钢、置换反应等概念理解偏差。典型：误认为合金是纯金属；混淆生铁与钢的含碳量。",
+      remediation: "用对比表格区分概念：合金=混合物，生铁 2%~4.3% 碳、钢 0.03%~2% 碳。",
+      knowledgeIds: ["V2-K102", "V2-K103", "V2-K108", "V2-K109"]
+    },
+    {
+      id: "M-PATTERN-OVERAPPLY",
+      name: "规律过度外推",
+      description: "把局部规律推广到不适用场景。典型：认为所有金属都能与酸反应放出氢气，忽略氢之后金属（Cu Hg Ag Pt Au）不反应。",
+      remediation: "以金属活动性顺序为准绳判断：氢之前的金属才能置换出氢气；氢之后的金属不与酸反应。",
+      knowledgeIds: ["V2-K105", "V2-K106", "V2-K107"]
+    },
+    {
+      id: "M-CONDITION-OMISSION",
+      name: "条件遗漏",
+      description: "忽略反应或现象的必要条件。典型：认为铁生锈只需水或只需氧气；高炉炼铁漏掉尾气 CO 处理；比较活泼性时未控制变量。",
+      remediation: "养成列出充分必要条件的好习惯：铁锈蚀=氧气+水共同作用；炼铁尾气必含 CO 需点燃或收集。",
+      knowledgeIds: ["V2-K107", "V2-K110", "V2-K111", "V2-K112"]
+    },
+    {
+      id: "M-PHENOMENON-JUDGE",
+      name: "现象判断错误",
+      description: "从表面现象错误推断本质。典型：只凭有气泡就断言金属活泼，未控制金属种类、酸浓度、接触面积等变量；把发光当化学变化证据。",
+      remediation: "现象是线索不是证据；比较必须控制变量，结论要由足够证据支撑。",
+      knowledgeIds: ["V2-K104", "V2-K105"]
+    },
+    {
+      id: "M-OBSERVATION-COMPARE",
+      name: "观察比较不规范",
+      description: "比较时条件不唯一，或观察不完整。典型：比较金属与酸反应速率时金属大小/酸的浓度不同，导致结论失真。",
+      remediation: "控制变量：金属颗粒大小相近、酸浓度与体积相同、温度相同，才可比较反应速率。",
+      knowledgeIds: ["V2-K101", "V2-K105", "V2-K111"]
+    },
+    {
+      id: "M-CALCULATION",
+      name: "计算错误",
+      description: "溶质质量分数、含杂质方程式计算、相对分子质量计算等步骤错误。",
+      remediation: "规范步骤：设未知量→写方程式→标已知量→列比例式→求解→答。含杂质先换算为纯净物质量。",
+      knowledgeIds: []
+    },
+    {
+      id: "M-EXAM-READING",
+      name: "审题错误",
+      description: "漏读关键词、答非所问。典型：把比较活泼性顺序答成能否反应。",
+      remediation: "圈出题干关键词（比较/排序/能否/原因/现象），先明确问题再作答。",
+      knowledgeIds: []
+    }
+  ];
+
+  const byId = {};
+  mistakes.forEach((m) => { byId[m.id] = m; });
+
+  return { mistakes: mistakes, byId: byId };
 }());
 </script>
 <script>(function () {

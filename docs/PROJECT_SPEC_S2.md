@@ -52,4 +52,21 @@ node tests/smoke.mjs                # Node 冒烟测试
 ## 现状
 
 - 仓库骨架已就位，36 天 manifest 已建立（全为"待发布"占位）。
-- 后续工作：按天产出 content-s2/days/day-XX.js 与 quiz-s2/day-XX.js，标记 ready，跑门禁。
+- 数据层已建立（`chemlab-curriculum-development` skill Phase 1-4）：
+  - `docs/CURRICULUM_MAP_S2.md`：教材分析 + 全册课程地图 + 单元一详细拆解。
+  - `content-s2/knowledge/knowledge.js`：知识图谱（单元一 12 个知识点，`V2-K1xx`）。
+  - `content-s2/experiments/experiments.js`：实验模型（单元一 6 个实验，`V2-E1xx`）。
+  - `content-s2/mistakes/mistakes.js`：错误分类表（8 类，`M-*`，含单元一具体表现）。
+- 数据层已纳入单文件构建（P0 规则），smoke 测试断言其内联。
+- validator 已升级：校验 ID 唯一性 + knowledge/experiment/mistake 引用完整性（含已发布天的内容与题目引用）。
+- 后续工作：按课程地图产出一单元内容（day-XX.js + quiz-XX.js），带 `knowledgeIds` / `experimentIds` / `mistakeTypes` 引用，标记 ready，跑门禁。
+
+## 数据层 ID 命名空间
+
+| 层 | 前缀 | 示例 |
+|----|------|------|
+| 知识点 | `V2-K` | `V2-K101` |
+| 实验 | `V2-E` | `V2-E101` |
+| 错误类型 | `M-` | `M-CHEMICAL-FORMULA` |
+| 天（预留） | `V2-D` | `V2-D01` |
+| 题（预留） | `V2-Q` | `V2-Q0101` |

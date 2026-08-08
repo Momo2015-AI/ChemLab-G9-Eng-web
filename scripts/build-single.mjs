@@ -33,9 +33,13 @@ days.forEach((d) => {
   inlineScripts += `<script>${read(quizPath)}</script>\n`;
 });
 
+// 数据层：知识图谱 / 实验 / 错误分类（须在 app 逻辑之前内联，供学习引擎引用）。
+inlineScripts += "<script>" + read("content-s2/knowledge/knowledge.js") + "</script>\n";
+inlineScripts += "<script>" + read("content-s2/experiments/experiments.js") + "</script>\n";
+inlineScripts += "<script>" + read("content-s2/mistakes/mistakes.js") + "</script>\n";
+
 // 应用逻辑（必须在内容之后加载）。
 inlineScripts += "<script>" + read("src/js/app.js") + "</script>\n";
-
 const css = read("src/css/app.css");
 let html = read("index.html");
 

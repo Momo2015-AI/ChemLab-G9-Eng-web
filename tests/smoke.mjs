@@ -9,13 +9,6 @@ import vm from "node:vm";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const builtPath = join(root, "dist", "ChemLab-S2.html");
 
-const html = readFileSync(builtPath, "utf8");
-const scripts = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map((m) => m[1]);
-if (!scripts.length) {
-  console.error("构建产物中未找到内联脚本。请先运行 node scripts/build-single.mjs");
-  process.exit(1);
-}
-
 let failures = 0;
 function assert(cond, name) {
   if (cond) {
@@ -25,6 +18,19 @@ function assert(cond, name) {
     console.log("  ✘ " + name);
   }
 }
+
+const html = readFileSync(builtPath, "utf8");
+const scripts = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map((m) => m[1]);
+if (!scripts.length) {
+  console.error("构建产物中未找到内联脚本。请先运行 node scripts/build-single.mjs");
+  process.exit(1);
+}
+
+// P0：数据层（知识图谱/实验/错误分类）必须内联进离线单文件。
+const dataLayers = ["ChemLabKnowledgeS2", "ChemLabExperimentsS2", "ChemLabMistakesS2"];
+dataLayers.forEach((g) => {
+  assert(html.includes(g), `数据层 ${g} 已内联进离线产物`);
+});
 
 // 最小 DOM 模拟：任何选择器都返回可用的桩元素，事件绑定为 noop。
 function makeEl() {

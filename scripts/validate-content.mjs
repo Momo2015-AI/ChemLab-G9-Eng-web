@@ -148,7 +148,75 @@ publishedDays.forEach((key) => {
   });
 });
 
-// ---- 5. 报告 ----
+// ---- 5. 知识图谱 / 实验 / 错误分类 数据层校验（ID 唯一性 + 引用完整性）----
+function loadRegistry(relPath, globalName) {
+  const r = loadJS(relPath);
+  return (r && r.window[globalName]) || null;
+}
+
+const knowledgeReg = loadRegistry("content-s2/knowledge/knowledge.js", "ChemLabKnowledgeS2");
+const experimentReg = loadRegistry("content-s2/experiments/experiments.js", "ChemLabExperimentsS2");
+const mistakeReg = loadRegistry("content-s2/mistakes/mistakes.js", "ChemLabMistakesS2");
+
+function assertUnique(list, kind, label) {
+  const seen = new Set();
+  (list || []).forEach((item) => {
+    if (!item.id) { err(`${label}: ${kind} 缺少 id`); return; }
+    if (seen.has(item.id)) err(`${label}: ${kind} id "${item.id}" 重复`);
+    seen.add(item.id);
+  });
+  return seen;
+}
+
+function assertRefs(refs, pool, label, kind) {
+  (refs || []).forEach((r) => {
+    if (!pool.has(r)) err(`${label}: 引用了不存在的 ${kind} "${r}"`);
+  });
+}
+
+const knowledgeIds = knowledgeReg ? assertUnique(knowledgeReg.knowledge, "知识点", "knowledge") : null;
+const experimentIds = experimentReg ? assertUnique(experimentReg.experiments, "实验", "experiments") : null;
+const mistakeIds = mistakeReg ? assertUnique(mistakeReg.mistakes, "错误类型", "mistakes") : null;
+
+if (knowledgeReg) {
+  knowledgeReg.knowledge.forEach((k) => {
+    assertRefs(k.prerequisite, knowledgeIds, `knowledge ${k.id}`, "前置知识点");
+    assertRefs(k.related, knowledgeIds, `knowledge ${k.id}`, "关联知识点");
+    if (experimentIds) assertRefs(k.experiments, experimentIds, `knowledge ${k.id}`, "实验");
+    if (mistakeIds) assertRefs(k.mistakeTypes, mistakeIds, `knowledge ${k.id}`, "错误类型");
+  });
+}
+if (experimentReg) {
+  experimentReg.experiments.forEach((e) => {
+    if (knowledgeIds) assertRefs(e.knowledgeIds, knowledgeIds, `experiment ${e.id}`, "知识点");
+    if (mistakeIds) assertRefs(e.commonErrors, mistakeIds, `experiment ${e.id}`, "错误类型");
+  });
+}
+if (mistakeReg) {
+  mistakeReg.mistakes.forEach((m) => {
+    if (knowledgeIds) assertRefs(m.knowledgeIds, knowledgeIds, `mistake ${m.id}`, "知识点");
+  });
+}
+
+// 已发布天内容与题目中的引用完整性（若内容已带知识/实验/错误引用字段）。
+publishedDays.forEach((key) => {
+  const c = loadJS(`content-s2/days/day-${key}.js`);
+  const day = c && c.window.ChemLabContentS2 && c.window.ChemLabContentS2[`day-${key}`];
+  if (!day) return;
+  if (knowledgeIds) assertRefs(day.knowledgeIds, knowledgeIds, `Day ${key}`, "知识点");
+  if (experimentIds) assertRefs(day.experimentIds, experimentIds, `Day ${key}`, "实验");
+  if (mistakeIds) assertRefs(day.mistakeTypes, mistakeIds, `Day ${key}`, "错误类型");
+
+  const q = loadJS(`quiz-s2/day-${key}.js`);
+  const quiz = q && q.window.ChemLabQuizS2 && q.window.ChemLabQuizS2[`day-${key}`];
+  if (!quiz || !Array.isArray(quiz.questions)) return;
+  quiz.questions.forEach((item, i) => {
+    if (knowledgeIds) assertRefs(item.knowledgeIds, knowledgeIds, `Day ${key} Q${i + 1}`, "知识点");
+    if (mistakeIds) assertRefs(item.mistakeTypes, mistakeIds, `Day ${key} Q${i + 1}`, "错误类型");
+  });
+});
+
+// ---- 6. 报告 ----
 if (warnings.length) {
   console.log(`\n警告（${warnings.length}）:`);
   warnings.forEach((w) => console.log("  - " + w));
