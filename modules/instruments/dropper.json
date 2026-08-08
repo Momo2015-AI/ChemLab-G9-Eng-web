@@ -1,0 +1,10 @@
+{
+  "id": "dropper",
+  "name": "滴管",
+  "category": "transfer",
+  "icon": "dropper",
+  "image": "",
+  "usage": ["liquid transfer", "dropwise addition"],
+  "safety": ["do not cross-contaminate reagents"],
+  "experiments": []
+}
