@@ -277,6 +277,155 @@ window.ChemLabKnowledgeS2 = (function () {
 
   knowledge.push(...unit2);
 
+  // 单元三（酸和碱）知识点：ID 命名空间 V2-K3xx
+  const unit3 = [
+    {
+      id: "V2-K301",
+      name: "盐酸的物理性质",
+      concept: "浓盐酸是无色液体，有刺激性气味，有挥发性。打开浓盐酸瓶盖，瓶口出现白雾（盐酸小液滴），这是挥发性的体现。盐酸常用于金属除锈、制备二氧化碳等。",
+      prerequisite: [],
+      related: ["V2-K302"],
+      experiments: ["V2-E301"],
+      mistakeTypes: ["M-OBSERVATION-COMPARE"],
+      examPoints: ["浓盐酸的物理性质（挥发性、白雾）", "浓盐酸与浓硫酸的物理性质对比"],
+      applications: ["金属除锈、实验室制CO₂"]
+    },
+    {
+      id: "V2-K302",
+      name: "硫酸的物理性质",
+      concept: "浓硫酸是无色粘稠油状液体，不易挥发。浓硫酸具有强烈的吸水性，可用作干燥剂（干燥中性或酸性气体，不能干燥碱性气体如NH₃）。浓硫酸还具有脱水性，能将有机物中的H、O按水的比例脱去，使有机物炭化。",
+      prerequisite: ["V2-K301"],
+      related: ["V2-K301"],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["浓硫酸的三大特性：吸水性、脱水性、强氧化性", "浓硫酸稀释操作（酸入水、沿器壁、不断搅拌）"],
+      applications: ["浓硫酸作干燥剂、稀释操作规范"]
+    },
+    {
+      id: "V2-K303",
+      name: "酸的通性（与指示剂反应）",
+      concept: "酸溶液能使紫色石蕊试液变红，使无色酚酞试液不变色。注意：是酸溶液（含H⁺）使指示剂变色，不是酸分子本身。稀硫酸、稀盐酸、醋酸等都能使石蕊变红。",
+      prerequisite: [],
+      related: ["V2-K304"],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["酸碱指示剂的变色规律", "酸使石蕊变红、酚酞不变色"],
+      applications: ["用石蕊试液检验溶液的酸性"]
+    },
+    {
+      id: "V2-K304",
+      name: "酸的化学性质",
+      concept: "酸的通性（五条）：①与指示剂反应（石蕊变红，酚酞不变）；②酸+活泼金属→盐+氢气（H前的金属）；③酸+金属氧化物→盐+水；④酸+碱→盐+水（中和反应）；⑤酸+盐→新酸+新盐（生成沉淀、气体或水）。",
+      prerequisite: ["V2-K303"],
+      related: ["V2-K305", "V2-K306"],
+      experiments: ["V2-E302"],
+      mistakeTypes: ["M-PATTERN-OVERAPPLY", "M-CHEMICAL-FORMULA"],
+      examPoints: ["酸的五个化学性质与方程式书写", "判断反应能否发生"],
+      applications: ["除铁锈（Fe₂O₃+6HCl=2FeCl₃+3H₂O）、实验室制H₂和CO₂"]
+    },
+    {
+      id: "V2-K305",
+      name: "氢氧化钠的性质",
+      concept: "氢氧化钠（NaOH）俗称烧碱、火碱、苛性钠，白色固体，易溶于水并放出大量热，易潮解（吸收空气中水分而潮解，可用作干燥剂）。氢氧化钠有强烈的腐蚀性，使用时要格外小心。NaOH能吸收空气中的CO₂而变质：2NaOH+CO₂=Na₂CO₃+H₂O。",
+      prerequisite: [],
+      related: ["V2-K306"],
+      experiments: ["V2-E303"],
+      mistakeTypes: ["M-CONDITION-OMISSION"],
+      examPoints: ["NaOH的物理性质（潮解）", "NaOH变质的原因与检验", "NaOH的保存方法（密封）"],
+      applications: ["NaOH固体作干燥剂、制作肥皂、石油精炼"]
+    },
+    {
+      id: "V2-K306",
+      name: "氢氧化钙的性质",
+      concept: "氢氧化钙（Ca(OH)₂）俗称熟石灰、消石灰，白色粉末，微溶于水，其水溶液叫澄清石灰水。Ca(OH)₂能与CO₂反应：Ca(OH)₂+CO₂=CaCO₃↓+H₂O，此反应常用于检验CO₂。Ca(OH)₂也易与空气中的CO₂反应而变质。",
+      prerequisite: ["V2-K305"],
+      related: ["V2-K305"],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["Ca(OH)₂的制备（CaO+H₂O=Ca(OH)₂）", "CO₂的检验方法", "澄清石灰水变浑浊的原理"],
+      applications: ["建筑砌砖（石灰浆硬化）、改良酸性土壤、配制波尔多液"]
+    },
+    {
+      id: "V2-K307",
+      name: "碱的通性（与指示剂反应）",
+      concept: "碱溶液能使紫色石蕊试液变蓝，使无色酚酞试液变红。注意：必须是碱溶液（含OH⁻），不溶性的碱（如Cu(OH)₂、Fe(OH)₃）不能使指示剂变色。氨水（NH₃·H₂O）是弱碱，也能使指示剂变色。",
+      prerequisite: ["V2-K303"],
+      related: ["V2-K308"],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["碱使石蕊变蓝、酚酞变红", "不溶性碱不能使指示剂变色"],
+      applications: ["用酚酞检验溶液的碱性"]
+    },
+    {
+      id: "V2-K308",
+      name: "碱的化学性质",
+      concept: "碱的通性（四条）：①与指示剂反应（石蕊变蓝，酚酞变红）；②碱+非金属氧化物→盐+水（如CO₂、SO₂）；③碱+酸→盐+水（中和反应）；④碱+盐→新碱+新盐（反应物均可溶，生成物有沉淀）。",
+      prerequisite: ["V2-K307"],
+      related: ["V2-K304"],
+      experiments: ["V2-E304"],
+      mistakeTypes: ["M-PATTERN-OVERAPPLY", "M-CHEMICAL-FORMULA"],
+      examPoints: ["碱的四个化学性质与方程式书写", "判断复分解反应能否发生"],
+      applications: ["用NaOH吸收SO₂（防止酸雨）、用Ca(OH)₂检验CO₂"]
+    },
+    {
+      id: "V2-K309",
+      name: "中和反应",
+      concept: "酸和碱作用生成盐和水的反应叫做中和反应。实质是H⁺+OH⁻=H₂O。中和反应放热。中和反应的应用：①改变土壤酸碱性（用熟石灰改良酸性土壤）；②处理工厂废水（用碱性物质中和酸性废水）；③医药（用Al(OH)₃治疗胃酸过多：Al(OH)₃+3HCl=AlCl₃+3H₂O）；④被蚊虫叮咬后涂肥皂水（中和蚊虫分泌的蚁酸）。",
+      prerequisite: ["V2-K304", "V2-K308"],
+      related: ["V2-K310"],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["中和反应的定义与实质", "中和反应的应用", "中和反应与复分解反应的关系"],
+      applications: ["改良酸性土壤、处理废水、治疗胃酸过多"]
+    },
+    {
+      id: "V2-K310",
+      name: "溶液的酸碱度（pH）",
+      concept: "pH是表示溶液酸碱强弱的数值。pH<7为酸性，pH越小酸性越强；pH=7为中性；pH>7为碱性，pH越大碱性越强。测定pH的方法：在白瓷板或玻璃片上放一小片pH试纸，用玻璃棒蘸取待测液滴到试纸上，把试纸显示的颜色与标准比色卡对照，读出pH。注意：pH试纸不能事先润湿，不能直接浸入待测液。",
+      prerequisite: ["V2-K309"],
+      related: ["V2-K309"],
+      experiments: [],
+      mistakeTypes: ["M-EXAM-READING"],
+      examPoints: ["pH与酸碱性的关系", "pH试纸的正确使用方法", "pH测定误差分析"],
+      applications: ["测定雨水pH判断酸雨、测定土壤pH指导农业"]
+    },
+    {
+      id: "V2-K311",
+      name: "常见酸碱指示剂",
+      concept: "指示剂是能跟酸或碱的溶液起作用而显示不同颜色的物质。常用的指示剂有石蕊和酚酞。石蕊：酸性溶液变红，碱性溶液变蓝，中性溶液不变色（紫色）。酚酞：酸性溶液不变色，碱性溶液变红，中性溶液不变色。",
+      prerequisite: ["V2-K303", "V2-K307"],
+      related: ["V2-K310"],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["石蕊和酚酞的变色规律", "指示剂与pH试纸的区别"],
+      applications: ["用指示剂检验溶液的酸碱性"]
+    },
+    {
+      id: "V2-K312",
+      name: "常见的盐（氯化钠、碳酸钠、碳酸氢钠、碳酸钙）",
+      concept: "氯化钠（NaCl）：俗称食盐，白色固体，易溶于水，是日常调味品和食品防腐剂，也是重要的化工原料（制NaOH、Cl₂、H₂等）。碳酸钠（Na₂CO₃）：俗称纯碱、苏打，白色粉末，易溶于水，水溶液呈碱性，用于玻璃、造纸、纺织等。碳酸氢钠（NaHCO₃）：俗称小苏打，白色晶体，受热易分解：2NaHCO₃=Na₂CO₃+H₂O+CO₂↑，用于焙制糕点和治疗胃酸过多。碳酸钙（CaCO₃）：白色固体，不溶于水，是石灰石、大理石的主要成分，用于建筑材料、实验室制CO₂。",
+      prerequisite: [],
+      related: ["V2-K313"],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["四种常见盐的俗名、性质与用途", "NaHCO₃受热分解方程式"],
+      applications: ["食盐调味、纯碱制玻璃、小苏打烘焙、碳酸钙建筑材料"]
+    },
+    {
+      id: "V2-K313",
+      name: "盐的化学性质",
+      concept: "盐的化学性质：①盐+金属→新盐+新金属（前置后，K Ca Na除外）；②盐+酸→新盐+新酸（生成沉淀、气体或水）；③盐+碱→新盐+新碱（反应物均可溶，生成物有沉淀）；④盐+盐→两种新盐（反应物均可溶，生成物有沉淀）。",
+      prerequisite: ["V2-K304", "V2-K308"],
+      related: ["V2-K312"],
+      experiments: [],
+      mistakeTypes: ["M-PATTERN-OVERAPPLY", "M-CHEMICAL-FORMULA"],
+      examPoints: ["盐的四条化学性质与方程式书写", "判断盐的反应能否发生"],
+      applications: ["湿法炼铜（Fe+CuSO₄=FeSO₄+Cu）、工业制Na₂CO₃"]
+    }
+  ];
+
+  knowledge.push(...unit3);
+
   const byId = {};
   knowledge.forEach((k) => { byId[k.id] = k; });
 

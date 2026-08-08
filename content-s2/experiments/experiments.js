@@ -222,6 +222,104 @@ window.ChemLabExperimentsS2 = (function () {
 
   experiments.push(...unit2Experiments);
 
+  // 单元三（酸和碱）实验：ID 命名空间 V2-E3xx
+  const unit3Experiments = [
+    {
+      id: "V2-E301",
+      name: "浓盐酸与浓硫酸的物理性质比较",
+      day: "14",
+      type: "observation",
+      purpose: "通过观察和简单操作，比较浓盐酸与浓硫酸的物理性质差异。",
+      materials: ["浓盐酸", "浓硫酸", "两支试管", "玻璃棒", "白纸", "石蕊试纸"],
+      setup: "取两支试管分别加入少量浓盐酸和浓硫酸，打开瓶盖观察，用玻璃棒分别蘸取滴在石蕊试纸上。",
+      steps: [
+        "取两支洁净试管，分别加入约2mL浓盐酸和浓硫酸",
+        "打开瓶盖，观察瓶口现象",
+        "用玻璃棒分别蘸取两种酸，滴在紫色石蕊试纸上",
+        "对比两种酸的现象差异"
+      ],
+      observations: ["①浓盐酸瓶口出现白雾", "②浓硫酸瓶口无明显现象", "③两种酸都能使石蕊试纸变红"],
+      conclusion: "浓盐酸具有挥发性，瓶口白雾是盐酸小液滴；浓硫酸不易挥发。两者都能使石蕊变红，说明溶液中都含有H⁺。",
+      safety: "supervised",
+      commonErrors: ["M-OBSERVATION-COMPARE", "M-CONCEPT-CONFUSION"],
+      knowledgeIds: ["V2-K301", "V2-K302", "V2-K303"],
+      examPoints: ["浓盐酸挥发性与白雾的形成", "浓硫酸与浓盐酸物理性质对比"]
+    },
+    {
+      id: "V2-E302",
+      name: "酸的化学性质探究",
+      day: "15",
+      type: "experiment",
+      purpose: "通过实验探究酸的五个化学性质。",
+      materials: ["稀盐酸", "稀硫酸", "锌粒", "铁钉", "铜片", "氧化铜粉末", "氢氧化钠溶液", "碳酸钠粉末", "试管若干", "酒精灯"],
+      setup: "分组探究酸与金属、金属氧化物、碱、盐的反应。",
+      steps: [
+        "酸与金属反应：取三支试管，分别加入锌粒、铁钉、铜片，再加入稀盐酸，观察现象",
+        "酸与金属氧化物反应：取一支试管加入少量氧化铜粉末，加入稀盐酸，加热，观察现象",
+        "酸与碱反应：取一支试管加入氢氧化钠溶液，滴入酚酞，再逐滴加入稀盐酸，观察现象",
+        "酸与盐反应：取一支试管加入碳酸钠粉末，加入稀盐酸，观察现象"
+      ],
+      observations: [
+        "①锌、铁与盐酸反应产生气泡（铜不反应）",
+        "②氧化铜粉末溶解，溶液变蓝色",
+        "③滴入酚酞的NaOH溶液红色褪去",
+        "④碳酸钠与盐酸反应产生大量气泡"
+      ],
+      conclusion: "酸能与多种物质反应：①酸+活泼金属→盐+H₂；②酸+金属氧化物→盐+水；③酸+碱→盐+水（中和反应）；④酸+盐→新酸+新盐。",
+      safety: "supervised",
+      commonErrors: ["M-PATTERN-OVERAPPLY", "M-CHEMICAL-FORMULA"],
+      knowledgeIds: ["V2-K304"],
+      examPoints: ["酸的五个化学性质与方程式书写", "实验现象描述"]
+    },
+    {
+      id: "V2-E303",
+      name: "氢氧化钠的潮解与变质探究",
+      day: "16",
+      type: "experiment",
+      purpose: "观察氢氧化钠的潮解现象，探究其变质的原因和检验方法。",
+      materials: ["氢氧化钠固体", "表面皿", "稀盐酸", "氯化钙溶液", "酚酞试液", "试管"],
+      setup: "将氢氧化钠固体暴露在空气中观察潮解，再检验变质产物。",
+      steps: [
+        "取少量氢氧化钠固体放在表面皿上，放置一段时间，观察现象",
+        "取少量久置的氢氧化钠固体于试管中，加入适量水溶解",
+        "向上述溶液中滴加稀盐酸，观察是否有气泡产生",
+        "另取少量溶液，加入氯化钙溶液，观察是否有沉淀产生"
+      ],
+      observations: ["①氢氧化钠固体表面变潮湿，逐渐溶解", "②滴加稀盐酸有气泡产生", "③加入氯化钙溶液有白色沉淀产生"],
+      conclusion: "氢氧化钠易潮解（吸收空气中水分）；易与CO₂反应变质生成碳酸钠：2NaOH+CO₂=Na₂CO₃+H₂O。检验变质：加酸有气泡或加CaCl₂有白色沉淀。",
+      safety: "supervised",
+      commonErrors: ["M-CONDITION-OMISSION", "M-CONCEPT-CONFUSION"],
+      knowledgeIds: ["V2-K305"],
+      examPoints: ["NaOH潮解与变质的原因", "NaOH变质程度的检验"]
+    },
+    {
+      id: "V2-E304",
+      name: "碱的化学性质探究",
+      day: "17",
+      type: "experiment",
+      purpose: "通过实验探究碱的三个主要化学性质。",
+      materials: ["氢氧化钠溶液", "氢氧化钙溶液", "酚酞试液", "稀盐酸", "二氧化碳", "硫酸铜溶液", "氯化铁溶液", "试管"],
+      setup: "分别探究碱与指示剂、非金属氧化物、盐的反应。",
+      steps: [
+        "碱与指示剂：取两支试管分别加入NaOH和Ca(OH)₂溶液，各滴入酚酞，观察现象",
+        "碱与非金属氧化物：向澄清石灰水中通入CO₂，观察现象",
+        "碱与盐：取两支试管分别加入NaOH溶液，一支滴加CuSO₄溶液，另一支滴加FeCl₃溶液，观察现象"
+      ],
+      observations: [
+        "①NaOH和Ca(OH)₂溶液都能使酚酞变红",
+        "②澄清石灰水变浑浊",
+        "③CuSO₄与NaOH反应产生蓝色沉淀；FeCl₃与NaOH反应产生红褐色沉淀"
+      ],
+      conclusion: "碱的化学性质：①碱+指示剂（酚酞变红）；②碱+非金属氧化物→盐+水；③碱+盐→新碱+新盐（生成物有沉淀）。",
+      safety: "supervised",
+      commonErrors: ["M-PATTERN-OVERAPPLY", "M-CHEMICAL-FORMULA"],
+      knowledgeIds: ["V2-K308"],
+      examPoints: ["碱的化学性质与方程式书写", "沉淀颜色的记忆"]
+    }
+  ];
+
+  experiments.push(...unit3Experiments);
+
   const byId = {};
   experiments.forEach((e) => { byId[e.id] = e; });
 
