@@ -139,9 +139,146 @@ window.ChemLabKnowledgeS2 = (function () {
     }
   ];
 
+  // 单元二（溶液）知识点：ID 命名空间 V2-K2xx
+  const unit2 = [
+    {
+      id: "V2-K201",
+      name: "溶液的概念",
+      concept: "一种或几种物质分散到另一种物质里，形成均一的、稳定的混合物，叫做溶液。溶液由溶质和溶剂组成。均一指各部分性质相同，稳定指外界条件不变时溶质不会分离出来。",
+      prerequisite: ["V2-K101"],
+      related: ["V2-K202", "V2-K203"],
+      experiments: ["V2-E201"],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["溶液三特征：均一、稳定、混合物", "区分溶液与悬浊液、乳浊液"],
+      applications: ["生理盐水、碘酒、汽水"]
+    },
+    {
+      id: "V2-K202",
+      name: "溶质与溶剂",
+      concept: "被溶解的物质叫溶质，能溶解其他物质的物质叫溶剂。水是最常用的溶剂，酒精、汽油也可做溶剂。当两种液体互溶时，量多的叫溶剂，量少的叫溶质；有水存在时，水一定是溶剂。",
+      prerequisite: ["V2-K201"],
+      related: ["V2-K203"],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["辨别溶质与溶剂", "不同溶剂下的溶解现象"],
+      applications: ["碘酒（碘溶解在酒精中）、油渍用汽油清洗"]
+    },
+    {
+      id: "V2-K203",
+      name: "溶解过程的微观解释",
+      concept: "溶解包含两个过程：溶质分子（或离子）向水中扩散（吸热），与水分子结合形成水合分子（或水合离子，放热）。两个过程的热效应不同，决定溶液温度变化：硝酸铵溶解吸热（降温），氢氧化钠溶解放热（升温），氯化钠溶解温度基本不变。",
+      prerequisite: ["V2-K201", "V2-K202"],
+      related: ["V2-K204"],
+      experiments: [],
+      mistakeTypes: ["M-PHENOMENON-JUDGE"],
+      examPoints: ["判断溶解时温度变化", "微观扩散与结合的动态平衡"],
+      applications: ["冷敷包（硝酸铵溶于水）"]
+    },
+    {
+      id: "V2-K204",
+      name: "乳化现象",
+      concept: "洗涤剂能使植物油在水中分散成无数细小的液滴，而不聚集成大的油珠，形成稳定的乳浊液，这种现象叫乳化。乳化不是溶解，油并没有消失，只是变成了微小的液滴均匀分散在水中。",
+      prerequisite: ["V2-K201"],
+      related: ["V2-K203"],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["区分溶解与乳化", "洗涤剂去油污原理"],
+      applications: ["洗碗用洗洁精、洗衣液去油渍"]
+    },
+    {
+      id: "V2-K205",
+      name: "饱和溶液与不饱和溶液",
+      concept: "在一定温度下，向一定量溶剂里加入某种溶质，当溶质不能继续溶解时，所得的溶液叫做这种溶质的饱和溶液；还能继续溶解的，叫做不饱和溶液。两者在一定条件下可以相互转化：加溶质或降温（多数物质）可使不饱和溶液变为饱和溶液；加溶剂或升温可使饱和溶液变为不饱和溶液。",
+      prerequisite: ["V2-K201"],
+      related: ["V2-K206", "V2-K207", "V2-K211"],
+      experiments: ["V2-E202"],
+      mistakeTypes: ["M-CONDITION-OMISSION", "M-CONCEPT-CONFUSION"],
+      examPoints: ["判断溶液是否饱和", "饱和与不饱和的转化方法", "明确"一定温度"和"一定量溶剂"这两个前提"],
+      applications: ["饱和食盐水、糖水浓度上限"]
+    },
+    {
+      id: "V2-K206",
+      name: "溶解度的概念",
+      concept: "在一定温度下，某固态物质在 100g 溶剂（通常为水）里达到饱和状态时所溶解的质量，叫做这种物质在这种溶剂里的溶解度。四要素：一定温度、100g 溶剂、饱和状态、单位是克。",
+      prerequisite: ["V2-K205"],
+      related: ["V2-K207", "V2-K211"],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["溶解度四要素缺一不可", "溶解度与饱和溶液的换算"],
+      applications: ["查表计算某温度下可溶解的最大质量"]
+    },
+    {
+      id: "V2-K207",
+      name: "溶解度曲线",
+      concept: "用曲线表示物质溶解度随温度变化的规律。曲线上的点表示该温度下的溶解度；曲线下方的点表示不饱和溶液；曲线上方的点表示过饱和溶液或有未溶晶体的饱和溶液。可通过曲线读出某温度下的溶解度，判断结晶方法（降温结晶适合溶解度随温度变化大的物质，蒸发结晶适合变化小的物质）。",
+      prerequisite: ["V2-K206"],
+      related: ["V2-K211"],
+      experiments: [],
+      mistakeTypes: ["M-OBSERVATION-COMPARE"],
+      examPoints: ["读溶解度曲线表信息", "比较同温下溶解度大小", "判断结晶方法"],
+      applications: ["从硝酸钾中除去少量氯化钠（降温结晶法）"]
+    },
+    {
+      id: "V2-K208",
+      name: "溶质的质量分数",
+      concept: "溶质质量与溶液质量之比，用百分数表示。公式：溶质质量分数 = 溶质质量 / (溶质质量 + 溶剂质量) × 100%。",
+      prerequisite: ["V2-K201", "V2-K202"],
+      related: ["V2-K209"],
+      experiments: [],
+      mistakeTypes: ["M-CALCULATION"],
+      examPoints: ["质量分数计算", "稀释问题（稀释前后溶质质量不变）", "含杂质计算"],
+      applications: ["医疗注射液浓度、农业选种液密度"]
+    },
+    {
+      id: "V2-K209",
+      name: "一定溶质质量分数溶液的配制",
+      concept: "配制步骤：计算 → 称量（固体）或量取（液体）→ 溶解 → 装瓶贴标签。需要用到的仪器：托盘天平、药匙、量筒、胶头滴管、烧杯、玻璃棒。",
+      prerequisite: ["V2-K208"],
+      related: ["V2-E203"],
+      experiments: ["V2-E203"],
+      mistakeTypes: ["M-CALCULATION", "M-EXAM-READING"],
+      examPoints: ["配制步骤与仪器选择", "误差分析（溶质少了→浓度偏低，溶剂多了→浓度偏低）"],
+      applications: ["配制生理盐水、配制农药溶液"]
+    },
+    {
+      id: "V2-K210",
+      name: "气体溶解度",
+      concept: "气体的溶解度随温度升高而减小，随压强增大而增大。打开汽水瓶盖时压强减小，CO₂ 溶解度降低，气体逸出形成泡沫。",
+      prerequisite: ["V2-K206"],
+      related: [],
+      experiments: [],
+      mistakeTypes: ["M-PHENOMENON-JUDGE"],
+      examPoints: ["温度、压强对气体溶解度的影响", "解释生产生活现象"],
+      applications: ["烧水时气泡（溶解空气逸出）、打开汽水冒泡"]
+    },
+    {
+      id: "V2-K211",
+      name: "温度对固体溶解度的影响",
+      concept: "大多数固体物质的溶解度随温度升高而增大（如硝酸钾、氯化钾），少数受温度影响很小（如氯化钠），极少数随温度升高而减小（如氢氧化钙）。氢氧化钙的溶解度随温度升高而减小，是特例。",
+      prerequisite: ["V2-K206"],
+      related: ["V2-K207", "V2-K205"],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["特殊物质 Ca(OH)₂ 的溶解度曲线走向", "由曲线判断结晶方法"],
+      applications: ["澄清石灰水加热后变浑浊（Ca(OH)₂ 溶解度降低析出）"]
+    },
+    {
+      id: "V2-K212",
+      name: "结晶方法",
+      concept: "从溶液中获得晶体的两种方法：降温结晶（冷却热饱和溶液）适用于溶解度随温度变化大的物质（如 KNO₃）；蒸发结晶适用于溶解度随温度变化小的物质（如 NaCl）。",
+      prerequisite: ["V2-K207", "V2-K211"],
+      related: [],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["选择结晶方法的依据", "除杂题中结晶法的选择"],
+      applications: ["从海水中提取食盐（蒸发结晶）、提纯硝酸钾（降温结晶）"]
+    }
+  ];
+
+  knowledge.push(...unit2);
+
   const byId = {};
   knowledge.forEach((k) => { byId[k.id] = k; });
 
-  // 依赖倒序：每个知识点依赖的 prerequisite 必须是已定义的（拓扑可构造）。
   return { knowledge: knowledge, byId: byId };
 }());
