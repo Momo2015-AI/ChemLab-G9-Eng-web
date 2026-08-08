@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "",
+    "type": "knowledge-point",
+    "title": ""
+  },
+  "relations": [
+    {
+      "from": "",
+      "to": "",
+      "type": "prerequisite"
+    }
+  ],
+  "relationTypes": [
+    "prerequisite",
+    "related",
+    "common-mistake"
+  ]
+}

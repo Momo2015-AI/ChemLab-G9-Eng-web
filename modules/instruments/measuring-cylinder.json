@@ -1,0 +1,10 @@
+{
+  "id": "measuring-cylinder",
+  "name": "量筒",
+  "category": "measurement",
+  "icon": "measuring-cylinder",
+  "image": "",
+  "usage": ["volume measurement"],
+  "safety": ["read scale at eye level"],
+  "experiments": []
+}
