@@ -426,6 +426,100 @@ window.ChemLabKnowledgeS2 = (function () {
 
   knowledge.push(...unit3);
 
+  // 单元四（盐、化肥）知识点：ID 命名空间 V2-K4xx
+  const unit4 = [
+    {
+      id: "V2-K401",
+      name: "复分解反应的深化",
+      concept: "复分解反应是两种化合物互相交换成分生成两种新化合物的反应。反应发生的条件是生成物中有沉淀、气体或水。酸+碱→盐+水（中和反应），酸+盐→新酸+新盐，碱+盐→新碱+新盐，盐+盐→两种新盐。记忆口诀：沉淀气体水，反应才能成。",
+      prerequisite: ["V2-K304", "V2-K308", "V2-K313"],
+      related: ["V2-K317", "V2-K318"],
+      experiments: [],
+      mistakeTypes: ["M-PATTERN-OVERAPPLY"],
+      examPoints: ["复分解反应条件判断", "常见沉淀和气体的记忆"],
+      applications: ["物质制备、除杂、推断"]
+    },
+    {
+      id: "V2-K402",
+      name: "物质的检验与鉴别",
+      concept: "检验：确定某物质是否存在。鉴别：区分两种或多种物质。离子检验方法：Cl⁻→AgNO₃+稀HNO₃（白沉），SO₄²⁻→Ba(NO₃)₂+稀HNO₃（白沉），CO₃²⁻→稀HCl（气泡+石灰水变浑），NH₄⁺→NaOH+加热（刺激性气体）。检验顺序：CO₃²⁻→SO₄²⁻→Cl⁻。",
+      prerequisite: ["V2-K317", "V2-K318", "V2-K319"],
+      related: ["V2-K401"],
+      experiments: [],
+      mistakeTypes: ["M-CONDITION-OMISSION"],
+      examPoints: ["离子检验方法", "鉴别方案设计", "检验顺序"],
+      applications: ["物质鉴定、纯度检验"]
+    },
+    {
+      id: "V2-K403",
+      name: "化肥的种类与作用",
+      concept: "氮肥（N）：促进茎叶生长，叶色浓绿。常见：尿素CO(NH₂)₂、NH₄HCO₃、NH₄Cl、(NH₄)₂SO₄。磷肥（P）：促进根系发达，增强抗寒抗旱。常见：过磷酸钙、磷矿粉。钾肥（K）：增强抗病虫害和抗倒伏。常见：KCl、K₂SO₄、K₂CO₃。复合肥：含两种以上营养元素，如KNO₃、NH₄H₂PO₄。",
+      prerequisite: [],
+      related: ["V2-K404"],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["化肥种类与作用的对应", "铵态氮肥的鉴别"],
+      applications: ["农业施肥指导"]
+    },
+    {
+      id: "V2-K404",
+      name: "铵态氮肥的使用禁忌",
+      concept: "铵态氮肥（含NH₄⁺）不能与碱性物质（如草木灰K₂CO₃、熟石灰Ca(OH)₂）混合施用，否则会产生NH₃逸出，降低肥效。反应：2NH₄Cl+Ca(OH)₂=CaCl₂+2H₂O+2NH₃↑。鉴别铵态氮肥：加碱研磨，产生刺激性气味气体使湿润红色石蕊试纸变蓝。",
+      prerequisite: ["V2-K403"],
+      related: ["V2-K403"],
+      experiments: [],
+      mistakeTypes: ["M-CONDITION-OMISSION"],
+      examPoints: ["铵态氮肥与碱反应的方程式", "铵态氮肥的鉴别方法"],
+      applications: ["合理施肥"]
+    },
+    {
+      id: "V2-K405",
+      name: "粗盐提纯",
+      concept: "粗盐提纯步骤：溶解→过滤→蒸发→计算产率。过滤要点：一贴二低三靠。蒸发要点：用玻璃棒不断搅拌防止液滴飞溅，出现较多固体时停止加热，利用余热蒸干。产率=精盐质量/粗盐质量×100%。产率偏低原因：溶解不充分、过滤时洒出、蒸发时飞溅。产率偏高：精盐未干燥。",
+      prerequisite: ["V2-K312"],
+      related: ["V2-K401"],
+      experiments: ["V2-E401"],
+      mistakeTypes: ["M-CALCULATION"],
+      examPoints: ["粗盐提纯步骤", "过滤蒸发操作要点", "产率误差分析"],
+      applications: ["海水晒盐", "实验室提纯"]
+    },
+    {
+      id: "V2-K406",
+      name: "人类六大营养素",
+      concept: "糖类（主要供能，淀粉/葡萄糖/蔗糖）、油脂（备用能源）、蛋白质（构成细胞基本物质）、维生素（调节新陈代谢）、水（生命之源）、无机盐（构成人体组织）。蛋白质是有机高分子化合物，遇热、重金属盐、甲醛会变性（不可逆）。蛋白质灼烧有烧焦羽毛气味（鉴别蚕丝和羊毛）。",
+      prerequisite: [],
+      related: ["V2-K407"],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["六大营养素的食物来源", "蛋白质的特性"],
+      applications: ["合理膳食"]
+    },
+    {
+      id: "V2-K407",
+      name: "化学元素与人体健康",
+      concept: "常量元素（>0.01%）：O、C、H、N、Ca、P、K、S、Na、Cl、Mg。微量元素（<0.01%）：Fe、Zn、Se、I、F等。缺钙→佝偻病/骨质疏松，缺铁→贫血，缺碘→甲状腺肿大，缺锌→发育不良，缺硒→癌症风险增加，缺氟→龋齿。重金属盐中毒可服用牛奶或蛋清（蛋白质结合重金属离子）急救。",
+      prerequisite: ["V2-K406"],
+      related: ["V2-K406"],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["元素缺乏症与补充来源", "重金属中毒急救"],
+      applications: ["合理膳食、健康饮食"]
+    },
+    {
+      id: "V2-K408",
+      name: "环境问题与绿色化学",
+      concept: "酸雨（pH<5.6）：SO₂和NOₓ引起，腐蚀建筑、酸化土壤。温室效应：CO₂等温室气体过量导致全球变暖。白色污染：难降解塑料废弃物。臭氧层空洞：氟氯代烷破坏臭氧层。绿色化学：从源头上减少和消除污染，原子利用率100%。防治：使用脱硫煤、植树造林、可降解塑料、无氟制冷剂。",
+      prerequisite: ["V2-K301", "V2-K302"],
+      related: ["V2-K407"],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["环境问题的成因与防治", "绿色化学理念"],
+      applications: ["环境保护意识"]
+    }
+  ];
+
+  knowledge.push(...unit4);
+
   const byId = {};
   knowledge.forEach((k) => { byId[k.id] = k; });
 

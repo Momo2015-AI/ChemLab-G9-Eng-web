@@ -320,6 +320,36 @@ window.ChemLabExperimentsS2 = (function () {
 
   experiments.push(...unit3Experiments);
 
+  // 单元四（盐、化肥）实验：ID 命名空间 V2-E4xx
+  const unit4Experiments = [
+    {
+      id: "V2-E401",
+      name: "粗盐提纯实验",
+      day: "25",
+      type: "experiment",
+      purpose: "通过粗盐提纯实验，掌握溶解、过滤、蒸发等基本操作。",
+      materials: ["粗盐", "蒸馏水", "烧杯", "玻璃棒", "漏斗", "滤纸", "铁架台（带铁圈）", "酒精灯", "蒸发皿", "量筒"],
+      setup: "将粗盐溶解于水，过滤除去不溶性杂质，蒸发滤液得到精盐。",
+      steps: [
+        "称取约5g粗盐，加入约10mL蒸馏水",
+        "用玻璃棒搅拌，加速粗盐溶解",
+        "准备过滤器：将滤纸折叠放入漏斗，用水润湿使其紧贴漏斗壁",
+        "过滤：将浑浊的食盐水沿玻璃棒倒入漏斗过滤",
+        "将滤液倒入蒸发皿，用酒精灯加热，用玻璃棒不断搅拌",
+        "当出现较多固体时停止加热，利用余热蒸干",
+        "将精盐转移到纸上称量，计算产率"
+      ],
+      observations: ["①粗盐逐渐溶解，得到浑浊的食盐水", "②过滤后得到澄清的食盐水", "③蒸发后得到白色固体（精盐）"],
+      conclusion: "通过溶解、过滤、蒸发三步操作，可以除去粗盐中的不溶性杂质，得到较纯净的氯化钠。过滤操作要遵循"一贴二低三靠"原则。",
+      safety: "supervised",
+      commonErrors: ["M-CALCULATION", "M-CONDITION-OMISSION"],
+      knowledgeIds: ["V2-K405"],
+      examPoints: ["粗盐提纯步骤", "过滤蒸发操作要点", "产率误差分析"]
+    }
+  ];
+
+  experiments.push(...unit4Experiments);
+
   const byId = {};
   experiments.forEach((e) => { byId[e.id] = e; });
 
