@@ -1,0 +1,32 @@
+name: Publish ChemLab Web
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Prepare public website
+        run: |
+          mkdir -p publish
+          cp index.html publish/
+          cp -r assets publish/ 2>/dev/null || true
+          cp -r content publish/ 2>/dev/null || true
+
+      - name: Deploy to ChemLab-G9-S2-web
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.WEB_DEPLOY_TOKEN }}
+          external_repository: Momo2015-AI/ChemLab-G9-S2-web
+          publish_dir: ./publish
+          publish_branch: main
