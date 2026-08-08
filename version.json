@@ -1,0 +1,10 @@
+{
+  "project": "ChemLab-G9-S2",
+  "version": "0.1.0",
+  "edition": "九年级化学下册",
+  "contentVersion": "s2-v1",
+  "engineVersion": "v1",
+  "dataNamespace": "chemlab-g9:v4:s2:",
+  "buildTarget": "single-html-offline",
+  "updated": "2026-08-08"
+}
