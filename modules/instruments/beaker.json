@@ -1,0 +1,10 @@
+{
+  "id": "beaker",
+  "name": "烧杯",
+  "category": "glassware",
+  "icon": "beaker",
+  "image": "",
+  "usage": ["mixing", "heating", "holding liquid"],
+  "safety": ["check heat resistance"],
+  "experiments": []
+}
