@@ -1,0 +1,14 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"ChemLab Learning Data Model",
+  "type":"object",
+  "required":["lesson","task","knowledge","activities","assessment"],
+  "properties":{
+    "lesson":{"type":"string"},
+    "task":{"type":"string"},
+    "knowledge":{"type":"array","items":{"type":"string"}},
+    "activities":{"type":"array","items":{"type":"object","required":["type"],"properties":{"type":{"type":"string"},"ref":{"type":"string"}}}},
+    "assessment":{"type":"object","properties":{"questions":{"type":"array","items":{"type":"string"}},"bloomLevels":{"type":"array","items":{"type":"string"}},"masteryTarget":{"type":"number","minimum":0,"maximum":1}}},
+    "nextTasks":{"type":"array","items":{"type":"string"}}
+  }
+}
