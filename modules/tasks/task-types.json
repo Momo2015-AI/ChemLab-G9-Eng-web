@@ -1,0 +1,11 @@
+{
+  "version": "1.5",
+  "types": [
+    {"id":"explore","name":"探索","purpose":"观察现象并形成问题"},
+    {"id":"learn","name":"理解","purpose":"建立概念与解释模型"},
+    {"id":"practice","name":"练习","purpose":"巩固知识并获得即时反馈"},
+    {"id":"investigate","name":"探究","purpose":"提出方案、验证并修正"},
+    {"id":"transfer","name":"迁移","purpose":"把知识应用到新情境"},
+    {"id":"reflect","name":"反思","purpose":"识别掌握情况和剩余疑问"}
+  ]
+}
