@@ -1,4 +1,3 @@
-window.ChemLabContentS2 = window.ChemLabContentS2 || {};
 window.ChemLabContentS2["day-13"] = {
   dayNumber: "13",
   title: "溶液的配制与结晶",

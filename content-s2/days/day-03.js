@@ -1,4 +1,3 @@
-window.ChemLabContentS2 = window.ChemLabContentS2 || {};
 window.ChemLabContentS2["day-03"] = {
   dayNumber: "03",
   title: "金属活动性顺序",
@@ -117,5 +116,4 @@ window.ChemLabContentS2["day-03"] = {
       }
     ]
   }
-  ]
 };

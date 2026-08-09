@@ -1,4 +1,3 @@
-window.ChemLabContentS2 = window.ChemLabContentS2 || {};
 window.ChemLabContentS2["day-02"] = {
   dayNumber: "02",
   title: "金属的化学性质（一）：金属与氧气、酸的反应",
@@ -120,5 +119,4 @@ window.ChemLabContentS2["day-02"] = {
       }
     ]
   }
-  ]
 };

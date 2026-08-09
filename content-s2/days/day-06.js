@@ -1,4 +1,3 @@
-window.ChemLabContentS2 = window.ChemLabContentS2 || {};
 window.ChemLabContentS2["day-06"] = {
   dayNumber: "06",
   title: "单元复习：金属和金属材料",
@@ -121,5 +120,4 @@ window.ChemLabContentS2["day-06"] = {
       }
     ]
   }
-  ]
 };

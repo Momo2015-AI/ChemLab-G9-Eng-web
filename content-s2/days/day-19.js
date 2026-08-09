@@ -1,4 +1,3 @@
-window.ChemLabContentS2 = window.ChemLabContentS2 || {};
 window.ChemLabContentS2["day-19"] = {
   dayNumber: "19",
   title: "溶液的酸碱度（pH）",

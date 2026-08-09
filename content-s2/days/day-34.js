@@ -1,4 +1,3 @@
-window.ChemLabContentS2 = window.ChemLabContentS2 || {};
 window.ChemLabContentS2["day-34"] = {
   dayNumber: "34",
   title: "综合提升：中考计算专练（二）",

@@ -1,4 +1,3 @@
-window.ChemLabContentS2 = window.ChemLabContentS2 || {};
 window.ChemLabContentS2["day-31"] = {
   dayNumber: "31",
   title: "综合提升：酸碱盐知识网络",

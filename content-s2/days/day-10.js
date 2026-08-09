@@ -1,4 +1,3 @@
-window.ChemLabContentS2 = window.ChemLabContentS2 || {};
 window.ChemLabContentS2["day-10"] = {
   dayNumber: "10",
   title: "溶解度",
@@ -69,7 +68,6 @@ window.ChemLabContentS2["day-10"] = {
         "B（氢氧化钙溶解度随温度升高而减小，属于微溶物质）",
         "t₁℃时120g饱和溶液含溶质20g、水100g。升温到t₂℃，100g水可溶解40g，还需加入40-20=20g才能达到饱和"
       ]
-  ]
     }
   ]
 };

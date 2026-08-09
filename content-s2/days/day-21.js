@@ -1,4 +1,3 @@
-window.ChemLabContentS2 = window.ChemLabContentS2 || {};
 window.ChemLabContentS2["day-21"] = {
   dayNumber: "21",
   title: "常见的盐",
@@ -26,7 +25,7 @@ window.ChemLabContentS2["day-21"] = {
       body: [
         "化学中的盐是指由金属离子（或铵根离子NH₄⁺）和酸根离子组成的化合物。常见的盐有氯化钠（NaCl）、碳酸钠（Na₂CO₃）、碳酸钙（CaCO₃）等。",
         "日常生活中的“食盐”特指氯化钠（NaCl），是化学中众多盐的一种。不要把“盐”和“食盐”混为一谈。",
-        { text: "化学中“盐”是一类物质（金属离子+酸根离子），“食盐”特指NaCl。“, kind: ”pitfall" }
+        { text: "化学中“盐”是一类物质（金属离子+酸根离子），“食盐”特指NaCl。", kind: "pitfall" }
       ]
     },
     {

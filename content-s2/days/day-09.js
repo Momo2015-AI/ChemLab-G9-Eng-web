@@ -1,4 +1,3 @@
-window.ChemLabContentS2 = window.ChemLabContentS2 || {};
 window.ChemLabContentS2["day-09"] = {
   dayNumber: "09",
   title: "饱和溶液与不饱和溶液",
@@ -69,7 +68,6 @@ window.ChemLabContentS2["day-09"] = {
         "不变，不变（饱和溶液不能再溶解该溶质，晶体质量不变，溶液浓度也不变）",
         "A（①加溶剂可使饱和变不饱和；②升高温度多数物质溶解度增大，饱和变不饱和；③加入该物质不能使溶液变不饱和；④蒸发溶剂会使溶液更浓，甚至析出晶体）"
       ]
-  ]
     }
   ]
 };

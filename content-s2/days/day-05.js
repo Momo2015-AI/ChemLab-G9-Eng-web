@@ -1,4 +1,3 @@
-window.ChemLabContentS2 = window.ChemLabContentS2 || {};
 window.ChemLabContentS2["day-05"] = {
   dayNumber: "05",
   title: "金属资源的利用与保护",
@@ -132,5 +131,4 @@ window.ChemLabContentS2["day-05"] = {
       }
     ]
   }
-  ]
 };

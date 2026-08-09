@@ -1,4 +1,3 @@
-window.ChemLabContentS2 = window.ChemLabContentS2 || {};
 window.ChemLabContentS2["day-08"] = {
   dayNumber: "08",
   title: "溶解的热效应",
@@ -68,8 +67,6 @@ window.ChemLabContentS2["day-08"] = {
         "硝酸铵溶解温度很低，应避免直接接触皮肤；使用时用布包裹，每次使用不超过15分钟",
         "错误。氯化钠溶解时温度基本不变，说明不是所有物质溶解都有明显的温度变化"
       ]
-  ]
     }
-};
-]
+  ]
 };

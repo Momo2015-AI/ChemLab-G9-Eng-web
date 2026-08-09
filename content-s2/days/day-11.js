@@ -1,4 +1,3 @@
-window.ChemLabContentS2 = window.ChemLabContentS2 || {};
 window.ChemLabContentS2["day-11"] = {
   dayNumber: "11",
   title: "溶解度曲线",
@@ -69,8 +68,6 @@ window.ChemLabContentS2["day-11"] = {
         "降温结晶（A曲线陡，降温时A大量析出）；蒸发结晶（B曲线平，蒸发时B析出而A留在溶液中）",
         "不变（升温后溶解度增大，溶液变为不饱和，溶质和溶剂质量都不变，故质量分数不变）"
       ]
-  ]
     }
-};
-]
+  ]
 };

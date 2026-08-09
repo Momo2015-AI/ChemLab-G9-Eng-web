@@ -424,6 +424,39 @@ window.ChemLabKnowledgeS2 = (function () {
     }
   ];
 
+    {
+      id: "V2-K314",
+      name: "化肥的种类与作用",
+      concept: "氮肥：促进植物茎叶生长，使叶色浓绿（如尿素CO(NH₂)₂、铵态氮肥NH₄HCO₃）。磷肥：促进根系发育，增强抗寒抗旱能力（如过磷酸钙Ca(H₂PO₄)₂）。钾肥：促进茎秆粗壮，增强抗病虫害能力（如KCl、K₂SO₄）。复合肥：含N、P、K中两种或两种以上营养元素（如KNO₃、NH₄H₂PO₄）。",
+      prerequisite: ["V2-K312"],
+      related: ["V2-K315"],
+      experiments: [],
+      mistakeTypes: ["M-CONCEPT-CONFUSION"],
+      examPoints: ["氮肥磷肥钾肥的作用", "常见化肥的化学式"],
+      applications: ["合理施肥提高作物产量"]
+    },
+    {
+      id: "V2-K315",
+      name: "化肥的施用与注意事项",
+      concept: "铵态氮肥（含NH₄⁺）不能与碱性物质混用，否则释放氨气降低肥效：NH₄⁺ + OH⁻ = NH₃↑ + H₂O。磷肥不易溶于水，施用时应与有机肥混合。钾肥易溶于水，应注意防止淋失。施肥前要土壤检测，做到测土配方施肥。",
+      prerequisite: ["V2-K314"],
+      related: ["V2-K316"],
+      experiments: [],
+      mistakeTypes: ["M-CONDITION-OMISSION"],
+      examPoints: ["铵态氮肥与碱性物质混用问题", "测土配方施肥"],
+      applications: ["化肥合理使用"]
+    },
+    {
+      id: "V2-K316",
+      name: "化肥与环境污染",
+      concept: "化肥过量施用会导致水体富营养化（N、P元素引起藻类爆发），土壤板结，地下水硝酸盐超标。防治措施：合理使用化肥，增施有机肥，推广测土配方施肥技术。",
+      prerequisite: ["V2-K315"],
+      related: ["V2-K408"],
+      experiments: [],
+      mistakeTypes: ["M-PATTERN-OVERAPPLY"],
+      examPoints: ["化肥过量施用的危害", "环境污染的防治"],
+      applications: ["绿色农业、环保施肥"]
+    },
   knowledge.push(...unit3);
 
   // 单元四（盐、化肥）知识点：ID 命名空间 V2-K4xx
