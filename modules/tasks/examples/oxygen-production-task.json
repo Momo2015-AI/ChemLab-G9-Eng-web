@@ -1,0 +1,15 @@
+{
+  "id": "task-oxygen-production-001",
+  "goal": "理解并掌握实验室制取氧气的基本过程",
+  "knowledge": ["oxygen-property", "laboratory-preparation"],
+  "activities": [
+    {"type":"explore","id":"observe-experiment"},
+    {"type":"learn","id":"identify-instruments"},
+    {"type":"practice","id":"assemble-apparatus"},
+    {"type":"investigate","id":"analyze-failure"},
+    {"type":"transfer","id":"design-alternative"},
+    {"type":"reflect","id":"self-assessment"}
+  ],
+  "assessment": {"bloomLevels":["understand","apply","analyze","evaluate","create"]},
+  "nextTasks": []
+}
