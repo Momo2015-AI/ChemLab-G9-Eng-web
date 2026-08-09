@@ -1,0 +1,37 @@
+{
+  "version":"1.5",
+  "nodes":[
+    {
+      "id":"chemical-change",
+      "name":"物理变化与化学变化",
+      "chapter":"走进化学世界",
+      "domain":"fundamentals",
+      "relations":{"prerequisite":[],"related":["chemical-experiment"],"experiment":[],"question":["q0001"],"commonMistake":["concept-error"]},
+      "bloomLevels":["remember","understand","analyze"]
+    },
+    {
+      "id":"chemical-experiment",
+      "name":"化学实验基本操作",
+      "chapter":"走进化学世界",
+      "domain":"experiment",
+      "relations":{"prerequisite":["chemical-change"],"related":["oxygen-property"],"experiment":["task-oxygen-production-001"],"question":[],"commonMistake":["experiment-operation-error"]},
+      "bloomLevels":["understand","apply","analyze"]
+    },
+    {
+      "id":"oxygen-property",
+      "name":"氧气的性质",
+      "chapter":"我们周围的空气",
+      "domain":"substance",
+      "relations":{"prerequisite":["chemical-change"],"related":["oxygen-preparation"],"experiment":["task-oxygen-production-001"],"question":[],"commonMistake":["concept-error","experiment-operation-error"]},
+      "bloomLevels":["remember","understand","apply","analyze"]
+    },
+    {
+      "id":"oxygen-preparation",
+      "name":"氧气的实验室制取",
+      "chapter":"我们周围的空气",
+      "domain":"experiment",
+      "relations":{"prerequisite":["oxygen-property","chemical-experiment"],"related":[],"experiment":["task-oxygen-production-001"],"question":[],"commonMistake":["experiment-operation-error","reasoning-error"]},
+      "bloomLevels":["apply","analyze","evaluate","create"]
+    }
+  ]
+}
