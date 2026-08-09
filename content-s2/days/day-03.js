@@ -117,4 +117,5 @@ window.ChemLabContentS2["day-03"] = {
       }
     ]
   }
+  ]
 };

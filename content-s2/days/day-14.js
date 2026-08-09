@@ -4,7 +4,7 @@ window.ChemLabContentS2["day-14"] = {
   title: "常见的酸",
   duration: "45--60 分钟",
   difficulty: "⭐⭐",
-  coreQuestion: "盐酸和硫酸都是"酸"，它们有什么不同？",
+  coreQuestion: "盐酸和硫酸都是“酸”，它们有什么不同？",
   knowledgeIds: ["V2-K301", "V2-K302", "V2-K303"],
   experimentIds: ["V2-E301"],
   mistakeTypes: ["M-CONCEPT-CONFUSION"],
@@ -17,7 +17,7 @@ window.ChemLabContentS2["day-14"] = {
     {
       title: "今天解决什么问题？",
       body: [
-        "实验室里最常见的是盐酸和硫酸，它们都是重要的酸。但仔细观察会发现：浓盐酸瓶口有白雾，浓硫酸却没有；浓硫酸还能"吃掉"纸张和布料。它们到底有什么不同？",
+        "实验室里最常见的是盐酸和硫酸，它们都是重要的酸。但仔细观察会发现：浓盐酸瓶口有白雾，浓硫酸却没有；浓硫酸还能“吃掉”纸张和布料。它们到底有什么不同？",
         "今天我们要认识这两种最常见的酸，了解它们的性质和用途。"
       ]
     },

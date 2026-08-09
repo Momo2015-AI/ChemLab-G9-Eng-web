@@ -20,7 +20,7 @@ window.ChemLabContentS2["day-32"] = {
         "金属活动性顺序：K Ca Na Mg Al Zn Fe Sn Pb (H) Cu Hg Ag Pt Au。",
         "应用一：判断金属与酸能否反应——H前的金属能置换酸中的氢。",
         "应用二：判断金属与盐能否反应——前置后（K Ca Na除外），生成新盐和新金属。",
-        "应用三：设计验证金属活动性顺序的实验方案——"两金夹一盐"或"两盐夹一金"。",
+        "应用三：设计验证金属活动性顺序的实验方案——“两金夹一盐”或“两盐夹一金”。",
         { text: "金属活动性：K Ca Na Mg Al | Zn Fe Sn Pb (H) | Cu Hg Ag Pt Au。", kind: "takeaway" }
       ]
     },

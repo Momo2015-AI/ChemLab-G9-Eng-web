@@ -340,7 +340,7 @@ window.ChemLabExperimentsS2 = (function () {
         "将精盐转移到纸上称量，计算产率"
       ],
       observations: ["①粗盐逐渐溶解，得到浑浊的食盐水", "②过滤后得到澄清的食盐水", "③蒸发后得到白色固体（精盐）"],
-      conclusion: "通过溶解、过滤、蒸发三步操作，可以除去粗盐中的不溶性杂质，得到较纯净的氯化钠。过滤操作要遵循"一贴二低三靠"原则。",
+      conclusion: "通过溶解、过滤、蒸发三步操作，可以除去粗盐中的不溶性杂质，得到较纯净的氯化钠。过滤操作要遵循“一贴二低三靠”原则。",
       safety: "supervised",
       commonErrors: ["M-CALCULATION", "M-CONDITION-OMISSION"],
       knowledgeIds: ["V2-K405"],

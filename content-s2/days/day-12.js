@@ -4,7 +4,7 @@ window.ChemLabContentS2["day-12"] = {
   title: "溶质质量分数",
   duration: "45--60 分钟",
   difficulty: "⭐⭐",
-  coreQuestion: "如何准确描述溶液的"浓"与"淡"？",
+  coreQuestion: "如何准确描述溶液的“浓”与“淡”？",
   knowledgeIds: ["V2-K208"],
   experimentIds: [],
   mistakeTypes: ["M-CALCULATION"],
@@ -70,5 +70,8 @@ window.ChemLabContentS2["day-12"] = {
         "9g氯化钠，141mL水（150×6%=9g，150-9=141g≈141mL）",
         "12.5%（混合后溶质=50×20%+50×5%=12.5g，溶液=100g，质量分数=12.5/100×100%=12.5%）"
       ]
+  ]
     }
+};
+]
 };

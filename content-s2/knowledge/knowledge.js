@@ -193,7 +193,7 @@ window.ChemLabKnowledgeS2 = (function () {
       related: ["V2-K206", "V2-K207", "V2-K211"],
       experiments: ["V2-E202"],
       mistakeTypes: ["M-CONDITION-OMISSION", "M-CONCEPT-CONFUSION"],
-      examPoints: ["判断溶液是否饱和", "饱和与不饱和的转化方法", "明确"一定温度"和"一定量溶剂"这两个前提"],
+      examPoints: ["判断溶液是否饱和", "饱和与不饱和的转化方法", "明确“一定温度”和“一定量溶剂”这两个前提"],
       applications: ["饱和食盐水、糖水浓度上限"]
     },
     {

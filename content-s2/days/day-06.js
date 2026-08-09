@@ -121,4 +121,5 @@ window.ChemLabContentS2["day-06"] = {
       }
     ]
   }
+  ]
 };
