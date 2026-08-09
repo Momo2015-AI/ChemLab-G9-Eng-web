@@ -421,9 +421,7 @@ window.ChemLabKnowledgeS2 = (function () {
       mistakeTypes: ["M-PATTERN-OVERAPPLY", "M-CHEMICAL-FORMULA"],
       examPoints: ["盐的四条化学性质与方程式书写", "判断盐的反应能否发生"],
       applications: ["湿法炼铜（Fe+CuSO₄=FeSO₄+Cu）、工业制Na₂CO₃"]
-    }
-  ];
-
+    },
     {
       id: "V2-K314",
       name: "化肥的种类与作用",
@@ -456,7 +454,9 @@ window.ChemLabKnowledgeS2 = (function () {
       mistakeTypes: ["M-PATTERN-OVERAPPLY"],
       examPoints: ["化肥过量施用的危害", "环境污染的防治"],
       applications: ["绿色农业、环保施肥"]
-    },
+    }
+  ];
+
   knowledge.push(...unit3);
 
   // 单元四（盐、化肥）知识点：ID 命名空间 V2-K4xx
