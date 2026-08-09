@@ -1,0 +1,9 @@
+{
+  "id": "knowledge-id",
+  "name": "知识点名称",
+  "chapter": "章节",
+  "level": "basic|advanced|challenge",
+  "relatedExperiments": [],
+  "relatedQuestions": [],
+  "mastery": 0
+}

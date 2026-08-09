@@ -1,0 +1,32 @@
+{
+  "id": "exp-001",
+  "title": "氧气的实验室制取",
+  "chapter": "我们周围的空气",
+  "type": "laboratory",
+  "goal": "掌握氧气制取、收集和检验方法",
+  "equipment": [
+    "试管",
+    "酒精灯",
+    "铁架台",
+    "集气瓶"
+  ],
+  "steps": [
+    {
+      "order": 1,
+      "action": "检查装置气密性"
+    },
+    {
+      "order": 2,
+      "action": "装入药品并加热"
+    },
+    {
+      "order": 3,
+      "action": "收集氧气"
+    }
+  ],
+  "phenomenon": "产生能使带火星木条复燃的气体",
+  "equation": "2KMnO4 → K2MnO4 + MnO2 + O2↑",
+  "safety": [
+    "实验结束先移导管再停止加热"
+  ]
+}
