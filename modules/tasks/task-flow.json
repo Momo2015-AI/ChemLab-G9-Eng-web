@@ -1,0 +1,18 @@
+{
+  "version": "1.5",
+  "defaultFlow": [
+    "diagnose",
+    "explore",
+    "learn",
+    "practice",
+    "feedback",
+    "investigate",
+    "transfer",
+    "reflect"
+  ],
+  "rules": {
+    "lowMastery": ["learn", "practice"],
+    "lowExperimentSkill": ["explore", "investigate"],
+    "highConceptMastery": ["transfer", "create"]
+  }
+}
