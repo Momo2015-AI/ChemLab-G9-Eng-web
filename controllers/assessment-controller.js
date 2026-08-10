@@ -48,6 +48,17 @@ export class AssessmentController {
     return Math.round(answers.filter(a => a.correct).length / answers.length * 100);
   }
 
+  async startByNode(nodeId) {
+    const data = await this.contentService.load();
+    const questions = data.questions.filter(q => (q.knowledge || q.knowledgePoints || []).includes(nodeId)).slice(0, 10);
+    if (!questions.length) return null;
+    this.session = { dayId: nodeId, questions, index: 0, answers: [], completed: false };
+    this.state.currentQuiz = nodeId;
+    this.state.quizIndex = 0;
+    this.state.quizAnswers = {};
+    return this.session;
+  }
+
   reset() {
     this.session = null;
     this.state.currentQuiz = null;
