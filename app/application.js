@@ -16,17 +16,18 @@ import { renderQuiz, renderQuizResult } from '../views/quiz-view.js';
 import { renderExperiment, renderExperimentResult } from '../views/experiment-view.js';
 import { renderDashboard } from '../views/dashboard-view.js';
 import { renderGraph } from '../views/graph-view.js';
+import { renderRemediation } from '../views/remediation-view.js';
 
-export function createApplication({ state, assessment, experimentEngine, masteryService = new MasteryService(), root = document.querySelector('#app') }) {
+export function createApplication({ state, assessment, experimentEngine, masteryService = new MasteryService(), remediationCatalog = {}, root = document.querySelector('#app') }) {
   masteryService.hydrate(state.progress?.mastery || {});
 
   const controllers = {
-    learning: new LearningController({ contentService, state }),
+    learning: new LearningController({ contentService, state, remediationCatalog }),
     assessment: new AssessmentController({ assessment, contentService, state, masteryService }),
     experiment: new ExperimentController({ experimentEngine, state, masteryService }),
   };
 
-  const views = { renderHome, renderCourse, renderQuiz, renderQuizResult, renderExperiment, renderExperimentResult, renderDashboard, renderGraph };
+  const views = { renderHome, renderCourse, renderQuiz, renderQuizResult, renderExperiment, renderExperimentResult, renderDashboard, renderGraph, renderRemediation };
 
   const router = createRouter({
     onRoute: route => { state.route = route; },
@@ -49,6 +50,9 @@ export function createApplication({ state, assessment, experimentEngine, mastery
         weakPoints: progress.weakPoints,
       };
       return views.renderDashboard({ root, summary });
+    }
+    if (route.page === 'remediation') {
+      return views.renderRemediation({ root, plan: state.learning?.remediation });
     }
     if (route.page === 'graph') {
       const graph = await contentService.getKnowledgeGraphViewModel();
