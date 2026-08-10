@@ -2,23 +2,22 @@ import { MasteryEngine } from '../engine/mastery-engine.js';
 
 /**
  * Application-facing mastery boundary.
- * The UI may consume mastery state, but must not calculate it itself.
+ * UI code consumes mastery state but never calculates it.
  */
 export class MasteryService {
-  constructor({ engine = new MasteryEngine(), state } = {}) {
+  constructor({ engine = new MasteryEngine() } = {}) {
     this.engine = engine;
-    this.state = state;
   }
 
-  recordEvidence(nodeId, score, weight = 1) {
-    return this.engine.update(nodeId, score, weight);
+  recordEvidence(knowledgeId, score, weight = 0.25) {
+    return this.engine.update(knowledgeId, { score, weight });
   }
 
-  getMastery(nodeId) {
-    return this.engine.getMastery(nodeId);
+  getMastery(knowledgeId) {
+    return this.engine.get(knowledgeId);
   }
 
   getState() {
-    return this.engine.getAll();
+    return Object.fromEntries(this.engine.mastery.entries());
   }
 }
