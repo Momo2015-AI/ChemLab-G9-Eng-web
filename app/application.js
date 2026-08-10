@@ -23,7 +23,7 @@ export function createApplication({ state, assessment, experimentEngine, mastery
   const controllers = {
     learning: new LearningController({ contentService, state }),
     assessment: new AssessmentController({ assessment, contentService, state, masteryService }),
-    experiment: new ExperimentController({ experimentEngine, state }),
+    experiment: new ExperimentController({ experimentEngine, state, masteryService }),
   };
 
   const views = { renderHome, renderCourse, renderQuiz, renderQuizResult, renderExperiment, renderExperimentResult, renderDashboard, renderGraph };
@@ -41,7 +41,7 @@ export function createApplication({ state, assessment, experimentEngine, mastery
       return views.renderCourse({ root, lesson });
     }
     if (route.page === 'dashboard') {
-      const progress = createProgressProjection(state.progress);
+      const progress = createProgressProjection({ ...state.progress, mastery: masteryService.getState() });
       const summary = {
         completed: progress.completed.length,
         mastery: Math.round(progress.masteryScore * 100),
