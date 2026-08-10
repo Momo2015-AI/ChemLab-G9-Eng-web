@@ -24,7 +24,7 @@ jobs:
 
       - name: Check JS syntax
         run: |
-          find engine core lab dashboard app controllers views tests -name '*.js' -o -name '*.mjs' 2>/dev/null | sort | while read f; do
+          find engine core lab dashboard app controllers views tests scripts -name '*.js' -o -name '*.mjs' 2>/dev/null | sort | while read f; do
             node --check "$f" || { echo "Syntax error in $f"; exit 1; }
           done
 
@@ -37,6 +37,18 @@ jobs:
             node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" || { echo "Invalid JSON: $f"; exit 1; }
           done
           echo "JSON OK"
+
+      - name: Check content source inventory
+        run: node scripts/check-content-sources.mjs
+
+      - name: Validate question bank
+        run: node scripts/validate-question-bank.mjs
+
+      - name: Validate lessons
+        run: node scripts/validate-lessons.mjs
+
+      - name: Check content referential integrity
+        run: node scripts/check-content-references.mjs
 
       - name: Check index.html exists
         run: |

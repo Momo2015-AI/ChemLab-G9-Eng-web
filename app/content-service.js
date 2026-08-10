@@ -4,16 +4,35 @@
  */
 
 import ContentLoader from '../engine/content-loader.js';
+import { KnowledgeEngine } from '../core/knowledge-graph/canonical-knowledge-engine.js';
 
 class ContentService {
   constructor(loader = new ContentLoader()) {
     this.loader = loader;
     this.data = null;
+    this._engine = null;
   }
 
   async load() {
     if (!this.data) this.data = await this.loader.loadAll();
     return this.data;
+  }
+
+  _buildEngine() {
+    if (!this._engine) {
+      const kg = this.data?.knowledgeGraph || {};
+      // Canonical engine accepts both edges (from/to) and relations (source/target)
+      const graph = {
+        nodes: kg.nodes || [],
+        relations: (kg.relations || kg.edges || []).map(e => ({
+          source: e.from || e.source,
+          target: e.to || e.target,
+          type: e.type,
+        })),
+      };
+      this._engine = new KnowledgeEngine(graph);
+    }
+    return this._engine;
   }
 
   async getLesson(dayId) {
@@ -34,6 +53,10 @@ class ContentService {
   async getKnowledgeGraph() {
     const data = await this.load();
     return data.knowledgeGraph;
+  }
+
+  getKnowledgeEngine() {
+    return this._buildEngine();
   }
 
   async getExperiment(id) {

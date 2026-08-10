@@ -5,6 +5,7 @@
 
 import { createRouter } from './router.js';
 import { contentService } from './content-service.js';
+import { MasteryService } from './mastery-service.js';
 import { AssessmentController } from '../controllers/assessment-controller.js';
 import { ExperimentController } from '../controllers/experiment-controller.js';
 import { LearningController } from '../controllers/learning-controller.js';
@@ -15,10 +16,10 @@ import { renderExperiment, renderExperimentResult } from '../views/experiment-vi
 import { renderDashboard } from '../views/dashboard-view.js';
 import { renderGraph } from '../views/graph-view.js';
 
-export function createApplication({ state, assessment, experimentEngine, root = document.querySelector('#app') }) {
+export function createApplication({ state, assessment, experimentEngine, masteryService = new MasteryService(), root = document.querySelector('#app') }) {
   const controllers = {
     learning: new LearningController({ contentService, state }),
-    assessment: new AssessmentController({ assessment, contentService, state }),
+    assessment: new AssessmentController({ assessment, contentService, state, masteryService }),
     experiment: new ExperimentController({ experimentEngine, state }),
   };
 
@@ -98,11 +99,13 @@ export function createApplication({ state, assessment, experimentEngine, root = 
       }
       case 'graph': {
         const data = await contentService.load();
+        const engine = contentService.getKnowledgeEngine();
         const viewMode = params[0] || 'modules';
         const selectedModule = viewMode === 'path' ? params[1] : null;
         const selectedNode = viewMode === 'detail' ? params[2] : null;
         views.renderGraph({ root, data: {
           knowledgeGraph: data.knowledgeGraph,
+          knowledgeEngine: engine,
           progress: state.progress,
           viewMode,
           selectedModule,
@@ -114,22 +117,22 @@ export function createApplication({ state, assessment, experimentEngine, root = 
       case 'dashboard': {
         const data = await contentService.load();
         const nodes = data.knowledgeGraph?.nodes || [];
-        const mastery = state.progress?.mastery || {};
-        const mastered = nodes.filter(n => mastery[n.id]?.score >= 0.8).length;
-        const learning = nodes.filter(n => { const m = mastery[n.id]?.score; return m > 0 && m < 0.8; }).length;
-        const weak = nodes.filter(n => !mastery[n.id]?.score).length;
+        const mastery = masteryService.getState();
+        const mastered = nodes.filter(n => mastery[n.id] >= 0.8).length;
+        const learning = nodes.filter(n => { const m = mastery[n.id]; return m > 0 && m < 0.8; }).length;
+        const weak = nodes.filter(n => !mastery[n.id]).length;
         const quizzes = state.progress?.quizScores || {};
         const totalQuizzes = Object.keys(quizzes).length;
         const avgScore = totalQuizzes ? Math.round(Object.values(quizzes).reduce((a, b) => a + b, 0) / totalQuizzes) : 0;
         const skillBars = nodes
-          .filter(n => mastery[n.id]?.score > 0)
-          .map(n => ({ id: n.id, name: n.name, score: Math.round(mastery[n.id].score * 100) }))
+          .filter(n => mastery[n.id] > 0)
+          .map(n => ({ id: n.id, name: n.name, score: Math.round(mastery[n.id] * 100) }))
           .sort((a, b) => a.score - b.score)
           .slice(-15);
         const recommendations = nodes
-          .filter(n => mastery[n.id]?.score < 0.5)
+          .filter(n => mastery[n.id] < 0.5)
           .slice(0, 8)
-          .map(n => ({ id: n.id, name: n.name, score: Math.round(mastery[n.id].score * 100) }));
+          .map(n => ({ id: n.id, name: n.name, score: Math.round(mastery[n.id] * 100) }));
         views.renderDashboard({ root, data: {
           totalQuizzes, avgScore, masteredCount: mastered,
           learningCount: learning, weakCount: weak,

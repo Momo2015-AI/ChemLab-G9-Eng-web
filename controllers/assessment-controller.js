@@ -3,10 +3,11 @@
  * Owns quiz session state and delegates answer evaluation to the domain engine.
  */
 export class AssessmentController {
-  constructor({ assessment, contentService, state }) {
+  constructor({ assessment, contentService, state, masteryService }) {
     this.assessment = assessment;
     this.contentService = contentService;
     this.state = state;
+    this.masteryService = masteryService;
     this.session = null;
   }
 
@@ -33,6 +34,10 @@ export class AssessmentController {
     this.session.completed = this.session.index >= this.session.questions.length;
     this.state.quizIndex = this.session.index;
     this.state.quizAnswers[question.id] = answer;
+    // Push evidence into mastery engine so mastery score drifts toward correct answer
+    for (const k of result.knowledge || []) {
+      this.masteryService?.recordEvidence(k, result.score ?? (result.correct ? 1 : 0), 0.25);
+    }
     if (this.session.completed) this.state.save?.();
     return result;
   }
