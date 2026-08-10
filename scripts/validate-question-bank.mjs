@@ -12,7 +12,7 @@ for (const [index, q] of questions.entries()) {
   if (!q.id) errors.push(`questions[${index}] missing id`);
   if (q.id && ids.has(q.id)) errors.push(`duplicate question id: ${q.id}`);
   if (q.id) ids.add(q.id);
-  if (!q.question && !q.stem && !q.prompt) errors.push(`${q.id || index}: missing question/stem/prompt`);
+  if (!q.question && !q.stem) errors.push(`${q.id || index}: missing question/stem`);
   if (!Array.isArray(q.options) && !Array.isArray(q.choices)) errors.push(`${q.id || index}: missing options/choices`);
 }
 

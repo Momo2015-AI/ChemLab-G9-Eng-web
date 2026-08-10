@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<base href="/">
+<base href="/ChemLab-G9-Eng-web/">
   <title>ChemLab-G9 | 九年级化学智能学习平台</title>
 <meta name="description" content="九年级化学智能学习平台 - 课程学习、虚拟实验、知识图谱、错题诊断">
 <style>
@@ -113,45 +113,10 @@ section h2{font-size:17px;margin-bottom:14px;padding-bottom:8px;border-bottom:2p
 .btn-secondary{background:var(--bg);color:var(--ink);border:1px solid var(--line)}
 /* Graph */
 .graph-page .container{padding-top:20px}
-.graph-header{display:flex;align-items:center;gap:12px;margin-bottom:20px}
-.graph-header h2{flex:1;font-size:17px;margin:0}
-.graph-subtitle{font-size:13px;color:var(--muted)}
-.module-badge{font-size:12px;padding:4px 10px;border-radius:12px;font-weight:600}
-.module-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:24px}
-.module-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:12px;position:relative;overflow:hidden}
-.module-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent)}
-.module-card:hover{border-color:var(--accent);box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px)}
-.module-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;flex-shrink:0}
-.module-info{flex:1;min-width:0}
-.module-name{font-size:14px;font-weight:600;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.module-meta{font-size:12px;color:var(--muted)}
-.module-mastery{display:flex;flex-direction:column;align-items:center;gap:4px}
-.mastery-ring{position:relative;width:48px;height:48px}
-.mastery-ring svg{width:100%;height:100%;transform:rotate(-90deg)}
-.mastery-ring text{transform:rotate(90deg);transform-origin:center}
-.weak-badge{font-size:10px;background:#fee2e2;color:#ef4444;padding:2px 6px;border-radius:8px}
-.path-container{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
-.path-legend{display:flex;gap:16px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
-.tree-view{padding:10px 0}
-.tree-node{display:flex;align-items:center;gap:8px;padding:6px 0}
-.tree-dot{width:24px;height:24px;border-radius:50%;cursor:pointer;transition:all .2s;flex-shrink:0}
-.tree-dot:hover{transform:scale(1.2)}
-.tree-label{font-size:13px;cursor:pointer;padding:4px 8px;border-radius:6px;transition:all .2s}
-.tree-label:hover{background:var(--brand-soft);color:var(--brand)}
-.node-detail{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
-.node-main{display:flex;align-items:center;gap:24px;margin-bottom:24px}
-.node-mastery-circle{width:120px;height:120px;flex-shrink:0}
-.node-mastery-circle svg{width:100%;height:100%;transform:rotate(-90deg)}
-.node-info{flex:1}
-.node-prereq,.node-children{font-size:13px;color:var(--muted);margin-bottom:8px}
-.node-prereq span,.node-children span{color:var(--ink);font-weight:500}
-.node-actions{display:flex;gap:10px;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--line)}
-.node-questions h3{font-size:14px;margin-bottom:12px}
-.question-preview{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid var(--line);border-radius:8px;margin-bottom:8px;cursor:pointer;transition:all .2s;font-size:13px}
-.question-preview:hover{border-color:var(--brand);background:var(--brand-soft)}
-.q-type{font-size:11px;background:var(--brand-soft);color:var(--brand);padding:2px 8px;border-radius:6px;white-space:nowrap}
-.q-diff{font-size:11px;padding:2px 8px;border-radius:6px;white-space:nowrap}
-.q-preview{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kg-container{display:flex;justify-content:center;margin:20px 0;overflow:hidden}
+.kg-container svg{max-width:100%;height:auto;display:block}
+.kg-node{cursor:pointer;transition:opacity .2s}
+.kg-node:hover{opacity:.8}
 .kg-legend{display:flex;gap:20px;justify-content:center;margin-top:12px}
 .legend-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
 .legend-dot{width:12px;height:12px;border-radius:50%}
@@ -276,14 +241,6 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;border-t
 <div id="app-root">
   <div class="loading">加载中...</div>
 </div>
-<script type="module" src="app/bootstrap.js"></script>
-<script type="module">
-  // Bootstrap the new V1.7 application
-  import { bootstrap } from './app/bootstrap.js';
-  bootstrap().catch(e => {
-    console.error('Bootstrap failed:', e);
-    document.getElementById('app-root').innerHTML = '<div class="container"><h2>启动失败</h2><p>' + (e?.message || '请刷新重试') + '</p></div>';
-  });
-</script>
+<script type="module" src="engine/app.js"></script>
 </body>
 </html>

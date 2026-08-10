@@ -7,32 +7,19 @@ import ContentLoader from '../engine/content-loader.js';
 import { KnowledgeEngine } from '../core/knowledge-graph/canonical-knowledge-engine.js';
 
 class ContentService {
-  constructor(loader = new ContentLoader()) {
+  constructor(loader = new ContentLoader(), knowledgeEngineFactory = graph => new KnowledgeEngine(graph)) {
     this.loader = loader;
+    this.knowledgeEngineFactory = knowledgeEngineFactory;
     this.data = null;
-    this._engine = null;
+    this.knowledgeEngine = null;
   }
 
   async load() {
-    if (!this.data) this.data = await this.loader.loadAll();
-    return this.data;
-  }
-
-  _buildEngine() {
-    if (!this._engine) {
-      const kg = this.data?.knowledgeGraph || {};
-      // Canonical engine accepts both edges (from/to) and relations (source/target)
-      const graph = {
-        nodes: kg.nodes || [],
-        relations: (kg.relations || kg.edges || []).map(e => ({
-          source: e.from || e.source,
-          target: e.to || e.target,
-          type: e.type,
-        })),
-      };
-      this._engine = new KnowledgeEngine(graph);
+    if (!this.data) {
+      this.data = await this.loader.loadAll();
+      this.knowledgeEngine = this.knowledgeEngineFactory(this.data.knowledgeGraph);
     }
-    return this._engine;
+    return this.data;
   }
 
   async getLesson(dayId) {
@@ -55,8 +42,42 @@ class ContentService {
     return data.knowledgeGraph;
   }
 
-  getKnowledgeEngine() {
-    return this._buildEngine();
+  async getKnowledgeGraphViewModel() {
+    const engine = await this.getKnowledgeEngine();
+    return {
+      nodes: Array.from(engine.nodes.values()),
+      relations: [...engine.relations],
+    };
+  }
+
+  async getKnowledgeEngine() {
+    await this.load();
+    return this.knowledgeEngine;
+  }
+
+  async getKnowledge(id) {
+    const engine = await this.getKnowledgeEngine();
+    return engine.getNode(id);
+  }
+
+  async getPrerequisites(id) {
+    const engine = await this.getKnowledgeEngine();
+    return engine.prerequisites(id);
+  }
+
+  async getExperimentsByKnowledge(id) {
+    const engine = await this.getKnowledgeEngine();
+    return engine.experiments(id);
+  }
+
+  async getQuestionsByKnowledgeGraph(id) {
+    const engine = await this.getKnowledgeEngine();
+    return engine.questions(id);
+  }
+
+  async getCommonMistakes(id) {
+    const engine = await this.getKnowledgeEngine();
+    return engine.commonMistakes(id);
   }
 
   async getExperiment(id) {
