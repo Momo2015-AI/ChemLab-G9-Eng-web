@@ -42,6 +42,14 @@ class ContentService {
     return data.knowledgeGraph;
   }
 
+  async getKnowledgeGraphViewModel() {
+    const engine = await this.getKnowledgeEngine();
+    return {
+      nodes: Array.from(engine.nodes.values()),
+      relations: [...engine.relations],
+    };
+  }
+
   async getKnowledgeEngine() {
     await this.load();
     return this.knowledgeEngine;
