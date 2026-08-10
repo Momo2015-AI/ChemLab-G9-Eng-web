@@ -28,11 +28,11 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p _site
-          if [ -d dist ]; then
-            cp -r dist/* _site/
+          if [ -d S2/dist ]; then
+            cp -r S2/dist/* _site/
           fi
-          if [ -f index.html ]; then
-            cp index.html _site/
+          if [ -f S2/index.html ]; then
+            cp S2/index.html _site/
           fi
           ls -la _site
 

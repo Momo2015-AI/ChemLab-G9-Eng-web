@@ -33,32 +33,32 @@ jobs:
 
       - name: Validate content
         run: |
-          if [ -f scripts/validate-content.mjs ]; then
-            node scripts/validate-content.mjs
+          if [ -f S2/scripts/validate-content.mjs ]; then
+            node S2/scripts/validate-content.mjs
           else
             echo "Content validator not found, skip"
           fi
 
       - name: Check chemistry correctness
         run: |
-          if [ -f scripts/check-science.mjs ]; then
-            node scripts/check-science.mjs --fatal
+          if [ -f S2/scripts/check-science.mjs ]; then
+            node S2/scripts/check-science.mjs --fatal
           else
             echo "Science checker not found, skip"
           fi
 
       - name: Build offline single HTML
         run: |
-          if [ -f scripts/build-single.mjs ]; then
-            node scripts/build-single.mjs
+          if [ -f S2/scripts/build-single.mjs ]; then
+            node S2/scripts/build-single.mjs
           else
             echo "Single HTML builder not found, skip"
           fi
 
       - name: Smoke test
         run: |
-          if [ -f tests/smoke.mjs ]; then
-            node tests/smoke.mjs
+          if [ -f S2/tests/smoke.mjs ]; then
+            node S2/tests/smoke.mjs
           else
             echo "Smoke test not found, skip"
           fi

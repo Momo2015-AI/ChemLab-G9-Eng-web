@@ -19,12 +19,10 @@ jobs:
       - name: Prepare full public website
         run: |
           mkdir -p publish
-          cp index.html publish/
-          cp -r assets publish/ 2>/dev/null || true
-          cp -r content publish/ 2>/dev/null || true
-          cp -r core publish/ 2>/dev/null || true
-          cp -r dashboard publish/ 2>/dev/null || true
-          cp -r pages publish/ 2>/dev/null || true
+          cp S2/index.html publish/
+          cp -r S2/assets publish/ 2>/dev/null || true
+          cp -r S2/content-s2 publish/ 2>/dev/null || true
+          cp -r S2/dist publish/ 2>/dev/null || true
 
       - name: Deploy to ChemLab-G9-S2-web
         uses: peaceiris/actions-gh-pages@v4
