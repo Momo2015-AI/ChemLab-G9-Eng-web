@@ -347,12 +347,20 @@ class ChemLabApp {
         <header>
           <div class="container header-inner">
             <div class="logo">ChemLab-G9</div>
-            <div class="quiz-header">
-              <span>${this.quizIndex + 1}/${total}</span>
-              <div class="progress-bar"><div class="progress-fill" style="width:${(this.quizIndex + 1) / total * 100}%"></div></div>
-            </div>
+            <nav>
+              <a href="#" data-nav="home" class="nav-link">首页</a>
+              <a href="#" data-nav="course" class="nav-link active">课程</a>
+              <a href="#" data-nav="graph" class="nav-link">知识图谱</a>
+              <a href="#" data-nav="dashboard" class="nav-link">学情</a>
+            </nav>
           </div>
         </header>
+        <div class="quiz-progress-bar">
+          <div class="container">
+            <div class="progress-bar"><div class="progress-fill" style="width:${(this.quizIndex + 1) / total * 100}%"></div></div>
+            <span class="quiz-count">${this.quizIndex + 1}/${total}</span>
+          </div>
+        </div>
         <div class="container quiz-container">
           <div class="question-card">
             <div class="q-meta">
