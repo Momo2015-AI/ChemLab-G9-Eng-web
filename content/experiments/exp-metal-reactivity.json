@@ -1,0 +1,51 @@
+{
+  "id": "exp-metal-reactivity",
+  "title": "金属活动性顺序探究",
+  "module": "module-metal",
+  "day": "17",
+  "knowledge": [
+    "metal-reactivity"
+  ],
+  "materials": [
+    "试管",
+    "锌粒",
+    "铁钉",
+    "铜片",
+    "稀硫酸",
+    "硫酸锌溶液",
+    "硫酸铜溶液",
+    "硫酸亚铁溶液"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "将锌粒放入稀硫酸中",
+      "observation": "锌粒表面产生气泡，反应较剧烈"
+    },
+    {
+      "step": 2,
+      "action": "将铁钉放入稀硫酸中",
+      "observation": "铁钉表面产生气泡，反应较缓慢"
+    },
+    {
+      "step": 3,
+      "action": "将铜片放入稀硫酸中",
+      "observation": "铜片表面无明显现象"
+    },
+    {
+      "step": 4,
+      "action": "将铁钉放入硫酸铜溶液中",
+      "observation": "铁钉表面有红色物质析出，溶液由蓝色变为浅绿色"
+    }
+  ],
+  "equation": "Fe + CuSO4 = FeSO4 + Cu",
+  "safety": [
+    "稀硫酸有腐蚀性",
+    "硫酸铜有毒，避免接触"
+  ],
+  "questions": [
+    "q-metal-r-001",
+    "q-metal-r-002",
+    "q-metal-r-003"
+  ]
+}

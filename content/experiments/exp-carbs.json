@@ -1,0 +1,39 @@
+{
+  "id": "exp-carbs",
+  "title": "淀粉和蛋白质的检验",
+  "module": "module-life",
+  "day": "28",
+  "knowledge": [
+    "nutrition-carbs",
+    "nutrition-protein"
+  ],
+  "materials": [
+    "试管",
+    "碘水",
+    "浓硝酸",
+    "鸡蛋清",
+    "米饭",
+    "馒头"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "取少量米饭于试管中，滴加碘水",
+      "observation": "米饭变蓝色，说明含有淀粉"
+    },
+    {
+      "step": 2,
+      "action": "取少量鸡蛋清于试管中，滴加浓硝酸并加热",
+      "observation": "变黄色，说明含有蛋白质"
+    }
+  ],
+  "equation": "",
+  "safety": [
+    "浓硝酸有强腐蚀性",
+    "实验后及时清洗"
+  ],
+  "questions": [
+    "q-carbs-001",
+    "q-protein-001"
+  ]
+}

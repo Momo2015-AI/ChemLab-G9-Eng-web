@@ -1,0 +1,20 @@
+{
+  "id": "acid-property",
+  "name": "酸的化学性质",
+  "description": "掌握酸的通性和化学方程式的书写",
+  "keyPoints": [
+    "酸能使紫色石蕊试液变红，无色酚酞试液不变色",
+    "酸 + 金属 → 盐 + 氢气（金属活动性顺序中H前面）",
+    "酸 + 金属氧化物 → 盐 + 水",
+    "酸 + 碱 → 盐 + 水（中和反应）",
+    "酸 + 盐 → 新酸 + 新盐"
+  ],
+  "experiments": [
+    "exp-acid-iron",
+    "exp-acid-rust"
+  ],
+  "equations": [
+    "Fe + H2SO4 = FeSO4 + H2↑",
+    "Zn + 2HCl = ZnCl2 + H2↑"
+  ]
+}

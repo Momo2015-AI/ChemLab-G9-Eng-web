@@ -1,0 +1,54 @@
+{
+  "id": "exp-iron-rust",
+  "title": "铁锈蚀条件探究",
+  "module": "module-metal",
+  "day": "20",
+  "knowledge": [
+    "iron-rust"
+  ],
+  "materials": [
+    "试管",
+    "铁钉",
+    "蒸馏水",
+    "植物油",
+    "干燥剂",
+    "橡皮塞"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "取三支试管，分别标记为A、B、C",
+      "observation": ""
+    },
+    {
+      "step": 2,
+      "action": "A试管：放入铁钉，加入蒸馏水浸没一半",
+      "observation": "铁钉一半在水中，一半在空气中"
+    },
+    {
+      "step": 3,
+      "action": "B试管：放入铁钉，加满蒸馏水并滴加植物油封层",
+      "observation": "铁钉只接触水，不接触空气"
+    },
+    {
+      "step": 4,
+      "action": "C试管：放入铁钉和干燥剂，塞紧橡皮塞",
+      "observation": "铁钉只接触干燥空气"
+    },
+    {
+      "step": 5,
+      "action": "几天后观察三支试管中铁钉的变化",
+      "observation": "A试管中铁钉生锈最严重，B、C试管中铁钉几乎不生锈"
+    }
+  ],
+  "equation": "4Fe + 3O2 + 6H2O = 2Fe2O3·6H2O",
+  "safety": [
+    "实验需要较长时间观察",
+    "铁锈主要成分是氧化铁"
+  ],
+  "questions": [
+    "q-iron-r-001",
+    "q-iron-r-002",
+    "q-iron-r-003"
+  ]
+}

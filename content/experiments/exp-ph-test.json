@@ -1,0 +1,42 @@
+{
+  "id": "exp-ph-test",
+  "title": "测定溶液pH",
+  "module": "module-acid-base",
+  "day": "05",
+  "knowledge": [
+    "ph-scale"
+  ],
+  "materials": [
+    "pH试纸",
+    "玻璃棒",
+    "待测溶液",
+    "比色卡"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "取一片pH试纸放在表面皿上",
+      "observation": "pH试纸呈黄色"
+    },
+    {
+      "step": 2,
+      "action": "用玻璃棒蘸取待测液滴在pH试纸上",
+      "observation": "试纸颜色发生变化"
+    },
+    {
+      "step": 3,
+      "action": "与标准比色卡对照读数",
+      "observation": "读取pH值"
+    }
+  ],
+  "equation": "",
+  "safety": [
+    "pH试纸不能预先润湿",
+    "不能将pH试纸直接浸入溶液中"
+  ],
+  "questions": [
+    "q-ph-001",
+    "q-ph-002",
+    "q-ph-003"
+  ]
+}

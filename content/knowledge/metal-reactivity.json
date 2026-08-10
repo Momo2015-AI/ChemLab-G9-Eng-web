@@ -1,0 +1,17 @@
+{
+  "id": "metal-reactivity",
+  "name": "金属活动性顺序",
+  "description": "掌握金属活动性顺序及其应用",
+  "keyPoints": [
+    "金属活动性顺序：K Ca Na Mg Al Zn Fe Sn Pb (H) Cu Hg Ag Pt Au",
+    "位于氢前面的金属能置换出酸中的氢",
+    "前面的金属能把后面的金属从其盐溶液中置换出来"
+  ],
+  "experiments": [
+    "exp-metal-reactivity"
+  ],
+  "equations": [
+    "Fe + CuSO4 = FeSO4 + Cu",
+    "Zn + H2SO4 = ZnSO4 + H2↑"
+  ]
+}

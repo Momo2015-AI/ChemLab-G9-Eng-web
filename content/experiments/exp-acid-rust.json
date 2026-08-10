@@ -1,0 +1,40 @@
+{
+  "id": "exp-acid-rust",
+  "title": "稀盐酸除铁锈",
+  "module": "module-acid-base",
+  "day": "01",
+  "knowledge": [
+    "acid-property"
+  ],
+  "materials": [
+    "生锈铁钉",
+    "稀盐酸",
+    "试管"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "取一支试管，加入约5mL稀盐酸",
+      "observation": "稀盐酸为无色液体"
+    },
+    {
+      "step": 2,
+      "action": "将生锈铁钉放入试管中",
+      "observation": "铁锈逐渐溶解"
+    },
+    {
+      "step": 3,
+      "action": "观察溶液颜色变化",
+      "observation": "溶液由无色变为黄色"
+    }
+  ],
+  "equation": "Fe2O3 + 6HCl = 2FeCl3 + 3H2O",
+  "safety": [
+    "稀盐酸有腐蚀性",
+    "实验后及时清洗试管"
+  ],
+  "questions": [
+    "q-acid-009",
+    "q-acid-011"
+  ]
+}

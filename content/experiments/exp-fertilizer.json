@@ -1,0 +1,45 @@
+{
+  "id": "exp-fertilizer",
+  "title": "化肥的鉴别",
+  "module": "module-salt-fert",
+  "day": "11",
+  "knowledge": [
+    "fertilizer-intro"
+  ],
+  "materials": [
+    "试管",
+    "稀盐酸",
+    "氢氧化钠溶液",
+    "熟石灰",
+    "氮肥样品",
+    "磷肥样品",
+    "钾肥样品"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "观察三种化肥的物理性质",
+      "observation": "氮肥和钾肥多为白色晶体，磷肥多为灰白色粉末"
+    },
+    {
+      "step": 2,
+      "action": "分别取样与熟石灰混合研磨",
+      "observation": "有刺激性气味的是铵态氮肥"
+    },
+    {
+      "step": 3,
+      "action": "分别取样加入稀盐酸",
+      "observation": "有气泡产生的是碳酸盐"
+    }
+  ],
+  "equation": "2NH4Cl + Ca(OH)2 = CaCl2 + 2H2O + 2NH3↑",
+  "safety": [
+    "铵态氮肥不能与碱性物质混用",
+    "避免吸入氨气"
+  ],
+  "questions": [
+    "q-fert-001",
+    "q-fert-002",
+    "q-fert-003"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "fertilizer-intro",
+  "name": "化学肥料概述",
+  "description": "了解化学肥料的种类、作用及合理使用",
+  "keyPoints": [
+    "氮肥：促进枝叶生长，叶色浓绿",
+    "磷肥：促进根系发达，增强抗寒抗旱能力",
+    "钾肥：使茎秆粗壮，增强抗倒伏能力",
+    "复合肥：含有N、P、K中两种或两种以上营养元素"
+  ],
+  "experiments": [
+    "exp-fertilizer"
+  ],
+  "equations": [
+    "2NH4Cl + Ca(OH)2 = CaCl2 + 2H2O + 2NH3↑"
+  ]
+}

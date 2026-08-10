@@ -1,0 +1,49 @@
+{
+  "id": "exp-ion-test",
+  "title": "常见离子的检验",
+  "module": "module-salt-fert",
+  "day": "10",
+  "knowledge": [
+    "salt-test"
+  ],
+  "materials": [
+    "试管",
+    "稀硝酸",
+    "硝酸银溶液",
+    "稀盐酸",
+    "氯化钡溶液",
+    "碳酸钠溶液"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "取少量待测液于试管中",
+      "observation": ""
+    },
+    {
+      "step": 2,
+      "action": "先滴加稀硝酸酸化",
+      "observation": ""
+    },
+    {
+      "step": 3,
+      "action": "再滴加硝酸银溶液",
+      "observation": "若有白色沉淀，说明含有Cl-"
+    },
+    {
+      "step": 4,
+      "action": "另取待测液，先加稀盐酸，再加氯化钡溶液",
+      "observation": "若有白色沉淀，说明含有SO4 2-"
+    }
+  ],
+  "equation": "AgNO3 + NaCl = AgCl↓ + NaNO3",
+  "safety": [
+    "硝酸银有腐蚀性",
+    "实验后废液倒入指定容器"
+  ],
+  "questions": [
+    "q-salt-test-001",
+    "q-salt-test-002",
+    "q-salt-test-003"
+  ]
+}

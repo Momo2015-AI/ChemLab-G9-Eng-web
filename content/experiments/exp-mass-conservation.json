@@ -1,0 +1,53 @@
+{
+  "id": "exp-mass-conservation",
+  "title": "质量守恒定律验证",
+  "module": "module-equation",
+  "day": "22",
+  "knowledge": [
+    "mass-conservation"
+  ],
+  "materials": [
+    "天平",
+    "锥形瓶",
+    "气球",
+    "铁钉",
+    "硫酸铜溶液"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "在锥形瓶中加入适量硫酸铜溶液",
+      "observation": "硫酸铜溶液为蓝色"
+    },
+    {
+      "step": 2,
+      "action": "将铁钉用细线悬挂在锥形瓶内（不接触溶液）",
+      "observation": ""
+    },
+    {
+      "step": 3,
+      "action": "在锥形瓶口套上气球，放在天平上称量",
+      "observation": "记录总质量m1"
+    },
+    {
+      "step": 4,
+      "action": "将铁钉浸入硫酸铜溶液中",
+      "observation": "铁钉表面有红色物质析出，溶液由蓝色变为浅绿色"
+    },
+    {
+      "step": 5,
+      "action": "待反应完成后，再次称量",
+      "observation": "记录总质量m2，m1=m2"
+    }
+  ],
+  "equation": "Fe + CuSO4 = FeSO4 + Cu",
+  "safety": [
+    "硫酸铜有毒",
+    "实验在密闭容器中进行"
+  ],
+  "questions": [
+    "q-mass-001",
+    "q-mass-002",
+    "q-mass-003"
+  ]
+}

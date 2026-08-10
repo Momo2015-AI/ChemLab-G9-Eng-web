@@ -1,0 +1,42 @@
+{
+  "id": "exp-acid-iron",
+  "title": "铁与稀硫酸反应",
+  "module": "module-metal",
+  "day": "18",
+  "knowledge": [
+    "metal-acid"
+  ],
+  "materials": [
+    "铁钉",
+    "稀硫酸",
+    "试管",
+    "试管夹"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "取一支试管，加入约5mL稀硫酸",
+      "observation": "稀硫酸为无色液体"
+    },
+    {
+      "step": 2,
+      "action": "将一枚铁钉放入试管中",
+      "observation": "铁钉表面有气泡产生"
+    },
+    {
+      "step": 3,
+      "action": "观察现象并记录",
+      "observation": "产生气泡，溶液由无色逐渐变为浅绿色"
+    }
+  ],
+  "equation": "Fe + H2SO4 = FeSO4 + H2↑",
+  "safety": [
+    "稀硫酸有腐蚀性，避免接触皮肤",
+    "实验后废液倒入指定容器"
+  ],
+  "questions": [
+    "q-metal-a-001",
+    "q-metal-a-002",
+    "q-metal-a-003"
+  ]
+}

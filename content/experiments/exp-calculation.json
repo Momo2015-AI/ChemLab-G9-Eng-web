@@ -1,0 +1,39 @@
+{
+  "id": "exp-calculation",
+  "title": "有关化学方程式的计算",
+  "module": "module-equation",
+  "day": "25",
+  "knowledge": [
+    "equation-calculation"
+  ],
+  "materials": [],
+  "steps": [
+    {
+      "step": 1,
+      "action": "写出正确的化学方程式",
+      "observation": ""
+    },
+    {
+      "step": 2,
+      "action": "标出已知量和未知量",
+      "observation": ""
+    },
+    {
+      "step": 3,
+      "action": "列出比例式",
+      "observation": ""
+    },
+    {
+      "step": 4,
+      "action": "求解未知量",
+      "observation": ""
+    }
+  ],
+  "equation": "",
+  "safety": [],
+  "questions": [
+    "q-eq-c-001",
+    "q-eq-c-002",
+    "q-eq-c-003"
+  ]
+}

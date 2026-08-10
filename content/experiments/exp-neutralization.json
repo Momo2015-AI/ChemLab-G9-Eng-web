@@ -1,0 +1,48 @@
+{
+  "id": "exp-neutralization",
+  "title": "中和反应实验",
+  "module": "module-acid-base",
+  "day": "06",
+  "knowledge": [
+    "neutralization"
+  ],
+  "materials": [
+    "氢氧化钠溶液",
+    "稀盐酸",
+    "酚酞试液",
+    "胶头滴管",
+    "烧杯"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "在烧杯中加入约5mL氢氧化钠溶液",
+      "observation": "氢氧化钠溶液为无色液体"
+    },
+    {
+      "step": 2,
+      "action": "滴加2-3滴酚酞试液",
+      "observation": "溶液变为红色"
+    },
+    {
+      "step": 3,
+      "action": "逐滴加入稀盐酸，边加边搅拌",
+      "observation": "溶液红色逐渐变浅直至褪色"
+    },
+    {
+      "step": 4,
+      "action": "观察并记录现象",
+      "observation": "恰好完全反应时溶液由红色变为无色"
+    }
+  ],
+  "equation": "NaOH + HCl = NaCl + H2O",
+  "safety": [
+    "氢氧化钠有腐蚀性",
+    "稀盐酸有腐蚀性"
+  ],
+  "questions": [
+    "q-neutral-001",
+    "q-neutral-002",
+    "q-neutral-003"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mass-conservation",
+  "name": "质量守恒定律",
+  "description": "理解质量守恒定律并能应用于化学计算",
+  "keyPoints": [
+    "参加化学反应的各物质的质量总和等于反应后生成的各物质的质量总和",
+    "微观实质：化学反应前后原子的种类、数目、质量都不变",
+    "应用：解释化学反应中的质量关系、进行化学计算"
+  ],
+  "experiments": [
+    "exp-mass-conservation"
+  ],
+  "equations": [
+    "Fe + CuSO4 = FeSO4 + Cu"
+  ]
+}

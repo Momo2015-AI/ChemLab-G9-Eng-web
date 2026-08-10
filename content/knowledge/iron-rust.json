@@ -1,0 +1,16 @@
+{
+  "id": "iron-rust",
+  "name": "铁的锈蚀与防护",
+  "description": "了解铁锈蚀的条件及防锈方法",
+  "keyPoints": [
+    "铁生锈是铁与氧气、水共同作用的结果",
+    "防锈方法：保持表面干燥、涂油、刷漆、电镀、制成不锈钢等",
+    "铁锈的主要成分是Fe2O3·xH2O，疏松多孔"
+  ],
+  "experiments": [
+    "exp-iron-rust"
+  ],
+  "equations": [
+    "4Fe + 3O2 + 6H2O = 2Fe2O3·6H2O"
+  ]
+}

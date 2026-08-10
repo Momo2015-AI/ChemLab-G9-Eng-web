@@ -1,0 +1,18 @@
+{
+  "id": "salt-test",
+  "name": "常见离子的检验",
+  "description": "掌握Cl-、SO4 2-、CO3 2-、NH4+的检验方法",
+  "keyPoints": [
+    "Cl-：加稀HNO3和AgNO3溶液，产生白色沉淀",
+    "SO4 2-：先加稀HCl，再加BaCl2溶液，产生白色沉淀",
+    "CO3 2-：加稀盐酸，产生能使澄清石灰水变浑浊的气体",
+    "NH4+：加NaOH溶液并加热，产生能使湿润红色石蕊试纸变蓝的气体"
+  ],
+  "experiments": [
+    "exp-ion-test"
+  ],
+  "equations": [
+    "AgNO3 + NaCl = AgCl↓ + NaNO3",
+    "BaCl2 + Na2SO4 = BaSO4↓ + 2NaCl"
+  ]
+}
