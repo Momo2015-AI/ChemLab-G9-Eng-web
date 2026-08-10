@@ -1,0 +1,62 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { ExperimentController } from '../controllers/experiment-controller.js';
+
+function createController() {
+  const experiments = {
+    acid: {
+      id: 'acid',
+      title: 'Acid observation',
+      steps: [
+        { id: 's1', observation: 'solution changes color' },
+        { id: 's2', observation: 'gas appears' },
+      ],
+    },
+  };
+  const engine = new (class {
+    constructor() { this.delegate = experiments; }
+    get(id) { return this.delegate[id] || null; }
+    start(id) {
+      const exp = this.get(id);
+      return exp ? { id: exp.id, title: exp.title, currentStep: 0, steps: exp.steps, observations: [], completed: false } : null;
+    }
+    next(session) { return { ...session, currentStep: Math.min(session.currentStep + 1, session.steps.length - 1) }; }
+    recordObservation(session, text) {
+      return { ...session, observations: [...session.observations, { step: session.currentStep, observation: String(text) }] };
+    }
+    complete(session) { return { ...session, completed: true }; }
+  })();
+  return new ExperimentController({ experimentEngine: engine, state: { progress: {} } });
+}
+
+test('experiment controller starts a valid session', () => {
+  const controller = createController();
+  const result = controller.start('acid');
+  assert.equal(result.experiment.id, 'acid');
+  assert.equal(result.session.currentStep, 0);
+  assert.equal(result.session.completed, false);
+});
+
+test('experiment controller advances and records observations', () => {
+  const controller = createController();
+  controller.start('acid');
+  controller.observe('solution changes color');
+  controller.next();
+  controller.observe('gas appears');
+
+  assert.equal(controller.session.currentStep, 1);
+  assert.equal(controller.session.observations.length, 2);
+  assert.equal(controller.session.observations[1].step, 1);
+});
+
+test('experiment controller completes and resets safely', () => {
+  const controller = createController();
+  controller.start('acid');
+  const completed = controller.complete();
+  assert.equal(completed.completed, true);
+  assert.equal(controller.complete().completed, true);
+  controller.reset();
+  assert.equal(controller.session, null);
+  assert.equal(controller.next(), null);
+  assert.equal(controller.observe('anything'), null);
+});
