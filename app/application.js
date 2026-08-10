@@ -5,6 +5,7 @@
 
 import { createRouter } from './router.js';
 import { contentService } from './content-service.js';
+import { MasteryService } from './mastery-service.js';
 import { AssessmentController } from '../controllers/assessment-controller.js';
 import { ExperimentController } from '../controllers/experiment-controller.js';
 import { LearningController } from '../controllers/learning-controller.js';
@@ -15,10 +16,12 @@ import { renderExperiment, renderExperimentResult } from '../views/experiment-vi
 import { renderDashboard } from '../views/dashboard-view.js';
 import { renderGraph } from '../views/graph-view.js';
 
-export function createApplication({ state, assessment, experimentEngine, root = document.querySelector('#app') }) {
+export function createApplication({ state, assessment, experimentEngine, masteryService = new MasteryService(), root = document.querySelector('#app') }) {
+  masteryService.hydrate(state.progress?.mastery || {});
+
   const controllers = {
     learning: new LearningController({ contentService, state }),
-    assessment: new AssessmentController({ assessment, contentService, state }),
+    assessment: new AssessmentController({ assessment, contentService, state, masteryService }),
     experiment: new ExperimentController({ experimentEngine, state }),
   };
 
@@ -48,7 +51,7 @@ export function createApplication({ state, assessment, experimentEngine, root = 
   }
 
   return {
-    state, router, contentService, controllers, views,
+    state, router, contentService, masteryService, controllers, views,
     start() { router.start(); },
     stop() { router.stop(); },
   };
