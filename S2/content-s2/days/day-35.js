@@ -4,8 +4,8 @@ window.ChemLabContentS2["day-35"] = {
   duration: "45--60 分钟",
   difficulty: "⭐⭐⭐",
   coreQuestion: "如何设计并评价化学实验方案？",
-  knowledgeIds: ["V2-E301", "V2-E302", "V2-E303", "V2-E304", "V2-E401"],
-  experimentIds: [],
+  knowledgeIds: [],
+  experimentIds: ["V2-E301", "V2-E302", "V2-E303", "V2-E304", "V2-E401"],
   mistakeTypes: ["M-CONDITION-OMISSION", "M-OBSERVATION-COMPARE", "M-PATTERN-OVERAPPLY"],
   learningObjectives: [
     "能设计并完成简单的探究性实验。",

@@ -99,11 +99,11 @@ assert(home.includes("成就徽章") && home.includes("badge-wall"), "渲染成�
 assert(home.includes("模块进度") && home.includes("mod-block"), "渲染可展开模块进度");
 assert(!home.includes("开始错题复习"), "空复习队列时不显示复习入口");
 
-console.log("\n[未发布天占位]");
-setSearch("?day=31");
+console.log("\n[已发布天内容渲染]");
+setSearch("?day=07");
 runApp();
 let page = appEl.innerHTML;
-assert(page.includes("还在开发中"), "未发布天显示开发中占位而非空白");
+assert(!page.includes("还在开发中"), "已发布天不显示开发中占位");
 
 console.log("\n[错题复习空状态]");
 setSearch("?view=review");
