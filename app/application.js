@@ -32,12 +32,18 @@ export function createApplication({ state, assessment, experimentEngine, mastery
     render: route => renderRoute(route),
   });
 
-  function renderRoute(route) {
+  async function renderRoute(route) {
     if (!root) return;
     if (route.page === 'home') return views.renderHome({ root });
-    if (route.page === 'course') return controllers.learning.getLesson(route.params[0]).then(lesson => views.renderCourse({ root, lesson }));
+    if (route.page === 'course') {
+      const lesson = await controllers.learning.getLesson(route.params[0]);
+      return views.renderCourse({ root, lesson });
+    }
     if (route.page === 'dashboard') return views.renderDashboard({ root, summary: state.progress || {} });
-    if (route.page === 'graph') return contentService.getKnowledgeGraph().then(graph => views.renderGraph({ root, graph }));
+    if (route.page === 'graph') {
+      const graph = await contentService.getKnowledgeGraphViewModel();
+      return views.renderGraph({ root, graph });
+    }
     if (route.page === 'quiz') {
       const session = controllers.assessment.session;
       if (!session) return;
