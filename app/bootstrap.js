@@ -27,10 +27,12 @@ export async function bootstrap({ root = document.querySelector('#app-root') } =
 
 export { state };
 
-document.addEventListener('DOMContentLoaded', () => {
-  bootstrap().catch(error => {
-    console.error('ChemLab V1.7 bootstrap failed:', error);
-    const root = document.querySelector('#app-root');
-    if (root) root.textContent = 'ChemLab failed to start. Please refresh and try again.';
+if (typeof document !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', () => {
+    bootstrap().catch(error => {
+      console.error('ChemLab V1.7 bootstrap failed:', error);
+      const root = document.querySelector('#app-root');
+      if (root) root.textContent = 'ChemLab failed to start. Please refresh and try again.';
+    });
   });
-});
+}
