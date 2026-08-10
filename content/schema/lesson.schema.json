@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chem-lab-g9.example/schema/lesson.schema.json",
+  "title": "ChemLab-G9 Lesson",
+  "type": "object",
+  "required": ["id", "title", "learningObjectives", "sequence"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "title": { "type": "string", "minLength": 1 },
+    "learningObjectives": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+    "knowledgePoints": { "type": "array", "items": { "type": "string" } },
+    "misconceptions": { "type": "array", "items": { "type": "string" } },
+    "sequence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["type", "id"],
+        "properties": {
+          "type": { "enum": ["phenomenon", "question", "model", "representation", "experiment", "practice", "reflection", "transfer"] },
+          "id": { "type": "string" },
+          "prompt": { "type": "string" },
+          "content": { "type": "string" },
+          "questionIds": { "type": "array", "items": { "type": "string" } },
+          "experimentId": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}
