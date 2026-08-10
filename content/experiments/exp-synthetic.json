@@ -4,36 +4,40 @@
   "module": "module-life",
   "day": "30",
   "knowledge": [
-    "material-organic",
-    "material-synthetic"
+    "material-synthetic",
+    "polymer-basics"
   ],
   "materials": [
-    "试管",
-    "酒精灯",
-    "棉线",
-    "羊毛线",
     "塑料片",
-    "合成纤维"
+    "棉布",
+    "羊毛线",
+    "酒精灯",
+    "镊子"
   ],
   "steps": [
     {
       "step": 1,
-      "action": "分别灼烧棉线和羊毛线",
-      "observation": "棉线燃烧有烧纸气味，羊毛线燃烧有烧焦羽毛气味"
+      "action": "分别灼烧三种材料",
+      "observation": "塑料熔化收缩有特殊气味"
     },
     {
       "step": 2,
-      "action": "灼烧塑料片",
-      "observation": "塑料熔化收缩，有特殊气味"
+      "action": "观察燃烧后的残渣",
+      "observation": "棉燃烧成灰，羊毛结成硬块，塑料结硬球"
+    },
+    {
+      "step": 3,
+      "action": "总结鉴别方法",
+      "observation": "燃烧法可区分天然纤维和合成纤维"
     }
   ],
   "equation": "",
   "safety": [
-    "灼烧时在通风处进行",
+    "灼烧在通风处进行",
     "避免吸入烟雾"
   ],
   "questions": [
-    "q-organic-001",
-    "q-synthetic-001"
+    "q-synthetic-001",
+    "q-synthetic-002"
   ]
 }

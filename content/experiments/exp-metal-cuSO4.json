@@ -1,0 +1,39 @@
+{
+  "id": "exp-metal-cuSO4",
+  "title": "铁与硫酸铜反应",
+  "module": "module-metal",
+  "day": "19",
+  "knowledge": [
+    "metal-salt"
+  ],
+  "materials": [
+    "铁钉",
+    "硫酸铜溶液",
+    "试管"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "取2mL硫酸铜溶液于试管",
+      "observation": "蓝色透明溶液"
+    },
+    {
+      "step": 2,
+      "action": "放入洁净铁钉",
+      "observation": "铁钉表面有红色物质析出"
+    },
+    {
+      "step": 3,
+      "action": "放置一段时间后观察",
+      "observation": "溶液由蓝色变为浅绿色"
+    }
+  ],
+  "equation": "Fe + CuSO4 = FeSO4 + Cu",
+  "safety": [
+    "硫酸铜有毒，避免接触"
+  ],
+  "questions": [
+    "q-metal-s-003",
+    "q-metal-s-004"
+  ]
+}

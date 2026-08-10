@@ -1,0 +1,42 @@
+{
+  "id": "exp-salt-agNO3",
+  "title": "氯化物的检验",
+  "module": "module-salt-fert",
+  "day": "10",
+  "knowledge": [
+    "salt-test",
+    "salt-solubility"
+  ],
+  "materials": [
+    "氯化钠溶液",
+    "硝酸银溶液",
+    "稀硝酸",
+    "试管"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "取少量氯化钠溶液于试管中",
+      "observation": "无色溶液"
+    },
+    {
+      "step": 2,
+      "action": "滴加稀硝酸酸化",
+      "observation": "无明显现象"
+    },
+    {
+      "step": 3,
+      "action": "滴加硝酸银溶液",
+      "observation": "产生白色沉淀，不溶于稀硝酸"
+    }
+  ],
+  "equation": "NaCl + AgNO3 = AgCl↓ + NaNO3",
+  "safety": [
+    "硝酸银有腐蚀性，会使皮肤变黑",
+    "实验后废液倒入指定容器"
+  ],
+  "questions": [
+    "q-salt-test-001",
+    "q-salt-test-002"
+  ]
+}

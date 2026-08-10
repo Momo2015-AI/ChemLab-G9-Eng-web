@@ -1,0 +1,43 @@
+{
+  "id": "exp-metal-salt",
+  "title": "金属与盐溶液反应",
+  "module": "module-metal",
+  "day": "19",
+  "knowledge": [
+    "metal-salt",
+    "metal-reactivity"
+  ],
+  "materials": [
+    "铁钉",
+    "硫酸铜溶液",
+    "锌粒",
+    "硫酸亚铁溶液",
+    "试管"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "将铁钉放入硫酸铜溶液中",
+      "observation": "铁钉表面析出红色物质，溶液由蓝色变浅绿"
+    },
+    {
+      "step": 2,
+      "action": "将锌粒放入硫酸亚铁溶液中",
+      "observation": "锌表面析出黑色物质"
+    },
+    {
+      "step": 3,
+      "action": "总结金属活动性",
+      "observation": "Zn > Fe > Cu"
+    }
+  ],
+  "equation": "Fe + CuSO4 = FeSO4 + Cu; Zn + FeSO4 = ZnSO4 + Fe",
+  "safety": [
+    "硫酸铜有毒",
+    "实验后废液倒入指定容器"
+  ],
+  "questions": [
+    "q-metal-s-001",
+    "q-metal-s-002"
+  ]
+}

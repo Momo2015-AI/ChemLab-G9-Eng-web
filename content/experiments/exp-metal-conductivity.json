@@ -1,0 +1,44 @@
+{
+  "id": "exp-metal-conductivity",
+  "title": "金属导电性实验",
+  "module": "module-metal",
+  "day": "16",
+  "knowledge": [
+    "metal-property",
+    "alloy-intro"
+  ],
+  "materials": [
+    "铜丝",
+    "铁丝",
+    "铝合金丝",
+    "导线",
+    "小灯泡",
+    "电池"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "将铜丝接入电路",
+      "observation": "灯泡发亮，铜导电性好"
+    },
+    {
+      "step": 2,
+      "action": "将铁丝接入电路",
+      "observation": "灯泡发亮，铁丝导电性较差"
+    },
+    {
+      "step": 3,
+      "action": "将铝合金丝接入电路",
+      "observation": "灯泡发亮，铝合金导电性好"
+    }
+  ],
+  "equation": "",
+  "safety": [
+    "电路电压低，安全",
+    "避免短路"
+  ],
+  "questions": [
+    "q-metal-p-001",
+    "q-metal-p-002"
+  ]
+}

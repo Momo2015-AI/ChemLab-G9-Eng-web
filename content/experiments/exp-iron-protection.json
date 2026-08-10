@@ -1,0 +1,49 @@
+{
+  "id": "exp-iron-protection",
+  "title": "铁锈蚀条件探究与防护",
+  "module": "module-metal",
+  "day": "20",
+  "knowledge": [
+    "iron-rust",
+    "metal-corrosion"
+  ],
+  "materials": [
+    "铁钉×3",
+    "试管×3",
+    "蒸馏水",
+    "植物油",
+    "干燥剂",
+    "橡皮塞"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "A试管：铁钉一半浸水",
+      "observation": "铁钉部分接触水和空气"
+    },
+    {
+      "step": 2,
+      "action": "B试管：铁钉完全浸水+油封",
+      "observation": "铁钉只接触水"
+    },
+    {
+      "step": 3,
+      "action": "C试管：铁钉+干燥剂密封",
+      "observation": "铁钉只接触干燥空气"
+    },
+    {
+      "step": 4,
+      "action": "观察三天后的变化",
+      "observation": "A试管铁钉生锈最严重，B、C几乎不生锈"
+    }
+  ],
+  "equation": "4Fe + 3O2 + 6H2O = 2Fe2O3·6H2O",
+  "safety": [
+    "实验周期较长",
+    "铁锈疏松，不能保护内部铁"
+  ],
+  "questions": [
+    "q-iron-r-001",
+    "q-iron-r-002"
+  ]
+}

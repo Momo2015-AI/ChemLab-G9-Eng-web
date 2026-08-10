@@ -1,0 +1,47 @@
+{
+  "id": "exp-gas-co2",
+  "title": "二氧化碳的实验室制取",
+  "module": "module-acid-base",
+  "day": "07",
+  "knowledge": [
+    "gas-preparation"
+  ],
+  "materials": [
+    "大理石",
+    "稀盐酸",
+    "锥形瓶",
+    "长颈漏斗",
+    "集气瓶",
+    "导管"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "组装发生装置（锥形瓶+长颈漏斗）",
+      "observation": "检查气密性"
+    },
+    {
+      "step": 2,
+      "action": "加入大理石，从长颈漏斗加稀盐酸",
+      "observation": "产生大量气泡"
+    },
+    {
+      "step": 3,
+      "action": "用向上排空气法收集",
+      "observation": "将燃着木条放在瓶口，熄灭则满"
+    },
+    {
+      "step": 4,
+      "action": "验满",
+      "observation": "木条熄灭说明CO2已集满"
+    }
+  ],
+  "equation": "CaCO3 + 2HCl = CaCl2 + H2O + CO2↑",
+  "safety": [
+    "稀盐酸有腐蚀性",
+    "收集时导管伸到集气瓶底部"
+  ],
+  "questions": [
+    "q-gas-prep-001"
+  ]
+}

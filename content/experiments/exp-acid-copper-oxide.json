@@ -1,0 +1,44 @@
+{
+  "id": "exp-acid-copper-oxide",
+  "title": "酸与金属氧化物反应",
+  "module": "module-acid-base",
+  "day": "02",
+  "knowledge": [
+    "acid-property",
+    "metal-oxide"
+  ],
+  "materials": [
+    "氧化铜粉末",
+    "稀盐酸",
+    "稀硫酸",
+    "试管",
+    "试管夹",
+    "酒精灯"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "取少量氧化铜粉末于试管中",
+      "observation": "黑色粉末"
+    },
+    {
+      "step": 2,
+      "action": "加入约5mL稀盐酸",
+      "observation": "黑色粉末逐渐溶解，溶液变为蓝色"
+    },
+    {
+      "step": 3,
+      "action": "写出反应方程式",
+      "observation": "CuO + 2HCl = CuCl2 + H2O"
+    }
+  ],
+  "equation": "CuO + 2HCl = CuCl2 + H2O",
+  "safety": [
+    "稀盐酸有腐蚀性",
+    "加热时注意试管口不要对着人"
+  ],
+  "questions": [
+    "q-acid-007",
+    "q-acid-008"
+  ]
+}

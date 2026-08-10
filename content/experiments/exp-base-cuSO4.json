@@ -1,0 +1,40 @@
+{
+  "id": "exp-base-cuSO4",
+  "title": "碱与盐溶液反应",
+  "module": "module-acid-base",
+  "day": "05",
+  "knowledge": [
+    "base-property",
+    "salt-use"
+  ],
+  "materials": [
+    "氢氧化钠溶液",
+    "硫酸铜溶液",
+    "试管"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "取2mL氢氧化钠溶液于试管中",
+      "observation": "无色溶液"
+    },
+    {
+      "step": 2,
+      "action": "滴加硫酸铜溶液",
+      "observation": "产生蓝色沉淀"
+    },
+    {
+      "step": 3,
+      "action": "写出反应方程式",
+      "observation": "2NaOH + CuSO4 = Cu(OH)2↓ + Na2SO4"
+    }
+  ],
+  "equation": "2NaOH + CuSO4 = Cu(OH)2↓ + Na2SO4",
+  "safety": [
+    "氢氧化钠有腐蚀性",
+    "硫酸铜有毒"
+  ],
+  "questions": [
+    "q-base-009"
+  ]
+}

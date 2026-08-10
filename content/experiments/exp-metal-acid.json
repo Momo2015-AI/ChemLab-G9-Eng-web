@@ -1,0 +1,43 @@
+{
+  "id": "exp-metal-acid",
+  "title": "金属与酸的反应对比",
+  "module": "module-metal",
+  "day": "18",
+  "knowledge": [
+    "metal-acid",
+    "metal-reactivity"
+  ],
+  "materials": [
+    "锌粒",
+    "铁钉",
+    "铜片",
+    "稀硫酸",
+    "试管×3"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "在三支试管中分别加入等量稀硫酸",
+      "observation": "无色液体"
+    },
+    {
+      "step": 2,
+      "action": "分别加入锌粒、铁钉、铜片",
+      "observation": "锌反应最剧烈，铁较缓慢，铜无现象"
+    },
+    {
+      "step": 3,
+      "action": "总结金属活动性顺序",
+      "observation": "Zn > Fe > (H) > Cu"
+    }
+  ],
+  "equation": "Zn + H2SO4 = ZnSO4 + H2↑; Fe + H2SO4 = FeSO4 + H2↑",
+  "safety": [
+    "稀硫酸有腐蚀性",
+    "氢气易燃，远离明火"
+  ],
+  "questions": [
+    "q-metal-a-001",
+    "q-metal-a-002"
+  ]
+}

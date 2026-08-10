@@ -1,0 +1,50 @@
+{
+  "id": "exp-comprehensive-01",
+  "title": "综合鉴别实验",
+  "module": "module-salt-fert",
+  "day": "14",
+  "knowledge": [
+    "salt-test",
+    "fertilizer-use",
+    "organic-intro"
+  ],
+  "materials": [
+    "待鉴别溶液×4",
+    "稀盐酸",
+    "BaCl2溶液",
+    "AgNO3溶液",
+    "酚酞",
+    "试管"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "观察四种无色溶液的外观",
+      "observation": "均为无色透明液体"
+    },
+    {
+      "step": 2,
+      "action": "分别滴加酚酞",
+      "observation": "两支变红（NaOH、Na2CO3），两支不变"
+    },
+    {
+      "step": 3,
+      "action": "向变红的两支中加稀盐酸",
+      "observation": "一支有气泡（Na2CO3），一支无（NaOH）"
+    },
+    {
+      "step": 4,
+      "action": "向不变红的两支加BaCl2",
+      "observation": "一支有白色沉淀（Na2SO4），一支无（NaCl）"
+    }
+  ],
+  "equation": "Na2CO3+2HCl=2NaCl+H2O+CO2↑; Na2SO4+BaCl2=BaSO4↓+2NaCl",
+  "safety": [
+    "注意试剂标注",
+    "废液分类处理"
+  ],
+  "questions": [
+    "q-unit2-001",
+    "q-unit2-002"
+  ]
+}

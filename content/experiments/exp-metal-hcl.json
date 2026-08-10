@@ -1,0 +1,42 @@
+{
+  "id": "exp-metal-hcl",
+  "title": "锌与稀盐酸反应制氢气",
+  "module": "module-metal",
+  "day": "18",
+  "knowledge": [
+    "metal-acid"
+  ],
+  "materials": [
+    "锌粒",
+    "稀盐酸",
+    "试管",
+    "带导管橡皮塞",
+    "集气试管"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "在试管中加入锌粒和稀盐酸",
+      "observation": "产生大量气泡"
+    },
+    {
+      "step": 2,
+      "action": "用排水法收集气体",
+      "observation": "集气试管中充满气体"
+    },
+    {
+      "step": 3,
+      "action": "点燃气体",
+      "observation": "气体安静燃烧，发出淡蓝色火焰"
+    }
+  ],
+  "equation": "Zn + 2HCl = ZnCl2 + H2↑",
+  "safety": [
+    "氢气易燃，点燃前需验纯",
+    "远离明火操作"
+  ],
+  "questions": [
+    "q-metal-a-003",
+    "q-metal-a-004"
+  ]
+}

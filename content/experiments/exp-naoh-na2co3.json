@@ -1,0 +1,43 @@
+{
+  "id": "exp-naoh-na2co3",
+  "title": "氢氧化钠变质探究",
+  "module": "module-acid-base",
+  "day": "04",
+  "knowledge": [
+    "base-intro",
+    "base-use"
+  ],
+  "materials": [
+    "氢氧化钠固体",
+    "稀盐酸",
+    "氯化钙溶液",
+    "酚酞试液",
+    "试管"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "取少量久置的氢氧化钠固体溶于水",
+      "observation": "固体溶解"
+    },
+    {
+      "step": 2,
+      "action": "滴加稀盐酸",
+      "observation": "有气泡产生，说明已变质含碳酸钠"
+    },
+    {
+      "step": 3,
+      "action": "另取溶液加氯化钙溶液",
+      "observation": "产生白色沉淀：Na2CO3+CaCl2=CaCO3↓+2NaCl"
+    }
+  ],
+  "equation": "2NaOH + CO2 = Na2CO3 + H2O; Na2CO3 + 2HCl = 2NaCl + H2O + CO2↑",
+  "safety": [
+    "氢氧化钠有强腐蚀性",
+    "稀盐酸有腐蚀性"
+  ],
+  "questions": [
+    "q-base-003",
+    "q-base-004"
+  ]
+}

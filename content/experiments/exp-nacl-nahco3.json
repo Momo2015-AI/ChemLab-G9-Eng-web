@@ -1,0 +1,43 @@
+{
+  "id": "exp-nacl-nahco3",
+  "title": "碳酸钠与碳酸氢钠的鉴别",
+  "module": "module-salt-fert",
+  "day": "09",
+  "knowledge": [
+    "salt-use",
+    "salt-reaction"
+  ],
+  "materials": [
+    "碳酸钠",
+    "碳酸氢钠",
+    "稀盐酸",
+    "试管×2",
+    "澄清石灰水"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "分别取少量碳酸钠和碳酸氢钠于两支试管",
+      "observation": "白色固体"
+    },
+    {
+      "step": 2,
+      "action": "分别滴加稀盐酸",
+      "observation": "两者都产生气泡，碳酸氢钠反应更剧烈"
+    },
+    {
+      "step": 3,
+      "action": "将气体通入澄清石灰水",
+      "observation": "石灰水变浑浊"
+    }
+  ],
+  "equation": "Na2CO3+2HCl=2NaCl+H2O+CO2↑; NaHCO3+HCl=NaCl+H2O+CO2↑",
+  "safety": [
+    "碳酸氢钠与酸反应更剧烈",
+    "注意控制盐酸用量"
+  ],
+  "questions": [
+    "q-salt-006",
+    "q-salt-007"
+  ]
+}

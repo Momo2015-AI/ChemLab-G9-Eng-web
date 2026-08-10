@@ -1,0 +1,40 @@
+{
+  "id": "exp-ion-test-cl",
+  "title": "氯离子检验实验",
+  "module": "module-salt-fert",
+  "day": "10",
+  "knowledge": [
+    "salt-test"
+  ],
+  "materials": [
+    "氯化钠溶液",
+    "硝酸银溶液",
+    "稀硝酸",
+    "试管"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "取2mL氯化钠溶液于试管",
+      "observation": "无色透明液体"
+    },
+    {
+      "step": 2,
+      "action": "滴加几滴稀硝酸",
+      "observation": "无明显现象"
+    },
+    {
+      "step": 3,
+      "action": "滴加硝酸银溶液",
+      "observation": "产生白色沉淀AgCl"
+    }
+  ],
+  "equation": "NaCl + AgNO3 = AgCl↓ + NaNO3",
+  "safety": [
+    "硝酸银见光易分解，应保存在棕色瓶中"
+  ],
+  "questions": [
+    "q-salt-test-003",
+    "q-salt-test-004"
+  ]
+}

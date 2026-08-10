@@ -1,6 +1,6 @@
 {
   "version": "1.6",
-  "total": 276,
+  "total": 320,
   "questions": [
     {
       "id": "q-acid-001",
@@ -5346,6 +5346,880 @@
       "answer": "D",
       "explanation": "焚烧塑料会产生有害气体污染空气。应减少使用、回收再利用或使用可降解塑料。",
       "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-acid-ind-001",
+      "type": "choice",
+      "difficulty": "easy",
+      "bloomLevel": "remember",
+      "knowledge": [
+        "acid-indicator"
+      ],
+      "prompt": "下列试剂中，能用来检验溶液酸碱性的是",
+      "options": [
+        "A. 酚酞试液",
+        "B. 石蕊试液",
+        "C. pH试纸",
+        "D. 以上都可以"
+      ],
+      "answer": "D",
+      "explanation": "酚酞、石蕊和pH试纸都可以检验溶液的酸碱性，其中pH试纸还能测定具体pH值。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-acid-ind-002",
+      "type": "choice",
+      "difficulty": "easy",
+      "bloomLevel": "understand",
+      "knowledge": [
+        "acid-indicator"
+      ],
+      "prompt": "紫色石蕊试液遇酸变",
+      "options": [
+        "A. 红色",
+        "B. 蓝色",
+        "C. 无色",
+        "D. 紫色"
+      ],
+      "answer": "A",
+      "explanation": "紫色石蕊试液遇酸变红，遇碱变蓝。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-base-strength-001",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "apply",
+      "knowledge": [
+        "base-strength"
+      ],
+      "prompt": "下列物质中，属于强碱的是",
+      "options": [
+        "A. NH3·H2O",
+        "B. Cu(OH)2",
+        "C. NaOH",
+        "D. Mg(OH)2"
+      ],
+      "answer": "C",
+      "explanation": "NaOH是强碱，易溶于水。NH3·H2O是弱碱，Cu(OH)2和Mg(OH)2是不溶性碱。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-ph-app-001",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "apply",
+      "knowledge": [
+        "ph-application"
+      ],
+      "prompt": "测定土壤酸碱度最简便的方法是",
+      "options": [
+        "A. 用pH计精确测量",
+        "B. 用pH试纸测定",
+        "C. 观察土壤颜色",
+        "D. 闻土壤气味"
+      ],
+      "answer": "B",
+      "explanation": "用pH试纸测定是最简便的方法，pH计更精确但操作复杂。",
+      "commonMistake": "operation-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-salt-sol-001",
+      "type": "choice",
+      "difficulty": "easy",
+      "bloomLevel": "remember",
+      "knowledge": [
+        "salt-solubility"
+      ],
+      "prompt": "下列盐中，易溶于水的是",
+      "options": [
+        "A. AgCl",
+        "B. BaSO4",
+        "C. Na2CO3",
+        "D. CaCO3"
+      ],
+      "answer": "C",
+      "explanation": "钠盐一般都易溶于水。AgCl和BaSO4是难溶盐，CaCO3难溶于水。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-salt-sol-002",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "apply",
+      "knowledge": [
+        "salt-solubility"
+      ],
+      "prompt": "下列各组物质中，都能溶于水的是",
+      "options": [
+        "A. BaSO4、AgCl",
+        "B. NaCl、KNO3",
+        "C. CaCO3、BaCO3",
+        "D. Cu(OH)2、Fe(OH)3"
+      ],
+      "answer": "B",
+      "explanation": "NaCl和KNO3都易溶于水。A中两者都难溶，C、D中都有难溶物。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-salt-crystal-001",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "analyze",
+      "knowledge": [
+        "salt-crystal"
+      ],
+      "prompt": "从硫酸铜溶液中提取硫酸铜晶体，采用的方法是",
+      "options": [
+        "A. 蒸发结晶",
+        "B. 降温结晶",
+        "C. 过滤",
+        "D. 蒸馏"
+      ],
+      "answer": "B",
+      "explanation": "硫酸铜的溶解度随温度变化较大，采用降温结晶（冷却热饱和溶液）的方法。",
+      "commonMistake": "operation-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-alloy-001",
+      "type": "choice",
+      "difficulty": "easy",
+      "bloomLevel": "remember",
+      "knowledge": [
+        "alloy-intro"
+      ],
+      "prompt": "下列属于合金的是",
+      "options": [
+        "A. 铁",
+        "B. 钢",
+        "C. 铜",
+        "D. 铝"
+      ],
+      "answer": "B",
+      "explanation": "钢是铁碳合金。铁、铜、铝都是纯金属。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-alloy-002",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "apply",
+      "knowledge": [
+        "alloy-intro"
+      ],
+      "prompt": "下列关于合金的说法正确的是",
+      "options": [
+        "A. 合金一定是化合物",
+        "B. 合金的熔点一般比组分金属高",
+        "C. 合金的硬度一般比组分金属大",
+        "D. 合金中一定不含非金属"
+      ],
+      "answer": "C",
+      "explanation": "合金是混合物，硬度一般比组分金属大，熔点一般比组分金属低。钢中含碳（非金属）。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-metal-disp-001",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "apply",
+      "knowledge": [
+        "metal-displacement"
+      ],
+      "prompt": "能将铜从其盐溶液中置换出来的是",
+      "options": [
+        "A. Ag",
+        "B. Au",
+        "C. Fe",
+        "D. Pt"
+      ],
+      "answer": "C",
+      "explanation": "铁比铜活泼，能将铜从铜盐溶液中置换出来。Ag、Au、Pt都不如铜活泼。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-metal-oxide-001",
+      "type": "choice",
+      "difficulty": "easy",
+      "bloomLevel": "remember",
+      "knowledge": [
+        "metal-oxide"
+      ],
+      "prompt": "下列金属氧化物中，能与酸反应的是",
+      "options": [
+        "A. CuO",
+        "B. Na2O",
+        "C. Fe2O3",
+        "D. 以上都可以"
+      ],
+      "answer": "D",
+      "explanation": "金属氧化物一般能与酸反应生成盐和水。CuO、Na2O、Fe2O3都能与酸反应。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-eq-practice-001",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "apply",
+      "knowledge": [
+        "equation-practice"
+      ],
+      "prompt": "下列化学方程式书写正确的是",
+      "options": [
+        "A. 2H2O2 = 2H2O + O2",
+        "B. 2H2O2 MnO2 2H2O + O2↑",
+        "C. H2O2 = H2 + O2",
+        "D. 2H2O2 = 2H2 + O2"
+      ],
+      "answer": "B",
+      "explanation": "过氧化氢在MnO2催化下分解生成水和氧气，需要注明催化剂条件和气体符号。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-eq-practice-002",
+      "type": "choice",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledge": [
+        "equation-practice"
+      ],
+      "prompt": "下列化学方程式中，完全正确的是",
+      "options": [
+        "A. 2KMnO4 = K2MnO4 + MnO2 + O2↑",
+        "B. 2KMnO4 加热 K2MnO4 + MnO2 + O2↑",
+        "C. KMnO4 加热 K2MnO4 + MnO2 + O2",
+        "D. 2KMnO4 加热 K2MnO4 + MnO2 + O2↑"
+      ],
+      "answer": "D",
+      "explanation": "D选项方程式配平正确、条件标注正确、气体符号正确。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-stoich-001",
+      "type": "calculation",
+      "difficulty": "medium",
+      "bloomLevel": "analyze",
+      "knowledge": [
+        "stoichiometry"
+      ],
+      "prompt": "实验室用15.8g KMnO4加热制取氧气，理论上可得到多少克氧气？",
+      "ans": "1.6g",
+      "explanation": "2KMnO4 加热 K2MnO4 + MnO2 + O2↑，316g KMnO4生成32g O2，15.8g生成1.6g。",
+      "commonMistake": "calculation-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-organic-fuel-001",
+      "type": "choice",
+      "difficulty": "easy",
+      "bloomLevel": "remember",
+      "knowledge": [
+        "organic-fuel"
+      ],
+      "prompt": "下列属于有机燃料的是",
+      "options": [
+        "A. 氢气",
+        "B. 煤",
+        "C. 石油",
+        "D. 天然气"
+      ],
+      "answer": "D",
+      "explanation": "天然气（主要成分CH4）是有机燃料。煤和石油是混合物，氢气是无机物。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-environment-001",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "apply",
+      "knowledge": [
+        "environment-chem"
+      ],
+      "prompt": "下列做法会加剧温室效应的是",
+      "options": [
+        "A. 植树造林",
+        "B. 大量燃烧化石燃料",
+        "C. 开发太阳能",
+        "D. 使用清洁能源"
+      ],
+      "answer": "B",
+      "explanation": "大量燃烧化石燃料产生大量CO2，加剧温室效应。其他选项都有助于减缓温室效应。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-polymer-001",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "analyze",
+      "knowledge": [
+        "polymer-basics"
+      ],
+      "prompt": "下列材料中，属于天然高分子材料的是",
+      "options": [
+        "A. 塑料",
+        "B. 橡胶",
+        "C. 淀粉",
+        "D. 尼龙"
+      ],
+      "answer": "C",
+      "explanation": "淀粉(C6H10O5)n是天然有机高分子化合物。塑料、合成橡胶、尼龙都是合成材料。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-lab-safety-001",
+      "type": "choice",
+      "difficulty": "easy",
+      "bloomLevel": "remember",
+      "knowledge": [
+        "lab-safety"
+      ],
+      "prompt": "实验室中下列操作正确的是",
+      "options": [
+        "A. 用燃着的酒精灯引燃另一盏",
+        "B. 尝药品的味道",
+        "C. 用灯帽盖灭酒精灯",
+        "D. 鼻子凑到容器口闻气味"
+      ],
+      "answer": "C",
+      "explanation": "用灯帽盖灭酒精灯是正确操作。A应用火柴点燃，B禁止尝药品，D应扇闻。",
+      "commonMistake": "operation-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-lab-safety-002",
+      "type": "choice",
+      "difficulty": "easy",
+      "bloomLevel": "remember",
+      "knowledge": [
+        "lab-safety"
+      ],
+      "prompt": "下列实验操作错误的是",
+      "options": [
+        "A. 给试管加热时先预热",
+        "B. 稀释浓硫酸时将水倒入浓硫酸",
+        "C. 用托盘天平称量时左物右码",
+        "D. 闻气体时用手扇闻"
+      ],
+      "answer": "B",
+      "explanation": "稀释浓硫酸应将浓硫酸沿器壁缓慢注入水中并搅拌，不能将水倒入浓硫酸。",
+      "commonMistake": "operation-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-lab-op-001",
+      "type": "choice",
+      "difficulty": "easy",
+      "bloomLevel": "remember",
+      "knowledge": [
+        "lab-operation"
+      ],
+      "prompt": "下列实验基本操作中，正确的是",
+      "options": [
+        "A. 用镊子取用粉末状药品",
+        "B. 用托盘天平称量5.62g NaCl",
+        "C. 用10mL量筒量取8.5mL水",
+        "D. 用燃着的酒精灯点燃另一盏"
+      ],
+      "answer": "C",
+      "explanation": "C正确：10mL量筒可量取8.5mL（精度0.1mL）。A应用药匙，B天平精度0.1g，D应用火柴。",
+      "commonMistake": "operation-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-o2-prep-001",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "apply",
+      "knowledge": [
+        "oxygen-prep"
+      ],
+      "prompt": "实验室用高锰酸钾制取氧气时，下列说法错误的是",
+      "options": [
+        "A. 试管口应略向下倾斜",
+        "B. 加热时先预热再集中加热",
+        "C. 实验结束先熄灭酒精灯再移导管",
+        "D. 用带火星木条验满"
+      ],
+      "answer": "C",
+      "explanation": "实验结束应先将导管移出水面再熄灭酒精灯，防止水倒吸使试管炸裂。",
+      "commonMistake": "operation-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-gas-collect-001",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "apply",
+      "knowledge": [
+        "gas-collection"
+      ],
+      "prompt": "下列气体中，只能用排水法收集的是",
+      "options": [
+        "A. O2",
+        "B. H2",
+        "C. CO",
+        "D. CO2"
+      ],
+      "answer": "C",
+      "explanation": "CO密度与空气接近且有毒，只能用排水法收集。O2和H2可用排水或排空气法，CO2只能用向上排空气法。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-mistake-u1-001",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "evaluate",
+      "knowledge": [
+        "unit1-mistake"
+      ],
+      "prompt": "下列关于酸和碱的说法中，错误的是",
+      "options": [
+        "A. 酸溶液能使石蕊变红",
+        "B. 碱溶液能使酚酞变红",
+        "C. 酸和碱反应一定生成盐和水",
+        "D. 有盐和水生成的反应一定是中和反应"
+      ],
+      "answer": "D",
+      "explanation": "D错误：金属氧化物与酸反应也生成盐和水，但不是中和反应。中和反应特指酸与碱的反应。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-mistake-u3-001",
+      "type": "choice",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledge": [
+        "unit3-mistake"
+      ],
+      "prompt": "将一定量铁粉加入到AgNO3和Cu(NO3)2混合溶液中，充分反应后过滤，向滤渣中滴加稀盐酸无现象。则滤液中一定含有",
+      "options": [
+        "A. Fe2+",
+        "B. Fe2+和Cu2+",
+        "C. Fe2+、Cu2+和Ag+",
+        "D. 无法确定"
+      ],
+      "answer": "A",
+      "explanation": "滤渣加盐酸无现象说明无Fe剩余。Fe先置换Ag+，Ag+反应完才置换Cu2+。滤液中一定有Fe2+，可能有Cu2+和Ag+。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-matter-class-001",
+      "type": "choice",
+      "difficulty": "easy",
+      "bloomLevel": "remember",
+      "knowledge": [
+        "matter-classify"
+      ],
+      "prompt": "下列物质中，属于纯净物的是",
+      "options": [
+        "A. 空气",
+        "B. 石灰水",
+        "C. 蒸馏水",
+        "D. 食盐水"
+      ],
+      "answer": "C",
+      "explanation": "蒸馏水只含H2O一种物质，是纯净物。空气、石灰水、食盐水都是混合物。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-matter-class-002",
+      "type": "choice",
+      "difficulty": "easy",
+      "bloomLevel": "remember",
+      "knowledge": [
+        "matter-classify"
+      ],
+      "prompt": "下列属于化合物的是",
+      "options": [
+        "A. O2",
+        "B. Fe",
+        "C. H2O",
+        "D. 空气"
+      ],
+      "answer": "C",
+      "explanation": "H2O由H、O两种元素组成，是化合物。O2和Fe是单质，空气是混合物。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-chem-symbol-001",
+      "type": "choice",
+      "difficulty": "easy",
+      "bloomLevel": "remember",
+      "knowledge": [
+        "chem-symbol"
+      ],
+      "prompt": "下列符号中，表示2个氢原子的是",
+      "options": [
+        "A. H2",
+        "B. 2H",
+        "C. 2H+",
+        "D. 2H2"
+      ],
+      "answer": "B",
+      "explanation": "2H表示2个氢原子。H2表示氢气或一个氢分子。2H+表示2个氢离子。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-acid-strength-001",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "understand",
+      "knowledge": [
+        "acid-strength"
+      ],
+      "prompt": "下列酸中，属于弱酸的是",
+      "options": [
+        "A. HCl",
+        "B. H2SO4",
+        "C. CH3COOH",
+        "D. HNO3"
+      ],
+      "answer": "C",
+      "explanation": "CH3COOH（乙酸）是弱酸，在水中部分电离。HCl、H2SO4、HNO3都是强酸。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-base-use-001",
+      "type": "choice",
+      "difficulty": "easy",
+      "bloomLevel": "remember",
+      "knowledge": [
+        "base-use"
+      ],
+      "prompt": "下列物质中，可用于改良酸性土壤的是",
+      "options": [
+        "A. NaCl",
+        "B. Ca(OH)2",
+        "C. HCl",
+        "D. NaOH"
+      ],
+      "answer": "B",
+      "explanation": "Ca(OH)2（熟石灰）价格低廉，常用于改良酸性土壤。NaOH腐蚀性太强，不适宜。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-base-use-002",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "apply",
+      "knowledge": [
+        "base-use"
+      ],
+      "prompt": "下列用途中，利用NaOH化学性质的是",
+      "options": [
+        "A. 作干燥剂",
+        "B. 制肥皂",
+        "C. 去除油污",
+        "D. 造纸"
+      ],
+      "answer": "B",
+      "explanation": "制肥皂是利用NaOH与油脂发生皂化反应（化学性质）。作干燥剂是利用吸水性（物理性质）。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-salt-reaction-001",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "apply",
+      "knowledge": [
+        "salt-reaction"
+      ],
+      "prompt": "下列反应中，属于复分解反应的是",
+      "options": [
+        "A. Zn + H2SO4 = ZnSO4 + H2↑",
+        "B. CaCO3 高温 CaO + CO2↑",
+        "C. NaOH + HCl = NaCl + H2O",
+        "D. 2H2 + O2 点燃 2H2O"
+      ],
+      "answer": "C",
+      "explanation": "复分解反应是两种化合物互相交换成分生成两种新化合物的反应。C是酸碱中和，属于复分解反应。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-salt-reaction-002",
+      "type": "choice",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledge": [
+        "salt-reaction"
+      ],
+      "prompt": "下列各组物质能在同一溶液中大量共存的是",
+      "options": [
+        "A. NaCl、AgNO3",
+        "B. Na2SO4、HCl",
+        "C. Na2CO3、HCl",
+        "D. CuSO4、NaOH"
+      ],
+      "answer": "B",
+      "explanation": "B中各物质不反应可共存。A中Ag+与Cl-生成沉淀，C中CO3 2-与H+生成气体，D中Cu2+与OH-生成沉淀。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-fert-use-001",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "apply",
+      "knowledge": [
+        "fertilizer-use"
+      ],
+      "prompt": "下列施肥方法中，不合理的是",
+      "options": [
+        "A. 铵态氮肥不与碱性物质混用",
+        "B. 化肥与农家肥交替使用",
+        "C. 大量施用化肥以提高产量",
+        "D. 根据土壤情况选择合适的化肥"
+      ],
+      "answer": "C",
+      "explanation": "大量施用化肥会造成土壤板结和水体富营养化，应合理施用。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-iron-corr-001",
+      "type": "choice",
+      "difficulty": "easy",
+      "bloomLevel": "remember",
+      "knowledge": [
+        "metal-corrosion"
+      ],
+      "prompt": "铁生锈的本质是",
+      "options": [
+        "A. 物理变化",
+        "B. 化学变化",
+        "C. 核变化",
+        "D. 无法确定"
+      ],
+      "answer": "B",
+      "explanation": "铁生锈是铁与氧气、水发生化学反应生成铁锈（Fe2O3·xH2O），属于化学变化。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-metal-corr-001",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "analyze",
+      "knowledge": [
+        "metal-corrosion"
+      ],
+      "prompt": "下列防锈措施中，原理与其他不同的是",
+      "options": [
+        "A. 涂油",
+        "B. 刷漆",
+        "C. 电镀",
+        "D. 制成不锈钢"
+      ],
+      "answer": "D",
+      "explanation": "A、B、C都是在金属表面形成保护层隔绝空气和水。D是改变金属内部结构，属于合金化防锈。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-ore-process-001",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "apply",
+      "knowledge": [
+        "ore-processing"
+      ],
+      "prompt": "工业炼铁的主要反应原理是",
+      "options": [
+        "A. 用C还原Fe2O3",
+        "B. 用CO还原Fe2O3",
+        "C. 用电解法",
+        "D. 用H2还原Fe2O3"
+      ],
+      "answer": "B",
+      "explanation": "高炉炼铁中，焦炭先生成CO，CO作为还原剂将Fe2O3还原为Fe。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-eq-practice-003",
+      "type": "choice",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledge": [
+        "equation-practice"
+      ],
+      "prompt": "下列化学方程式正确的是",
+      "options": [
+        "A. 2Fe + 6HCl = 2FeCl3 + 3H2↑",
+        "B. Cu + 2HCl = CuCl2 + H2↑",
+        "C. Fe + 2HCl = FeCl2 + H2↑",
+        "D. 2Al + 3H2SO4 = Al2(SO4)3 + 2H2↑"
+      ],
+      "answer": "C",
+      "explanation": "C正确：铁与稀盐酸生成FeCl2（亚铁盐）。A生成FeCl3错误，B中Cu不与稀盐酸反应，D中H2系数应为3。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-organics-intro-001",
+      "type": "choice",
+      "difficulty": "easy",
+      "bloomLevel": "remember",
+      "knowledge": [
+        "organics-intro"
+      ],
+      "prompt": "下列物质中，不属于有机物的是",
+      "options": [
+        "A. CH4",
+        "B. C2H5OH",
+        "C. CO2",
+        "D. C6H12O6"
+      ],
+      "answer": "C",
+      "explanation": "CO2虽然含碳，但性质与无机物相似，归为无机物。CH4、C2H5OH、C6H12O6都是有机物。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-org-intro-002",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "understand",
+      "knowledge": [
+        "organics-intro"
+      ],
+      "prompt": "甲烷（CH4）燃烧的化学方程式为",
+      "options": [
+        "A. CH4 + O2 = CO2 + H2O",
+        "B. CH4 + 2O2 点燃 CO2 + 2H2O",
+        "C. CH4 + O2 点燃 C + 2H2O",
+        "D. 2CH4 + 3O2 点燃 2CO + 4H2O"
+      ],
+      "answer": "B",
+      "explanation": "甲烷完全燃烧生成CO2和H2O，方程式为CH4 + 2O2 点燃 CO2 + 2H2O。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-unit2-mistake-001",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "evaluate",
+      "knowledge": [
+        "unit2-mistake"
+      ],
+      "prompt": "下列关于盐和化肥的说法中，错误的是",
+      "options": [
+        "A. 盐都是由金属离子和酸根离子构成的",
+        "B. 铵态氮肥不能与碱性物质混用",
+        "C. 复合肥只含N、P、K中的一种",
+        "D. 鉴别NaCl和Na2CO3可用稀盐酸"
+      ],
+      "answer": "C",
+      "explanation": "C错误：复合肥含N、P、K中两种或两种以上营养元素。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-unit4-mistake-001",
+      "type": "choice",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledge": [
+        "unit4-mistake"
+      ],
+      "prompt": "在化学反应A+2B=C+2D中，9.8gA与8gB恰好完全反应，生成14.2gC，则生成D的质量为",
+      "options": [
+        "A. 3.6g",
+        "B. 7.2g",
+        "C. 10.8g",
+        "D. 18g"
+      ],
+      "answer": "A",
+      "explanation": "根据质量守恒：9.8+8=14.2+m(D)，m(D)=3.6g。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-unit5-mistake-001",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "evaluate",
+      "knowledge": [
+        "unit5-mistake"
+      ],
+      "prompt": "下列关于化学与生活的说法中，正确的是",
+      "options": [
+        "A. 用甲醛溶液浸泡海产品保鲜",
+        "B. 用灼烧法鉴别羊毛和涤纶",
+        "C. 用聚氯乙烯塑料包装食品",
+        "D. 合金的熔点一般比组分金属高"
+      ],
+      "answer": "B",
+      "explanation": "B正确：羊毛燃烧有烧焦羽毛气味，涤纶燃烧有特殊气味。A中甲醛有毒，C中PVC有毒，D中合金熔点一般更低。",
+      "commonMistake": "concept-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-gas-prep-001",
+      "type": "choice",
+      "difficulty": "medium",
+      "bloomLevel": "apply",
+      "knowledge": [
+        "gas-preparation"
+      ],
+      "prompt": "实验室制取CO2时，下列仪器不需要的是",
+      "options": [
+        "A. 试管",
+        "B. 长颈漏斗",
+        "C. 酒精灯",
+        "D. 集气瓶"
+      ],
+      "answer": "C",
+      "explanation": "实验室用大理石与稀盐酸在常温下反应制CO2，不需要加热，所以不需要酒精灯。",
+      "commonMistake": "operation-error",
+      "status": "ready"
+    },
+    {
+      "id": "q-lab-op-002",
+      "type": "choice",
+      "difficulty": "easy",
+      "bloomLevel": "remember",
+      "knowledge": [
+        "lab-operation"
+      ],
+      "prompt": "下列实验操作正确的是",
+      "options": [
+        "A. 用燃着的酒精灯引燃另一盏",
+        "B. 给试管中的液体加热时试管口对着自己",
+        "C. 用托盘天平称量时左盘放药品右盘放砝码",
+        "D. 用10mL量筒量取9.36mL液体"
+      ],
+      "answer": "C",
+      "explanation": "C正确：托盘天平左物右码。A应用火柴，B试管口不能对着人，D中10mL量筒精度为0.1mL。",
+      "commonMistake": "operation-error",
       "status": "ready"
     }
   ]

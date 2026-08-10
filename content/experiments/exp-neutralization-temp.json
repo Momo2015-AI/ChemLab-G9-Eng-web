@@ -1,0 +1,48 @@
+{
+  "id": "exp-neutralization-temp",
+  "title": "中和反应放热实验",
+  "module": "module-acid-base",
+  "day": "06",
+  "knowledge": [
+    "neutralization",
+    "ph-application"
+  ],
+  "materials": [
+    "氢氧化钠溶液",
+    "稀盐酸",
+    "温度计",
+    "烧杯",
+    "量筒"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "用量筒量取20mL NaOH溶液倒入烧杯",
+      "observation": "测量初始温度t1"
+    },
+    {
+      "step": 2,
+      "action": "量取20mL稀盐酸，测量温度",
+      "observation": "温度应与t1相近"
+    },
+    {
+      "step": 3,
+      "action": "将盐酸倒入NaOH溶液中，搅拌",
+      "observation": "温度升高"
+    },
+    {
+      "step": 4,
+      "action": "记录最高温度t2",
+      "observation": "t2 > t1，证明中和反应放热"
+    }
+  ],
+  "equation": "NaOH + HCl = NaCl + H2O + 热",
+  "safety": [
+    "酸碱有腐蚀性",
+    "温度计勿打破"
+  ],
+  "questions": [
+    "q-neutral-004",
+    "q-neutral-005"
+  ]
+}

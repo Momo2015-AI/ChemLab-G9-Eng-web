@@ -1810,6 +1810,845 @@
         "q-final-017",
         "q-final-018"
       ]
+    },
+    {
+      "id": "acid-indicator",
+      "name": "酸碱指示剂",
+      "chapter": "单元一",
+      "domain": "acid-base",
+      "relations": {
+        "prerequisite": [
+          "acid-intro"
+        ],
+        "related": [
+          "ph-scale",
+          "neutralization"
+        ],
+        "experiment": [
+          "exp-acid-copper-oxide"
+        ],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-acid-ind-001",
+        "q-acid-ind-002"
+      ]
+    },
+    {
+      "id": "base-use",
+      "name": "碱的用途",
+      "chapter": "单元一",
+      "domain": "acid-base",
+      "relations": {
+        "prerequisite": [
+          "base-intro"
+        ],
+        "related": [
+          "acid-use",
+          "neutralization"
+        ],
+        "experiment": [
+          "exp-naoh-na2co3"
+        ],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-base-use-001",
+        "q-base-use-002"
+      ]
+    },
+    {
+      "id": "ph-application",
+      "name": "pH在实际中的应用",
+      "chapter": "单元一",
+      "domain": "acid-base",
+      "relations": {
+        "prerequisite": [
+          "ph-scale"
+        ],
+        "related": [
+          "neutralization"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "operation-error"
+        ]
+      },
+      "questions": [
+        "q-ph-app-001"
+      ]
+    },
+    {
+      "id": "salt-solubility",
+      "name": "盐的溶解性",
+      "chapter": "单元二",
+      "domain": "salt",
+      "relations": {
+        "prerequisite": [
+          "salt-intro"
+        ],
+        "related": [
+          "salt-test",
+          "salt-use"
+        ],
+        "experiment": [
+          "exp-salt-agNO3"
+        ],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-salt-sol-001",
+        "q-salt-sol-002"
+      ]
+    },
+    {
+      "id": "salt-reaction",
+      "name": "盐与酸/碱反应",
+      "chapter": "单元二",
+      "domain": "salt",
+      "relations": {
+        "prerequisite": [
+          "salt-intro",
+          "acid-property"
+        ],
+        "related": [
+          "salt-test",
+          "neutralization"
+        ],
+        "experiment": [
+          "exp-nacl-nahco3"
+        ],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-salt-reaction-001",
+        "q-salt-reaction-002"
+      ]
+    },
+    {
+      "id": "fertilizer-use",
+      "name": "化肥的合理使用",
+      "chapter": "单元二",
+      "domain": "fertilizer",
+      "relations": {
+        "prerequisite": [
+          "fertilizer-intro"
+        ],
+        "related": [
+          "fertilizer-nitrogen",
+          "fertilizer-phosphate",
+          "fertilizer-potassium"
+        ],
+        "experiment": [
+          "exp-comprehensive-01"
+        ],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-fert-use-001"
+      ]
+    },
+    {
+      "id": "metal-corrosion",
+      "name": "金属腐蚀原理",
+      "chapter": "单元三",
+      "domain": "metal",
+      "relations": {
+        "prerequisite": [
+          "metal-intro"
+        ],
+        "related": [
+          "iron-rust",
+          "metal-reactivity"
+        ],
+        "experiment": [
+          "exp-iron-protection"
+        ],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-iron-corr-001",
+        "q-metal-corr-001"
+      ]
+    },
+    {
+      "id": "alloy-intro",
+      "name": "合金与合金材料",
+      "chapter": "单元三",
+      "domain": "metal",
+      "relations": {
+        "prerequisite": [
+          "metal-property"
+        ],
+        "related": [
+          "metal-intro"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-alloy-001",
+        "q-alloy-002"
+      ]
+    },
+    {
+      "id": "metal-displacement",
+      "name": "置换反应规律",
+      "chapter": "单元三",
+      "domain": "metal",
+      "relations": {
+        "prerequisite": [
+          "metal-reactivity"
+        ],
+        "related": [
+          "metal-acid",
+          "metal-salt"
+        ],
+        "experiment": [
+          "exp-metal-acid"
+        ],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-metal-disp-001"
+      ]
+    },
+    {
+      "id": "ore-processing",
+      "name": "矿石冶炼工艺",
+      "chapter": "单元三",
+      "domain": "metal",
+      "relations": {
+        "prerequisite": [
+          "metal-extraction"
+        ],
+        "related": [
+          "mass-conservation",
+          "equation-calculation"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-ore-process-001"
+      ]
+    },
+    {
+      "id": "equation-practice",
+      "name": "方程式书写练习",
+      "chapter": "单元四",
+      "domain": "equation",
+      "relations": {
+        "prerequisite": [
+          "equation-writing"
+        ],
+        "related": [
+          "equation-balancing",
+          "equation-calculation"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "operation-error"
+        ]
+      },
+      "questions": [
+        "q-eq-practice-001",
+        "q-eq-practice-002",
+        "q-eq-practice-003"
+      ]
+    },
+    {
+      "id": "stoichiometry",
+      "name": "化学计量入门",
+      "chapter": "单元四",
+      "domain": "equation",
+      "relations": {
+        "prerequisite": [
+          "equation-calculation"
+        ],
+        "related": [
+          "mass-conservation"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "calculation-error"
+        ]
+      },
+      "questions": [
+        "q-stoich-001"
+      ]
+    },
+    {
+      "id": "organics-intro",
+      "name": "有机化合物入门",
+      "chapter": "单元五",
+      "domain": "material",
+      "relations": {
+        "prerequisite": [
+          "material-organic"
+        ],
+        "related": [
+          "material-synthetic",
+          "material-natural"
+        ],
+        "experiment": [
+          "exp-comprehensive-01"
+        ],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-organics-intro-001",
+        "q-org-intro-002"
+      ]
+    },
+    {
+      "id": "polymer-basics",
+      "name": "高分子材料基础",
+      "chapter": "单元五",
+      "domain": "material",
+      "relations": {
+        "prerequisite": [
+          "material-synthetic"
+        ],
+        "related": [
+          "material-recycle",
+          "material-natural"
+        ],
+        "experiment": [
+          "exp-synthetic"
+        ],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-polymer-001"
+      ]
+    },
+    {
+      "id": "matter-classify",
+      "name": "物质的分类方法",
+      "chapter": "基础模块",
+      "domain": "fundamentals",
+      "relations": {
+        "prerequisite": [
+          "chem-fundamentals"
+        ],
+        "related": [
+          "acid-intro",
+          "base-intro",
+          "metal-intro"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-matter-class-001",
+        "q-matter-class-002"
+      ]
+    },
+    {
+      "id": "chem-symbol",
+      "name": "化学用语与符号",
+      "chapter": "基础模块",
+      "domain": "fundamentals",
+      "relations": {
+        "prerequisite": [
+          "chem-fundamentals"
+        ],
+        "related": [
+          "equation-writing"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-chem-symbol-001"
+      ]
+    },
+    {
+      "id": "lab-safety",
+      "name": "实验室安全规范",
+      "chapter": "基础模块",
+      "domain": "fundamentals",
+      "relations": {
+        "prerequisite": [],
+        "related": [
+          "chem-fundamentals"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "operation-error"
+        ]
+      },
+      "questions": [
+        "q-lab-safety-001",
+        "q-lab-safety-002"
+      ]
+    },
+    {
+      "id": "lab-operation",
+      "name": "基本实验操作",
+      "chapter": "基础模块",
+      "domain": "fundamentals",
+      "relations": {
+        "prerequisite": [
+          "lab-safety"
+        ],
+        "related": [
+          "chem-fundamentals"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "operation-error"
+        ]
+      },
+      "questions": [
+        "q-lab-op-001",
+        "q-lab-op-002"
+      ]
+    },
+    {
+      "id": "oxygen-prep",
+      "name": "氧气的实验室制取",
+      "chapter": "基础模块",
+      "domain": "experiment",
+      "relations": {
+        "prerequisite": [
+          "chem-fundamentals"
+        ],
+        "related": [
+          "gas-collection"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "operation-error"
+        ]
+      },
+      "questions": [
+        "q-o2-prep-001"
+      ]
+    },
+    {
+      "id": "gas-collection",
+      "name": "气体的收集方法",
+      "chapter": "基础模块",
+      "domain": "experiment",
+      "relations": {
+        "prerequisite": [
+          "oxygen-prep"
+        ],
+        "related": [
+          "gas-preparation"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "operation-error"
+        ]
+      },
+      "questions": [
+        "q-gas-collect-001"
+      ]
+    },
+    {
+      "id": "gas-preparation",
+      "name": "气体制取综合",
+      "chapter": "基础模块",
+      "domain": "experiment",
+      "relations": {
+        "prerequisite": [
+          "gas-collection"
+        ],
+        "related": [
+          "oxygen-prep"
+        ],
+        "experiment": [
+          "exp-comprehensive-01"
+        ],
+        "question": [],
+        "commonMistake": [
+          "operation-error"
+        ]
+      },
+      "questions": [
+        "q-gas-prep-001"
+      ]
+    },
+    {
+      "id": "unit1-mistake",
+      "name": "单元一易错点汇总",
+      "chapter": "单元一",
+      "domain": "review",
+      "relations": {
+        "prerequisite": [
+          "acid-intro",
+          "base-intro"
+        ],
+        "related": [
+          "unit1-review"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-mistake-u1-001"
+      ]
+    },
+    {
+      "id": "unit2-mistake",
+      "name": "单元二易错点汇总",
+      "chapter": "单元二",
+      "domain": "review",
+      "relations": {
+        "prerequisite": [
+          "salt-intro",
+          "fertilizer-intro"
+        ],
+        "related": [
+          "unit2-review"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-unit2-mistake-001"
+      ]
+    },
+    {
+      "id": "unit3-mistake",
+      "name": "单元三易错点汇总",
+      "chapter": "单元三",
+      "domain": "review",
+      "relations": {
+        "prerequisite": [
+          "metal-intro",
+          "metal-reactivity"
+        ],
+        "related": [
+          "unit3-review"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-mistake-u3-001"
+      ]
+    },
+    {
+      "id": "unit4-mistake",
+      "name": "单元四易错点汇总",
+      "chapter": "单元四",
+      "domain": "review",
+      "relations": {
+        "prerequisite": [
+          "equation-writing",
+          "equation-balancing"
+        ],
+        "related": [
+          "unit4-review"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-unit4-mistake-001"
+      ]
+    },
+    {
+      "id": "unit5-mistake",
+      "name": "单元五易错点汇总",
+      "chapter": "单元五",
+      "domain": "review",
+      "relations": {
+        "prerequisite": [
+          "material-organic",
+          "nutrition-intro"
+        ],
+        "related": [
+          "unit5-review"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-unit5-mistake-001"
+      ]
+    },
+    {
+      "id": "acid-strength",
+      "name": "强酸与弱酸",
+      "chapter": "单元一",
+      "domain": "acid-base",
+      "relations": {
+        "prerequisite": [
+          "acid-intro"
+        ],
+        "related": [
+          "acid-property",
+          "ph-scale"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-acid-strength-001"
+      ]
+    },
+    {
+      "id": "base-strength",
+      "name": "强碱与弱碱",
+      "chapter": "单元一",
+      "domain": "acid-base",
+      "relations": {
+        "prerequisite": [
+          "base-intro"
+        ],
+        "related": [
+          "base-property",
+          "ph-scale"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-base-strength-001"
+      ]
+    },
+    {
+      "id": "salt-crystal",
+      "name": "结晶与溶解度",
+      "chapter": "单元二",
+      "domain": "salt",
+      "relations": {
+        "prerequisite": [
+          "salt-intro"
+        ],
+        "related": [
+          "salt-solubility"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-salt-crystal-001"
+      ]
+    },
+    {
+      "id": "metal-oxide",
+      "name": "金属氧化物",
+      "chapter": "单元三",
+      "domain": "metal",
+      "relations": {
+        "prerequisite": [
+          "metal-intro"
+        ],
+        "related": [
+          "metal-property",
+          "iron-rust"
+        ],
+        "experiment": [
+          "exp-acid-copper-oxide"
+        ],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-metal-oxide-001"
+      ]
+    },
+    {
+      "id": "organic-fuel",
+      "name": "有机燃料与能源",
+      "chapter": "单元五",
+      "domain": "material",
+      "relations": {
+        "prerequisite": [
+          "material-organic"
+        ],
+        "related": [
+          "material-synthetic"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-organic-fuel-001"
+      ]
+    },
+    {
+      "id": "environment-chem",
+      "name": "化学与环境污染",
+      "chapter": "单元五",
+      "domain": "material",
+      "relations": {
+        "prerequisite": [
+          "material-recycle"
+        ],
+        "related": [
+          "material-synthetic"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      },
+      "questions": [
+        "q-environment-001"
+      ]
+    },
+    {
+      "id": "quant-intro",
+      "name": "物质的量入门",
+      "chapter": "基础模块",
+      "domain": "fundamentals",
+      "relations": {
+        "prerequisite": [
+          "chem-fundamentals"
+        ],
+        "related": [
+          "stoichiometry"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      }
+    },
+    {
+      "id": "acid-base-app",
+      "name": "酸碱中和应用",
+      "chapter": "单元一",
+      "domain": "acid-base",
+      "relations": {
+        "prerequisite": [
+          "neutralization"
+        ],
+        "related": [
+          "ph-application"
+        ],
+        "experiment": [
+          "exp-neutralization-temp"
+        ],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      }
+    },
+    {
+      "id": "metal-protect",
+      "name": "金属防护方法",
+      "chapter": "单元三",
+      "domain": "metal",
+      "relations": {
+        "prerequisite": [
+          "iron-rust"
+        ],
+        "related": [
+          "metal-corrosion"
+        ],
+        "experiment": [
+          "exp-iron-protection"
+        ],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      }
+    },
+    {
+      "id": "eco-chemistry",
+      "name": "绿色化学理念",
+      "chapter": "单元五",
+      "domain": "material",
+      "relations": {
+        "prerequisite": [
+          "material-recycle"
+        ],
+        "related": [
+          "environment-chem"
+        ],
+        "experiment": [],
+        "question": [],
+        "commonMistake": [
+          "concept-error"
+        ]
+      }
     }
   ],
   "edges": [
@@ -4346,6 +5185,721 @@
     {
       "from": "exam-final",
       "to": "reasoning-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "acid-indicator",
+      "to": "acid-intro",
+      "type": "prerequisite"
+    },
+    {
+      "from": "acid-indicator",
+      "to": "ph-scale",
+      "type": "related"
+    },
+    {
+      "from": "acid-indicator",
+      "to": "neutralization",
+      "type": "related"
+    },
+    {
+      "from": "acid-indicator",
+      "to": "exp-acid-copper-oxide",
+      "type": "experiment"
+    },
+    {
+      "from": "acid-indicator",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "base-use",
+      "to": "base-intro",
+      "type": "prerequisite"
+    },
+    {
+      "from": "base-use",
+      "to": "acid-use",
+      "type": "related"
+    },
+    {
+      "from": "base-use",
+      "to": "neutralization",
+      "type": "related"
+    },
+    {
+      "from": "base-use",
+      "to": "exp-naoh-na2co3",
+      "type": "experiment"
+    },
+    {
+      "from": "base-use",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "ph-application",
+      "to": "ph-scale",
+      "type": "prerequisite"
+    },
+    {
+      "from": "ph-application",
+      "to": "neutralization",
+      "type": "related"
+    },
+    {
+      "from": "ph-application",
+      "to": "operation-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "salt-solubility",
+      "to": "salt-intro",
+      "type": "prerequisite"
+    },
+    {
+      "from": "salt-solubility",
+      "to": "salt-test",
+      "type": "related"
+    },
+    {
+      "from": "salt-solubility",
+      "to": "salt-use",
+      "type": "related"
+    },
+    {
+      "from": "salt-solubility",
+      "to": "exp-salt-agNO3",
+      "type": "experiment"
+    },
+    {
+      "from": "salt-solubility",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "salt-reaction",
+      "to": "salt-intro",
+      "type": "prerequisite"
+    },
+    {
+      "from": "salt-reaction",
+      "to": "acid-property",
+      "type": "prerequisite"
+    },
+    {
+      "from": "salt-reaction",
+      "to": "salt-test",
+      "type": "related"
+    },
+    {
+      "from": "salt-reaction",
+      "to": "neutralization",
+      "type": "related"
+    },
+    {
+      "from": "salt-reaction",
+      "to": "exp-nacl-nahco3",
+      "type": "experiment"
+    },
+    {
+      "from": "salt-reaction",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "fertilizer-use",
+      "to": "fertilizer-intro",
+      "type": "prerequisite"
+    },
+    {
+      "from": "fertilizer-use",
+      "to": "fertilizer-nitrogen",
+      "type": "related"
+    },
+    {
+      "from": "fertilizer-use",
+      "to": "fertilizer-phosphate",
+      "type": "related"
+    },
+    {
+      "from": "fertilizer-use",
+      "to": "fertilizer-potassium",
+      "type": "related"
+    },
+    {
+      "from": "fertilizer-use",
+      "to": "exp-comprehensive-01",
+      "type": "experiment"
+    },
+    {
+      "from": "fertilizer-use",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "metal-corrosion",
+      "to": "metal-intro",
+      "type": "prerequisite"
+    },
+    {
+      "from": "metal-corrosion",
+      "to": "iron-rust",
+      "type": "related"
+    },
+    {
+      "from": "metal-corrosion",
+      "to": "metal-reactivity",
+      "type": "related"
+    },
+    {
+      "from": "metal-corrosion",
+      "to": "exp-iron-protection",
+      "type": "experiment"
+    },
+    {
+      "from": "metal-corrosion",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "alloy-intro",
+      "to": "metal-property",
+      "type": "prerequisite"
+    },
+    {
+      "from": "alloy-intro",
+      "to": "metal-intro",
+      "type": "related"
+    },
+    {
+      "from": "alloy-intro",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "metal-displacement",
+      "to": "metal-reactivity",
+      "type": "prerequisite"
+    },
+    {
+      "from": "metal-displacement",
+      "to": "metal-acid",
+      "type": "related"
+    },
+    {
+      "from": "metal-displacement",
+      "to": "metal-salt",
+      "type": "related"
+    },
+    {
+      "from": "metal-displacement",
+      "to": "exp-metal-acid",
+      "type": "experiment"
+    },
+    {
+      "from": "metal-displacement",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "ore-processing",
+      "to": "metal-extraction",
+      "type": "prerequisite"
+    },
+    {
+      "from": "ore-processing",
+      "to": "mass-conservation",
+      "type": "related"
+    },
+    {
+      "from": "ore-processing",
+      "to": "equation-calculation",
+      "type": "related"
+    },
+    {
+      "from": "ore-processing",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "equation-practice",
+      "to": "equation-writing",
+      "type": "prerequisite"
+    },
+    {
+      "from": "equation-practice",
+      "to": "equation-balancing",
+      "type": "related"
+    },
+    {
+      "from": "equation-practice",
+      "to": "equation-calculation",
+      "type": "related"
+    },
+    {
+      "from": "equation-practice",
+      "to": "operation-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "stoichiometry",
+      "to": "equation-calculation",
+      "type": "prerequisite"
+    },
+    {
+      "from": "stoichiometry",
+      "to": "mass-conservation",
+      "type": "related"
+    },
+    {
+      "from": "stoichiometry",
+      "to": "calculation-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "organics-intro",
+      "to": "material-organic",
+      "type": "prerequisite"
+    },
+    {
+      "from": "organics-intro",
+      "to": "material-synthetic",
+      "type": "related"
+    },
+    {
+      "from": "organics-intro",
+      "to": "material-natural",
+      "type": "related"
+    },
+    {
+      "from": "organics-intro",
+      "to": "exp-comprehensive-01",
+      "type": "experiment"
+    },
+    {
+      "from": "organics-intro",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "polymer-basics",
+      "to": "material-synthetic",
+      "type": "prerequisite"
+    },
+    {
+      "from": "polymer-basics",
+      "to": "material-recycle",
+      "type": "related"
+    },
+    {
+      "from": "polymer-basics",
+      "to": "material-natural",
+      "type": "related"
+    },
+    {
+      "from": "polymer-basics",
+      "to": "exp-synthetic",
+      "type": "experiment"
+    },
+    {
+      "from": "polymer-basics",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "matter-classify",
+      "to": "chem-fundamentals",
+      "type": "prerequisite"
+    },
+    {
+      "from": "matter-classify",
+      "to": "acid-intro",
+      "type": "related"
+    },
+    {
+      "from": "matter-classify",
+      "to": "base-intro",
+      "type": "related"
+    },
+    {
+      "from": "matter-classify",
+      "to": "metal-intro",
+      "type": "related"
+    },
+    {
+      "from": "matter-classify",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "chem-symbol",
+      "to": "chem-fundamentals",
+      "type": "prerequisite"
+    },
+    {
+      "from": "chem-symbol",
+      "to": "equation-writing",
+      "type": "related"
+    },
+    {
+      "from": "chem-symbol",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "lab-safety",
+      "to": "chem-fundamentals",
+      "type": "related"
+    },
+    {
+      "from": "lab-safety",
+      "to": "operation-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "lab-operation",
+      "to": "lab-safety",
+      "type": "prerequisite"
+    },
+    {
+      "from": "lab-operation",
+      "to": "chem-fundamentals",
+      "type": "related"
+    },
+    {
+      "from": "lab-operation",
+      "to": "operation-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "oxygen-prep",
+      "to": "chem-fundamentals",
+      "type": "prerequisite"
+    },
+    {
+      "from": "oxygen-prep",
+      "to": "gas-collection",
+      "type": "related"
+    },
+    {
+      "from": "oxygen-prep",
+      "to": "operation-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "gas-collection",
+      "to": "oxygen-prep",
+      "type": "prerequisite"
+    },
+    {
+      "from": "gas-collection",
+      "to": "gas-preparation",
+      "type": "related"
+    },
+    {
+      "from": "gas-collection",
+      "to": "operation-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "gas-preparation",
+      "to": "gas-collection",
+      "type": "prerequisite"
+    },
+    {
+      "from": "gas-preparation",
+      "to": "oxygen-prep",
+      "type": "related"
+    },
+    {
+      "from": "gas-preparation",
+      "to": "exp-comprehensive-01",
+      "type": "experiment"
+    },
+    {
+      "from": "gas-preparation",
+      "to": "operation-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "unit1-mistake",
+      "to": "acid-intro",
+      "type": "prerequisite"
+    },
+    {
+      "from": "unit1-mistake",
+      "to": "base-intro",
+      "type": "prerequisite"
+    },
+    {
+      "from": "unit1-mistake",
+      "to": "unit1-review",
+      "type": "related"
+    },
+    {
+      "from": "unit1-mistake",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "unit2-mistake",
+      "to": "salt-intro",
+      "type": "prerequisite"
+    },
+    {
+      "from": "unit2-mistake",
+      "to": "fertilizer-intro",
+      "type": "prerequisite"
+    },
+    {
+      "from": "unit2-mistake",
+      "to": "unit2-review",
+      "type": "related"
+    },
+    {
+      "from": "unit2-mistake",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "unit3-mistake",
+      "to": "metal-intro",
+      "type": "prerequisite"
+    },
+    {
+      "from": "unit3-mistake",
+      "to": "metal-reactivity",
+      "type": "prerequisite"
+    },
+    {
+      "from": "unit3-mistake",
+      "to": "unit3-review",
+      "type": "related"
+    },
+    {
+      "from": "unit3-mistake",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "unit4-mistake",
+      "to": "equation-writing",
+      "type": "prerequisite"
+    },
+    {
+      "from": "unit4-mistake",
+      "to": "equation-balancing",
+      "type": "prerequisite"
+    },
+    {
+      "from": "unit4-mistake",
+      "to": "unit4-review",
+      "type": "related"
+    },
+    {
+      "from": "unit4-mistake",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "unit5-mistake",
+      "to": "material-organic",
+      "type": "prerequisite"
+    },
+    {
+      "from": "unit5-mistake",
+      "to": "nutrition-intro",
+      "type": "prerequisite"
+    },
+    {
+      "from": "unit5-mistake",
+      "to": "unit5-review",
+      "type": "related"
+    },
+    {
+      "from": "unit5-mistake",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "acid-strength",
+      "to": "acid-intro",
+      "type": "prerequisite"
+    },
+    {
+      "from": "acid-strength",
+      "to": "acid-property",
+      "type": "related"
+    },
+    {
+      "from": "acid-strength",
+      "to": "ph-scale",
+      "type": "related"
+    },
+    {
+      "from": "acid-strength",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "base-strength",
+      "to": "base-intro",
+      "type": "prerequisite"
+    },
+    {
+      "from": "base-strength",
+      "to": "base-property",
+      "type": "related"
+    },
+    {
+      "from": "base-strength",
+      "to": "ph-scale",
+      "type": "related"
+    },
+    {
+      "from": "base-strength",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "salt-crystal",
+      "to": "salt-intro",
+      "type": "prerequisite"
+    },
+    {
+      "from": "salt-crystal",
+      "to": "salt-solubility",
+      "type": "related"
+    },
+    {
+      "from": "salt-crystal",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "metal-oxide",
+      "to": "metal-intro",
+      "type": "prerequisite"
+    },
+    {
+      "from": "metal-oxide",
+      "to": "metal-property",
+      "type": "related"
+    },
+    {
+      "from": "metal-oxide",
+      "to": "iron-rust",
+      "type": "related"
+    },
+    {
+      "from": "metal-oxide",
+      "to": "exp-acid-copper-oxide",
+      "type": "experiment"
+    },
+    {
+      "from": "metal-oxide",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "organic-fuel",
+      "to": "material-organic",
+      "type": "prerequisite"
+    },
+    {
+      "from": "organic-fuel",
+      "to": "material-synthetic",
+      "type": "related"
+    },
+    {
+      "from": "organic-fuel",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "environment-chem",
+      "to": "material-recycle",
+      "type": "prerequisite"
+    },
+    {
+      "from": "environment-chem",
+      "to": "material-synthetic",
+      "type": "related"
+    },
+    {
+      "from": "environment-chem",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "quant-intro",
+      "to": "chem-fundamentals",
+      "type": "prerequisite"
+    },
+    {
+      "from": "quant-intro",
+      "to": "stoichiometry",
+      "type": "related"
+    },
+    {
+      "from": "quant-intro",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "acid-base-app",
+      "to": "neutralization",
+      "type": "prerequisite"
+    },
+    {
+      "from": "acid-base-app",
+      "to": "ph-application",
+      "type": "related"
+    },
+    {
+      "from": "acid-base-app",
+      "to": "exp-neutralization-temp",
+      "type": "experiment"
+    },
+    {
+      "from": "acid-base-app",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "metal-protect",
+      "to": "iron-rust",
+      "type": "prerequisite"
+    },
+    {
+      "from": "metal-protect",
+      "to": "metal-corrosion",
+      "type": "related"
+    },
+    {
+      "from": "metal-protect",
+      "to": "exp-iron-protection",
+      "type": "experiment"
+    },
+    {
+      "from": "metal-protect",
+      "to": "concept-error",
+      "type": "commonMistake"
+    },
+    {
+      "from": "eco-chemistry",
+      "to": "material-recycle",
+      "type": "prerequisite"
+    },
+    {
+      "from": "eco-chemistry",
+      "to": "environment-chem",
+      "type": "related"
+    },
+    {
+      "from": "eco-chemistry",
+      "to": "concept-error",
       "type": "commonMistake"
     }
   ]
