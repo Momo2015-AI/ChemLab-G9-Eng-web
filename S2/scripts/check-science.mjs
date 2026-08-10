@@ -19,7 +19,12 @@ function loadJS(relPath) {
   const full = join(root, relPath);
   if (!existsSync(full)) return null;
   const code = readFileSync(full, "utf8");
-  const sandbox = { window: {} };
+  const sandbox = {
+    window: {
+      ChemLabContentS2: {},
+      ChemLabQuizS2: {}
+    }
+  };
   try { vm.runInNewContext(code, sandbox, { filename: relPath }); }
   catch (e) { errors.push(`解析失败 ${relPath}: ${e.message}`); return null; }
   return sandbox;

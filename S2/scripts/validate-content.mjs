@@ -18,7 +18,12 @@ function loadJS(relPath, sandboxGlobals) {
   const full = join(root, relPath);
   if (!existsSync(full)) return null;
   const code = readFileSync(full, "utf8");
-  const sandbox = { window: {} };
+  const sandbox = {
+    window: {
+      ChemLabContentS2: {},
+      ChemLabQuizS2: {}
+    }
+  };
   if (sandboxGlobals) {
     Object.keys(sandboxGlobals).forEach((k) => { sandbox[k] = sandboxGlobals[k]; });
   }
@@ -92,8 +97,8 @@ publishedDays.forEach((key) => {
         sec.body.forEach((p, j) => {
           if (typeof p === "string") return;
           if (p && typeof p === "object" && typeof p.text === "string") {
-            if (p.kind !== undefined && !["takeaway", "note"].includes(p.kind)) {
-              err(`Day ${key}: sections[${i}].body[${j}] kind 应为 takeaway 或 note`);
+            if (p.kind !== undefined && !["takeaway", "note", "pitfall", "summary"].includes(p.kind)) {
+              err(`Day ${key}: sections[${i}].body[${j}] kind 应为 takeaway / note / pitfall / summary`);
             }
           } else {
             err(`Day ${key}: sections[${i}].body[${j}] 应为字符串或 {text, kind?}`);

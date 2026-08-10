@@ -234,7 +234,7 @@ window.ChemLabKnowledgeS2 = (function () {
       name: "一定溶质质量分数溶液的配制",
       concept: "配制步骤：计算 → 称量（固体）或量取（液体）→ 溶解 → 装瓶贴标签。需要用到的仪器：托盘天平、药匙、量筒、胶头滴管、烧杯、玻璃棒。",
       prerequisite: ["V2-K208"],
-      related: ["V2-E203"],
+      related: [],
       experiments: ["V2-E203"],
       mistakeTypes: ["M-CALCULATION", "M-EXAM-READING"],
       examPoints: ["配制步骤与仪器选择", "误差分析（溶质少了→浓度偏低，溶剂多了→浓度偏低）"],
@@ -454,6 +454,39 @@ window.ChemLabKnowledgeS2 = (function () {
       mistakeTypes: ["M-PATTERN-OVERAPPLY"],
       examPoints: ["化肥过量施用的危害", "环境污染的防治"],
       applications: ["绿色农业、环保施肥"]
+    },
+    {
+      id: "V2-K317",
+      name: "常见离子的检验",
+      concept: "Cl⁻：加入AgNO₃溶液和稀硝酸，产生不溶于稀硝酸的白色沉淀（AgCl）。SO₄²⁻：加入Ba(NO₃)₂溶液和稀硝酸，产生不溶于稀硝酸的白色沉淀（BaSO₄）。CO₃²⁻：加入稀盐酸，产生能使澄清石灰水变浑浊的气体（CO₂）。NH₄⁺：加入NaOH溶液并加热，产生有刺激性气味、能使湿润红色石蕊试纸变蓝的气体（NH₃）。",
+      prerequisite: ["V2-K312"],
+      related: ["V2-K318", "V2-K402"],
+      experiments: [],
+      mistakeTypes: ["M-CONDITION-OMISSION"],
+      examPoints: ["四种离子的检验试剂与现象", "排除干扰离子"],
+      applications: ["离子鉴定、推断题"]
+    },
+    {
+      id: "V2-K318",
+      name: "常见沉淀与气体的特征",
+      concept: "常见沉淀：BaSO₄（白色，不溶于稀硝酸）、AgCl（白色，不溶于稀硝酸）、CaCO₃（白色，溶于稀硝酸）、BaCO₃（白色，溶于稀硝酸）、Cu(OH)₂（蓝色）、Fe(OH)₃（红褐色）。常见气体的检验：CO₂使澄清石灰水变浑浊，NH₃使湿润红色石蕊试纸变蓝。",
+      prerequisite: ["V2-K317"],
+      related: ["V2-K401"],
+      experiments: [],
+      mistakeTypes: ["M-OBSERVATION-COMPARE"],
+      examPoints: ["沉淀颜色与溶解性记忆", "气体检验方法"],
+      applications: ["复分解反应判断、推断题"]
+    },
+    {
+      id: "V2-K319",
+      name: "离子检验的顺序与干扰排除",
+      concept: "当溶液中有多种离子需逐一检验时，检验顺序很关键：先检验CO₃²⁻（加稀HNO₃排除），再检验SO₄²⁻（加Ba(NO₃)₂），最后检验Cl⁻（加AgNO₃）。若先检验Cl⁻，AgNO₃会与SO₄²⁻生成微溶Ag₂SO₄干扰判断。检验时加入的试剂不能引入待检离子。",
+      prerequisite: ["V2-K317", "V2-K318"],
+      related: ["V2-K402"],
+      experiments: [],
+      mistakeTypes: ["M-PATTERN-OVERAPPLY"],
+      examPoints: ["确定检验顺序", "排除干扰设计"],
+      applications: ["综合推断题"]
     }
   ];
 
