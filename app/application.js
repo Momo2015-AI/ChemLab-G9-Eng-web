@@ -61,7 +61,30 @@ export function createApplication({ state, assessment, experimentEngine, mastery
     if (route.page === 'quiz') {
       const session = controllers.assessment.session;
       if (!session) return;
-      return views.renderQuiz({ root, question: session.questions[session.index], index: session.index, total: session.questions.length });
+      return views.renderQuiz({
+        root,
+        question: session.questions[session.index],
+        index: session.index,
+        total: session.questions.length,
+        onAnswer: optionIndex => {
+          const result = controllers.assessment.answer(optionIndex);
+          if (!result) return;
+          if (controllers.assessment.session.completed) {
+            const score = controllers.assessment.getScore();
+            const hasRemediation = Boolean(state.learning?.remediation);
+            return views.renderQuizResult({
+              root,
+              score,
+              correct: controllers.assessment.session.answers.filter(a => a.correct).length,
+              total: controllers.assessment.session.answers.length,
+              hasRemediation,
+              onRemediation: () => router.navigate('remediation'),
+              onContinue: () => router.navigate('dashboard'),
+            });
+          }
+          return renderRoute({ page: 'quiz', params: [] });
+        },
+      });
     }
     if (route.page === 'experiment') {
       const session = controllers.experiment.session;
