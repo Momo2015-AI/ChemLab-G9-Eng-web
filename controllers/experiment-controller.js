@@ -3,9 +3,10 @@
  * Owns experiment-session state; ExperimentEngine remains responsible for domain rules.
  */
 export class ExperimentController {
-  constructor({ experimentEngine, state }) {
+  constructor({ experimentEngine, state, masteryService = null }) {
     this.engine = experimentEngine;
     this.state = state;
+    this.masteryService = masteryService;
     this.session = null;
   }
 
@@ -24,7 +25,11 @@ export class ExperimentController {
 
   observe(text) {
     if (!this.session) return null;
-    this.session = this.engine.recordObservation(this.session, text || '');
+    const observation = String(text ?? '').trim();
+    const validation = this.engine.validateStep(this.session, observation);
+    this.session = this.engine.recordObservation(this.session, observation);
+    this.session.lastValidation = validation;
+    this.#recordEvidence(validation);
     return this.session;
   }
 
@@ -36,5 +41,12 @@ export class ExperimentController {
 
   reset() {
     this.session = null;
+  }
+
+  #recordEvidence(validation) {
+    if (!this.masteryService || !this.session?.id || !validation) return;
+    const knowledgeId = this.session.knowledgeId || this.session.knowledgePointId;
+    if (!knowledgeId) return;
+    this.masteryService.recordEvidence(knowledgeId, validation.valid ? 1 : 0, 0.2);
   }
 }
