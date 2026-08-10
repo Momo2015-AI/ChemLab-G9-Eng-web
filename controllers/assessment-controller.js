@@ -14,9 +14,7 @@ export class AssessmentController {
     const day = await this.contentService.getLesson(dayId);
     if (!day) return null;
     const data = await this.contentService.load();
-    const questions = (day.questions || [])
-      .map(id => data.questionById.get(id) || null)
-      .filter(Boolean);
+    const questions = (day.questions || []).map(id => data.questionById.get(id) || null).filter(Boolean);
     this.session = { dayId, questions, index: 0, answers: [], completed: questions.length === 0 };
     this.state.currentQuiz = dayId;
     this.state.quizIndex = 0;
@@ -28,14 +26,20 @@ export class AssessmentController {
     if (!this.session || this.session.completed) return null;
     const question = this.session.questions[this.session.index];
     if (!question) return null;
-    const result = this.assessment.evaluate(question, optionIndex);
-    this.session.answers.push({ questionId: question.id, selected: optionIndex, ...result });
+    const answer = this.toDomainAnswer(question, optionIndex);
+    const result = this.assessment.evaluate(question, answer);
+    this.session.answers.push({ questionId: question.id, selected: optionIndex, answer, ...result });
     this.session.index += 1;
     this.session.completed = this.session.index >= this.session.questions.length;
     this.state.quizIndex = this.session.index;
-    this.state.quizAnswers[question.id] = optionIndex;
+    this.state.quizAnswers[question.id] = answer;
     if (this.session.completed) this.state.save?.();
     return result;
+  }
+
+  toDomainAnswer(question, optionIndex) {
+    if (question.type !== 'choice') return optionIndex;
+    return String.fromCharCode(65 + Number(optionIndex));
   }
 
   getScore() {
