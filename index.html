@@ -175,6 +175,60 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;border-t
 .badge-exp{font-size:10px;background:var(--brand-soft);color:var(--brand);padding:2px 6px;border-radius:6px}
 .day-exp{margin-top:6px}
 @media(max-width:640px){.exp-body{grid-template-columns:1fr}}
+
+/* Dark mode */
+:root.dark {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface-alt: #1c2128;
+  --line: #30363d;
+  --ink: #e6edf3;
+  --muted: #8b949e;
+  --brand-soft: #1a2332;
+}
+:root.dark .card,
+:root.dark .day-card,
+:root.dark .graph-node,
+:root.dark .exp-info,
+:root.dark .exp-steps,
+:root.dark .exp-observe-area,
+:root.dark .quiz-option,
+:root.dark .result-card {
+  background: var(--surface);
+  border-color: var(--line);
+}
+:root.dark .quiz-option:hover,
+:root.dark .quiz-option.selected {
+  background: var(--brand-soft);
+}
+:root.dark .stat-card {
+  background: var(--surface);
+}
+:root.dark .exp-obs-input {
+  background: var(--bg);
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+/* iPad responsiveness */
+@media(min-width:768px) and (max-width:1024px) {
+  .container{max-width:960px}
+  .course-grid{grid-template-columns:repeat(4,1fr)}
+  .graph-node{width:72px;height:72px;font-size:11px}
+  .graph-node .node-name{font-size:9px}
+  .graph-node .node-mastery{font-size:9px}
+  .day-card{padding:14px}
+}
+@media(max-width:767px){
+  .container{padding:12px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .course-grid{grid-template-columns:repeat(3,1fr)}
+  .graph-node{width:60px;height:60px;font-size:10px}
+  .graph-node .node-name{font-size:8px}
+  .graph-node .node-mastery{font-size:8px}
+  .day-card{padding:10px}
+  .day-name{font-size:11px}
+}
 </style>
 </head>
 <body>

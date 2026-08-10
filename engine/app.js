@@ -67,6 +67,7 @@ class ChemLabApp {
       this.diagnosis = new (await import('./diagnosis.js')).default(this.knowledgeGraph, this.assessment);
 
       this.initMastery();
+      this.injectDarkMode();
       this.currentPage = 'home';
       this.navigate();
     } catch (e) {
@@ -183,6 +184,16 @@ class ChemLabApp {
     this.render();
   }
 
+
+  // Dark mode support
+  injectDarkMode() {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      document.documentElement.classList.toggle('dark', e.matches);
+    });
+  }
   render() {
     const root = document.getElementById('app-root');
     if (!root) return;
