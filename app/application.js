@@ -42,7 +42,13 @@ export function createApplication({ state, assessment, experimentEngine, mastery
     }
     if (route.page === 'dashboard') {
       const progress = createProgressProjection(state.progress);
-      return views.renderDashboard({ root, summary: progress });
+      const summary = {
+        completed: progress.completed.length,
+        mastery: Math.round(progress.masteryScore * 100),
+        questions: progress.questions,
+        weakPoints: progress.weakPoints,
+      };
+      return views.renderDashboard({ root, summary });
     }
     if (route.page === 'graph') {
       const graph = await contentService.getKnowledgeGraphViewModel();
