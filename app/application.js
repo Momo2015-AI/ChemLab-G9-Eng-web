@@ -52,7 +52,16 @@ export function createApplication({ state, assessment, experimentEngine, mastery
       return views.renderDashboard({ root, summary });
     }
     if (route.page === 'remediation') {
-      return views.renderRemediation({ root, plan: state.learning?.remediation });
+      return views.renderRemediation({
+        root,
+        plan: state.learning?.remediation,
+        onRecheck: async plan => {
+          const ids = [...new Set((plan.steps || []).map(step => step.knowledgeId).filter(Boolean))];
+          const session = await controllers.assessment.startTargeted(ids);
+          if (session) return renderRoute({ page: 'quiz', params: [] });
+        },
+        onTransfer: () => router.navigate('course'),
+      });
     }
     if (route.page === 'graph') {
       const graph = await contentService.getKnowledgeGraphViewModel();
