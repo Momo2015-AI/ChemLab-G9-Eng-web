@@ -1,9 +1,6 @@
 /**
  * ChemLab-G9 V1.7 Application State
- *
  * Transitional state boundary for the V1.7 refactor.
- * Keeps persistence compatible with the V1.6 storage key while preventing
- * new modules from depending directly on localStorage.
  */
 
 const STORAGE_KEY = 'chemlab_v16';
@@ -20,11 +17,7 @@ const DEFAULT_STATE = Object.freeze({
 });
 
 function cloneDefaultState() {
-  return {
-    ...DEFAULT_STATE,
-    quizAnswers: {},
-    progress: {},
-  };
+  return { ...DEFAULT_STATE, quizAnswers: {}, progress: {} };
 }
 
 function readPersistedProgress() {
@@ -38,19 +31,20 @@ function readPersistedProgress() {
   }
 }
 
-export function createAppState() {
-  const state = cloneDefaultState();
-  state.progress = readPersistedProgress();
-  return state;
-}
-
 export function saveProgress(progress) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(progress ?? {}));
 }
 
+export function createAppState() {
+  const state = cloneDefaultState();
+  state.progress = readPersistedProgress();
+  state.save = () => saveProgress(state.progress);
+  return state;
+}
+
 export function updateRoute(state, route, params = {}) {
-  state.currentRoute = route;
-  Object.assign(state, params);
+  state.currentRoute = route?.page || route || 'home';
+  state.routeParams = route?.params || params;
   return state;
 }
 
