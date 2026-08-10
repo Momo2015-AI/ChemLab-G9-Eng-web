@@ -1,25 +1,34 @@
 /**
  * ChemLab-G9 V1.7 application bootstrap.
  *
- * This is the new application boundary. V1.6 engine/app.js remains the
- * compatibility runtime for now; future phases will move orchestration out
- * of that legacy module and into this bootstrap layer.
+ * The legacy runtime remains available as a compatibility layer while the
+ * new composition root is introduced incrementally.
  */
 
 import { createAppState } from './state.js';
+import { createApplication } from './application.js';
+import assessmentEngine from '../engine/assessment-engine.js';
+import experimentEngine from '../engine/experiment-engine.js';
 
 const state = createAppState();
-
-// Keep the state boundary observable for the migration period without
-// changing the existing public `window.app` API used by legacy templates.
 window.chemLabState = state;
 
-export async function bootstrap() {
-  // Importing the legacy runtime is intentionally deferred. This gives the
-  // new entry point a stable place for future dependency wiring while keeping
-  // V1.6 behaviour unchanged during the refactor.
+export async function bootstrap({ root = document.querySelector('#app') } = {}) {
+  const application = createApplication({
+    state,
+    assessment: assessmentEngine,
+    experimentEngine,
+    root,
+  });
+
+  await application.contentService.load();
+  application.start();
+  window.chemLabApplication = application;
+
+  // Legacy runtime is intentionally loaded only after the new boundary is
+  // ready, preserving the existing public `window.app` API during migration.
   await import('../engine/app.js');
-  return window.app;
+  return application;
 }
 
 export { state };
