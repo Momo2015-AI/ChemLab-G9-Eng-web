@@ -62,9 +62,9 @@ class ChemLabApp {
         });
       });
 
-      this.assessment = new (await import('./assessment-engine.js')).default();
-      this.experimentEngine = new (await import('./experiment-engine.js')).default();
-      this.diagnosis = new (await import('./diagnosis.js')).default(this.knowledgeGraph, this.assessment);
+      const { AssessmentEngine } = await import('./assessment-engine.js'); this.assessment = new AssessmentEngine();
+      const { ExperimentEngine } = await import('./experiment-engine.js'); this.experimentEngine = new ExperimentEngine();
+      const { DiagnosisEngine } = await import('./diagnosis.js'); this.diagnosis = new DiagnosisEngine(this.knowledgeGraph, this.assessment);
 
       this.initMastery();
       this.injectDarkMode();
