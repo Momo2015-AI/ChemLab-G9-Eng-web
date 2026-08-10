@@ -144,6 +144,37 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;border-t
   nav{gap:0}
   .nav-link{padding:6px 8px;font-size:13px}
 }
+
+/* Experiment page */
+.experiment-page .container{padding-top:16px}
+.exp-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.exp-header h2{flex:1;font-size:17px}
+.exp-progress{font-size:13px;color:var(--muted);background:var(--brand-soft);padding:4px 12px;border-radius:12px}
+.btn-back{padding:6px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);cursor:pointer;font-size:13px}
+.exp-body{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.exp-info,.exp-steps{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.exp-info h3{font-size:14px;color:var(--brand);margin:12px 0 6px}
+.exp-info h3:first-child{margin-top:0}
+.exp-info p{font-size:13px;color:var(--ink);line-height:1.6}
+.equation{font-family:monospace;background:var(--bg);padding:8px 12px;border-radius:6px;font-size:14px}
+.safety-list{padding-left:18px;font-size:13px}
+.safety-list li{margin-bottom:4px;color:var(--danger)}
+.step{display:flex;gap:12px;padding:12px;margin-bottom:8px;border-radius:8px;border:1px solid var(--line);font-size:13px}
+.step.done{background:#f0fdf4;border-color:#bbf7d0}
+.step.current{background:var(--brand-soft);border-color:var(--brand)}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--line);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0}
+.step.current .step-num{background:var(--brand);color:#fff}
+.step.done .step-num{background:var(--success);color:#fff}
+.step-action{font-weight:600;margin-bottom:4px}
+.step-observation{color:var(--muted);font-size:12px}
+.exp-observe-area{margin-top:16px;padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+.exp-observe-area p{font-size:14px;margin-bottom:8px}
+.exp-obs-input{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;font-size:14px;margin-bottom:10px;outline:none}
+.exp-obs-input:focus{border-color:var(--brand)}
+.exp-actions{display:flex;gap:10px}
+.badge-exp{font-size:10px;background:var(--brand-soft);color:var(--brand);padding:2px 6px;border-radius:6px}
+.day-exp{margin-top:6px}
+@media(max-width:640px){.exp-body{grid-template-columns:1fr}}
 </style>
 </head>
 <body>

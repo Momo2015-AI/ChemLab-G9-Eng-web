@@ -156,6 +156,32 @@ class ChemLabApp {
   goCourse() { this.currentPage = 'course'; this.navigate(); }
   goGraph() { this.currentPage = 'graph'; this.navigate(); }
   goDashboard() { this.currentPage = 'dashboard'; this.navigate(); }
+  goExperiment(expId) {
+    const exp = this.experimentEngine.get(expId);
+    if (!exp) return;
+    this.currentExperiment = exp;
+    this.currentExpSession = this.experimentEngine.start(expId);
+    this.currentPage = 'experiment';
+    this.render();
+  }
+  experimentNext() {
+    if (!this.currentExpSession) return;
+    this.currentExpSession = this.experimentEngine.next(this.currentExpSession);
+    this.render();
+  }
+  experimentObserve(text) {
+    if (!this.currentExpSession) return;
+    const input = text || (document.querySelector('.exp-obs-input')?.value || '');
+    this.currentExpSession = this.experimentEngine.recordObservation(this.currentExpSession, input);
+    this.experimentNext();
+  }
+  experimentComplete() {
+    if (!this.currentExpSession) return;
+    this.currentExpSession = this.experimentEngine.complete(this.currentExpSession);
+    this.saveProgress();
+    this.currentPage = 'experiment-result';
+    this.render();
+  }
 
   render() {
     const root = document.getElementById('app-root');
@@ -167,6 +193,8 @@ class ChemLabApp {
       case 'result': root.innerHTML = this.renderResult(); break;
       case 'graph': root.innerHTML = this.renderGraph(); break;
       case 'dashboard': root.innerHTML = this.renderDashboard(); break;
+      case 'experiment': root.innerHTML = this.renderExperiment(); break;
+      case 'experiment-result': root.innerHTML = this.renderExperimentResult(); break;
       default: root.innerHTML = this.renderHome();
     }
     this.bindEvents();
@@ -287,6 +315,7 @@ class ChemLabApp {
                           <div class="mini-bar"><div class="mini-fill" style="width:${mastery}%"></div></div>
                           <span>${mastery}%</span>
                         </div>
+                        ${d.experiments?.length ? `<div class="day-exp"><span class="badge-exp">实验</span></div>` : ''}
                       </div>`;
                   }).join('')}
                 </div>
@@ -448,6 +477,93 @@ class ChemLabApp {
             <div class="legend-item"><span class="legend-dot" style="background:#2e9e63"></span>掌握 ≥80%</div>
             <div class="legend-item"><span class="legend-dot" style="background:#f59e0b"></span>掌握 ≥50%</div>
             <div class="legend-item"><span class="legend-dot" style="background:#ef4444"></span>掌握 &lt;50%</div>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  renderExperiment() {
+    const s = this.currentExpSession;
+    if (!s) return '<div class="container"><p>实验加载中...</p></div>';
+    const exp = this.currentExperiment;
+    const step = s.steps[s.currentStep];
+    const total = s.steps.length;
+    const isLast = s.currentStep >= total - 1;
+    return `
+      <div class="page experiment-page">
+        <header>
+          <div class="container header-inner">
+            <div class="logo">ChemLab-G9</div>
+            <nav>
+              <a href="#" data-nav="home" class="nav-link">首页</a>
+              <a href="#" data-nav="course" class="nav-link">课程</a>
+              <a href="#" data-nav="graph" class="nav-link">知识图谱</a>
+              <a href="#" data-nav="dashboard" class="nav-link">学情</a>
+            </nav>
+          </div>
+        </header>
+        <div class="container">
+          <div class="exp-header">
+            <button class="btn-back" onclick="app.goCourse()">返回</button>
+            <h2>${exp.title}</h2>
+            <span class="exp-progress">${s.currentStep + 1}/${total} 步</span>
+          </div>
+          <div class="exp-body">
+            <div class="exp-info">
+              <h3>实验目的</h3>
+              <p>${exp.knowledge?.map(k => {
+                const n = this.knowledgeGraph.nodes?.find(x => x.id === k);
+                return n ? n.name : k;
+              }).join('、') || ''}</p>
+              <h3>仪器药品</h3>
+              <p>${(exp.materials || []).join('、')}</p>
+              ${exp.equation ? `<h3>化学方程式</h3><p class="equation">${exp.equation}</p>` : ''}
+              ${exp.safety?.length ? `<h3>安全注意事项</h3><ul class="safety-list">${exp.safety.map(s => `<li>${s}</li>`).join('')}</ul>` : ''}
+            </div>
+            <div class="exp-steps">
+              <h3>实验步骤</h3>
+              ${s.steps.map((st, i) => {
+                const done = i < s.currentStep;
+                const current = i === s.currentStep;
+                return `<div class="step ${done ? 'done' : ''} ${current ? 'current' : ''}">
+                  <div class="step-num">${i + 1}</div>
+                  <div class="step-content">
+                    <div class="step-action">${st.action}</div>
+                    <div class="step-observation">预期现象: ${st.observation}</div>
+                  </div>
+                </div>`;
+              }).join('')}
+              ${step ? `
+                <div class="exp-observe-area">
+                  <p>请记录观察到的现象:</p>
+                  <input type="text" class="exp-obs-input" placeholder="描述你观察到的现象..." />
+                  <div class="exp-actions">
+                    ${!isLast ? `<button class="btn-primary" onclick="app.experimentObserve()">下一步</button>` : `<button class="btn-primary" onclick="app.experimentComplete()">完成实验</button>`}
+                  </div>
+                </div>
+              ` : ''}
+            </div>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  renderExperimentResult() {
+    const s = this.currentExpSession;
+    const score = this.experimentEngine.getScore(s);
+    return `
+      <div class="page result-page">
+        <div class="container">
+          <div class="result-card">
+            <div class="result-icon">${score >= 80 ? '🎉' : score >= 50 ? '👍' : '💪'}</div>
+            <h2>实验完成！</h2>
+            <div class="result-score">${score}分</div>
+            <p>完成 ${s?.observations?.length || 0}/${s?.steps?.length || 0} 步观察</p>
+            <div class="result-actions">
+              <button class="btn-primary" onclick="app.goCourse()">返回课程</button>
+              <button class="btn-secondary" onclick="app.goExperiment('${s?.id}')">重做</button>
+              <button class="btn-secondary" onclick="app.goDashboard()">查看学情</button>
+            </div>
           </div>
         </div>
       </div>`;
