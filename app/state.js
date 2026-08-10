@@ -1,7 +1,9 @@
 /**
  * ChemLab-G9 V1.7 Application State
- * Transitional state boundary for the V1.7 refactor.
+ * Owns in-memory application state; persistence is delegated to ProgressService.
  */
+
+import { ProgressService } from './progress-service.js';
 
 const STORAGE_KEY = 'chemlab_v16';
 
@@ -20,25 +22,16 @@ function cloneDefaultState() {
   return { ...DEFAULT_STATE, quizAnswers: {}, progress: {} };
 }
 
-function readPersistedProgress() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return {};
-    const parsed = JSON.parse(raw);
-    return parsed && typeof parsed === 'object' ? parsed : {};
-  } catch {
-    return {};
-  }
-}
-
-export function saveProgress(progress) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(progress ?? {}));
-}
-
-export function createAppState() {
+export function createAppState({ progressService = new ProgressService({ key: STORAGE_KEY }) } = {}) {
   const state = cloneDefaultState();
-  state.progress = readPersistedProgress();
-  state.save = () => saveProgress(state.progress);
+  state.progress = progressService.load();
+  state.save = () => progressService.save(state.progress);
+  state.progressService = progressService;
+  return state;
+}
+
+export function saveProgress(state) {
+  state.save?.();
   return state;
 }
 

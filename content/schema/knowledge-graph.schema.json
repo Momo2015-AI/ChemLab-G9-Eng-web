@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChemLab G9 Knowledge Graph",
+  "type": "object",
+  "required": ["version", "nodes", "relations"],
+  "properties": {
+    "version": { "type": "string" },
+    "source": { "type": "string" },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "name": { "type": "string" },
+          "title": { "type": "string" },
+          "description": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "target", "type"],
+        "properties": {
+          "source": { "type": "string", "minLength": 1 },
+          "target": { "type": "string", "minLength": 1 },
+          "type": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}
