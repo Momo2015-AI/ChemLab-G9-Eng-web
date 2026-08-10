@@ -3,7 +3,7 @@
  * Single source of truth for SPA navigation.
  */
 
-const ROUTES = new Set(['home', 'course', 'graph', 'dashboard', 'quiz', 'experiment', 'experiment-result', 'result']);
+const ROUTES = new Set(['home', 'course', 'graph', 'dashboard', 'quiz', 'experiment', 'experiment-result', 'result', 'remediation']);
 
 function parseHash(hash = window.location.hash) {
   const value = hash.replace(/^#/, '') || 'home';
