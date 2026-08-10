@@ -22,40 +22,18 @@ jobs:
         with:
           node-version: 22
 
-      - name: Check JS syntax (engine/)
+      - name: Check JS syntax
         run: |
-          for f in engine/*.js; do
+          find engine core lab dashboard app controllers views tests -name '*.js' -o -name '*.mjs' 2>/dev/null | sort | while read f; do
             node --check "$f" || { echo "Syntax error in $f"; exit 1; }
           done
-          echo "engine/ OK"
 
-      - name: Check JS syntax (core/)
-        run: |
-          find core -name '*.js' | sort | while read f; do
-            node --check "$f" || { echo "Syntax error in $f"; exit 1; }
-          done
-          echo "core/ OK"
-
-      - name: Check JS syntax (lab/)
-        run: |
-          find lab -name '*.js' | sort | while read f; do
-            node --check "$f" || { echo "Syntax error in $f"; exit 1; }
-          done
-          echo "lab/ OK"
-
-      - name: Check JS syntax (dashboard/)
-        run: |
-          find dashboard -name '*.js' | sort | while read f; do
-            node --check "$f" || { echo "Syntax error in $f"; exit 1; }
-          done
-          echo "dashboard/ OK"
+      - name: Run tests
+        run: npm test
 
       - name: Validate content JSON
         run: |
-          find modules -name '*.json' | sort | while read f; do
-            node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" || { echo "Invalid JSON: $f"; exit 1; }
-          done
-          find content -name '*.json' | sort | while read f; do
+          find modules content -name '*.json' | sort | while read f; do
             node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" || { echo "Invalid JSON: $f"; exit 1; }
           done
           echo "JSON OK"
