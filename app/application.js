@@ -1,6 +1,6 @@
 /**
  * V1.7 Application Composition Root
- * Wires state, router, services and controllers without replacing the legacy runtime yet.
+ * Wires state, router, services, controllers and view adapters.
  */
 
 import { createRouter } from './router.js';
@@ -8,30 +8,48 @@ import { contentService } from './content-service.js';
 import { AssessmentController } from '../controllers/assessment-controller.js';
 import { ExperimentController } from '../controllers/experiment-controller.js';
 import { LearningController } from '../controllers/learning-controller.js';
+import { renderHome } from '../views/home-view.js';
+import { renderCourse } from '../views/course-view.js';
+import { renderQuiz, renderQuizResult } from '../views/quiz-view.js';
+import { renderExperiment, renderExperimentResult } from '../views/experiment-view.js';
+import { renderDashboard } from '../views/dashboard-view.js';
+import { renderGraph } from '../views/graph-view.js';
 
-export function createApplication({ state, assessment, experimentEngine }) {
+export function createApplication({ state, assessment, experimentEngine, root = document.querySelector('#app') }) {
   const controllers = {
     learning: new LearningController({ contentService, state }),
     assessment: new AssessmentController({ assessment, contentService, state }),
     experiment: new ExperimentController({ experimentEngine, state }),
   };
 
+  const views = { renderHome, renderCourse, renderQuiz, renderQuizResult, renderExperiment, renderExperimentResult, renderDashboard, renderGraph };
+
   const router = createRouter({
-    onRoute: route => {
-      state.route = route;
-    },
+    onRoute: route => { state.route = route; },
+    render: route => renderRoute(route),
   });
 
+  function renderRoute(route) {
+    if (!root) return;
+    if (route.page === 'home') return views.renderHome({ root });
+    if (route.page === 'course') return controllers.learning.getLesson(route.params[0]).then(lesson => views.renderCourse({ root, lesson }));
+    if (route.page === 'dashboard') return views.renderDashboard({ root, summary: state.progress || {} });
+    if (route.page === 'graph') return contentService.getKnowledgeGraph().then(graph => views.renderGraph({ root, graph }));
+    if (route.page === 'quiz') {
+      const session = controllers.assessment.session;
+      if (!session) return;
+      return views.renderQuiz({ root, question: session.questions[session.index], index: session.index, total: session.questions.length });
+    }
+    if (route.page === 'experiment') {
+      const session = controllers.experiment.session;
+      if (!session) return;
+      return views.renderExperiment({ root, experiment: session.experiment || {}, session });
+    }
+  }
+
   return {
-    state,
-    router,
-    contentService,
-    controllers,
-    start() {
-      router.start();
-    },
-    stop() {
-      router.stop();
-    },
+    state, router, contentService, controllers, views,
+    start() { router.start(); },
+    stop() { router.stop(); },
   };
 }
