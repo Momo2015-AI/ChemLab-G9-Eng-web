@@ -218,7 +218,7 @@ class ChemLabApp {
       <div class="page">
         <header>
           <div class="container header-inner">
-            <div class="logo">ChemLab-G9 <span>九年级化学</span></div>
+            <div class="logo" onclick="app.goHome()">ChemLab-G9 <span>九年级化学</span></div>
             <nav>
               <a href="#" data-nav="home" class="nav-link active">首页</a>
               <a href="#" data-nav="course" class="nav-link">课程</a>
@@ -298,7 +298,7 @@ class ChemLabApp {
       <div class="page">
         <header>
           <div class="container header-inner">
-            <div class="logo">ChemLab-G9 <span>九年级化学</span></div>
+            <div class="logo" onclick="app.goHome()">ChemLab-G9 <span>九年级化学</span></div>
             <nav>
               <a href="#" data-nav="home" class="nav-link">首页</a>
               <a href="#" data-nav="course" class="nav-link active">课程</a>
@@ -346,7 +346,7 @@ class ChemLabApp {
       <div class="page quiz-page">
         <header>
           <div class="container header-inner">
-            <div class="logo">ChemLab-G9</div>
+            <div class="logo" onclick="app.goHome()">ChemLab-G9</div>
             <nav>
               <a href="#" data-nav="home" class="nav-link">首页</a>
               <a href="#" data-nav="course" class="nav-link active">课程</a>
@@ -477,7 +477,7 @@ class ChemLabApp {
       <div class="page graph-page">
         <header>
           <div class="container header-inner">
-            <div class="logo">ChemLab-G9</div>
+            <div class="logo" onclick="app.goHome()">ChemLab-G9</div>
             <nav>
               <a href="#" data-nav="home" class="nav-link">首页</a>
               <a href="#" data-nav="course" class="nav-link">课程</a>
@@ -512,7 +512,7 @@ class ChemLabApp {
       <div class="page experiment-page">
         <header>
           <div class="container header-inner">
-            <div class="logo">ChemLab-G9</div>
+            <div class="logo" onclick="app.goHome()">ChemLab-G9</div>
             <nav>
               <a href="#" data-nav="home" class="nav-link">首页</a>
               <a href="#" data-nav="course" class="nav-link">课程</a>
@@ -605,7 +605,7 @@ class ChemLabApp {
       <div class="page dashboard-page">
         <header>
           <div class="container header-inner">
-            <div class="logo">ChemLab-G9</div>
+            <div class="logo" onclick="app.goHome()">ChemLab-G9</div>
             <nav>
               <a href="#" data-nav="home" class="nav-link">首页</a>
               <a href="#" data-nav="course" class="nav-link">课程</a>
