@@ -1,4 +1,4 @@
-# ChemLab-G9-S2 Content Layer
+# ChemLab-G9 Content Layer
 
 V1.6 开始将学习内容从页面逻辑中拆分。
 

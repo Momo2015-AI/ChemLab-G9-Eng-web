@@ -1,4 +1,4 @@
-name: Deploy ChemLab-G9-S2 to GitHub Pages
+name: Deploy ChemLab-G9 to GitHub Pages
 
 on:
   push:

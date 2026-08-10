@@ -1,4 +1,4 @@
-// ChemLab-G9-S2 V1.6
+// ChemLab-G9 V1.6
 // Experiment Loader
 
 import { experimentMap } from './learning-link/lesson-experiment-map.js';

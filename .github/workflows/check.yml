@@ -21,4 +21,4 @@ jobs:
           node-version: 22
 
       - name: Run health check
-        run: node S2/scripts/health-check.js
+        run: node scripts/health-check.js

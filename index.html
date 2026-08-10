@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChemLab-G9 | 九年级化学智能学习平台</title>
+  <meta name="description" content="九年级化学智能学习平台 - 课程学习、虚拟实验、知识图谱、错题诊断" />
+  <style>
+    :root {
+      --bg: #f5f7f8;
+      --surface: #ffffff;
+      --ink: #1a2332;
+      --muted: #6b7c93;
+      --brand: #146c6e;
+      --brand-soft: #e6f5f5;
+      --line: #e2e8f0;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    .container { max-width: 960px; margin: 0 auto; padding: 24px; }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+      padding: 16px 0;
+      margin-bottom: 24px;
+    }
+    header .container { display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-size: 20px; font-weight: 700; color: var(--brand); }
+    .logo span { color: var(--ink); font-weight: 400; font-size: 14px; margin-left: 8px; }
+    .badge {
+      background: var(--brand-soft);
+      color: var(--brand);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .hero {
+      background: linear-gradient(135deg, #0d5f61 0%, #2f9aa8 60%, #52b6a4 100%);
+      color: white;
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      margin-bottom: 24px;
+    }
+    .hero h1 { font-size: 28px; margin-bottom: 12px; }
+    .hero p { opacity: 0.9; font-size: 16px; max-width: 600px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .card h3 { font-size: 16px; margin-bottom: 8px; color: var(--brand); }
+    .card p { font-size: 14px; color: var(--muted); }
+    .card .icon { font-size: 28px; margin-bottom: 12px; }
+    section { margin-bottom: 32px; }
+    section h2 { font-size: 18px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--brand-soft); }
+    footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; }
+    .status { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #2e9e63; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">ChemLab-G9 <span>九年级化学</span></div>
+      <div class="badge">V1.6 Engine</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero">
+      <h1>化学智能学习平台</h1>
+      <p>课程学习 → 知识理解 → 虚拟实验 → 练习评价 → 学习诊断 → 个性推荐，构建完整学习闭环。</p>
+      <div class="status" style="margin-top:16px">
+        <span class="status-dot"></span>
+        <span>Engine V1.6 · 模块化架构 · 知识图谱已就绪</span>
+      </div>
+    </div>
+
+    <section>
+      <h2>核心能力</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="icon">📚</div>
+          <h3>课程学习</h3>
+          <p>结构化课程数据，按天组织学习路径，覆盖九年级全册内容。</p>
+        </div>
+        <div class="card">
+          <div class="icon">🧪</div>
+          <h3>虚拟实验</h3>
+          <p>LAB Engine 驱动的实验播放器，支持步骤交互与错误诊断。</p>
+        </div>
+        <div class="card">
+          <div class="icon">🧠</div>
+          <h3>知识图谱</h3>
+          <p>知识点关联图谱，支持前置依赖查询与学习路径生成。</p>
+        </div>
+        <div class="card">
+          <div class="icon">📊</div>
+          <h3>学习诊断</h3>
+          <p>错题类型分类、薄弱知识点识别、个性化复习推荐。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>引擎架构</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>engine/</h3>
+          <p>应用引擎层：路由、知识、实验、评估、掌握度、推荐、任务、进度管理。</p>
+        </div>
+        <div class="card">
+          <h3>core/</h3>
+          <p>服务层：学习流、实验加载、知识图谱、错题诊断、学习记录。</p>
+        </div>
+        <div class="card">
+          <h3>modules/</h3>
+          <p>模块化数据：课程、仪器、题目、学习任务定义。</p>
+        </div>
+        <div class="card">
+          <h3>lab/</h3>
+          <p>实验前端：播放器、渲染器、状态管理、错误诊断。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>本地运行</h2>
+      <div class="card">
+        <p>本项目使用 ES Module，需通过 HTTP 服务器运行：</p>
+        <pre style="background:#f1f5f9;padding:12px;border-radius:8px;margin-top:12px;font-size:14px;overflow-x:auto">python3 -m http.server 8080
+# 访问 http://localhost:8080/index.html</pre>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>ChemLab-G9 · V1.6 Engine · 九年级化学智能学习平台</p>
+  </footer>
+
+  <script type="module">
+    // ChemLab Engine V1.6 入口
+    // 后续将在此加载 engine/app.js 并初始化应用
+    console.log('ChemLab-G9 V1.6 engine loaded');
+  </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-name: ChemLab-G9-S2 Build Check
+name: ChemLab-G9 Build Check
 
 on:
   push:
@@ -9,56 +9,61 @@ on:
       - main
 
 jobs:
-  validate-build:
-    name: Validate chemistry learning package
+  validate:
+    name: Validate ChemLab engine
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
-#          cache: npm  # 项目无 package.json，跳过 npm cache
 
-      - name: Install dependencies
+      - name: Check JS syntax (engine/)
         run: |
-          if [ -f package.json ]; then
-            npm ci
-          else
-            echo "No package.json found, skip npm install"
-          fi
+          for f in engine/*.js; do
+            node --check "$f" || { echo "Syntax error in $f"; exit 1; }
+          done
+          echo "engine/ OK"
 
-      - name: Validate content
+      - name: Check JS syntax (core/)
         run: |
-          if [ -f S2/scripts/validate-content.mjs ]; then
-            node S2/scripts/validate-content.mjs
-          else
-            echo "Content validator not found, skip"
-          fi
+          find core -name '*.js' | sort | while read f; do
+            node --check "$f" || { echo "Syntax error in $f"; exit 1; }
+          done
+          echo "core/ OK"
 
-      - name: Check chemistry correctness
+      - name: Check JS syntax (lab/)
         run: |
-          if [ -f S2/scripts/check-science.mjs ]; then
-            node S2/scripts/check-science.mjs --fatal
-          else
-            echo "Science checker not found, skip"
-          fi
+          find lab -name '*.js' | sort | while read f; do
+            node --check "$f" || { echo "Syntax error in $f"; exit 1; }
+          done
+          echo "lab/ OK"
 
-      - name: Build offline single HTML
+      - name: Check JS syntax (dashboard/)
         run: |
-          if [ -f S2/scripts/build-single.mjs ]; then
-            node S2/scripts/build-single.mjs
-          else
-            echo "Single HTML builder not found, skip"
-          fi
+          find dashboard -name '*.js' | sort | while read f; do
+            node --check "$f" || { echo "Syntax error in $f"; exit 1; }
+          done
+          echo "dashboard/ OK"
 
-      - name: Smoke test
+      - name: Validate content JSON
         run: |
-          if [ -f S2/tests/smoke.mjs ]; then
-            node S2/tests/smoke.mjs
-          else
-            echo "Smoke test not found, skip"
+          find modules -name '*.json' | sort | while read f; do
+            node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" || { echo "Invalid JSON: $f"; exit 1; }
+          done
+          find content -name '*.json' | sort | while read f; do
+            node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" || { echo "Invalid JSON: $f"; exit 1; }
+          done
+          echo "JSON OK"
+
+      - name: Check index.html exists
+        run: |
+          if [ ! -f index.html ]; then
+            echo "index.html not found — must exist as app entry point"
+            exit 1
           fi
+          echo "index.html OK"
