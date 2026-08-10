@@ -6,6 +6,7 @@
 import { createRouter } from './router.js';
 import { contentService } from './content-service.js';
 import { MasteryService } from './mastery-service.js';
+import { createProgressProjection } from './progress-projection.js';
 import { AssessmentController } from '../controllers/assessment-controller.js';
 import { ExperimentController } from '../controllers/experiment-controller.js';
 import { LearningController } from '../controllers/learning-controller.js';
@@ -39,7 +40,16 @@ export function createApplication({ state, assessment, experimentEngine, mastery
       const lesson = await controllers.learning.getLesson(route.params[0]);
       return views.renderCourse({ root, lesson });
     }
-    if (route.page === 'dashboard') return views.renderDashboard({ root, summary: state.progress || {} });
+    if (route.page === 'dashboard') {
+      const progress = createProgressProjection(state.progress);
+      const summary = {
+        completed: progress.completed.length,
+        mastery: Math.round(progress.masteryScore * 100),
+        questions: progress.questions,
+        weakPoints: progress.weakPoints,
+      };
+      return views.renderDashboard({ root, summary });
+    }
     if (route.page === 'graph') {
       const graph = await contentService.getKnowledgeGraphViewModel();
       return views.renderGraph({ root, graph });
