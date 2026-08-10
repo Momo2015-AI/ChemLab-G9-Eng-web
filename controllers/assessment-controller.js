@@ -3,11 +3,16 @@
  * Owns quiz session state and delegates answer evaluation to the domain engine.
  */
 export class AssessmentController {
-  constructor({ assessment, contentService, state }) {
+  constructor({ assessment, contentService, state, masteryService = null }) {
     this.assessment = assessment;
     this.contentService = contentService;
     this.state = state;
+    this.masteryService = masteryService;
     this.session = null;
+
+    if (this.masteryService) {
+      this.masteryService.hydrate(this.state.progress?.mastery || {});
+    }
   }
 
   async start(dayId) {
@@ -29,12 +34,32 @@ export class AssessmentController {
     const answer = this.toDomainAnswer(question, optionIndex);
     const result = this.assessment.evaluate(question, answer);
     this.session.answers.push({ questionId: question.id, selected: optionIndex, answer, ...result });
+    this.recordMasteryEvidence(question, result);
     this.session.index += 1;
     this.session.completed = this.session.index >= this.session.questions.length;
     this.state.quizIndex = this.session.index;
     this.state.quizAnswers[question.id] = answer;
     if (this.session.completed) this.state.save?.();
     return result;
+  }
+
+  recordMasteryEvidence(question, result) {
+    if (!this.masteryService) return null;
+    const knowledgeIds = this.getKnowledgeIds(question);
+    const score = result?.correct ? 1 : 0;
+    const weight = Number.isFinite(question?.masteryWeight) ? question.masteryWeight : 0.25;
+    for (const knowledgeId of knowledgeIds) {
+      this.masteryService.recordEvidence(knowledgeId, score, weight);
+    }
+    this.state.progress.mastery = this.masteryService.getState();
+    return this.state.progress.mastery;
+  }
+
+  getKnowledgeIds(question) {
+    const ids = question?.knowledgeIds || question?.knowledgePoints || question?.knowledgeId;
+    if (Array.isArray(ids)) return ids.filter(Boolean);
+    if (ids) return [ids];
+    return [];
   }
 
   toDomainAnswer(question, optionIndex) {
