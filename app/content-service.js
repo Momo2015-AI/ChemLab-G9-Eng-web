@@ -4,15 +4,21 @@
  */
 
 import ContentLoader from '../engine/content-loader.js';
+import { KnowledgeEngine } from '../core/knowledge-graph/canonical-knowledge-engine.js';
 
 class ContentService {
-  constructor(loader = new ContentLoader()) {
+  constructor(loader = new ContentLoader(), knowledgeEngineFactory = graph => new KnowledgeEngine(graph)) {
     this.loader = loader;
+    this.knowledgeEngineFactory = knowledgeEngineFactory;
     this.data = null;
+    this.knowledgeEngine = null;
   }
 
   async load() {
-    if (!this.data) this.data = await this.loader.loadAll();
+    if (!this.data) {
+      this.data = await this.loader.loadAll();
+      this.knowledgeEngine = this.knowledgeEngineFactory(this.data.knowledgeGraph);
+    }
     return this.data;
   }
 
@@ -34,6 +40,36 @@ class ContentService {
   async getKnowledgeGraph() {
     const data = await this.load();
     return data.knowledgeGraph;
+  }
+
+  async getKnowledgeEngine() {
+    await this.load();
+    return this.knowledgeEngine;
+  }
+
+  async getKnowledge(id) {
+    const engine = await this.getKnowledgeEngine();
+    return engine.getNode(id);
+  }
+
+  async getPrerequisites(id) {
+    const engine = await this.getKnowledgeEngine();
+    return engine.prerequisites(id);
+  }
+
+  async getExperimentsByKnowledge(id) {
+    const engine = await this.getKnowledgeEngine();
+    return engine.experiments(id);
+  }
+
+  async getQuestionsByKnowledgeGraph(id) {
+    const engine = await this.getKnowledgeEngine();
+    return engine.questions(id);
+  }
+
+  async getCommonMistakes(id) {
+    const engine = await this.getKnowledgeEngine();
+    return engine.commonMistakes(id);
   }
 
   async getExperiment(id) {
