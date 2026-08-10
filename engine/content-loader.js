@@ -3,7 +3,15 @@
  * Loads all structured learning data from modules/
  */
 
-const BASE = '';
+// Detect deployment subpath from base href
+const BASE = (() => {
+  const baseEl = document.querySelector('base');
+  if (baseEl) {
+    const href = baseEl.getAttribute('href');
+    return href.endsWith('/') ? href.slice(0, -1) : href;
+  }
+  return '';
+})();
 
 const ENDPOINTS = {
   questionBank: `${BASE}/modules/questions/question-bank.json`,
