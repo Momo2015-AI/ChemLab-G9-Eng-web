@@ -9,7 +9,18 @@ export class MasteryService {
     this.engine = engine;
   }
 
+  hydrate(state = {}) {
+    const mastery = state && typeof state === 'object' ? state : {};
+    for (const [knowledgeId, value] of Object.entries(mastery)) {
+      if (Number.isFinite(value)) {
+        this.engine.mastery.set(knowledgeId, Math.max(0, Math.min(1, value)));
+      }
+    }
+    return this.getState();
+  }
+
   recordEvidence(knowledgeId, score, weight = 0.25) {
+    if (!knowledgeId) return null;
     return this.engine.update(knowledgeId, { score, weight });
   }
 
