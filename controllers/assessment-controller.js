@@ -20,6 +20,27 @@ export class AssessmentController {
     if (!day) return null;
     const data = await this.contentService.load();
     const questions = (day.questions || []).map(id => data.questionById.get(id) || null).filter(Boolean);
+    return this.createSession(dayId, questions);
+  }
+
+  async startTargeted(knowledgeIds, limit = 5) {
+    const ids = Array.isArray(knowledgeIds) ? knowledgeIds.filter(Boolean) : [knowledgeIds].filter(Boolean);
+    if (!ids.length) return null;
+    const data = await this.contentService.load();
+    const wanted = new Set(ids);
+    const questions = data.questions.filter(question => {
+      const points = question.knowledgeIds || question.knowledgePoints || question.knowledgeId || question.knowledge || [];
+      const values = Array.isArray(points) ? points : [points];
+      return values.some(id => wanted.has(id));
+    }).slice(0, limit);
+    if (!questions.length) return null;
+    this.state.learning ||= {};
+    this.state.learning.recheck = { knowledgeIds: ids, questionCount: questions.length };
+    this.state.save?.();
+    return this.createSession('remediation-recheck', questions);
+  }
+
+  createSession(dayId, questions) {
     this.session = { dayId, questions, index: 0, answers: [], completed: questions.length === 0 };
     this.state.currentQuiz = dayId;
     this.state.quizIndex = 0;
@@ -48,15 +69,13 @@ export class AssessmentController {
     const knowledgeIds = this.getKnowledgeIds(question);
     const score = result?.correct ? 1 : 0;
     const weight = Number.isFinite(question?.masteryWeight) ? question.masteryWeight : 0.25;
-    for (const knowledgeId of knowledgeIds) {
-      this.masteryService.recordEvidence(knowledgeId, score, weight);
-    }
+    for (const knowledgeId of knowledgeIds) this.masteryService.recordEvidence(knowledgeId, score, weight);
     this.state.progress.mastery = this.masteryService.getState();
     return this.state.progress.mastery;
   }
 
   getKnowledgeIds(question) {
-    const ids = question?.knowledgeIds || question?.knowledgePoints || question?.knowledgeId;
+    const ids = question?.knowledgeIds || question?.knowledgePoints || question?.knowledgeId || question?.knowledge;
     if (Array.isArray(ids)) return ids.filter(Boolean);
     if (ids) return [ids];
     return [];
