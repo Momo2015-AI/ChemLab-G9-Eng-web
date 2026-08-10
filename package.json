@@ -1,0 +1,8 @@
+{
+  "name": "chemlab-g9-eng-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  }
+}
