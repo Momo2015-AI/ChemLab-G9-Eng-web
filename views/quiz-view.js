@@ -6,9 +6,11 @@ export function renderQuiz({ root, question = {}, index = 0, total = 0, onAnswer
   if (typeof onAnswer === 'function') root.querySelectorAll('[data-option]').forEach(button => button.addEventListener('click', () => onAnswer(Number(button.dataset.option))));
 }
 
-export function renderQuizResult({ root, score = 0, correct = 0, total = 0, onContinue } = {}) {
+export function renderQuizResult({ root, score = 0, correct = 0, total = 0, hasRemediation = false, onRemediation, onContinue } = {}) {
   if (!root) return;
-  root.innerHTML = `<section class="page quiz-result-page"><header class="page-header"><h1>Practice complete</h1><p>${correct} of ${total} correct · ${Number(score)}%</p></header><button type="button" data-continue>Continue learning</button></section>`;
+  const remediationAction = hasRemediation ? '<button type="button" data-remediation>Start targeted learning</button>' : '';
+  root.innerHTML = `<section class="page quiz-result-page"><header class="page-header"><h1>Practice complete</h1><p>${correct} of ${total} correct · ${Number(score)}%</p></header>${remediationAction}<button type="button" data-continue>Continue learning</button></section>`;
+  if (typeof onRemediation === 'function') root.querySelector('[data-remediation]')?.addEventListener('click', onRemediation);
   if (typeof onContinue === 'function') root.querySelector('[data-continue]')?.addEventListener('click', onContinue);
 }
 
