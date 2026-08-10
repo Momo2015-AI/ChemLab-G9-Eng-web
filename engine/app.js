@@ -45,21 +45,34 @@ class ChemLabApp {
   }
 
   async init(basePath) {
-    const [qb, kg, manifest, topics, days] = await loadData(basePath || '');
-    this.questions = qb.questions;
-    this.knowledgeGraph = kg;
-    this.manifest = manifest;
-    this.lessons = days;
-    this.questionById = new Map(this.questions.map(q => [q.id, q]));
-    this.questionByKnowledge = {};
-    this.questions.forEach(q => {
-      (q.knowledge || []).forEach(k => {
-        (this.questionByKnowledge[k] = this.questionByKnowledge[k] || []).push(q);
+    try {
+      const loader = new (await import('./content-loader.js')).default();
+      const data = await loader.loadAll();
+      this.questions = data.questions;
+      this.questionById = data.questionById;
+      this.knowledgeGraph = data.knowledgeGraph;
+      this.manifest = data.manifest;
+      this.lessons = data.days;
+      this.dayById = data.dayById;
+
+      this.questionByKnowledge = {};
+      this.questions.forEach(q => {
+        (q.knowledge || []).forEach(k => {
+          (this.questionByKnowledge[k] = this.questionByKnowledge[k] || []).push(q);
+        });
       });
-    });
-    this.initMastery();
-    this.currentPage = 'home';
-    this.navigate();
+
+      this.assessment = new (await import('./assessment-engine.js')).default();
+      this.experimentEngine = new (await import('./experiment-engine.js')).default();
+      this.diagnosis = new (await import('./diagnosis.js')).default(this.knowledgeGraph, this.assessment);
+
+      this.initMastery();
+      this.currentPage = 'home';
+      this.navigate();
+    } catch (e) {
+      console.error('Init failed:', e);
+      document.getElementById('app-root').innerHTML = '<div class="container"><h2>数据加载失败: ' + e.message + '</h2><p>请刷新重试</p></div>';
+    }
   }
 
   initMastery() {
@@ -89,12 +102,13 @@ class ChemLabApp {
   }
 
   startQuiz(dayId) {
-    const day = this.lessons.find(d => d.day === dayId);
+    const day = this.dayById?.get(dayId) || this.lessons.find(d => d.day === dayId);
     if (!day) return;
     this.currentDay = day;
     this.currentQuiz = day.questions.map(id => this.questionById.get(id)).filter(Boolean);
     this.quizIndex = 0;
     this.quizAnswers = {};
+    this.quizResults = [];
     this.currentPage = 'quiz';
     this.render();
   }
@@ -102,9 +116,10 @@ class ChemLabApp {
   answerQuiz(optionIndex) {
     const q = this.currentQuiz[this.quizIndex];
     if (!q) return;
-    const isCorrect = this.checkAnswer(q, optionIndex);
-    this.quizAnswers[q.id] = { selected: optionIndex, correct: isCorrect };
-    (q.knowledge || []).forEach(k => this.recordAnswer(k, isCorrect));
+    const result = this.assessment.evaluate(q, optionIndex);
+    this.quizResults.push(result);
+    this.quizAnswers[q.id] = { selected: optionIndex, correct: result.correct };
+    (q.knowledge || []).forEach(k => this.recordAnswer(k, result.correct));
     this.saveProgress();
     this.quizIndex++;
     if (this.quizIndex >= this.currentQuiz.length) {
@@ -543,7 +558,8 @@ window.app = app;
 
 // Auto-init
 document.addEventListener('DOMContentLoaded', () => {
-  app.init('').catch(() => {
-    document.getElementById('app-root').innerHTML = '<div class="container"><h2>数据加载失败，请刷新重试</h2></div>';
+  app.init('').catch(e => {
+    console.error('App init error:', e);
+    document.getElementById('app-root').innerHTML = '<div class="container"><h2>数据加载失败</h2><p>' + (e?.message || '请刷新重试') + '</p></div>';
   });
 });
