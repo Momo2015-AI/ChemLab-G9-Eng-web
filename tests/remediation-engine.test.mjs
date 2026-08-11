@@ -19,6 +19,20 @@ test('incorrect diagnosis creates targeted review, practice and recheck', () => 
   assert.equal(plan.steps[0].resourceId, 'lesson-acid');
   assert.equal(plan.steps[1].resourceId, 'practice-acid');
   assert.equal(plan.steps[0].reason, 'indicator confusion');
+  assert.deepEqual(plan.steps[2].knowledgeIds, ['acid-base']);
+});
+
+test('recheck preserves all diagnosed knowledge targets', () => {
+  const plan = createRemediationPlan({
+    status: 'incorrect',
+    knowledge: ['acid-base', 'metal-acid'],
+    possibleErrors: ['concept-confusion'],
+  });
+
+  assert.deepEqual(plan.steps.find(step => step.type === 'recheck').knowledgeIds, [
+    'acid-base',
+    'metal-acid',
+  ]);
 });
 
 test('unknown diagnosis does not fabricate remediation', () => {
