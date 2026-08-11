@@ -16,7 +16,9 @@ const BASE = (() => {
 
 const ENDPOINTS = {
   questionBank: `${BASE}/modules/questions/question-bank.json`,
-  knowledgeGraph: `${BASE}/modules/questions/taxonomy/knowledge-graph.json`,
+  // V1.7 canonical graph. Keep the legacy path only as a migration fallback.
+  knowledgeGraph: `${BASE}/content/knowledge/knowledge-graph.json`,
+  legacyKnowledgeGraph: `${BASE}/modules/questions/taxonomy/knowledge-graph.json`,
   manifest: `${BASE}/modules/lessons/manifest.json`,
   topicBank: `${BASE}/modules/questions/bank/questions-by-topic.json`,
 };
@@ -35,11 +37,23 @@ class ContentLoader {
     return data;
   }
 
+  async loadKnowledgeGraph() {
+    try {
+      return await this.fetchJSON(ENDPOINTS.knowledgeGraph);
+    } catch (error) {
+      // Migration fallback for older deployments only. Canonical production
+      // content always resolves from /content/knowledge/ first.
+      return this.fetchJSON(ENDPOINTS.legacyKnowledgeGraph).catch(() => {
+        throw error;
+      });
+    }
+  }
+
   async loadAll() {
     const manifest = await this.fetchJSON(ENDPOINTS.manifest);
     const [qb, kg, topics, days] = await Promise.all([
       this.fetchJSON(ENDPOINTS.questionBank),
-      this.fetchJSON(ENDPOINTS.knowledgeGraph),
+      this.loadKnowledgeGraph(),
       this.fetchJSON(ENDPOINTS.topicBank).catch(() => ({ topics: [] })),
       this.loadAllDays(manifest),
     ]);
