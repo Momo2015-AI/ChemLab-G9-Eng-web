@@ -1,275 +1,208 @@
 # ChemLab-G9
 
-## 九年级化学智能学习平台
+## 九年级化学智能学习平台 · V1.7
 
-ChemLab-G9 是基于模块化架构的九年级化学学习引擎，覆盖上册与下册全部内容。
+ChemLab-G9 是一个面向中国初中九年级学生的原生 ES Module 化学学习平台。当前主线为 **V1.7**，重点不是堆叠功能，而是建立一条可验证、可维护的学习闭环：
 
-> 课程学习 → 知识理解 → 虚拟实验 → 练习评价 → 学习诊断 → 个性推荐
+> 课程学习 → 知识理解 → 实验探究 → 练习评价 → 掌握度更新 → 学习诊断 → 补救学习 → 再检测 → 迁移
+
+平台坚持三个工程原则：**第一性原理、KISS、长期维护主义**。架构重构不得破坏学生学习过程中的证据积累、掌握度、诊断、补救与再检测逻辑。
 
 ---
 
-## 仓库结构
+## 当前运行架构
 
+真实生产入口以代码为准：
+
+```text
+index.html
+    ↓
+app/bootstrap.js
+    ↓
+app/application.js          ← V1.7 Composition Root
+    ├── app/state.js
+    ├── app/router.js
+    ├── app/content-service.js
+    ├── app/mastery-service.js
+    ├── app/progress-service.js
+    ├── controllers/
+    │   ├── assessment-controller.js
+    │   ├── experiment-controller.js
+    │   └── learning-controller.js
+    └── views/
+        ├── home-view.js
+        ├── course-view.js
+        ├── quiz-view.js
+        ├── experiment-view.js
+        ├── dashboard-view.js
+        ├── graph-view.js
+        └── remediation-view.js
 ```
+
+`app/application.js` 是当前应用组合根：负责装配依赖、路由和 View，不再承担核心学习领域计算。fileciteturn271file0
+
+### 核心学习链
+
+```text
+Assessment
+    ↓
+Evidence
+    ↓
+MasteryService
+    ↓
+MasteryEngine
+    ↓
+Learning State
+    ↓
+Diagnosis / Remediation
+    ↓
+Targeted Recheck
+    ↓
+Transfer
+```
+
+知识图谱由 `ContentService` 统一提供，核心知识查询使用 canonical knowledge engine；应用层不再维护多套 KnowledgeEngine。
+
+---
+
+## 目录职责
+
+```text
 ChemLab-G9/
-├── index.html              应用入口（ES Module）
-├── engine/                 应用引擎层
-│   ├── app.js              应用主入口（ChemLabApp）
-│   ├── router.js           路由
-│   ├── knowledge-engine.js 知识引擎
-│   ├── experiment-engine.js 实验引擎
-│   ├── assessment-engine.js 评估引擎
-│   ├── mastery-engine.js   掌握度引擎
-│   ├── recommendation-engine.js 推荐引擎
-│   ├── progress-manager.js 进度管理器
-│   ├── task-engine.js      任务引擎
-│   └── content-loader.js   内容加载器
-│
-├── core/                   服务层
-│   ├── learning-flow.js    学习流程控制器
-│   ├── learning-record.js  学习记录系统
-│   ├── experiment-loader.js 实验加载器
-│   ├── experiment-service.js 实验服务
-│   ├── day-course-service.js 课程服务
-│   ├── diagnosis/          错题诊断
-│   ├── knowledge-graph/    知识图谱引擎
-│   ├── learning-link/      课程-实验映射
-│   └── recommendation/     推荐服务
-│
-├── lab/                    LAB 实验前端
-│   ├── experiment-player.js 实验播放器
-│   ├── experiment-renderer.js 实验渲染器
-│   ├── experiment-state.js  实验状态管理
-│   ├── error-diagnosis.js   实验错误诊断
-│   ├── equipment.js         仪器注册表
-│   └── lab-page.html        实验页面（独立）
-│
-├── dashboard/              仪表盘服务
-│   ├── dashboard-service.js
-│   ├── learning-progress.js
-│   ├── experiment-history.js
-│   └── mastery-report.js
-│
-├── modules/                模块化数据与模型
-│   ├── lessons/            课程数据（day01.json 等）
-│   ├── instruments/        仪器图标数据（JSON）
-│   ├── experiments/        实验模块定义
-│   ├── materials/          教材材料
-│   ├── learning/           学习数据模型
-│   ├── questions/          题目与 taxonomy
-│   └── tasks/              学习任务定义
-│
-├── content/                内容数据层
-│   ├── experiments/        实验数据（JSON/JS）
-│   └── knowledge/          知识点数据（JS/JSON）
-│
-├── schemas/                JSON Schema 层
-│   ├── lesson.schema.json
-│   ├── question.schema.json
-│   ├── experiment.schema.json
-│   └── instrument.schema.json
-│
-├── docs/                   架构与开发文档
-│   ├── ChemLab-Learning-Engine-V1.5-Architecture.md
-│   ├── V1.6-ARCHITECTURE.md
-│   └── V1.6-DEVELOPMENT-PLAN.md
-│
-└── .github/workflows/      CI/CD
-    ├── build-check.yml     构建校验（JS 语法 + 结构检查）
-    ├── check.yml           健康检查
-    └── pages.yml           GitHub Pages 部署
+├── index.html                  # 浏览器入口
+├── app/                        # V1.7 应用编排与应用服务
+│   ├── bootstrap.js
+│   ├── application.js          # Composition Root
+│   ├── state.js                # 运行状态
+│   ├── router.js               # 路由
+│   ├── content-service.js      # 内容/知识图谱访问
+│   ├── mastery-service.js      # 掌握度领域入口
+│   ├── progress-service.js     # 持久化适配
+│   └── progress-projection.js  # Dashboard Read Model
+├── controllers/                # 学习流程控制
+├── views/                      # UI 渲染
+├── engine/                     # 当前仍存在的领域引擎/兼容层；legacy 清理中
+├── core/                       # 历史 V1.6 服务与仍有价值的领域模块；逐项审计中
+├── modules/                    # 课程、题目等核心内容数据
+├── content/                    # V1.7 实验与知识内容补充数据
+├── schemas/                    # 数据结构约束
+├── docs/                       # 架构、开发与审计记录
+└── .github/workflows/          # CI/CD
 ```
+
+> **重要：** `engine/`、`core/`、`dashboard/`、`lab/` 等历史目录目前仍有部分遗留实现。它们不能根据目录名称被视为 V1.7 生产入口，也不会在没有依赖、入口和教育语义验证的情况下批量删除。Legacy 正在按 KEEP / ARCHIVE / DELETE 三态清理。
 
 ---
 
-## V1.6 架构总览
+## V1.7 架构原则
 
+### 1. 单一事实来源
+
+- Assessment 负责形成答题证据。
+- MasteryEngine / MasteryService 负责掌握度更新。
+- Canonical Knowledge Engine 负责知识图谱查询。
+- Diagnosis / Remediation 负责学习补救决策。
+- Application 不重新实现这些领域规则。
+
+### 2. 学习科学优先
+
+系统不是简单的“课程 + 题库”网站。学习闭环必须保留：
+
+```text
+学习 → 练习 → 证据 → 掌握度 → 诊断 → 补救 → 再检测 → 迁移
 ```
-用户
- │
- ▼
-┌─────────────────────────────────────┐
-│           应用引擎层（engine/）        │
-│  app → router → knowledge/experiment/
-│        assessment/mastery/
-│        recommendation/task           │
-└─────────────────────────────────────┘
- │
- ▼
-┌─────────────────────────────────────┐
-│           服务层（core/）             │
-│  learning-flow | experiment-service |
-│  knowledge-graph | diagnosis |        │
-│  learning-record | recommendation    │
-└─────────────────────────────────────┘
- │
- ▼
-┌─────────────────────────────────────┐
-│           数据层                     │
-│  modules/lessons/  课程数据           │
-│  modules/instruments/  仪器图标        │
-│  modules/questions/  题目与分类        │
-│  modules/tasks/      学习任务定义      │
-│  content/experiments/ 实验数据         │
-│  content/knowledge/    知识点数据      │
-│  schemas/              JSON Schema    │
-└─────────────────────────────────────┘
- │
- ▼
-┌─────────────────────────────────────┐
-│           前端展示层                 │
-│  lab/          虚拟实验播放器         │
-│  dashboard/    学习仪表盘            │
-│  index.html    主入口（ES Module）   │
-└─────────────────────────────────────┘
-```
+
+任何架构精简如果破坏这条链，都不应合并。
+
+### 3. KISS
+
+优先复用现有服务和领域对象；只有在职责确实无法归属时才新增抽象。禁止为了消除少量重复而创建新的 `*Engine`、`*Manager`、`*Service`。
+
+### 4. 长期维护
+
+- 文档必须描述当前代码，而不是历史愿景。
+- 数据 schema 和测试应成为 CI 的保护网。
+- legacy 删除必须先证明没有生产入口、测试依赖、部署入口或独立教育价值。
+- 学习数据格式升级必须考虑 migration，不能仅修改 storage key。
 
 ---
 
-## 核心模块
+## 数据与内容
 
-### 1. 学习引擎（engine/）
+课程和题目属于内容源；知识图谱属于知识数据；实验内容属于实验数据。`modules/` 与 `content/` 的边界在 V1.7 内容源策略中维护，新增内容必须遵循统一的数据来源规则。
 
-| 模块 | 职责 |
-|------|------|
-| `app.js` | 应用主入口，初始化所有引擎 |
-| `router.js` | 路由分发 |
-| `knowledge-engine.js` | 知识点查询与图谱遍历 |
-| `experiment-engine.js` | 实验数据加载与执行 |
-| `assessment-engine.js` | 题目评分与反馈 |
-| `mastery-engine.js` | 知识掌握度计算 |
-| `recommendation-engine.js` | 个性化复习路径推荐 |
-| `progress-manager.js` | 学习进度持久化 |
-| `task-engine.js` | 学习任务调度 |
-
-### 2. 服务层（core/）
-
-| 模块 | 职责 |
-|------|------|
-| `learning-flow.js` | 学习流程控制器（lesson→knowledge→experiment→practice→evaluation） |
-| `learning-record.js` | 学习记录存储（localStorage） |
-| `experiment-loader.js` | 实验数据加载 |
-| `experiment-service.js` | 实验完成状态管理 |
-| `diagnosis/` | 错题诊断引擎（错误类型模型、题目-知识点映射） |
-| `knowledge-graph/` | 知识图谱构建、查询、学习路径生成 |
-| `recommendation/` | 实验与知识复习推荐 |
-
-### 3. LAB 实验引擎（lab/）
-
-```
-Experiment JSON
-      ↓
-experiment-state   实验状态管理
-      ↓
-experiment-player  交互播放器
-      ↓
-experiment-renderer 实验渲染（页面输出）
-      ↓
-error-diagnosis    实验错误诊断
-```
-
-### 4. 仪表盘（dashboard/）
-
-- `learning-progress.js` — 学习进度报告
-- `experiment-history.js` — 实验完成历史
-- `mastery-report.js` — 知识掌握度报告
-- `dashboard-service.js` — 聚合层
+课程加载不得依赖硬编码天数；生产代码应以 manifest / 内容元数据为事实来源。
 
 ---
 
-## 数据模型
+## 测试与 CI
 
-### 知识图谱节点
+本项目使用 Node 原生 ES Module 测试，不使用构建器或框架依赖：
 
-```json
-{
-  "id": "oxygen-property",
-  "name": "氧气的性质",
-  "chapter": "我们周围的空气",
-  "domain": "substance",
-  "relations": {
-    "prerequisite": ["chemical-change"],
-    "related": ["oxygen-preparation"],
-    "experiment": ["task-oxygen-production-001"],
-    "question": ["q0001"],
-    "commonMistake": ["concept-error"]
-  },
-  "bloomLevels": ["remember", "understand", "apply", "analyze"]
-}
+```bash
+npm test
 ```
 
-### 学习数据模型
+CI 的最低要求是测试通过。V1.7 Final Stabilization 当前优先处理历史测试失败、API 契约、Node/浏览器环境耦合与知识图谱回归；在测试恢复稳定后，再进行 Legacy 清场和 Schema CI 收尾。
 
-```
-lesson → task → knowledge（target）
-task   → activity（composes）
-activity → assessment（produces）
-assessment → mistake（mayIdentify）
-assessment → mastery（updates）
-mastery → nextTask（influences）
+---
+
+## 当前 V1.7 收尾路线
+
+```text
+P0  修复测试失败与核心 API 契约
+ ↓
+P0  消除 Node / 浏览器环境耦合
+ ↓
+P0  验证 Assessment → Mastery → Diagnosis 闭环
+ ↓
+P1  README / 架构文档与代码保持一致
+ ↓
+P1  Legacy 三态清单：KEEP / ARCHIVE / DELETE
+ ↓
+P1  删除确定无价值的遗留实现
+ ↓
+P1  内容加载与题库来源收敛
+ ↓
+P2  Schema CI
+ ↓
+最终全仓库架构审计
 ```
 
 ---
 
 ## 本地运行
 
+项目为原生 ES Module，需要 HTTP 静态服务器：
+
 ```bash
-# 使用任意静态服务器
 python3 -m http.server 8080
-# 然后访问 http://localhost:8080/index.html
 ```
 
-> 注意：ES Module 需要 HTTP 服务器运行（不能直接双击打开）。
+然后访问：
 
----
+```text
+http://localhost:8080/index.html
+```
 
-## 开发路线
-
-### V1.6（当前）
-
-已完成：
-
-- 模块化引擎骨架（engine/）
-- 知识图谱 v1.5（modules/questions/taxonomy/）
-- 实验数据模型与 LAB 播放器基础
-- 仪器图标库（6 种基础仪器）
-- 学习流程控制器
-- 错题诊断模型
-- Dashboard 基础模块
-
-待完成：
-
-- 完整课程内容填充（模块数据）
-- 题目库扩充
-- LAB 实验交互完善
-- 知识图谱节点全量导入
-
-### V1.7（规划）
-
-- 化学知识图谱全量构建
-- 错题诊断系统上线
-- AI 化学导师（需接入 LLM API）
-- 个性化学习路径
-
-### V2.0（远期）
-
-- 上册内容完整填充
-- 多册内容统一导航
-- 学习数据分析看板
+不能直接双击 `index.html`，因为浏览器模块加载和资源访问需要 HTTP 环境。
 
 ---
 
 ## 技术栈
 
-- 原生 HTML / CSS / JavaScript（ES Module）
-- 无框架、无打包器、无外部依赖
-- GitHub Pages 部署
-- GitHub Actions CI
+- HTML / CSS / JavaScript
+- 原生 ES Module
+- 无前端框架
+- 无打包器
+- GitHub Pages
+- GitHub Actions
+- Node.js 测试
 
 ---
 
 ## 项目目标
 
-打造一个适合中国初中化学学生的智能学习环境：
+打造一个适合中国初中化学学生自主学习的科学学习环境：
 
-让学生不仅学习知识，更通过实验、反馈和诊断形成科学学习能力。
+**不仅记住化学知识，更通过实验、证据、反馈、诊断、补救和再检测形成可迁移的科学学习能力。**
