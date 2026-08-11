@@ -24,10 +24,11 @@ const getDefaultRoot = () => {
 };
 
 export function createApplication({ state, assessment, experimentEngine, masteryService = new MasteryService(), remediationCatalog = {}, root = getDefaultRoot() }) {
+  const learning = new LearningController({ contentService, state, remediationCatalog });
   const controllers = {
-    learning: new LearningController({ contentService, state, remediationCatalog }),
-    assessment: new AssessmentController({ assessment, contentService, state, masteryService }),
-    experiment: new ExperimentController({ experimentEngine, state, masteryService }),
+    learning,
+    assessment: new AssessmentController({ assessment, contentService, state, masteryService, learningController: learning }),
+    experiment: new ExperimentController({ experimentEngine, state, masteryService, learningController: learning }),
   };
 
   const views = { renderHome, renderCourse, renderQuiz, renderQuizResult, renderExperiment, renderExperimentResult, renderDashboard, renderGraph, renderRemediation };
@@ -84,7 +85,7 @@ export function createApplication({ state, assessment, experimentEngine, mastery
           if (!result) return;
           if (controllers.assessment.session.completed) {
             const score = controllers.assessment.getScore();
-            const hasRemediation = Boolean(state.learning?.remediation);
+            const hasRemediation = state.learning?.remediation?.status === 'needs-remediation';
             return views.renderQuizResult({
               root,
               score,
