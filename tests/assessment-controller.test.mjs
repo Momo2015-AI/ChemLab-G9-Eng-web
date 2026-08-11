@@ -60,6 +60,21 @@ test('assessment controller records answer evidence for knowledge mastery', asyn
   assert.deepEqual(masteryService.getState(), { atom: { score: 0, weight: 0.5 } });
 });
 
+test('assessment controller starts a targeted recheck and feeds new evidence into mastery', async () => {
+  const { controller, state, masteryService } = createController();
+  const session = await controller.startTargeted(['atom'], 5);
+
+  assert.equal(session.dayId, 'remediation-recheck');
+  assert.equal(session.questions.length, 1);
+  assert.deepEqual(state.learning.recheck, { knowledgeIds: ['atom'], questionCount: 1 });
+
+  const result = controller.answer(0);
+  assert.equal(result.correct, true);
+  assert.deepEqual(masteryService.getState(), { atom: { score: 1, weight: 0.5 } });
+  assert.deepEqual(state.progress.mastery, masteryService.getState());
+  assert.equal(state.saved, true);
+});
+
 test('assessment controller ignores answers without an active session', () => {
   const { controller } = createController();
   assert.equal(controller.answer(0), null);
