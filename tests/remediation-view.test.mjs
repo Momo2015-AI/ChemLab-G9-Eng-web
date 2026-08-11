@@ -3,7 +3,11 @@ import assert from 'node:assert/strict';
 import { renderRemediation } from '../views/remediation-view.js';
 
 test('remediation view renders plan steps and escapes dynamic values', () => {
-  const root = { innerHTML: '' };
+  const root = {
+    innerHTML: '',
+    querySelector() { return null; },
+  };
+
   renderRemediation({
     root,
     plan: {
@@ -18,4 +22,5 @@ test('remediation view renders plan steps and escapes dynamic values', () => {
   assert.match(root.innerHTML, /Your next learning steps/);
   assert.match(root.innerHTML, /&lt;lesson&gt;/);
   assert.doesNotMatch(root.innerHTML, /<lesson>/);
+  assert.match(root.innerHTML, /data-recheck/);
 });
