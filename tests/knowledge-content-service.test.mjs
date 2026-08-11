@@ -14,7 +14,7 @@ function createLoader() {
             { id: 'matter' },
           ],
           relations: [
-            { source: 'matter', target: 'atom', type: 'prerequisite' },
+            { source: 'atom', target: 'matter', type: 'prerequisite' },
           ],
         },
         manifest: {},
