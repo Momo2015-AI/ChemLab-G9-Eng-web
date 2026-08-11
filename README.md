@@ -1,18 +1,16 @@
 # ChemLab-G9
 
-## 九年级化学智能学习平台 · V1.8
+## 九年级化学智能学习平台 · V1.8 Freeze → V1.9 Feature Development
 
-ChemLab-G9 是一个面向中国初中九年级学生的原生 ES Module 化学学习平台。V1.7 已完成核心架构收敛；V1.8 已完成生产接线、知识图谱边界归一化、诊断→补救→再检测闭环和 Architecture Freeze Audit。
+ChemLab-G9 是一个面向中国初中九年级学生的原生 ES Module 化学学习平台。V1.8 已完成生产接线、知识图谱边界归一化、诊断→补救→再检测闭环、Architecture Freeze 与 Directory Freeze。当前进入 V1.9 功能开发阶段。
 
 > 课程学习 → 知识理解 → 实验探究 → 练习评价 → 证据 → 掌握度 → 诊断 → 补救 → 再检测 → 迁移 → 下一学习任务
 
-项目坚持三个长期原则：**第一性原理、KISS、长期维护主义**。任何新功能或重构都不能破坏学习证据、掌握度、诊断、补救和再检测链路。
+项目坚持三个长期原则：**第一性原理、KISS、长期维护主义**。任何新功能都不能破坏学习证据、掌握度、诊断、补救和再检测链路。
 
 ---
 
-## V1.7 / V1.8 稳定架构
-
-V1.7/V1.8 已形成稳定的应用架构：
+## V1.8 冻结架构
 
 ```text
 index.html
@@ -32,109 +30,105 @@ controllers/
     ├── experiment-controller.js
     └── learning-controller.js
           ↓
-engine/ + core/
+canonical core / domain engines
     ├── assessment
     ├── experiment
     ├── mastery
     ├── diagnosis
-    └── canonical knowledge graph
+    └── knowledge graph
           ↓
 views/
 ```
 
-应用层负责装配和流程协调；领域引擎负责学习领域规则；View 负责展示。
+应用层负责装配和流程协调；领域引擎负责学习规则；View 负责展示。
 
-### 当前验证结果
+### 单一事实来源
+
+| 能力 | Canonical 来源 |
+|---|---|
+| Application Runtime | `app/bootstrap.js` + `app/application.js` |
+| Application State | `app/state.js` |
+| Progress Persistence | `app/progress-service.js` |
+| Content Access | `app/content-service.js` |
+| Knowledge Graph | Canonical Knowledge Engine |
+| Mastery | `MasteryEngine` |
+| Diagnosis | Canonical Diagnosis Engine |
+| Remediation | Canonical remediation flow/catalog |
+| Assessment | `AssessmentController` |
+| Experiment | `ExperimentController` |
+| Learning | `LearningController` |
+
+禁止重新引入第二套 application state、mastery、knowledge graph 或 recommendation/diagnosis engine。
+
+---
+
+## V1.8 验证基线
+
+当前自动化测试：
 
 ```text
-62 tests
-62 pass
+66 tests
+66 pass
 0 fail
 0 skipped
 0 cancelled
 ```
 
-V1.8 Architecture Freeze Audit 已完成，结果为 **PASS WITH CONTROLLED COMPATIBILITY**。
+V1.8 Architecture Freeze Audit：**APPROVED**。
 
-完整审计记录：`docs/V1.8-ARCHITECTURE-FREEZE-AUDIT.md`。
+V1.8 Directory Freeze：**APPROVED**。
+
+完整审计记录：
+
+- `docs/V1.8-ARCHITECTURE-FREEZE-AUDIT.md`
+- `docs/V1.8-DIRECTORY-FREEZE-AUDIT.md`
+
+Health Check 已迁移到 ESM，与项目 `"type": "module"` 契约一致。
 
 ---
 
-## V1.8 产品目标
+## 受控兼容层
 
-V1.8 的核心问题不是“再增加多少页面”，而是：
-
-> **系统能否根据学生产生的学习证据，判断下一步最值得做什么？**
-
-当前核心闭环：
+当前唯一明确保留的架构兼容项是旧知识图谱 JSON fallback：
 
 ```text
-Lesson
-  ↓
-Knowledge understanding
-  ↓
-Practice / Experiment
-  ↓
+canonical: /content/knowledge/knowledge-graph.json
+fallback:  /modules/questions/taxonomy/knowledge-graph.json
+```
+
+canonical 数据始终优先。fallback 仅用于内容迁移安全，不属于第二套生产知识引擎。
+
+已有 `chemlab_v16` storage key 也作为旧学习数据兼容标识保留，但不构成第二套状态实现。
+
+---
+
+## V1.9 开发方向
+
+V1.9 不再进行基础架构重写，重点进入产品能力与真实学习体验：
+
+```text
+Learning Center
+      ↓
+Knowledge Learning
+      ↓
+Interactive Experiment
+      ↓
+Assessment
+      ↓
 Evidence
-  ↓
-Mastery update
-  ↓
+      ↓
 Diagnosis
-  ↓
-Remediation
-  ↓
-Targeted recheck
-  ↓
-New evidence
-  ↓
-Mastery
+      ↓
+Personalized Remediation
+      ↓
+Targeted Recheck
+      ↓
+Mastery / Dashboard
+      ↓
+Transfer / Next Task
 ```
 
----
-
-## Architecture Freeze
-
-V1.8 冻结以下核心边界：
-
-- `ContentService`：唯一应用侧内容访问边界。
-- `Canonical Knowledge Engine`：唯一知识图谱遍历和查询实现。
-- `MasteryEngine`：唯一掌握度计算实现。
-- `DiagnosisEngine`：唯一诊断决策实现。
-- `Remediation`：唯一补救规划路径。
-- `ProgressService`：唯一学习进度持久化边界。
-- `Controllers`：协调流程，不重复领域算法。
-
-禁止：
-
-1. 新增第二套 application state。
-2. 新增第二套 mastery calculation。
-3. 新增第二套 knowledge graph engine。
-4. 在 Controller 中复制领域算法。
-5. 新增生产代码依赖 deprecated legacy adapter。
-6. 绕过 `ContentService` 直接建立第二套 canonical content access。
-
-唯一受控兼容例外是旧 knowledge graph JSON fallback：canonical graph 始终优先，旧路径只作为迁移安全网。
-
----
-
-## 数据合同
-
-V1.8 统一使用以下核心语义标识：
-
-```text
-knowledgeId
-lessonId
-questionId
-experimentId
-evidenceId
-errorType
-difficulty
-masteryScore
-confidence
-recommendedAction
-```
-
-所有会影响掌握度的学习事件都应该可以追溯到 evidence。
+详细开发计划：`docs/V1.9-DEVELOPMENT-PLAN.md`。
 
 ---
 
@@ -146,27 +140,21 @@ recommendedAction
 npm test
 ```
 
-当前基线：
-
-```text
-62 / 62
-0 failures
-```
-
-Build Check 验证 JavaScript syntax、Node tests、内容 JSON 和入口文件。
-
-GitHub Pages 发布 workflow 同样先执行 `npm test`，测试通过后才允许上传和部署 Pages artifact。
-
-每个后续 Phase 的完成条件：
+每个功能阶段必须满足：
 
 ```text
 implementation
-→ tests
+→ unit/integration tests
 → npm test GREEN
-→ CI GREEN
+→ Build Check GREEN
 → documentation updated
 → commit on main
+→ Pages deployment
 ```
+
+GitHub Pages 发布 workflow 必须先通过测试，再上传和部署 Pages artifact。
+
+`main` 是本项目唯一开发与发布分支。
 
 ---
 
