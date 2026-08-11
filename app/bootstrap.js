@@ -1,6 +1,10 @@
 /**
  * ChemLab-G9 V1.7 application bootstrap.
- * The V1.7 composition root is now the sole production runtime entry.
+ * The V1.7 composition root is the sole production runtime entry.
+ *
+ * Startup is intentionally resilient: the shell/router can render even when
+ * a remote content asset fails. Content is loaded before content-dependent
+ * navigation is used, while the home shell remains available for diagnostics.
  */
 
 import { createAppState } from './state.js';
@@ -15,6 +19,26 @@ function getDefaultRoot() {
   return document.querySelector('#app-root');
 }
 
+function renderStartupError(root, error) {
+  if (!root) return;
+  const message = error instanceof Error ? error.message : String(error);
+  console.error('ChemLab V1.7 content bootstrap failed:', error);
+  root.innerHTML = `
+    <section class="page startup-error">
+      <header class="page-header">
+        <h1>ChemLab-G9</h1>
+        <p>本次页面加载的内容资源未能完整加载。</p>
+      </header>
+      <div class="startup-error__body">
+        <p>学习平台外壳已经启动。请刷新页面后重试。</p>
+        <details>
+          <summary>技术诊断</summary>
+          <pre>${String(message).replace(/[&<>\"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]))}</pre>
+        </details>
+      </div>
+    </section>`;
+}
+
 export async function bootstrap({ root = getDefaultRoot() } = {}) {
   const application = createApplication({
     state,
@@ -23,8 +47,17 @@ export async function bootstrap({ root = getDefaultRoot() } = {}) {
     root,
   });
 
-  await application.contentService.load();
+  // Start the browser shell first. The router/home view does not require the
+  // content payload, so a single missing asset must not blank the application.
   application.start();
+
+  try {
+    await application.contentService.load();
+  } catch (error) {
+    renderStartupError(root, error);
+    application.state.contentLoadError = error;
+  }
+
   if (typeof window !== 'undefined') {
     window.chemLabApplication = application;
     window.chemLabState = state;
