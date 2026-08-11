@@ -1,16 +1,18 @@
 /**
- * ChemLab-G9 V1.6 Content Loader
- * Loads all structured learning data from modules/
+ * ChemLab-G9 legacy content loader.
+ *
+ * V1.7 production code uses app/content-service.js as the application-facing
+ * boundary. This loader remains only as a compatibility adapter for legacy
+ * consumers and must stay environment-safe when imported by Node tests.
  */
 
-// Detect deployment subpath from base href
+// Detect deployment subpath from base href without assuming a browser runtime.
 const BASE = (() => {
+  if (typeof document === 'undefined') return '';
   const baseEl = document.querySelector('base');
-  if (baseEl) {
-    const href = baseEl.getAttribute('href');
-    return href.endsWith('/') ? href.slice(0, -1) : href;
-  }
-  return '';
+  if (!baseEl) return '';
+  const href = baseEl.getAttribute('href') || '';
+  return href.endsWith('/') ? href.slice(0, -1) : href;
 })();
 
 const ENDPOINTS = {
@@ -35,32 +37,35 @@ class ContentLoader {
   }
 
   async loadAll() {
-    const [qb, kg, manifest, topics, days] = await Promise.all([
+    const manifest = await this.fetchJSON(ENDPOINTS.manifest);
+    const [qb, kg, topics, days] = await Promise.all([
       this.fetchJSON(ENDPOINTS.questionBank),
       this.fetchJSON(ENDPOINTS.knowledgeGraph),
-      this.fetchJSON(ENDPOINTS.manifest),
       this.fetchJSON(ENDPOINTS.topicBank).catch(() => ({ topics: [] })),
-      this.loadAllDays(),
+      this.loadAllDays(manifest),
     ]);
 
     return {
       questions: qb.questions,
       questionById: new Map(qb.questions.map(q => [q.id, q])),
       knowledgeGraph: kg,
-      manifest: manifest,
+      manifest,
       topics: topics.topics,
-      days: days,
+      days,
       dayById: new Map(days.map(d => [d.day, d])),
     };
   }
 
-  async loadAllDays() {
+  async loadAllDays(manifest = {}) {
+    const dayIds = Array.isArray(manifest.days)
+      ? manifest.days.map(entry => entry?.day).filter(Boolean)
+      : [];
+
     const results = await Promise.all(
-      Array.from({ length: 36 }, (_, i) => {
-        const day = String(i + 1).padStart(2, '0');
-        return this.fetchJSON(`${BASE}/modules/lessons/day-${day}.json`)
-          .catch(() => null);
-      })
+      dayIds.map(day =>
+        this.fetchJSON(`${BASE}/modules/lessons/day-${String(day).padStart(2, '0')}.json`)
+          .catch(() => null)
+      )
     );
     return results.filter(Boolean);
   }
