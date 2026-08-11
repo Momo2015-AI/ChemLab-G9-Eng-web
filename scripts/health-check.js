@@ -1,15 +1,15 @@
 // ChemLab-G9 Health Check
 // Checks: directory structure, JS syntax, JSON validity, essential files
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+import fs from 'node:fs';
+import path from 'node:path';
+import { execSync } from 'node:child_process';
 
 const errors = [];
 const warnings = [];
 
 // Required top-level directories
-const requiredDirs = ['engine', 'core', 'modules', 'schemas'];
+const requiredDirs = ['core', 'modules', 'schemas'];
 for (const dir of requiredDirs) {
   if (!fs.existsSync(dir)) {
     errors.push(`Missing required directory: ${dir}/`);
@@ -24,8 +24,8 @@ for (const file of requiredFiles) {
   }
 }
 
-// Check JS syntax in engine/, core/, lab/, dashboard/
-const jsDirs = ['engine', 'core', 'lab', 'dashboard'];
+// Check JS syntax in canonical production directories.
+const jsDirs = ['app', 'core', 'controllers', 'services', 'views', 'modules'];
 for (const dir of jsDirs) {
   if (!fs.existsSync(dir)) continue;
   const files = getAllJsFiles(dir);
@@ -38,7 +38,7 @@ for (const dir of jsDirs) {
   }
 }
 
-// Check JSON validity in modules/ and schemas/
+// Check JSON validity in content and schema directories.
 const jsonDirs = ['modules', 'schemas', 'content'];
 for (const dir of jsonDirs) {
   if (!fs.existsSync(dir)) continue;
