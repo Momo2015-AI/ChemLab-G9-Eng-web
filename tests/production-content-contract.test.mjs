@@ -10,6 +10,16 @@ test('production loader points to canonical knowledge graph content', () => {
   assert.ok(fs.existsSync(new URL('../content/knowledge/knowledge-graph.json', import.meta.url)));
 });
 
+test('canonical knowledge graph relations expose source and target', () => {
+  const graph = JSON.parse(read('content/knowledge/knowledge-graph.json'));
+  const relations = graph.relations || graph.edges || [];
+  assert.ok(relations.length > 0);
+  for (const relation of relations) {
+    assert.equal(typeof relation.source, 'string');
+    assert.equal(typeof relation.target, 'string');
+  }
+});
+
 test('canonical experiment content uses the schema-supported title and knowledge fields', () => {
   const schema = JSON.parse(read('schemas/experiment.schema.json'));
   const experiment = JSON.parse(read('content/experiments/exp-hcl-fe.json'));
