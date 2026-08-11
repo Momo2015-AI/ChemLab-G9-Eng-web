@@ -5,6 +5,25 @@
 
 import ContentLoader from './content-loader.js';
 import { KnowledgeEngine } from '../core/knowledge-graph/canonical-knowledge-engine.js';
+import { registerQuestion } from '../core/diagnosis/question-knowledge-map.js';
+
+function normalizeKnowledgeIds(question) {
+  const value = question?.knowledgeIds
+    ?? question?.knowledgePoints
+    ?? question?.knowledgeId
+    ?? question?.knowledge
+    ?? [];
+  return (Array.isArray(value) ? value : [value]).filter(Boolean);
+}
+
+function normalizeKnowledgeGraph(graph = {}) {
+  const relations = (graph.relations || graph.edges || []).map(relation => ({
+    ...relation,
+    source: relation.source || relation.from,
+    target: relation.target || relation.to,
+  }));
+  return { ...graph, relations };
+}
 
 class ContentService {
   constructor(loader = new ContentLoader(), knowledgeEngineFactory = graph => new KnowledgeEngine(graph)) {
@@ -17,6 +36,21 @@ class ContentService {
   async load() {
     if (!this.data) {
       this.data = await this.loader.loadAll();
+      this.data.knowledgeGraph = normalizeKnowledgeGraph(this.data.knowledgeGraph);
+      this.data.questionById = new Map(this.data.questions.map(q => [q.id, q]));
+
+      // Build the diagnosis registry at the content boundary. This keeps
+      // question-to-knowledge registration deterministic and avoids global UI
+      // side effects or controller-specific registration rules.
+      for (const question of this.data.questions) {
+        const knowledge = normalizeKnowledgeIds(question);
+        const commonMistake = question.commonMistake || question.mistake || null;
+        const errors = Array.isArray(question.errors)
+          ? question.errors
+          : commonMistake ? [commonMistake] : [];
+        registerQuestion(question.id, { knowledge, errors });
+      }
+
       this.knowledgeEngine = this.knowledgeEngineFactory(this.data.knowledgeGraph);
     }
     return this.data;
@@ -34,7 +68,7 @@ class ContentService {
 
   async getQuestionsByKnowledge(knowledgeId) {
     const data = await this.load();
-    return data.questions.filter(q => (q.knowledge || []).includes(knowledgeId));
+    return data.questions.filter(q => normalizeKnowledgeIds(q).includes(knowledgeId));
   }
 
   async getKnowledgeGraph() {
