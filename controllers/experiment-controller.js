@@ -2,11 +2,14 @@
  * V1.7 Experiment Controller
  * Owns experiment-session state; ExperimentEngine remains responsible for domain rules.
  */
+import { diagnoseExperiment } from '../core/diagnosis/diagnosis-engine.js';
+
 export class ExperimentController {
-  constructor({ experimentEngine, state, masteryService = null }) {
+  constructor({ experimentEngine, state, masteryService = null, learningController = null }) {
     this.engine = experimentEngine;
     this.state = state;
     this.masteryService = masteryService;
+    this.learningController = learningController;
     this.session = null;
   }
 
@@ -14,6 +17,8 @@ export class ExperimentController {
     const experiment = this.engine.get(experimentId);
     if (!experiment) return null;
     this.session = this.engine.start(experimentId);
+    this.session.experiment = experiment;
+    this.session.knowledgeIds = this.getKnowledgeIds(experiment);
     return { experiment, session: this.session };
   }
 
@@ -43,10 +48,30 @@ export class ExperimentController {
     this.session = null;
   }
 
+  getKnowledgeIds(experiment) {
+    const ids = experiment?.knowledgeIds ?? experiment?.knowledgeId ?? experiment?.knowledge ?? [];
+    return (Array.isArray(ids) ? ids : [ids]).filter(Boolean);
+  }
+
   #recordEvidence(validation) {
-    if (!this.masteryService || !this.session?.id || !validation) return;
-    const knowledgeId = this.session.knowledgeId || this.session.knowledgePointId;
-    if (!knowledgeId) return;
-    this.masteryService.recordEvidence(knowledgeId, validation.valid ? 1 : 0, 0.2);
+    if (!this.session?.id || !validation) return;
+    const knowledgeIds = this.session.knowledgeIds || [];
+    if (!knowledgeIds.length) return;
+
+    const diagnosis = diagnoseExperiment({ knowledgeIds, validation });
+    this.state.learning ||= {};
+    this.state.learning.diagnosis = diagnosis;
+
+    if (this.masteryService) {
+      for (const knowledgeId of knowledgeIds) {
+        this.masteryService.recordEvidence(knowledgeId, validation.valid ? 1 : 0, 0.2);
+      }
+      this.state.progress.mastery = this.masteryService.getState();
+    }
+
+    if (diagnosis.status === 'incorrect' && this.learningController) {
+      this.learningController.getRemediationPlan(diagnosis);
+    }
+    this.state.save?.();
   }
 }
