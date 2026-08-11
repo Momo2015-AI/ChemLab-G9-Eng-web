@@ -6,7 +6,7 @@ test('canonical graph resolves explicit relations', () => {
   const graph = new KnowledgeEngine({
     nodes: [{ id: 'atom' }, { id: 'element' }, { id: 'lab-1' }],
     relations: [
-      { source: 'element', target: 'atom', type: 'prerequisite' },
+      { source: 'atom', target: 'element', type: 'prerequisite' },
       { source: 'element', target: 'lab-1', type: 'experiment' }
     ]
   });
