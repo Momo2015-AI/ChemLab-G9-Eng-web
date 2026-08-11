@@ -54,7 +54,8 @@ export function createApplication({ state, assessment, experimentEngine, mastery
         root,
         plan: state.learning?.remediation,
         onRecheck: async plan => {
-          const ids = [...new Set((plan.steps || []).map(step => step.knowledgeId).filter(Boolean))];
+          const recheck = (plan.steps || []).find(step => step.type === 'recheck');
+          const ids = recheck?.knowledgeIds || [];
           const session = await controllers.assessment.startTargeted(ids);
           if (session) return renderRoute({ page: 'quiz', params: [] });
         },
