@@ -42,7 +42,11 @@ export function createRemediationPlan(diagnosis, { catalog = {} } = {}) {
 
   if (steps.length === 0) steps.push(DEFAULT_REVIEW);
 
-  steps.push({ type: 'recheck', reason: 'verify-remediation' });
+  steps.push({
+    type: 'recheck',
+    knowledgeIds: [...knowledge],
+    reason: 'verify-remediation',
+  });
 
   return {
     status: 'needs-remediation',
