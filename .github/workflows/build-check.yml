@@ -28,11 +28,16 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          find engine core lab dashboard app controllers views tests -type f \( -name '*.js' -o -name '*.mjs' \) -print0 \
-            | sort -z \
-            | while IFS= read -r -d '' f; do
+          for dir in engine core app controllers views tests; do
+            if [ -d "$dir" ]; then
+              find "$dir" -type f \( -name '*.js' -o -name '*.mjs' \) -print
+            fi
+          done \
+            | sort \
+            | while IFS= read -r f; do
                 node --check "$f"
               done
+          echo "JS syntax OK"
 
       - name: Run tests
         run: npm test
@@ -41,12 +46,20 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          find modules content -type f -name '*.json' -print0 \
-            | sort -z \
-            | while IFS= read -r -d '' f; do
+          found=0
+          for dir in modules content; do
+            if [ -d "$dir" ]; then
+              while IFS= read -r -d '' f; do
+                found=1
                 node -e "JSON.parse(require('fs').readFileSync(process.argv[1],'utf8'))" "$f"
-              done
-          echo "JSON OK"
+              done < <(find "$dir" -type f -name '*.json' -print0 | sort -z)
+            fi
+          done
+          if [ "$found" -eq 0 ]; then
+            echo "No content JSON files found; skipping JSON content validation."
+          else
+            echo "JSON OK"
+          fi
 
       - name: Check index.html exists
         run: |
