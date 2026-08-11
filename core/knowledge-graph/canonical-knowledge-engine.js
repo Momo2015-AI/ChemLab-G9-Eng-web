@@ -39,13 +39,23 @@ export class KnowledgeEngine {
     return (node?.relations?.[type] || []).map(ref => this.get(ref) || ref);
   }
 
-  prerequisites(id) { return this.related(id, 'prerequisite'); }
-  dependents(id) {
-    return this.findRelations(id, 'prerequisite')
-      .filter(r => r.target === id)
+  prerequisites(id) {
+    const explicit = this.relations
+      .filter(r => r.type === 'prerequisite' && r.target === id)
       .map(r => this.get(r.source))
       .filter(Boolean);
+    if (explicit.length) return explicit;
+    const node = this.get(id);
+    return (node?.relations?.prerequisite || []).map(ref => this.get(ref) || ref);
   }
+
+  dependents(id) {
+    return this.relations
+      .filter(r => r.type === 'prerequisite' && r.source === id)
+      .map(r => this.get(r.target))
+      .filter(Boolean);
+  }
+
   relatedNodes(id) { return this.related(id, 'related'); }
   experiments(id) { return this.related(id, 'experiment'); }
   questions(id) { return this.related(id, 'question'); }
