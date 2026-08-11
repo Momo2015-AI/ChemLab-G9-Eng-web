@@ -7,11 +7,13 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   validate:
-    name: Validate ChemLab engine
+    name: Validate ChemLab V1.7 baseline
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Checkout
@@ -23,25 +25,30 @@ jobs:
           node-version: 22
 
       - name: Check JS syntax
+        shell: bash
         run: |
-          find engine core lab dashboard app controllers views tests -name '*.js' -o -name '*.mjs' 2>/dev/null | sort | while read f; do
-            node --check "$f" || { echo "Syntax error in $f"; exit 1; }
-          done
+          set -euo pipefail
+          find engine core lab dashboard app controllers views tests -type f \( -name '*.js' -o -name '*.mjs' \) -print0 \
+            | sort -z \
+            | while IFS= read -r -d '' f; do
+                node --check "$f"
+              done
 
       - name: Run tests
         run: npm test
 
       - name: Validate content JSON
+        shell: bash
         run: |
-          find modules content -name '*.json' | sort | while read f; do
-            node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" || { echo "Invalid JSON: $f"; exit 1; }
-          done
+          set -euo pipefail
+          find modules content -type f -name '*.json' -print0 \
+            | sort -z \
+            | while IFS= read -r -d '' f; do
+                node -e "JSON.parse(require('fs').readFileSync(process.argv[1],'utf8'))" "$f"
+              done
           echo "JSON OK"
 
       - name: Check index.html exists
         run: |
-          if [ ! -f index.html ]; then
-            echo "index.html not found — must exist as app entry point"
-            exit 1
-          fi
+          test -f index.html
           echo "index.html OK"
