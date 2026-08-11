@@ -19,8 +19,6 @@ import { renderGraph } from '../views/graph-view.js';
 import { renderRemediation } from '../views/remediation-view.js';
 
 export function createApplication({ state, assessment, experimentEngine, masteryService = new MasteryService(), remediationCatalog = {}, root = document.querySelector('#app') }) {
-  masteryService.hydrate(state.progress?.mastery || {});
-
   const controllers = {
     learning: new LearningController({ contentService, state, remediationCatalog }),
     assessment: new AssessmentController({ assessment, contentService, state, masteryService }),
