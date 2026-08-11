@@ -15,7 +15,10 @@ function fakeContentLoader() {
         ],
         questionById: new Map(),
         knowledgeGraph: {
-          nodes: [{ id: 'k1', name: 'Knowledge 1' }],
+          nodes: [
+            { id: 'k0', name: 'Prerequisite' },
+            { id: 'k1', name: 'Knowledge 1' },
+          ],
           edges: [{ from: 'k0', to: 'k1', type: 'prerequisite' }],
         },
         manifest: { days: [] },
@@ -61,7 +64,6 @@ test('assessment production flow stores diagnosis and creates remediation', () =
     learningController,
   });
 
-  // Register the same production mapping through the content boundary contract.
   const { registerQuestion } = await import('../core/diagnosis/question-knowledge-map.js');
   registerQuestion('q-production', { knowledge: ['k1'], errors: ['concept-confusion'] });
   controller.createSession('day-01', [{ id: 'q-production', type: 'choice', knowledge: ['k1'], answer: 'A' }]);
@@ -76,7 +78,7 @@ test('experiment production flow preserves multi-knowledge evidence', () => {
   const state = { progress: { mastery: {} }, learning: {}, save() {} };
   const masteryService = {
     recordEvidence(id, score, weight) { evidence.push({ id, score, weight }); },
-    getState() { return { 'k1': 0.2, 'k2': 0.2 }; },
+    getState() { return { k1: 0.2, k2: 0.2 }; },
   };
   const experimentEngine = {
     get: () => ({ id: 'exp-1', title: 'Experiment', knowledge: ['k1', 'k2'], steps: [{ observation: 'blue' }] }),
