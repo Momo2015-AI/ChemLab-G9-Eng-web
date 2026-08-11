@@ -2,12 +2,15 @@
  * V1.7 Assessment Controller
  * Owns quiz session state and delegates answer evaluation to the domain engine.
  */
+import { diagnoseAssessment } from '../core/diagnosis/diagnosis-engine.js';
+
 export class AssessmentController {
-  constructor({ assessment, contentService, state, masteryService = null }) {
+  constructor({ assessment, contentService, state, masteryService = null, learningController = null }) {
     this.assessment = assessment;
     this.contentService = contentService;
     this.state = state;
     this.masteryService = masteryService;
+    this.learningController = learningController;
     this.session = null;
 
     if (this.masteryService) {
@@ -54,14 +57,35 @@ export class AssessmentController {
     if (!question) return null;
     const answer = this.toDomainAnswer(question, optionIndex);
     const result = this.assessment.evaluate(question, answer);
-    this.session.answers.push({ questionId: question.id, selected: optionIndex, answer, ...result });
+    const diagnosis = diagnoseAssessment(question.id, result);
+
+    this.session.answers.push({ questionId: question.id, selected: optionIndex, answer, ...result, diagnosis });
     this.recordMasteryEvidence(question, result);
+    this.recordDiagnosisEvidence(diagnosis);
+
     this.session.index += 1;
     this.session.completed = this.session.index >= this.session.questions.length;
     this.state.quizIndex = this.session.index;
     this.state.quizAnswers[question.id] = answer;
-    if (this.session.completed) this.state.save?.();
+
+    if (this.session.completed) {
+      this.state.save?.();
+    }
     return result;
+  }
+
+  recordDiagnosisEvidence(diagnosis) {
+    this.state.learning ||= {};
+    this.state.learning.diagnosis = diagnosis;
+
+    if (diagnosis?.status === 'incorrect' && this.learningController) {
+      this.learningController.getRemediationPlan(diagnosis);
+    } else if (diagnosis?.status === 'correct') {
+      this.state.learning.remediation = null;
+    }
+
+    this.state.save?.();
+    return diagnosis;
   }
 
   recordMasteryEvidence(question, result) {
