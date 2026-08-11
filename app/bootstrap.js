@@ -10,7 +10,12 @@ import experimentEngine from '../engine/experiment-engine.js';
 
 const state = createAppState();
 
-export async function bootstrap({ root = document.querySelector('#app-root') } = {}) {
+function getDefaultRoot() {
+  if (typeof document === 'undefined') return null;
+  return document.querySelector('#app-root');
+}
+
+export async function bootstrap({ root = getDefaultRoot() } = {}) {
   const application = createApplication({
     state,
     assessment: assessmentEngine,
@@ -20,8 +25,10 @@ export async function bootstrap({ root = document.querySelector('#app-root') } =
 
   await application.contentService.load();
   application.start();
-  window.chemLabApplication = application;
-  window.chemLabState = state;
+  if (typeof window !== 'undefined') {
+    window.chemLabApplication = application;
+    window.chemLabState = state;
+  }
   return application;
 }
 
