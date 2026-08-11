@@ -18,7 +18,12 @@ import { renderDashboard } from '../views/dashboard-view.js';
 import { renderGraph } from '../views/graph-view.js';
 import { renderRemediation } from '../views/remediation-view.js';
 
-export function createApplication({ state, assessment, experimentEngine, masteryService = new MasteryService(), remediationCatalog = {}, root = document.querySelector('#app') }) {
+const getDefaultRoot = () => {
+  if (typeof document === 'undefined') return null;
+  return document.querySelector('#app-root');
+};
+
+export function createApplication({ state, assessment, experimentEngine, masteryService = new MasteryService(), remediationCatalog = {}, root = getDefaultRoot() }) {
   const controllers = {
     learning: new LearningController({ contentService, state, remediationCatalog }),
     assessment: new AssessmentController({ assessment, contentService, state, masteryService }),
