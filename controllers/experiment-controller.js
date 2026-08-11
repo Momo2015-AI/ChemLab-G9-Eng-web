@@ -66,7 +66,9 @@ export class ExperimentController {
       for (const knowledgeId of knowledgeIds) {
         this.masteryService.recordEvidence(knowledgeId, validation.valid ? 1 : 0, 0.2);
       }
-      this.state.progress.mastery = this.masteryService.getState();
+      if (typeof this.masteryService.getState === 'function') {
+        this.state.progress.mastery = this.masteryService.getState();
+      }
     }
 
     if (diagnosis.status === 'incorrect' && this.learningController) {
