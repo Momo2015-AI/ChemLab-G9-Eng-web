@@ -1,0 +1,25 @@
+:root {
+  --lab-bg: #071426;
+  --panel-bg: rgba(255,255,255,.08);
+  --plasma-blue: #00d9ff;
+  --chemical-green: #00ffa8;
+  --ai-purple: #8b5cff;
+  --text-main: #e8f7ff;
+}
+
+body {
+  background: radial-gradient(circle at top, rgba(0,217,255,.15), transparent 35%), var(--lab-bg);
+  color: var(--text-main);
+}
+
+.glow-card {
+  background: var(--panel-bg);
+  border: 1px solid rgba(0,217,255,.35);
+  border-radius: 18px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 24px rgba(0,217,255,.15);
+}
+
+.glow-card:hover {
+  box-shadow: 0 0 32px rgba(0,217,255,.35);
+}
