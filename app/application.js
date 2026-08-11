@@ -12,7 +12,7 @@ import { LearningController } from '../controllers/learning-controller.js';
 import { renderHome } from '../views/home-view.js';
 import { renderV19Course } from '../views/v19-course-view.js';
 import { renderQuiz, renderQuizResult } from '../views/quiz-view.js';
-import { renderExperiment, renderExperimentResult } from '../views/experiment-view.js';
+import { renderV19Experiment, renderV19ExperimentResult } from '../views/v19-experiment-view.js';
 import { renderDashboard } from '../views/dashboard-view.js';
 import { renderGraph } from '../views/graph-view.js';
 import { renderRemediation } from '../views/remediation-view.js';
@@ -26,20 +26,14 @@ export function createApplication({ state, assessment, experimentEngine, mastery
     assessment: new AssessmentController({ assessment, contentService, state, masteryService, learningController: learning }),
     experiment: new ExperimentController({ experimentEngine, state, masteryService, learningController: learning }),
   };
-  const views = { renderHome, renderCourse: renderV19Course, renderQuiz, renderQuizResult, renderExperiment, renderExperimentResult, renderDashboard, renderGraph, renderRemediation };
+  const views = { renderHome, renderCourse: renderV19Course, renderQuiz, renderQuizResult, renderExperiment: renderV19Experiment, renderExperimentResult: renderV19ExperimentResult, renderDashboard, renderGraph, renderRemediation };
   const router = createRouter({ onRoute: route => { state.route = route; }, render: route => renderRoute(route) });
 
   async function getHomeData() {
     const data = await contentService.load();
     const progress = createProgressProjection({ ...state.progress, mastery: masteryService.getState() });
     const lessons = data.days.map(day => ({ ...day, completed: Boolean(progress.completed?.[day.day]) }));
-    return {
-      title: '九年级化学智能学习中心',
-      subtitle: '学习 → 实验 → 答题 → 诊断 → 补救 → 再检测',
-      lessons,
-      hasRemediation: state.learning?.remediation?.status === 'needs-remediation',
-      stats: { completed: lessons.filter(day => day.completed).length, mastery: Math.round((progress.masteryScore || 0) * 100), questions: progress.questions || 0 },
-    };
+    return { title: '九年级化学智能学习中心', subtitle: '学习 → 实验 → 答题 → 诊断 → 补救 → 再检测', lessons, hasRemediation: state.learning?.remediation?.status === 'needs-remediation', stats: { completed: lessons.filter(day => day.completed).length, mastery: Math.round((progress.masteryScore || 0) * 100), questions: progress.questions || 0 } };
   }
 
   async function renderRoute(route) {
