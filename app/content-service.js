@@ -1,9 +1,9 @@
 /**
  * ChemLab-G9 V1.7 Content Service
- * Stable application-facing boundary over the legacy content loader.
+ * Stable application-facing boundary over the content loader.
  */
 
-import ContentLoader from '../engine/content-loader.js';
+import ContentLoader from './content-loader.js';
 import { KnowledgeEngine } from '../core/knowledge-graph/canonical-knowledge-engine.js';
 
 class ContentService {
