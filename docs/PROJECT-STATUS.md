@@ -1,10 +1,12 @@
 # ChemLab-G9 Project Status
 
-> Last refreshed for V1.8 planning after the V1.7 55/55 GREEN baseline.
+> Refreshed for V1.8 after the V1.7 baseline and production-wiring audit.
 
 ## Current release state
 
-**V1.7 — Stable Baseline**
+**V1.7 — Architecture baseline**
+
+Previous verified baseline:
 
 ```text
 55 tests
@@ -14,9 +16,9 @@
 0 cancelled
 ```
 
-V1.7 is considered architecture-stable. New development should prefer additive product evolution over another broad refactor.
+V1.7 established the canonical application architecture. V1.8 now focuses on product completion and production wiring rather than another broad refactor.
 
-## What V1.7 established
+## V1.7 architecture established
 
 - V1.7 browser entry and Composition Root.
 - Canonical ContentService boundary.
@@ -30,6 +32,23 @@ V1.7 is considered architecture-stable. New development should prefer additive p
 - Node/CI-safe application construction and router behavior.
 - CI baseline for syntax, tests, JSON and entrypoint validation.
 - Legacy cleanup governed by KEEP / ARCHIVE / DELETE rather than directory-name heuristics.
+
+## Production wiring audit status
+
+The V1.8 production audit identified and repaired the remaining wiring/data-boundary gaps:
+
+```text
+canonical graph path
+→ graph normalization
+→ question registration
+→ assessment diagnosis
+→ remediation generation
+→ targeted recheck
+→ multi-knowledge experiment evidence
+→ data-derived remediation catalog
+```
+
+The production path is now explicitly tested by `tests/production-wiring-v18.test.mjs`.
 
 ## V1.8 objective
 
@@ -65,6 +84,10 @@ content
 
 Detailed plan: `docs/V1.8-DEVELOPMENT-PLAN.md`.
 
+Production wiring audit: `docs/V1.8-PRODUCTION-WIRING-AUDIT.md`.
+
+Release/deployment workflow: `docs/RELEASE-AND-DEPLOYMENT.md`.
+
 ## Architecture contract
 
 ```text
@@ -74,7 +97,7 @@ views/        presentation
 engine/       domain engines
 core/         canonical domain modules / adapters
 modules/      primary content
-content/      supporting content
+content/      supporting canonical content
 schemas/      contracts
 docs/         project documentation
 ```
@@ -82,7 +105,7 @@ docs/         project documentation
 Domain ownership remains explicit:
 
 ```text
-ContentService       → content access
+ContentService       → content access + normalization + registration boundary
 Knowledge Engine     → graph semantics
 MasteryEngine        → mastery calculation
 DiagnosisEngine      → diagnosis
@@ -93,20 +116,19 @@ Views                → rendering only
 
 ## Release discipline
 
-All V1.8 work remains on `main` unless a future change explicitly requires another strategy.
-
-Each phase must finish with:
+All V1.8 work remains on `main`.
 
 ```text
 code
 → tests
 → npm test GREEN
 → CI GREEN
+→ Pages deploy
 → docs refreshed
 → commit
 ```
 
-A red `main` branch is not an acceptable intermediate release state.
+The single canonical repository is `Momo2015-AI/ChemLab-G9-Eng-web`. No secondary development or publication repository is part of the active workflow.
 
 ## Definition of V1.8 complete
 
