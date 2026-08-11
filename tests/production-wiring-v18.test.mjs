@@ -5,6 +5,7 @@ import { AssessmentController } from '../controllers/assessment-controller.js';
 import { ExperimentController } from '../controllers/experiment-controller.js';
 import { diagnoseAssessment } from '../core/diagnosis/diagnosis-engine.js';
 import { createRemediationCatalog } from '../core/diagnosis/remediation-catalog.js';
+import { registerQuestion } from '../core/diagnosis/question-knowledge-map.js';
 
 function fakeContentLoader() {
   return {
@@ -64,7 +65,6 @@ test('assessment production flow stores diagnosis and creates remediation', () =
     learningController,
   });
 
-  const { registerQuestion } = await import('../core/diagnosis/question-knowledge-map.js');
   registerQuestion('q-production', { knowledge: ['k1'], errors: ['concept-confusion'] });
   controller.createSession('day-01', [{ id: 'q-production', type: 'choice', knowledge: ['k1'], answer: 'A' }]);
   controller.answer(0);
