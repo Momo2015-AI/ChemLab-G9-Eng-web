@@ -1,7 +1,7 @@
 /**
  * V1.7 canonical diagnosis engine.
  *
- * Converts learning evidence into one stable diagnosis contract.  UI and
+ * Converts learning evidence into one stable diagnosis contract. UI and
  * controllers must not implement diagnosis policy themselves.
  */
 import { getQuestionKnowledge } from './question-knowledge-map.js';
@@ -38,15 +38,19 @@ export function diagnoseAssessment(questionId, result) {
   });
 }
 
-export function diagnoseExperiment({ knowledgeId, validation } = {}) {
-  if (!knowledgeId) {
+export function diagnoseExperiment({ knowledgeIds, knowledgeId, validation } = {}) {
+  const ids = Array.isArray(knowledgeIds)
+    ? knowledgeIds.filter(Boolean)
+    : [knowledgeId].filter(Boolean);
+
+  if (!ids.length) {
     return { status: 'unknown', message: 'Knowledge mapping not found' };
   }
 
   if (validation?.valid) {
     return {
       status: 'correct',
-      knowledge: [knowledgeId],
+      knowledge: ids,
       recommendation: 'continue',
       source: 'experiment',
     };
@@ -55,7 +59,7 @@ export function diagnoseExperiment({ knowledgeId, validation } = {}) {
   const error = validation?.errors || validation?.message;
   return {
     status: 'incorrect',
-    knowledge: [knowledgeId],
+    knowledge: ids,
     possibleErrors: error ? [error] : [],
     recommendation: 'review-and-practice',
     source: 'experiment',
