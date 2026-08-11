@@ -9,6 +9,7 @@
 
 import { createAppState } from './state.js';
 import { createApplication } from './application.js';
+import { createRemediationCatalog } from '../core/diagnosis/remediation-catalog.js';
 import assessmentEngine from '../engine/assessment-engine.js';
 import experimentEngine from '../engine/experiment-engine.js';
 
@@ -47,12 +48,11 @@ export async function bootstrap({ root = getDefaultRoot() } = {}) {
     root,
   });
 
-  // Start the browser shell first. The router/home view does not require the
-  // content payload, so a single missing asset must not blank the application.
   application.start();
 
   try {
-    await application.contentService.load();
+    const data = await application.contentService.load();
+    application.controllers.learning.remediationCatalog = createRemediationCatalog(data);
   } catch (error) {
     renderStartupError(root, error);
     application.state.contentLoadError = error;
