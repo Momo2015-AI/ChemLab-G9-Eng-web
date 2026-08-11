@@ -39,29 +39,52 @@ app/application.js          ← V1.7 Composition Root
         └── remediation-view.js
 ```
 
-`app/application.js` 是当前应用组合根：负责装配依赖、路由和 View，不再承担核心学习领域计算。fileciteturn271file0
+`app/application.js` 是当前应用组合根：负责装配依赖、路由和 View，不再承担核心学习领域计算。
 
 ### 核心学习链
 
 ```text
-Assessment
-    ↓
-Evidence
-    ↓
-MasteryService
-    ↓
-MasteryEngine
-    ↓
-Learning State
-    ↓
-Diagnosis / Remediation
-    ↓
-Targeted Recheck
-    ↓
-Transfer
+Assessment / Experiment
+          ↓
+       Evidence
+          ↓
+       Mastery
+          ↓
+       Diagnosis
+          ↓
+      Remediation
+          ↓
+   Targeted Recheck
+          ↓
+     New Evidence
+          ↓
+       Transfer
 ```
 
 知识图谱由 `ContentService` 统一提供，核心知识查询使用 canonical knowledge engine；应用层不再维护多套 KnowledgeEngine。
+
+---
+
+## Diagnosis 架构
+
+V1.7 已将学习诊断收敛为单一 canonical diagnosis engine：
+
+```text
+Assessment Evidence ─┐
+                     ├→ diagnosis-engine.js
+Experiment Evidence ─┘          ↓
+                         Diagnosis Contract
+                                  ↓
+                         remediation-engine.js
+                                  ↓
+                         review / practice
+                                  ↓
+                         targeted recheck
+```
+
+`learning-diagnosis.js` 仅作为迁移兼容 adapter，不再复制诊断策略。`question-knowledge-map.js` 提供诊断所需的题目—知识映射；错误类型模型与诊断策略保持职责分离。
+
+详见：`docs/V1.7-DIAGNOSIS-ARCHITECTURE.md`。
 
 ---
 
@@ -71,18 +94,10 @@ Transfer
 ChemLab-G9/
 ├── index.html                  # 浏览器入口
 ├── app/                        # V1.7 应用编排与应用服务
-│   ├── bootstrap.js
-│   ├── application.js          # Composition Root
-│   ├── state.js                # 运行状态
-│   ├── router.js               # 路由
-│   ├── content-service.js      # 内容/知识图谱访问
-│   ├── mastery-service.js      # 掌握度领域入口
-│   ├── progress-service.js     # 持久化适配
-│   └── progress-projection.js  # Dashboard Read Model
 ├── controllers/                # 学习流程控制
-├── views/                      # UI 渲染
-├── engine/                     # 当前仍存在的领域引擎/兼容层；legacy 清理中
-├── core/                       # 历史 V1.6 服务与仍有价值的领域模块；逐项审计中
+├── views/                      # V1.7 UI 渲染
+├── engine/                     # 仍在使用的领域引擎/兼容层
+├── core/                       # 仍有价值的领域模块与迁移兼容层
 ├── modules/                    # 课程、题目等核心内容数据
 ├── content/                    # V1.7 实验与知识内容补充数据
 ├── schemas/                    # 数据结构约束
@@ -90,7 +105,18 @@ ChemLab-G9/
 └── .github/workflows/          # CI/CD
 ```
 
-> **重要：** `engine/`、`core/`、`dashboard/`、`lab/` 等历史目录目前仍有部分遗留实现。它们不能根据目录名称被视为 V1.7 生产入口，也不会在没有依赖、入口和教育语义验证的情况下批量删除。Legacy 正在按 KEEP / ARCHIVE / DELETE 三态清理。
+### Legacy 清理状态
+
+V1.7 重构已经完成第一轮历史代码清场。以下历史实现已确认不属于当前生产入口并已移除：
+
+- 旧 `engine/app.js` / `engine/app.js.bak`
+- 旧 `engine/router.js`
+- 被 canonical knowledge engine 替代的旧 Knowledge Graph 实现
+- 独立的旧 `lab/` 实验小程序
+- 旧 transitional View Registry / View Constants
+- 已确认无生产入口的历史 Dashboard 实现
+
+剩余 `engine/`、`core/`、`modules/` 内容继续按照 **KEEP / ARCHIVE / DELETE** 三态治理。任何删除都必须先验证生产入口、测试依赖、部署入口和教育语义，禁止仅凭目录名称批量删除。
 
 ---
 
@@ -143,30 +169,37 @@ ChemLab-G9/
 npm test
 ```
 
-CI 的最低要求是测试通过。V1.7 Final Stabilization 当前优先处理历史测试失败、API 契约、Node/浏览器环境耦合与知识图谱回归；在测试恢复稳定后，再进行 Legacy 清场和 Schema CI 收尾。
+当前完整基线：
+
+```text
+53 tests
+53 pass
+0 fail
+0 skipped
+```
+
+CI 同时执行 JavaScript 语法检查、Node 测试、JSON 校验和入口文件检查。任何 Legacy 清理或架构重构都必须保持完整基线通过。
 
 ---
 
-## 当前 V1.7 收尾路线
+## V1.7 当前收尾路线
 
 ```text
-P0  修复测试失败与核心 API 契约
+P0  修复测试失败与核心 API 契约                         ✓
  ↓
-P0  消除 Node / 浏览器环境耦合
+P0  验证 Assessment → Mastery → Diagnosis 闭环          ✓
  ↓
-P0  验证 Assessment → Mastery → Diagnosis 闭环
+P1  README / 架构文档与代码保持一致                     ✓ / 持续维护
  ↓
-P1  README / 架构文档与代码保持一致
+P1  Legacy 三态清单：KEEP / ARCHIVE / DELETE             →
  ↓
-P1  Legacy 三态清单：KEEP / ARCHIVE / DELETE
+P1  删除确定无价值的遗留实现                             →
  ↓
-P1  删除确定无价值的遗留实现
+P1  内容加载与题库来源收敛                               →
  ↓
-P1  内容加载与题库来源收敛
+P2  Schema CI                                             →
  ↓
-P2  Schema CI
- ↓
-最终全仓库架构审计
+最终全仓库架构审计                                         →
 ```
 
 ---
