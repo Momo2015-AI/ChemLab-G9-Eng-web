@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { ContentService } from '../app/content-service.js';
+import ContentService from '../app/content-service.js';
 import { AssessmentController } from '../controllers/assessment-controller.js';
 import { ExperimentController } from '../controllers/experiment-controller.js';
 import { diagnoseAssessment } from '../core/diagnosis/diagnosis-engine.js';
