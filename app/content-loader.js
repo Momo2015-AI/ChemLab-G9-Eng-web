@@ -1,10 +1,17 @@
 /**
- * ChemLab-G9 V1.7 content loader.
+ * ChemLab-G9 V1.9 content loader.
  *
  * Infrastructure adapter owned by the application content boundary.
  * ContentService is the public application-facing API; this module owns
  * manifest-driven JSON loading and browser deployment-base resolution.
+ *
+ * Day 01 diagnostic questions are deliberately kept in a separate JS content
+ * module while review is in progress. They are merged at the application
+ * boundary so diagnosis can resolve them without pretending they are already
+ * part of the published 320-question bank.
  */
+
+import { day01DiagnosticQuestions } from '../content/questions/day01-diagnostics.js';
 
 const BASE = (() => {
   if (typeof document === 'undefined') return '';
@@ -16,7 +23,6 @@ const BASE = (() => {
 
 const ENDPOINTS = {
   questionBank: `${BASE}/modules/questions/question-bank.json`,
-  // V1.7 canonical graph. Keep the legacy path only as a migration fallback.
   knowledgeGraph: `${BASE}/content/knowledge/knowledge-graph.json`,
   legacyKnowledgeGraph: `${BASE}/modules/questions/taxonomy/knowledge-graph.json`,
   manifest: `${BASE}/modules/lessons/manifest.json`,
@@ -41,8 +47,6 @@ class ContentLoader {
     try {
       return await this.fetchJSON(ENDPOINTS.knowledgeGraph);
     } catch (error) {
-      // Migration fallback for older deployments only. Canonical production
-      // content always resolves from /content/knowledge/ first.
       return this.fetchJSON(ENDPOINTS.legacyKnowledgeGraph).catch(() => {
         throw error;
       });
@@ -58,9 +62,13 @@ class ContentLoader {
       this.loadAllDays(manifest),
     ]);
 
+    const productionQuestions = Array.isArray(qb.questions) ? qb.questions : [];
+    const diagnostics = day01DiagnosticQuestions.filter(q => q.status !== 'archived');
+    const questions = [...productionQuestions, ...diagnostics];
+
     return {
-      questions: qb.questions,
-      questionById: new Map(qb.questions.map(q => [q.id, q])),
+      questions,
+      questionById: new Map(questions.map(q => [q.id, q])),
       knowledgeGraph: kg,
       manifest,
       topics: topics.topics,
@@ -94,9 +102,10 @@ class ContentLoader {
   }
 
   getQuestionsByKnowledge(knowledgeId) {
-    const qb = this.cache.get(ENDPOINTS.questionBank);
-    if (!qb) return [];
-    return qb.questions.filter(q => (q.knowledge || []).includes(knowledgeId));
+    const data = this.cache.get(ENDPOINTS.questionBank);
+    if (!data) return [];
+    return [...data.questions, ...day01DiagnosticQuestions]
+      .filter(q => (q.knowledge || []).includes(knowledgeId));
   }
 }
 
