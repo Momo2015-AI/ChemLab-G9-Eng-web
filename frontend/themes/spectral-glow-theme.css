@@ -1,0 +1,219 @@
+/**
+ * Spectral Glow Theme — 谱线光谱主题
+ * ------------------------------------------------------------------
+ * 取代占位性的通用"霓虹蓝紫"配色，改用六种元素/化合物真实发射光谱
+ * 波长对应的颜色，作为全站统一的学科域色彩编码：
+ *
+ *   基础(Hg 435nm 紫)  酸(Hβ 486nm 蓝)  碱(O 558nm 绿)
+ *   盐(Na-D 589nm 黄)  金属(Ne 640nm 橙)  反应(Hα 656nm 红)
+ *
+ * 同一种颜色在课程标签、实验卡片、知识图谱节点、看板掌握度条上
+ * 永远代表同一个学科域——用户不需要记文字，靠颜色就能认路。
+ *
+ * 加载顺序：本文件必须排在 index.html 里其它样式表之后，
+ * 靠后写规则覆盖前面同选择器的写法生效，不需要 !important。
+ * ------------------------------------------------------------------
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  /* ---- 谱线色板（学科域真值来源，其它所有颜色变量都从这里派生）---- */
+  --spec-violet:#9b7bff;   /* Hg 435nm · 基础 */
+  --spec-blue:#4fc3f7;     /* Hβ 486nm · 酸 */
+  --spec-green:#6ee7b7;    /* O  558nm · 碱 */
+  --spec-yellow:#ffd166;   /* Na-D 589nm · 盐 */
+  --spec-orange:#ff9662;   /* Ne 640nm · 金属 */
+  --spec-red:#ff5c68;      /* Hα 656nm · 反应 */
+
+  /* ---- 中性基调：深空底色，冷峻实验室感 ---- */
+  --ink-bg:#0a0e14;
+  --ink-bg-1:#10161f;
+  --ink-bg-2:#161d29;
+  --ink:#eaf2fb;
+  --ink-dim:#8a97ac;
+  --ink-faint:#5b6779;
+  --ink-line:rgba(138,151,172,.14);
+  --ink-line-strong:rgba(138,151,172,.28);
+
+  --font-display:'Space Grotesk','PingFang SC','Microsoft YaHei',sans-serif;
+  --font-body:'Inter','PingFang SC','Microsoft YaHei',sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,monospace;
+
+  /* ---- 兼容旧变量名，避免尚未迁移的样式块失色 ---- */
+  --lab-bg:var(--ink-bg);
+  --panel-bg:rgba(234,242,251,.06);
+  --plasma-blue:var(--spec-blue);
+  --chemical-green:var(--spec-green);
+  --ai-purple:var(--spec-violet);
+  --text-main:var(--ink);
+}
+
+/* ================= 全局基调 & 字体 ================= */
+body{
+  background:
+    radial-gradient(ellipse 900px 500px at 10% -10%, rgba(155,123,255,.14), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 95% 0%, rgba(79,195,247,.09), transparent 55%),
+    var(--ink-bg) !important;
+  color:var(--ink) !important;
+  font-family:var(--font-body) !important;
+}
+.chem-page-root h1,.chem-page-root h2,.chem-page-root h3,
+.portal-title,.course-hero-main h1,.chem-brand strong{
+  font-family:var(--font-display);
+}
+.portal-eyebrow,.section-eyebrow,.course-kicker,.chem-sidebar-label,
+.chem-page-root .page-header .eyebrow{
+  font-family:var(--font-mono) !important;
+}
+
+/* ================= 侧边导航 · 任何页面可回首页 ================= */
+.chem-portal-root,.chem-shell{background:var(--ink-bg) !important}
+.chem-shell{
+  background:
+    radial-gradient(circle at 70% -10%, rgba(155,123,255,.12), transparent 35%),
+    var(--ink-bg) !important;
+}
+.chem-sidebar{
+  background:rgba(10,14,20,.82) !important;
+  border-right:1px solid var(--ink-line) !important;
+}
+.chem-brand-mark{
+  background:linear-gradient(140deg,var(--spec-violet),var(--spec-blue)) !important;
+  border-color:transparent !important;
+  box-shadow:0 0 20px rgba(155,123,255,.4) !important;
+}
+.chem-brand small{color:var(--ink-dim) !important}
+
+/* 六个学习模块 —— 每一项用它自己的学科域色标记，贯穿全站 */
+.chem-nav-item{color:var(--ink-dim) !important}
+.chem-nav-item:hover{
+  color:var(--ink) !important;
+  background:var(--ink-bg-2) !important;
+  border-color:var(--ink-line) !important;
+}
+.chem-nav-item.active{
+  color:var(--ink) !important;
+  background:linear-gradient(90deg, color-mix(in srgb, var(--nav-dot,var(--spec-blue)) 16%, transparent), transparent) !important;
+  border-color:color-mix(in srgb, var(--nav-dot,var(--spec-blue)) 40%, transparent) !important;
+  box-shadow:inset 2px 0 var(--nav-dot,var(--spec-blue)), 0 0 20px color-mix(in srgb, var(--nav-dot,var(--spec-blue)) 25%, transparent) !important;
+}
+.chem-nav-item[data-nav="home"]{--nav-dot:#ffffff}
+.chem-nav-item[data-nav="course"]{--nav-dot:var(--spec-blue)}
+.chem-nav-item[data-nav="lab"]{--nav-dot:var(--spec-orange)}
+.chem-nav-item[data-nav="knowledge-map"]{--nav-dot:var(--spec-violet)}
+.chem-nav-item[data-nav="assessment"]{--nav-dot:var(--spec-yellow)}
+.chem-nav-item[data-nav="progress"]{--nav-dot:var(--spec-green)}
+.chem-nav-item[data-nav="ai-tutor"]{--nav-dot:var(--spec-red)}
+.chem-nav-item::before{
+  content:'';display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:var(--nav-dot,var(--ink-faint));margin-right:2px;flex:none;
+}
+.chem-nav-item.active::before{box-shadow:0 0 8px 1px var(--nav-dot,var(--spec-blue))}
+
+.chem-status-card{border-color:rgba(110,231,183,.2) !important;color:var(--spec-green) !important;background:rgba(110,231,183,.06) !important}
+.chem-status-dot{background:var(--spec-green) !important;box-shadow:0 0 10px var(--spec-green) !important}
+
+/* 顶部工作区 header：面包屑 + AI 按钮 + "返回首页"始终可见 */
+.chem-header{
+  background:rgba(10,14,20,.78) !important;
+  border-bottom:1px solid var(--ink-line) !important;
+}
+.chem-breadcrumb,.chem-breadcrumb-home{color:var(--ink-dim) !important}
+.chem-breadcrumb-home:hover{color:var(--spec-blue) !important}
+.chem-breadcrumb-current{color:var(--ink) !important}
+.chem-ai-button{color:#f2e9ff !important;border-color:rgba(155,123,255,.35) !important;background:rgba(155,123,255,.08) !important}
+.chem-ai-button:hover{box-shadow:0 0 20px rgba(155,123,255,.2) !important}
+.chem-search{border-color:var(--ink-line-strong) !important;background:rgba(255,255,255,.02) !important;color:var(--ink-dim) !important}
+.chem-search:hover{border-color:var(--spec-blue) !important;box-shadow:0 0 16px rgba(79,195,247,.14) !important}
+.chem-footer{border-top:1px solid var(--ink-line) !important;color:var(--ink-faint) !important}
+.chem-footer-home:hover{color:var(--spec-blue) !important}
+
+/* ================= 页头 / 门户卡片系统（课程·实验室·测验·图谱·看板通用）================= */
+.chem-page-root .page-header{
+  border-color:var(--ink-line) !important;
+  background:linear-gradient(135deg, rgba(155,123,255,.08), rgba(79,195,247,.05)) !important;
+}
+.chem-page-root .page-header .eyebrow{color:var(--spec-violet) !important}
+.chem-page-root .page-header p{color:var(--ink-dim) !important}
+
+.portal-eyebrow{color:var(--spec-violet) !important}
+.portal-title{color:var(--ink) !important}
+.portal-subtitle,.portal-muted{color:var(--ink-dim) !important}
+.portal-btn{border-color:var(--ink-line-strong) !important;background:var(--ink-bg-1) !important;color:var(--ink) !important}
+.portal-btn:hover{border-color:var(--spec-blue) !important}
+.portal-btn.primary{
+  background:linear-gradient(135deg, rgba(155,123,255,.22), rgba(79,195,247,.18)) !important;
+  box-shadow:0 0 20px rgba(79,195,247,.12) !important;
+}
+.portal-card{
+  background:var(--ink-bg-1) !important;
+  border-color:var(--ink-line) !important;
+  box-shadow:none !important;
+}
+.portal-progress{background:var(--ink-bg-2) !important}
+.portal-progress>span{background:linear-gradient(90deg,var(--spec-blue),var(--spec-green)) !important}
+.portal-list button{border-color:var(--ink-line) !important;background:rgba(255,255,255,.02) !important;color:var(--ink) !important}
+.portal-list button:hover{border-color:var(--spec-blue) !important;background:rgba(79,195,247,.08) !important}
+.portal-chip{background:var(--ink-bg-2) !important;color:var(--ink-dim) !important}
+.portal-chip.good{color:var(--spec-green) !important}
+.portal-chip.ai{color:var(--spec-violet) !important}
+.portal-node{
+  border-color:var(--ink-line-strong) !important;
+  background:var(--ink-bg-1) !important;
+  color:var(--ink) !important;
+  box-shadow:0 0 16px rgba(79,195,247,.1) !important;
+}
+.portal-node small{color:var(--ink-dim) !important}
+.portal-map{background:radial-gradient(circle at 50% 45%, rgba(79,195,247,.1), transparent 34%), var(--ink-bg) !important;border-color:var(--ink-line) !important}
+.portal-instrument{border-color:var(--ink-line) !important;background:rgba(255,255,255,.02) !important;color:var(--ink) !important}
+.portal-bench{border-color:var(--ink-line-strong) !important;color:var(--ink-dim) !important;background:radial-gradient(circle, rgba(79,195,247,.06), transparent 60%) !important}
+.portal-message{background:rgba(255,255,255,.03) !important}
+.portal-message.ai{border-left-color:var(--spec-violet) !important}
+
+.chem-page-root .home-stats strong{color:var(--spec-green) !important}
+.chem-page-root .home-stats span{color:var(--ink-faint) !important}
+.chem-page-root .home-stats>div{border-color:var(--ink-line) !important;background:rgba(255,255,255,.02) !important}
+.chem-page-root .home-actions button{border-color:var(--ink-line-strong) !important;background:var(--ink-bg-1) !important;color:var(--ink) !important}
+.chem-page-root .home-actions button:hover{box-shadow:0 0 18px rgba(79,195,247,.14) !important}
+.chem-page-root .lesson-card{border-color:var(--ink-line) !important;background:var(--ink-bg-1) !important;color:var(--ink) !important}
+.chem-page-root .lesson-card:hover{border-color:var(--spec-blue) !important;box-shadow:0 0 18px rgba(79,195,247,.12) !important}
+.chem-page-root a{color:var(--spec-blue) !important}
+
+/* ================= 课程学习页 v21：六种 tone 复用为六个学科域色 ================= */
+.course-hero-card{
+  border-color:var(--ink-line) !important;
+  background:linear-gradient(135deg, rgba(20,16,30,.92), rgba(10,20,32,.9)) !important;
+}
+.course-status{background:var(--ink-bg-2) !important;color:var(--spec-blue) !important}
+.course-status.done{background:rgba(110,231,183,.1) !important;color:var(--spec-green) !important}
+.course-kicker,.section-eyebrow{color:var(--spec-violet) !important}
+.course-hero-icon{
+  background:linear-gradient(145deg, rgba(155,123,255,.18), rgba(79,195,247,.16)) !important;
+  border-color:var(--ink-line) !important;
+}
+.course-action{border-color:var(--ink-line) !important;background:var(--ink-bg-1) !important;color:var(--ink) !important}
+.course-action:hover{border-color:var(--spec-blue) !important}
+.course-action.primary{
+  border-color:rgba(79,195,247,.3) !important;
+  background:linear-gradient(135deg, rgba(79,195,247,.14), rgba(79,195,247,.04)) !important;
+}
+.action-icon{background:var(--ink-bg-2) !important;color:var(--spec-blue) !important}
+.knowledge-card-v21{border-color:var(--ink-line) !important;background:var(--ink-bg-1) !important}
+.knowledge-index{color:var(--spec-blue) !important}
+
+/* tone-* = 学科域色（基础/酸/碱/盐/金属/反应），供实验与知识点卡片复用 */
+.tone-violet .module-marker span{color:var(--spec-violet) !important;background:rgba(155,123,255,.12) !important}
+.tone-teal   .module-marker span{color:var(--spec-blue)   !important;background:rgba(79,195,247,.12) !important}
+.tone-green  .module-marker span{color:var(--spec-green)  !important;background:rgba(110,231,183,.12) !important}
+.tone-amber  .module-marker span{color:var(--spec-yellow) !important;background:rgba(255,209,102,.12) !important}
+.tone-pink   .module-marker span{color:var(--spec-orange) !important;background:rgba(255,150,98,.12) !important}
+.tone-indigo .module-marker span{color:var(--spec-red)    !important;background:rgba(255,92,104,.12) !important}
+
+/* ================= AI 导师页 ================= */
+.glow-card{background:var(--ink-bg-1) !important;border-color:var(--ink-line) !important;box-shadow:none !important;backdrop-filter:none !important}
+.glow-card:hover{box-shadow:0 0 18px rgba(79,195,247,.1) !important}
+
+@media(prefers-reduced-motion:reduce){
+  .chem-nav-item,.chem-sidebar,.chem-sidebar-scrim,.course-action{transition:none !important}
+}
