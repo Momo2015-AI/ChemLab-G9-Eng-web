@@ -1,2 +1,0 @@
-/* Dashboard UI */
-.dashboard-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.dashboard-card{padding:18px;border-radius:16px}
