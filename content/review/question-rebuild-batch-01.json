@@ -1,0 +1,25 @@
+{
+  "version": "1.9.0",
+  "batch": "01",
+  "status": "in-progress",
+  "policy": {
+    "placeholderQuestions": "quarantined",
+    "publishGate": ["curriculum", "scientific", "ageSuitability", "itemQuality", "knowledgeLinks"],
+    "p0BlocksReady": true
+  },
+  "families": [
+    {"prefix":"q-aci-","target":"acids, bases and indicators","priority":"P0"},
+    {"prefix":"q-sal-","target":"salts and fertilizer","priority":"P0"},
+    {"prefix":"q-fer-","target":"iron compounds and redox","priority":"P0"},
+    {"prefix":"q-com-","target":"common laboratory gases","priority":"P0"},
+    {"prefix":"q-met-","target":"metals and extraction","priority":"P0"},
+    {"prefix":"q-iro-","target":"iron and corrosion","priority":"P1"},
+    {"prefix":"q-mas-","target":"mass relationships and equations","priority":"P0"},
+    {"prefix":"q-equ-","target":"equations and quantitative reasoning","priority":"P0"},
+    {"prefix":"q-nut-","target":"chemistry and nutrition","priority":"P1"},
+    {"prefix":"q-mat-","target":"materials and properties","priority":"P1"},
+    {"prefix":"q-exa-","target":"integrated examination practice","priority":"P1"},
+    {"prefix":"q-uni-","target":"integrated unit review","priority":"P1"}
+  ],
+  "nextAction": "replace quarantined placeholders with verified curriculum-aligned items"
+}
