@@ -9,6 +9,7 @@
     "questionReferences": "pass",
     "experimentReference": "pass",
     "misconceptionCoverage": "pass",
+    "diagnosticRecheckCoverage": "pass-structural-review",
     "curriculum": "review",
     "scientific": "review",
     "ageSuitability": "review",
@@ -19,7 +20,17 @@
     {
       "id": "q-acid-001",
       "severity": "P1",
-      "issue": "terminology precision: HCl as hydrogen chloride versus hydrochloric acid as its aqueous solution"
+      "issue": "terminology precision: HCl as hydrogen chloride versus hydrochloric acid as its aqueous solution; excluded from Day 01 until corrected"
+    },
+    {
+      "id": "q-acid-004",
+      "severity": "P1",
+      "issue": "safety-sensitive skin-exposure item requires independent verification or replacement; excluded from Day 01"
+    },
+    {
+      "id": "day01-diagnostic-runtime",
+      "severity": "P1",
+      "issue": "all diagnostic and recheck IDs require automated runtime resolution verification before release"
     }
   ],
   "questionChange": {
@@ -27,10 +38,19 @@
     "reason": "P0 non-unique answer under current wording",
     "replacement": "q-acid-006"
   },
+  "diagnosticRecheck": {
+    "pairs": [
+      ["q-acid-dx-001", "q-acid-rx-001", "mc-acid-hcl-solution"],
+      ["q-acid-dx-004", "q-acid-rx-004", "mc-acid-dilution-direction"],
+      ["q-acid-dx-002", "q-acid-rx-002", "mc-acid-metal-overgeneralization"],
+      ["q-acid-dx-003", "q-acid-rx-003", "mc-acid-observation-inference"]
+    ],
+    "rule": "recheck must use a distinct surface form and test transfer of the repaired concept"
+  },
   "scientificNotes": [
     "The rust-removal experiment distinguishes observation from explanation and includes both Fe2O3 + 6HCl and Fe + 2HCl reactions.",
     "The lesson explicitly avoids the overgeneralization that every acid reacts with every metal to produce hydrogen.",
     "Concentrated sulfuric acid dilution is treated as a safety-critical procedure and is not presented as an optional memorization point."
   ],
-  "nextGate": "independent curriculum, scientific and Grade-9 pedagogical review"
+  "nextGate": "independent curriculum, scientific, Grade-9 pedagogical, item-quality, knowledge-link, and runtime verification"
 }
