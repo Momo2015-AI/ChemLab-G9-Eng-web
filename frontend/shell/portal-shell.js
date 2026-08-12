@@ -63,7 +63,7 @@ export function mountPortalShell(root) {
     button.addEventListener('click', () => {
       const route = button.dataset.nav;
       if (route === 'settings') return;
-      window.location.hash = route === 'home' ? 'home' : route;
+      window.location.hash = route;
     });
   });
 
