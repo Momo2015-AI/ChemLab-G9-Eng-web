@@ -4,7 +4,7 @@ import path from 'node:path';
 
 const root = process.cwd();
 const graphPath = path.join(root, 'content/knowledge/knowledge-graph.json');
-const questionPath = path.join(root, 'modules/questions/question-bank.json');
+const questionPath = path.join(root, 'content/questions/question-bank.json');
 const report = { errors: [], warnings: [], stats: {} };
 
 function load(file) {
@@ -15,8 +15,9 @@ function load(file) {
 const graph = load(graphPath);
 const bank = load(questionPath);
 
-// Content reset state: the legacy 320-question bank has been intentionally removed.
-// An empty question bank is valid until the user supplies new source documents.
+// Content reset state: the legacy 320-question bank was intentionally removed.
+// The future canonical bank belongs under content/questions/ and is optional
+// until new source documents are supplied, reviewed, and generated into a bank.
 if (!bank) {
   report.stats.sourceQuestions = 0;
   report.stats.sourceReady = 0;
@@ -26,7 +27,7 @@ if (!bank) {
   report.stats.overrides = 0;
   report.stats.questionBankState = 'RESET_PENDING_SOURCE_DOCUMENTS';
 } else if (!Array.isArray(bank.questions)) {
-  report.errors.push('question-bank.json exists but questions[] is missing');
+  report.errors.push('content/questions/question-bank.json exists but questions[] is missing');
 } else {
   const ids = new Set();
   const validTypes = new Set(['choice','multi-choice','fill','short-answer','true-false','experiment','calculation']);
