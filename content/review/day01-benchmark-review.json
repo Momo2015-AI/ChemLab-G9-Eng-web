@@ -1,0 +1,36 @@
+{
+  "lessonId": "day-01",
+  "title": "常见的酸",
+  "status": "review",
+  "benchmark": true,
+  "checks": {
+    "realTeachingContent": "pass",
+    "templateDetection": "pass",
+    "questionReferences": "pass",
+    "experimentReference": "pass",
+    "misconceptionCoverage": "pass",
+    "curriculum": "review",
+    "scientific": "review",
+    "ageSuitability": "review",
+    "itemQuality": "review",
+    "knowledgeLinks": "review"
+  },
+  "knownBlockingDependencies": [
+    {
+      "id": "q-acid-001",
+      "severity": "P1",
+      "issue": "terminology precision: HCl as hydrogen chloride versus hydrochloric acid as its aqueous solution"
+    }
+  ],
+  "questionChange": {
+    "removed": ["q-acid-005"],
+    "reason": "P0 non-unique answer under current wording",
+    "replacement": "q-acid-006"
+  },
+  "scientificNotes": [
+    "The rust-removal experiment distinguishes observation from explanation and includes both Fe2O3 + 6HCl and Fe + 2HCl reactions.",
+    "The lesson explicitly avoids the overgeneralization that every acid reacts with every metal to produce hydrogen.",
+    "Concentrated sulfuric acid dilution is treated as a safety-critical procedure and is not presented as an optional memorization point."
+  ],
+  "nextGate": "independent curriculum, scientific and Grade-9 pedagogical review"
+}
