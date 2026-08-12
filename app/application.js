@@ -1,6 +1,7 @@
 /**
- * V1.9 Application Composition Root.
- * Single production wiring point for state, content, controllers and views.
+ * V2.0 Application Composition Root.
+ * Core learning services, engines and controllers remain unchanged; the
+ * portal adds an experience-layer AI Tutor entry point.
  */
 import { createRouter } from './router.js';
 import { contentService } from './content-service.js';
@@ -16,6 +17,7 @@ import { renderV19Experiment, renderV19ExperimentResult } from '../views/v19-exp
 import { renderDashboard } from '../views/dashboard-view.js';
 import { renderGraph } from '../views/graph-view.js';
 import { renderRemediation } from '../views/remediation-view.js';
+import { renderAITutorPage } from '../frontend/pages/ai-tutor/ai-tutor-page.js';
 
 const getDefaultRoot = () => typeof document === 'undefined' ? null : document.querySelector('#app-root');
 
@@ -26,7 +28,7 @@ export function createApplication({ state, assessment, experimentEngine, mastery
     assessment: new AssessmentController({ assessment, contentService, state, masteryService, learningController: learning }),
     experiment: new ExperimentController({ experimentEngine, state, masteryService, learningController: learning }),
   };
-  const views = { renderHome, renderCourse: renderV19Course, renderQuiz, renderQuizResult, renderExperiment: renderV19Experiment, renderExperimentResult: renderV19ExperimentResult, renderDashboard, renderGraph, renderRemediation };
+  const views = { renderHome, renderCourse: renderV19Course, renderQuiz, renderQuizResult, renderExperiment: renderV19Experiment, renderExperimentResult: renderV19ExperimentResult, renderDashboard, renderGraph, renderRemediation, renderAITutorPage };
   const router = createRouter({ onRoute: route => { state.route = route; }, render: route => renderRoute(route) });
 
   async function getHomeData() {
@@ -70,6 +72,7 @@ export function createApplication({ state, assessment, experimentEngine, mastery
       const session = controllers.experiment.session;
       return views.renderExperiment({ root, experiment: session.experiment || {}, session, onNext: () => { controllers.experiment.next(); renderRoute(route); }, onObserve: text => controllers.experiment.observe(text), onComplete: () => views.renderExperimentResult({ root, result: controllers.experiment.complete() || {}, onContinue: () => router.navigate('dashboard') }) });
     }
+    if (route.page === 'ai-tutor') return views.renderAITutorPage({ root });
     if (route.page === 'experiment-result' || route.page === 'result') return router.navigate('dashboard');
   }
 
