@@ -1,40 +1,25 @@
 {
-  "id": "exp-acid-rust",
-  "title": "稀盐酸除铁锈",
-  "module": "module-acid-base",
-  "day": "01",
-  "knowledge": [
-    "acid-property"
+  "id":"exp-acid-rust",
+  "title":"稀盐酸除铁锈",
+  "module":"module-acid-base",
+  "day":"01",
+  "knowledge":["acid-property"],
+  "materials":["生锈铁钉","稀盐酸","试管","护目镜"],
+  "conditions":"使用稀盐酸；观察铁锈去除过程，不以长时间浸泡为目标。",
+  "steps":[
+    {"step":1,"action":"佩戴护目镜，取一支试管，加入少量稀盐酸。","observation":"稀盐酸通常为无色液体。"},
+    {"step":2,"action":"将生锈铁钉放入试管中并观察。","observation":"红棕色铁锈逐渐溶解。"},
+    {"step":3,"action":"继续短时间观察溶液颜色。","observation":"溶液可能呈黄色；若铁锈基本去除后仍继续反应，铁表面可能出现气泡。"},
+    {"step":4,"action":"达到观察目的后停止浸泡，并按实验要求处理和清洗。","observation":"铁锈被去除，避免继续长时间与酸接触。"}
   ],
-  "materials": [
-    "生锈铁钉",
-    "稀盐酸",
-    "试管"
+  "interpretation":"铁锈的主要成分可用Fe2O3表示；Fe2O3与HCl反应生成FeCl3和水。铁锈去除后，过量盐酸还可能与铁反应生成FeCl2和H2。",
+  "equations":["Fe2O3 + 6HCl = 2FeCl3 + 3H2O","Fe + 2HCl = FeCl2 + H2↑"],
+  "conclusion":"稀盐酸能够与铁锈中的主要成分反应，使铁锈逐渐溶解；除锈应控制反应时间，避免酸继续腐蚀铁基体。",
+  "commonMistakes":[
+    {"id":"exp-rust-observation-inference","mistake":"把“出现黄色”直接当作结论，忽略观察与解释的区别。","misconceptionId":"mc-acid-observation-inference"},
+    {"id":"exp-rust-oversoak","mistake":"认为铁锈去除后继续浸泡不会产生影响。","misconceptionId":"mc-acid-metal-overgeneralization"}
   ],
-  "steps": [
-    {
-      "step": 1,
-      "action": "取一支试管，加入约5mL稀盐酸",
-      "observation": "稀盐酸为无色液体"
-    },
-    {
-      "step": 2,
-      "action": "将生锈铁钉放入试管中",
-      "observation": "铁锈逐渐溶解"
-    },
-    {
-      "step": 3,
-      "action": "观察溶液颜色变化",
-      "observation": "溶液由无色变为黄色"
-    }
-  ],
-  "equation": "Fe2O3 + 6HCl = 2FeCl3 + 3H2O",
-  "safety": [
-    "稀盐酸有腐蚀性",
-    "实验后及时清洗试管"
-  ],
-  "questions": [
-    "q-acid-009",
-    "q-acid-011"
-  ]
+  "misconceptions":["mc-acid-observation-inference","mc-acid-metal-overgeneralization"],
+  "safety":["稀盐酸具有腐蚀性，应佩戴护目镜并避免接触皮肤和眼睛。","达到实验目的后及时停止浸泡并按规范清洗，不长时间浸泡铁制品。"],
+  "questions":["q-acid-009","q-acid-011"]
 }
