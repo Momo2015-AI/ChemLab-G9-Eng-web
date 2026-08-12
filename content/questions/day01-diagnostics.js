@@ -62,15 +62,15 @@ export const day01DiagnosticQuestions = [
     difficulty: 'medium',
     bloomLevel: 'apply',
     knowledge: ['acid-intro'],
-    prompt: 'Which procedure is correct when diluting concentrated sulfuric acid in a school laboratory?',
+    prompt: 'Why is dilution of concentrated sulfuric acid treated as a safety-critical laboratory operation?',
     options: [
-      'A. Pour water quickly into concentrated sulfuric acid.',
-      'B. Pour concentrated sulfuric acid slowly into water while stirring.',
-      'C. Mix equal amounts of acid and water at once.',
-      'D. Heat the acid first so it mixes more easily.'
+      'A. Mixing can release substantial heat, so uncontrolled mixing can increase the risk of splashing and burns.',
+      'B. The mixture becomes radioactive.',
+      'C. The acid stops being a chemical substance after dilution.',
+      'D. Dilution always produces a gas that must be inhaled to identify it.'
     ],
-    answer: 'B',
-    explanation: 'Dilution releases heat. The standard school-laboratory procedure is to add concentrated sulfuric acid slowly to water while stirring, using appropriate protective equipment.',
+    answer: 'A',
+    explanation: 'Dilution is strongly exothermic. At school level, the key learning point is to recognize the heat and splash hazard and follow the teacher-approved laboratory safety procedure rather than improvise.',
     misconceptionIds: ['mc-acid-dilution-direction'],
     purpose: 'diagnostic',
     status: 'review'
@@ -141,15 +141,15 @@ export const day01DiagnosticQuestions = [
     difficulty: 'medium',
     bloomLevel: 'apply',
     knowledge: ['acid-intro'],
-    prompt: 'Which action best follows the same safety principle used when diluting concentrated sulfuric acid?',
+    prompt: 'Which statement best captures the safety principle for work involving concentrated sulfuric acid?',
     options: [
-      'A. Make the mixing sudden so the total time is shorter.',
-      'B. Add the concentrated acid gradually to water with stirring and avoid unnecessary splashing.',
-      'C. Add water to concentrated acid in one quick stream.',
-      'D. Hold the container close to the face to observe the mixture.'
+      'A. Because dilution releases heat, the operation must follow an approved laboratory procedure under appropriate supervision.',
+      'B. Any mixing order is safe if the quantities are small.',
+      'C. Heating the acid makes the operation automatically safer.',
+      'D. Personal protective equipment is unnecessary when the liquid looks clear.'
     ],
-    answer: 'B',
-    explanation: 'The safe procedure controls heat release and reduces the risk of splashing. Concentrated sulfuric acid should be handled only with appropriate laboratory supervision and protective equipment.',
+    answer: 'A',
+    explanation: 'The key concept is controlled heat release and protection from corrosive exposure. Students should follow the teacher-approved laboratory procedure and should not improvise hazardous operations.',
     misconceptionIds: ['mc-acid-dilution-direction'],
     purpose: 'recheck',
     recheckFor: 'q-acid-dx-004',
