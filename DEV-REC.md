@@ -269,3 +269,38 @@ The UI direction is approved as the V2.1 learning-surface standard. Day 01 remai
 ### Next action
 
 Finish the Day 01 content corrections, then run the complete release gate again. Only after Day 01 is genuinely READY should the V2.1 visual pattern be propagated to the remaining lessons.
+
+---
+
+## 2026-08-12 — Day 01 final item audit
+
+### Findings
+
+A focused audit of the production acid question set identified three concrete blockers:
+
+1. **P0 — `q-acid-012`:** the answer key and explanation are internally inconsistent, and the question lacks sufficient apparatus assumptions to establish a unique pressure-change answer. It must be rewritten or replaced.
+2. **P1 — `q-acid-001`:** its explanation incorrectly describes HCl as an aqueous solution. The benchmark must distinguish hydrogen chloride (HCl) from hydrochloric acid (aqueous HCl).
+3. **P1 — `q-acid-004`:** the legacy fixed-concentration post-exposure instruction is not suitable as a generic student safety instruction. It remains quarantined pending independent safety review/replacement.
+4. **P1 — `q-acid-011`:** Fe2O3 must remain explicitly presented as a simplified junior-high model rather than a claim that all real rust is pure Fe2O3.
+
+### Engineering integrity correction
+
+An attempted connector edit of the 320-question `question-bank.json` was detected as destructive because the update replaced the complete file with an incomplete reconstruction. The remote `main` reference was immediately restored to the pre-edit commit `35c83924bedae2bf2b307309d7e742b534abc766`; the destructive intermediate commit was removed from the active `main` history. No truncated question bank remains on `main`.
+
+This establishes a new engineering rule: **never perform a full question-bank replacement unless the complete source is preserved; prefer isolated question modules or exact transformations.**
+
+Added:
+
+- `reports/V1.9-DAY01-FINAL-ITEM-AUDIT-2026-08-12.md`
+
+Commit: `0b0cca2cbdb27b98d2e455300d95f61eadeb0006`
+
+### Current state
+
+**DAY 01 = BLOCKED / NOT READY.**
+
+### Next action
+
+Resolve `q-acid-012`, correct/replace `q-acid-001`, independently review/rewrite `q-acid-004`, then rerun the full Day 01 release gate. Do not propagate Day 01 to other lessons until the gate passes.
+
+---
