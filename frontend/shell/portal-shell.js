@@ -1,6 +1,6 @@
 const NAV_ITEMS=[['home','首页','home'],['course','课程学习','course'],['lab','虚拟实验','lab'],['knowledge-map','知识地图','knowledge'],['assessment','训练中心','assessment'],['progress','学习报告','progress'],['ai-tutor','AI 化学导师','ai']];
 const ICONS={home:'frontend/icons/home.svg',course:'frontend/icons/course.svg',lab:'frontend/icons/flask.svg',knowledge:'frontend/icons/atom.svg',assessment:'frontend/icons/chart.svg',progress:'frontend/icons/chart.svg',ai:'frontend/icons/robot.svg'};
-const LABELS={home:'首页',course:'课程学习',lab:'虚拟实验',knowledge-map:'知识地图',assessment:'训练中心',progress:'学习报告',ai-tutor:'AI 化学导师',dashboard:'学习驾驶舱',graph:'知识图谱',quiz:'训练题',experiment:'实验', 'experiment-result':'实验结果',result:'学习结果',remediation:'针对性补救'};
+const LABELS={home:'首页',course:'课程学习',lab:'虚拟实验','knowledge-map':'知识地图',assessment:'训练中心',progress:'学习报告','ai-tutor':'AI 化学导师',dashboard:'学习驾驶舱',graph:'知识图谱',quiz:'训练题',experiment:'实验','experiment-result':'实验结果',result:'学习结果',remediation:'针对性补救'};
 function icon(name){return `<img class="chem-nav-icon" src="${ICONS[name]||ICONS.home}" alt="" aria-hidden="true">`}
 function breadcrumb(route){
   const page=route?.page||'home';
