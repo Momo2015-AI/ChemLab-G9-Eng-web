@@ -27,9 +27,13 @@ test('V1.9 question bank records satisfy the legacy runtime contract', async () 
   const allowedBloom = new Set(['remember', 'understand', 'apply', 'analyze', 'evaluate', 'create']);
 
   for (const question of bank.questions) {
+    // The canonical runtime boundary normalizes the legacy `ans` spelling to
+    // `answer`; accept both source spellings while validating the effective contract.
+    const answer = question.answer ?? question.ans;
+
     assert.equal(typeof question.prompt, 'string', `${question.id}: prompt is required`);
     assert.ok(question.prompt.trim(), `${question.id}: prompt must not be empty`);
-    assert.ok(question.answer !== undefined && question.answer !== null, `${question.id}: answer is required`);
+    assert.ok(answer !== undefined && answer !== null, `${question.id}: answer is required`);
     assert.equal(typeof question.explanation, 'string', `${question.id}: explanation is required`);
     assert.ok(question.explanation.trim(), `${question.id}: explanation must not be empty`);
     assert.ok(Array.isArray(question.knowledge) && question.knowledge.length > 0, `${question.id}: knowledge linkage is required`);
@@ -38,8 +42,8 @@ test('V1.9 question bank records satisfy the legacy runtime contract', async () 
 
     if (question.type === 'choice') {
       assert.ok(Array.isArray(question.options) && question.options.length >= 2, `${question.id}: choice requires options`);
-      assert.ok(typeof question.answer === 'string', `${question.id}: choice answer must be a string`);
-      assert.ok(question.options.some(option => option.startsWith(`${question.answer}.`)), `${question.id}: answer must resolve to an option`);
+      assert.equal(typeof answer, 'string', `${question.id}: choice answer must be a string`);
+      assert.ok(question.options.some(option => option.startsWith(`${answer}.`)), `${question.id}: answer must resolve to an option`);
     }
   }
 });
