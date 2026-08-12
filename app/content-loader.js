@@ -1,17 +1,8 @@
 /**
- * ChemLab-G9 V1.9 content loader.
+ * ChemLab-G9 V2.0 content loader.
  *
- * Infrastructure adapter owned by the application content boundary.
- * ContentService is the public application-facing API; this module owns
- * manifest-driven JSON loading and browser deployment-base resolution.
- *
- * Asset URLs are resolved from this module's own URL rather than document
- * <base>. This makes the same build work at localhost root and under the
- * GitHub Pages project path without relying on environment-specific HTML.
- *
- * Day 01 review content is deliberately kept in separate JS modules while
- * review is in progress. The production overrides replace known defective
- * legacy IDs without reconstructing the large 320-question JSON file.
+ * Deployment-independent asset resolution is anchored to this module URL.
+ * Startup loads only the canonical index data; lesson JSON is loaded lazily.
  */
 
 import { day01DiagnosticQuestions } from '../content/questions/day01-diagnostics.js';
@@ -22,6 +13,7 @@ import {
 
 const APP_ROOT = new URL('../', import.meta.url);
 const assetUrl = path => new URL(path, APP_ROOT).href;
+const lessonUrl = day => assetUrl(`modules/lessons/day-${String(day).padStart(2, '0')}.json`);
 
 const ENDPOINTS = {
   questionBank: assetUrl('modules/questions/question-bank.json'),
@@ -44,45 +36,45 @@ class ContentLoader {
 
   async fetchJSON(url) {
     if (this.cache.has(url)) return this.cache.get(url);
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Failed to load: ${url} (${res.status})`);
-    const data = await res.json();
-    this.cache.set(url, data);
-    return data;
+    const promise = fetch(url).then(res => {
+      if (!res.ok) throw new Error(`Failed to load: ${url} (${res.status})`);
+      return res.json();
+    });
+    this.cache.set(url, promise);
+    try {
+      return await promise;
+    } catch (error) {
+      this.cache.delete(url);
+      throw error;
+    }
   }
 
   async loadKnowledgeGraph() {
     try {
       return await this.fetchJSON(ENDPOINTS.knowledgeGraph);
     } catch (error) {
-      return this.fetchJSON(ENDPOINTS.legacyKnowledgeGraph).catch(() => {
-        throw error;
-      });
+      return this.fetchJSON(ENDPOINTS.legacyKnowledgeGraph).catch(() => { throw error; });
     }
   }
 
   async loadAll() {
-    const manifest = await this.fetchJSON(ENDPOINTS.manifest);
-    const [qb, kg, topics, days] = await Promise.all([
+    const [manifest, qb, kg, topics] = await Promise.all([
+      this.fetchJSON(ENDPOINTS.manifest),
       this.fetchJSON(ENDPOINTS.questionBank),
       this.loadKnowledgeGraph(),
       this.fetchJSON(ENDPOINTS.topicBank).catch(() => ({ topics: [] })),
-      this.loadAllDays(manifest),
     ]);
 
-    const productionQuestions = Array.isArray(qb.questions)
-      ? qb.questions.map(normalizeQuestion)
-      : [];
-    const sanitizedProductionQuestions = productionQuestions.filter(
-      question => !day01ProductionOverrideIds.has(question.id)
-    );
-    const productionQuestionsWithOverrides = [
+    const productionQuestions = Array.isArray(qb.questions) ? qb.questions.map(normalizeQuestion) : [];
+    const sanitizedProductionQuestions = productionQuestions.filter(q => !day01ProductionOverrideIds.has(q.id));
+    const questions = [
       ...sanitizedProductionQuestions,
       ...day01ProductionOverrides,
+      ...day01DiagnosticQuestions.filter(q => q.status !== 'archived'),
     ];
-    const diagnostics = day01DiagnosticQuestions.filter(q => q.status !== 'archived');
-    const questions = [...productionQuestionsWithOverrides, ...diagnostics];
 
+    // Manifest entries are lightweight route metadata. Lesson bodies are loaded on demand.
+    const days = Array.isArray(manifest.days) ? manifest.days : [];
     return {
       questions,
       questionById: new Map(questions.map(q => [q.id, q])),
@@ -94,18 +86,8 @@ class ContentLoader {
     };
   }
 
-  async loadAllDays(manifest = {}) {
-    const dayIds = Array.isArray(manifest.days)
-      ? manifest.days.map(entry => entry?.day).filter(Boolean)
-      : [];
-
-    const results = await Promise.all(
-      dayIds.map(day =>
-        this.fetchJSON(assetUrl(`modules/lessons/day-${String(day).padStart(2, '0')}.json`))
-          .catch(() => null)
-      )
-    );
-    return results.filter(Boolean);
+  async loadLesson(day) {
+    return this.fetchJSON(lessonUrl(day));
   }
 
   async loadExperiment(id) {
@@ -120,9 +102,7 @@ class ContentLoader {
     const data = this.cache.get(ENDPOINTS.questionBank);
     if (!data) return [];
     return [
-      ...data.questions
-        .map(normalizeQuestion)
-        .filter(q => !day01ProductionOverrideIds.has(q.id)),
+      ...data.questions.map(normalizeQuestion).filter(q => !day01ProductionOverrideIds.has(q.id)),
       ...day01ProductionOverrides,
       ...day01DiagnosticQuestions,
     ].filter(q => (q.knowledge || []).includes(knowledgeId));
