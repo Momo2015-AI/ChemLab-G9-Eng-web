@@ -2,7 +2,72 @@
 
 > Purpose: maintain a continuous, repository-local record of major development conversations, decisions, audits, implementation actions, commits, and next steps so future work can resume without losing context.
 >
+> **Permanent project rule — conversation logging:** Every development conversation must be recorded in this file. At minimum, record the date, user request/decision, engineering findings, actions taken, verification status, commit reference(s), and the next action. The record is concise rather than a verbatim transcript, but no material engineering decision or change may be omitted. This rule applies to every future development session and survives version changes.
+>
 > Recording rule: at each remote push/commit during this project, append a concise record of the relevant conversation and resulting engineering action. This is a development log, not a verbatim transcript; it preserves decisions, rationale, findings, implementation status, commit references, and next actions.
+
+---
+
+## 2026-08-12 — Permanent conversation-log rule + deep repository cleanup initiated
+
+### Conversation / decision
+
+The user explicitly required that **every development conversation be recorded in `DEV-REC.md`**, and that this requirement become a top-level permanent project rule. The user then requested a deep repository cleanup using appropriate software-engineering and audit practices before continuing product development.
+
+### Engineering decision
+
+The repository will be audited from the actual current `main` tree rather than from historical assumptions. Cleanup must be evidence-based and dependency-aware:
+
+```text
+current main tree
+    ↓
+production entry points
+    ↓
+import/reference graph
+    ↓
+CI/test/build references
+    ↓
+legacy/duplicate classification
+    ↓
+remove only proven orphaned artifacts
+    ↓
+full test + runtime/content integrity verification
+    ↓
+commit main
+```
+
+No file is retained merely because it might be useful someday. Conversely, no production or test dependency is deleted merely because its directory/version name looks old.
+
+### Initial audit findings
+
+The current tree contains several clear cleanup candidates that require dependency verification, including:
+
+- a small `frontend/runtime/application.js` alongside the real `app/application.js` composition root;
+- duplicate/legacy stylesheet layers including `styles/v17.css`, `frontend/themes/chem-glow-theme.css`, and multiple very small `frontend/styles/*` files;
+- multiple historical V1.6/V1.7 architecture documents that may now be superseded by V1.8/V1.9/V2.x canonical documents;
+- multiple schema locations (`content/schema`, `schemas`, and feature-local schema files) requiring canonical-source verification;
+- legacy `modules/questions/taxonomy/knowledge-graph.json` retained as the documented compatibility fallback and therefore **not removable until the fallback contract is explicitly retired**;
+- the `engine/` directory is still production-referenced by `app/bootstrap.js` for assessment and experiment engines, so it cannot be deleted as a simple legacy directory without first consolidating those domain engines.
+
+### Critical production observation
+
+`index.html` currently loads `styles/v17.css` and `frontend/themes/chem-glow-theme.css`, while the latest visual commit adds `frontend/themes/spectral-glow-theme.css` last in the cascade. This indicates the old styles are still explicit entry-point dependencies and must be removed from the entry point before their files can be deleted.
+
+`app/bootstrap.js` currently imports `engine/assessment-engine.js` and `engine/experiment-engine.js`; these are therefore production dependencies despite the broader architecture cleanup.
+
+### Cleanup principle frozen
+
+**Deep cleanup means consolidation, not cosmetic deletion.** Any duplicate capability must first be assigned a canonical owner; references are migrated; tests are updated if they encode obsolete structure; only then is the duplicate removed.
+
+### Current state
+
+**Deep cleanup = IN PROGRESS.**
+
+No cleanup deletion has been committed in this conversation yet. The current `main` production tree remains intact.
+
+### Next action
+
+Complete the dependency/reference audit for runtime, styles, schemas, legacy docs, modules, tests, and CI. Then execute the proven-safe cleanup directly on `main`, run the full verification gates, and record the cleanup commit and final audit result here.
 
 ---
 
@@ -348,7 +413,7 @@ Added:
 
 - `reports/V1.9-DAY01-BLOCKER-RESOLUTION-2026-08-12.md`
 
-The `Content Integrity` workflow for `64e36a1e2d229511214040f9bab5fa39fb079c60` was observed running successfully into the verification phase; final conclusion must be checked after the latest documentation commit.
+The `Content Integrity` workflow for `64e36a1e2d229276...` was observed running successfully into the verification phase; final conclusion must be checked after the latest documentation commit.
 
 ### Current state
 
