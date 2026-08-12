@@ -141,7 +141,10 @@ export function createApplication({ state, assessment, experimentEngine, mastery
     start() {
       stopped = false;
       router.start();
-      void hydrateContent();
+      // Hydration is intentionally background work. Its rejection is already
+      // rendered into the UI by hydrateContent(), so do not leak an unhandled
+      // rejection when the app is constructed in Node or a test environment.
+      void hydrateContent().catch(() => undefined);
     },
     stop() {
       stopped = true;
