@@ -1,9 +1,10 @@
 /**
- * ChemLab-G9 V1.7 Application Router
- * Single source of truth for SPA navigation.
+ * ChemLab-G9 V2.0 Application Router.
+ * The existing learning routes remain intact; the AI Tutor route is an
+ * experience-layer entry point for the future tutor engine.
  */
 
-const ROUTES = new Set(['home', 'course', 'graph', 'dashboard', 'quiz', 'experiment', 'experiment-result', 'result', 'remediation']);
+const ROUTES = new Set(['home', 'course', 'graph', 'dashboard', 'quiz', 'experiment', 'experiment-result', 'result', 'remediation', 'ai-tutor']);
 
 const hasWindow = () => typeof window !== 'undefined';
 
