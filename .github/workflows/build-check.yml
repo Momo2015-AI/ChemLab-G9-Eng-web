@@ -1,4 +1,4 @@
-name: ChemLab-G9 Build Check
+name: ChemLab-G9 CI/CD
 
 on:
   push:
@@ -6,6 +6,15 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: chem-lab-main
+  cancel-in-progress: true
 
 jobs:
   validate:
@@ -32,7 +41,9 @@ jobs:
               while IFS= read -r -d '' f; do files+=("$f"); done < <(find "$root" -type f \( -name '*.js' -o -name '*.mjs' \) -print0)
             fi
           done
-          printf '%s\0' "${files[@]}" | sort -z | while IFS= read -r -d '' f; do node --check "$f"; done
+          if (( ${#files[@]} )); then
+            printf '%s\0' "${files[@]}" | sort -z | while IFS= read -r -d '' f; do node --check "$f"; done
+          fi
           echo "JS syntax OK"
 
       - name: Run test suite
@@ -52,11 +63,37 @@ jobs:
               while IFS= read -r -d '' f; do files+=("$f"); done < <(find "$root" -type f -name '*.json' -print0)
             fi
           done
-          printf '%s\0' "${files[@]}" | sort -z | while IFS= read -r -d '' f; do node -e "JSON.parse(require('fs').readFileSync(process.argv[1],'utf8'))" "$f"; done
+          if (( ${#files[@]} )); then
+            printf '%s\0' "${files[@]}" | sort -z | while IFS= read -r -d '' f; do node -e "JSON.parse(require('fs').readFileSync(process.argv[1],'utf8'))" "$f"; done
+          fi
           echo "JSON OK"
 
       - name: Run content integrity gates
         run: npm run audit:content
 
       - name: Check deployment entry
-        run: test -f index.html && test -f .github/workflows/deploy-pages.yml
+        run: test -f index.html
+
+  deploy:
+    name: Deploy ChemLab to GitHub Pages
+    needs: validate
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
