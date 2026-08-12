@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChemLab-G9 Content Provenance",
+  "type": "object",
+  "required": ["sourceType", "sourceTitle", "reviewStatus"],
+  "properties": {
+    "sourceType": {
+      "type": "string",
+      "enum": ["national-curriculum", "textbook", "school-resource", "teacher-authored", "original", "external-reference"]
+    },
+    "sourceTitle": {"type": "string", "minLength": 1},
+    "sourcePublisher": {"type": "string"},
+    "sourceEdition": {"type": "string"},
+    "sourceLocator": {"type": "string"},
+    "reviewStatus": {
+      "type": "string",
+      "enum": ["unreviewed", "review", "verified", "blocked", "ready"]
+    },
+    "reviewNotes": {"type": "string"},
+    "reviewedAt": {"type": "string", "format": "date"}
+  }
+}
