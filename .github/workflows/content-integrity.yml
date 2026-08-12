@@ -1,0 +1,29 @@
+name: Content Integrity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'modules/questions/**'
+      - 'content/knowledge/**'
+      - 'content/review/**'
+      - 'scripts/content-integrity-v19.mjs'
+      - '.github/workflows/content-integrity.yml'
+  pull_request:
+    paths:
+      - 'modules/questions/**'
+      - 'content/knowledge/**'
+      - 'content/review/**'
+      - 'scripts/content-integrity-v19.mjs'
+      - '.github/workflows/content-integrity.yml'
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Run content integrity gate
+        run: node scripts/content-integrity-v19.mjs
