@@ -5,13 +5,16 @@
  * ContentService is the public application-facing API; this module owns
  * manifest-driven JSON loading and browser deployment-base resolution.
  *
- * Day 01 diagnostic questions are deliberately kept in a separate JS content
- * module while review is in progress. They are merged at the application
- * boundary so diagnosis can resolve them without pretending they are already
- * part of the published 320-question bank.
+ * Day 01 review content is deliberately kept in separate JS modules while
+ * review is in progress. The production overrides replace known defective
+ * legacy IDs without reconstructing the large 320-question JSON file.
  */
 
 import { day01DiagnosticQuestions } from '../content/questions/day01-diagnostics.js';
+import {
+  day01ProductionOverrides,
+  day01ProductionOverrideIds,
+} from '../content/questions/day01-production-overrides.js';
 
 const BASE = (() => {
   if (typeof document === 'undefined') return '';
@@ -63,8 +66,15 @@ class ContentLoader {
     ]);
 
     const productionQuestions = Array.isArray(qb.questions) ? qb.questions : [];
+    const sanitizedProductionQuestions = productionQuestions.filter(
+      question => !day01ProductionOverrideIds.has(question.id)
+    );
+    const productionQuestionsWithOverrides = [
+      ...sanitizedProductionQuestions,
+      ...day01ProductionOverrides,
+    ];
     const diagnostics = day01DiagnosticQuestions.filter(q => q.status !== 'archived');
-    const questions = [...productionQuestions, ...diagnostics];
+    const questions = [...productionQuestionsWithOverrides, ...diagnostics];
 
     return {
       questions,
@@ -104,8 +114,11 @@ class ContentLoader {
   getQuestionsByKnowledge(knowledgeId) {
     const data = this.cache.get(ENDPOINTS.questionBank);
     if (!data) return [];
-    return [...data.questions, ...day01DiagnosticQuestions]
-      .filter(q => (q.knowledge || []).includes(knowledgeId));
+    return [
+      ...data.questions.filter(q => !day01ProductionOverrideIds.has(q.id)),
+      ...day01ProductionOverrides,
+      ...day01DiagnosticQuestions,
+    ].filter(q => (q.knowledge || []).includes(knowledgeId));
   }
 }
 
