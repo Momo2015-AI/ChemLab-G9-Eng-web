@@ -359,3 +359,40 @@ The original P0/P1 item blockers have been addressed in effective runtime conten
 ### Next action
 
 Check the CI conclusion. If green, perform the complete Day 01 release-gate re-audit and only then consider changing Day 01 from `review` to `ready`. Do not start the 35 remaining lesson rewrites before the benchmark gate is genuinely closed.
+
+---
+
+## 2026-08-12 — CI failure triage + Day 01 lesson schema cleanup
+
+### CI finding
+
+The first post-resolution Content Integrity run failed on an unrelated legacy schema defect: `q-stoich-001` uses `ans` instead of the canonical `answer` field. The question bank itself remained intact at 320 records and the knowledge graph reported zero missing question references. The lesson readiness gate also correctly reported that 35 lessons are still templates and Day 01 was missing the scanner's exact `新知探究` and `例题精讲` section titles.
+
+### Implementation
+
+Updated:
+
+- `app/content-loader.js` — normalize legacy `ans` to `answer` at runtime without rewriting the large question bank.
+- `scripts/content-integrity-v19.mjs` — validate the normalized schema consistently with runtime behavior.
+- `modules/lessons/day-01.json` — renamed the benchmark's core teaching sections to the required audit schema while preserving the actual content.
+
+Deleted:
+
+- `modules/lessons/day01.json` — obsolete duplicate lesson artifact confirmed unused by the lesson scanner.
+
+Commits:
+
+- `c16a41d45ad2bedead3735acd4c1750253c120ec`
+- `355a0a3cc190bba4201fc68fc019a4114559a9dc`
+- `87bc56bb7778761cafda1fdb26c7d595fd3599cc`
+- `bea57a12a0281727bd9f7bd8e1d7cabd9da724a5`
+
+### Current state
+
+**DAY 01 = REVIEW / NOT READY.**
+
+A new Content Integrity run for `355a0a3cc190bba4201fc68fc019a4114559a9dc` is queued. The lesson audit will still remain globally blocked by the 35 template lessons; this is expected and is not a reason to promote Day 01 prematurely.
+
+### Next action
+
+Wait for the new CI result. If the question/knowledge gate passes, perform the Day 01-specific scientific, Grade-9, item-quality, knowledge-link, and runtime release review. Only after those pass should Day 01 be promoted to `ready` and its V2.1 learning-surface pattern propagated to later lessons.
