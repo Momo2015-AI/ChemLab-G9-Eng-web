@@ -146,52 +146,61 @@ Day 01 remained **NOT READY**.
 
 ## 2026-08-12 — Day 01 diagnostic → remediation → recheck closure
 
+The diagnostic/recheck layer was expanded to four distinct pairs covering HCl terminology, dilution safety reasoning, acid–metal overgeneralization, and observation versus interpretation.
+
+Design rule frozen: a recheck must use a different surface form or context while testing the same underlying concept.
+
+Key commits:
+
+- `6c203f0a7b8cbfbed58f15fff6d5e9980d89a995`
+- `522d58d739b021f580be12badaadf15a04d535e2`
+- `37735ca72195926055671f9223b568a560c38cb1`
+- `9ab0af0d0a22f920fb4a2c65877635ac920ce01e`
+
+Day 01 remained **NOT READY**.
+
+---
+
+## 2026-08-12 — Day 01 final release-gate review
+
 ### Conversation / decision
 
-The user requested continuation. The next required gate was to stop treating a misconception record as complete until it had a genuine diagnostic question and a distinct post-remediation recheck.
+The user requested continued deep review rather than moving on to Day 02. The review was expanded from structural linkage to scientific precision, Grade-9 suitability, safety boundary, and release-state consistency.
 
-### Finding
+### Findings
 
-Three diagnostics existed, but dilution direction had no dedicated diagnostic. Several misconceptions reused the same item as both diagnosis and recheck, which cannot demonstrate transfer after remediation.
+1. The Day 01 lesson had four diagnostic questions available, but the lesson metadata listed only three. This was corrected so `q-acid-dx-004` is part of the diagnostic flow.
+2. Student-facing safety content was too procedural around concentrated sulfuric acid. It was revised to teach the heat/splash hazard and require teacher-approved laboratory procedures rather than provide operational handling instructions.
+3. The rust experiment is acceptable as a junior-high model only if Fe2O3 is explicitly framed as a simplified representation of rust composition; the final scientific review must verify this wording.
+4. The production-bank `q-acid-001` terminology issue remains excluded from Day 01.
+5. The production-bank `q-acid-004` safety-sensitive item remains excluded pending independent review/replacement.
+6. Diagnostic and recheck content remains `review` until runtime and independent content review gates pass.
 
 ### Implementation
 
-Updated `content/questions/day01-diagnostics.js` with four diagnostic/recheck pairs:
+Updated:
 
-- `q-acid-dx-001` → `q-acid-rx-001` for HCl vs hydrochloric acid
-- `q-acid-dx-004` → `q-acid-rx-004` for dilution direction
-- `q-acid-dx-002` → `q-acid-rx-002` for acid–metal overgeneralization
-- `q-acid-dx-003` → `q-acid-rx-003` for observation vs interpretation
-
-Updated `content/misconceptions/day01-acid.js` so each misconception now has an explicit diagnostic and a distinct recheck route.
+- `modules/lessons/day-01.json`
+- `content/questions/day01-diagnostics.js`
 
 Added:
 
-- `reports/V1.9-DAY01-DIAGNOSTIC-RECHECK-2026-08-12.md`
+- `reports/V1.9-DAY01-RELEASE-GATE-2026-08-12.md`
 
-Updated:
+Commit:
 
-- `content/review/day01-benchmark-review.json`
-
-### Design rule frozen
-
-A recheck must not simply repeat the diagnostic item. It must use a different surface form or context while testing the same underlying concept.
-
-### Commits
-
-- Diagnostic/recheck content: `6c203f0a7b8cbfbed58f15fff6d5e9980d89a995`
-- Misconception routing: `522d58d739b021f580be12badaadf15a04d535e2`
-- Review report: `37735ca72195926055671f9223b568a560c38cb1`
-- Benchmark review update: `9ab0af0d0a22f920fb4a2c65877635ac920ce01e`
+- Day 01 alignment: `0aa253282341438194f745081c3c4cb854d4d419`
+- Diagnostic safety boundary: `4a8a91c47e255756a60cc357b53fd27a4b26c88a`
+- Release gate report: `312f434bbdc1fad846e79d36fb1b72e62195bfc7`
 
 ### Current state
 
-Day 01 is still **NOT READY**. The diagnostic/recheck structure is now complete for the four modeled misconceptions, but all items remain `review` pending independent scientific review, Grade-9 suitability review, item-quality review, knowledge-link verification, and runtime/CI verification.
+**DAY 01 = BLOCKED / NOT READY.**
 
-Remaining blockers also include the excluded `q-acid-001` terminology item and safety-sensitive `q-acid-004`, which must be corrected/replaced independently before production use.
+Structural and diagnostic/recheck design gates pass. Publication remains blocked by independent scientific review, Grade-9 pedagogical review, item-quality review, knowledge-link verification, and final runtime/CI verification.
 
 ### Next action
 
-Run the Day 01 release-gate audit against the complete lesson → question → diagnostic → misconception → remediation → recheck graph, then perform independent scientific and Grade-9 pedagogical review. Only after all gates pass may Day 01 become `ready: true`.
+Run the independent scientific and Grade-9 review against the complete Day 01 graph, then execute the final automated integrity gate. Do not mark Day 01 ready until all blockers are closed.
 
 ---
