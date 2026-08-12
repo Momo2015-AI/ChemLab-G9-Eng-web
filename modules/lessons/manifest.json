@@ -2,303 +2,50 @@
   "version": "1.6",
   "course": "ChemLab-G9",
   "modules": {
-    "module-acid-base": {
-      "name": "酸和碱",
-      "order": 1,
-      "chapters": [
-        "单元一"
-      ]
-    },
-    "module-salt-fert": {
-      "name": "盐 化肥",
-      "order": 2,
-      "chapters": [
-        "单元二"
-      ]
-    },
-    "module-metal": {
-      "name": "金属和金属矿物",
-      "order": 3,
-      "chapters": [
-        "单元三"
-      ]
-    },
-    "module-equation": {
-      "name": "化学方程式",
-      "order": 4,
-      "chapters": [
-        "单元四"
-      ]
-    },
-    "module-life": {
-      "name": "化学与生活",
-      "order": 5,
-      "chapters": [
-        "单元五"
-      ]
-    },
-    "module-review": {
-      "name": "综合提升",
-      "order": 6,
-      "chapters": [
-        "单元六"
-      ]
-    }
+    "module-acid-base": {"name":"酸和碱","order":1,"chapters":["单元一"]},
+    "module-salt-fert": {"name":"盐 化肥","order":2,"chapters":["单元二"]},
+    "module-metal": {"name":"金属和金属矿物","order":3,"chapters":["单元三"]},
+    "module-equation": {"name":"化学方程式","order":4,"chapters":["单元四"]},
+    "module-life": {"name":"化学与生活","order":5,"chapters":["单元五"]},
+    "module-review": {"name":"综合提升","order":6,"chapters":["单元六"]}
   },
   "days": [
-    {
-      "day": "01",
-      "title": "常见的酸",
-      "module": "module-acid-base",
-      "ready": true
-    },
-    {
-      "day": "02",
-      "title": "酸的化学性质",
-      "module": "module-acid-base",
-      "ready": true
-    },
-    {
-      "day": "03",
-      "title": "酸的用途与安全技术",
-      "module": "module-acid-base",
-      "ready": true
-    },
-    {
-      "day": "04",
-      "title": "常见的碱",
-      "module": "module-acid-base",
-      "ready": true
-    },
-    {
-      "day": "05",
-      "title": "碱的化学性质",
-      "module": "module-acid-base",
-      "ready": true
-    },
-    {
-      "day": "06",
-      "title": "溶液的酸碱度与pH",
-      "module": "module-acid-base",
-      "ready": true
-    },
-    {
-      "day": "07",
-      "title": "中和反应及其应用",
-      "module": "module-acid-base",
-      "ready": true
-    },
-    {
-      "day": "08",
-      "title": "生活中的盐",
-      "module": "module-salt-fert",
-      "ready": true
-    },
-    {
-      "day": "09",
-      "title": "盐的化学性质",
-      "module": "module-salt-fert",
-      "ready": true
-    },
-    {
-      "day": "10",
-      "title": "常见离子的检验",
-      "module": "module-salt-fert",
-      "ready": true
-    },
-    {
-      "day": "11",
-      "title": "化学肥料概述",
-      "module": "module-salt-fert",
-      "ready": true
-    },
-    {
-      "day": "12",
-      "title": "氮肥与磷肥",
-      "module": "module-salt-fert",
-      "ready": true
-    },
-    {
-      "day": "13",
-      "title": "钾肥与复合肥",
-      "module": "module-salt-fert",
-      "ready": true
-    },
-    {
-      "day": "14",
-      "title": "单元二 综合复习",
-      "module": "module-salt-fert",
-      "ready": true
-    },
-    {
-      "day": "15",
-      "title": "金属资源的利用",
-      "module": "module-metal",
-      "ready": true
-    },
-    {
-      "day": "16",
-      "title": "金属的物理性质",
-      "module": "module-metal",
-      "ready": true
-    },
-    {
-      "day": "17",
-      "title": "金属活动性顺序",
-      "module": "module-metal",
-      "ready": true
-    },
-    {
-      "day": "18",
-      "title": "金属与酸的反应",
-      "module": "module-metal",
-      "ready": true
-    },
-    {
-      "day": "19",
-      "title": "金属与盐溶液的反应",
-      "module": "module-metal",
-      "ready": true
-    },
-    {
-      "day": "20",
-      "title": "铁的锈蚀与防护",
-      "module": "module-metal",
-      "ready": true
-    },
-    {
-      "day": "21",
-      "title": "单元三 综合复习",
-      "module": "module-metal",
-      "ready": true
-    },
-    {
-      "day": "22",
-      "title": "质量守恒定律",
-      "module": "module-equation",
-      "ready": true
-    },
-    {
-      "day": "23",
-      "title": "化学方程式的书写",
-      "module": "module-equation",
-      "ready": true
-    },
-    {
-      "day": "24",
-      "title": "化学方程式的配平",
-      "module": "module-equation",
-      "ready": true
-    },
-    {
-      "day": "25",
-      "title": "有关化学方程式的计算",
-      "module": "module-equation",
-      "ready": true
-    },
-    {
-      "day": "26",
-      "title": "单元四 综合复习",
-      "module": "module-equation",
-      "ready": true
-    },
-    {
-      "day": "27",
-      "title": "人类重要的营养物质",
-      "module": "module-life",
-      "ready": true
-    },
-    {
-      "day": "28",
-      "title": "蛋白质与糖类",
-      "module": "module-life",
-      "ready": true
-    },
-    {
-      "day": "29",
-      "title": "油脂与维生素",
-      "module": "module-life",
-      "ready": true
-    },
-    {
-      "day": "30",
-      "title": "有机化合物与合成材料",
-      "module": "module-life",
-      "ready": true
-    },
-    {
-      "day": "31",
-      "title": "单元五 综合复习",
-      "module": "module-life",
-      "ready": true
-    },
-    {
-      "day": "32",
-      "title": "基础概念回顾",
-      "module": "module-review",
-      "ready": true
-    },
-    {
-      "day": "33",
-      "title": "实验探究专题",
-      "module": "module-review",
-      "ready": true
-    },
-    {
-      "day": "34",
-      "title": "化学计算专题",
-      "module": "module-review",
-      "ready": true
-    },
-    {
-      "day": "35",
-      "title": "综合诊断测试（一）",
-      "module": "module-review",
-      "ready": true
-    },
-    {
-      "day": "36",
-      "title": "综合诊断测试（二）",
-      "module": "module-review",
-      "ready": true
-    }
+    {"day":"01","title":"常见的酸","module":"module-acid-base","ready":false},
+    {"day":"02","title":"酸的化学性质","module":"module-acid-base","ready":false},
+    {"day":"03","title":"酸的用途与安全技术","module":"module-acid-base","ready":false},
+    {"day":"04","title":"常见的碱","module":"module-acid-base","ready":false},
+    {"day":"05","title":"碱的化学性质","module":"module-acid-base","ready":false},
+    {"day":"06","title":"溶液的酸碱度与pH","module":"module-acid-base","ready":false},
+    {"day":"07","title":"中和反应及其应用","module":"module-acid-base","ready":false},
+    {"day":"08","title":"生活中的盐","module":"module-salt-fert","ready":false},
+    {"day":"09","title":"盐的化学性质","module":"module-salt-fert","ready":false},
+    {"day":"10","title":"常见离子的检验","module":"module-salt-fert","ready":false},
+    {"day":"11","title":"化学肥料概述","module":"module-salt-fert","ready":false},
+    {"day":"12","title":"氮肥与磷肥","module":"module-salt-fert","ready":false},
+    {"day":"13","title":"钾肥与复合肥","module":"module-salt-fert","ready":false},
+    {"day":"14","title":"单元二 综合复习","module":"module-salt-fert","ready":false},
+    {"day":"15","title":"金属资源的利用","module":"module-metal","ready":false},
+    {"day":"16","title":"金属的物理性质","module":"module-metal","ready":false},
+    {"day":"17","title":"金属活动性顺序","module":"module-metal","ready":false},
+    {"day":"18","title":"金属与酸的反应","module":"module-metal","ready":false},
+    {"day":"19","title":"金属与盐溶液的反应","module":"module-metal","ready":false},
+    {"day":"20","title":"铁的锈蚀与防护","module":"module-metal","ready":false},
+    {"day":"21","title":"单元三 综合复习","module":"module-metal","ready":false},
+    {"day":"22","title":"质量守恒定律","module":"module-equation","ready":false},
+    {"day":"23","title":"化学方程式的书写","module":"module-equation","ready":false},
+    {"day":"24","title":"化学方程式的配平","module":"module-equation","ready":false},
+    {"day":"25","title":"有关化学方程式的计算","module":"module-equation","ready":false},
+    {"day":"26","title":"单元四 综合复习","module":"module-equation","ready":false},
+    {"day":"27","title":"人类重要的营养物质","module":"module-life","ready":false},
+    {"day":"28","title":"蛋白质与糖类","module":"module-life","ready":false},
+    {"day":"29","title":"油脂与维生素","module":"module-life","ready":false},
+    {"day":"30","title":"有机化合物与合成材料","module":"module-life","ready":false},
+    {"day":"31","title":"单元五 综合复习","module":"module-life","ready":false},
+    {"day":"32","title":"基础概念回顾","module":"module-review","ready":false},
+    {"day":"33","title":"实验探究专题","module":"module-review","ready":false},
+    {"day":"34","title":"化学计算专题","module":"module-review","ready":false},
+    {"day":"35","title":"综合诊断测试（一）","module":"module-review","ready":false},
+    {"day":"36","title":"综合诊断测试（二）","module":"module-review","ready":false}
   ],
-  "readyDays": [
-    "01",
-    "02",
-    "03",
-    "04",
-    "05",
-    "06",
-    "07",
-    "08",
-    "09",
-    "10",
-    "11",
-    "12",
-    "13",
-    "14",
-    "15",
-    "16",
-    "17",
-    "18",
-    "19",
-    "20",
-    "21",
-    "22",
-    "23",
-    "24",
-    "25",
-    "26",
-    "27",
-    "28",
-    "29",
-    "30",
-    "31",
-    "32",
-    "33",
-    "34",
-    "35",
-    "36"
-  ]
+  "readyDays": []
 }
