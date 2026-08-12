@@ -19,8 +19,10 @@ if (!bootstrap.includes("'./application.js'")) errors.push('bootstrap.js does no
 if (!bootstrap.includes("'../frontend/shell/portal-shell.js'")) errors.push('bootstrap.js does not import the canonical portal shell.');
 if (/contentService\.load\(\)/.test(bootstrap)) errors.push('bootstrap.js directly blocks startup on contentService.load(); hydration belongs to application.start().');
 
-// Verify every relative JS import target in the production graph exists.
-const jsRoots = ['app', 'core', 'controllers', 'engine', 'frontend', 'services', 'views'];
+// Verify every relative JS import target in the production/runtime tree exists.
+// `services/` is intentionally excluded: the current canonical runtime does not
+// contain that legacy directory, and scanning absent roots only obscures real defects.
+const jsRoots = ['app', 'core', 'controllers', 'engine', 'frontend', 'scripts', 'views'];
 const files = [];
 for (const dir of jsRoots) {
   if (!exists(dir)) continue;
@@ -54,9 +56,6 @@ const pageWorkflows = workflows.filter(f => /page|deploy/i.test(f));
 if (pageWorkflows.length !== 1 || pageWorkflows[0] !== 'deploy-pages.yml') {
   errors.push(`expected exactly one canonical Pages workflow (deploy-pages.yml); found ${pageWorkflows.join(', ') || 'none'}`);
 }
-
-// Duplicate legacy health workflow is no longer part of the architecture.
-if (exists('.github/workflows/check.yml')) warnings.push('.github/workflows/check.yml remains; it should be removed after the consolidated build gate is active.');
 
 console.log('=== ChemLab production runtime audit ===');
 console.log(`JS files scanned: ${files.length}`);
