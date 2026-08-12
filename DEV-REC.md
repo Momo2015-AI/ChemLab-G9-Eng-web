@@ -235,3 +235,52 @@ Day 01 is still **NOT READY**. The deep review found that the content direction 
 Correct q-acid-001 terminology, independently verify/rewrite q-acid-004 safety wording, run automated relationship/content integrity checks, then perform the final benchmark review. Do not propagate Day 01 to the other 35 lessons until this gate passes.
 
 ---
+
+## 2026-08-12 — Day 01 diagnostic routing deep review
+
+### Conversation / decision
+
+The user requested another round of review. The focus moved from whether misconception records existed to whether they actually diagnose the intended learner error and route to an appropriate remediation/recheck.
+
+### Findings
+
+1. **P0:** `mc-acid-metal-overgeneralization` was previously linked to `q-acid-006`, which does not directly diagnose the targeted acid–metal overgeneralization.
+2. **P0:** `mc-acid-observation-inference` was previously linked to classification/equation questions that did not directly test observation versus interpretation.
+3. **P0:** `mc-acid-hcl-solution` used `q-acid-006` as a recheck even though it does not directly test HCl versus hydrochloric acid.
+4. **P1:** recheck items should normally be new surface forms rather than the same item reused as practice/recheck.
+5. **P1:** the legacy `q-acid-001` terminology defect remains unresolved, and `q-acid-004` remains safety-review-only.
+
+### Implementation
+
+Added:
+
+- `content/questions/day01-diagnostics.js`
+- `reports/V1.9-DAY01-DIAGNOSTIC-ROUTING-2026-08-12.md`
+
+The diagnostic layer now has targeted items for:
+
+- HCl vs hydrochloric acid
+- acid–metal overgeneralization
+- observation vs interpretation
+
+Updated `content/misconceptions/day01-acid.js` to use the targeted diagnostic IDs and corrected the acid–metal mapping to include `q-acid-007`.
+
+The new diagnostic file is intentionally `status: review` and is not silently inserted into the existing production question bank until the runtime integration contract is verified.
+
+### Commits
+
+Diagnostic questions: `5fc0e7e7f6605cdde0502ec909a135b34d8a3034`
+
+Misconception routing: `e8fcc23352ae5b20582293b7421aaa0223833da0`
+
+Diagnostic review report: `0bd2ac579373df0485a09a8de95e22cbb789aef6`
+
+### Current state
+
+Day 01 remains **NOT READY**. The diagnostic model is now substantially more meaningful, but it still needs runtime integration verification, distinct recheck variants, correction/quarantine of legacy question defects, and final independent review.
+
+### Next action
+
+Verify the runtime question-loading contract for the new diagnostic layer, create distinct recheck variants, resolve q-acid-001 and q-acid-004, then run the complete benchmark release gate.
+
+---
