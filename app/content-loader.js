@@ -5,6 +5,10 @@
  * ContentService is the public application-facing API; this module owns
  * manifest-driven JSON loading and browser deployment-base resolution.
  *
+ * Asset URLs are resolved from this module's own URL rather than document
+ * <base>. This makes the same build work at localhost root and under the
+ * GitHub Pages project path without relying on environment-specific HTML.
+ *
  * Day 01 review content is deliberately kept in separate JS modules while
  * review is in progress. The production overrides replace known defective
  * legacy IDs without reconstructing the large 320-question JSON file.
@@ -16,20 +20,15 @@ import {
   day01ProductionOverrideIds,
 } from '../content/questions/day01-production-overrides.js';
 
-const BASE = (() => {
-  if (typeof document === 'undefined') return '';
-  const baseEl = document.querySelector('base');
-  if (!baseEl) return '';
-  const href = baseEl.getAttribute('href') || '';
-  return href.endsWith('/') ? href.slice(0, -1) : href;
-})();
+const APP_ROOT = new URL('../', import.meta.url);
+const assetUrl = path => new URL(path, APP_ROOT).href;
 
 const ENDPOINTS = {
-  questionBank: `${BASE}/modules/questions/question-bank.json`,
-  knowledgeGraph: `${BASE}/content/knowledge/knowledge-graph.json`,
-  legacyKnowledgeGraph: `${BASE}/modules/questions/taxonomy/knowledge-graph.json`,
-  manifest: `${BASE}/modules/lessons/manifest.json`,
-  topicBank: `${BASE}/modules/questions/bank/questions-by-topic.json`,
+  questionBank: assetUrl('modules/questions/question-bank.json'),
+  knowledgeGraph: assetUrl('content/knowledge/knowledge-graph.json'),
+  legacyKnowledgeGraph: assetUrl('modules/questions/taxonomy/knowledge-graph.json'),
+  manifest: assetUrl('modules/lessons/manifest.json'),
+  topicBank: assetUrl('modules/questions/bank/questions-by-topic.json'),
 };
 
 const normalizeQuestion = question => {
@@ -102,7 +101,7 @@ class ContentLoader {
 
     const results = await Promise.all(
       dayIds.map(day =>
-        this.fetchJSON(`${BASE}/modules/lessons/day-${String(day).padStart(2, '0')}.json`)
+        this.fetchJSON(assetUrl(`modules/lessons/day-${String(day).padStart(2, '0')}.json`))
           .catch(() => null)
       )
     );
@@ -110,13 +109,11 @@ class ContentLoader {
   }
 
   async loadExperiment(id) {
-    const url = `${BASE}/content/experiments/${id}.json`;
-    return this.fetchJSON(url).catch(() => null);
+    return this.fetchJSON(assetUrl(`content/experiments/${id}.json`)).catch(() => null);
   }
 
   async loadKnowledgeContent(id) {
-    const url = `${BASE}/content/knowledge/${id}.json`;
-    return this.fetchJSON(url).catch(() => null);
+    return this.fetchJSON(assetUrl(`content/knowledge/${id}.json`)).catch(() => null);
   }
 
   getQuestionsByKnowledge(knowledgeId) {
