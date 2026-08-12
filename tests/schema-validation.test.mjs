@@ -4,15 +4,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const schema = JSON.parse(fs.readFileSync(path.join(root, 'schemas/lesson.schema.json'), 'utf8'));
+const schema = JSON.parse(fs.readFileSync(path.join(root, 'content/schema/lesson.schema.json'), 'utf8'));
 
 test('lesson schema declares the core lesson contract', () => {
   assert.equal(schema.type, 'object');
   assert.ok(schema.properties.id);
   assert.ok(schema.properties.title);
   assert.ok(schema.properties.knowledgePoints);
-  assert.ok(schema.properties.questions);
-  assert.ok(schema.properties.experiments);
+  assert.ok(schema.properties.sequence);
 });
 
 test('lesson schema enforces required educational identity fields', () => {
