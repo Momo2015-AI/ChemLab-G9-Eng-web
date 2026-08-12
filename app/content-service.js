@@ -1,5 +1,5 @@
 /**
- * ChemLab-G9 V1.7 Content Service
+ * ChemLab-G9 V1.9 Content Service
  * Stable application-facing boundary over the content loader.
  */
 
@@ -39,15 +39,19 @@ class ContentService {
       this.data.knowledgeGraph = normalizeKnowledgeGraph(this.data.knowledgeGraph);
       this.data.questionById = new Map(this.data.questions.map(q => [q.id, q]));
 
-      // Build the diagnosis registry at the content boundary. This keeps
-      // question-to-knowledge registration deterministic and avoids global UI
-      // side effects or controller-specific registration rules.
+      // Build the diagnosis registry at the content boundary. Diagnostic
+      // questions use misconceptionIds directly; legacy production questions
+      // continue to use commonMistake/mistake/errors.
       for (const question of this.data.questions) {
         const knowledge = normalizeKnowledgeIds(question);
         const commonMistake = question.commonMistake || question.mistake || null;
-        const errors = Array.isArray(question.errors)
+        const misconceptionIds = Array.isArray(question.misconceptionIds)
+          ? question.misconceptionIds
+          : [];
+        const legacyErrors = Array.isArray(question.errors)
           ? question.errors
           : commonMistake ? [commonMistake] : [];
+        const errors = [...new Set([...legacyErrors, ...misconceptionIds])];
         registerQuestion(question.id, { knowledge, errors });
       }
 
