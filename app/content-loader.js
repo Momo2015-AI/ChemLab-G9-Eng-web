@@ -32,6 +32,12 @@ const ENDPOINTS = {
   topicBank: `${BASE}/modules/questions/bank/questions-by-topic.json`,
 };
 
+const normalizeQuestion = question => {
+  if (!question || typeof question !== 'object') return question;
+  if (question.answer !== undefined || question.ans === undefined) return question;
+  return { ...question, answer: question.ans };
+};
+
 class ContentLoader {
   constructor() {
     this.cache = new Map();
@@ -65,7 +71,9 @@ class ContentLoader {
       this.loadAllDays(manifest),
     ]);
 
-    const productionQuestions = Array.isArray(qb.questions) ? qb.questions : [];
+    const productionQuestions = Array.isArray(qb.questions)
+      ? qb.questions.map(normalizeQuestion)
+      : [];
     const sanitizedProductionQuestions = productionQuestions.filter(
       question => !day01ProductionOverrideIds.has(question.id)
     );
@@ -115,7 +123,9 @@ class ContentLoader {
     const data = this.cache.get(ENDPOINTS.questionBank);
     if (!data) return [];
     return [
-      ...data.questions.filter(q => !day01ProductionOverrideIds.has(q.id)),
+      ...data.questions
+        .map(normalizeQuestion)
+        .filter(q => !day01ProductionOverrideIds.has(q.id)),
       ...day01ProductionOverrides,
       ...day01DiagnosticQuestions,
     ].filter(q => (q.knowledge || []).includes(knowledgeId));
