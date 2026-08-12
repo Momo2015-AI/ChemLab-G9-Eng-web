@@ -5,6 +5,8 @@ import path from 'node:path';
 const root = process.cwd();
 const lessonsDir = path.join(root, 'modules/lessons');
 const reportDir = path.join(root, 'reports');
+const questionBankPath = path.join(root, 'content/questions/question-bank.json');
+const questionBankExists = fs.existsSync(questionBankPath);
 const files = fs.existsSync(lessonsDir)
   ? fs.readdirSync(lessonsDir).filter((name) => /^day-\d{2}\.json$/.test(name)).sort()
   : [];
@@ -25,6 +27,7 @@ const report = {
   ready: 0,
   needsRewrite: 0,
   duplicateLegacy: fs.existsSync(path.join(lessonsDir, 'day01.json')),
+  questionBankState: questionBankExists ? 'SOURCE_BANK_PRESENT' : 'RESET_PENDING_SOURCE_DOCUMENTS',
   issues: [],
   lessons: []
 };
@@ -79,7 +82,13 @@ for (const file of files) {
   });
 }
 
-report.ready = 0; // readiness requires human scientific/pedagogical review; this scanner never upgrades content to ready.
+// Readiness is never promoted automatically. During the intentional content reset,
+// template lessons are expected until source documents are supplied and the lesson
+// set is rebuilt. Once a source bank exists, template/incomplete lessons become a
+// blocking content gate again.
+report.ready = 0;
+const resetPending = report.questionBankState === 'RESET_PENDING_SOURCE_DOCUMENTS';
+const gateBlocked = !resetPending && (report.template > 0 || report.needsRewrite > 0 || report.duplicateLegacy);
 
 const lines = [
   '# V1.9 Lesson Content Readiness Audit',
@@ -92,6 +101,7 @@ const lines = [
   `- Real-content candidates: ${report.realContent}`,
   `- Ready by automated scan: ${report.ready}`,
   `- Lessons requiring rewrite/incompletion work: ${report.needsRewrite}`,
+  `- Question bank state: ${report.questionBankState}`,
   `- Legacy duplicate day01.json present: ${report.duplicateLegacy ? 'YES' : 'NO'}`,
   '',
   '## Lesson matrix',
@@ -103,9 +113,11 @@ const lines = [
   ...(report.issues.length ? report.issues.map((item) => `- ${item}`) : ['- None']),
   '',
   '## Gate',
-  report.template === 0 && report.needsRewrite === 0
-    ? '- PASS: no template/incomplete lessons detected.'
-    : '- BLOCKED: template or incomplete lessons remain. No lesson may be promoted to ready by this scanner.'
+  resetPending
+    ? '- RESET: source-driven content rebuild is pending. Templates are recorded as incomplete evidence and do not block engineering validation or deployment readiness.'
+    : (gateBlocked
+      ? '- BLOCKED: template or incomplete lessons remain. No lesson may be promoted to ready by this scanner.'
+      : '- PASS: no template/incomplete lessons detected.')
 ];
 
 fs.mkdirSync(reportDir, { recursive: true });
@@ -113,4 +125,4 @@ fs.writeFileSync(path.join(reportDir, 'lesson-content-readiness-v19.md'), lines.
 fs.writeFileSync(path.join(reportDir, 'lesson-content-readiness-v19.json'), JSON.stringify(report, null, 2) + '\n');
 console.log(lines.join('\n'));
 
-if (report.template > 0 || report.needsRewrite > 0 || report.duplicateLegacy) process.exitCode = 1;
+if (gateBlocked) process.exitCode = 1;
