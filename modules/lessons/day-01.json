@@ -7,8 +7,9 @@
   "knowledgePoints": ["acid-intro", "acid-property"],
   "prerequisites": ["matter-classify", "chem-symbol"],
   "experiments": ["exp-acid-rust"],
-  "questions": ["q-acid-001", "q-acid-002", "q-acid-003", "q-acid-004", "q-acid-006"],
-  "misconceptions": ["mc-acid-hcl-solution", "mc-acid-dilution-direction", "mc-acid-metal-overgeneralization"],
+  "questions": ["q-acid-002", "q-acid-003", "q-acid-006"],
+  "diagnosticQuestions": ["q-acid-dx-001", "q-acid-dx-002", "q-acid-dx-003"],
+  "misconceptions": ["mc-acid-hcl-solution", "mc-acid-dilution-direction", "mc-acid-metal-overgeneralization", "mc-acid-observation-inference"],
   "sections": [
     {"title":"学习目标","body":["说出盐酸、硫酸等常见酸在初中阶段的主要用途，并能正确区分酸、碱、盐等物质类别。","知道浓盐酸具有挥发性；知道浓硫酸具有吸水性和腐蚀性。","掌握稀释浓硫酸的安全操作原则，并能解释为什么不能把水直接倒入浓硫酸。","能根据物质名称、化学式和实验情境进行基本判断，而不是只依靠用途或名称猜测类别。"]},
     {"title":"前置知识激活","body":["先回忆：HCl、NaOH、NaCl、H2O分别属于哪一类物质？分类时看的是物质的组成和类别，不是生活用途。","术语约定：HCl表示氯化氢；实验中所说的盐酸是氯化氢的水溶液。题目若强调溶液状态，使用“盐酸”更准确。"]},
@@ -18,12 +19,13 @@
     {"title":"实验探究：稀盐酸除铁锈","body":["观察：生锈铁钉表面有红棕色铁锈。加入稀盐酸后，铁锈逐渐溶解，溶液可能出现黄色；继续观察，在铁锈除去后铁表面可能出现气泡。","解释：铁锈的主要成分常以Fe2O3表示。Fe2O3与HCl反应生成FeCl3和水：Fe2O3 + 6HCl = 2FeCl3 + 3H2O。黄色可与Fe3+在该溶液中的存在联系。","为什么不能长时间用酸浸泡铁制品？铁锈除去后，酸还可能继续与铁反应：Fe + 2HCl = FeCl2 + H2↑。因此除锈达到目的后应及时停止并清洗。","安全提醒：稀盐酸具有腐蚀性；实验时佩戴护目镜，避免接触皮肤和眼睛。"]},
     {"title":"例题精讲：怎样判断一个选项是否真的正确？","body":["例题：下列物质属于酸的是：A. NaOH  B. HCl  C. NaCl  D. H2O。","第一步，看物质类别：NaOH是碱，NaCl是盐，H2O是氧化物。","第二步，检查HCl：在初中物质分类中，HCl是酸的化学式；若题目写“盐酸”，则应理解为HCl的水溶液。","第三步，不要根据用途或某一种性质反推类别。分类首先依据物质组成和类别定义。答案为B。","真正目标不是记住B，而是形成“先分类、再判断、最后核对术语”的解题流程。"]},
     {"title":"典型错误与纠正","body":["错误一：把HCl和盐酸完全当成同一个概念。纠正：HCl是氯化氢，盐酸是HCl的水溶液；实验情境中要看题目使用的是哪一种表达。","错误二：稀释浓硫酸时把水倒入浓硫酸。纠正：应把浓硫酸沿器壁缓慢加入水中，并不断搅拌；混合会放热，错误操作可能造成局部剧烈放热和液体飞溅。","错误三：认为所有酸都能和所有金属反应生成氢气。纠正：反应与否取决于金属、酸的种类和条件，不能把“酸+金属→氢气”当成无条件规律。"]},
-    {"title":"巩固练习","body":["完成q-acid-001：检查能否准确区分酸、碱、盐和氧化物。","完成q-acid-002：判断浓盐酸敞口放置后的质量变化，并用挥发性解释。","完成q-acid-003：独立写出稀释浓硫酸的正确操作。","完成q-acid-004：判断浓硫酸接触皮肤后的正确应急处理。","完成q-acid-006：检验是否已经避免“酸都能与所有金属反应”的过度概括。"]},
+    {"title":"巩固练习","body":["完成q-acid-002：判断浓盐酸敞口放置后的质量变化，并用挥发性解释。","完成q-acid-003：独立写出稀释浓硫酸的正确操作。","完成q-acid-006：检验是否已经避免“酸都能与所有金属反应”的过度概括。"]},
+    {"title":"诊断检查","body":["完成q-acid-dx-001：检查能否准确区分HCl与盐酸。","完成q-acid-dx-002：检查是否把酸与金属反应错误概括成无条件规律。","完成q-acid-dx-003：检查是否能区分实验中的直接观察与化学解释。诊断题答错后先进入对应补救，而不是直接继续下一课。"]},
     {"title":"学习检查：三句话回忆","body":["① 盐酸是HCl的水溶液；② 浓盐酸具有挥发性，浓硫酸具有吸水性和腐蚀性；③ 稀释浓硫酸时把酸沿器壁缓慢加入水中并搅拌。","如果不能解释其中任何一句“为什么”，回到对应章节重新学习，而不是直接继续刷题。"]}
   ],
-  "summary":"本课建立常见酸的基本概念和安全使用意识，并通过“稀盐酸除铁锈”把物质、现象、解释和方程式联系起来。",
+  "summary":"本课建立常见酸的基本概念和安全使用意识，并通过“稀盐酸除铁锈”把物质、现象、解释和方程式联系起来。诊断题进一步检查术语、条件推理和观察—解释区分。",
   "preview":"下一课将系统学习酸的化学性质，并进一步比较酸与金属氧化物、金属等物质的反应。",
   "provenance":{"status":"review","basis":"junior-high chemistry curriculum/textbook scope; project scientific review standard","note":"Benchmark lesson requires independent scientific and pedagogical review before publication."},
-  "review":{"curriculum":"review","scientific":"review","ageSuitability":"review","itemQuality":"review","knowledgeLinks":"review","blockingIssues":["q-acid-001 terminology review remains open"]},
+  "review":{"curriculum":"review","scientific":"review","ageSuitability":"review","itemQuality":"review","knowledgeLinks":"review","blockingIssues":["q-acid-001 terminology review remains open in the production bank; removed from Day 01 until corrected","q-acid-004 safety-sensitive item removed from Day 01 pending independent verification","diagnostic rechecks require distinct post-remediation variants"]},
   "status":"review"
 }
