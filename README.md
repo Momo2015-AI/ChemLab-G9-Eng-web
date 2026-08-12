@@ -1,16 +1,18 @@
-# ChemLab-G9
+# ChemLab-G9-Eng
 
-## 九年级化学智能学习平台 · V1.8 Freeze → V1.9 Feature Development
+## 九年级化学学习平台 · Architecture Freeze → Content-First Development
 
-ChemLab-G9 是一个面向中国初中九年级学生的原生 ES Module 化学学习平台。V1.8 已完成生产接线、知识图谱边界归一化、诊断→补救→再检测闭环、Architecture Freeze 与 Directory Freeze。当前进入 V1.9 功能开发阶段。
+ChemLab-G9-Eng 是面向中国初中九年级学生的化学学习平台。当前工程架构已经完成深度清扫并正式冻结；项目进入**内容建设优先**阶段。
 
-> 课程学习 → 知识理解 → 实验探究 → 练习评价 → 证据 → 掌握度 → 诊断 → 补救 → 再检测 → 迁移 → 下一学习任务
+> **当前优先级：内容可信度 > 学习效果 > 实验与反馈 > UI 打磨 > 未来 AI 能力**
 
-项目坚持三个长期原则：**第一性原理、KISS、长期维护主义**。任何新功能都不能破坏学习证据、掌握度、诊断、补救和再检测链路。
+旧的 320 道题原始数据已永久退出生产体系。后续题库只允许基于经过登记、审查的新课程/教材/科学资料重新建设。
 
 ---
 
-## V1.8 冻结架构
+## 1. Architecture Freeze
+
+当前生产入口保持单一事实来源：
 
 ```text
 index.html
@@ -18,149 +20,222 @@ index.html
 app/bootstrap.js
     ↓
 app/application.js              ← Composition Root
-    ├── app/state.js
-    ├── app/router.js
-    ├── app/content-service.js
-    ├── app/content-loader.js
-    ├── app/mastery-service.js
-    └── app/progress-service.js
+    ├── state
+    ├── router
+    ├── content service/loader
+    ├── mastery
+    └── progress
           ↓
 controllers/
-    ├── assessment-controller.js
-    ├── experiment-controller.js
-    └── learning-controller.js
           ↓
-canonical core / domain engines
-    ├── assessment
-    ├── experiment
-    ├── mastery
-    ├── diagnosis
-    └── knowledge graph
+canonical domain engines
           ↓
 views/
 ```
 
-应用层负责装配和流程协调；领域引擎负责学习规则；View 负责展示。
+### 冻结原则
 
-### 单一事实来源
+- `main` 是唯一开发与发布分支。
+- 不再进行无明确需求的基础架构重写。
+- 不重新引入第二套 state / mastery / knowledge graph / diagnosis / recommendation engine。
+- 任何架构变更必须先有明确理由、影响分析、测试和审计记录。
+- 目录清扫已经完成；后续删除或迁移必须经过依赖证据确认。
 
-| 能力 | Canonical 来源 |
-|---|---|
-| Application Runtime | `app/bootstrap.js` + `app/application.js` |
-| Application State | `app/state.js` |
-| Progress Persistence | `app/progress-service.js` |
-| Content Access | `app/content-service.js` |
-| Knowledge Graph | Canonical Knowledge Engine |
-| Mastery | `MasteryEngine` |
-| Diagnosis | Canonical Diagnosis Engine |
-| Remediation | Canonical remediation flow/catalog |
-| Assessment | `AssessmentController` |
-| Experiment | `ExperimentController` |
-| Learning | `LearningController` |
-
-禁止重新引入第二套 application state、mastery、knowledge graph 或 recommendation/diagnosis engine。
-
----
-
-## V1.8 验证基线
-
-当前自动化测试：
+### CI/CD Freeze
 
 ```text
-66 tests
-66 pass
-0 fail
-0 skipped
-0 cancelled
+ChemLab-G9 CI/CD
+├── Validate
+│   ├── JS syntax
+│   ├── npm test
+│   ├── runtime audit
+│   ├── JSON validation
+│   ├── content integrity
+│   └── deployment entry
+└── Deploy
+    └── GitHub Pages
+
+Content Integrity
+└── 内容专项审计
 ```
 
-V1.8 Architecture Freeze Audit：**APPROVED**。
+仓库只保留一个自有 Pages deployment workflow。GitHub Pages 的内部 `pages-build-deployment` 属于平台基础设施，不计入仓库 workflow 数量。
 
-V1.8 Directory Freeze：**APPROVED**。
-
-完整审计记录：
-
-- `docs/V1.8-ARCHITECTURE-FREEZE-AUDIT.md`
-- `docs/V1.8-DIRECTORY-FREEZE-AUDIT.md`
-
-Health Check 已迁移到 ESM，与项目 `"type": "module"` 契约一致。
+当前生产门禁必须保持全绿：**tests / runtime audit / content integrity / Pages deployment**。
 
 ---
 
-## 受控兼容层
+## 2. Content-First Development
 
-当前唯一明确保留的架构兼容项是旧知识图谱 JSON fallback：
+内容生产遵循：
 
 ```text
-canonical: /content/knowledge/knowledge-graph.json
-fallback:  /modules/questions/taxonomy/knowledge-graph.json
+Authoritative Sources
+        ↓
+Source Registry
+        ↓
+Curriculum Map
+        ↓
+Knowledge Graph
+        ↓
+Learning Objectives
+        ↓
+Lesson
+        ↓
+Experiment / Visual / Example
+        ↓
+Assessment Blueprint
+        ↓
+Question Bank
+        ↓
+Diagnosis / Remediation / Recheck
+        ↓
+7-Gate Content Audit
+        ↓
+Release
 ```
 
-canonical 数据始终优先。fallback 仅用于内容迁移安全，不属于第二套生产知识引擎。
+详细规范：
 
-已有 `chemlab_v16` storage key 也作为旧学习数据兼容标识保留，但不构成第二套状态实现。
+- `docs/SOURCE-REGISTRY-STANDARD.md`
+- `docs/COURSE-DEVELOPMENT-STANDARD.md`
+- `docs/CONTENT-AUDIT-STANDARD.md`
+- `content/sources/README.md`
+
+### 内容来源原则
+
+生产课程必须首先建立 Source Registry，并明确：
+
+- **S0：指定教材/课程体系**——决定课程范围与章节顺序；
+- **S1：官方课程标准/课程要求**——决定学习要求和边界；
+- **S2：权威科学资料**——用于科学事实、实验和术语核验；
+- **S3：可靠教学研究/教学资料**——仅在确有必要时支持教学设计；
+- 未经登记的网络材料不能直接成为生产内容来源。
+
+当前 Source Registry 状态为：`SOURCE_REGISTRY_PENDING`。在新的教材/课程文档登记并完成范围审查前，不批量生成生产题库。
 
 ---
 
-## V1.9 开发方向
+## 3. Lesson Production Contract
 
-V1.9 不再进行基础架构重写，重点进入产品能力与真实学习体验：
+每一课必须至少具备：
+
+1. 可观察的学习目标；
+2. 前置知识与知识依赖；
+3. 核心概念及边界；
+4. 从现象/问题 → 模型 → 解释 → 规律的学习链；
+5. 适龄视觉模型或交互；
+6. 适用时的实验目标、器材、现象、解释、结论、安全和异常情况；
+7. 必要时的示范例题；
+8. 从理解到应用、迁移的分层练习；
+9. 误解诊断、补救和再检测链接；
+10. 来源 provenance；
+11. 明确的 `DRAFT / IN_REVIEW / REVISED / READY / RETIRED` 状态。
+
+**题目必须在课程目标、知识关联和 Assessment Blueprint 完成后生成。**
+
+---
+
+## 4. Content Audit Gates
+
+每个生产单元必须通过：
 
 ```text
-Learning Center
-      ↓
-Knowledge Learning
-      ↓
-Interactive Experiment
-      ↓
-Assessment
-      ↓
-Evidence
-      ↓
-Diagnosis
-      ↓
-Personalized Remediation
-      ↓
-Targeted Recheck
-      ↓
-Mastery / Dashboard
-      ↓
-Transfer / Next Task
+1. Source Audit
+       ↓
+2. Scientific Audit
+       ↓
+3. Grade-9 Suitability Audit
+       ↓
+4. Pedagogical / Content Audit
+       ↓
+5. Question Quality Audit
+       ↓
+6. Knowledge-Linkage Audit
+       ↓
+7. Release Gate
 ```
 
-详细开发计划：`docs/V1.9-DEVELOPMENT-PLAN.md`。
+任何 `BLOCKER` 或未关闭的高风险问题都不得进入 `READY`。
 
 ---
 
-## 测试与发布
+## 5. Current Content Phase
 
-项目使用 Node 原生 ES Module 测试：
+### Phase C0 — Source Intake
+
+建立教材、课程标准、科学参考资料的来源登记与版本锁定。
+
+### Phase C1 — Curriculum Reconstruction
+
+从 S0/S1 来源重建课程范围、章节结构、课时边界和知识依赖。
+
+### Phase C2 — Knowledge Architecture
+
+建立 Curriculum Map、Knowledge Graph、Learning Graph、Assessment Graph。
+
+### Phase C3 — Benchmark Lesson
+
+选择第一课作为完整内容生产样板，跑通：
+
+```text
+source → lesson → experiment → knowledge → practice → diagnosis → audit
+```
+
+### Phase C4 — Controlled Expansion
+
+Benchmark 通过全部 Gate 后，再逐课扩展，不允许批量复制模板制造“虚假完成度”。
+
+---
+
+## 6. Retired Question Bank Rule
+
+旧 320 道题：
+
+- 不属于 Source Registry；
+- 不属于 seed；
+- 不属于 benchmark；
+- 不属于 fallback；
+- 不用于新题目生成；
+- 不用于评价新题库质量。
+
+新题库必须从新课程资料重新建立。
+
+---
+
+## 7. Development Log
+
+所有实质性开发对话、工程决策、审计结果、提交和下一步必须记录在顶层：
+
+`DEV-REC.md`
+
+这是永久项目规则，不因版本冻结或架构升级而失效。
+
+---
+
+## 8. Verification & Release
 
 ```bash
 npm test
 ```
 
-每个功能阶段必须满足：
+每次生产变更遵循：
 
 ```text
 implementation
-→ unit/integration tests
-→ npm test GREEN
-→ Build Check GREEN
-→ documentation updated
+→ tests
+→ runtime/content audit
+→ documentation
 → commit on main
+→ CI GREEN
 → Pages deployment
 ```
 
-GitHub Pages 发布 workflow 必须先通过测试，再上传和部署 Pages artifact。
-
-`main` 是本项目唯一开发与发布分支。
-
 ---
 
-## 本地运行
+## 9. Local Development
 
-项目为原生 ES Module，需要 HTTP 静态服务器：
+项目使用原生 ES Module，需要 HTTP 静态服务器：
 
 ```bash
 python3 -m http.server 8080
@@ -172,24 +247,24 @@ python3 -m http.server 8080
 http://localhost:8080/index.html
 ```
 
-不能直接双击 `index.html`，因为浏览器模块加载和资源访问需要 HTTP 环境。
+不能直接双击 `index.html`。
 
 ---
 
-## 技术栈
+## 10. Technology
 
 - HTML / CSS / JavaScript
-- 原生 ES Module
-- 无前端框架
-- 无打包器
+- Native ES Modules
+- No frontend framework
+- No bundler
 - GitHub Pages
 - GitHub Actions
-- Node.js 原生测试
+- Node.js native tests
 
 ---
 
-## 项目愿景
+## Project Vision
 
-打造一个适合中国初中化学学生自主学习的科学学习环境：
+打造一个适合中国初中九年级学生自主学习的科学学习环境：
 
-**不仅记住化学知识，更通过实验、证据、反馈、诊断、补救、再检测和迁移形成可持续的科学学习能力。**
+**不仅记住化学知识，更通过现象、模型、实验、证据、反馈、诊断、补救、再检测和迁移形成可持续的科学学习能力。**
