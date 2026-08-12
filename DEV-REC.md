@@ -304,3 +304,58 @@ Commit: `0b0cca2cbdb27b98d2e455300d95f61eadeb0006`
 Resolve `q-acid-012`, correct/replace `q-acid-001`, independently review/rewrite `q-acid-004`, then rerun the full Day 01 release gate. Do not propagate Day 01 to other lessons until the gate passes.
 
 ---
+
+## 2026-08-12 — Day 01 blocker resolution pass
+
+### Conversation / decision
+
+The user requested that development continue from the final item audit. The identified Day 01 blockers were resolved through isolated runtime overrides rather than a destructive rewrite of the 320-question JSON.
+
+### Content corrections
+
+Added `content/questions/day01-production-overrides.js` with replacements for:
+
+- `q-acid-001` — corrected HCl / hydrochloric-acid terminology.
+- `q-acid-003` — converted the dilution item to hazard-recognition and supervised-safety reasoning.
+- `q-acid-004` — removed the fixed-concentration post-exposure neutralization instruction.
+- `q-acid-005` — replaced the ambiguous coexistence item with a unique-answer version.
+- `q-acid-011` — explicitly framed Fe2O3 as a simplified junior-high rust model.
+- `q-acid-012` — replaced the under-specified pressure item with a fully specified conceptual model.
+
+Updated `content/experiments/exp-acid-rust.json` to preserve the observation/interpretation boundary and explicitly distinguish the Fe2O3 school model from real rust composition.
+
+### Runtime / CI integrity
+
+`app/content-loader.js` now removes the affected legacy IDs and appends the isolated replacements, preserving an effective 320-question set.
+
+`scripts/content-integrity-v19.mjs` now validates the effective runtime question set, including the override records.
+
+`.github/workflows/content-integrity.yml` now triggers when runtime question modules, experiments, or the content loader change; previously those changes could bypass the integrity workflow.
+
+### Verification
+
+Commit sequence:
+
+- `88b855d7a209341a29a1601f7ccd5980b7254475`
+- `5965172b3324626fa9a727087d2b7e77876f51c1`
+- `2b989d8558e31ef39aa4113302f40364ff67ed11`
+- `a38ffc5475a649d880ba7ebbf5faa1c7662e377b`
+- `4c4a364335d7c0e00ae73a53c6e4ad4c47317f0e`
+- `64e36a1e2d229511214040f9bab5fa39fb079c60`
+- `61f64289fba2b02ce32ae798f99d404ad60ac535`
+
+Added:
+
+- `reports/V1.9-DAY01-BLOCKER-RESOLUTION-2026-08-12.md`
+
+The `Content Integrity` workflow for `64e36a1e2d229511214040f9bab5fa39fb079c60` was observed running successfully into the verification phase; final conclusion must be checked after the latest documentation commit.
+
+### Current state
+
+**DAY 01 = REVIEW / NOT READY.**
+
+The original P0/P1 item blockers have been addressed in effective runtime content. Publication is still blocked until the automated gate, final scientific/Grade-9 review, knowledge-link verification, and runtime verification all pass.
+
+### Next action
+
+Check the CI conclusion. If green, perform the complete Day 01 release-gate re-audit and only then consider changing Day 01 from `review` to `ready`. Do not start the 35 remaining lesson rewrites before the benchmark gate is genuinely closed.
