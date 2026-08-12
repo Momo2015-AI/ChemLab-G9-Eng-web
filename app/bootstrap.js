@@ -1,7 +1,14 @@
 /**
  * ChemLab V2.0 application bootstrap.
- * The learning engine and composition root remain the production runtime;
- * the portal shell is an experience layer around the existing page runtime.
+ *
+ * Startup is deliberately staged:
+ *   1. mount the shell immediately;
+ *   2. load/validate the content boundary;
+ *   3. build remediation data;
+ *   4. only then start the router.
+ *
+ * This prevents an async route-render failure from leaving the permanent
+ * "ChemLab 正在启动…" placeholder on GitHub Pages.
  */
 
 import { createAppState } from './state.js';
@@ -18,6 +25,12 @@ function getDefaultRoot() {
   return document.querySelector('#app-root');
 }
 
+function escapeHtml(value) {
+  return String(value).replace(/[&<>\"']/g, c => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[c]));
+}
+
 function renderStartupError(root, error) {
   if (!root) return;
   const message = error instanceof Error ? error.message : String(error);
@@ -26,13 +39,14 @@ function renderStartupError(root, error) {
     <section class="page startup-error">
       <header class="page-header">
         <h1>ChemLab-G9</h1>
-        <p>本次页面加载的内容资源未能完整加载。</p>
+        <p>学习平台启动失败，内容资源没有完整加载。</p>
       </header>
       <div class="startup-error__body">
-        <p>学习平台外壳已经启动。请刷新页面后重试。</p>
+        <p>请刷新页面后重试；如果问题持续存在，可展开技术诊断信息。</p>
+        <button type="button" onclick="location.reload()">重新加载</button>
         <details>
           <summary>技术诊断</summary>
-          <pre>${String(message).replace(/[&<>\"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]))}</pre>
+          <pre>${escapeHtml(message)}</pre>
         </details>
       </div>
     </section>`;
@@ -47,20 +61,23 @@ export async function bootstrap({ root = getDefaultRoot() } = {}) {
     root: pageRoot,
   });
 
-  application.start();
-
-  if (typeof window !== 'undefined') {
-    const sync = () => syncPortalNavigation(root, application.router.current());
-    window.addEventListener('hashchange', sync);
-    sync();
-  }
-
   try {
+    // Load content before starting the router. The previous order started an
+    // async home render first, so a rejected render promise could leave the
+    // loading placeholder visible forever.
     const data = await application.contentService.load();
     application.controllers.learning.remediationCatalog = createRemediationCatalog(data);
+
+    application.start();
+
+    if (typeof window !== 'undefined') {
+      const sync = () => syncPortalNavigation(root, application.router.current());
+      window.addEventListener('hashchange', sync);
+      sync();
+    }
   } catch (error) {
+    state.contentLoadError = error;
     renderStartupError(pageRoot, error);
-    application.state.contentLoadError = error;
   }
 
   if (typeof window !== 'undefined') {
@@ -76,8 +93,7 @@ if (typeof document !== 'undefined') {
   document.addEventListener('DOMContentLoaded', () => {
     bootstrap().catch(error => {
       console.error('ChemLab bootstrap failed:', error);
-      const root = document.querySelector('#app-root');
-      if (root) root.textContent = 'ChemLab failed to start. Please refresh and try again.';
+      renderStartupError(document.querySelector('#app-root'), error);
     });
   });
 }
