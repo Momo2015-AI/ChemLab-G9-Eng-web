@@ -17,6 +17,17 @@
 </head>
 <body>
 <div id="app-root"><div class="loading">ChemLab 正在启动…</div></div>
-<script type="module" src="app/bootstrap.js"></script>
+<script type="module">
+  import('./app/bootstrap.js').catch(error => {
+    console.error('ChemLab module failed to load:', error);
+    const root = document.querySelector('#app-root');
+    if (root) {
+      const message = String(error?.message || error).replace(/[&<>\"']/g, c => ({
+        '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+      }[c]));
+      root.innerHTML = `<section class="page startup-error"><header class="page-header"><h1>ChemLab-G9</h1><p>学习平台脚本加载失败。</p></header><div class="startup-error__body"><button type="button" onclick="location.reload()">重新加载</button><details><summary>技术诊断</summary><pre>${message}</pre></details></div></section>`;
+    }
+  });
+</script>
 </body>
 </html>
