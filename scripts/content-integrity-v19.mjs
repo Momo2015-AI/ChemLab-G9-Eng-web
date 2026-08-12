@@ -13,6 +13,12 @@ function load(file) {
   return JSON.parse(fs.readFileSync(file, 'utf8'));
 }
 
+const normalizeQuestion = question => {
+  if (!question || typeof question !== 'object') return question;
+  if (question.answer !== undefined || question.ans === undefined) return question;
+  return { ...question, answer: question.ans };
+};
+
 const report = { errors: [], warnings: [], stats: {} };
 const bank = load(questionPath);
 const graph = load(graphPath);
@@ -21,7 +27,7 @@ const taxonomy = load(questionTaxonomyPath);
 if (!bank?.questions || !Array.isArray(bank.questions)) {
   report.errors.push('question-bank.json: missing questions[]');
 } else {
-  const questions = bank.questions;
+  const questions = bank.questions.map(normalizeQuestion);
   const ids = new Set();
   const validTypes = new Set(['choice','multi-choice','fill','short-answer','true-false','experiment','calculation']);
   const validDifficulty = new Set(['easy','medium','hard']);
@@ -68,7 +74,9 @@ if (!bank?.questions || !Array.isArray(bank.questions)) {
 // by ID and replaced by isolated JS records. This avoids rewriting the large
 // 320-question JSON through a connector that cannot safely perform partial JSON edits.
 const effectiveQuestions = [
-  ...(bank?.questions ?? []).filter(q => !day01ProductionOverrideIds.has(q.id)),
+  ...(bank?.questions ?? [])
+    .map(normalizeQuestion)
+    .filter(q => !day01ProductionOverrideIds.has(q.id)),
   ...day01ProductionOverrides,
 ];
 const effectiveIds = new Set();
