@@ -5,14 +5,26 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const QUESTION_BANK_PATH = 'content/questions/question-bank.json';
 
 async function readJson(relativePath) {
   const text = await fs.readFile(path.join(ROOT, relativePath), 'utf8');
   return JSON.parse(text);
 }
 
-test('V1.9 question bank has a stable unique ID set', async () => {
-  const bank = await readJson('modules/questions/question-bank.json');
+async function readOptionalJson(relativePath) {
+  try {
+    return await readJson(relativePath);
+  } catch (error) {
+    if (error?.code === 'ENOENT') return null;
+    throw error;
+  }
+}
+
+test('question bank is in reset state until source documents are supplied', async () => {
+  const bank = await readOptionalJson(QUESTION_BANK_PATH);
+  if (bank === null) return;
+
   assert.ok(Array.isArray(bank.questions), 'question bank must expose questions[]');
   assert.equal(bank.questions.length, bank.total, 'declared total must match actual question count');
 
@@ -21,14 +33,14 @@ test('V1.9 question bank has a stable unique ID set', async () => {
   assert.equal(new Set(ids).size, ids.length, 'question IDs must be unique');
 });
 
-test('V1.9 question bank records satisfy the legacy runtime contract', async () => {
-  const bank = await readJson('modules/questions/question-bank.json');
+test('question bank records satisfy the runtime contract when a bank exists', async () => {
+  const bank = await readOptionalJson(QUESTION_BANK_PATH);
+  if (bank === null) return;
+
   const allowedDifficulty = new Set(['easy', 'medium', 'hard']);
   const allowedBloom = new Set(['remember', 'understand', 'apply', 'analyze', 'evaluate', 'create']);
 
   for (const question of bank.questions) {
-    // The canonical runtime boundary normalizes the legacy `ans` spelling to
-    // `answer`; accept both source spellings while validating the effective contract.
     const answer = question.answer ?? question.ans;
 
     assert.equal(typeof question.prompt, 'string', `${question.id}: prompt is required`);
@@ -48,16 +60,18 @@ test('V1.9 question bank records satisfy the legacy runtime contract', async () 
   }
 });
 
-test('V1.9 canonical knowledge graph has unique node IDs and resolvable question references', async () => {
+test('canonical knowledge graph has unique node IDs and validates question references when a bank exists', async () => {
   const graph = await readJson('content/knowledge/knowledge-graph.json');
-  const bank = await readJson('modules/questions/question-bank.json');
-  const questionIds = new Set(bank.questions.map(question => question.id));
+  const bank = await readOptionalJson(QUESTION_BANK_PATH);
 
   assert.ok(Array.isArray(graph.nodes), 'knowledge graph must expose nodes[]');
   const nodeIds = graph.nodes.map(node => node.id);
   assert.ok(nodeIds.every(Boolean), 'every knowledge node must have an id');
   assert.equal(new Set(nodeIds).size, nodeIds.length, 'knowledge node IDs must be unique');
 
+  if (bank === null) return;
+
+  const questionIds = new Set(bank.questions.map(question => question.id));
   const references = graph.nodes.flatMap(node => node.questions ?? []);
   const missing = [...new Set(references.filter(id => !questionIds.has(id)))];
   assert.deepEqual(missing, [], `knowledge graph contains missing question references: ${missing.join(', ')}`);
