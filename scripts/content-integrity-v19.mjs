@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import { day01ProductionOverrides, day01ProductionOverrideIds } from '../content/questions/day01-production-overrides.js';
 
 const root = process.cwd();
 const questionPath = path.join(root, 'modules/questions/question-bank.json');
@@ -44,9 +45,9 @@ if (!bank?.questions || !Array.isArray(bank.questions)) {
     }
     if (q.status === 'ready') ready++;
   }
-  report.stats.questions = questions.length;
-  report.stats.ready = ready;
-  report.stats.questionIds = ids.size;
+  report.stats.sourceQuestions = questions.length;
+  report.stats.sourceReady = ready;
+  report.stats.sourceQuestionIds = ids.size;
 
   if (Number.isInteger(bank.total) && bank.total !== questions.length) {
     report.errors.push(`question-bank total=${bank.total} but actual=${questions.length}`);
@@ -63,14 +64,37 @@ if (!bank?.questions || !Array.isArray(bank.questions)) {
   }
 }
 
-// Known human-review rules: these are intentionally warnings until the content owner
-// approves the final wording; the rules prevent accidental publication of flagged items.
+// Effective runtime question set: known Day 01 legacy defects are quarantined
+// by ID and replaced by isolated JS records. This avoids rewriting the large
+// 320-question JSON through a connector that cannot safely perform partial JSON edits.
+const effectiveQuestions = [
+  ...(bank?.questions ?? []).filter(q => !day01ProductionOverrideIds.has(q.id)),
+  ...day01ProductionOverrides,
+];
+const effectiveIds = new Set();
+for (const q of effectiveQuestions) {
+  if (effectiveIds.has(q.id)) report.errors.push(`Effective question duplicate id: ${q.id}`);
+  effectiveIds.add(q.id);
+  if (!q.prompt?.trim()) report.errors.push(`${q.id}: effective prompt is empty`);
+  if (!q.explanation?.trim()) report.errors.push(`${q.id}: effective explanation is empty`);
+  if (!Array.isArray(q.knowledge) || q.knowledge.length === 0) report.errors.push(`${q.id}: effective knowledge link missing`);
+}
+report.stats.effectiveQuestions = effectiveQuestions.length;
+report.stats.effectiveQuestionIds = effectiveIds.size;
+report.stats.overrides = day01ProductionOverrides.length;
+
+if (Number.isInteger(bank?.total) && bank.total !== effectiveQuestions.length) {
+  report.errors.push(`effective question total=${effectiveQuestions.length} does not preserve bank.total=${bank.total}`);
+}
+
+// Human-review flags apply to the effective runtime records, not quarantined legacy records.
 const humanReviewFlags = {
   'q-acid-005': 'Review uniqueness of the correct answer; current wording may admit more than one option.',
-  'q-acid-012': 'Review pressure-change premise and apparatus/conditions; current explanation conflicts with the stem.'
+  'q-acid-012': 'Review pressure-change premise and apparatus/conditions; current explanation conflicts with the legacy stem.'
 };
 for (const [id, message] of Object.entries(humanReviewFlags)) {
-  if (bank?.questions?.some(q => q.id === id && q.status === 'ready')) report.errors.push(`${id}: ${message}`);
+  const q = effectiveQuestions.find(item => item.id === id);
+  if (q?.status === 'ready') report.errors.push(`${id}: ${message}`);
 }
 
 const out = [
