@@ -6,7 +6,7 @@ export const day01AcidMisconceptions = [
     knowledgeIds: ['acid-intro'],
     signals: ['concept-confusion'],
     questionIds: ['q-acid-001'],
-    experimentIds: ['exp-hcl-fe'],
+    experimentIds: [],
     severity: 'medium',
     source: 'Day 01 benchmark content review',
     remediation: {
@@ -37,10 +37,10 @@ export const day01AcidMisconceptions = [
     id: 'mc-acid-metal-overgeneralization',
     title: 'Overgeneralizing acid–metal reactions',
     description: 'The learner applies the rule “acid + metal always produces hydrogen” without considering the metal, acid, and reaction conditions.',
-    knowledgeIds: ['acid-intro'],
+    knowledgeIds: ['acid-intro', 'acid-property'],
     signals: ['concept-confusion', 'reasoning-gap'],
     questionIds: ['q-acid-006'],
-    experimentIds: ['exp-hcl-fe'],
+    experimentIds: ['exp-acid-rust'],
     severity: 'medium',
     source: 'Day 01 benchmark scientific review',
     remediation: {
@@ -48,6 +48,23 @@ export const day01AcidMisconceptions = [
       lessonIds: ['day-01'],
       practiceQuestionIds: ['q-acid-006'],
       recheckQuestionIds: ['q-acid-001']
+    }
+  },
+  {
+    id: 'mc-acid-observation-inference',
+    title: 'Treating an observation as a conclusion',
+    description: 'The learner reports an interpretation as though it were directly observed, instead of separating observation, explanation, and conclusion.',
+    knowledgeIds: ['acid-property'],
+    signals: ['observation-inference-confusion', 'reasoning-gap'],
+    questionIds: ['q-acid-009', 'q-acid-011'],
+    experimentIds: ['exp-acid-rust'],
+    severity: 'medium',
+    source: 'Day 01 benchmark experiment review',
+    remediation: {
+      goal: 'Separate what is directly observed from the chemical explanation and the conclusion supported by evidence.',
+      lessonIds: ['day-01'],
+      practiceQuestionIds: ['q-acid-009'],
+      recheckQuestionIds: ['q-acid-011']
     }
   }
 ];
