@@ -1,0 +1,28 @@
+{
+  "version": "1.9.0",
+  "policy": {
+    "publicationStatus": ["draft", "review", "verified", "blocked", "ready"],
+    "requiredEvidence": ["curriculum", "scientific", "ageSuitability", "itemQuality", "knowledgeLinks"],
+    "p0BlocksReady": true
+  },
+  "items": {
+    "q-acid-001": {
+      "status": "review",
+      "severity": "P1",
+      "issues": ["terminology: HCl vs aqueous hydrochloric acid"],
+      "requiredEvidence": ["scientific", "ageSuitability"]
+    },
+    "q-acid-005": {
+      "status": "blocked",
+      "severity": "P0",
+      "issues": ["non-unique answer under current wording"],
+      "requiredEvidence": ["itemQuality", "scientific"]
+    },
+    "q-acid-012": {
+      "status": "blocked",
+      "severity": "P0",
+      "issues": ["experimental premise and explanation are inconsistent"],
+      "requiredEvidence": ["scientific", "itemQuality", "ageSuitability"]
+    }
+  }
+}
