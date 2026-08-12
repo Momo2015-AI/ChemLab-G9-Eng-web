@@ -74,10 +74,11 @@ test('V1.8 production entry uses the canonical bootstrap only', () => {
   assert.doesNotMatch(index, /engine\/app\.js/);
 });
 
-test('V1.8 single repository Pages workflow is present', () => {
-  const workflow = path.join(root, '.github/workflows/deploy-pages.yml');
+test('V1.8 single repository-owned Pages workflow is present', () => {
+  const workflow = path.join(root, '.github/workflows/build-check.yml');
   assert.equal(fs.existsSync(workflow), true);
   const source = fs.readFileSync(workflow, 'utf8');
   assert.match(source, /actions\/upload-pages-artifact@v3/);
   assert.match(source, /actions\/deploy-pages@v4/);
+  assert.equal(fs.existsSync(path.join(root, '.github/workflows/deploy-pages.yml')), false);
 });
