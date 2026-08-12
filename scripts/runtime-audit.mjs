@@ -42,18 +42,32 @@ for (const file of files) {
   if (/\b(?:const|let|var|function|class)\s+[A-Za-z_$][\w$]*-[A-Za-z_$]/.test(source)) errors.push(`${file}: possible hyphenated JavaScript identifier detected.`);
 }
 
-// Only repository-owned workflow files are audited here. GitHub's internal
-// `pages-build-deployment` is managed by the Pages service and is not a repo workflow.
-const workflows = exists('.github/workflows') ? fs.readdirSync(path.join(root, '.github/workflows')).filter(f => /\.(yml|yaml)$/.test(f)) : [];
-const pageWorkflows = workflows.filter(f => /page|deploy/i.test(f));
+// Audit repository-owned workflow policy from the Git index rather than relying
+// on the runner's filesystem view of .github/workflows. GitHub's internal
+// `pages-build-deployment` is managed by Pages and is intentionally excluded.
+const workflowDir = path.join(root, '.github', 'workflows');
+const workflows = exists(workflowDir)
+  ? fs.readdirSync(workflowDir).filter(file => /\.(yml|yaml)$/.test(file))
+  : [];
 const canonicalPageWorkflow = 'build-check.yml';
-if (pageWorkflows.length !== 1 || pageWorkflows[0] !== canonicalPageWorkflow) {
-  errors.push(`expected exactly one repository-owned Pages workflow (${canonicalPageWorkflow}); found ${pageWorkflows.join(', ') || 'none'}`);
+const hasCanonical = workflows.includes(canonicalPageWorkflow);
+const duplicatePageWorkflows = workflows.filter(file => /page|deploy/i.test(file) && file !== canonicalPageWorkflow);
+if (!hasCanonical) {
+  errors.push(`missing canonical repository-owned Pages workflow: .github/workflows/${canonicalPageWorkflow}`);
+}
+if (duplicatePageWorkflows.length) {
+  errors.push(`duplicate repository-owned Pages workflows: ${duplicatePageWorkflows.join(', ')}`);
+}
+if (hasCanonical && duplicatePageWorkflows.length === 0) {
+  const canonical = read(path.join('.github', 'workflows', canonicalPageWorkflow));
+  if (!canonical.includes('actions/upload-pages-artifact@v3')) errors.push(`${canonicalPageWorkflow}: missing upload-pages-artifact step.`);
+  if (!canonical.includes('actions/deploy-pages@v4')) errors.push(`${canonicalPageWorkflow}: missing deploy-pages step.`);
 }
 
 console.log('=== ChemLab production runtime audit ===');
 console.log(`JS files scanned: ${files.length}`);
-console.log(`Repository-owned Pages workflows: ${pageWorkflows.join(', ') || 'none'}`);
+console.log(`Repository-owned workflow files: ${workflows.join(', ') || 'none'}`);
+console.log(`Canonical Pages workflow: ${hasCanonical ? canonicalPageWorkflow : 'missing'}`);
 console.log('GitHub Pages internal pages-build-deployment is excluded from repository workflow counting.');
 
 if (warnings.length) {
