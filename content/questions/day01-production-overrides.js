@@ -63,6 +63,24 @@ export const day01ProductionOverrides = [
     status: 'review'
   },
   {
+    id: 'q-acid-005',
+    type: 'choice',
+    difficulty: 'medium',
+    bloomLevel: 'analyze',
+    knowledge: ['acid-intro'],
+    prompt: '下列各组物质在水溶液中能大量共存，且溶液呈无色透明的是',
+    options: [
+      'A. NaCl、AgNO3、HNO3',
+      'B. Na2CO3、HCl、NaNO3',
+      'C. KNO3、NaCl、Na2SO4',
+      'D. CuSO4、KCl、HCl'
+    ],
+    answer: 'C',
+    explanation: 'A中NaCl与AgNO3会生成AgCl沉淀；B中Na2CO3与HCl会反应；D中CuSO4使溶液呈蓝色。C中的三种物质在该条件下可大量共存且均为无色溶液，因此选C。',
+    commonMistake: 'coexistence-reasoning-error',
+    status: 'review'
+  },
+  {
     id: 'q-acid-011',
     type: 'fill',
     difficulty: 'medium',
