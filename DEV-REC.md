@@ -187,3 +187,51 @@ Day 01 is a genuine teaching lesson and is now the reference model for future le
 Perform the independent Day 01 content audit and fix all P0/P1 findings. Then connect the benchmark's misconception records to the runtime diagnosis/remediation path before propagating the lesson pattern to Day 02–Day 36.
 
 ---
+
+## 2026-08-12 — Day 01 deep review and integration corrections
+
+### Conversation / decision
+
+The user requested a deep review before treating Day 01 as the benchmark. The review deliberately checked the lesson, linked questions, experiment object, misconception records, and knowledge relationships rather than only reading the lesson prose.
+
+### Findings
+
+1. **P0:** the lesson's experiment reference did not match the rust-removal experiment actually being taught. The lesson referenced `exp-hcl-fe` while the intended object was `exp-acid-rust`. The lesson link has been corrected.
+2. **P0:** the experiment object did not yet contain explicit common-mistake and misconception linkage required by the benchmark standard.
+3. **P1:** `q-acid-001` explanation incorrectly described HCl as hydrochloric acid's aqueous solution; the distinction is taught correctly in the lesson but must also be corrected in the question.
+4. **P1:** `q-acid-004` contains a safety-sensitive first-aid concentration instruction that requires independent source verification before publication.
+5. **P1:** experiment observation and interpretation need to be kept explicitly separate.
+6. **P1:** experiment conditions and stopping criteria need to be more explicit.
+7. A previously existing misconception record contained stale experiment links and lacked the new observation-vs-inference misconception. These were corrected/expanded.
+
+### Implementation
+
+Added:
+
+- `reports/V1.9-DAY01-DEEP-REVIEW-2026-08-12.md`
+
+Updated:
+
+- `modules/lessons/day-01.json` — corrected experiment reference and aligned knowledge links.
+- `content/experiments/exp-acid-rust.json` — added conditions, interpretation, conclusion, common mistakes, safety structure, and misconception links.
+- `content/misconceptions/day01-acid.js` — corrected experiment references and added `mc-acid-observation-inference`.
+
+### Commits
+
+Lesson linkage correction: `e9b5f90acf698bdd8dc16f0de4eab71f1a5be284`
+
+Deep-review report: `3add69573308633fbb7d5286d772c844c2b51c20`
+
+Experiment enrichment: `a74466c20e021002353df925235d4ad12c0fd878`
+
+Misconception linkage update: `019c6f634338e8950f4cdc6b8dba23b891071d71`
+
+### Current state
+
+Day 01 is still **NOT READY**. The deep review found that the content direction is strong, but the benchmark gate cannot pass until the remaining P1 question issues are resolved and independent curriculum/scientific/pedagogical review is complete.
+
+### Next action
+
+Correct q-acid-001 terminology, independently verify/rewrite q-acid-004 safety wording, run automated relationship/content integrity checks, then perform the final benchmark review. Do not propagate Day 01 to the other 35 lessons until this gate passes.
+
+---
