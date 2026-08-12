@@ -2,19 +2,16 @@ name: ChemLab-G9 Build Check
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 jobs:
   validate:
-    name: Validate ChemLab V1.7 baseline
+    name: Validate production runtime
     runs-on: ubuntu-latest
     timeout-minutes: 10
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,40 +25,27 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          for dir in engine core app controllers views tests; do
-            if [ -d "$dir" ]; then
-              find "$dir" -type f \( -name '*.js' -o -name '*.mjs' \) -print
-            fi
-          done \
+          find app core controllers engine frontend scripts services views tests -type f \( -name '*.js' -o -name '*.mjs' \) -print 2>/dev/null \
             | sort \
-            | while IFS= read -r f; do
-                node --check "$f"
-              done
+            | while IFS= read -r f; do node --check "$f"; done
           echo "JS syntax OK"
 
-      - name: Run tests
+      - name: Run test suite
         run: npm test
+
+      - name: Run runtime architecture audit
+        run: node scripts/runtime-audit.mjs
 
       - name: Validate content JSON
         shell: bash
         run: |
           set -euo pipefail
-          found=0
-          for dir in modules content; do
-            if [ -d "$dir" ]; then
-              while IFS= read -r -d '' f; do
-                found=1
-                node -e "JSON.parse(require('fs').readFileSync(process.argv[1],'utf8'))" "$f"
-              done < <(find "$dir" -type f -name '*.json' -print0 | sort -z)
-            fi
-          done
-          if [ "$found" -eq 0 ]; then
-            echo "No content JSON files found; skipping JSON content validation."
-          else
-            echo "JSON OK"
-          fi
+          find modules content schemas -type f -name '*.json' -print0 2>/dev/null \
+            | while IFS= read -r -d '' f; do node -e "JSON.parse(require('fs').readFileSync(process.argv[1],'utf8'))" "$f"; done
+          echo "JSON OK"
 
-      - name: Check index.html exists
-        run: |
-          test -f index.html
-          echo "index.html OK"
+      - name: Run content integrity gates
+        run: npm run audit:content
+
+      - name: Check deployment entry
+        run: test -f index.html && test -f .github/workflows/deploy-pages.yml
