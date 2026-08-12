@@ -10,11 +10,10 @@ import { createApplication } from './application.js';
 import { createRemediationCatalog } from '../core/diagnosis/remediation-catalog.js';
 import assessmentEngine from '../engine/assessment-engine.js';
 import experimentEngine from '../engine/experiment-engine.js';
-// bootstrap.js lives under /app; the portal shell lives at /frontend.
-// This relative path is required for browser module resolution on GitHub Pages.
 import { mountPortalShell, syncPortalNavigation } from '../frontend/shell/portal-shell.js';
 
 const state = createAppState();
+let bootstrapPromise = null;
 
 function getDefaultRoot() {
   if (typeof document === 'undefined') return null;
@@ -49,43 +48,59 @@ function renderStartupError(root, error) {
 }
 
 export async function bootstrap({ root = getDefaultRoot() } = {}) {
-  const pageRoot = mountPortalShell(root) || root;
-  const application = createApplication({
-    state,
-    assessment: assessmentEngine,
-    experimentEngine,
-    root: pageRoot,
-  });
+  if (bootstrapPromise) return bootstrapPromise;
 
-  try {
-    const data = await application.contentService.load();
-    application.controllers.learning.remediationCatalog = createRemediationCatalog(data);
-    application.start();
+  bootstrapPromise = (async () => {
+    const pageRoot = mountPortalShell(root) || root;
+    const application = createApplication({
+      state,
+      assessment: assessmentEngine,
+      experimentEngine,
+      root: pageRoot,
+    });
+
+    try {
+      const data = await application.contentService.load();
+      application.controllers.learning.remediationCatalog = createRemediationCatalog(data);
+      application.start();
+
+      if (typeof window !== 'undefined') {
+        const sync = () => syncPortalNavigation(root, application.router.current());
+        window.addEventListener('hashchange', sync);
+        sync();
+      }
+    } catch (error) {
+      state.contentLoadError = error;
+      renderStartupError(pageRoot, error);
+    }
 
     if (typeof window !== 'undefined') {
-      const sync = () => syncPortalNavigation(root, application.router.current());
-      window.addEventListener('hashchange', sync);
-      sync();
+      window.chemLabApplication = application;
+      window.chemLabState = state;
     }
-  } catch (error) {
-    state.contentLoadError = error;
-    renderStartupError(pageRoot, error);
-  }
+    return application;
+  })();
 
-  if (typeof window !== 'undefined') {
-    window.chemLabApplication = application;
-    window.chemLabState = state;
-  }
-  return application;
+  return bootstrapPromise;
 }
 
 export { state };
 
-if (typeof document !== 'undefined') {
-  document.addEventListener('DOMContentLoaded', () => {
-    bootstrap().catch(error => {
-      console.error('ChemLab bootstrap failed:', error);
-      renderStartupError(document.querySelector('#app-root'), error);
-    });
+function startWhenReady() {
+  bootstrap().catch(error => {
+    console.error('ChemLab bootstrap failed:', error);
+    renderStartupError(getDefaultRoot(), error);
   });
+}
+
+// Dynamic import() from index.html may finish before OR after DOMContentLoaded.
+// Never rely on a one-shot DOMContentLoaded listener alone: if the event has
+// already fired, that listener would never run and the shell would remain on
+// the initial "ChemLab 正在启动…" placeholder forever.
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startWhenReady, { once: true });
+  } else {
+    startWhenReady();
+  }
 }
