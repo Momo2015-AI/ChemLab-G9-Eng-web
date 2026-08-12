@@ -204,3 +204,68 @@ Structural and diagnostic/recheck design gates pass. Publication remains blocked
 Run the independent scientific and Grade-9 review against the complete Day 01 graph, then execute the final automated integrity gate. Do not mark Day 01 ready until all blockers are closed.
 
 ---
+
+## 2026-08-12 — V2.1 learning UI redesign + deeper Day 01 audit
+
+### Conversation / decision
+
+The user requested a visual redesign because the current course page was too text-dense and visually crowded. The new direction is to use icons, color, cards, compact metadata, and a visible learning flow so a Grade-9 learner can understand the current task and next action without reading the whole page first.
+
+### UI implementation
+
+Updated:
+
+- `views/v19-course-view.js`
+- `frontend/themes/portal-content.css`
+
+The lesson surface now uses:
+
+```text
+Hero
+ ↓
+Learning flow
+ ↓
+Action cards
+ ↓
+Knowledge cards
+ ↓
+Learning timeline
+ ↓
+Practice / experiment / diagnosis
+```
+
+The redesign reduces uninterrupted prose, uses visual modules for learning stages, keeps primary actions visible, and provides responsive layouts for desktop/iPad/mobile.
+
+Added:
+
+- `docs/V2.1-LEARNING-UI-STANDARD.md`
+
+Key commits:
+
+- `1fd44aee82dc666c7a9eafa630db17bd4b618c0b`
+- `081b7fe469fdb985958e6d780c90be2fadf2f9c6`
+- `cbe7dbacdbeb6956d8737bdff88e4655946bc2f4`
+
+### Deeper Day 01 audit
+
+Added:
+
+- `reports/V1.9-DAY01-SCIENTIFIC-AGE-AUDIT-2026-08-12.md`
+
+New findings:
+
+1. The HCl classification example remains context-sensitive and should be rewritten so state/solution terminology is explicit rather than making terminology ambiguity part of the test.
+2. Fe2O3 must remain explicitly framed as a junior-high simplified rust model in all future content; do not normalize rust as pure Fe2O3.
+3. “Yellow solution” and post-rust-removal bubbling are conditional observations and must not be presented as universal guaranteed observations.
+4. Safety diagnostics should assess hazard recognition and supervised-lab reasoning rather than procedural hazardous handling.
+5. The new UI is considered a cognitive-load correction, not a content simplification: scientific content remains unchanged while presentation becomes more scannable.
+
+### Current state
+
+**DAY 01 = REVIEW / NOT READY.**
+
+The UI direction is approved as the V2.1 learning-surface standard. Day 01 remains blocked by the outstanding terminology/item issue plus final independent scientific, Grade-9, knowledge-link, and CI gates.
+
+### Next action
+
+Finish the Day 01 content corrections, then run the complete release gate again. Only after Day 01 is genuinely READY should the V2.1 visual pattern be propagated to the remaining lessons.
