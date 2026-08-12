@@ -1,0 +1,35 @@
+{
+  "version": "1.9.1",
+  "status": "active",
+  "policy": "blocked items cannot be published",
+  "placeholderGroups": [
+    "q-aci-001..005",
+    "q-sal-001..005",
+    "q-fer-001..005",
+    "q-com-001..005",
+    "q-met-001..005",
+    "q-iro-001..005",
+    "q-mas-001..005",
+    "q-equ-001..005",
+    "q-nut-001..005",
+    "q-mat-001..005",
+    "q-exa-001..005",
+    "q-uni-001..005"
+  ],
+  "confirmedP0": [
+    "q-stoich-001",
+    "q-final-004",
+    "q-final-c-004",
+    "q-final-c-005",
+    "q-salt-008",
+    "q-salt-010",
+    "q-metal-extraction-005"
+  ],
+  "reviewP1": [
+    "q-acid-001",
+    "q-organic-003",
+    "q-fert-P-001",
+    "q-fert-P-002"
+  ],
+  "replacementRule": "Replace placeholder content with new curriculum-aligned questions rather than polishing placeholder text."
+}
