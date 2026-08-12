@@ -75,7 +75,7 @@ test('V1.8 production entry uses the canonical bootstrap only', () => {
 });
 
 test('V1.8 single repository Pages workflow is present', () => {
-  const workflow = path.join(root, '.github/workflows/pages.yml');
+  const workflow = path.join(root, '.github/workflows/deploy-pages.yml');
   assert.equal(fs.existsSync(workflow), true);
   const source = fs.readFileSync(workflow, 'utf8');
   assert.match(source, /actions\/upload-pages-artifact@v3/);
