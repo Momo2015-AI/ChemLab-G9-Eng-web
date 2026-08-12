@@ -8,20 +8,15 @@ const root = process.cwd();
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 const exists = file => fs.existsSync(path.join(root, file));
 
-// index.html must not hard-code a deployment-specific <base>.
 const index = read('index.html');
 if (/<base\b/i.test(index)) errors.push('index.html contains <base>; deployment-specific base paths are forbidden.');
 if (!/import\(['"]\.\/app\/bootstrap\.js['"]\)/.test(index)) errors.push('index.html does not dynamically import ./app/bootstrap.js.');
 
-// Production bootstrap must resolve in the canonical app -> frontend layout.
 const bootstrap = read('app/bootstrap.js');
 if (!bootstrap.includes("'./application.js'")) errors.push('bootstrap.js does not import the canonical application composition root.');
 if (!bootstrap.includes("'../frontend/shell/portal-shell.js'")) errors.push('bootstrap.js does not import the canonical portal shell.');
 if (/contentService\.load\(\)/.test(bootstrap)) errors.push('bootstrap.js directly blocks startup on contentService.load(); hydration belongs to application.start().');
 
-// Verify every relative JS import target in the production/runtime tree exists.
-// `services/` is intentionally excluded: the current canonical runtime does not
-// contain that legacy directory, and scanning absent roots only obscures real defects.
 const jsRoots = ['app', 'core', 'controllers', 'engine', 'frontend', 'scripts', 'views'];
 const files = [];
 for (const dir of jsRoots) {
@@ -42,24 +37,24 @@ for (const file of files) {
   }
 }
 
-// Detect common syntax mistakes that previously caused browser parser failures.
 for (const file of files) {
   const source = read(file);
-  if (/\b(?:const|let|var|function|class)\s+[A-Za-z_$][\w$]*-[A-Za-z_$]/.test(source)) {
-    errors.push(`${file}: possible hyphenated JavaScript identifier detected.`);
-  }
+  if (/\b(?:const|let|var|function|class)\s+[A-Za-z_$][\w$]*-[A-Za-z_$]/.test(source)) errors.push(`${file}: possible hyphenated JavaScript identifier detected.`);
 }
 
-// Deployment must have exactly one canonical Pages workflow.
+// Only repository-owned workflow files are audited here. GitHub's internal
+// `pages-build-deployment` is managed by the Pages service and is not a repo workflow.
 const workflows = exists('.github/workflows') ? fs.readdirSync(path.join(root, '.github/workflows')).filter(f => /\.(yml|yaml)$/.test(f)) : [];
 const pageWorkflows = workflows.filter(f => /page|deploy/i.test(f));
-if (pageWorkflows.length !== 1 || pageWorkflows[0] !== 'deploy-pages.yml') {
-  errors.push(`expected exactly one canonical Pages workflow (deploy-pages.yml); found ${pageWorkflows.join(', ') || 'none'}`);
+const canonicalPageWorkflow = 'build-check.yml';
+if (pageWorkflows.length !== 1 || pageWorkflows[0] !== canonicalPageWorkflow) {
+  errors.push(`expected exactly one repository-owned Pages workflow (${canonicalPageWorkflow}); found ${pageWorkflows.join(', ') || 'none'}`);
 }
 
 console.log('=== ChemLab production runtime audit ===');
 console.log(`JS files scanned: ${files.length}`);
-console.log(`Pages workflows: ${pageWorkflows.join(', ') || 'none'}`);
+console.log(`Repository-owned Pages workflows: ${pageWorkflows.join(', ') || 'none'}`);
+console.log('GitHub Pages internal pages-build-deployment is excluded from repository workflow counting.');
 
 if (warnings.length) {
   console.log('\nWARNINGS:');
