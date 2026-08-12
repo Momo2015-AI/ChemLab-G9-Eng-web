@@ -75,7 +75,7 @@ Day 01 is the benchmark lesson. It must be genuinely teachable and fully reviewe
 
 ### This record
 
-The user requested a dedicated repository document named `DEV-REC.md`. From this point forward, every substantive remote push/commit for this project should append a concise development record here, including the relevant conversation decision, implementation work, audit findings, commit reference, and next step.
+The user requested a dedicated repository document named `DEV-REC.md`. From this point forward, every substantive remote push/commit for this project should append a concise development record here, including the relevant conversation decision, implementation work, audit findings, commit reference, and next action.
 
 ### Next action
 
@@ -112,5 +112,78 @@ This report records the baseline, severity, classification rule, and next action
 ### Next action
 
 Build Day 01 as the benchmark lesson and subject it to curriculum/source, scientific, Grade-9 suitability, learning-design, question-quality, knowledge-link, and misconception/remediation review before using it as the production model for the remaining lessons.
+
+---
+
+## 2026-08-12 — Day 01 benchmark lesson built
+
+### Conversation / decision
+
+The user requested that the first lesson be completed directly rather than continuing with planning. Day 01 (`常见的酸`) is now the first real benchmark lesson instead of a generic template.
+
+### Implementation
+
+Replaced the placeholder sections in `modules/lessons/day-01.json` with topic-specific teaching content covering:
+
+- learning objectives and prerequisites
+- distinction between HCl and hydrochloric acid
+- common acids and their characteristics
+- evidence-based reasoning from observations
+- the rust-removal experiment
+- reaction equations and interpretation
+- safe dilution of concentrated sulfuric acid
+- worked-example reasoning
+- three explicit misconception patterns
+- real question references
+- retrieval/recheck guidance
+- provenance and review status
+
+The blocked `q-acid-005` was removed from Day 01 because its current wording has multiple valid answers. `q-acid-006` is used instead.
+
+### Commit
+
+`1edcd436096695c8d813ebd405dc58a882568fc5`
+
+### Important review status
+
+Day 01 is **review**, not `ready`. `q-acid-001` still has an open P1 terminology issue, so the lesson cannot be promoted to verified/ready yet.
+
+---
+
+## 2026-08-12 — Day 01 misconception foundation added
+
+### Implementation
+
+Added `content/misconceptions/day01-acid.js` with three real misconception records:
+
+- `mc-acid-hcl-solution`
+- `mc-acid-dilution-direction`
+- `mc-acid-metal-overgeneralization`
+
+Each record includes knowledge links, diagnostic signals, question/experiment links where applicable, remediation, practice, and recheck routing according to `misconceptionSchemaV2`.
+
+### Commit
+
+`d8170da879bc752a1a8485ca29e152ec1a6ae8ff`
+
+---
+
+## 2026-08-12 — Day 01 benchmark review record added
+
+### Implementation
+
+Added `content/review/day01-benchmark-review.json` recording the benchmark review state, removed/replaced question, scientific notes, and remaining publication gate.
+
+### Commit
+
+`96ddfeb2d1f2e36a27157fda6ddb1cfc5b3989c9`
+
+### Current state
+
+Day 01 is a genuine teaching lesson and is now the reference model for future lesson production, but it remains `review` until independent curriculum, scientific, Grade-9 suitability, item-quality, and knowledge-link review is completed.
+
+### Next action
+
+Perform the independent Day 01 content audit and fix all P0/P1 findings. Then connect the benchmark's misconception records to the runtime diagnosis/remediation path before propagating the lesson pattern to Day 02–Day 36.
 
 ---
