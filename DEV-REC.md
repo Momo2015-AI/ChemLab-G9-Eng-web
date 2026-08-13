@@ -461,3 +461,193 @@ A new Content Integrity run for `355a0a3cc190bba4201fc68fc019a4114559a9dc` is qu
 ### Next action
 
 Wait for the new CI result. If the question/knowledge gate passes, perform the Day 01-specific scientific, Grade-9, item-quality, knowledge-link, and runtime release review. Only after those pass should Day 01 be promoted to `ready` and its V2.1 learning-surface pattern propagated to later lessons.
+
+---
+
+## 2026-08-13 — Full learning-flow, architecture, and presentation audit
+
+### Conversation / request
+
+The user requested a full review of the remote repository's learning logic, system architecture, and the relationship between page presentation and runtime flow. The user explicitly requested a repair plan and asked that no business code be changed during the audit.
+
+The repository was cloned from `https://github.com/Momo2015-AI/ChemLab-G9-Eng-web` into the local workspace. This entry records the findings and repair sequence; the audit itself did not modify production code.
+
+### Verification performed
+
+- Inspected the production entry chain: `index.html` → `app/bootstrap.js` → `app/application.js` → router → services → controllers → views/pages.
+- Traced content loading, lesson routing, assessment, experiment, diagnosis, remediation, mastery, progress persistence, and reporting.
+- Opened the local static preview and checked home, course, assessment, lab, progress, and first-lesson experiment routes.
+- Ran `npm test`: **71 passed, 4 failed**.
+- Ran `node scripts/runtime-audit.mjs`: **passed**.
+- Ran `npm run audit:content`: **passed with RESET state**, reporting `RESET_PENDING_SOURCE_DOCUMENTS`, zero source/effective question-bank records, and no lesson candidates in the automated readiness scan.
+- Confirmed that temporary audit report artifacts were removed and the working tree was clean before this log-only change.
+
+### Confirmed engineering findings
+
+#### P0 — Assessment authority is duplicated
+
+`controllers/assessment-controller.js` and `controllers/assessment-runtime-controller.js` implement overlapping assessment sessions, answer normalization, diagnosis persistence, recheck handling, and mastery completion. Production composition uses `AssessmentRuntimeController`, while older tests and compatibility paths still exercise `AssessmentController`. Their session fields, diagnosis shape, mastery behavior, and recheck identifiers are not identical.
+
+**Required direction:** establish one production assessment authority and reduce the other implementation to a temporary compatibility adapter or remove it after dependency evidence and test migration are complete.
+
+#### P0 — Production answer evidence does not have one guaranteed mastery path
+
+The runtime assessment controller writes attempt history and lesson-level learning state, but the production path does not consistently route every practice, recheck, and mastery answer through `MasteryService.recordEvidence()`. The progress report reads canonical mastery state, so a learner can answer questions while the knowledge-domain report remains unchanged or incomplete.
+
+**Required direction:** route practice, experiment, recheck, and mastery evidence through one evidence event contract before updating projections or reports.
+
+#### P0 — The first-lesson experiment route is disconnected
+
+The first lesson exposes `L01-E01`, but the default `ExperimentEngine` instance is empty and the experiment JSON is not registered through the production content boundary. In the local preview, clicking the first lesson's experiment action navigated to `#experiment/L01-E01` and returned to the lesson because no runtime experiment was found.
+
+**Required direction:** load/register experiments through `ContentService` or an equivalent canonical boundary, then persist observation evidence and completion state through the normal learning evidence path.
+
+#### P0 — Runtime content and content-integrity scope are not aligned
+
+The runtime combines the question-bank endpoint, production overrides, diagnostics, lesson-embedded questions, and independent mastery files. Meanwhile, the content gate reports zero source/effective question-bank records and `RESET_PENDING_SOURCE_DOCUMENTS`. This creates a mismatch where the UI exposes learning content while the content audit does not treat the same effective content as a released question bank.
+
+**Required direction:** define one auditable production-content contract covering lesson questions, mastery questions, diagnostics, knowledge IDs, answer keys, provenance, and release status. Do not declare the learning loop released while the content gate remains in RESET unless the UI explicitly presents a content-build state.
+
+#### P0 — CI test baseline is not green
+
+The four failures were:
+
+1. `tests/learning-center-canonical.test.mjs` still reads removed `modules/lessons/manifest.json`.
+2. `tests/learning-controller.test.mjs` expects completion without the current Mastery gate.
+3. `tests/lesson01-runtime-regression.test.mjs` uses an answer-key contract inconsistent with the current mastery content.
+4. `tests/production-wiring-v18.test.mjs` expects a diagnosis shape from the older assessment path.
+
+**Required direction:** classify each failure as obsolete test contract or production regression, migrate tests to the actual production path, and restore an all-green baseline before implementation is considered complete.
+
+#### P1 — The page flow is more complete than the runtime state machine
+
+The course page presents learning → experiment → practice → diagnosis/remediation → 95% Mastery, but guided-learning checks do not persist evidence, experiment/practice are not strict stage gates, and completion primarily checks Mastery status. The visual flow is therefore a promise that the runtime does not yet fully enforce.
+
+**Required direction:** define a per-lesson state machine with explicit entry/completion rules for guided learning, experiment, practice, diagnosis, remediation, recheck, mastery, and completion. Persist the current phase so a refresh resumes the same task.
+
+#### P1 — Learning state is not isolated by lesson
+
+`state.learning.diagnosis`, `state.learning.remediation`, and `state.learning.recheck` are effectively global current-session fields. Results from one lesson can therefore appear on another lesson's page.
+
+**Required direction:** store learning state under `state.learning.lessons[lessonId]`; retain only derived aggregates globally.
+
+#### P1 — Guided learning is interactive content, not yet learning evidence
+
+The eight guided-learning checks render and show immediate feedback in the page, but do not persist step completion, attempts, hints, or knowledge evidence.
+
+**Required direction:** introduce a guided-step evidence record containing lesson ID, step ID, knowledge IDs, attempts, correctness, hint usage, and completion time.
+
+#### P1 — Assessment Center and Virtual Lab are presentation placeholders
+
+The Assessment Center renders a learning-loop summary whose buttons have no operational handlers. The top-level Virtual Lab renders instruments and an empty workbench but does not expose an experiment catalog or connect those controls to `ExperimentController`.
+
+**Required direction:** make the Assessment Center a task inbox for practice, remediation, recheck, and mastery; make the Lab a real experiment catalog and session launcher. Until then, label unavailable actions as content-in-build rather than fully operational.
+
+#### P1 — Mastery is currently mostly a total-score gate
+
+The lesson contract describes unseen transfer, objective coverage, critical misconception handling, and a 19/20 threshold. Runtime completion mainly uses score threshold status and does not yet enforce all of those constraints.
+
+**Required direction:** make mastery a composite decision: threshold score, objective coverage, critical-misconception clearance, and any required constructed-response/rubric evidence.
+
+#### P2 — Portal data and textbook-term presentation need stronger domain wiring
+
+The course portal displays upper/lower textbook switches and planned units, but the content manifest and runtime data are not yet fully filtered by term. Course cards also do not consistently display the learner's exact current phase or release status.
+
+**Required direction:** make textbook term a content query boundary and expose explicit card states: not started, learning, experiment pending, practice pending, remediation, recheck, mastery pending, mastered, and unavailable/in review.
+
+#### P2 — Knowledge graph is currently more navigation display than learning navigation
+
+The graph renders real nodes and relations, but node details do not consistently link to the corresponding lesson, experiment, question set, or remediation action.
+
+**Required direction:** turn node selection into actionable learning navigation while keeping graph traversal inside the canonical knowledge service.
+
+### Approved repair plan
+
+#### Phase 0 — Contract and baseline freeze
+
+1. Freeze the current production route map and identify all consumers of both assessment controllers.
+2. Define canonical contracts for `Question`, `AssessmentSession`, `AssessmentResult`, `EvidenceEvent`, `Diagnosis`, `RemediationPlan`, `LessonState`, and `ProgressProjection`.
+3. Add contract tests before changing behavior.
+4. Migrate or quarantine obsolete tests and restore `npm test` to green.
+
+**Exit gate:** one documented production assessment authority; all tests either pass or are explicitly replaced with equivalent production-contract tests.
+
+#### Phase 1 — Evidence pipeline and persistence
+
+1. Route practice answers, experiment observations, recheck answers, and mastery answers through the same evidence boundary.
+2. Ensure `MasteryService` is the only mastery calculation authority.
+3. Persist lesson-scoped evidence and current phase through `ProgressService`.
+4. Version the persisted state key/schema and define migration behavior for existing `chemlab_v16` data.
+5. Make reports consume only the stable progress projection.
+
+**Exit gate:** answer → evidence → mastery/diagnosis → persistence → reload produces the same report and lesson state.
+
+#### Phase 2 — First-lesson runtime completion
+
+1. Load the first-lesson experiment from canonical content.
+2. Connect experiment route, observation UI, validation, completion, and result view.
+3. Record experiment knowledge evidence and remediation when observations are incorrect.
+4. Connect practice diagnosis to lesson-scoped remediation.
+5. Connect remediation to targeted recheck and recheck evidence back to mastery.
+
+**Exit gate:** a learner can complete the first lesson's full loop without manually editing the URL or losing lesson context.
+
+#### Phase 3 — Lesson state machine and UI truthfulness
+
+1. Implement explicit per-lesson phases and transition rules.
+2. Persist guided-step completion and checks.
+3. Gate or clearly label stages that are optional versus required.
+4. Make course cards, breadcrumbs, results, and completion controls read the same lesson state.
+5. Prevent an `in-review` or content-reset lesson from appearing as released student content.
+
+**Exit gate:** every visible action either performs a real state transition or is clearly marked unavailable/content-in-build.
+
+#### Phase 4 — Portal integration
+
+1. Convert Assessment Center into an executable task inbox.
+2. Convert Virtual Lab into an experiment catalog/session launcher.
+3. Add knowledge-graph actions for lesson, question, experiment, and remediation navigation.
+4. Make upper/lower textbook selection filter canonical content.
+5. Add empty, loading, unavailable, and failed-content states for each portal.
+
+**Exit gate:** top-level navigation and lesson-level navigation reach the same canonical sessions and projections.
+
+#### Phase 5 — Content release alignment
+
+1. Choose the single auditable source of truth for practice, mastery, diagnostic, and recheck items.
+2. Normalize answer keys, question types, knowledge IDs, mistake taxonomy, provenance, and release status.
+3. Extend content-integrity checks to the effective runtime content.
+4. Keep Day 01 in review until scientific, pedagogical, knowledge-link, item-quality, and runtime gates are all closed.
+
+**Exit gate:** content audit, runtime audit, test suite, and deployment gate agree on what is released.
+
+### Recommended acceptance flow
+
+```text
+Open Lesson 01
+  → complete guided learning evidence
+  → start and complete the experiment
+  → complete practice
+  → receive lesson-scoped diagnosis
+  → enter targeted remediation
+  → complete targeted recheck
+  → receive new mastery evidence
+  → pass composite Mastery gate
+  → complete the lesson
+  → refresh the page
+  → retain the same phase, report, and mastery state
+```
+
+### Current state
+
+**Repair plan = APPROVED FOR IMPLEMENTATION / NO BUSINESS CODE CHANGED IN THIS AUDIT.**
+
+The immediate implementation priority is Phase 0 followed by Phase 1. Do not add more portal polish or expand lesson coverage until the assessment authority, evidence pipeline, experiment registration, and test baseline are stable.
+
+### Commit
+
+The repair plan is recorded in the preceding documentation commit; the exact commit reference is added by the follow-up publication record after the commit hash is final.
+
+### Next action
+
+Implement Phase 0 in a separate focused change, beginning with contract tests and assessment-controller consolidation. Record each implementation commit, verification result, and any scope change in this development log before pushing.
