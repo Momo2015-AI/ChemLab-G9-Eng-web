@@ -76,6 +76,7 @@ export class AssessmentRuntimeController {
     this.state.currentQuiz = attemptId;
     this.state.quizIndex = 0;
     this.state.quizAnswers = {};
+    this.learningController?.updateLessonState?.(lessonId, { phase: mode === 'mastery' ? 'MASTERY' : mode === 'recheck' ? 'RECHECK' : 'PRACTICE', activeAttemptId: attemptId });
     return this.session;
   }
 
@@ -175,6 +176,7 @@ export class AssessmentRuntimeController {
     this.state.learning ||= {};
     this.state.learning.practice = { lessonId: this.session.lessonId, attemptId: this.session.attemptId, correct, total, score, completedAt: diagnosis.completedAt };
     this.state.learning.diagnosis = diagnosis;
+    this.learningController?.updateLessonState?.(this.session.lessonId, { practice: this.state.learning.practice, diagnosis, phase: errors.length ? 'REMEDIATION' : 'MASTERY' });
     if (errors.length) {
       this.learningController?.getRemediationPlan({ status: 'incorrect', knowledge: weakPoints, possibleErrors, source: 'practice-attempt' });
     } else {
@@ -195,6 +197,7 @@ export class AssessmentRuntimeController {
       score,
       completedAt: new Date().toISOString(),
     };
+    this.learningController?.updateLessonState?.(this.session.lessonId, { recheck: this.state.learning.recheck, phase: passed ? 'MASTERY' : 'REMEDIATION' });
     if (passed) this.state.learning.remediation = null;
   }
 
@@ -216,6 +219,7 @@ export class AssessmentRuntimeController {
       threshold,
       completedAt: new Date().toISOString(),
     };
+    this.learningController?.updateLessonState?.(lessonId, { mastery: this.state.learning.mastery[lessonId], phase: passed ? 'MASTERED' : 'REMEDIATION' });
     this.state.progress.lessonMastery ||= {};
     this.state.progress.lessonMastery[lessonId] = passed;
     if (passed) this.state.learning.remediation = null;

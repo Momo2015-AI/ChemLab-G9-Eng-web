@@ -7,6 +7,7 @@
   "duration":"45 分钟",
   "description":"通过观察、实验、记录和证据分析建立科学探究的基本方法。",
   "status":"review",
+  "releaseStatus":"review",
   "learningObjectives":["区分观察到的现象与基于证据形成的解释。","理解控制变量、公平比较和重复实验的基本意义。","能够根据真实记录评价证据是否支持结论。"],
   "knowledgePoints":["scientific-inquiry","observation-inference","control-variables","evidence-reasoning","data-integrity"],
   "prerequisites":["lesson-01-material-changes-properties"],

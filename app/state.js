@@ -2,6 +2,7 @@
 import { ProgressService } from './progress-service.js';
 
 const STORAGE_KEY = 'chemlab_v16';
+const STATE_SCHEMA_VERSION = 2;
 
 const DEFAULT_STATE = Object.freeze({
   currentRoute: 'home',
@@ -21,10 +22,8 @@ function cloneDefaultState() {
 
 export function createAppState({ progressService = new ProgressService({ key: STORAGE_KEY }) } = {}) {
   const state = cloneDefaultState();
-  state.progress = progressService.load();
-  state.learning = state.progress?.learning && typeof state.progress.learning === 'object'
-    ? state.progress.learning
-    : {};
+  state.progress = migrateProgress(progressService.load());
+  state.learning = state.progress.learning;
   state.save = () => progressService.save({
     ...state.progress,
     learning: state.learning,
@@ -55,3 +54,20 @@ export function resetSession(state) {
 }
 
 export { STORAGE_KEY };
+export { STATE_SCHEMA_VERSION };
+
+function migrateProgress(progress = {}) {
+  const source = progress && typeof progress === 'object' ? progress : {};
+  const legacyLearning = source.learning && typeof source.learning === 'object' ? source.learning : {};
+  const lessons = { ...(legacyLearning.lessons || {}) };
+  for (const field of ['guided', 'experiment', 'practice', 'diagnosis', 'remediation', 'recheck', 'mastery']) {
+    const value = legacyLearning[field];
+    const lessonId = value?.lessonId;
+    if (lessonId && !lessons[lessonId]?.[field]) lessons[lessonId] = { ...(lessons[lessonId] || {}), [field]: value };
+  }
+  return {
+    ...source,
+    schemaVersion: STATE_SCHEMA_VERSION,
+    learning: { ...legacyLearning, lessons },
+  };
+}

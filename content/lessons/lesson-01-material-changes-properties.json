@@ -7,6 +7,7 @@
   "duration":"45 分钟",
   "description":"从生活与实验现象出发，建立变化、性质、证据与结论之间的关系，并训练武汉中考式陌生情境推理。",
   "status":"review",
+  "releaseStatus":"review",
   "learningObjectives":["区分物理变化与化学变化，并用是否生成新物质说明判断依据。","区分物理性质与化学性质，能从生活和实验描述中提取性质信息。","建立“观察现象—寻找证据—形成结论—说明理由”的基本化学学习流程。","面对陌生情境，能够把变化/性质与证据推理结合起来。"],
   "knowledgePoints":["matter-change","physical-change","chemical-change","physical-property","chemical-property","observation-inference","evidence-reasoning"],
   "prerequisites":[],

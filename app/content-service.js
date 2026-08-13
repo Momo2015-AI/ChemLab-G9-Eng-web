@@ -35,6 +35,18 @@ class ContentService {
   async getQuestionsByKnowledgeGraph(id) { const engine = await this.getKnowledgeEngine(); return engine.questions(id); }
   async getCommonMistakes(id) { const engine = await this.getKnowledgeEngine(); return engine.commonMistakes(id); }
   async getExperiment(id) { return this.loader.loadExperiment(id); }
+  async getExperimentCatalog() {
+    const data = await this.load();
+    const experiments = [];
+    for (const entry of data.days.filter(day => day?.canonicalId)) {
+      const lesson = await this.loader.loadLesson(entry.canonicalId).catch(() => null);
+      for (const item of lesson?.experiments || []) {
+        const experiment = await this.getExperiment(item.id);
+        if (experiment) experiments.push({ ...experiment, lessonId: lesson.id, lessonTitle: lesson.title, lessonStatus: lesson.status });
+      }
+    }
+    return experiments;
+  }
   async getKnowledgeContent(id) { return this.loader.loadKnowledgeContent(id); }
 
   registerLessonQuestions(data, lesson) {

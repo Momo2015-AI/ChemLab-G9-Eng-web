@@ -35,7 +35,7 @@ export class ExperimentEngine {
     if (!session || !expectedObservation) return { valid: true, message: 'Step validated' };
     const current = session.steps[session.currentStep];
     if (!current) return { valid: true, message: 'Step completed' };
-    const expected = String(current.observation || '').trim().toLowerCase();
+    const expected = String(current.observation || current.expectedObservation || current.record || '').trim().toLowerCase();
     const actual = String(expectedObservation || '').trim().toLowerCase();
     if (!expected || !actual) return { valid: false, message: '请记录你观察到的实验现象', expected: current.observation };
     const sample = expected.slice(0, Math.min(10, expected.length));

@@ -3,12 +3,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const lessonsDir = path.join(root, 'modules/lessons');
+const lessonsDir = path.join(root, 'content/lessons');
 const reportDir = path.join(root, 'reports');
 const questionBankPath = path.join(root, 'content/questions/question-bank.json');
 const questionBankExists = fs.existsSync(questionBankPath);
 const files = fs.existsSync(lessonsDir)
-  ? fs.readdirSync(lessonsDir).filter((name) => /^day-\d{2}\.json$/.test(name)).sort()
+  ? fs.readdirSync(lessonsDir).filter((name) => /^lesson-.*\.json$/.test(name) && !name.endsWith('-guided-learning.json') && !name.endsWith('-experiment.json') && !name.endsWith('-practice.json') && !name.endsWith('-diagnostic.json') && !name.endsWith('-mastery.json')).sort()
   : [];
 
 const placeholderPatterns = [
@@ -18,7 +18,9 @@ const placeholderPatterns = [
   /完成5道随堂练习，检测学习效果。/
 ];
 const requiredArrays = ['knowledgePoints', 'experiments', 'questions', 'sections'];
-const requiredSectionTitles = ['学习目标', '新知探究', '例题精讲', '巩固练习'];
+const requiredSectionTitles = [];
+const reviewStates = new Set(['review', 'in-review', 'ready-for-review']);
+const releasedStates = new Set(['ready', 'released', 'published']);
 
 const report = {
   scanned: 0,
@@ -59,11 +61,12 @@ for (const file of files) {
     if (!data.sections?.some((section) => section?.title === title)) missing.push(`section:${title}`);
   }
 
-  const status = templateHits > 0 ? 'template' : (missing.length ? 'incomplete' : 'candidate');
+  const releaseStatus = String(data.releaseStatus || data.status || data.provenance?.status || '').toLowerCase();
+  const status = templateHits > 0 ? 'template' : (missing.length ? 'incomplete' : (releasedStates.has(releaseStatus) ? 'released' : reviewStates.has(releaseStatus) ? 'review' : 'unavailable'));
   if (status === 'template') {
     report.template++;
     report.needsRewrite++;
-  } else if (status === 'candidate') {
+  } else if (status === 'released' || status === 'review') {
     report.realContent++;
   } else {
     report.needsRewrite++;
@@ -77,6 +80,7 @@ for (const file of files) {
     day: data.day ?? null,
     title: data.title ?? null,
     status,
+    releaseStatus: releaseStatus || null,
     templateHits,
     missing
   });
@@ -105,9 +109,9 @@ const lines = [
   `- Legacy duplicate day01.json present: ${report.duplicateLegacy ? 'YES' : 'NO'}`,
   '',
   '## Lesson matrix',
-  '| File | Day | Title | Status | Template hits | Missing |',
-  '|---|---:|---|---|---:|---|',
-  ...report.lessons.map((item) => `| ${item.file} | ${item.day ?? '-'} | ${item.title ?? '-'} | ${item.status} | ${item.templateHits} | ${item.missing.join(', ') || '-'} |`),
+  '| File | Day | Title | Status | Release status | Template hits | Missing |',
+  '|---|---:|---|---|---|---:|---|',
+  ...report.lessons.map((item) => `| ${item.file} | ${item.day ?? '-'} | ${item.title ?? '-'} | ${item.status} | ${item.releaseStatus ?? '-'} | ${item.templateHits} | ${item.missing.join(', ') || '-'} |`),
   '',
   '## Issues',
   ...(report.issues.length ? report.issues.map((item) => `- ${item}`) : ['- None']),

@@ -39,3 +39,9 @@ test('canonical first-lesson experiment is discoverable through lesson content',
   assert.deepEqual(experiment.linkedGuidedSteps, ['L01-S01', 'L01-S03', 'L01-S04']);
   assert.equal(lesson.experiments[0].resourceRef, 'content/lessons/lesson-01-material-changes-properties-experiment.json');
 });
+
+test('canonical lessons expose an explicit release state', () => {
+  const manifest = JSON.parse(read('content/lessons/lesson-01-material-changes-properties.json'));
+  assert.equal(manifest.releaseStatus, 'review');
+  assert.equal(manifest.status, 'review');
+});

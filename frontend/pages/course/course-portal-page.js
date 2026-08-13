@@ -33,7 +33,7 @@ export function renderCoursePortal({ root, lessons = [], term = 'upper', onLesso
       <article class="portal-card full"><h2>学习单元 · ${term === 'lower' ? '下册' : '上册'}</h2><div class="unit-grid">${units.map(unit => {
         const unitLessons = unit.lessonIds.map(id => byId.get(id)).filter(Boolean);
         const ready = unitLessons.length > 0;
-        return `<article class="unit-card ${ready ? 'ready' : 'planned'}"><div class="unit-number">${unit.number}</div><div class="unit-body"><h3>${escapeHtml(unit.title)}</h3><p>${escapeHtml(unit.description)}</p>${ready ? `<div class="unit-lessons">${unitLessons.map((lesson, index) => `<button class="unit-lesson" data-lesson="${escapeHtml(lesson.id)}"><span>${String(index + 1).padStart(2,'0')}</span><strong>${escapeHtml(lesson.title)}</strong><small>${lesson.completed ? '已完成' : '开始学习'}</small></button>`).join('')}</div>` : '<span class="portal-chip">内容建设中</span>'}</div></article>`;
+        return `<article class="unit-card ${ready ? 'ready' : 'planned'}"><div class="unit-number">${unit.number}</div><div class="unit-body"><h3>${escapeHtml(unit.title)}</h3><p>${escapeHtml(unit.description)}</p>${ready ? `<div class="unit-lessons">${unitLessons.map((lesson, index) => `<button class="unit-lesson" data-lesson="${escapeHtml(lesson.id)}" ${lesson.available===false?'disabled':''}><span>${String(index + 1).padStart(2,'0')}</span><strong>${escapeHtml(lesson.title)}</strong><small>${escapeHtml(lesson.cardLabel || (lesson.completed ? '已完成' : '开始学习'))}</small></button>`).join('')}</div>` : '<span class="portal-chip">内容建设中</span>'}</div></article>`;
       }).join('')}</div></article>
     </div>
   </section>`;
