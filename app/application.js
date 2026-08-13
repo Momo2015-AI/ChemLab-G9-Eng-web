@@ -1,7 +1,4 @@
-/**
- * ChemLab application composition root.
- * Canonical lesson identity is the routing key; numeric day is display/order data.
- */
+/** ChemLab application composition root. */
 import { createRouter } from './router.js';
 import { contentService } from './content-service.js';
 import { MasteryService } from './mastery-service.js';
@@ -23,72 +20,33 @@ import { renderKnowledgePortal } from '../frontend/pages/knowledge/knowledge-por
 import { renderAssessmentPortal } from '../frontend/pages/assessment/assessment-portal-page.js';
 import { renderProgressPortal } from '../frontend/pages/progress/progress-portal-page.js';
 import { createRemediationCatalog } from '../core/diagnosis/remediation-catalog.js';
-
-const getDefaultRoot = () => typeof document === 'undefined' ? null : document.querySelector('#app-root');
-const CANONICAL_GOLDEN_LESSON = 'lesson-01-material-changes-properties';
-
-export function createApplication({ state, assessment, experimentEngine, masteryService = new MasteryService(), remediationCatalog = {}, root = getDefaultRoot() } = {}) {
-  const learning = new LearningController({ contentService, state, remediationCatalog });
-  const controllers = { learning, assessment: new AssessmentController({ assessment, contentService, state, masteryService, learningController: learning }), experiment: new ExperimentController({ experimentEngine, state, masteryService, learningController: learning }) };
-  const views = { renderHome, renderCourse: renderV19Course, renderQuiz, renderQuizResult, renderExperiment: renderV19Experiment, renderExperimentResult: renderV19ExperimentResult, renderDashboard, renderGraph, renderRemediation, renderAITutorPage };
-  let hydrationPromise = null; let stopped = false;
-  const router = createRouter({ onRoute: route => { state.route = route; }, render: route => renderRoute(route) });
-  const currentTerm = () => (typeof window !== 'undefined' && window.chemLabTextbookTerm === 'lower') ? 'lower' : 'upper';
-
-  function renderHomeLoading() {
-    if (!root) return;
-    views.renderHome({ root, data: { title: '九年级化学智能学习中心', subtitle: '正在准备学习内容…', lessons: [], stats: { completed: 0, mastery: 0, questions: 0 } }, onCourse: () => router.navigate('course'), onDashboard: () => router.navigate('progress'), onGraph: () => router.navigate('knowledge-map') });
-  }
-  async function hydrateContent() {
-    if (hydrationPromise) return hydrationPromise;
-    hydrationPromise = contentService.load().then(data => { learning.remediationCatalog = createRemediationCatalog(data); state.contentReady = true; state.contentLoadError = null; if (!stopped) renderRoute(router.current()); return data; }).catch(error => { state.contentLoadError = error; state.contentReady = false; if (root && !stopped && router.current().page === 'home') views.renderHome({ root, data: { title: '九年级化学智能学习中心', subtitle: '课程内容暂时无法加载，请刷新后重试。', lessons: [], stats: { completed: 0, mastery: 0, questions: 0 } }, onCourse: () => router.navigate('course'), onDashboard: () => router.navigate('progress'), onGraph: () => router.navigate('knowledge-map') }); throw error; });
-    return hydrationPromise;
-  }
-  async function getHomeData() {
-    if (!contentService.data) return null;
-    const data = contentService.data; const progress = createProgressProjection({ ...state.progress, mastery: masteryService.getState() });
-    const lessons = data.days.filter(day => Boolean(day.canonicalId)).sort((a, b) => Number(a.day || 0) - Number(b.day || 0)).map(day => ({ ...day, id: day.canonicalId, completed: Boolean(progress.completed?.[day.canonicalId]) }));
-    const weakPoints = state.learning?.diagnosis?.weakPoints || [];
-    return { title: '九年级化学智能学习中心', subtitle: '学习 → 实验 → 答题 → 诊断 → 补救 → 再检测', lessons, term: currentTerm(), hasRemediation: state.learning?.remediation?.status === 'needs-remediation', stats: { completed: lessons.filter(day => day.completed).length, mastery: Math.round((progress.masteryScore || 0) * 100), questions: progress.questions || 0, weak: weakPoints.length } };
-  }
-  async function renderRoute(route) {
-    if (!root) return;
-    const needsContent = ['home','course','progress','assessment','quiz','knowledge-map','graph'].includes(route.page);
-    if (needsContent && !state.contentReady) { if (route.page === 'home') renderHomeLoading(); return; }
-    const data = ['home','course','progress','assessment'].includes(route.page) ? await getHomeData() : null;
-    if (route.page === 'home') return views.renderHome({ root, data, onCourse: id => router.navigate('course', id || firstIncompleteLesson(data)), onDashboard: () => router.navigate('progress'), onGraph: () => router.navigate('knowledge-map'), onRemediation: () => router.navigate('assessment') });
-    if (route.page === 'course' && !route.params.length) return renderCoursePortal({ root, lessons: data?.lessons, term: currentTerm(), onLesson: id => router.navigate('course', id), onHome: () => router.navigate('home') });
-    if (route.page === 'course') {
-      const lessonId = route.params[0] || firstIncompleteLesson(data) || CANONICAL_GOLDEN_LESSON;
-      const lesson = await controllers.learning.getLesson(lessonId);
-      if (!lesson) return views.renderCourse({ root, lesson: { id: lessonId, title: '课程未找到', description: '请返回学习中心选择课程。' } });
-      const guidedLearning = await contentService.getGuidedLearning(lesson.id || lessonId);
-      return views.renderCourse({ root, lesson, guidedLearning, progress: controllers.learning.getProgress(lessonId), onStartQuiz: () => router.navigate('quiz', lessonId), onStartExperiment: id => router.navigate('experiment', id), onComplete: () => { controllers.learning.markComplete(lessonId); renderRoute(route); }, onBack: () => router.navigate('course') });
-    }
-    if (route.page === 'lab' && !route.params.length) return renderLabPortal({ root, onHome: () => router.navigate('home') });
-    if (route.page === 'knowledge-map') { const graph = await contentService.getKnowledgeGraphViewModel().catch(() => ({ nodes: [], relations: [] })); return renderKnowledgePortal({ root, onHome: () => router.navigate('home'), nodes: graph?.nodes || [], relations: graph?.relations || [] }); }
-    if (route.page === 'assessment') return renderAssessmentPortal({ root, onHome: () => router.navigate('home'), score: Math.round((createProgressProjection({ ...state.progress, mastery: masteryService.getState() }).masteryScore || 0) * 100), weakPoints: state.learning?.diagnosis?.weakPoints || [] });
-    if (route.page === 'progress' || route.page === 'dashboard') {
-      const progress = createProgressProjection({ ...state.progress, mastery: masteryService.getState() });
-      const graph = await contentService.getKnowledgeGraphViewModel().catch(() => ({ nodes: [] }));
-      return renderProgressPortal({
-        root,
-        onHome: () => router.navigate('home'),
-        onQuiz: id => router.navigate('quiz', id),
-        summary: { completed: Object.values(progress.completed || {}).filter(Boolean).length, mastery: Math.round((progress.masteryScore || 0) * 100), questions: progress.questions || 0 },
-        masteryState: masteryService.getState(),
-        knowledgeNodes: graph?.nodes || [],
-        weakPoints: state.learning?.diagnosis?.weakPoints || [],
-      });
-    }
-    if (route.page === 'graph') return views.renderGraph({ root, graph: await contentService.getKnowledgeGraphViewModel(), onBack: () => router.navigate('home') });
-    if (route.page === 'quiz') { if (!controllers.assessment.session) await controllers.assessment.start(route.params[0] || firstIncompleteLesson(await getHomeData())); const session = controllers.assessment.session; if (!session) return; if (session.completed) return views.renderQuizResult({ root, score: controllers.assessment.getScore(), correct: session.answers.filter(a => a.correct).length, total: session.answers.length, hasRemediation: state.learning?.remediation?.status === 'needs-remediation', onRemediation: () => router.navigate('assessment'), onContinue: () => router.navigate('progress') }); return views.renderQuiz({ root, question: session.questions[session.index], index: session.index, total: session.questions.length, onAnswer: optionIndex => { if (controllers.assessment.answer(optionIndex)) renderRoute(route); } }); }
-    if (route.page === 'experiment' && !route.params.length) return renderLabPortal({ root, onHome: () => router.navigate('home') });
-    if (route.page === 'experiment') { if (!controllers.experiment.session && !controllers.experiment.start(route.params[0])) return; const session = controllers.experiment.session; return views.renderExperiment({ root, experiment: session.experiment || {}, session, onNext: () => { controllers.experiment.next(); renderRoute(route); }, onObserve: text => controllers.experiment.observe(text), onComplete: () => views.renderExperimentResult({ root, result: controllers.experiment.complete() || {}, onContinue: () => router.navigate('progress') }) }); }
-    if (route.page === 'remediation') return views.renderRemediation({ root, plan: state.learning?.remediation, onRecheck: async plan => { const ids = (plan.steps || []).find(step => step.type === 'recheck')?.knowledgeIds || []; if (await controllers.assessment.startTargeted(ids)) router.navigate('quiz'); }, onTransfer: () => router.navigate('home') });
-    if (route.page === 'ai-tutor') return views.renderAITutorPage({ root });
-    if (route.page === 'experiment-result' || route.page === 'result') return router.navigate('progress');
-  }
-  return { state, router, contentService, masteryService, controllers, views, hydrateContent, start() { stopped = false; if (typeof window !== 'undefined') window.addEventListener('chemlab:term-change', () => { if (router.current().page === 'course' && !router.current().params.length) void renderRoute(router.current()); }); router.start(); void hydrateContent().catch(() => undefined); }, stop() { stopped = true; router.stop(); } };
+const getDefaultRoot=()=>typeof document==='undefined'?null:document.querySelector('#app-root');
+const CANONICAL_GOLDEN_LESSON='lesson-01-material-changes-properties';
+export function createApplication({state,assessment,experimentEngine,masteryService=new MasteryService(),remediationCatalog={},root=getDefaultRoot()}={}){
+ const learning=new LearningController({contentService,state,remediationCatalog});
+ const controllers={learning,assessment:new AssessmentController({assessment,contentService,state,masteryService,learningController:learning}),experiment:new ExperimentController({experimentEngine,state,masteryService,learningController:learning})};
+ const views={renderHome,renderCourse:renderV19Course,renderQuiz,renderQuizResult,renderExperiment:renderV19Experiment,renderExperimentResult:renderV19ExperimentResult,renderDashboard,renderGraph,renderRemediation,renderAITutorPage};
+ let hydrationPromise=null,stopped=false;
+ const router=createRouter({onRoute:route=>{state.route=route;},render:route=>renderRoute(route)});
+ const currentTerm=()=>typeof window!=='undefined'&&window.chemLabTextbookTerm==='lower'?'lower':'upper';
+ function renderHomeLoading(){if(!root)return;views.renderHome({root,data:{title:'九年级化学智能学习中心',subtitle:'正在准备学习内容…',lessons:[],stats:{completed:0,mastery:0,questions:0}},onCourse:()=>router.navigate('course'),onDashboard:()=>router.navigate('progress'),onGraph:()=>router.navigate('knowledge-map')});}
+ async function hydrateContent(){if(hydrationPromise)return hydrationPromise;hydrationPromise=contentService.load().then(data=>{learning.remediationCatalog=createRemediationCatalog(data);state.contentReady=true;state.contentLoadError=null;if(!stopped)renderRoute(router.current());return data;}).catch(error=>{state.contentLoadError=error;state.contentReady=false;if(root&&!stopped&&router.current().page==='home')views.renderHome({root,data:{title:'九年级化学智能学习中心',subtitle:'课程内容暂时无法加载，请刷新后重试。',lessons:[],stats:{completed:0,mastery:0,questions:0}},onCourse:()=>router.navigate('course'),onDashboard:()=>router.navigate('progress'),onGraph:()=>router.navigate('knowledge-map')});throw error;});return hydrationPromise;}
+ async function getHomeData(){if(!contentService.data)return null;const data=contentService.data,progress=createProgressProjection({...state.progress,mastery:masteryService.getState()});const lessons=data.days.filter(day=>Boolean(day.canonicalId)).sort((a,b)=>Number(a.day||0)-Number(b.day||0)).map(day=>({...day,id:day.canonicalId,completed:Boolean(progress.completed?.[day.canonicalId])}));const weakPoints=state.learning?.diagnosis?.weakPoints||[];return{title:'九年级化学智能学习中心',subtitle:'学习 → 实验 → 答题 → 诊断 → 补救 → 再检测',lessons,term:currentTerm(),hasRemediation:state.learning?.remediation?.status==='needs-remediation',stats:{completed:lessons.filter(day=>day.completed).length,mastery:Math.round((progress.masteryScore||0)*100),questions:progress.questions||0,weak:weakPoints.length}};}
+ async function renderRoute(route){if(!root)return;const needsContent=['home','course','progress','assessment','quiz','knowledge-map','graph'].includes(route.page);if(needsContent&&!state.contentReady){if(route.page==='home')renderHomeLoading();return;}const data=['home','course','progress','assessment'].includes(route.page)?await getHomeData():null;
+  if(route.page==='home')return views.renderHome({root,data,onCourse:id=>router.navigate('course',id||firstIncompleteLesson(data)),onDashboard:()=>router.navigate('progress'),onGraph:()=>router.navigate('knowledge-map'),onRemediation:()=>router.navigate('assessment')});
+  if(route.page==='course'&&!route.params.length)return renderCoursePortal({root,lessons:data?.lessons,term:currentTerm(),onLesson:id=>router.navigate('course',id),onHome:()=>router.navigate('home')});
+  if(route.page==='course'){const lessonId=route.params[0]||firstIncompleteLesson(data)||CANONICAL_GOLDEN_LESSON;const lesson=await controllers.learning.getLesson(lessonId);if(!lesson)return views.renderCourse({root,lesson:{id:lessonId,title:'课程未找到',description:'请返回学习中心选择课程。'}});const guidedLearning=await contentService.getGuidedLearning(lesson.id||lessonId);const masteryPassed=state.learning?.mastery?.[lessonId]?.status==='passed'||Boolean(state.progress?.lessonMastery?.[lessonId]);return views.renderCourse({root,lesson,guidedLearning,progress:controllers.learning.getProgress(lessonId),masteryPassed,onStartQuiz:()=>router.navigate('quiz',lessonId),onStartMastery:()=>router.navigate('quiz',`mastery:${lessonId}`),onStartExperiment:id=>router.navigate('experiment',id),onComplete:()=>{if(masteryPassed){controllers.learning.markComplete(lessonId);renderRoute(route);}},onBack:()=>router.navigate('course')});}
+  if(route.page==='lab'&&!route.params.length)return renderLabPortal({root,onHome:()=>router.navigate('home')});
+  if(route.page==='knowledge-map'){const graph=await contentService.getKnowledgeGraphViewModel().catch(()=>({nodes:[],relations:[]}));return renderKnowledgePortal({root,onHome:()=>router.navigate('home'),nodes:graph?.nodes||[],relations:graph?.relations||[]});}
+  if(route.page==='assessment')return renderAssessmentPortal({root,onHome:()=>router.navigate('home'),score:Math.round((createProgressProjection({...state.progress,mastery:masteryService.getState()}).masteryScore||0)*100),weakPoints:state.learning?.diagnosis?.weakPoints||[]});
+  if(route.page==='progress'||route.page==='dashboard'){const progress=createProgressProjection({...state.progress,mastery:masteryService.getState()}),graph=await contentService.getKnowledgeGraphViewModel().catch(()=>({nodes:[]}));return renderProgressPortal({root,onHome:()=>router.navigate('home'),onQuiz:id=>router.navigate('quiz',id),summary:{completed:Object.values(progress.completed||{}).filter(Boolean).length,mastery:Math.round((progress.masteryScore||0)*100),questions:progress.questions||0},masteryState:masteryService.getState(),knowledgeNodes:graph?.nodes||[],weakPoints:state.learning?.diagnosis?.weakPoints||[]});}
+  if(route.page==='graph')return views.renderGraph({root,graph:await contentService.getKnowledgeGraphViewModel(),onBack:()=>router.navigate('home')});
+  if(route.page==='quiz'){const rawId=route.params[0]||firstIncompleteLesson(await getHomeData());if(!controllers.assessment.session){if(String(rawId).startsWith('mastery:'))await controllers.assessment.startMastery(String(rawId).replace(/^mastery:/,''));else await controllers.assessment.start(rawId);}const session=controllers.assessment.session;if(!session)return; if(session.completed){const score=controllers.assessment.getScore();const lessonId=session.mode==='mastery'?String(session.dayId).replace(/^mastery:/,''):null;const masteryState=lessonId?state.learning?.mastery?.[lessonId]:null;return views.renderQuizResult({root,score,correct:session.answers.filter(a=>a.correct).length,total:session.answers.length,hasRemediation:session.mode==='mastery'?masteryState?.status!=='passed':state.learning?.remediation?.status==='needs-remediation',onRemediation:()=>router.navigate('assessment'),onContinue:()=>router.navigate(session.mode==='mastery'?'course': 'progress',...(session.mode==='mastery'?[lessonId]:[]))});}return views.renderQuiz({root,question:session.questions[session.index],index:session.index,total:session.questions.length,onAnswer:optionIndex=>{if(controllers.assessment.answer(optionIndex))renderRoute(route);}});}
+  if(route.page==='experiment'&&!route.params.length)return renderLabPortal({root,onHome:()=>router.navigate('home')});
+  if(route.page==='experiment'){if(!controllers.experiment.session&&!controllers.experiment.start(route.params[0]))return;const session=controllers.experiment.session;return views.renderExperiment({root,experiment:session.experiment||{},session,onNext:()=>{controllers.experiment.next();renderRoute(route);},onObserve:text=>controllers.experiment.observe(text),onComplete:()=>views.renderExperimentResult({root,result:controllers.experiment.complete()||{},onContinue:()=>router.navigate('progress')})});}
+  if(route.page==='remediation')return views.renderRemediation({root,plan:state.learning?.remediation,onRecheck:async plan=>{const ids=(plan.steps||[]).find(step=>step.type==='recheck')?.knowledgeIds||[];if(await controllers.assessment.startTargeted(ids))router.navigate('quiz');},onTransfer:()=>router.navigate('home')});
+  if(route.page==='ai-tutor')return views.renderAITutorPage({root});if(route.page==='experiment-result'||route.page==='result')return router.navigate('progress');
+ }
+ return{state,router,contentService,masteryService,controllers,views,hydrateContent,start(){stopped=false;if(typeof window!=='undefined')window.addEventListener('chemlab:term-change',()=>{if(router.current().page==='course'&&!router.current().params.length)void renderRoute(router.current());});router.start();void hydrateContent().catch(()=>undefined);},stop(){stopped=true;router.stop();}};
 }
-function firstIncompleteLesson(data) { return data?.lessons?.find(lesson => !lesson.completed)?.id || data?.lessons?.[0]?.id || CANONICAL_GOLDEN_LESSON; }
+function firstIncompleteLesson(data){return data?.lessons?.find(lesson=>!lesson.completed)?.id||data?.lessons?.[0]?.id||CANONICAL_GOLDEN_LESSON;}
