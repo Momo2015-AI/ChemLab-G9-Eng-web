@@ -25,6 +25,7 @@ import { renderProgressPortal } from '../frontend/pages/progress/progress-portal
 import { createRemediationCatalog } from '../core/diagnosis/remediation-catalog.js';
 
 const getDefaultRoot = () => typeof document === 'undefined' ? null : document.querySelector('#app-root');
+const CANONICAL_GOLDEN_LESSON = 'lesson-01-material-changes-properties';
 
 export function createApplication({ state, assessment, experimentEngine, masteryService = new MasteryService(), remediationCatalog = {}, root = getDefaultRoot() } = {}) {
   const learning = new LearningController({ contentService, state, remediationCatalog });
@@ -45,7 +46,12 @@ export function createApplication({ state, assessment, experimentEngine, mastery
   async function getHomeData() {
     if (!contentService.data) return null;
     const data = contentService.data; const progress = createProgressProjection({ ...state.progress, mastery: masteryService.getState() });
-    const lessons = data.days.map(day => ({ ...day, id: day.canonicalId || day.day, completed: Boolean(progress.completed?.[day.canonicalId || day.day]) }));
+    // Only canonical lessons are part of the learner-facing curriculum. Legacy day files
+    // (including the old acid-base sequence) are intentionally excluded from navigation.
+    const lessons = data.days
+      .filter(day => Boolean(day.canonicalId))
+      .sort((a, b) => Number(a.day || 0) - Number(b.day || 0))
+      .map(day => ({ ...day, id: day.canonicalId, completed: Boolean(progress.completed?.[day.canonicalId]) }));
     return { title: '九年级化学智能学习中心', subtitle: '学习 → 实验 → 答题 → 诊断 → 补救 → 再检测', lessons, hasRemediation: state.learning?.remediation?.status === 'needs-remediation', stats: { completed: lessons.filter(day => day.completed).length, mastery: Math.round((progress.masteryScore || 0) * 100), questions: progress.questions || 0 } };
   }
   async function renderRoute(route) {
@@ -55,7 +61,7 @@ export function createApplication({ state, assessment, experimentEngine, mastery
     const data = ['home','course','progress','assessment'].includes(route.page) ? await getHomeData() : null;
     if (route.page === 'home') return views.renderHome({ root, data, onCourse: id => router.navigate('course', id || firstIncompleteLesson(data)), onDashboard: () => router.navigate('progress'), onGraph: () => router.navigate('knowledge-map'), onRemediation: () => router.navigate('assessment') });
     if (route.page === 'course' && !route.params.length) return renderCoursePortal({ root, lessons: data?.lessons, onLesson: id => router.navigate('course', id), onHome: () => router.navigate('home') });
-    if (route.page === 'course') { const lessonId = route.params[0] || firstIncompleteLesson(data) || 'lesson-01-material-changes-properties'; const lesson = await controllers.learning.getLesson(lessonId); if (!lesson) return views.renderCourse({ root, lesson: { id: lessonId, title: '课程未找到', description: '请返回学习中心选择课程。' } }); return views.renderCourse({ root, lesson, progress: controllers.learning.getProgress(lessonId), onStartQuiz: () => router.navigate('quiz', lessonId), onStartExperiment: id => router.navigate('experiment', id), onComplete: () => { controllers.learning.markComplete(lessonId); renderRoute(route); }, onBack: () => router.navigate('course') }); }
+    if (route.page === 'course') { const lessonId = route.params[0] || firstIncompleteLesson(data) || CANONICAL_GOLDEN_LESSON; const lesson = await controllers.learning.getLesson(lessonId); if (!lesson) return views.renderCourse({ root, lesson: { id: lessonId, title: '课程未找到', description: '请返回学习中心选择课程。' } }); return views.renderCourse({ root, lesson, progress: controllers.learning.getProgress(lessonId), onStartQuiz: () => router.navigate('quiz', lessonId), onStartExperiment: id => router.navigate('experiment', id), onComplete: () => { controllers.learning.markComplete(lessonId); renderRoute(route); }, onBack: () => router.navigate('course') }); }
     if (route.page === 'lab' && !route.params.length) return renderLabPortal({ root, onHome: () => router.navigate('home') });
     if (route.page === 'knowledge-map') return renderKnowledgePortal({ root, onHome: () => router.navigate('home'), nodes: await contentService.getKnowledgeGraphViewModel().then(model => model?.nodes || []).catch(() => []) });
     if (route.page === 'assessment') return renderAssessmentPortal({ root, onHome: () => router.navigate('home'), score: Math.round((createProgressProjection({ ...state.progress, mastery: masteryService.getState() }).masteryScore || 0) * 100), weakPoints: state.learning?.diagnosis?.weakPoints || [] });
@@ -70,4 +76,4 @@ export function createApplication({ state, assessment, experimentEngine, mastery
   }
   return { state, router, contentService, masteryService, controllers, views, hydrateContent, start() { stopped = false; router.start(); void hydrateContent().catch(() => undefined); }, stop() { stopped = true; router.stop(); } };
 }
-function firstIncompleteLesson(data) { return data?.lessons?.find(lesson => !lesson.completed)?.id || data?.lessons?.[0]?.id || 'lesson-01-material-changes-properties'; }
+function firstIncompleteLesson(data) { return data?.lessons?.find(lesson => !lesson.completed)?.id || data?.lessons?.[0]?.id || CANONICAL_GOLDEN_LESSON; }
