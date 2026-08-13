@@ -1,20 +1,19 @@
 /**
  * ChemLab content loader.
- * Canonical lesson IDs are resolved first; legacy day files remain only as
- * compatibility data and must never override canonical lessons.
+ * Canonical lesson IDs are the only production lesson source.
  */
 import { day01DiagnosticQuestions } from '../content/questions/day01-diagnostics.js';
 import { day01ProductionOverrides, day01ProductionOverrideIds } from '../content/questions/day01-production-overrides.js';
 
 const APP_ROOT = new URL('../', import.meta.url);
 const assetUrl = path => new URL(path, APP_ROOT).href;
-const lessonUrl = day => assetUrl(`modules/lessons/day-${String(day).padStart(2, '0')}.json`);
 const canonicalLessonUrl = id => assetUrl(`content/lessons/${id}.json`);
+const guidedLearningUrl = id => assetUrl(`content/lessons/${id}-guided-learning.json`);
 const ENDPOINTS = {
   questionBank: assetUrl('content/questions/question-bank.json'),
   knowledgeGraph: assetUrl('content/knowledge/knowledge-graph.json'),
   legacyKnowledgeGraph: assetUrl('modules/questions/taxonomy/knowledge-graph.json'),
-  manifest: assetUrl('modules/lessons/manifest.json'),
+  manifest: assetUrl('content/manifest.js'),
   topicBank: assetUrl('modules/questions/bank/questions-by-topic.json'),
 };
 const DEFAULT_TIMEOUT_MS = 12000;
@@ -51,7 +50,7 @@ class ContentLoader {
   async loadOptionalJSON(url, fallback) { try { return await this.fetchJSON(url); } catch { return fallback; } }
   async loadAll() {
     const [manifest, qb, kg, topics] = await Promise.all([
-      this.fetchJSON(ENDPOINTS.manifest), this.loadOptionalJSON(ENDPOINTS.questionBank, { questions: [] }),
+      import('../content/manifest.js'), this.loadOptionalJSON(ENDPOINTS.questionBank, { questions: [] }),
       this.loadKnowledgeGraph(), this.loadOptionalJSON(ENDPOINTS.topicBank, { topics: [] }),
     ]);
     const productionQuestions = Array.isArray(qb.questions) ? qb.questions.map(normalizeQuestion) : [];
@@ -61,18 +60,19 @@ class ContentLoader {
     return { questions, questionById: new Map(questions.map(q => [q.id, q])), knowledgeGraph: kg, manifest, topics: topics.topics, days, dayById: new Map(days.map(d => [d.day, d])) };
   }
   async loadLesson(id) {
-    if (String(id).startsWith('lesson-')) return this.fetchJSON(canonicalLessonUrl(id));
-    const manifestEntry = (await this.loadAll()).days.find(day => day.day === String(id));
-    if (manifestEntry?.canonicalId) return this.fetchJSON(canonicalLessonUrl(manifestEntry.canonicalId));
-    return this.fetchJSON(lessonUrl(id));
+    if (!String(id).startsWith('lesson-')) {
+      const manifestEntry = (await this.loadAll()).days.find(day => day.day === String(id) || day.canonicalId === String(id));
+      id = manifestEntry?.canonicalId || id;
+    }
+    if (!String(id).startsWith('lesson-')) return null;
+    return this.fetchJSON(canonicalLessonUrl(id));
+  }
+  async loadGuidedLearning(id) {
+    if (!String(id).startsWith('lesson-')) return null;
+    return this.fetchJSON(guidedLearningUrl(id));
   }
   async loadExperiment(id) { return this.fetchJSON(assetUrl(`content/experiments/${id}.json`)).catch(() => null); }
   async loadKnowledgeContent(id) { return this.fetchJSON(assetUrl(`content/knowledge/${id}.json`)).catch(() => null); }
-  getQuestionsByKnowledge(knowledgeId) {
-    const data = this.cache.get(ENDPOINTS.questionBank);
-    const productionQuestions = data?.questions && Array.isArray(data.questions) ? data.questions.map(normalizeQuestion).filter(q => !day01ProductionOverrideIds.has(q.id)) : [];
-    return [...productionQuestions, ...day01ProductionOverrides, ...day01DiagnosticQuestions].filter(q => (q.knowledge || []).includes(knowledgeId));
-  }
 }
 export const contentLoader = new ContentLoader();
 export default ContentLoader;
