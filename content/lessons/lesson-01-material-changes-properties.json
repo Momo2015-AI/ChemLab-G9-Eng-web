@@ -1,0 +1,31 @@
+{
+  "id":"lesson-01-material-changes-properties",
+  "sequenceNumber":1,
+  "day":"01",
+  "title":"物质的变化和性质",
+  "module":"unit-01-intro-chemistry",
+  "duration":"45 分钟",
+  "description":"从物质变化、现象与性质出发，建立化学学习的基本观察与证据意识。",
+  "status":"review",
+  "learningObjectives":[
+    "区分物理变化与化学变化，并用可观察证据说明判断依据。",
+    "区分物理性质与化学性质，理解性质需要在特定条件下通过实验或事实认识。",
+    "建立“观察现象—基于证据解释—形成结论”的基本化学学习流程。"
+  ],
+  "knowledgePoints":["matter-change","physical-change","chemical-change","physical-property","chemical-property","observation-inference"],
+  "prerequisites":[],
+  "experiments":[],
+  "questions":[],
+  "diagnosticQuestions":[],
+  "misconceptions":["observation-inference","change-vs-property","physical-vs-chemical"],
+  "sections":[
+    {"title":"学习目标","body":["先学会区分“发生了什么变化”和“物质具有什么性质”。","任何判断都尽量回到可观察的事实和证据。"]},
+    {"title":"观察与变化","body":["物质发生的变化可以表现为状态、形状等改变，也可能产生新的物质。判断化学变化不能只看外观变化，而要寻找是否有新物质生成的证据。"]},
+    {"title":"物理性质与化学性质","body":["不需要发生化学变化就能表现出来的性质属于物理性质；物质在化学变化中表现出来的性质属于化学性质。性质与变化是相关但不同的概念。"]},
+    {"title":"证据推理","body":["先客观记录现象，再说明依据和结论。不能把“看到的现象”直接写成未经论证的结论。"]},
+    {"title":"学习检查","body":["完成配套练习后，用陌生情境检查自己能否根据证据判断变化类型，并解释为什么。达到95% Mastery前，不进入下一课。"]}
+  ],
+  "summary":"本课建立九年级化学学习的第一套基本框架：变化、性质、现象、证据与结论。",
+  "provenance":{"status":"review","basis":"project curriculum-development standard; Grade 9 chemistry introductory scope","note":"Final source and pedagogical audit is required before publication."},
+  "review":{"curriculum":"review","scientific":"review","ageSuitability":"review","itemQuality":"pending","knowledgeLinks":"pending","blockingIssues":["source-document verification pending","assessment integration pending","final runtime verification pending"]}
+}
