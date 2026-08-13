@@ -651,3 +651,35 @@ The repair plan was published in commit `d5d144c1c4cc9d0e8c391ce42e6e3423f9bae6e
 ### Next action
 
 Implement Phase 0 in a separate focused change, beginning with contract tests and assessment-controller consolidation. Record each implementation commit, verification result, and any scope change in this development log before pushing.
+
+## 2026-08-13 — P0 runtime repair and verification
+
+### Scope completed
+
+1. Consolidated the legacy assessment facade onto `AssessmentRuntimeController`, so practice, mastery, and targeted recheck share one session, answer normalization, diagnosis, evidence, and persistence path.
+2. Routed every assessment answer through `MasteryService`, including negative evidence, and persisted lesson-scoped practice diagnosis, weak points, remediation state, recheck state, and mastery results.
+3. Registered canonical lesson and mastery questions at the content boundary, including knowledge and misconception mappings, so runtime sessions no longer depend on the reset question-bank file.
+4. Resolved the first lesson experiment from canonical lesson resources, registered it before starting the production experiment engine, preserved lesson context on completion, and rendered `action`/`record` step instructions in the experiment view.
+5. Extended content integrity validation to the effective runtime question set and supplied missing Lesson 01 mastery explanations required by the runtime contract.
+6. Updated contract tests for canonical lesson identity, assessment evidence, targeted recheck state, and first-lesson experiment discoverability.
+
+### Verification
+
+- `npm test`: **78 passed, 0 failed**.
+- `node scripts/runtime-audit.mjs`: **passed**.
+- `npm run audit:content`: **passed; 0 errors, 0 warnings**. The question bank remains intentionally `RESET_PENDING_SOURCE_DOCUMENTS`, while 50 effective runtime questions are validated from canonical lesson/mastery content and runtime diagnostics.
+- `node --check views/v19-experiment-view.js`: **passed**.
+- `git diff --check`: **passed**.
+- Browser smoke check loaded `http://127.0.0.1:8766/index.html#experiment/L01-E01`, displayed the real first-lesson experiment, and reported no console errors. The local smoke server was stopped after verification.
+
+### Commit
+
+The P0 implementation was committed as `407e7a8a1ea536897062e5faa696b394efc8a2de` (`fix: complete P0 learning runtime wiring`).
+
+### Scope boundary
+
+P1 work remains intentionally out of this change: the top-level Assessment Center and Virtual Lab portal cards are still placeholders, and the broader per-lesson phase state machine and content release alignment still require follow-up implementation.
+
+### Next action
+
+Push the P0 implementation and this development-log record to `origin/main`, then begin P1 portal integration and lesson-state alignment.
