@@ -1,10 +1,10 @@
-/** V2.1 Course View — visual, low-density learning surface. */
-export function renderV19Course({ root, lesson = {}, progress = false, onStartQuiz, onStartExperiment, onComplete, onBack } = {}) {
+/** V2.2 Course View — low-density overview plus real guided learning. */
+export function renderV19Course({ root, lesson = {}, guidedLearning = null, progress = false, onStartQuiz, onStartExperiment, onComplete, onBack } = {}) {
   if (!root) return;
   const points = Array.isArray(lesson.knowledgePoints) ? lesson.knowledgePoints : [];
   const experiments = Array.isArray(lesson.experiments) ? lesson.experiments : [];
-  const sections = Array.isArray(lesson.sections) ? lesson.sections : [];
   const diagnostics = Array.isArray(lesson.diagnosticQuestions) ? lesson.diagnosticQuestions : [];
+  const steps = Array.isArray(guidedLearning?.steps) ? guidedLearning.steps : [];
   const sectionIcons = ['◎','◈','⚗','▣','✓','◆','↗'];
   const sectionTone = ['blue','violet','teal','amber','green','pink','indigo'];
 
@@ -17,8 +17,8 @@ export function renderV19Course({ root, lesson = {}, progress = false, onStartQu
         </div>
         <div class="course-hero-main">
           <div>
-            <div class="course-kicker">DAY ${escapeHtml(lesson.day || lesson.id || '')} · ${escapeHtml(lesson.duration || '')}</div>
-            <h1>${escapeHtml(lesson.title || lesson.id || 'Lesson')}</h1>
+            <div class="course-kicker">第 ${escapeHtml(lesson.day || lesson.sequenceNumber || '')} 课 · ${escapeHtml(lesson.duration || '')}</div>
+            <h1>${escapeHtml(lesson.title || lesson.id || '课程')}</h1>
             <p>${escapeHtml(lesson.summary || lesson.description || '')}</p>
           </div>
           <div class="course-hero-icon" aria-hidden="true">⚗</div>
@@ -29,51 +29,45 @@ export function renderV19Course({ root, lesson = {}, progress = false, onStartQu
       </div>
 
       <div class="course-action-grid">
-        <button class="course-action primary" type="button" data-quiz><span class="action-icon">✦</span><span><strong>开始练习</strong><small>用题目检验理解</small></span><b>→</b></button>
+        ${steps.length ? `<button class="course-action primary" type="button" data-guided><span class="action-icon">▸</span><span><strong>开始一步一步学</strong><small>${steps.length} 个学习步骤 · 讲解 + 即时检查</small></span><b>↓</b></button>` : ''}
+        <button class="course-action" type="button" data-quiz><span class="action-icon">✦</span><span><strong>开始练习</strong><small>用题目检验理解</small></span><b>→</b></button>
         ${experiments.length ? `<button class="course-action teal" type="button" data-experiment><span class="action-icon">⚗</span><span><strong>进入虚拟实验</strong><small>观察现象 · 建立证据</small></span><b>→</b></button>` : ''}
         ${diagnostics.length ? `<div class="course-action diagnostic"><span class="action-icon">⌁</span><span><strong>诊断检查</strong><small>${diagnostics.length} 个概念检查点</small></span></div>` : ''}
         ${!progress ? `<button class="course-action quiet" type="button" data-complete><span class="action-icon">✓</span><span><strong>完成本课</strong><small>稍后可从学习中心继续</small></span></button>` : ''}
       </div>
 
       <section class="course-section-block">
-        <div class="course-section-heading"><div><span class="section-eyebrow">KNOWLEDGE MAP</span><h2>这节课要掌握什么？</h2></div><span class="section-count">${points.length} 个知识点</span></div>
-        <div class="knowledge-card-grid">${points.length ? points.map((id, i) => `<article class="knowledge-card-v21"><span class="knowledge-index">${String(i + 1).padStart(2,'0')}</span><div><strong>${escapeHtml(id)}</strong><small>核心知识 · 本课重点</small></div><span class="knowledge-arrow">›</span></article>`).join('') : '<div class="empty-card">本课暂无独立知识点配置。</div>'}</div>
+        <div class="course-section-heading"><div><span class="section-eyebrow">学习目标</span><h2>本节课要掌握什么？</h2></div><span class="section-count">${points.length} 个知识点</span></div>
+        <div class="knowledge-card-grid">${points.length ? points.map((id, i) => `<article class="knowledge-card-v21"><span class="knowledge-index">${String(i + 1).padStart(2,'0')}</span><div><strong>${escapeHtml(id)}</strong><small>本课重点</small></div><span class="knowledge-arrow">›</span></article>`).join('') : '<div class="empty-card">本课暂无独立知识点配置。</div>'}</div>
       </section>
 
-      <section class="course-section-block lesson-content-block">
-        <div class="course-section-heading"><div><span class="section-eyebrow">LEARNING PATH</span><h2>一步一步学</h2></div><span class="section-count">${sections.length} 个学习模块</span></div>
-        <div class="lesson-timeline">
-          ${sections.map((section, i) => `<article class="lesson-module-card tone-${sectionTone[i % sectionTone.length]}">
-            <div class="module-marker"><span>${sectionIcons[i % sectionIcons.length]}</span><em>${String(i + 1).padStart(2,'0')}</em></div>
-            <div class="module-content"><div class="module-label">${moduleLabel(section.title, i)}</div><h3>${escapeHtml(section.title || '')}</h3><div class="module-body">${renderBody(section.body)}</div></div>
-          </article>`).join('')}
+      ${steps.length ? `<section class="course-section-block lesson-content-block" id="guided-learning">
+        <div class="course-section-heading"><div><span class="section-eyebrow">核心学习</span><h2>一步一步学</h2></div><span class="section-count">${steps.length} 步</span></div>
+        <div class="guided-learning-path">
+          ${steps.map((step, i) => renderGuidedStep(step, i, sectionIcons[i % sectionIcons.length], sectionTone[i % sectionTone.length])).join('')}
         </div>
-      </section>
+      </section>` : ''}
     </section>`;
 
   root.querySelector('[data-back]')?.addEventListener('click', () => onBack?.());
+  root.querySelector('[data-guided]')?.addEventListener('click', () => document.querySelector('#guided-learning')?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
   root.querySelector('[data-quiz]')?.addEventListener('click', () => onStartQuiz?.());
   root.querySelector('[data-experiment]')?.addEventListener('click', () => onStartExperiment?.(experiments[0]));
   root.querySelector('[data-complete]')?.addEventListener('click', () => onComplete?.());
 }
 
-function moduleLabel(title, index) {
-  const t = String(title || '');
-  if (/目标/.test(t)) return 'START · 学习目标';
-  if (/新知|探究|概念/.test(t)) return 'LEARN · 核心概念';
-  if (/实验|观察/.test(t)) return 'DISCOVER · 实验证据';
-  if (/例题/.test(t)) return 'THINK · 例题推理';
-  if (/练习|巩固/.test(t)) return 'PRACTICE · 即时练习';
-  if (/检查|诊断/.test(t)) return 'CHECK · 概念检查';
-  return `STEP ${String(index + 1).padStart(2,'0')}`;
-}
-
-function renderBody(body) {
-  const items = Array.isArray(body) ? body : [body];
-  return items.filter(item => item !== null && item !== undefined && String(item).trim()).map((item, i) => {
-    const text = String(item);
-    return `<p class="lesson-paragraph">${escapeHtml(text)}</p>`;
-  }).join('');
+function renderGuidedStep(step, index, icon, tone) {
+  const body = Array.isArray(step.body) ? step.body : [step.body];
+  const check = step.check;
+  return `<article class="guided-step-card tone-${tone}">
+    <div class="guided-step-marker"><span>${icon}</span><em>${String(index + 1).padStart(2,'0')}</em></div>
+    <div class="guided-step-content">
+      <div class="guided-step-label">第 ${index + 1} 步 · ${step.type === 'concept' ? '核心概念' : step.type === 'reasoning' ? '判断方法' : step.type === 'transfer' ? '迁移检查' : '引导学习'}</div>
+      <h3>${escapeHtml(step.title || '')}</h3>
+      <div class="guided-step-body">${body.filter(Boolean).map(text => `<p>${escapeHtml(text)}</p>`).join('')}</div>
+      ${check ? `<details class="guided-check"><summary>马上检查一下</summary><div class="guided-check-body"><p class="guided-question">${escapeHtml(check.question || '')}</p>${Array.isArray(check.options) ? `<ol>${check.options.map(option => `<li>${escapeHtml(option)}</li>`).join('')}</ol>` : ''}<div class="guided-answer"><strong>正确答案：</strong>${Number.isInteger(check.answer) ? `第 ${check.answer + 1} 项` : escapeHtml(check.answer || '')}<p>${escapeHtml(check.explanation || '')}</p></div></div></details>` : ''}
+    </div>
+  </article>`;
 }
 
 function escapeHtml(value) { return String(value).replace(/[&<>\"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c])); }
