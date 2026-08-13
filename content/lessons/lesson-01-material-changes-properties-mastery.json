@@ -1,0 +1,26 @@
+{
+  "lessonId":"lesson-01-material-changes-properties",
+  "version":"1.0",
+  "mastery":{"threshold":0.95,"minQuestions":20,"unseenTransfer":true,"questions":[
+    {"id":"L01-M01","knowledgePoint":"physical-vs-chemical-change","question":"下列现象中，最能直接支持“有新物质生成”的是：","options":["水的状态改变","玻璃被打碎","铁表面形成新的锈层","冰块变小"],"answer":2},
+    {"id":"L01-M02","knowledgePoint":"physical-property","question":"下列描述属于物理性质的是：","options":["能与氧气反应","容易燃烧","硬度较大","容易生锈"],"answer":2},
+    {"id":"L01-M03","knowledgePoint":"chemical-property","question":"“某物质在空气中容易被氧化”描述的是：","options":["物理变化","化学变化","物理性质","化学性质"],"answer":3},
+    {"id":"L01-M04","knowledgePoint":"evidence-reasoning","question":"某液体加热出现气泡。仅凭这一现象，最科学的结论是：","options":["一定生成新物质","一定是化学变化","需要进一步寻找证据判断是否生成新物质","一定是物理性质"],"answer":2},
+    {"id":"L01-M05","knowledgePoint":"concept-distinction","question":"下列组合中，属于“性质—变化”的是：","options":["氧气助燃；铁生锈","水沸点；水沸腾","木炭燃烧；木炭可燃","铁生锈；铁是固体"],"answer":1},
+    {"id":"L01-M06","knowledgePoint":"physical-vs-chemical-change","question":"纸张被剪碎后仍是纸张。最合理的判断是：","options":["化学变化","物理变化","化学性质","无法判断性质"],"answer":1},
+    {"id":"L01-M07","knowledgePoint":"chemical-property","question":"“镁带能与氧气反应”属于：","options":["物理性质","化学性质","物理变化","化学变化"],"answer":1},
+    {"id":"L01-M08","knowledgePoint":"physical-property","question":"“铜丝具有良好的导电性”属于：","options":["物理性质","化学性质","物理变化","化学变化"],"answer":0},
+    {"id":"L01-M09","knowledgePoint":"evidence-reasoning","question":"观察到颜色改变后，为什么还需要继续分析？","options":["颜色不是现象","颜色改变可能有不同原因","颜色不能被观察","化学变化没有颜色变化"],"answer":1},
+    {"id":"L01-M10","knowledgePoint":"concept-distinction","question":"下列说法中把“性质”和“变化”区分正确的是：","options":["铁生锈是化学性质","铁容易生锈是化学性质","水沸腾是物理性质","氧气助燃是化学变化"],"answer":1},
+    {"id":"L01-M11","knowledgePoint":"physical-vs-chemical-change","question":"蜡烛熔化与蜡烛燃烧的主要区别应从什么角度判断？","options":["是否有光","是否有热","是否生成新物质","是否速度快"],"answer":2},
+    {"id":"L01-M12","knowledgePoint":"evidence-reasoning","question":"一个变化伴随放热。仅凭放热现象能否确定发生化学变化？","options":["能","不能，还需结合是否生成新物质的证据","只能判断物理变化","只能判断化学性质"],"answer":1},
+    {"id":"L01-M13","knowledgePoint":"physical-property","question":"下列哪项可以在不改变物质种类的情况下测定？","options":["可燃性","密度","助燃性","与酸反应的能力"],"answer":1},
+    {"id":"L01-M14","knowledgePoint":"chemical-property","question":"“铁在潮湿空气中容易生锈”中的“容易生锈”属于：","options":["物理性质","化学性质","物理变化","化学变化"],"answer":1},
+    {"id":"L01-M15","knowledgePoint":"concept-distinction","question":"“水由液态变为气态”描述的是：","options":["物理变化","化学变化","物理性质","化学性质"],"answer":0},
+    {"id":"L01-M16","knowledgePoint":"concept-distinction","question":"“水的沸点约为100 ℃”描述的是：","options":["物理变化","化学变化","物理性质","化学性质"],"answer":2},
+    {"id":"L01-M17","knowledgePoint":"evidence-reasoning","question":"要把一个陌生变化判断为化学变化，最有价值的证据是：","options":["变化很剧烈","声音很大","能说明生成了不同于原物质的新物质","颜色漂亮"],"answer":2},
+    {"id":"L01-M18","knowledgePoint":"physical-vs-chemical-change","question":"下列变化中，恢复原状并不能单独证明一定是物理变化，原因是：","options":["所有化学变化都不可逆","判断仍应依据是否生成新物质","恢复原状不是变化","物理变化没有现象"],"answer":1},
+    {"id":"L01-M19","knowledgePoint":"concept-distinction","question":"“木炭燃烧”与“木炭具有可燃性”的关系是：","options":["前者是化学变化，后者是化学性质","前者是化学性质，后者是化学变化","两者都是化学变化","两者都是化学性质"],"answer":0},
+    {"id":"L01-M20","knowledgePoint":"transfer","question":"面对从未见过的物质变化，最完整的科学判断路径是：","options":["看现象→直接猜结论","背例子→套答案","观察→寻找证据→判断是否生成新物质→说明理由","看颜色→决定类别"],"answer":2}
+  ]}
+}
