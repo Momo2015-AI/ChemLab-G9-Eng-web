@@ -51,10 +51,14 @@ class ContentService {
     const lesson = await this.loader.loadLesson(dayId).catch(() => null);
     if (lesson) {
       data.dayById.set(dayId, lesson);
-      const index = data.days.findIndex(day => day.day === dayId);
+      const index = data.days.findIndex(day => day.day === dayId || day.canonicalId === dayId);
       if (index >= 0) data.days[index] = lesson;
     }
     return lesson || data.dayById.get(dayId) || null;
+  }
+
+  async getGuidedLearning(lessonId) {
+    return this.loader.loadGuidedLearning(lessonId).catch(() => null);
   }
 
   async getQuestion(questionId) { const data = await this.load(); return data.questionById.get(questionId) || null; }
