@@ -1,0 +1,10 @@
+{
+  "lessonId":"lesson-01-material-changes-properties",
+  "version":"1.0",
+  "diagnostics":[
+    {"id":"L01-D01","knowledgePoint":"physical-vs-chemical-change","question":"把“冰融化”和“铁生锈”都称为化学变化，这个判断错在哪里？","options":["忽略了是否生成新物质","只看到了颜色变化","忽略了温度","两个都没有现象"],"answer":0,"errorType":"definition-confusion","remediationStep":"L01-S02/L01-S03"},
+    {"id":"L01-D02","knowledgePoint":"evidence-reasoning","question":"看到实验中产生气泡后，最科学的下一步是什么？","options":["立即断定发生化学变化","寻找证据判断是否生成新物质","认为一定是沸腾","忽略其他现象"],"answer":1,"errorType":"single-phenomenon-overgeneralization","remediationStep":"L01-S04"},
+    {"id":"L01-D03","knowledgePoint":"property-vs-change","question":"把“氧气具有助燃性”判断为化学变化，主要混淆了什么？","options":["物理性质和化学性质","性质和变化","物理变化和化学变化","现象和温度"],"answer":1,"errorType":"property-change-confusion","remediationStep":"L01-S05/L01-S06/L01-S07"}
+  ],
+  "remediation":{"L01-S02":"重新学习物理变化定义并完成一次分类检查。","L01-S03":"重新学习化学变化与生成新物质的判断。","L01-S04":"重新学习现象、证据、结论之间的关系。","L01-S05/L01-S06/L01-S07":"重新比较物理性质、化学性质、物理变化和化学变化。"}
+}
