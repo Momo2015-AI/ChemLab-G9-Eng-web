@@ -4,6 +4,7 @@
  */
 import { day01DiagnosticQuestions } from '../content/questions/day01-diagnostics.js';
 import { day01ProductionOverrides, day01ProductionOverrideIds } from '../content/questions/day01-production-overrides.js';
+import lessonManifest from '../content/curriculum/lesson-manifest.js';
 
 const APP_ROOT = new URL('../', import.meta.url);
 const assetUrl = path => new URL(path, APP_ROOT).href;
@@ -13,7 +14,6 @@ const ENDPOINTS = {
   questionBank: assetUrl('content/questions/question-bank.json'),
   knowledgeGraph: assetUrl('content/knowledge/knowledge-graph.json'),
   legacyKnowledgeGraph: assetUrl('modules/questions/taxonomy/knowledge-graph.json'),
-  manifest: assetUrl('content/manifest.js'),
   topicBank: assetUrl('modules/questions/bank/questions-by-topic.json'),
 };
 const DEFAULT_TIMEOUT_MS = 12000;
@@ -49,15 +49,15 @@ class ContentLoader {
   }
   async loadOptionalJSON(url, fallback) { try { return await this.fetchJSON(url); } catch { return fallback; } }
   async loadAll() {
-    const [manifest, qb, kg, topics] = await Promise.all([
-      import('../content/manifest.js'), this.loadOptionalJSON(ENDPOINTS.questionBank, { questions: [] }),
+    const [qb, kg, topics] = await Promise.all([
+      this.loadOptionalJSON(ENDPOINTS.questionBank, { questions: [] }),
       this.loadKnowledgeGraph(), this.loadOptionalJSON(ENDPOINTS.topicBank, { topics: [] }),
     ]);
     const productionQuestions = Array.isArray(qb.questions) ? qb.questions.map(normalizeQuestion) : [];
     const sanitizedProductionQuestions = productionQuestions.filter(q => !day01ProductionOverrideIds.has(q.id));
     const questions = [...sanitizedProductionQuestions, ...day01ProductionOverrides, ...day01DiagnosticQuestions.filter(q => q.status !== 'archived')];
-    const days = Array.isArray(manifest.days) ? manifest.days : [];
-    return { questions, questionById: new Map(questions.map(q => [q.id, q])), knowledgeGraph: kg, manifest, topics: topics.topics, days, dayById: new Map(days.map(d => [d.day, d])) };
+    const days = Array.isArray(lessonManifest.lessons) ? lessonManifest.lessons : [];
+    return { questions, questionById: new Map(questions.map(q => [q.id, q])), knowledgeGraph: kg, manifest: lessonManifest, topics: topics.topics, days, dayById: new Map(days.map(d => [d.day, d])) };
   }
   async loadLesson(id) {
     if (!String(id).startsWith('lesson-')) {
