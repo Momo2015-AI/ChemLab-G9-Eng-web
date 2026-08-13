@@ -5,8 +5,6 @@ export function renderV19Course({ root, lesson = {}, guidedLearning = null, prog
   const experiments = Array.isArray(lesson.experiments) ? lesson.experiments : [];
   const diagnostics = Array.isArray(lesson.diagnosticQuestions) ? lesson.diagnosticQuestions : [];
   const steps = Array.isArray(guidedLearning?.steps) ? guidedLearning.steps : [];
-  const sectionIcons = ['◎','◈','⚗','▣','✓','◆','↗'];
-  const sectionTone = ['blue','violet','teal','amber','green','pink','indigo'];
 
   root.innerHTML = `
     <section class="page course-page v21-course">
@@ -23,9 +21,7 @@ export function renderV19Course({ root, lesson = {}, guidedLearning = null, prog
           </div>
           <div class="course-hero-icon" aria-hidden="true">⚗</div>
         </div>
-        <div class="course-flow" aria-label="学习流程">
-          <span class="active">① 学习</span><i>→</i><span>② 实验</span><i>→</i><span>③ 练习</span><i>→</i><span>④ 检查</span>
-        </div>
+        <div class="course-flow" aria-label="学习流程"><span class="active">① 学习</span><i>→</i><span>② 实验</span><i>→</i><span>③ 练习</span><i>→</i><span>④ 检查</span></div>
       </div>
 
       <div class="course-action-grid">
@@ -43,8 +39,8 @@ export function renderV19Course({ root, lesson = {}, guidedLearning = null, prog
 
       ${steps.length ? `<section class="course-section-block lesson-content-block" id="guided-learning">
         <div class="course-section-heading"><div><span class="section-eyebrow">核心学习</span><h2>一步一步学</h2></div><span class="section-count">${steps.length} 步</span></div>
-        <div class="guided-learning-path">
-          ${steps.map((step, i) => renderGuidedStep(step, i, sectionIcons[i % sectionIcons.length], sectionTone[i % sectionTone.length])).join('')}
+        <div class="guided-learning-cards">
+          ${steps.map((step, i) => renderGuidedCard(step, i)).join('')}
         </div>
       </section>` : ''}
     </section>`;
@@ -56,18 +52,68 @@ export function renderV19Course({ root, lesson = {}, guidedLearning = null, prog
   root.querySelector('[data-complete]')?.addEventListener('click', () => onComplete?.());
 }
 
-function renderGuidedStep(step, index, icon, tone) {
+function renderGuidedCard(step, index) {
   const body = Array.isArray(step.body) ? step.body : [step.body];
   const check = step.check;
-  return `<article class="guided-step-card tone-${tone}">
-    <div class="guided-step-marker"><span>${icon}</span><em>${String(index + 1).padStart(2,'0')}</em></div>
-    <div class="guided-step-content">
-      <div class="guided-step-label">第 ${index + 1} 步 · ${step.type === 'concept' ? '核心概念' : step.type === 'reasoning' ? '判断方法' : step.type === 'transfer' ? '迁移检查' : '引导学习'}</div>
-      <h3>${escapeHtml(step.title || '')}</h3>
+  const hasDetail = body.some(Boolean) || Boolean(check);
+  const label = step.type === 'concept' ? '核心概念' : step.type === 'reasoning' ? '判断方法' : step.type === 'transfer' ? '迁移检查' : '引导学习';
+  return `<article class="guided-learning-card ${hasDetail ? '' : 'compact'}">
+    <button class="guided-card-header" type="button" aria-expanded="false">
+      <span class="guided-card-index">${String(index + 1).padStart(2,'0')}</span>
+      <span class="guided-card-main"><span class="guided-card-label">第 ${index + 1} 步 · ${label}</span><strong>${escapeHtml(step.title || '')}</strong><small>点击展开学习内容</small></span>
+      <span class="guided-card-toggle" aria-hidden="true">＋</span>
+    </button>
+    <div class="guided-card-detail" hidden>
       <div class="guided-step-body">${body.filter(Boolean).map(text => `<p>${escapeHtml(text)}</p>`).join('')}</div>
-      ${check ? `<details class="guided-check"><summary>马上检查一下</summary><div class="guided-check-body"><p class="guided-question">${escapeHtml(check.question || '')}</p>${Array.isArray(check.options) ? `<ol>${check.options.map(option => `<li>${escapeHtml(option)}</li>`).join('')}</ol>` : ''}<div class="guided-answer"><strong>正确答案：</strong>${Number.isInteger(check.answer) ? `第 ${check.answer + 1} 项` : escapeHtml(check.answer || '')}<p>${escapeHtml(check.explanation || '')}</p></div></div></details>` : ''}
+      ${check ? renderCheck(check) : ''}
     </div>
   </article>`;
 }
 
+function renderCheck(check) {
+  const options = Array.isArray(check.options) ? check.options : [];
+  return `<div class="guided-check">
+    <div class="guided-check-title">马上检查一下</div>
+    <p class="guided-question">${escapeHtml(check.question || '')}</p>
+    ${options.length ? `<div class="guided-options">${options.map((option, i) => `<label><input type="radio" name="check-${escapeHtml(check.question || 'q')}" value="${i}"><span>${String.fromCharCode(65 + i)}. ${escapeHtml(option)}</span></label>`).join('')}</div>` : ''}
+    <button type="button" class="guided-submit">提交答案</button>
+    <div class="guided-result" hidden></div>
+  </div>`;
+}
+
 function escapeHtml(value) { return String(value).replace(/[&<>\"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c])); }
+
+if (typeof document !== 'undefined') {
+  document.addEventListener('click', event => {
+    const header = event.target.closest('.guided-card-header');
+    if (header) {
+      const card = header.closest('.guided-learning-card');
+      const detail = card?.querySelector('.guided-card-detail');
+      if (!detail) return;
+      const open = !detail.hidden;
+      detail.hidden = open;
+      header.setAttribute('aria-expanded', String(!open));
+      const toggle = header.querySelector('.guided-card-toggle');
+      if (toggle) toggle.textContent = open ? '＋' : '−';
+      return;
+    }
+    const submit = event.target.closest('.guided-submit');
+    if (submit) {
+      const check = submit.closest('.guided-check');
+      const selected = check?.querySelector('input[type="radio"]:checked');
+      const result = check?.querySelector('.guided-result');
+      if (!selected || !result) return;
+      const answerIndex = Number(selected.value);
+      const question = check.querySelector('.guided-question')?.textContent || '';
+      const card = submit.closest('.guided-learning-card');
+      const stepTitle = card?.querySelector('.guided-card-main strong')?.textContent || '';
+      const source = window.__chemLabGuidedLearning?.steps?.find(step => step.title === stepTitle);
+      const expected = Number.isInteger(source?.check?.answer) ? source.check.answer : null;
+      const correct = expected !== null && answerIndex === expected;
+      result.hidden = false;
+      result.textContent = correct ? `✓ 回答正确。${source?.check?.explanation || ''}` : `再想一想。${source?.check?.explanation || '请回到本步骤的讲解，找出支持答案的证据。'}`;
+      result.className = `guided-result ${correct ? 'correct' : 'retry'}`;
+      void question;
+    }
+  });
+}
