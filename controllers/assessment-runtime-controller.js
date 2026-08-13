@@ -1,3 +1,5 @@
+import { diagnoseAssessment } from '../core/diagnosis/diagnosis-engine.js';
+
 export class AssessmentRuntimeController {
   constructor({ assessment, contentService, state, masteryService = null, learningController = null }) {
     this.assessment = assessment;
