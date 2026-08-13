@@ -57,7 +57,13 @@ export function createApplication({ state, assessment, experimentEngine, mastery
     const data = ['home','course','progress','assessment'].includes(route.page) ? await getHomeData() : null;
     if (route.page === 'home') return views.renderHome({ root, data, onCourse: id => router.navigate('course', id || firstIncompleteLesson(data)), onDashboard: () => router.navigate('progress'), onGraph: () => router.navigate('knowledge-map'), onRemediation: () => router.navigate('assessment') });
     if (route.page === 'course' && !route.params.length) return renderCoursePortal({ root, lessons: data?.lessons, term: currentTerm(), onLesson: id => router.navigate('course', id), onHome: () => router.navigate('home') });
-    if (route.page === 'course') { const lessonId = route.params[0] || firstIncompleteLesson(data) || CANONICAL_GOLDEN_LESSON; const lesson = await controllers.learning.getLesson(lessonId); if (!lesson) return views.renderCourse({ root, lesson: { id: lessonId, title: '课程未找到', description: '请返回学习中心选择课程。' } }); return views.renderCourse({ root, lesson, progress: controllers.learning.getProgress(lessonId), onStartQuiz: () => router.navigate('quiz', lessonId), onStartExperiment: id => router.navigate('experiment', id), onComplete: () => { controllers.learning.markComplete(lessonId); renderRoute(route); }, onBack: () => router.navigate('course') }); }
+    if (route.page === 'course') {
+      const lessonId = route.params[0] || firstIncompleteLesson(data) || CANONICAL_GOLDEN_LESSON;
+      const lesson = await controllers.learning.getLesson(lessonId);
+      if (!lesson) return views.renderCourse({ root, lesson: { id: lessonId, title: '课程未找到', description: '请返回学习中心选择课程。' } });
+      const guidedLearning = await contentService.getGuidedLearning(lesson.id || lessonId);
+      return views.renderCourse({ root, lesson, guidedLearning, progress: controllers.learning.getProgress(lessonId), onStartQuiz: () => router.navigate('quiz', lessonId), onStartExperiment: id => router.navigate('experiment', id), onComplete: () => { controllers.learning.markComplete(lessonId); renderRoute(route); }, onBack: () => router.navigate('course') });
+    }
     if (route.page === 'lab' && !route.params.length) return renderLabPortal({ root, onHome: () => router.navigate('home') });
     if (route.page === 'knowledge-map') return renderKnowledgePortal({ root, onHome: () => router.navigate('home'), nodes: await contentService.getKnowledgeGraphViewModel().then(model => model?.nodes || []).catch(() => []) });
     if (route.page === 'assessment') return renderAssessmentPortal({ root, onHome: () => router.navigate('home'), score: Math.round((createProgressProjection({ ...state.progress, mastery: masteryService.getState() }).masteryScore || 0) * 100), weakPoints: state.learning?.diagnosis?.weakPoints || [] });
