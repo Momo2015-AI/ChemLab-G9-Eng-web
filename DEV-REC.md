@@ -646,7 +646,7 @@ The immediate implementation priority is Phase 0 followed by Phase 1. Do not add
 
 ### Commit
 
-The repair plan is recorded in the preceding documentation commit; the exact commit reference is added by the follow-up publication record after the commit hash is final.
+The repair plan was published in commit `d5d144c1c4cc9d0e8c391ce42e6e3423f9bae6e2`.
 
 ### Next action
 
