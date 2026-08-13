@@ -683,3 +683,38 @@ P1 work remains intentionally out of this change: the top-level Assessment Cente
 ### Next action
 
 Push the P0 implementation and this development-log record to `origin/main`, then begin P1 portal integration and lesson-state alignment.
+
+## 2026-08-13 — P1 page, lesson-state, and release-alignment repair
+
+### Scope completed
+
+1. Added versioned progress migration to schema `2`, preserving legacy `chemlab_v16` data while moving current learning records into `state.learning.lessons[lessonId]`.
+2. Added a lesson state machine with persisted phases for guided learning, experiment, practice, diagnosis, remediation, recheck, mastery, and completion.
+3. Persisted guided-learning check evidence by lesson and step, including attempts, correctness, hint usage, and completion time.
+4. Persisted experiment sessions and lesson context so refresh/return can resume the same experiment; canonical `record` fields are now accepted by experiment validation.
+5. Converted Assessment Center into a task inbox for real practice, remediation, and mastery routes, and converted Virtual Lab into a canonical experiment catalog and launcher.
+6. Made course cards and course pages display lesson-scoped phase/release status and gate practice, mastery, and completion actions according to the same state source.
+7. Added explicit release policy: review content is available for preview/evidence collection but cannot be marked formally complete; unavailable content is blocked from runtime actions.
+8. Updated lesson content auditing to scan canonical `content/lessons` files and report release status instead of scanning the removed legacy lesson directory.
+
+### Verification
+
+- `npm test`: **83 passed, 0 failed**, including new P1 migration/state/release contract tests.
+- `node scripts/runtime-audit.mjs`: **passed**.
+- `npm run audit:content`: **passed; 0 errors, 0 warnings**. Two canonical lessons are scanned and both remain explicitly `review`; the question bank remains intentionally `RESET_PENDING_SOURCE_DOCUMENTS`.
+- JavaScript syntax checks for changed application, course, assessment, and lab modules: **passed**.
+- `git diff --check`: **passed**.
+- Static smoke check: `index.html`, Lesson 01 JSON, and Lesson 01 experiment JSON each returned HTTP `200` from the local server.
+- The attempted headless browser adapter could not load its bundled module export in this environment; no code change was based on that failure.
+
+### Commit
+
+The P1 implementation was committed as `f25b79353f5bb7fdc4e4cf9cb9a7413cbe3676ed` (`fix: complete P1 learning portals and lesson state`).
+
+### Scope boundary
+
+P2 remains: composite mastery gates beyond score threshold, full upper/lower textbook content filtering, knowledge-graph action navigation, and source-document-driven promotion from review/reset to formal release.
+
+### Next action
+
+Push the P1 implementation and this development-log record to `origin/main`, then begin P2 mastery-policy and content-release evidence alignment.
