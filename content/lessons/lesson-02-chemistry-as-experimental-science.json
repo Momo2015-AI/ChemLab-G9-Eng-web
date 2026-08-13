@@ -1,0 +1,27 @@
+{
+  "id":"lesson-02-chemistry-as-experimental-science",
+  "sequenceNumber":2,
+  "day":"02",
+  "title":"化学是一门以实验为基础的科学",
+  "module":"unit-01-intro-chemistry",
+  "duration":"45 分钟",
+  "description":"通过观察、实验、记录和证据分析建立科学探究的基本方法。",
+  "status":"review",
+  "learningObjectives":["区分观察到的现象与基于证据形成的解释。","理解控制变量、公平比较和重复实验的基本意义。","能够根据真实记录评价证据是否支持结论。"],
+  "knowledgePoints":["scientific-inquiry","observation-inference","control-variables","evidence-reasoning","data-integrity"],
+  "prerequisites":["lesson-01-material-changes-properties"],
+  "experiments":[],
+  "questions":[],
+  "diagnosticQuestions":[],
+  "misconceptions":["M02-observation-inference","M02-control-variable","M02-data-integrity","M02-evidence-logic"],
+  "sections":[
+    {"title":"问题与假设","body":["从可检验的问题开始，再提出能够通过观察或实验检验的假设。"]},
+    {"title":"观察与记录","body":["先客观记录直接观察到的现象，再进行解释。实验记录应保留真实数据。"]},
+    {"title":"公平比较","body":["研究一个因素的影响时，只改变研究变量，尽量保持其他主要条件一致。"]},
+    {"title":"证据与结论","body":["结论必须与证据存在清晰联系；结果不符合预测时，应保留数据并检查条件、操作和假设。"]},
+    {"title":"掌握检查","body":["完成练习、诊断、补救和陌生题检测。达到19/20（95%）且通过Transfer后，才视为本课掌握。"]}
+  ],
+  "summary":"本课建立“问题—假设—方案—观察/数据—证据—结论—反思”的科学探究框架。",
+  "provenance":{"status":"review","basis":"project curriculum-development standard; Grade 9 chemistry introductory scope","note":"Final source and pedagogical audit is required before publication."},
+  "review":{"curriculum":"review","scientific":"review","ageSuitability":"review","itemQuality":"review","knowledgeLinks":"review","blockingIssues":["source-document verification pending","assessment integration pending","final runtime verification pending"]}
+}
