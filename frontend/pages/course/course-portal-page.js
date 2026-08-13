@@ -1,18 +1,45 @@
-export function renderCoursePortal({ root, lessons = [], onLesson = id => { window.location.hash = `course/${id}` }, onHome = () => { window.location.hash = 'home'; } } = {}) {
+const GOLDEN_LESSON_ID = 'lesson-01-material-changes-properties';
+
+const UPPER_UNITS = [
+  { id: 'unit-01-intro-chemistry', number: '01', title: '走进化学世界', description: '物质的变化、性质与化学实验基础', lessonIds: ['lesson-01-material-changes-properties', 'lesson-02-chemistry-as-experimental-science'] },
+  { id: 'unit-02-air', number: '02', title: '我们周围的空气', description: '空气组成、氧气与相关实验', lessonIds: [] },
+  { id: 'unit-03-matter-structure', number: '03', title: '物质构成的奥秘', description: '分子、原子、离子与元素', lessonIds: [] },
+  { id: 'unit-04-water', number: '04', title: '自然界的水', description: '水的组成、净化与爱护', lessonIds: [] },
+  { id: 'unit-05-equations', number: '05', title: '化学方程式', description: '质量守恒、方程式与计算', lessonIds: [] },
+  { id: 'unit-06-carbon-oxides', number: '06', title: '碳和碳的氧化物', description: '碳单质、二氧化碳与一氧化碳', lessonIds: [] },
+  { id: 'unit-07-fuel', number: '07', title: '燃料及其利用', description: '燃料、能源与环境', lessonIds: [] },
+];
+
+const LOWER_UNITS = [
+  { id: 'unit-08-metals', number: '08', title: '金属和金属材料', description: '金属性质、活动性与资源利用', lessonIds: [] },
+  { id: 'unit-09-solutions', number: '09', title: '溶液', description: '溶解、溶液组成与浓度', lessonIds: [] },
+  { id: 'unit-10-acids-bases', number: '10', title: '酸和碱', description: '酸、碱、pH与中和', lessonIds: [] },
+  { id: 'unit-11-salts-fertilizers', number: '11', title: '盐 化肥', description: '常见盐、化肥与相关实验', lessonIds: [] },
+  { id: 'unit-12-life', number: '12', title: '化学与生活', description: '营养物质、材料与健康生活', lessonIds: [] },
+];
+
+export function renderCoursePortal({ root, lessons = [], term = 'upper', onLesson = id => { window.location.hash = `course/${id}` }, onHome = () => { window.location.hash = 'home'; } } = {}) {
   if (!root) return;
-  const golden = lessons.find(lesson => lesson.canonicalId === 'lesson-01-material-changes-properties') || { canonicalId: 'lesson-01-material-changes-properties', title: '物质的变化和性质', description: '从现象、性质到证据推理' };
+  const units = term === 'lower' ? LOWER_UNITS : UPPER_UNITS;
+  const canonicalLessons = lessons.filter(lesson => lesson?.canonicalId || lesson?.id).map(lesson => ({ ...lesson, id: lesson.canonicalId || lesson.id }));
+  const byId = new Map(canonicalLessons.map(lesson => [lesson.id, lesson]));
+  const golden = byId.get(GOLDEN_LESSON_ID) || { id: GOLDEN_LESSON_ID, title: '物质的变化和性质', description: '从观察现象到证据推理' };
+
   root.innerHTML = `<section class="portal-page">
-    <div class="portal-hero"><div><div class="portal-eyebrow">COURSE CENTER · GOLDEN LESSON</div><h1 class="portal-title">九年级化学课程</h1><p class="portal-subtitle">按照“课程 → 知识 → 实验 → 训练 → 掌握”的学习路径组织全部课程。</p></div><div class="portal-actions"><button class="portal-btn" data-home>⌂ 首页</button></div></div>
+    <div class="portal-hero"><div><div class="portal-eyebrow">COURSE CENTER · ${term === 'lower' ? '下册' : '上册'}</div><h1 class="portal-title">九年级化学课程</h1><p class="portal-subtitle">按教材单元 → 课题 → 学习流程组织课程；未完成审计的旧内容不会出现在学习入口。</p></div><div class="portal-actions"><button class="portal-btn" data-home>⌂ 首页</button></div></div>
     <div class="portal-grid">
       <article class="portal-card full"><h2>第一课 · Golden Lesson 01</h2><p>${escapeHtml(golden.title)}</p><p class="portal-muted">${escapeHtml(golden.description)}</p><span class="portal-chip good">95% Mastery</span><span class="portal-chip">Unseen</span><span class="portal-chip">Transfer</span><div><button class="portal-btn" data-golden>开始第一课</button></div></article>
-      <article class="portal-card full"><h2>课程进度</h2><p class="portal-muted">选择一个学习单元继续。</p><div class="portal-progress"><span style="width:72%"></span></div><span class="portal-chip good">学习中</span><span class="portal-chip">九年级</span></article>
-      <article class="portal-card wide"><h2>学习单元</h2><div class="portal-list">${lessons.length ? lessons.map((l,i)=>`<button data-lesson="${escapeHtml(l.canonicalId || l.day || l.id || String(i+1).padStart(2,'0'))}"><strong>${escapeHtml(l.title || `课程 ${i+1}`)}</strong><br><span class="portal-muted">${escapeHtml(l.description || '知识点 · 实验 · 训练')}</span></button>`).join('') : '<p class="portal-muted">课程内容正在加载。</p>'}</div></article>
-      <article class="portal-card"><h3>学习路径</h3><p class="portal-muted">每个单元完成后进入实验和针对性训练。</p><span class="portal-chip">Knowledge</span><span class="portal-chip">Lab</span><span class="portal-chip">Practice</span></article>
+      <article class="portal-card full"><h2>学习流程</h2><div class="portal-list flow-list"><div><strong>01 学习理解</strong><span>概念、现象、模型</span></div><div><strong>02 实验探究</strong><span>观察与证据</span></div><div><strong>03 基础练习</strong><span>理解 → 应用</span></div><div><strong>04 诊断与补救</strong><span>错误原因 → 再学习</span></div><div><strong>05 Unseen Mastery</strong><span>95% 掌握门槛</span></div><div><strong>06 Transfer</strong><span>陌生情境迁移</span></div></div></article>
+      <article class="portal-card full"><h2>学习单元 · ${term === 'lower' ? '下册' : '上册'}</h2><div class="unit-grid">${units.map(unit => {
+        const unitLessons = unit.lessonIds.map(id => byId.get(id)).filter(Boolean);
+        const ready = unitLessons.length > 0;
+        return `<article class="unit-card ${ready ? 'ready' : 'planned'}"><div class="unit-number">${unit.number}</div><div class="unit-body"><h3>${escapeHtml(unit.title)}</h3><p>${escapeHtml(unit.description)}</p>${ready ? `<div class="unit-lessons">${unitLessons.map(lesson => `<button class="unit-lesson" data-lesson="${escapeHtml(lesson.id)}"><span>${escapeHtml(String(lesson.day || '').padStart(2,'0'))}</span><strong>${escapeHtml(lesson.title)}</strong><small>${lesson.completed ? '已完成' : '可学习'}</small></button>`).join('')}</div>` : '<span class="portal-chip">内容建设中</span>'}</div></article>`;
+      }).join('')}</div></article>
     </div>
   </section>`;
   root.querySelector('[data-home]')?.addEventListener('click', onHome);
-  root.querySelector('[data-golden]')?.addEventListener('click', () => onLesson('lesson-01-material-changes-properties'));
-  root.querySelectorAll('[data-lesson]').forEach(b => b.addEventListener('click', () => onLesson(b.dataset.lesson)));
+  root.querySelector('[data-golden]')?.addEventListener('click', () => onLesson(GOLDEN_LESSON_ID));
+  root.querySelectorAll('[data-lesson]').forEach(button => button.addEventListener('click', () => onLesson(button.dataset.lesson)));
 }
 
 function escapeHtml(value) {
