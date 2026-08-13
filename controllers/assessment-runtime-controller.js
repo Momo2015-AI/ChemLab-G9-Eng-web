@@ -56,7 +56,7 @@ export class AssessmentRuntimeController {
   }
 
   hasSession(lessonId, mode) {
-    return Boolean(this.session && this.session.lessonId === lessonId && this.session.mode === mode && !this.session.completed);
+    return Boolean(this.session && this.session.lessonId === lessonId && this.session.mode === mode);
   }
 
   answer(selectedIndex) {
@@ -79,6 +79,9 @@ export class AssessmentRuntimeController {
     const correct = this.session.answers.filter(a => a.correct).length;
     const total = this.session.answers.length;
     const score = total ? correct / total : 0;
+    this.state.progress ||= {};
+    this.state.progress.history ||= [];
+    this.state.progress.history.push({ attemptId: this.session.attemptId, lessonId: this.session.lessonId, mode: this.session.mode, score, correct, total, completedAt: new Date().toISOString() });
     if (this.session.mode === 'practice') this.finishPractice(correct, total, score);
     if (this.session.mode === 'recheck') this.finishRecheck(correct, total, score);
     if (this.session.mode === 'mastery') this.finishMastery(correct, total, score);
@@ -111,7 +114,6 @@ export class AssessmentRuntimeController {
     this.state.learning ||= {};
     this.state.learning.mastery ||= {};
     this.state.learning.mastery[lessonId] = { ...existing, lessonId, attemptId: this.session.attemptId, status: passed ? 'passed' : 'needs-remediation', correct, total, score, threshold, completedAt: new Date().toISOString() };
-    this.state.progress ||= {};
     this.state.progress.lessonMastery ||= {};
     this.state.progress.lessonMastery[lessonId] = passed;
     if (passed) this.state.learning.remediation = null;
