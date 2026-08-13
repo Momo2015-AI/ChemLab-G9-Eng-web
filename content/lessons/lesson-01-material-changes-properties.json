@@ -7,25 +7,29 @@
   "duration":"45 分钟",
   "description":"从物质变化、现象与性质出发，建立化学学习的基本观察与证据意识。",
   "status":"review",
-  "learningObjectives":[
-    "区分物理变化与化学变化，并用可观察证据说明判断依据。",
-    "区分物理性质与化学性质，理解性质需要在特定条件下通过实验或事实认识。",
-    "建立“观察现象—基于证据解释—形成结论”的基本化学学习流程。"
-  ],
+  "learningObjectives":["区分物理变化与化学变化，并用可观察证据说明判断依据。","区分物理性质与化学性质，理解性质需要在特定条件下通过实验或事实认识。","建立“观察现象—基于证据解释—形成结论”的基本化学学习流程。"],
   "knowledgePoints":["matter-change","physical-change","chemical-change","physical-property","chemical-property","observation-inference"],
   "prerequisites":[],
-  "experiments":[],
-  "questions":[],
-  "diagnosticQuestions":[],
-  "misconceptions":["observation-inference","change-vs-property","physical-vs-chemical"],
-  "sections":[
-    {"title":"学习目标","body":["先学会区分“发生了什么变化”和“物质具有什么性质”。","任何判断都尽量回到可观察的事实和证据。"]},
-    {"title":"观察与变化","body":["物质发生的变化可以表现为状态、形状等改变，也可能产生新的物质。判断化学变化不能只看外观变化，而要寻找是否有新物质生成的证据。"]},
-    {"title":"物理性质与化学性质","body":["不需要发生化学变化就能表现出来的性质属于物理性质；物质在化学变化中表现出来的性质属于化学性质。性质与变化是相关但不同的概念。"]},
-    {"title":"证据推理","body":["先客观记录现象，再说明依据和结论。不能把“看到的现象”直接写成未经论证的结论。"]},
-    {"title":"学习检查","body":["完成配套练习后，用陌生情境检查自己能否根据证据判断变化类型，并解释为什么。达到95% Mastery前，不进入下一课。"]}
+  "experiments":[{"id":"L01-E01","title":"观察几种常见变化","purpose":"通过可观察现象建立“现象—证据—结论”意识。","status":"planned","note":"上线前需完成安全、器材与教材一致性审查。"}],
+  "questions":[
+    {"id":"L01-Q01","type":"concept","question":"冰块融化成水，属于什么？","options":["物理变化","化学变化","化学性质","无法判断"],"answer":0,"explanation":"状态发生改变，没有证据表明生成新物质。"},
+    {"id":"L01-Q02","type":"concept","question":"下列哪项是判断化学变化的核心依据？","options":["颜色改变","产生气泡","生成新的物质","温度改变"],"answer":2,"explanation":"化学变化的定义性特征是有新物质生成。"},
+    {"id":"L01-Q03","type":"classification","question":"“氧气是无色气体”属于什么？","options":["物理变化","化学变化","物理性质","化学性质"],"answer":2,"explanation":"颜色和状态属于不需要发生化学变化即可表现的性质。"},
+    {"id":"L01-Q04","type":"classification","question":"“铁在潮湿空气中容易生锈”属于什么？","options":["物理变化","化学变化","物理性质","化学性质"],"answer":3,"explanation":"它描述铁发生化学变化的能力或倾向，属于化学性质。"},
+    {"id":"L01-Q05","type":"reasoning","question":"水沸腾时出现气泡，为什么不能仅凭气泡判断发生化学变化？","options":["气泡不是现象","沸腾属于物理变化，也会产生气泡","化学变化不会产生气泡","水沸腾一定生成新物质"],"answer":1,"explanation":"单一现象只能提供线索，最终仍要判断是否生成新物质。"},
+    {"id":"L01-Q06","type":"reasoning","question":"面对陌生变化，较科学的判断顺序是什么？","options":["先下结论再找现象","现象→证据→判断→理由","看到气泡就判化学变化","看到颜色变化就判化学变化"],"answer":1,"explanation":"化学学习强调基于证据形成结论。"},
+    {"id":"L01-Q07","type":"transfer","question":"一块蜡烛受热变成液态，冷却后又凝固。最合理的判断是？","options":["一定是化学变化","通常属于物理变化，但最终依据仍是是否生成新物质","一定生成新物质","属于化学性质"],"answer":1,"explanation":"状态改变且可逆通常属于物理变化，但核心判断仍是有无新物质。"},
+    {"id":"L01-Q08","type":"transfer","question":"某实验中出现颜色改变。要判断是否为化学变化，还需要什么？","options":["只看颜色是否鲜艳","判断是否有新物质生成的证据","只看是否放热","只看是否有气泡"],"answer":1,"explanation":"颜色改变不是充分条件，需要结合证据判断是否生成新物质。"}
   ],
+  "diagnosticQuestions":[
+    {"id":"L01-D01","knowledgePoint":"physical-vs-chemical-change","question":"你能否用“是否生成新物质”解释物理变化与化学变化的区别？","answer":true,"remediationStep":"L01-S02-L01-S04"},
+    {"id":"L01-D02","knowledgePoint":"change-vs-property","question":"你能区分“发生了什么”与“物质具有什么特征”吗？","answer":true,"remediationStep":"L01-S05-L01-S07"},
+    {"id":"L01-D03","knowledgePoint":"observation-inference","question":"你能把观察到的现象和依据、结论分开表达吗？","answer":true,"remediationStep":"L01-S01-L01-S04"}
+  ],
+  "mastery":{"threshold":0.95,"questionCount":10,"minCorrect":10,"mode":"unseen-transfer","description":"最终掌握验证必须使用学生在课程正文和基础练习中未直接见过的变式或陌生情境；达到95%才标记本课掌握。","fallback":"diagnosis"},
+  "misconceptions":["observation-inference","change-vs-property","physical-vs-chemical"],
+  "sections":[{"title":"学习目标","body":["先学会区分“发生了什么变化”和“物质具有什么性质”。","任何判断都尽量回到可观察的事实和证据。"]},{"title":"观察与变化","body":["物质发生的变化可以表现为状态、形状等改变，也可能产生新的物质。判断化学变化不能只看外观变化，而要寻找是否有新物质生成的证据。"]},{"title":"物理性质与化学性质","body":["不需要发生化学变化就能表现出来的性质属于物理性质；物质在化学变化中表现出来的性质属于化学性质。性质与变化是相关但不同的概念。"]},{"title":"证据推理","body":["先客观记录现象，再说明依据和结论。不能把“看到的现象”直接写成未经论证的结论。"]},{"title":"学习检查","body":["完成配套练习后，用陌生情境检查自己能否根据证据判断变化类型，并解释为什么。达到95% Mastery前，不进入下一课。"]}],
   "summary":"本课建立九年级化学学习的第一套基本框架：变化、性质、现象、证据与结论。",
-  "provenance":{"status":"review","basis":"project curriculum-development standard; Grade 9 chemistry introductory scope","note":"Final source and pedagogical audit is required before publication."},
-  "review":{"curriculum":"review","scientific":"review","ageSuitability":"review","itemQuality":"pending","knowledgeLinks":"pending","blockingIssues":["source-document verification pending","assessment integration pending","final runtime verification pending"]}
+  "provenance":{"status":"review","basis":"project curriculum-development standard; Grade 9 chemistry introductory scope","note":"Final textbook/source and pedagogical audit is required before publication."},
+  "review":{"curriculum":"review","scientific":"review","ageSuitability":"review","itemQuality":"review","knowledgeLinks":"review","blockingIssues":["source-document verification pending","experiment safety audit pending","final runtime verification pending"]}
 }
