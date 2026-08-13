@@ -7,9 +7,23 @@ function normalizeKnowledgeGraph(graph = {}) { const relations = (graph.relation
 class ContentService {
   constructor(loader = new ContentLoader(), knowledgeEngineFactory = graph => new KnowledgeEngine(graph)) { this.loader = loader; this.knowledgeEngineFactory = knowledgeEngineFactory; this.data = null; this.knowledgeEngine = null; }
   async load() { if (!this.data) { this.data = await this.loader.loadAll(); this.data.knowledgeGraph = normalizeKnowledgeGraph(this.data.knowledgeGraph); this.data.questionById = new Map(this.data.questions.map(q => [q.id, q])); for (const question of this.data.questions) { const knowledge = normalizeKnowledgeIds(question); const commonMistake = question.commonMistake || question.mistake || null; const misconceptionIds = Array.isArray(question.misconceptionIds) ? question.misconceptionIds : []; const legacyErrors = Array.isArray(question.errors) ? question.errors : commonMistake ? [commonMistake] : []; registerQuestion(question.id, { knowledge, errors: [...new Set([...legacyErrors, ...misconceptionIds])] }); } this.knowledgeEngine = this.knowledgeEngineFactory(this.data.knowledgeGraph); } return this.data; }
-  async getLesson(dayId) { const data = await this.load(); const lesson = await this.loader.loadLesson(dayId).catch(() => null); if (lesson) { data.dayById.set(dayId, lesson); const index = data.days.findIndex(day => day.day === dayId || day.canonicalId === dayId); if (index >= 0) data.days[index] = lesson; } return lesson || data.dayById.get(dayId) || null; }
+  async getLesson(dayId) {
+    const data = await this.load();
+    const lesson = await this.loader.loadLesson(dayId).catch(() => null);
+    if (lesson) {
+      data.dayById.set(dayId, lesson);
+      const index = data.days.findIndex(day => day.day === dayId || day.canonicalId === dayId);
+      if (index >= 0) data.days[index] = lesson;
+      this.registerLessonQuestions(data, lesson);
+    }
+    return lesson || data.dayById.get(dayId) || null;
+  }
   async getGuidedLearning(lessonId) { return this.loader.loadGuidedLearning(lessonId).catch(() => null); }
-  async getMastery(lessonId) { return this.loader.loadMastery(lessonId).catch(() => null); }
+  async getMastery(lessonId) {
+    const mastery = await this.loader.loadMastery(lessonId).catch(() => null);
+    if (mastery?.questions) this.registerQuestions(this.data || await this.load(), mastery.questions);
+    return mastery;
+  }
   async getQuestion(questionId) { const data = await this.load(); return data.questionById.get(questionId) || null; }
   async getQuestionsByKnowledge(knowledgeId) { const data = await this.load(); return data.questions.filter(q => normalizeKnowledgeIds(q).includes(knowledgeId)); }
   async getKnowledgeGraph() { const data = await this.load(); return data.knowledgeGraph; }
@@ -22,6 +36,27 @@ class ContentService {
   async getCommonMistakes(id) { const engine = await this.getKnowledgeEngine(); return engine.commonMistakes(id); }
   async getExperiment(id) { return this.loader.loadExperiment(id); }
   async getKnowledgeContent(id) { return this.loader.loadKnowledgeContent(id); }
+
+  registerLessonQuestions(data, lesson) {
+    const questions = Array.isArray(lesson?.questions) ? lesson.questions : [];
+    this.registerQuestions(data, questions, lesson.knowledgePoints || []);
+  }
+
+  registerQuestions(data, questions, fallbackKnowledge = []) {
+    for (const rawQuestion of questions) {
+      if (!rawQuestion?.id) continue;
+      const question = {
+        ...rawQuestion,
+        knowledgeIds: normalizeKnowledgeIds(rawQuestion).length ? normalizeKnowledgeIds(rawQuestion) : fallbackKnowledge,
+      };
+      data.questionById.set(question.id, question);
+      if (!data.questions.some(item => item.id === question.id)) data.questions.push(question);
+      const commonMistake = question.commonMistake || question.mistake || null;
+      const misconceptionIds = Array.isArray(question.misconceptionIds) ? question.misconceptionIds : [];
+      const legacyErrors = Array.isArray(question.errors) ? question.errors : commonMistake ? [commonMistake] : [];
+      registerQuestion(question.id, { knowledge: question.knowledgeIds, errors: [...new Set([...legacyErrors, ...misconceptionIds])] });
+    }
+  }
 }
 export const contentService = new ContentService();
 export default ContentService;

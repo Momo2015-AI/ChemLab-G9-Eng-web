@@ -66,7 +66,7 @@ test('assessment controller starts a targeted recheck and feeds new evidence int
 
   assert.equal(session.dayId, 'remediation-recheck');
   assert.equal(session.questions.length, 1);
-  assert.deepEqual(state.learning.recheck, { knowledgeIds: ['atom'], questionCount: 1 });
+  assert.deepEqual(state.learning.recheck, { lessonId: 'remediation-recheck', knowledgeIds: ['atom'], status: 'in-progress', questionCount: 1 });
 
   const result = controller.answer(0);
   assert.equal(result.correct, true);

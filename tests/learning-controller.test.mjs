@@ -25,9 +25,10 @@ test('LearningController delegates lesson loading', async () => {
 
 test('LearningController marks completion and persists state', () => {
   const state = makeState();
+  state.learning.mastery = { 'day-03': { status: 'passed', score: 1, threshold: 0.95 } };
   const controller = new LearningController({ contentService: {}, state });
 
-  controller.markComplete('day-03');
+  assert.equal(controller.markComplete('day-03'), true);
 
   assert.equal(controller.getProgress('day-03'), true);
   assert.equal(state.progress.completed['day-03'], true);

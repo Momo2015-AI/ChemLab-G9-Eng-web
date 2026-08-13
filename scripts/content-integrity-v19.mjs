@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import { day01DiagnosticQuestions } from '../content/questions/day01-diagnostics.js';
+import { day01ProductionOverrides } from '../content/questions/day01-production-overrides.js';
 
 const root = process.cwd();
 const graphPath = path.join(root, 'content/knowledge/knowledge-graph.json');
 const questionPath = path.join(root, 'content/questions/question-bank.json');
+const lessonsPath = path.join(root, 'content/lessons');
 const report = { errors: [], warnings: [], stats: {} };
 
 function load(file) {
@@ -15,6 +18,44 @@ function load(file) {
 const graph = load(graphPath);
 const bank = load(questionPath);
 
+function normalizeLessonQuestion(question, lesson) {
+  if (!question?.id) return null;
+  const options = Array.isArray(question.options) ? question.options : [];
+  const answer = question.answer;
+  const knowledge = question.knowledge || question.knowledgeIds || question.knowledgePoints || question.knowledgePoint || lesson.knowledgePoints || [];
+  return {
+    ...question,
+    prompt: question.prompt || question.question || question.q,
+    answer,
+    knowledge: Array.isArray(knowledge) ? knowledge : [knowledge].filter(Boolean),
+    options,
+    explanation: question.explanation || '',
+  };
+}
+
+function loadRuntimeQuestions() {
+  if (!fs.existsSync(lessonsPath)) return [];
+  const questions = [];
+  for (const name of fs.readdirSync(lessonsPath).filter(file => file.endsWith('.json'))) {
+    const lesson = load(path.join(lessonsPath, name));
+    if (!lesson) continue;
+    for (const question of lesson.questions || []) {
+      const normalized = normalizeLessonQuestion(question, lesson);
+      if (normalized) questions.push(normalized);
+    }
+    const masteryFile = path.join(lessonsPath, name.replace(/\.json$/, '-mastery.json'));
+    const mastery = load(masteryFile);
+    for (const question of mastery?.mastery?.questions || mastery?.questions || []) {
+      const normalized = normalizeLessonQuestion(question, lesson);
+      if (normalized) questions.push(normalized);
+    }
+  }
+  return questions;
+}
+
+const runtimeQuestions = loadRuntimeQuestions();
+runtimeQuestions.push(...day01ProductionOverrides, ...day01DiagnosticQuestions.filter(question => question.status !== 'archived'));
+
 // Content reset state: the legacy 320-question bank was intentionally removed.
 // The future canonical bank belongs under content/questions/ and is optional
 // until new source documents are supplied, reviewed, and generated into a bank.
@@ -22,9 +63,10 @@ if (!bank) {
   report.stats.sourceQuestions = 0;
   report.stats.sourceReady = 0;
   report.stats.sourceQuestionIds = 0;
-  report.stats.effectiveQuestions = 0;
-  report.stats.effectiveQuestionIds = 0;
+  report.stats.effectiveQuestions = runtimeQuestions.length;
+  report.stats.effectiveQuestionIds = new Set(runtimeQuestions.map(question => question.id)).size;
   report.stats.overrides = 0;
+  report.stats.runtimeQuestionSources = 'canonical lesson/mastery content plus runtime overrides/diagnostics';
   report.stats.questionBankState = 'RESET_PENDING_SOURCE_DOCUMENTS';
 } else if (!Array.isArray(bank.questions)) {
   report.errors.push('content/questions/question-bank.json exists but questions[] is missing');
@@ -60,6 +102,22 @@ if (!bank) {
   report.stats.overrides = 0;
   if (Number.isInteger(bank.total) && bank.total !== bank.questions.length) {
     report.errors.push(`question-bank total=${bank.total} but actual=${bank.questions.length}`);
+  }
+}
+
+if (runtimeQuestions.length) {
+  const ids = new Set();
+  for (const question of runtimeQuestions) {
+    if (ids.has(question.id)) report.errors.push(`Duplicate effective runtime question id: ${question.id}`);
+    ids.add(question.id);
+    if (!question.prompt?.trim()) report.errors.push(`${question.id}: effective runtime question has no prompt`);
+    if (question.answer === undefined || question.answer === null || question.answer === '') report.errors.push(`${question.id}: effective runtime question has no answer`);
+    if (!question.explanation?.trim() && question.type !== 'constructed') report.errors.push(`${question.id}: effective runtime question has no explanation`);
+    if (!question.knowledge.length) report.errors.push(`${question.id}: effective runtime question has no knowledge links`);
+    if (Array.isArray(question.options) && question.options.length > 0 && question.answer !== undefined) {
+      const index = Number.isInteger(question.answer) ? question.answer : Number(String(question.answer).toUpperCase().charCodeAt(0) - 65);
+      if (!Number.isInteger(index) || index < 0 || index >= question.options.length) report.errors.push(`${question.id}: effective runtime answer does not resolve to options`);
+    }
   }
 }
 

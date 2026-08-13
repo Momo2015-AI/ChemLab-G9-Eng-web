@@ -1,19 +1,27 @@
-/** V1.10 Assessment Controller: practice, diagnosis, remediation recheck, and mastery sessions. */
-import { diagnoseAssessment } from '../core/diagnosis/diagnosis-engine.js';
-export class AssessmentController {
-  constructor({ assessment, contentService, state, masteryService = null, learningController = null }) { this.assessment = assessment; this.contentService = contentService; this.state = state; this.masteryService = masteryService; this.learningController = learningController; this.session = null; if (this.masteryService) this.masteryService.hydrate(this.state.progress?.mastery || {}); }
-  async start(dayId) { const day = await this.contentService.getLesson(dayId); if (!day) return null; const data = await this.contentService.load(); const questions = (day.questions || []).map(id => data.questionById.get(id) || (typeof id === 'object' ? id : null)).filter(Boolean); return this.createSession(dayId, questions, 'practice'); }
-  async startMastery(lessonId) { const mastery = await this.contentService.getMastery(lessonId); const questions = Array.isArray(mastery?.questions) ? mastery.questions.map(question => ({ ...question, type: question.type || 'choice', masteryWeight: Number.isFinite(question.masteryWeight) ? question.masteryWeight : 1, knowledgeIds: question.knowledgeIds || question.knowledgePoint || question.knowledgePoints || [] })) : []; if (!questions.length) return null; this.state.learning ||= {}; this.state.learning.mastery ||= {}; this.state.learning.mastery[lessonId] = { status: 'in-progress', questionCount: questions.length, threshold: Number(mastery.threshold || .95) }; this.state.save?.(); return this.createSession(`mastery:${lessonId}`, questions, 'mastery'); }
-  async startTargeted(knowledgeIds, limit = 5) { const ids = Array.isArray(knowledgeIds) ? knowledgeIds.filter(Boolean) : [knowledgeIds].filter(Boolean); if (!ids.length) return null; const data = await this.contentService.load(); const wanted = new Set(ids); const questions = data.questions.filter(question => { const points = question.knowledgeIds || question.knowledgePoints || question.knowledgeId || question.knowledge || []; const values = Array.isArray(points) ? points : [points]; return values.some(id => wanted.has(id)); }).slice(0, limit); if (!questions.length) return null; this.state.learning ||= {}; this.state.learning.recheck = { knowledgeIds: ids, questionCount: questions.length }; this.state.save?.(); return this.createSession('remediation-recheck', questions, 'recheck'); }
-  createSession(dayId, questions, mode = 'practice') { this.session = { dayId, questions, index: 0, answers: [], completed: questions.length === 0, mode }; this.state.currentQuiz = dayId; this.state.quizIndex = 0; this.state.quizAnswers = {}; return this.session; }
-  answer(optionIndex) { if (!this.session || this.session.completed) return null; const question = this.session.questions[this.session.index]; if (!question) return null; const answer = this.toDomainAnswer(question, optionIndex); const evaluationQuestion = this.withNormalizedAnswerKey(question); const result = this.assessment.evaluate(evaluationQuestion, answer); const diagnosis = diagnoseAssessment(question.id, result); this.session.answers.push({ questionId: question.id, selected: optionIndex, answer, ...result, diagnosis, question }); if (this.session.mode !== 'mastery') this.recordMasteryEvidence(question, result); this.recordDiagnosisEvidence(diagnosis, question, result); this.session.index += 1; this.session.completed = this.session.index >= this.session.questions.length; this.state.quizIndex = this.session.index; this.state.quizAnswers[question.id] = answer; if (this.session.completed) { if (this.session.mode === 'mastery') this.finalizeMastery(); this.state.save?.(); } return result; }
-  withNormalizedAnswerKey(question) { const normalized = { ...question }; const raw = question?.answer ?? question?.correctAnswer ?? question?.correctOption ?? question?.correct; if (raw !== undefined && raw !== null && raw !== '') normalized.answer = this.normalizeAnswerKey(raw); return normalized; }
-  normalizeAnswerKey(value) { if (typeof value === 'number' && Number.isInteger(value) && value >= 0 && value <= 25) return String.fromCharCode(65 + value); const text = String(value).trim().toUpperCase(); if (/^[A-Z]$/.test(text)) return text; if (/^\d+$/.test(text)) { const index = Number(text); return index >= 0 && index <= 25 ? String.fromCharCode(65 + index) : text; } return text; }
-  recordDiagnosisEvidence(diagnosis, question, result) { this.state.learning ||= {}; const previous = this.state.learning.diagnosis || {}; const errors = Array.isArray(previous.errors) ? previous.errors.slice() : []; const weakPoints = Array.isArray(previous.weakPoints) ? previous.weakPoints.slice() : []; if (diagnosis?.status === 'incorrect' && this.session?.mode !== 'mastery') { const knowledgeIds = this.getKnowledgeIds(question); const entry = { questionId: question?.id, knowledgeIds, mistake: diagnosis?.mistake || diagnosis?.type || '未分类错误', explanation: result?.explanation || '', at: new Date().toISOString() }; errors.push(entry); for (const id of knowledgeIds) if (!weakPoints.includes(id)) weakPoints.push(id); this.learningController?.getRemediationPlan(diagnosis); } else if (diagnosis?.status === 'correct' && this.session?.mode !== 'mastery') { this.state.learning.remediation = null; } this.state.learning.diagnosis = { ...previous, last: diagnosis, errors: errors.slice(-20), weakPoints }; this.state.save?.(); return diagnosis; }
-  finalizeMastery() { const session = this.session; const lessonId = String(session.dayId).replace(/^mastery:/, ''); const correct = session.answers.filter(a => a.correct).length; const total = session.answers.length; const score = total ? correct / total : 0; const mastery = this.state.learning?.mastery?.[lessonId] || {}; const threshold = Number(mastery.threshold || .95); const passed = score >= threshold; this.state.learning ||= {}; this.state.learning.mastery ||= {}; this.state.learning.mastery[lessonId] = { ...mastery, status: passed ? 'passed' : 'needs-remediation', score, correct, total, threshold, completedAt: new Date().toISOString() }; this.state.progress ||= {}; this.state.progress.lessonMastery ||= {}; this.state.progress.lessonMastery[lessonId] = passed; if (passed) this.state.learning.remediation = null; this.state.save?.(); return this.state.learning.mastery[lessonId]; }
-  recordMasteryEvidence(question, result) { if (!this.masteryService) return null; const knowledgeIds = this.getKnowledgeIds(question); const score = result?.correct ? 1 : 0; const weight = Number.isFinite(question?.masteryWeight) ? question.masteryWeight : 0.25; for (const knowledgeId of knowledgeIds) this.masteryService.recordEvidence(knowledgeId, score, weight); this.state.progress.mastery = this.masteryService.getState(); return this.state.progress.mastery; }
-  getKnowledgeIds(question) { const ids = question?.knowledgeIds || question?.knowledgePoints || question?.knowledgeId || question?.knowledge; if (Array.isArray(ids)) return ids.filter(Boolean); if (ids) return [ids]; return []; }
-  toDomainAnswer(question, optionIndex) { if (question.type !== 'choice') return optionIndex; return String.fromCharCode(65 + Number(optionIndex)); }
-  getScore() { const answers = this.session?.answers || []; if (!answers.length) return 0; return Math.round(answers.filter(a => a.correct).length / answers.length * 100); }
-  reset() { this.session = null; this.state.currentQuiz = null; this.state.quizIndex = 0; this.state.quizAnswers = {}; }
+/**
+ * Compatibility facade for the canonical assessment runtime.
+ * New production code must use AssessmentRuntimeController directly.
+ */
+import { AssessmentRuntimeController } from './assessment-runtime-controller.js';
+
+export class AssessmentController extends AssessmentRuntimeController {
+  async start(dayId) {
+    return this.startPractice(dayId);
+  }
+
+  async startTargeted(knowledgeIds, limit = 5) {
+    const session = await this.startRecheck('remediation-recheck', knowledgeIds, limit);
+    if (session) session.dayId = 'remediation-recheck';
+    return session;
+  }
+
+  async startMastery(lessonId) {
+    const session = await super.startMastery(lessonId);
+    if (session) session.dayId = `mastery:${lessonId}`;
+    return session;
+  }
+
+  createSession(dayId, questions, mode = 'practice') {
+    return this.startAttempt(dayId, questions.map(question => this.normalizeQuestion(question)), mode);
+  }
 }

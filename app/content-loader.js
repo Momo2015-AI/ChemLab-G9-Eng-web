@@ -23,7 +23,25 @@ class ContentLoader {
   async loadLesson(id) { if (!String(id).startsWith('lesson-')) { const manifestEntry = (await this.loadAll()).days.find(day => day.day === String(id) || day.canonicalId === String(id)); id = manifestEntry?.canonicalId || id; } if (!String(id).startsWith('lesson-')) return null; return this.fetchJSON(canonicalLessonUrl(id)); }
   async loadGuidedLearning(id) { if (!String(id).startsWith('lesson-')) return null; try { return await this.fetchJSON(guidedLearningUrl(id)); } catch { if (id === 'lesson-01-material-changes-properties') return this.fetchJSON(assetUrl('content/lessons/lesson-01-guided-learning.json')).catch(() => null); return null; } }
   async loadMastery(id) { if (!String(id).startsWith('lesson-')) return null; const data = await this.fetchJSON(masteryUrl(id)).catch(() => null); return data?.mastery || data || null; }
-  async loadExperiment(id) { return this.fetchJSON(assetUrl(`content/experiments/${id}.json`)).catch(() => null); }
+  async loadExperiment(id) {
+    const direct = await this.fetchJSON(assetUrl(`content/experiments/${id}.json`)).catch(() => null);
+    if (direct) return direct;
+    const lessons = Array.isArray(lessonManifest.lessons) ? lessonManifest.lessons : [];
+    for (const entry of lessons) {
+      const lesson = await this.fetchJSON(canonicalLessonUrl(entry.canonicalId)).catch(() => null);
+      const embedded = lesson?.experiments?.find(experiment => experiment?.id === id);
+      if (embedded) {
+        const resource = embedded.resourceRef || lesson.resourceRefs?.experiment;
+        const detail = resource ? await this.fetchJSON(assetUrl(resource)).catch(() => null) : null;
+        if (detail?.experiments) {
+          const resolved = detail.experiments.find(experiment => experiment?.id === id) || embedded;
+          return { ...resolved, lessonId: lesson.id, knowledgeIds: resolved.knowledgeIds || resolved.knowledge || lesson.knowledgePoints || [] };
+        }
+        return { ...(detail || embedded), lessonId: lesson.id, knowledgeIds: (detail || embedded).knowledgeIds || (detail || embedded).knowledge || lesson.knowledgePoints || [] };
+      }
+    }
+    return null;
+  }
   async loadKnowledgeContent(id) { return this.fetchJSON(assetUrl(`content/knowledge/${id}.json`)).catch(() => null); }
 }
 export const contentLoader = new ContentLoader();

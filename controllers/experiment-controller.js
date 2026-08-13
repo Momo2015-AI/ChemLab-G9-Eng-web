@@ -22,6 +22,12 @@ export class ExperimentController {
     return { experiment, session: this.session };
   }
 
+  register(experiment) {
+    if (!experiment?.id || typeof this.engine.register !== 'function') return false;
+    this.engine.register(experiment.id, experiment);
+    return true;
+  }
+
   next() {
     if (!this.session) return null;
     this.session = this.engine.next(this.session);
@@ -66,6 +72,7 @@ export class ExperimentController {
       for (const knowledgeId of knowledgeIds) {
         this.masteryService.recordEvidence(knowledgeId, validation.valid ? 1 : 0, 0.2);
       }
+      this.state.progress ||= {};
       if (typeof this.masteryService.getState === 'function') {
         this.state.progress.mastery = this.masteryService.getState();
       }
