@@ -1,8 +1,4 @@
-/**
- * ChemLab-G9 V1.7 Application State
- * Owns in-memory application state; persistence is delegated to ProgressService.
- */
-
+/** ChemLab-G9 application state. Runtime learning state is persisted with progress. */
 import { ProgressService } from './progress-service.js';
 
 const STORAGE_KEY = 'chemlab_v16';
@@ -16,16 +12,23 @@ const DEFAULT_STATE = Object.freeze({
   currentExperiment: null,
   currentExperimentSession: null,
   progress: {},
+  learning: {},
 });
 
 function cloneDefaultState() {
-  return { ...DEFAULT_STATE, quizAnswers: {}, progress: {} };
+  return { ...DEFAULT_STATE, quizAnswers: {}, progress: {}, learning: {} };
 }
 
 export function createAppState({ progressService = new ProgressService({ key: STORAGE_KEY }) } = {}) {
   const state = cloneDefaultState();
   state.progress = progressService.load();
-  state.save = () => progressService.save(state.progress);
+  state.learning = state.progress?.learning && typeof state.progress.learning === 'object'
+    ? state.progress.learning
+    : {};
+  state.save = () => progressService.save({
+    ...state.progress,
+    learning: state.learning,
+  });
   state.progressService = progressService;
   return state;
 }
