@@ -10,6 +10,7 @@ const APP_ROOT = new URL('../', import.meta.url);
 const assetUrl = path => new URL(path, APP_ROOT).href;
 const canonicalLessonUrl = id => assetUrl(`content/lessons/${id}.json`);
 const guidedLearningUrl = id => assetUrl(`content/lessons/${id}-guided-learning.json`);
+const legacyGuidedLearningUrl = id => assetUrl(`content/lessons/${id.replace(/^lesson-01-/, 'lesson-01-')}-guided-learning.json`);
 const ENDPOINTS = {
   questionBank: assetUrl('content/questions/question-bank.json'),
   knowledgeGraph: assetUrl('content/knowledge/knowledge-graph.json'),
@@ -69,7 +70,13 @@ class ContentLoader {
   }
   async loadGuidedLearning(id) {
     if (!String(id).startsWith('lesson-')) return null;
-    return this.fetchJSON(guidedLearningUrl(id));
+    try { return await this.fetchJSON(guidedLearningUrl(id)); }
+    catch (error) {
+      // Backward-compatible bridge for the first Lesson 01 asset name. The runtime
+      // remains canonical; this fallback exists only until the asset is renamed.
+      if (id === 'lesson-01-material-changes-properties') return this.fetchJSON(assetUrl('content/lessons/lesson-01-guided-learning.json')).catch(() => null);
+      return null;
+    }
   }
   async loadExperiment(id) { return this.fetchJSON(assetUrl(`content/experiments/${id}.json`)).catch(() => null); }
   async loadKnowledgeContent(id) { return this.fetchJSON(assetUrl(`content/knowledge/${id}.json`)).catch(() => null); }
