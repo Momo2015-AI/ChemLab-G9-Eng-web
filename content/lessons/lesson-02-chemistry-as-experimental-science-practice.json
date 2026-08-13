@@ -1,0 +1,150 @@
+{
+  "lessonId": "lesson-02-chemistry-as-experimental-science",
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "L02-P01",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "observation-inference",
+      "question": "下列属于观察记录的是：",
+      "options": [
+        "溶液由无色变为蓝色",
+        "一定发生了化学变化",
+        "肯定生成了新物质",
+        "是置换反应"
+      ],
+      "answer": 0,
+      "explanation": "颜色变化可以直接看到，是观察；判断反应类型属于解释。",
+      "knowledgeIds": [
+        "observation-inference"
+      ]
+    },
+    {
+      "id": "L02-P02",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "scientific-inquiry",
+      "question": "科学探究应从什么开始？",
+      "options": [
+        "可检验的问题",
+        "最终结论",
+        "实验报告",
+        "漂亮的数据表"
+      ],
+      "answer": 0,
+      "explanation": "探究从能通过观察或实验检验的问题开始。",
+      "knowledgeIds": [
+        "scientific-inquiry"
+      ]
+    },
+    {
+      "id": "L02-P03",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "control-variables",
+      "question": "要研究温度对溶解快慢的影响，应保持相同的是：",
+      "options": [
+        "水的温度",
+        "蔗糖质量、水量与搅拌情况",
+        "溶解的时间",
+        "杯子颜色"
+      ],
+      "answer": 1,
+      "explanation": "研究变量是温度，其他条件应保持一致，比较才公平。",
+      "knowledgeIds": [
+        "control-variables"
+      ]
+    },
+    {
+      "id": "L02-P04",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "data-integrity",
+      "question": "发现数据与预期不符时，正确的做法是：",
+      "options": [
+        "修改数据",
+        "保留数据并分析原因",
+        "删除异常值",
+        "只报符合的数据"
+      ],
+      "answer": 1,
+      "explanation": "数据真实性要求保留并分析异常，而不是篡改。",
+      "knowledgeIds": [
+        "data-integrity"
+      ]
+    },
+    {
+      "id": "L02-P05",
+      "type": "single",
+      "difficulty": "application",
+      "knowledgePoint": "evidence-reasoning",
+      "question": "重复实验的主要作用是：",
+      "options": [
+        "让实验更复杂",
+        "减小偶然误差，提高结论可靠性",
+        "增加试剂消耗",
+        "让报告更长"
+      ],
+      "answer": 1,
+      "explanation": "重复实验能发现偶然误差，多次一致的结果更可靠。",
+      "knowledgeIds": [
+        "evidence-reasoning"
+      ]
+    },
+    {
+      "id": "L02-P06",
+      "type": "single",
+      "difficulty": "application",
+      "knowledgePoint": "observation-inference",
+      "question": "“烧杯内壁出现水珠”属于哪一类记录？",
+      "options": [
+        "观察到的现象",
+        "基于现象的解释",
+        "最终的结论",
+        "实验假设"
+      ],
+      "answer": 0,
+      "explanation": "水珠可直接看到，是观察；它说明什么属于解释。",
+      "knowledgeIds": [
+        "observation-inference"
+      ]
+    },
+    {
+      "id": "L02-P07",
+      "type": "single",
+      "difficulty": "transfer",
+      "knowledgePoint": "control-variables",
+      "question": "要研究“搅拌是否影响食盐溶解快慢”，实验设计正确的是：",
+      "options": [
+        "一组搅拌一组不搅拌，其余条件相同",
+        "两组都搅拌",
+        "一组用热水一组用冷水",
+        "同时改变温度和搅拌"
+      ],
+      "answer": 0,
+      "explanation": "只改变是否搅拌，保持水量、盐量、温度相同，比较才公平。",
+      "knowledgeIds": [
+        "control-variables"
+      ]
+    },
+    {
+      "id": "L02-P08",
+      "type": "single",
+      "difficulty": "transfer",
+      "knowledgePoint": "evidence-reasoning",
+      "question": "一份值得信任的探究报告最重要的部分是：",
+      "options": [
+        "完整的原始数据与观察记录",
+        "醒目的标题",
+        "漂亮的排版",
+        "老师的签名"
+      ],
+      "answer": 0,
+      "explanation": "结论要有原始数据与观察记录支撑，才经得起检验。",
+      "knowledgeIds": [
+        "evidence-reasoning"
+      ]
+    }
+  ]
+}

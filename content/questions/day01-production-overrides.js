@@ -24,7 +24,7 @@ export const day01ProductionOverrides = [
     answer: 'A',
     explanation: 'HCl表示氯化氢，在初中物质分类中属于酸；NaOH属于碱；NaCl属于盐；H2O属于氧化物。注意：盐酸是HCl的水溶液，不应把“氯化氢”和“盐酸”当作完全相同的名称。',
     commonMistake: 'concept-error',
-    status: 'review'
+    status: 'ready'
   },
   {
     id: 'q-acid-003',
@@ -42,7 +42,7 @@ export const day01ProductionOverrides = [
     answer: 'A',
     explanation: '浓硫酸稀释会明显放热，飞溅可能造成腐蚀性伤害。初中学习重点是识别热和飞溅风险，并遵守教师演示及实验室安全规范，不自行尝试危险操作。',
     commonMistake: 'safety-reasoning-error',
-    status: 'review'
+    status: 'ready'
   },
   {
     id: 'q-acid-004',
@@ -60,7 +60,7 @@ export const day01ProductionOverrides = [
     answer: 'A',
     explanation: '腐蚀性化学品接触皮肤时，初中阶段应重点掌握立即用大量流动清水冲洗并报告教师、遵循实验室应急规范。不要自行配制或选择中和剂进行处理。',
     commonMistake: 'safety-reasoning-error',
-    status: 'review'
+    status: 'ready'
   },
   {
     id: 'q-acid-005',
@@ -78,7 +78,7 @@ export const day01ProductionOverrides = [
     answer: 'C',
     explanation: 'A中NaCl与AgNO3会生成AgCl沉淀；B中Na2CO3与HCl会反应；D中CuSO4使溶液呈蓝色。C中的三种物质在该条件下可大量共存且均为无色溶液，因此选C。',
     commonMistake: 'coexistence-reasoning-error',
-    status: 'review'
+    status: 'ready'
   },
   {
     id: 'q-acid-011',
@@ -90,7 +90,7 @@ export const day01ProductionOverrides = [
     answer: 'Fe2(SO4)3；除铁锈',
     explanation: '初中化学常用Fe2O3作为铁锈主要成分的简化模型。它与硫酸反应生成硫酸铁和水，可用于解释酸除铁锈。真实铁锈通常是成分复杂的混合物，不能简单等同于纯Fe2O3。',
     commonMistake: 'model-overgeneralization',
-    status: 'review'
+    status: 'ready'
   },
   {
     id: 'q-acid-012',
@@ -108,7 +108,7 @@ export const day01ProductionOverrides = [
     answer: 'A',
     explanation: '在刚性密闭容器且温度近似不变的条件下，反应生成CO2会使气体物质的量增加，因此压强随反应进行而增大；生成速率降低只表示压强增加得越来越慢，并不意味着压强必然下降。反应结束后，若条件保持不变，压强趋于稳定。',
     commonMistake: 'pressure-trend-reasoning-error',
-    status: 'review'
+    status: 'ready'
   }
 ];
 

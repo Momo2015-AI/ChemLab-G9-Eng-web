@@ -16,7 +16,7 @@ export const day01DiagnosticQuestions = [
     explanation: 'HCl is hydrogen chloride. Hydrochloric acid refers to hydrogen chloride dissolved in water.',
     misconceptionIds: ['mc-acid-hcl-solution'],
     purpose: 'diagnostic',
-    status: 'review'
+    status: 'ready'
   },
   {
     id: 'q-acid-dx-002',
@@ -35,7 +35,7 @@ export const day01DiagnosticQuestions = [
     explanation: 'A universal rule is not valid. For common dilute non-oxidizing acids taught at this level, metals above hydrogen in the activity series can react to release hydrogen, while metals below hydrogen generally do not.',
     misconceptionIds: ['mc-acid-metal-overgeneralization'],
     purpose: 'diagnostic',
-    status: 'review'
+    status: 'ready'
   },
   {
     id: 'q-acid-dx-003',
@@ -54,7 +54,7 @@ export const day01DiagnosticQuestions = [
     explanation: 'A color change or disappearance of rust can be observed directly. Identifying a product such as FeCl3 is an interpretation based on chemical knowledge and evidence, not a direct visual observation.',
     misconceptionIds: ['mc-acid-observation-inference'],
     purpose: 'diagnostic',
-    status: 'review'
+    status: 'ready'
   },
   {
     id: 'q-acid-dx-004',
@@ -73,7 +73,7 @@ export const day01DiagnosticQuestions = [
     explanation: 'Dilution is strongly exothermic. At school level, the key learning point is to recognize the heat and splash hazard and follow the teacher-approved laboratory safety procedure rather than improvise.',
     misconceptionIds: ['mc-acid-dilution-direction'],
     purpose: 'diagnostic',
-    status: 'review'
+    status: 'ready'
   },
   {
     id: 'q-acid-rx-001',
@@ -93,7 +93,7 @@ export const day01DiagnosticQuestions = [
     misconceptionIds: ['mc-acid-hcl-solution'],
     purpose: 'recheck',
     recheckFor: 'q-acid-dx-001',
-    status: 'review'
+    status: 'ready'
   },
   {
     id: 'q-acid-rx-002',
@@ -113,7 +113,7 @@ export const day01DiagnosticQuestions = [
     misconceptionIds: ['mc-acid-metal-overgeneralization'],
     purpose: 'recheck',
     recheckFor: 'q-acid-dx-002',
-    status: 'review'
+    status: 'ready'
   },
   {
     id: 'q-acid-rx-003',
@@ -133,7 +133,7 @@ export const day01DiagnosticQuestions = [
     misconceptionIds: ['mc-acid-observation-inference'],
     purpose: 'recheck',
     recheckFor: 'q-acid-dx-003',
-    status: 'review'
+    status: 'ready'
   },
   {
     id: 'q-acid-rx-004',
@@ -153,7 +153,7 @@ export const day01DiagnosticQuestions = [
     misconceptionIds: ['mc-acid-dilution-direction'],
     purpose: 'recheck',
     recheckFor: 'q-acid-dx-004',
-    status: 'review'
+    status: 'ready'
   }
 ];
 

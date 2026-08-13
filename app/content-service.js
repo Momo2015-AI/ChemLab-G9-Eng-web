@@ -2,7 +2,7 @@
 import ContentLoader from './content-loader.js';
 import { KnowledgeEngine } from '../core/knowledge-graph/canonical-knowledge-engine.js';
 import { registerQuestion } from '../core/diagnosis/question-knowledge-map.js';
-function normalizeKnowledgeIds(question) { const value = question?.knowledgeIds ?? question?.knowledgePoints ?? question?.knowledgeId ?? question?.knowledge ?? []; return (Array.isArray(value) ? value : [value]).filter(Boolean); }
+function normalizeKnowledgeIds(question) { const value = question?.knowledgeIds ?? question?.knowledgePoints ?? question?.knowledgePoint ?? question?.knowledgeId ?? question?.knowledge ?? []; return (Array.isArray(value) ? value : [value]).filter(Boolean); }
 function normalizeKnowledgeGraph(graph = {}) { const relations = (graph.relations || graph.edges || []).map(relation => ({ ...relation, source: relation.source || relation.from, target: relation.target || relation.to })); return { ...graph, relations }; }
 class ContentService {
   constructor(loader = new ContentLoader(), knowledgeEngineFactory = graph => new KnowledgeEngine(graph)) { this.loader = loader; this.knowledgeEngineFactory = knowledgeEngineFactory; this.data = null; this.knowledgeEngine = null; }

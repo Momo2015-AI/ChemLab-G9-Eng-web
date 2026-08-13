@@ -42,6 +42,6 @@ test('canonical first-lesson experiment is discoverable through lesson content',
 
 test('canonical lessons expose an explicit release state', () => {
   const manifest = JSON.parse(read('content/lessons/lesson-01-material-changes-properties.json'));
-  assert.equal(manifest.releaseStatus, 'review');
-  assert.equal(manifest.status, 'review');
+  assert.equal(manifest.releaseStatus, 'ready');
+  assert.equal(manifest.status, 'ready');
 });

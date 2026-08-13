@@ -1,0 +1,332 @@
+{
+  "lessonId": "lesson-02-chemistry-as-experimental-science",
+  "version": "1.0",
+  "mastery": {
+    "threshold": 0.95,
+    "minQuestions": 20,
+    "unseenTransfer": true,
+    "questions": [
+      {
+        "id": "L02-M01",
+        "knowledgePoint": "scientific-inquiry",
+        "question": "下列哪个问题最适合作为科学探究的起点？",
+        "options": [
+          "木炭燃烧后质量会减少吗",
+          "哪种颜色最好看",
+          "谁是最伟大的人",
+          "什么样的音乐好听"
+        ],
+        "answer": 0,
+        "explanation": "“木炭燃烧后质量会减少吗”可以通过称量实验检验；其余是主观问题，无法用实验回答。",
+        "knowledgeIds": [
+          "scientific-inquiry"
+        ]
+      },
+      {
+        "id": "L02-M02",
+        "knowledgePoint": "observation-inference",
+        "question": "下列属于直接观察的是：",
+        "options": [
+          "锌粒放入盐酸后有气泡产生",
+          "生成的气体是氢气",
+          "发生了置换反应",
+          "反应放热说明是化学变化"
+        ],
+        "answer": 0,
+        "explanation": "“有气泡产生”可以直接看到，是观察；判断气体成分、反应类型属于解释。",
+        "knowledgeIds": [
+          "observation-inference"
+        ]
+      },
+      {
+        "id": "L02-M03",
+        "knowledgePoint": "control-variables",
+        "question": "要研究“水的多少是否影响糖溶解的量”，实验中的研究变量是：",
+        "options": [
+          "糖的质量",
+          "水的体积",
+          "温度",
+          "是否搅拌"
+        ],
+        "answer": 1,
+        "explanation": "研究变量是我们要探究的因素，即水的体积；其他条件如糖的质量、温度、搅拌应保持不变。",
+        "knowledgeIds": [
+          "control-variables"
+        ]
+      },
+      {
+        "id": "L02-M04",
+        "knowledgePoint": "data-integrity",
+        "question": "实验记录中出现一个明显偏离其他数据的值，恰当的处理是：",
+        "options": [
+          "当作错误直接删除",
+          "保留数据并分析可能的原因",
+          "修改成接近平均值",
+          "忽略它不看"
+        ],
+        "answer": 1,
+        "explanation": "异常数据必须保留并分析，可能反映操作失误，也可能指向新的现象。",
+        "knowledgeIds": [
+          "data-integrity"
+        ]
+      },
+      {
+        "id": "L02-M05",
+        "knowledgePoint": "evidence-reasoning",
+        "question": "科学结论必须与什么保持一致？",
+        "options": [
+          "实验证据",
+          "教科书的标准表述",
+          "老师的预期",
+          "大多数同学的答案"
+        ],
+        "answer": 0,
+        "explanation": "结论应由实验证据支持，而不是迁就课本、预期或他人意见。",
+        "knowledgeIds": [
+          "evidence-reasoning"
+        ]
+      },
+      {
+        "id": "L02-M06",
+        "knowledgePoint": "observation-inference",
+        "question": "“蜡烛燃烧时火焰明亮”属于科学记录中的：",
+        "options": [
+          "观察",
+          "解释",
+          "假设",
+          "目的"
+        ],
+        "answer": 0,
+        "explanation": "火焰明亮可以直接观察到，是观察记录，不涉及推断。",
+        "knowledgeIds": [
+          "observation-inference"
+        ]
+      },
+      {
+        "id": "L02-M07",
+        "knowledgePoint": "scientific-inquiry",
+        "question": "科学探究常见的基本顺序是：",
+        "options": [
+          "问题→假设→方案→观察与数据→结论",
+          "结论→数据→问题",
+          "方案→结论→问题",
+          "顺序随意，无需固定"
+        ],
+        "answer": 0,
+        "explanation": "探究一般从问题出发，提出假设，设计方案并观察记录，最后基于证据得出结论。",
+        "knowledgeIds": [
+          "scientific-inquiry"
+        ]
+      },
+      {
+        "id": "L02-M08",
+        "knowledgePoint": "control-variables",
+        "question": "要验证“温度影响蔗糖溶解快慢”，实验中应改变的因素是：",
+        "options": [
+          "水的温度",
+          "蔗糖的质量",
+          "水的体积",
+          "是否搅拌"
+        ],
+        "answer": 0,
+        "explanation": "研究变量是温度，因此只改变温度，其他条件保持不变。",
+        "knowledgeIds": [
+          "control-variables"
+        ]
+      },
+      {
+        "id": "L02-M09",
+        "knowledgePoint": "data-integrity",
+        "question": "下列哪项体现了数据真实性原则？",
+        "options": [
+          "如实记录所有数据，包括异常值",
+          "只记录符合预期的数据",
+          "凭记忆补写数据",
+          "估计读数代替实测"
+        ],
+        "answer": 0,
+        "explanation": "数据真实性要求完整、如实记录，异常值也要保留，不能补写或估计。",
+        "knowledgeIds": [
+          "data-integrity"
+        ]
+      },
+      {
+        "id": "L02-M10",
+        "knowledgePoint": "evidence-reasoning",
+        "question": "让一次实验的结论更可靠，较好的做法是：",
+        "options": [
+          "重复实验验证结果",
+          "凭直觉修改结论",
+          "不再检查过程",
+          "只报告成功的一次"
+        ],
+        "answer": 0,
+        "explanation": "重复实验能减小偶然误差，多次一致的结果更支持结论的可靠性。",
+        "knowledgeIds": [
+          "evidence-reasoning"
+        ]
+      },
+      {
+        "id": "L02-M11",
+        "knowledgePoint": "observation-inference",
+        "question": "“杯壁出现水珠，推测生成了水蒸气”中的“推测”属于：",
+        "options": [
+          "解释（推断）",
+          "直接观察",
+          "测量数据",
+          "实验目的"
+        ],
+        "answer": 0,
+        "explanation": "水珠可直接看到，但把水珠解释为水蒸气冷凝是推断，属于解释。",
+        "knowledgeIds": [
+          "observation-inference"
+        ]
+      },
+      {
+        "id": "L02-M12",
+        "knowledgePoint": "control-variables",
+        "question": "对照实验中，除研究变量外，其他条件应当：",
+        "options": [
+          "保持相同",
+          "各不相同",
+          "完全随意",
+          "只让温度相同"
+        ],
+        "answer": 0,
+        "explanation": "只改变研究变量、保持其他条件相同，比较才公平，结论才有说服力。",
+        "knowledgeIds": [
+          "control-variables"
+        ]
+      },
+      {
+        "id": "L02-M13",
+        "knowledgePoint": "scientific-inquiry",
+        "question": "一个好的科学假设应当满足：",
+        "options": [
+          "可以被实验检验",
+          "一定正确",
+          "足够复杂",
+          "听起来很专业"
+        ],
+        "answer": 0,
+        "explanation": "假设是对问题的可检验解释，关键在“可检验”，而不是正确、复杂或专业。",
+        "knowledgeIds": [
+          "scientific-inquiry"
+        ]
+      },
+      {
+        "id": "L02-M14",
+        "knowledgePoint": "data-integrity",
+        "question": "为什么异常数据也值得保留？",
+        "options": [
+          "它可能提示操作失误或新的发现",
+          "为了凑足数据量",
+          "让报告看起来更完整",
+          "它反正不重要"
+        ],
+        "answer": 0,
+        "explanation": "异常数据可能反映失误，也可能指向新现象，保留并分析是数据真实性的要求。",
+        "knowledgeIds": [
+          "data-integrity"
+        ]
+      },
+      {
+        "id": "L02-M15",
+        "knowledgePoint": "observation-inference",
+        "question": "科学观察记录应做到：",
+        "options": [
+          "客观、准确、完整",
+          "符合预期结果",
+          "简洁美观即可",
+          "提前写好结论"
+        ],
+        "answer": 0,
+        "explanation": "记录要客观准确完整，忠于实际观察，不迁就预期或结论。",
+        "knowledgeIds": [
+          "observation-inference"
+        ]
+      },
+      {
+        "id": "L02-M16",
+        "knowledgePoint": "control-variables",
+        "question": "设计对照实验时，实验组与对照组的唯一区别应当是：",
+        "options": [
+          "研究变量",
+          "操作的同学",
+          "实验日期",
+          "使用的器材品牌"
+        ],
+        "answer": 0,
+        "explanation": "两组之间只允许研究变量不同，其余条件相同，才能把结果的差异归因于研究变量。",
+        "knowledgeIds": [
+          "control-variables"
+        ]
+      },
+      {
+        "id": "L02-M17",
+        "knowledgePoint": "data-integrity",
+        "question": "一份完整的实验报告应包含：",
+        "options": [
+          "原始数据与观察记录",
+          "只有最终结论",
+          "只有漂亮的图表",
+          "只写成功的部分"
+        ],
+        "answer": 0,
+        "explanation": "报告应保留原始数据与观察记录，结论才有依据可查。",
+        "knowledgeIds": [
+          "data-integrity"
+        ]
+      },
+      {
+        "id": "L02-M18",
+        "knowledgePoint": "evidence-reasoning",
+        "question": "数据不支持预测时，下列做法正确的是：",
+        "options": [
+          "保留数据，检查条件、操作与假设",
+          "强行修改结论",
+          "隐瞒这部分数据",
+          "重新定义预测"
+        ],
+        "answer": 0,
+        "explanation": "应保留原始数据，检查条件、操作与假设，这才是基于证据的科学态度。",
+        "knowledgeIds": [
+          "evidence-reasoning"
+        ]
+      },
+      {
+        "id": "L02-M19",
+        "knowledgePoint": "observation-inference",
+        "question": "“铁钉表面出现红棕色物质”是观察，要判断是否生成了新物质还需要：",
+        "options": [
+          "进一步寻找支持“生成新物质”的证据",
+          "凭经验直接下结论",
+          "看颜色是否鲜艳",
+          "无需任何证据"
+        ],
+        "answer": 0,
+        "explanation": "观察只是线索，判断是否生成新物质必须进一步寻找证据，形成证据链。",
+        "knowledgeIds": [
+          "observation-inference"
+        ]
+      },
+      {
+        "id": "L02-M20",
+        "knowledgePoint": "evidence-reasoning",
+        "question": "为检验“搅拌会加快食盐溶解”，最科学的做法是：",
+        "options": [
+          "两杯等量等温的水和盐，一杯搅拌一杯不搅拌，比较溶解时间",
+          "一杯搅拌一杯用热水",
+          "两杯都搅拌，只记录结果",
+          "目测估计溶解快慢"
+        ],
+        "answer": 0,
+        "explanation": "研究搅拌的影响，应保证水量、盐量、温度相同，只改变是否搅拌，再比较溶解时间。",
+        "knowledgeIds": [
+          "evidence-reasoning",
+          "observation-inference"
+        ]
+      }
+    ]
+  }
+}

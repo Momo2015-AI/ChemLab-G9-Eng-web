@@ -1,0 +1,64 @@
+{
+  "lessonId": "lesson-02-chemistry-as-experimental-science",
+  "version": "1.0",
+  "diagnostics": [
+    {
+      "id": "L02-D01",
+      "knowledgePoint": "observation-inference",
+      "question": "“溶液由无色变为蓝色”和“溶液一定发生了化学变化”哪一句是观察？",
+      "options": [
+        "前者是观察，后者是解释",
+        "前者是解释，后者是观察",
+        "两句都是观察",
+        "两句都是解释"
+      ],
+      "answer": 0,
+      "errorType": "observation-inference-confusion",
+      "remediationStep": "L02-S02/L02-S03",
+      "knowledgeIds": [
+        "observation-inference"
+      ]
+    },
+    {
+      "id": "L02-D02",
+      "knowledgePoint": "control-variables",
+      "question": "比较温度对溶解快慢的影响时，同时改变温度和水量，问题出在哪里？",
+      "options": [
+        "改变的因素多于一个，无法判断是哪个因素导致差异",
+        "应该只改变水量",
+        "温度不需要控制",
+        "溶解快慢无法比较"
+      ],
+      "answer": 0,
+      "errorType": "control-variable-violation",
+      "remediationStep": "L02-S04",
+      "knowledgeIds": [
+        "control-variables"
+      ]
+    },
+    {
+      "id": "L02-D03",
+      "knowledgePoint": "data-integrity",
+      "question": "实验数据与预测不符时，把数据改成符合预测的值，这种做法主要违背了什么？",
+      "options": [
+        "数据真实性原则",
+        "控制变量原则",
+        "观察的客观性",
+        "结论的可检验性"
+      ],
+      "answer": 0,
+      "errorType": "data-fabrication",
+      "remediationStep": "L02-S06/L02-S07",
+      "knowledgeIds": [
+        "data-integrity"
+      ]
+    }
+  ],
+  "remediation": {
+    "L02-S02": "重新学习什么是直接观察。",
+    "L02-S03": "重新学习现象与解释的区别。",
+    "L02-S04": "重新学习控制变量与公平比较。",
+    "L02-S06": "重新学习结论必须由证据支持。",
+    "L02-S07": "重新学习如实记录数据。"
+  }
+}

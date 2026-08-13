@@ -1,14 +1,154 @@
 {
-  "lessonId":"lesson-01-material-changes-properties",
-  "version":"1.0",
-  "questions":[
-    {"id":"L01-P01","type":"single","difficulty":"basic","knowledgePoint":"physical-vs-chemical-change","question":"下列变化中，属于化学变化的是：","options":["冰雪融化","玻璃破碎","铁钉生锈","水沸腾"],"answer":2,"explanation":"铁生锈会生成新的物质，属于化学变化。"},
-    {"id":"L01-P02","type":"single","difficulty":"basic","knowledgePoint":"physical-vs-chemical-change","question":"判断一个变化是否属于化学变化，最核心的依据是：","options":["是否有明显现象","是否放热","是否生成新的物质","是否有气泡"],"answer":2,"explanation":"物理变化和化学变化的本质区别是是否生成新的物质。"},
-    {"id":"L01-P03","type":"single","difficulty":"basic","knowledgePoint":"physical-property","question":"下列属于物理性质的是：","options":["可燃性","助燃性","密度","容易生锈"],"answer":2,"explanation":"密度可以在不发生化学变化的情况下测定，属于物理性质。"},
-    {"id":"L01-P04","type":"single","difficulty":"basic","knowledgePoint":"chemical-property","question":"“木炭具有可燃性”属于：","options":["物理变化","化学变化","物理性质","化学性质"],"answer":3,"explanation":"可燃性描述物质在化学变化中表现出的性质。"},
-    {"id":"L01-P05","type":"single","difficulty":"application","knowledgePoint":"evidence-reasoning","question":"下列说法最严谨的是：","options":["有气泡就一定发生了化学变化","有颜色变化就一定生成了新物质","看到现象后应进一步寻找生成新物质的证据","有放热现象就一定是化学变化"],"answer":2,"explanation":"单一现象可能有多种原因，必须结合证据判断是否生成新物质。"},
-    {"id":"L01-P06","type":"single","difficulty":"application","knowledgePoint":"concept-distinction","question":"下列各项中，前者属于变化、后者属于性质的是：","options":["氧气无色；氧气支持燃烧","铁生锈；铁能导电","水沸腾；水的沸点较高","木炭可燃；木炭燃烧"],"answer":2,"explanation":"水沸腾是过程，沸点是物质的物理性质。"},
-    {"id":"L01-P07","type":"single","difficulty":"transfer","knowledgePoint":"evidence-reasoning","question":"某固体加热后变成液体，冷却后又变回固体。仅依据这些信息，最合理的判断是：","options":["一定是化学变化","更可能是物理变化，但最终仍应判断是否生成新物质","一定生成了新物质","一定属于化学性质"],"answer":1,"explanation":"状态改变且可逆通常提示物理变化，但定义性依据仍是是否生成新物质。"},
-    {"id":"L01-P08","type":"single","difficulty":"transfer","knowledgePoint":"concept-distinction","question":"下列描述中属于化学性质的是：","options":["氧气是无色气体","铁是银白色固体","铁在潮湿空气中容易生锈","水在标准大气压下约100 ℃沸腾"],"answer":2,"explanation":"容易生锈描述铁发生化学变化的倾向，属于化学性质。"}
+  "lessonId": "lesson-01-material-changes-properties",
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "L01-P01",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "physical-change",
+      "question": "下列变化中，属于化学变化的是：",
+      "options": [
+        "冰雪融化",
+        "玻璃破碎",
+        "铁钉生锈",
+        "水沸腾"
+      ],
+      "answer": 2,
+      "explanation": "铁生锈会生成新的物质，属于化学变化。",
+      "knowledgeIds": [
+        "physical-change",
+        "chemical-change"
+      ]
+    },
+    {
+      "id": "L01-P02",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "physical-change",
+      "question": "判断一个变化是否属于化学变化，最核心的依据是：",
+      "options": [
+        "是否有明显现象",
+        "是否放热",
+        "是否生成新的物质",
+        "是否有气泡"
+      ],
+      "answer": 2,
+      "explanation": "物理变化和化学变化的本质区别是是否生成新的物质。",
+      "knowledgeIds": [
+        "physical-change",
+        "chemical-change"
+      ]
+    },
+    {
+      "id": "L01-P03",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "physical-property",
+      "question": "下列属于物理性质的是：",
+      "options": [
+        "可燃性",
+        "助燃性",
+        "密度",
+        "容易生锈"
+      ],
+      "answer": 2,
+      "explanation": "密度可以在不发生化学变化的情况下测定，属于物理性质。",
+      "knowledgeIds": [
+        "physical-property"
+      ]
+    },
+    {
+      "id": "L01-P04",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "chemical-property",
+      "question": "“木炭具有可燃性”属于：",
+      "options": [
+        "物理变化",
+        "化学变化",
+        "物理性质",
+        "化学性质"
+      ],
+      "answer": 3,
+      "explanation": "可燃性描述物质在化学变化中表现出的性质。",
+      "knowledgeIds": [
+        "chemical-property"
+      ]
+    },
+    {
+      "id": "L01-P05",
+      "type": "single",
+      "difficulty": "application",
+      "knowledgePoint": "evidence-reasoning",
+      "question": "下列说法最严谨的是：",
+      "options": [
+        "有气泡就一定发生了化学变化",
+        "有颜色变化就一定生成了新物质",
+        "看到现象后应进一步寻找生成新物质的证据",
+        "有放热现象就一定是化学变化"
+      ],
+      "answer": 2,
+      "explanation": "单一现象可能有多种原因，必须结合证据判断是否生成新物质。",
+      "knowledgeIds": [
+        "evidence-reasoning"
+      ]
+    },
+    {
+      "id": "L01-P06",
+      "type": "single",
+      "difficulty": "application",
+      "knowledgePoint": "matter-change",
+      "question": "下列各项中，前者属于变化、后者属于性质的是：",
+      "options": [
+        "氧气无色；氧气支持燃烧",
+        "铁生锈；铁能导电",
+        "水沸腾；水的沸点较高",
+        "木炭可燃；木炭燃烧"
+      ],
+      "answer": 2,
+      "explanation": "水沸腾是过程，沸点是物质的物理性质。",
+      "knowledgeIds": [
+        "matter-change",
+        "observation-inference"
+      ]
+    },
+    {
+      "id": "L01-P07",
+      "type": "single",
+      "difficulty": "transfer",
+      "knowledgePoint": "evidence-reasoning",
+      "question": "某固体加热后变成液体，冷却后又变回固体。仅依据这些信息，最合理的判断是：",
+      "options": [
+        "一定是化学变化",
+        "更可能是物理变化，但最终仍应判断是否生成新物质",
+        "一定生成了新物质",
+        "一定属于化学性质"
+      ],
+      "answer": 1,
+      "explanation": "状态改变且可逆通常提示物理变化，但定义性依据仍是是否生成新物质。",
+      "knowledgeIds": [
+        "evidence-reasoning"
+      ]
+    },
+    {
+      "id": "L01-P08",
+      "type": "single",
+      "difficulty": "transfer",
+      "knowledgePoint": "matter-change",
+      "question": "下列描述中属于化学性质的是：",
+      "options": [
+        "氧气是无色气体",
+        "铁是银白色固体",
+        "铁在潮湿空气中容易生锈",
+        "水在标准大气压下约100 ℃沸腾"
+      ],
+      "answer": 2,
+      "explanation": "容易生锈描述铁发生化学变化的倾向，属于化学性质。",
+      "knowledgeIds": [
+        "matter-change",
+        "observation-inference"
+      ]
+    }
   ]
 }

@@ -15,10 +15,11 @@ export class AssessmentRuntimeController {
     const lesson = await this.contentService.getLesson(lessonId);
     const data = await this.contentService.load();
     if (!lesson) return null;
+    const fallbackKnowledge = Array.isArray(lesson.knowledgePoints) ? lesson.knowledgePoints : [];
     const questions = (lesson.questions || [])
-      .map(item => data.questionById.get(item) || (typeof item === 'object' ? item : null))
+      .map(item => data.questionById.get(typeof item === 'object' ? item.id : item) || (typeof item === 'object' ? item : null))
       .filter(Boolean)
-      .map(question => this.normalizeQuestion(question));
+      .map(question => this.normalizeQuestion(question, fallbackKnowledge));
     return this.startAttempt(lessonId, questions, 'practice');
   }
 
@@ -230,10 +231,11 @@ export class AssessmentRuntimeController {
     return (Array.isArray(raw) ? raw : [raw]).filter(Boolean);
   }
 
-  normalizeQuestion(question = {}) {
+  normalizeQuestion(question = {}, fallbackKnowledge = []) {
     const options = question.options || question.o || [];
     const rawAnswer = question.correctIndex ?? question.answer ?? question.correctAnswer ?? question.correctOption ?? question.correct ?? question.a;
     const isChoice = Array.isArray(options) && options.length > 0 && question.type !== 'constructed';
+    const knowledgeIds = this.knowledge(question).length ? this.knowledge(question) : fallbackKnowledge;
     if (isChoice) {
       return {
         ...question,
@@ -241,10 +243,10 @@ export class AssessmentRuntimeController {
         options: options.map(option => typeof option === 'object' ? option.text ?? option.label ?? '' : option),
         correctIndex: this.toIndex(rawAnswer),
         answer: this.toLetter(this.toIndex(rawAnswer)),
-        knowledgeIds: this.knowledge(question),
+        knowledgeIds,
       };
     }
-    return { ...question, type: question.type || 'short-answer', answer: rawAnswer, knowledgeIds: this.knowledge(question) };
+    return { ...question, type: question.type || 'short-answer', answer: rawAnswer, knowledgeIds };
   }
 
   withNormalizedAnswerKey(question) {

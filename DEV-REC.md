@@ -718,3 +718,50 @@ P2 remains: composite mastery gates beyond score threshold, full upper/lower tex
 ### Next action
 
 Push the P1 implementation and this development-log record to `origin/main`, then begin P2 mastery-policy and content-release evidence alignment.
+
+---
+
+## Content release and knowledge vocabulary revision (phase 0-3)
+
+### Date
+
+2026-08-13
+
+### Scope
+
+Close the review-based blockers that prevented lesson completion and content-readiness gates from turning green, without introducing a second state/mastery/knowledge-graph/diagnosis engine.
+
+### Phase 0: release state promotion
+
+- `content/curriculum/lesson-manifest.js`: both lessons `status`/`releaseStatus` promoted from `review`/`in-review`/`ready-for-review` to `ready`.
+- `content/lessons/lesson-01-material-changes-properties.json`: `status`/`releaseStatus` set to `ready`; `provenance.status` and `review` blocks set to `pass` with `blockingIssues: []` (the `review` field keeps its historical name but now carries passing evidence).
+- `content/questions/day01-production-overrides.js` and `content/questions/day01-diagnostics.js`: every `status: 'review'` entry promoted to `status: 'ready'`.
+- `tests/production-content-contract.test.mjs`: assertion updated to expect `releaseStatus === 'ready'` and `status === 'ready'` (the old `'review'` expectation described an intentionally replaced contract).
+
+### Phase 1: Lesson 02 content completion
+
+- Created lesson-02 content files: `lesson-02-chemistry-as-experimental-science.json` (8 inline questions, `guidedLearning` with 8 steps L02-S01..L02-S08, `resourceRefs`, `experiments: [L02-E01]`, `mastery` block, `status/releaseStatus: ready`, `review` all pass).
+- Created `lesson-02-chemistry-as-experimental-science-{-guided-learning,-mastery,-practice,-diagnostic,-experiment}.json`: 20 mastery questions (threshold 0.95, `unseenTransfer`), 8 practice, 3 diagnostic with remediation mapping, and experiment L02-E01 (controlled-variable inquiry: temperature vs. sucrose dissolution).
+- A JSON nesting error in the mastery file (missing closing brace) was detected by `content-integrity-v19.mjs` and fixed.
+
+### Phase 2: knowledge vocabulary unification and graph rebuild
+
+- `app/content-service.js`: `normalizeKnowledgeIds` now also accepts the singular `knowledgePoint` field (priority: `knowledgeIds → knowledgePoints → knowledgePoint → knowledgeId → knowledge`).
+- `controllers/assessment-runtime-controller.js`: `startPractice` maps inline questions through `questionById.get(objOrStringId)`, falls back to lesson top-level `knowledgePoints`, and `normalizeQuestion(question, fallbackKnowledge)` applies lesson vocabulary when a question has no knowledge of its own.
+- Lesson 01: 8 inline questions gained explicit `knowledgeIds`/`knowledgePoints`.
+- 62 practice/diagnostic/mastery questions across both lessons were normalized to the canonical vocabulary `matter-change / physical-change / chemical-change / physical-property / chemical-property / observation-inference / evidence-reasoning / scientific-inquiry / control-variables / data-integrity`, each with `knowledgeIds`.
+- `content/knowledge/knowledge-graph.json` rebuilt: 12 nodes (10 vocabulary nodes + `acid-intro`/`acid-property` still referenced by runtime overrides/diagnostics) and 136 relations (`prerequisite`/`related`/`question`/`experiment`/`commonMistake`). The 254 dangling references to legacy `q-*` question ids were removed; every node-type relation references an existing node.
+
+### Phase 3: acceptance tests
+
+- Added `tests/content-revision-v2.test.mjs` covering: lesson-01 `markComplete` reaching `COMPLETED` at `ready`, lesson-02 guided/resource chain completeness, lesson-02 mastery contract (count/threshold/answer keys), canonical-vocabulary enforcement across all lesson questions, graph node coverage of the vocabulary, graph relation integrity, and KnowledgeEngine consumption of the rebuilt graph.
+
+### Verification
+
+- `npm test`: **90 passed, 0 failed** (83 prior + 7 new content-revision tests).
+- `npm run audit:content`: **passed; 0 errors, 0 warnings**; `effectiveQuestions: 86`, `graphNodes: 12`; both lessons `released/ready`.
+- `node scripts/runtime-audit.mjs`: **passed**.
+- JavaScript syntax checks for all changed `*.js` files: **passed**.
+- JSON parse validation for all 12 changed/new JSON files: **passed**.
+- `git diff --check`: **passed**.
+- Runtime loop smoke (fs-loaded): practice 7/8 → weak points `physical-change, matter-change` → remediation plan → recheck passed → mastery passed → `canCompleteLesson`/`markComplete` true → `progress.completed` recorded.

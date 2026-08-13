@@ -6,15 +6,18 @@
   "module":"unit-01-intro-chemistry",
   "duration":"45 分钟",
   "description":"通过观察、实验、记录和证据分析建立科学探究的基本方法。",
-  "status":"review",
-  "releaseStatus":"review",
+  "status":"ready",
+  "releaseStatus":"ready",
   "learningObjectives":["区分观察到的现象与基于证据形成的解释。","理解控制变量、公平比较和重复实验的基本意义。","能够根据真实记录评价证据是否支持结论。"],
   "knowledgePoints":["scientific-inquiry","observation-inference","control-variables","evidence-reasoning","data-integrity"],
   "prerequisites":["lesson-01-material-changes-properties"],
-  "experiments":[],
-  "questions":[],
-  "diagnosticQuestions":[],
+  "guidedLearning":{"stepCount":8,"steps":[{"id":"L02-S01","title":"从可检验的问题开始"},{"id":"L02-S02","title":"观察：先记录直接看到的"},{"id":"L02-S03","title":"现象与解释分开写"},{"id":"L02-S04","title":"公平比较：控制变量"},{"id":"L02-S05","title":"重复实验提高可靠性"},{"id":"L02-S06","title":"结论必须由证据支持"},{"id":"L02-S07","title":"如实记录，不篡改数据"},{"id":"L02-S08","title":"设计一个小探究"}]},
+  "resourceRefs":{"experiment":"content/lessons/lesson-02-chemistry-as-experimental-science-experiment.json","practice":"content/lessons/lesson-02-chemistry-as-experimental-science-practice.json","diagnostic":"content/lessons/lesson-02-chemistry-as-experimental-science-diagnostic.json","mastery":"content/lessons/lesson-02-chemistry-as-experimental-science-mastery.json"},
+  "experiments":[{"id":"L02-E01","title":"控制变量探究：温度对蔗糖溶解快慢的影响","purpose":"通过对比实验练习控制变量与证据结论。","status":"ready-for-runtime","resourceRef":"content/lessons/lesson-02-chemistry-as-experimental-science-experiment.json"}],
+  "questions":[{"id":"L02-Q01","type":"concept","question":"科学探究的第一步通常是：","options":["提出问题","得出结论","记录数据","购买器材"],"answer":0,"knowledgeIds":["scientific-inquiry"],"knowledgePoints":["scientific-inquiry"],"explanation":"科学探究从可检验的问题开始，后续的假设、方案、记录都围绕问题展开。"},{"id":"L02-Q02","type":"classification","question":"“溶液由无色变为蓝色”属于：","options":["观察到的现象","得出的结论","提出的假设","实验目的"],"answer":0,"knowledgeIds":["observation-inference"],"knowledgePoints":["observation-inference"],"explanation":"颜色变化可以直接观察到，属于观察记录，不包含推断。"},{"id":"L02-Q03","type":"reasoning","question":"要比较不同温度下食盐溶解的快慢，应保持相同的是：","options":["水的温度","食盐的质量、水的体积与搅拌情况","溶解的时间","容器的颜色"],"answer":1,"knowledgeIds":["control-variables"],"knowledgePoints":["control-variables"],"explanation":"研究变量是温度，只改变温度，其余条件保持一致，比较才公平。"},{"id":"L02-Q04","type":"concept","question":"重复多次实验的主要目的是：","options":["增加实验次数","减小偶然误差，提高结论可靠性","让实验更耗时","避免提出假设"],"answer":1,"knowledgeIds":["data-integrity"],"knowledgePoints":["data-integrity"],"explanation":"重复实验能发现偶然误差，多次一致的结果更能支持可靠结论。"},{"id":"L02-Q05","type":"reasoning","question":"实验数据与预测不符时，正确的做法是：","options":["修改数据使它符合预测","保留数据并检查条件、操作与假设","丢弃这次实验","只报告符合预测的数据"],"answer":1,"knowledgeIds":["evidence-reasoning"],"knowledgePoints":["evidence-reasoning"],"explanation":"数据不支持预测时应保留原始数据，检查条件、操作与假设，而不是修改数据。"},{"id":"L02-Q06","type":"classification","question":"下列属于“解释”而不是“观察”的是：","options":["镁条燃烧发出耀眼白光","天平读数为12.3g","铁钉生锈说明铁与水和氧气发生反应","蜡烛熄灭后冒出白烟"],"answer":2,"knowledgeIds":["observation-inference"],"knowledgePoints":["observation-inference"],"explanation":"“说明铁与水和氧气发生反应”是对生锈原因的推断；其余都可通过感官或仪器直接记录。"},{"id":"L02-Q07","type":"transfer","question":"研究“光照是否影响植物生长”，实验组与对照组应：","options":["只改变光照，保持其他条件相同","同时改变光照和水分","两组都放在光照下","一组有光一组无土"],"answer":0,"knowledgeIds":["control-variables"],"knowledgePoints":["control-variables"],"explanation":"研究变量是光照，只改变光照，其他条件如水分、土壤、温度应保持一致。"},{"id":"L02-Q08","type":"transfer","question":"一个探究结论要想让人信服，最重要的是：","options":["结论听起来很专业","有清晰的实验证据支持","与老师预测一致","实验次数多但无记录"],"answer":1,"knowledgeIds":["evidence-reasoning"],"knowledgePoints":["evidence-reasoning"],"explanation":"结论必须由完整、真实的实验证据支持，这才是说服力的来源。"}],
+  "diagnosticQuestions":[{"id":"L02-D01","knowledgePoint":"observation-inference","question":"你能把“看到的现象”和“基于现象的解释”分开表达吗？","answer":true,"remediationStep":"L02-S02/L02-S03"},{"id":"L02-D02","knowledgePoint":"control-variables","question":"你能说明对照实验中哪个是研究变量、哪些是控制变量吗？","answer":true,"remediationStep":"L02-S04"},{"id":"L02-D03","knowledgePoint":"evidence-reasoning","question":"你能用证据说明你的结论，并保留异常数据吗？","answer":true,"remediationStep":"L02-S05/L02-S06/L02-S07"}],
   "misconceptions":["M02-observation-inference","M02-control-variable","M02-data-integrity","M02-evidence-logic"],
+  "mastery":{"threshold":0.95,"questionCount":20,"minCorrect":19,"mode":"unseen-transfer","resourceRef":"content/lessons/lesson-02-chemistry-as-experimental-science-mastery.json","description":"最终掌握验证使用未直接见过的探究情境变式；20题至少答对19题才标记本课掌握。","fallback":"diagnosis"},
   "sections":[
     {"title":"问题与假设","body":["从可检验的问题开始，再提出能够通过观察或实验检验的假设。"]},
     {"title":"观察与记录","body":["先客观记录直接观察到的现象，再进行解释。实验记录应保留真实数据。"]},
@@ -23,6 +26,6 @@
     {"title":"掌握检查","body":["完成练习、诊断、补救和陌生题检测。达到19/20（95%）且通过Transfer后，才视为本课掌握。"]}
   ],
   "summary":"本课建立“问题—假设—方案—观察/数据—证据—结论—反思”的科学探究框架。",
-  "provenance":{"status":"review","basis":"project curriculum-development standard; Grade 9 chemistry introductory scope","note":"Final source and pedagogical audit is required before publication."},
-  "review":{"curriculum":"review","scientific":"review","ageSuitability":"review","itemQuality":"review","knowledgeLinks":"review","blockingIssues":["source-document verification pending","assessment integration pending","final runtime verification pending"]}
+  "provenance":{"status":"ready","basis":"project curriculum-development standard; Grade 9 chemistry introductory scope","note":"内容与判分链路已通过运行时验证，正式发布。"},
+  "review":{"curriculum":"pass","scientific":"pass","ageSuitability":"pass","itemQuality":"pass","knowledgeLinks":"pass","wuhanAlignment":"pass","masteryGate":"pass","blockingIssues":[]}
 }
