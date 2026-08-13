@@ -12,7 +12,11 @@ export function renderV19Experiment({ root, experiment = {}, session = {}, onNex
 }
 export function renderV19ExperimentResult({ root, result = {}, onContinue } = {}) {
   if (!root) return;
-  root.innerHTML = `<section class="page experiment-result-page"><header class="page-header"><span class="eyebrow">实验完成</span><h1>实验学习证据已记录</h1><p>${escapeHtml(result.conclusion || result.message || '实验结果已进入学习状态。')}</p></header><button type="button" data-continue>查看学习状态</button></section>`;
-  root.querySelector('[data-continue]')?.addEventListener('click', () => onContinue?.());
+  const lessonId = typeof window !== 'undefined' ? window.__chemLabCurrentLessonId : '';
+  root.innerHTML = `<section class="page experiment-result-page"><header class="page-header"><span class="eyebrow">实验完成</span><h1>实验学习证据已记录</h1><p>${escapeHtml(result.conclusion || result.message || '实验结果已进入学习状态。')}</p></header><p class="experiment-next-hint">下一步：回到本课，继续完成基础练习。</p><button type="button" data-continue>返回本课 →</button></section>`;
+  root.querySelector('[data-continue]')?.addEventListener('click', () => {
+    if (lessonId && typeof window !== 'undefined') window.location.hash = `course/${encodeURIComponent(lessonId)}`;
+    else onContinue?.();
+  });
 }
 function escapeHtml(value) { return String(value).replace(/[&<>\"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c])); }
