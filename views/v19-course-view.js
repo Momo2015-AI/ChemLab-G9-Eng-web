@@ -39,9 +39,7 @@ export function renderV19Course({ root, lesson = {}, guidedLearning = null, prog
 
       ${steps.length ? `<section class="course-section-block lesson-content-block" id="guided-learning">
         <div class="course-section-heading"><div><span class="section-eyebrow">核心学习</span><h2>一步一步学</h2></div><span class="section-count">${steps.length} 步</span></div>
-        <div class="guided-learning-cards">
-          ${steps.map((step, i) => renderGuidedCard(step, i)).join('')}
-        </div>
+        <div class="guided-learning-cards">${steps.map((step, i) => renderGuidedCard(step, i)).join('')}</div>
       </section>` : ''}
     </section>`;
 
@@ -65,17 +63,18 @@ function renderGuidedCard(step, index) {
     </button>
     <div class="guided-card-detail" hidden>
       <div class="guided-step-body">${body.filter(Boolean).map(text => `<p>${escapeHtml(text)}</p>`).join('')}</div>
-      ${check ? renderCheck(check) : ''}
+      ${check ? renderCheck(check, index) : ''}
     </div>
   </article>`;
 }
 
-function renderCheck(check) {
+function renderCheck(check, index) {
   const options = Array.isArray(check.options) ? check.options : [];
-  return `<div class="guided-check">
+  const encodedExplanation = escapeHtml(check.explanation || '请回到本步骤的讲解，找出支持答案的证据。');
+  return `<div class="guided-check" data-answer="${Number.isInteger(check.answer) ? check.answer : ''}" data-explanation="${encodedExplanation}">
     <div class="guided-check-title">马上检查一下</div>
     <p class="guided-question">${escapeHtml(check.question || '')}</p>
-    ${options.length ? `<div class="guided-options">${options.map((option, i) => `<label><input type="radio" name="check-${escapeHtml(check.question || 'q')}" value="${i}"><span>${String.fromCharCode(65 + i)}. ${escapeHtml(option)}</span></label>`).join('')}</div>` : ''}
+    ${options.length ? `<div class="guided-options">${options.map((option, i) => `<label><input type="radio" name="guided-check-${index}" value="${i}"><span>${String.fromCharCode(65 + i)}. ${escapeHtml(option)}</span></label>`).join('')}</div>` : ''}
     <button type="button" class="guided-submit">提交答案</button>
     <div class="guided-result" hidden></div>
   </div>`;
@@ -103,17 +102,13 @@ if (typeof document !== 'undefined') {
       const selected = check?.querySelector('input[type="radio"]:checked');
       const result = check?.querySelector('.guided-result');
       if (!selected || !result) return;
+      const expected = Number.parseInt(check.dataset.answer, 10);
       const answerIndex = Number(selected.value);
-      const question = check.querySelector('.guided-question')?.textContent || '';
-      const card = submit.closest('.guided-learning-card');
-      const stepTitle = card?.querySelector('.guided-card-main strong')?.textContent || '';
-      const source = window.__chemLabGuidedLearning?.steps?.find(step => step.title === stepTitle);
-      const expected = Number.isInteger(source?.check?.answer) ? source.check.answer : null;
-      const correct = expected !== null && answerIndex === expected;
+      const correct = Number.isInteger(expected) && answerIndex === expected;
+      const explanation = check.dataset.explanation || '请回到本步骤的讲解，找出支持答案的证据。';
       result.hidden = false;
-      result.textContent = correct ? `✓ 回答正确。${source?.check?.explanation || ''}` : `再想一想。${source?.check?.explanation || '请回到本步骤的讲解，找出支持答案的证据。'}`;
+      result.textContent = correct ? `✓ 回答正确。${explanation}` : `再想一想。${explanation}`;
       result.className = `guided-result ${correct ? 'correct' : 'retry'}`;
-      void question;
     }
   });
 }
