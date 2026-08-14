@@ -47,6 +47,7 @@ export class LearningController {
     const mastery = this.getLessonMastery(dayId);
     if (mastery?.status === 'passed') return 'MASTERED';
     if (lessonState.recheck?.lessonId === dayId) return 'RECHECK';
+    if (lessonState.transfer?.lessonId === dayId) return 'TRANSFER';
     if (lessonState.remediation?.status === 'needs-remediation') return 'REMEDIATION';
     if (lessonState.diagnosis?.lessonId === dayId) return 'DIAGNOSIS';
     if (lessonState.practice?.lessonId === dayId) return 'PRACTICE';
@@ -147,6 +148,7 @@ function phaseLabel(phase) {
     RECHECK: '等待复查',
     MASTERY: '等待掌握测试',
     MASTERED: '已掌握',
+    TRANSFER: '迁移挑战',
     COMPLETED: '已完成',
   }[phase] || '学习中';
 }

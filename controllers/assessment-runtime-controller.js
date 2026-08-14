@@ -16,11 +16,14 @@ export class AssessmentRuntimeController {
     const data = await this.contentService.load();
     if (!lesson) return null;
     const fallbackKnowledge = Array.isArray(lesson.knowledgePoints) ? lesson.knowledgePoints : [];
-    const questions = (lesson.questions || [])
+    const practiceQuestions = typeof this.contentService.getPractice === 'function'
+      ? await this.contentService.getPractice(lessonId).catch(() => null)
+      : null;
+    const source = (Array.isArray(practiceQuestions) && practiceQuestions.length ? practiceQuestions : lesson.questions || [])
       .map(item => data.questionById.get(typeof item === 'object' ? item.id : item) || (typeof item === 'object' ? item : null))
       .filter(Boolean)
       .map(question => this.normalizeQuestion(question, fallbackKnowledge));
-    return this.startAttempt(lessonId, questions, 'practice');
+    return this.startAttempt(lessonId, source, 'practice');
   }
 
   async startMastery(lessonId) {
@@ -44,6 +47,9 @@ export class AssessmentRuntimeController {
     const ids = Array.isArray(knowledgeIds) ? knowledgeIds.filter(Boolean) : [knowledgeIds].filter(Boolean);
     if (!ids.length) return null;
     const data = await this.contentService.load();
+    if (typeof this.contentService.getLesson === 'function') await this.contentService.getLesson(lessonId).catch(() => null);
+    if (typeof this.contentService.getPractice === 'function') await this.contentService.getPractice(lessonId).catch(() => null);
+    if (typeof this.contentService.getDiagnostic === 'function') await this.contentService.getDiagnostic(lessonId).catch(() => null);
     const wanted = new Set(ids);
     const questions = data.questions
       .filter(question => this.knowledge(question).some(id => wanted.has(id)))
@@ -59,6 +65,24 @@ export class AssessmentRuntimeController {
     };
     this.state.save?.();
     return this.startAttempt(lessonId, questions, 'recheck');
+  }
+
+  async startTransfer(lessonId, limit = 5) {
+    const data = await this.contentService.getMastery(lessonId).catch(() => null);
+    const pool = Array.isArray(data?.questions) ? data.questions : [];
+    if (!pool.length) return null;
+    const questions = pool
+      .slice(0, limit)
+      .map(question => this.normalizeQuestion(question));
+    if (!questions.length) return null;
+    this.state.learning ||= {};
+    this.state.learning.transfer = {
+      lessonId,
+      status: 'in-progress',
+      questionCount: questions.length,
+    };
+    this.state.save?.();
+    return this.startAttempt(lessonId, questions, 'transfer');
   }
 
   startAttempt(lessonId, questions, mode) {
@@ -77,7 +101,7 @@ export class AssessmentRuntimeController {
     this.state.currentQuiz = attemptId;
     this.state.quizIndex = 0;
     this.state.quizAnswers = {};
-    this.learningController?.updateLessonState?.(lessonId, { phase: mode === 'mastery' ? 'MASTERY' : mode === 'recheck' ? 'RECHECK' : 'PRACTICE', activeAttemptId: attemptId });
+    this.learningController?.updateLessonState?.(lessonId, { phase: mode === 'mastery' ? 'MASTERY' : mode === 'recheck' ? 'RECHECK' : mode === 'transfer' ? 'TRANSFER' : 'PRACTICE', activeAttemptId: attemptId });
     return this.session;
   }
 
@@ -146,6 +170,7 @@ export class AssessmentRuntimeController {
     if (this.session.mode === 'practice') this.finishPractice(correct, total, score);
     if (this.session.mode === 'recheck') this.finishRecheck(correct, total, score);
     if (this.session.mode === 'mastery') this.finishMastery(correct, total, score);
+    if (this.session.mode === 'transfer') this.finishTransfer(correct, total, score);
     this.state.save?.();
   }
 
@@ -224,6 +249,23 @@ export class AssessmentRuntimeController {
     this.state.progress.lessonMastery ||= {};
     this.state.progress.lessonMastery[lessonId] = passed;
     if (passed) this.state.learning.remediation = null;
+  }
+
+  finishTransfer(correct, total, score) {
+    const lessonId = this.session.lessonId;
+    this.state.learning ||= {};
+    this.state.learning.transfer = {
+      ...(this.state.learning.transfer || {}),
+      lessonId,
+      attemptId: this.session.attemptId,
+      status: 'completed',
+      correct,
+      total,
+      score,
+      completedAt: new Date().toISOString(),
+    };
+    this.learningController?.updateLessonState?.(lessonId, { transfer: this.state.learning.transfer, phase: 'TRANSFER' });
+    this.state.save?.();
   }
 
   knowledge(question) {

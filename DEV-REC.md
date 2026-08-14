@@ -765,3 +765,75 @@ Close the review-based blockers that prevented lesson completion and content-rea
 - JSON parse validation for all 12 changed/new JSON files: **passed**.
 - `git diff --check`: **passed**.
 - Runtime loop smoke (fs-loaded): practice 7/8 → weak points `physical-change, matter-change` → remediation plan → recheck passed → mastery passed → `canCompleteLesson`/`markComplete` true → `progress.completed` recorded.
+
+---
+
+## Audit of page design: six defects found and fixed (phase 4)
+
+### Date
+
+2026-08-14
+
+### Scope
+
+User asked to review the lesson-01 learning flow UI from code architecture and learning-logic perspective. A full audit (code review + runtime simulation) found six defects. All six were fixed; nine new tests added; CI gates passed.
+
+### Defects identified
+
+1. **`-practice.json` / `-diagnostic.json` never loaded.** `app/content-loader.js` lacked `practiceUrl`/`diagnosticUrl`; `app/content-service.js` lacked `getPractice`/`getDiagnostic`; `assessment-runtime-controller.js` `startPractice` used only inline questions (thin pool).
+2. **Preset diagnostic questions (with `remediationStep`) never consumed.** Course view had no `diagnosticQuestions` prop and no preset self-check block.
+3. **Transfer step is an empty shell.** `onTransfer` in remediation route just navigated to course page; no transfer session / finish logic.
+4. **Remediation view was English and had no content reach for review steps.** No Chinese strings; review steps pointed to knowledgeId with no link to guided content.
+5. **Recheck pool was thin.** `startRecheck` only filtered `data.questions` without hydrating the lesson/practice/diagnostic pool; `physical-property` / `chemical-property` got only one acid question each.
+6. **Knowledge graph had no action navigation; lesson.sections never rendered.** No "learn" button on portal nodes; course view skipped the sections block.
+
+### Fixes applied
+
+#### Content enrichment
+- `content/lessons/lesson-01-material-changes-properties-guided-learning.json`: added `knowledgePoints` field to each of 8 guided steps so remediation review steps can map `knowledgeId → guided step`.
+
+#### Loader + service
+- `app/content-loader.js`: added `practiceUrl(id)` / `diagnosticUrl(id)` helpers and `loadPractice(id)` / `loadDiagnostic(id)` methods.
+- `app/content-service.js`: added `getPractice(lessonId)` and `getDiagnostic(lessonId)` that register their questions into `data.questions`/`questionById` pool; both are defensive (`try/catch`).
+
+#### Assessment runtime
+- `controllers/assessment-runtime-controller.js`:
+  - `startPractice(lessonId)`: now fetches `practice.json` via `getPractice` first, falls back to `lesson.questions` (backward compatible with legacy mocks).
+  - `startRecheck(lessonId, ids, limit)`: hydrates lesson/practice/diagnostic pools via `typeof … === 'function'` guards, then filters by `wanted` knowledge ids.
+  - `startTransfer(lessonId, limit=5)`: new — starts a transfer session from the mastery pool, sets `state.learning.transfer`.
+  - `finishTransfer(correct, total, score)`: new — records transfer completion state.
+  - `startAttempt`: updated phase label set includes `TRANSFER`.
+  - `finish()`: added branch for `transfer` mode to call `finishTransfer`.
+- `controllers/learning-controller.js`: `phaseLabel` now includes `'TRANSFER': '迁移挑战'`; `getLessonPhase` returns `'TRANSFER'` when `lessonState.transfer?.lessonId === dayId`.
+
+#### Views
+- `views/v19-course-view.js`:
+  - Added `diagnosticQuestions` prop; renders preset diagnostic self-check block with `data-guided-step` links that expand the targeted guided card.
+  - Added `highlightStep` prop; auto-expands and scrolls the matched guided card on load (used by remediation-review navigation).
+  - Added `onStartTransfer` prop and transfer entry button on mastered mastery gate.
+  - Added `renderLessonSections` helper; renders `lesson.sections` block after knowledge goal block.
+  - Document-level event delegation for `[data-guided-step]` click expands + scrolls to target card.
+- `views/quiz-view.js`: added `mode === 'transfer'` rendering path (title `迁移挑战`, status label, next-text).
+- `views/remediation-view.js`: fully rewritten in Chinese; review steps link to guided step title via knowledge-point → guided-step mapping; pass `lessonId` + `guidedLearning` so the view can resolve links.
+- `frontend/pages/knowledge/knowledge-portal-page.js`: added `lessons` and `onLearn` props; renders `去学习这个知识点 →` button in the detail panel for nodes that have a covering lesson; calls `onLearn(lessonId)`.
+
+#### App wiring
+- `app/application.js`:
+  - Course route passes `diagnosticQuestions` and `highlightStep` props.
+  - Quiz route supports `transfer:<lessonId>` mode; calls `startTransfer`.
+  - Remediation route passes `guidedLearning` + `lessonId` + `onReview(stepId)` callback; navigates to course with step id for auto-expand.
+  - Knowledge-map route passes `lessons` and `onLearn` callback.
+
+#### Tests
+- `tests/remediation-view.test.mjs`: updated for Chinese strings; added 3 tests (plan rendering, review link targeting, transfer action).
+- `tests/runtime-paths-v21.test.mjs` (new): 5 tests covering practice pool priority, recheck pool coverage, transfer session lifecycle, course view sections + diagnostic links, knowledge portal learn action.
+
+### Verification
+
+- `npm test`: **97 passed, 0 failed** (+7 new).
+- `npm run audit:content`: **passed; 0 errors, 0 warnings**; `effectiveQuestions: 86`, `graphNodes: 12`; both lessons `released/ready`.
+- `node scripts/runtime-audit.mjs`: **passed**.
+- JS syntax check for all changed `*.js`: **passed**.
+- JSON parse check for changed `*.json`: **passed**.
+- `git diff --check`: **passed**.
+- Recheck pool coverage verified: full pool = 33 questions (14 acid + 8 inline + 8 practice + 3 diagnostic); coverage: physical-change/matter-change 9, physical-property 3, chemical-property 3, observation-inference/evidence-reasoning 8.

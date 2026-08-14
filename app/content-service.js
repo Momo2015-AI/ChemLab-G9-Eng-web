@@ -24,6 +24,16 @@ class ContentService {
     if (mastery?.questions) this.registerQuestions(this.data || await this.load(), mastery.questions);
     return mastery;
   }
+  async getPractice(lessonId) {
+    const questions = await this.loader.loadPractice(lessonId).catch(() => null);
+    if (Array.isArray(questions) && questions.length) this.registerQuestions(this.data || await this.load(), questions);
+    return questions;
+  }
+  async getDiagnostic(lessonId) {
+    const questions = await this.loader.loadDiagnostic(lessonId).catch(() => null);
+    if (Array.isArray(questions) && questions.length) this.registerQuestions(this.data || await this.load(), questions);
+    return questions;
+  }
   async getQuestion(questionId) { const data = await this.load(); return data.questionById.get(questionId) || null; }
   async getQuestionsByKnowledge(knowledgeId) { const data = await this.load(); return data.questions.filter(q => normalizeKnowledgeIds(q).includes(knowledgeId)); }
   async getKnowledgeGraph() { const data = await this.load(); return data.knowledgeGraph; }

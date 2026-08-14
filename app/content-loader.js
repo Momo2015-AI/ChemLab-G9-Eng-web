@@ -11,6 +11,8 @@ const assetUrl = path => new URL(path, APP_ROOT).href;
 const canonicalLessonUrl = id => assetUrl(`content/lessons/${id}.json`);
 const guidedLearningUrl = id => assetUrl(`content/lessons/${id}-guided-learning.json`);
 const masteryUrl = id => assetUrl(`content/lessons/${id}-mastery.json`);
+const practiceUrl = id => assetUrl(`content/lessons/${id}-practice.json`);
+const diagnosticUrl = id => assetUrl(`content/lessons/${id}-diagnostic.json`);
 const ENDPOINTS = { questionBank: assetUrl('content/questions/question-bank.json'), knowledgeGraph: assetUrl('content/knowledge/knowledge-graph.json'), legacyKnowledgeGraph: assetUrl('modules/questions/taxonomy/knowledge-graph.json'), topicBank: assetUrl('modules/questions/bank/questions-by-topic.json') };
 const DEFAULT_TIMEOUT_MS = 12000;
 const normalizeQuestion = question => { if (!question || typeof question !== 'object') return question; if (question.answer !== undefined || question.ans === undefined) return question; return { ...question, answer: question.ans }; };
@@ -23,6 +25,8 @@ class ContentLoader {
   async loadLesson(id) { if (!String(id).startsWith('lesson-')) { const manifestEntry = (await this.loadAll()).days.find(day => day.day === String(id) || day.canonicalId === String(id)); id = manifestEntry?.canonicalId || id; } if (!String(id).startsWith('lesson-')) return null; return this.fetchJSON(canonicalLessonUrl(id)); }
   async loadGuidedLearning(id) { if (!String(id).startsWith('lesson-')) return null; try { return await this.fetchJSON(guidedLearningUrl(id)); } catch { if (id === 'lesson-01-material-changes-properties') return this.fetchJSON(assetUrl('content/lessons/lesson-01-guided-learning.json')).catch(() => null); return null; } }
   async loadMastery(id) { if (!String(id).startsWith('lesson-')) return null; const data = await this.fetchJSON(masteryUrl(id)).catch(() => null); return data?.mastery || data || null; }
+  async loadPractice(id) { if (!String(id).startsWith('lesson-')) return null; const data = await this.fetchJSON(practiceUrl(id)).catch(() => null); if (!data) return null; return Array.isArray(data.questions) ? data.questions : data; }
+  async loadDiagnostic(id) { if (!String(id).startsWith('lesson-')) return null; const data = await this.fetchJSON(diagnosticUrl(id)).catch(() => null); if (!data) return null; return Array.isArray(data.diagnostics) ? data.diagnostics : data; }
   async loadExperiment(id) {
     const direct = await this.fetchJSON(assetUrl(`content/experiments/${id}.json`)).catch(() => null);
     if (direct) return direct;

@@ -30,10 +30,16 @@ function layout(nodes) {
   return positioned;
 }
 
-export function renderKnowledgePortal({ root, nodes = [], relations = [], onHome = () => { window.location.hash = 'home'; } } = {}) {
+export function renderKnowledgePortal({ root, nodes = [], relations = [], lessons = [], onHome = () => { window.location.hash = 'home'; }, onLearn = () => {} } = {}) {
   if (!root) return;
   const laidOut = layout(nodes);
   const byId = new Map(laidOut.map(n => [n.id, n]));
+  const lessonByPoint = new Map();
+  for (const lesson of lessons) {
+    for (const point of (lesson.knowledgePoints || [])) {
+      if (!lessonByPoint.has(point)) lessonByPoint.set(point, lesson.id || lesson.canonicalId);
+    }
+  }
 
   root.innerHTML = `<section class="portal-page cg-graph-page">
     <div class="portal-hero">
@@ -100,7 +106,9 @@ export function renderKnowledgePortal({ root, nodes = [], relations = [], onHome
       <h4>${escapeHtml(node.name || node.id)}</h4>
       ${node.chapter ? `<p class="portal-muted">${escapeHtml(node.chapter)}</p>` : ''}
       ${Object.entries(TYPE_LABEL).map(([type, label]) => `<div class="cg-gp-row"><h5>${label}</h5><ul>${(byType[type]?.length ? byType[type] : ['—']).slice(0, 6).map(x => `<li>${escapeHtml(String(x))}</li>`).join('')}</ul></div>`).join('')}
+      ${lessonByPoint.has(node.id) ? `<button type="button" class="portal-btn cg-learn-btn" data-learn>去学习这个知识点 →</button>` : ''}
     `;
+    root.querySelector('[data-learn]')?.addEventListener('click', () => onLearn(lessonByPoint.get(node.id)));
   }
 
   root.querySelector('[data-search]')?.addEventListener('input', e => {
