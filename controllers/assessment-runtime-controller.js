@@ -1,4 +1,5 @@
 import { diagnoseAssessment } from '../core/diagnosis/diagnosis-engine.js';
+import { evaluateMastery } from '../core/assessment/mastery-policy.js';
 
 export class AssessmentRuntimeController {
   constructor({ assessment, contentService, state, masteryService = null, learningController = null }) {
@@ -28,16 +29,24 @@ export class AssessmentRuntimeController {
 
   async startMastery(lessonId) {
     const data = await this.contentService.getMastery(lessonId);
+    const lesson = typeof this.contentService.getLesson === 'function' ? await this.contentService.getLesson(lessonId).catch(() => null) : null;
     const questions = (data?.questions || []).map(question => this.normalizeQuestion(question));
     if (!questions.length) return null;
     this.state.learning ||= {};
     this.state.learning.mastery ||= {};
+    const requiredKnowledgeIds = data.requiredKnowledgeIds || data.knowledgeIds || lesson?.knowledgePoints || [...new Set(questions.flatMap(question => this.knowledge(question)))];
+    const criteria = {
+      requiredKnowledgeIds: Array.isArray(requiredKnowledgeIds) ? requiredKnowledgeIds : [requiredKnowledgeIds].filter(Boolean),
+      criticalMisconceptions: data.criticalMisconceptions || lesson?.mastery?.criticalMisconceptions || [],
+      requireConstructed: Boolean(data.requireConstructed || lesson?.mastery?.requireConstructed),
+    };
     this.state.learning.mastery[lessonId] = {
       ...(this.state.learning.mastery[lessonId] || {}),
       lessonId,
       status: 'in-progress',
       questionCount: questions.length,
       threshold: Number(data.threshold || .95),
+      criteria,
     };
     this.state.save?.();
     return this.startAttempt(lessonId, questions, 'mastery');
@@ -231,7 +240,15 @@ export class AssessmentRuntimeController {
     const lessonId = this.session.lessonId;
     const existing = this.state.learning?.mastery?.[lessonId] || {};
     const threshold = Number(existing.threshold || .95);
-    const passed = total > 0 && score >= threshold;
+    const decision = evaluateMastery({
+      questions: this.session.questions,
+      answers: this.session.answers,
+      threshold,
+      requiredKnowledgeIds: existing.criteria?.requiredKnowledgeIds || [],
+      criticalMisconceptions: existing.criteria?.criticalMisconceptions || [],
+      requireConstructed: existing.criteria?.requireConstructed,
+    });
+    const passed = decision.passed;
     this.state.learning ||= {};
     this.state.learning.mastery ||= {};
     this.state.learning.mastery[lessonId] = {
@@ -243,6 +260,7 @@ export class AssessmentRuntimeController {
       total,
       score,
       threshold,
+      criteria: decision,
       completedAt: new Date().toISOString(),
     };
     this.learningController?.updateLessonState?.(lessonId, { mastery: this.state.learning.mastery[lessonId], phase: passed ? 'MASTERED' : 'REMEDIATION' });

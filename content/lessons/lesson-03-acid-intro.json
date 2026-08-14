@@ -4,6 +4,8 @@
   "day": "03",
   "title": "酸入门：初识身边的酸",
   "module": "unit-01-intro-chemistry",
+  "semester": "upper",
+  "unitId": "u01",
   "duration": "45 分钟",
   "description": "从生活经验出发认识常见的酸，理解酸的性质、安全使用与科学态度。",
   "status": "ready",

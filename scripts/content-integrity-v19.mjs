@@ -18,7 +18,7 @@ function load(file) {
 const graph = load(graphPath);
 const bank = load(questionPath);
 
-function normalizeLessonQuestion(question, lesson) {
+function normalizeLessonQuestion(question, lesson, source = 'lesson') {
   if (!question?.id) return null;
   const options = Array.isArray(question.options) ? question.options : [];
   const answer = question.answer;
@@ -30,44 +30,54 @@ function normalizeLessonQuestion(question, lesson) {
     knowledge: Array.isArray(knowledge) ? knowledge : [knowledge].filter(Boolean),
     options,
     explanation: question.explanation || '',
+    source,
   };
 }
 
 function loadRuntimeQuestions() {
   if (!fs.existsSync(lessonsPath)) return [];
   const questions = [];
-  for (const name of fs.readdirSync(lessonsPath).filter(file => file.endsWith('.json'))) {
+  const lessonFiles = fs.readdirSync(lessonsPath).filter(file => file.endsWith('.json') && !/(?:-practice|-mastery|-diagnostic|-guided-learning|-experiment)\.json$/.test(file));
+  for (const name of lessonFiles) {
     const lesson = load(path.join(lessonsPath, name));
     if (!lesson) continue;
-    for (const question of lesson.questions || []) {
-      const normalized = normalizeLessonQuestion(question, lesson);
-      if (normalized) questions.push(normalized);
-    }
-    const masteryFile = path.join(lessonsPath, name.replace(/\.json$/, '-mastery.json'));
-    const mastery = load(masteryFile);
-    for (const question of mastery?.mastery?.questions || mastery?.questions || []) {
-      const normalized = normalizeLessonQuestion(question, lesson);
-      if (normalized) questions.push(normalized);
-    }
+    const add = (list, source) => {
+      for (const question of list || []) {
+        const normalized = normalizeLessonQuestion(question, lesson, source);
+        if (normalized) questions.push(normalized);
+      }
+    };
+    add(lesson.questions, 'lesson');
+    const practice = load(path.join(lessonsPath, name.replace(/\.json$/, '-practice.json')));
+    add(practice?.questions || practice, 'practice');
+    const diagnostic = load(path.join(lessonsPath, name.replace(/\.json$/, '-diagnostic.json')));
+    add(diagnostic?.diagnostics || diagnostic, 'diagnostic');
+    const masteryResource = load(path.join(lessonsPath, name.replace(/\.json$/, '-mastery.json')));
+    add(masteryResource?.mastery?.questions || masteryResource?.questions, 'mastery');
   }
   return questions;
 }
 
 const runtimeQuestions = loadRuntimeQuestions();
-runtimeQuestions.push(...day01ProductionOverrides, ...day01DiagnosticQuestions.filter(question => question.status !== 'archived'));
+runtimeQuestions.push(
+  ...day01ProductionOverrides.map(question => ({ ...question, source: 'runtime-override' })),
+  ...day01DiagnosticQuestions
+    .filter(question => question.status !== 'archived')
+    .map(question => ({ ...question, source: 'runtime-diagnostic' }))
+);
 
-// Content reset state: the legacy 320-question bank was intentionally removed.
-// The future canonical bank belongs under content/questions/ and is optional
-// until new source documents are supplied, reviewed, and generated into a bank.
+// The optional question bank is not required while canonical runtime content
+// is present and has passed the same effective-content validation.
 if (!bank) {
-  report.stats.sourceQuestions = 0;
-  report.stats.sourceReady = 0;
-  report.stats.sourceQuestionIds = 0;
+  const ids = new Set(runtimeQuestions.map(question => question.id));
+  report.stats.sourceQuestions = runtimeQuestions.length;
+  report.stats.sourceReady = runtimeQuestions.length;
+  report.stats.sourceQuestionIds = ids.size;
   report.stats.effectiveQuestions = runtimeQuestions.length;
-  report.stats.effectiveQuestionIds = new Set(runtimeQuestions.map(question => question.id)).size;
-  report.stats.overrides = 0;
-  report.stats.runtimeQuestionSources = 'canonical lesson/mastery content plus runtime overrides/diagnostics';
-  report.stats.questionBankState = 'RESET_PENDING_SOURCE_DOCUMENTS';
+  report.stats.effectiveQuestionIds = ids.size;
+  report.stats.overrides = day01ProductionOverrides.length;
+  report.stats.runtimeQuestionSources = 'canonical lesson/practice/diagnostic/mastery content plus runtime overrides/diagnostics';
+  report.stats.questionBankState = 'CANONICAL_RUNTIME_SOURCE';
 } else if (!Array.isArray(bank.questions)) {
   report.errors.push('content/questions/question-bank.json exists but questions[] is missing');
 } else {
@@ -112,7 +122,7 @@ if (runtimeQuestions.length) {
     ids.add(question.id);
     if (!question.prompt?.trim()) report.errors.push(`${question.id}: effective runtime question has no prompt`);
     if ((question.answer === undefined || question.answer === null || question.answer === '') && question.type !== 'constructed') report.errors.push(`${question.id}: effective runtime question has no answer`);
-    if (!question.explanation?.trim() && question.type !== 'constructed') report.errors.push(`${question.id}: effective runtime question has no explanation`);
+    if (!question.explanation?.trim() && question.type !== 'constructed' && question.source !== 'diagnostic') report.errors.push(`${question.id}: effective runtime question has no explanation`);
     if (!question.knowledge.length) report.errors.push(`${question.id}: effective runtime question has no knowledge links`);
     if (Array.isArray(question.options) && question.options.length > 0 && question.answer !== undefined) {
       const index = Number.isInteger(question.answer) ? question.answer : Number(String(question.answer).toUpperCase().charCodeAt(0) - 65);
@@ -123,8 +133,8 @@ if (runtimeQuestions.length) {
 
 if (graph?.nodes) {
   report.stats.graphNodes = graph.nodes.length;
-  if (bank?.questions) {
-    const ids = new Set(bank.questions.map(q => q?.id).filter(Boolean));
+  if (bank?.questions || runtimeQuestions.length) {
+    const ids = new Set((bank?.questions || runtimeQuestions).map(q => q?.id).filter(Boolean));
     let missing = 0;
     for (const node of graph.nodes) {
       for (const qid of (node.questions ?? [])) {
@@ -136,7 +146,7 @@ if (graph?.nodes) {
     }
     report.stats.graphMissingQuestions = missing;
   } else {
-    report.stats.graphQuestionReferences = 'DEFERRED_UNTIL_NEW_BANK';
+    report.stats.graphQuestionReferences = 'VALIDATED_AGAINST_CANONICAL_RUNTIME_SOURCE';
   }
 }
 

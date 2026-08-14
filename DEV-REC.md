@@ -670,6 +670,7 @@ Implement Phase 0 in a separate focused change, beginning with contract tests an
 - `npm run audit:content`: **passed; 0 errors, 0 warnings**. The question bank remains intentionally `RESET_PENDING_SOURCE_DOCUMENTS`, while 50 effective runtime questions are validated from canonical lesson/mastery content and runtime diagnostics.
 - `node --check views/v19-experiment-view.js`: **passed**.
 - `git diff --check`: **passed**.
+
 - Browser smoke check loaded `http://127.0.0.1:8766/index.html#experiment/L01-E01`, displayed the real first-lesson experiment, and reported no console errors. The local smoke server was stopped after verification.
 
 ### Commit
@@ -885,3 +886,25 @@ User asked to review the lesson-01 learning flow UI from code architecture and l
 - JS syntax check for all changed `*.js`: **passed**.
 - JSON parse check for all changed `*.json`: **passed**.
 - `git diff --check`: **passed**.
+
+## 2026-08-14 — P2 学习入口、Mastery 与发布一致性修复
+
+### Scope
+
+完成 P2 全量修复，统一 canonical lesson、运行时题源、学习状态和上下册页面入口之间的边界；未引入第二套课程或推荐状态源。
+
+### Fixes applied
+
+- `AssessmentRuntimeController` 使用组合 Mastery 门槛：总分阈值、知识点覆盖、关键误解清除；构造题支持量规通过结果。
+- `ContentService` 提供按 `semester` 过滤的 canonical lesson/experiment catalog；首页、课程页、实验页和学期切换统一使用当前教材册次。
+- lesson manifest 纳入 L03，并明确其上册 `u01` 归属；下册没有可运行 canonical 内容时展示真实接入状态，不伪造课程入口。
+- 内容完整性审计纳入主课、practice、diagnostic、mastery 四类 canonical runtime 题源；诊断题按错误类型/补救步骤契约校验，不误判为缺少解析。
+- 发布审计从旧的 reset 阻断状态切换为 `CANONICAL_RUNTIME_SOURCE`，三课均报告 `released/ready`，并更新可追踪审计报告。
+
+### Verification
+
+- `npm test`: **101 passed, 0 failed**。
+- `npm run audit:content`: **passed; 0 errors, 0 warnings**；`effectiveQuestions: 139`、`graphMissingQuestions: 0`、3 lessons `released/ready`。
+- `node scripts/runtime-audit.mjs`: **passed**。
+- Changed JavaScript `node --check`: **passed**。
+- `git diff --check`: **passed**。

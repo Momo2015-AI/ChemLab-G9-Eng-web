@@ -13,7 +13,7 @@ class ContentService {
     if (lesson) {
       data.dayById.set(dayId, lesson);
       const index = data.days.findIndex(day => day.day === dayId || day.canonicalId === dayId);
-      if (index >= 0) data.days[index] = lesson;
+      if (index >= 0) data.days[index] = { ...data.days[index], ...lesson, canonicalId: data.days[index].canonicalId || lesson.id, id: lesson.id };
       this.registerLessonQuestions(data, lesson);
     }
     return lesson || data.dayById.get(dayId) || null;
@@ -35,6 +35,10 @@ class ContentService {
     return questions;
   }
   async getQuestion(questionId) { const data = await this.load(); return data.questionById.get(questionId) || null; }
+  async getLessons({ semester = null } = {}) {
+    const data = await this.load();
+    return data.days.filter(lesson => !semester || lesson.semester === semester);
+  }
   async getQuestionsByKnowledge(knowledgeId) { const data = await this.load(); return data.questions.filter(q => normalizeKnowledgeIds(q).includes(knowledgeId)); }
   async getKnowledgeGraph() { const data = await this.load(); return data.knowledgeGraph; }
   async getKnowledgeGraphViewModel() { const engine = await this.getKnowledgeEngine(); return { nodes: Array.from(engine.nodes.values()), relations: [...engine.relations] }; }
@@ -45,10 +49,10 @@ class ContentService {
   async getQuestionsByKnowledgeGraph(id) { const engine = await this.getKnowledgeEngine(); return engine.questions(id); }
   async getCommonMistakes(id) { const engine = await this.getKnowledgeEngine(); return engine.commonMistakes(id); }
   async getExperiment(id) { return this.loader.loadExperiment(id); }
-  async getExperimentCatalog() {
-    const data = await this.load();
+  async getExperimentCatalog({ semester = null } = {}) {
+    const lessons = await this.getLessons({ semester });
     const experiments = [];
-    for (const entry of data.days.filter(day => day?.canonicalId)) {
+    for (const entry of lessons.filter(day => day?.canonicalId)) {
       const lesson = await this.loader.loadLesson(entry.canonicalId).catch(() => null);
       for (const item of lesson?.experiments || []) {
         const experiment = await this.getExperiment(item.id);

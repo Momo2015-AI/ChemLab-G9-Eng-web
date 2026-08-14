@@ -1,14 +1,14 @@
 # V1.9 Lesson Content Readiness Audit
 
-Generated: 2026-08-14T09:20:19.098Z
+Generated: 2026-08-14T13:05:49.190Z
 
 ## Baseline
 - Lessons scanned: 3
 - Template lessons: 0
 - Real-content candidates: 3
-- Ready by automated scan: 0
+- Ready by automated scan: 3
 - Lessons requiring rewrite/incompletion work: 0
-- Question bank state: RESET_PENDING_SOURCE_DOCUMENTS
+- Question bank state: CANONICAL_RUNTIME_SOURCE
 - Legacy duplicate day01.json present: NO
 
 ## Lesson matrix
@@ -22,4 +22,4 @@ Generated: 2026-08-14T09:20:19.098Z
 - None
 
 ## Gate
-- RESET: source-driven content rebuild is pending. Templates are recorded as incomplete evidence and do not block engineering validation or deployment readiness.
+- PASS: no template/incomplete lessons detected.

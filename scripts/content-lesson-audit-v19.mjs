@@ -29,7 +29,7 @@ const report = {
   ready: 0,
   needsRewrite: 0,
   duplicateLegacy: fs.existsSync(path.join(lessonsDir, 'day01.json')),
-  questionBankState: questionBankExists ? 'SOURCE_BANK_PRESENT' : 'RESET_PENDING_SOURCE_DOCUMENTS',
+  questionBankState: questionBankExists ? 'SOURCE_BANK_PRESENT' : 'CANONICAL_RUNTIME_SOURCE',
   issues: [],
   lessons: []
 };
@@ -68,6 +68,7 @@ for (const file of files) {
     report.needsRewrite++;
   } else if (status === 'released' || status === 'review') {
     report.realContent++;
+    if (status === 'released') report.ready++;
   } else {
     report.needsRewrite++;
   }
@@ -86,12 +87,9 @@ for (const file of files) {
   });
 }
 
-// Readiness is never promoted automatically. During the intentional content reset,
-// template lessons are expected until source documents are supplied and the lesson
-// set is rebuilt. Once a source bank exists, template/incomplete lessons become a
-// blocking content gate again.
-report.ready = 0;
-const resetPending = report.questionBankState === 'RESET_PENDING_SOURCE_DOCUMENTS';
+// A reset state is valid only when no canonical lesson has real released content.
+// Once canonical lessons exist, template/incomplete lessons are a blocking gate.
+const resetPending = !questionBankExists && report.realContent === 0;
 const gateBlocked = !resetPending && (report.template > 0 || report.needsRewrite > 0 || report.duplicateLegacy);
 
 const lines = [

@@ -2,10 +2,10 @@
   "scanned": 3,
   "template": 0,
   "realContent": 3,
-  "ready": 0,
+  "ready": 3,
   "needsRewrite": 0,
   "duplicateLegacy": false,
-  "questionBankState": "RESET_PENDING_SOURCE_DOCUMENTS",
+  "questionBankState": "CANONICAL_RUNTIME_SOURCE",
   "issues": [],
   "lessons": [
     {

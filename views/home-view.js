@@ -5,8 +5,8 @@ export function renderHome({ root, data = {}, onCourse, onDashboard, onGraph, on
   if (!root) return;
   const stats = data.stats || {};
   const lessons = Array.isArray(data.lessons) ? data.lessons : [];
-  const firstLesson = lessons.find(lesson => lesson.canonicalId === GOLDEN_LESSON_ID || lesson.id === GOLDEN_LESSON_ID) || { canonicalId: GOLDEN_LESSON_ID, id: GOLDEN_LESSON_ID, day: '01', title: '物质的变化和性质', description: '从观察现象到证据推理，建立化学学习的第一套思维框架。' };
-  const firstLessonId = firstLesson.canonicalId || firstLesson.id || GOLDEN_LESSON_ID;
+  const firstLesson = lessons.find(lesson => lesson.canonicalId === GOLDEN_LESSON_ID || lesson.id === GOLDEN_LESSON_ID) || (data.term === 'lower' ? null : { canonicalId: GOLDEN_LESSON_ID, id: GOLDEN_LESSON_ID, day: '01', title: '物质的变化和性质', description: '从观察现象到证据推理，建立化学学习的第一套思维框架。' });
+  const firstLessonId = firstLesson?.canonicalId || firstLesson?.id || GOLDEN_LESSON_ID;
   root.innerHTML = `
     <section class="page home-page">
       <header class="page-header">
@@ -14,7 +14,7 @@ export function renderHome({ root, data = {}, onCourse, onDashboard, onGraph, on
         <h1>${escapeHtml(data.title || '九年级化学智能学习中心')}</h1>
         <p>${escapeHtml(data.subtitle || '学习 → 理解 → 实验 → 练习 → 诊断 → 补救 → 掌握')}</p>
       </header>
-      <section class="golden-lesson-entry" aria-label="精品首课">
+      ${firstLesson ? `<section class="golden-lesson-entry" aria-label="精品首课">
         <div class="golden-lesson-entry__meta"><span>GOLDEN LESSON · 01</span><span>95% MASTERY</span></div>
         <div class="golden-lesson-entry__number" aria-hidden="true">01</div>
         <div class="golden-lesson-entry__body">
@@ -23,7 +23,7 @@ export function renderHome({ root, data = {}, onCourse, onDashboard, onGraph, on
           <div class="golden-lesson-entry__flow"><span>01 学习</span><b>→</b><span>02 实验</span><b>→</b><span>03 练习</span><b>→</b><span>04 诊断</span><b>→</b><span>05 掌握</span></div>
           <button type="button" data-golden-lesson>开始第一课</button>
         </div>
-      </section>
+      </section>` : '<section class="golden-lesson-entry" aria-label="下册课程建设中"><div class="golden-lesson-entry__body"><h2>下册课程正在接入</h2><p>当前还没有可运行的下册 canonical 课程，已为你保留课程入口。</p></div></section>'}
       <section class="home-learning-path" aria-label="学习流程">
         <div class="section-heading"><span>LEARNING FLOW</span><h2>按这个顺序学习</h2><p>每一课沿着同一条学习路径推进，避免在不同模块之间来回跳转。</p></div>
         <div class="learning-flow-grid">
@@ -36,7 +36,7 @@ export function renderHome({ root, data = {}, onCourse, onDashboard, onGraph, on
         </div>
       </section>
       <section class="learning-center-list" aria-label="课程目录">
-        <div class="section-heading"><span>CURRICULUM · 上册</span><h2>学习单元</h2><p>只显示已经建立 canonical 内容的课程；旧版“常见的酸”课程不再作为当前学习入口。</p></div>
+        <div class="section-heading"><span>CURRICULUM · ${data.term === 'lower' ? '下册' : '上册'}</span><h2>学习单元</h2><p>只显示已经建立 canonical 内容的课程；旧版课程不再作为当前学习入口。</p></div>
         ${lessons.length ? `<div class="lesson-grid">${lessons.map((lesson, index) => `
           <button type="button" class="lesson-card" data-lesson-id="${escapeHtml(lesson.canonicalId || lesson.id)}">
             <span class="lesson-card-number">${String(Number(lesson.day || index + 1)).padStart(2, '0')}</span>
