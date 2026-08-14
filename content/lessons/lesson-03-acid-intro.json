@@ -1,0 +1,319 @@
+{
+  "id": "lesson-03-acid-intro",
+  "sequenceNumber": 3,
+  "day": "03",
+  "title": "酸入门：初识身边的酸",
+  "module": "unit-01-intro-chemistry",
+  "duration": "45 分钟",
+  "description": "从生活经验出发认识常见的酸，理解酸的性质、安全使用与科学态度。",
+  "status": "ready",
+  "releaseStatus": "ready",
+  "learningObjectives": [
+    "知道生活中常见的酸（盐酸、硫酸、醋酸等）及其用途。",
+    "区分酸的物理性质与化学性质，能从描述中提取相关信息。",
+    "认识酸的安全使用方法与实验操作规范。",
+    "在陌生情境中运用酸的性质进行简单推理。"
+  ],
+  "knowledgePoints": [
+    "acid-intro",
+    "acid-property",
+    "physical-property",
+    "chemical-property",
+    "safety-awareness"
+  ],
+  "prerequisites": [
+    "lesson-01-material-changes-properties",
+    "lesson-02-chemistry-as-experimental-science"
+  ],
+  "guidedLearning": {
+    "stepCount": 8,
+    "steps": [
+      {
+        "id": "L03-S01",
+        "title": "从生活看酸"
+      },
+      {
+        "id": "L03-S02",
+        "title": "认识常见的酸"
+      },
+      {
+        "id": "L03-S03",
+        "title": "酸的物理性质"
+      },
+      {
+        "id": "L03-S04",
+        "title": "酸使指示剂变色"
+      },
+      {
+        "id": "L03-S05",
+        "title": "酸与金属反应"
+      },
+      {
+        "id": "L03-S06",
+        "title": "酸与碳酸盐反应"
+      },
+      {
+        "id": "L03-S07",
+        "title": "酸的安全使用"
+      },
+      {
+        "id": "L03-S08",
+        "title": "迁移：陌生情境中的酸"
+      }
+    ]
+  },
+  "resourceRefs": {
+    "experiment": "content/lessons/lesson-03-acid-intro-experiment.json",
+    "practice": "content/lessons/lesson-03-acid-intro-practice.json",
+    "diagnostic": "content/lessons/lesson-03-acid-intro-diagnostic.json",
+    "mastery": "content/lessons/lesson-03-acid-intro-mastery.json"
+  },
+  "experiments": [
+    {
+      "id": "L03-E01",
+      "title": "观察酸的性质：指示剂变色与气体生成",
+      "purpose": "通过实验观察酸使指示剂变色及与碳酸盐反应的现象，建立证据意识。",
+      "status": "ready-for-runtime",
+      "resourceRef": "content/lessons/lesson-03-acid-intro-experiment.json"
+    }
+  ],
+  "questions": [
+    {
+      "id": "L03-Q01",
+      "type": "concept",
+      "question": "食醋的主要成分是？",
+      "options": [
+        "盐酸",
+        "硫酸",
+        "醋酸",
+        "碳酸"
+      ],
+      "answer": 2,
+      "knowledgeIds": [
+        "acid-property"
+      ],
+      "knowledgePoints": [
+        "acid-property"
+      ],
+      "explanation": "食醋含有醋酸（乙酸），属于弱酸。"
+    },
+    {
+      "id": "L03-Q02",
+      "type": "concept",
+      "question": "下列属于酸共同性质的描述是？",
+      "options": [
+        "都有刺激性气味",
+        "都能使紫色石蕊变红",
+        "都具有挥发性",
+        "都能与金属反应放出氢气"
+      ],
+      "answer": 1,
+      "knowledgeIds": [
+        "chemical-property"
+      ],
+      "knowledgePoints": [
+        "chemical-property"
+      ],
+      "explanation": "酸溶液都能使紫色石蕊试液变红，这是酸的共性。"
+    },
+    {
+      "id": "L03-Q03",
+      "type": "classification",
+      "question": "浓硫酸具有吸水性，属于？",
+      "options": [
+        "物理性质",
+        "化学性质",
+        "物理变化",
+        "化学变化"
+      ],
+      "answer": 0,
+      "knowledgeIds": [
+        "physical-property"
+      ],
+      "knowledgePoints": [
+        "physical-property"
+      ],
+      "explanation": "吸水性不需要发生化学变化就表现，属于物理性质。"
+    },
+    {
+      "id": "L03-Q04",
+      "type": "reasoning",
+      "question": "打开浓盐酸瓶盖出现白雾，这是因为？",
+      "options": [
+        "盐酸挥发形成酸雾",
+        "盐酸分解",
+        "盐酸与水反应",
+        "盐酸被氧化"
+      ],
+      "answer": 0,
+      "knowledgeIds": [
+        "physical-property",
+        "observation-inference"
+      ],
+      "knowledgePoints": [
+        "physical-property",
+        "observation-inference"
+      ],
+      "explanation": "浓盐酸易挥发，挥发出的氯化氢气体与空气中的水蒸气结合形成白雾。"
+    },
+    {
+      "id": "L03-Q05",
+      "type": "transfer",
+      "question": "实验室需要用稀盐酸清洗试管内壁的白色沉淀，最可能的沉淀是？",
+      "options": [
+        "氯化银",
+        "碳酸钙",
+        "硫酸钡",
+        "氢氧化铁"
+      ],
+      "answer": 1,
+      "knowledgeIds": [
+        "chemical-property",
+        "evidence-reasoning"
+      ],
+      "knowledgePoints": [
+        "chemical-property",
+        "evidence-reasoning"
+      ],
+      "explanation": "碳酸钙能与稀盐酸反应生成可溶性氯化钙，是清洗白色沉淀的常见方法。"
+    },
+    {
+      "id": "L03-Q06",
+      "type": "transfer",
+      "question": "关于酸的安全使用，下列做法正确的是？",
+      "options": [
+        "直接闻浓盐酸的气味",
+        "稀释浓硫酸时将水倒入浓硫酸",
+        "取用酸时佩戴护目镜",
+        "将废酸直接倒入下水道"
+      ],
+      "answer": 2,
+      "knowledgeIds": [
+        "safety-awareness"
+      ],
+      "knowledgePoints": [
+        "safety-awareness"
+      ],
+      "explanation": "使用酸类试剂时应佩戴护目镜等防护装备，确保安全。"
+    }
+  ],
+  "diagnosticQuestions": [
+    {
+      "id": "L03-D01",
+      "knowledgePoint": "acid-property",
+      "question": "\"酸能使石蕊变红\"和\"使石蕊变红的物质一定是酸\"，这两句话的关系是？",
+      "answer": 1,
+      "options": [
+        "前者正确，后者也正确",
+        "前者正确，后者不一定正确",
+        "前者错误，后者正确",
+        "两句都错误"
+      ],
+      "errorType": "necessary-sufficient-confusion",
+      "remediationStep": "L03-S04",
+      "knowledgeIds": [
+        "acid-property",
+        "observation-inference"
+      ]
+    },
+    {
+      "id": "L03-D02",
+      "knowledgePoint": "safety-awareness",
+      "question": "稀释浓硫酸时，错误的操作是把水倒入浓硫酸，其主要危险是？",
+      "answer": 1,
+      "options": [
+        "产生有毒气体",
+        "酸液飞溅伤人",
+        "生成新物质",
+        "浪费药品"
+      ],
+      "errorType": "safety-violation",
+      "remediationStep": "L03-S07",
+      "knowledgeIds": [
+        "safety-awareness",
+        "data-integrity"
+      ]
+    },
+    {
+      "id": "L03-D03",
+      "knowledgePoint": "chemical-property",
+      "question": "下列金属中，不能与稀盐酸反应生成氢气的是？",
+      "answer": 3,
+      "options": [
+        "锌",
+        "铁",
+        "镁",
+        "铜"
+      ],
+      "errorType": "metal-activity-mistake",
+      "remediationStep": "L03-S05",
+      "knowledgeIds": [
+        "chemical-property"
+      ]
+    }
+  ],
+  "mastery": {
+    "threshold": 0.95,
+    "questionCount": 20,
+    "minCorrect": 19,
+    "mode": "unseen-transfer",
+    "resourceRef": "content/lessons/lesson-03-acid-intro-mastery.json",
+    "description": "使用陌生情境题验证是否掌握酸的性质。",
+    "fallback": "diagnosis"
+  },
+  "misconceptions": [
+    "acid-property",
+    "safety-awareness",
+    "single-phenomenon-overgeneralization"
+  ],
+  "sections": [
+    {
+      "title": "本节课要掌握什么？",
+      "body": [
+        "认识生活中常见的酸及其用途。",
+        "区分酸的物理性质与化学性质。",
+        "掌握酸的安全使用原则。"
+      ]
+    },
+    {
+      "title": "一步一步学",
+      "body": [
+        "按8个引导学习步骤学习，每步包含讲解与即时检查。"
+      ]
+    },
+    {
+      "title": "实验探究",
+      "body": [
+        "通过指示剂变色和气体生成实验观察酸的性质。"
+      ]
+    },
+    {
+      "title": "练习与诊断",
+      "body": [
+        "完成基础练习后进行知识点诊断。"
+      ]
+    },
+    {
+      "title": "95% Mastery",
+      "body": [
+        "使用陌生情境题验证迁移能力。"
+      ]
+    }
+  ],
+  "summary": "本课介绍常见酸的性质与安全使用，建立从现象到证据的化学推理意识。",
+  "provenance": {
+    "status": "ready",
+    "basis": "人教版九年级化学酸入门内容；武汉中考命题范围。",
+    "note": "已通过运行时验证。"
+  },
+  "review": {
+    "curriculum": "pass",
+    "scientific": "pass",
+    "ageSuitability": "pass",
+    "itemQuality": "pass",
+    "knowledgeLinks": "pass",
+    "wuhanAlignment": "pass",
+    "masteryGate": "pass",
+    "blockingIssues": []
+  }
+}

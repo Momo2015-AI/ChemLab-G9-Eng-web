@@ -837,3 +837,51 @@ User asked to review the lesson-01 learning flow UI from code architecture and l
 - JSON parse check for changed `*.json`: **passed**.
 - `git diff --check`: **passed**.
 - Recheck pool coverage verified: full pool = 33 questions (14 acid + 8 inline + 8 practice + 3 diagnostic); coverage: physical-change/matter-change 9, physical-property 3, chemical-property 3, observation-inference/evidence-reasoning 8.
+
+## 2026-08-14 — P0-P3 defect fixes + lesson-03 acid intro creation
+
+### Defects addressed
+
+**P0: Lesson-02 JSON migration**
+- Created `lesson-02-chemistry-as-experimental-science.json` (main file, status/releaseStatus: ready) replacing the old `.js` module that the content-loader could not read.
+- Created companion files: `-practice.json` (13 questions: 11 single + 2 constructed), `-mastery.json` (20 questions, nested under `mastery.questions`), `-diagnostic.json` (3 multiple-choice items with errorType/remediationStep/knowledgeIds), `-guided-learning.json` (8 steps), `-experiment.json`.
+- Updated main JSON `diagnosticQuestions` to use the new multiple-choice format with `options`/`answer`/`errorType`/`remediationStep` fields.
+
+**P0: Guided-learning knowledgePoints for L02**
+- Added `knowledgePoints` array to all 8 guided-learning steps, mapping to canonical nodes: `scientific-inquiry`, `observation-inference`, `control-variables`, `evidence-reasoning`, `data-integrity`.
+
+**P1: Practice constructed-response questions**
+- Added L02-P09 through L02-P13 to practice pool; P12 and P13 are `type: "constructed"` with `rubric` and `misconception` fields.
+- Similarly added L03-P12 and L03-P13 to the new lesson-03 practice pool.
+
+**P1: Diagnostic multiple-choice improvement**
+- L02 diagnostic questions converted from boolean self-check to multiple-choice with four options, `errorType`, `remediationStep`, and `knowledgeIds` fields.
+
+**P2: Quiz result page question review**
+- Extended `renderQuizResult` in `views/quiz-view.js` to accept `answers` and `questions` props.
+- Renders expandable per-question review section showing correct/incorrect status, user vs correct answer letter, and explanation.
+- Updated `app/application.js` quiz route to pass `answers: session.answers, questions: session.questions`.
+
+**P2: Learning-phase hard constraint**
+- Updated `views/v19-course-view.js` practice section: when `stages.practice` is false, renders disabled button with message "完成第一步引导学习后解锁" and helper text "请先完成所有引导学习步骤，再进行练习。"
+- Constraint already enforced at controller level (`getStageAvailability` returns `practice: false` until guided + experiment complete).
+
+**P3: Lesson-03 acid intro**
+- Created full seven-file set: `lesson-03-acid-intro.json` (main, 6 inline questions, status: ready), `-guided-learning.json` (8 steps with knowledgePoints), `-practice.json` (13 questions: 11 single + 2 constructed), `-mastery.json` (20 questions nested under `mastery.questions`), `-diagnostic.json` (3 multiple-choice), `-experiment.json` (indicator color change + gas generation).
+- Knowledge points: `acid-intro`, `acid-property`, `physical-property`, `chemical-property`, `safety-awareness`.
+- Prerequisites: lesson-01 and lesson-02.
+
+**Bug fix: Assessment engine default type**
+- `engine/assessment-engine.js` `checkAnswer`: added `if (!question.type) question.type = 'choice';` to handle questions without an explicit `type` field (e.g., mastery questions loaded via the engine).
+
+**Bug fix: Audit script constructed-question exemption**
+- `scripts/content-integrity-v19.mjs` line 114: added `&& question.type !== 'constructed'` to the answer-missing check, matching the existing exemption on line 115 for explanation.
+
+### Verification
+
+- `npm test`: **97 passed, 0 failed**.
+- `npm run audit:content`: **passed; 0 errors, 0 warnings**; `effectiveQuestions: 130`, `graphNodes: 12`; three lessons all `released/ready`.
+- `node scripts/runtime-audit.mjs`: **passed**.
+- JS syntax check for all changed `*.js`: **passed**.
+- JSON parse check for all changed `*.json`: **passed**.
+- `git diff --check`: **passed**.

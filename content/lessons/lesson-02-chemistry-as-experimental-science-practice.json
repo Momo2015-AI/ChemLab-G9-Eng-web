@@ -145,6 +145,88 @@
       "knowledgeIds": [
         "evidence-reasoning"
       ]
+    },
+    {
+      "id": "L02-P09",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "evidence-reasoning",
+      "question": "实验记录只有结论没有数据，主要缺陷是：",
+      "options": [
+        "字数太少",
+        "缺少支撑结论的原始证据",
+        "仪器一定错误",
+        "结论一定错误"
+      ],
+      "answer": 1,
+      "explanation": "没有原始观察或数据，就无法充分检查结论是否有证据支持。",
+      "knowledgeIds": [
+        "evidence-reasoning"
+      ]
+    },
+    {
+      "id": "L02-P10",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "observation-inference",
+      "question": "实验报告中把\"观察到什么\"和\"由此说明什么\"分开记录的主要意义是：",
+      "options": [
+        "让报告更长",
+        "区分证据与解释，减少把推断当成现象",
+        "保证每次都得到预期结果",
+        "避免重复实验"
+      ],
+      "answer": 1,
+      "explanation": "分开记录有助于保持证据边界和推理透明。",
+      "knowledgeIds": [
+        "observation-inference",
+        "evidence-reasoning"
+      ]
+    },
+    {
+      "id": "L02-P11",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "scientific-inquiry",
+      "question": "下列哪项最符合科学探究的特点？",
+      "options": [
+        "只接受与预期一致的结果",
+        "允许根据证据修正原来的解释",
+        "实验结论不能改变",
+        "实验记录可以事后调整"
+      ],
+      "answer": 1,
+      "explanation": "科学探究强调证据、复核和根据新证据修正解释。",
+      "knowledgeIds": [
+        "scientific-inquiry",
+        "evidence-reasoning"
+      ]
+    },
+    {
+      "id": "L02-P12",
+      "type": "constructed",
+      "difficulty": "medium",
+      "knowledgePoint": "evidence-reasoning",
+      "question": "请说明为什么实验记录中应先写\"观察到的现象\"，再写\"根据现象得到的解释\"。",
+      "rubric": "指出两者性质不同；说明现象是直接证据，解释是基于证据的推断；避免把推断写成观察。",
+      "misconception": "M02-observation-inference",
+      "knowledgeIds": [
+        "observation-inference",
+        "evidence-reasoning"
+      ]
+    },
+    {
+      "id": "L02-P13",
+      "type": "constructed",
+      "difficulty": "medium",
+      "knowledgePoint": "control-variables",
+      "question": "设计一个简单的公平比较方案，研究\"搅拌是否影响某固体在水中的溶解快慢\"。写出应控制的主要条件。",
+      "rubric": "明确只改变是否搅拌；保持水量、固体质量/规格、温度等主要条件一致，并采用一致的观察指标。",
+      "misconception": "M02-control-variable",
+      "knowledgeIds": [
+        "control-variables",
+        "data-integrity"
+      ]
     }
   ]
 }

@@ -34,6 +34,7 @@ export class AssessmentEngine {
 
   checkAnswer(question, answer) {
     if (!question || answer === undefined) return false;
+    if (!question.type) question.type = 'choice';
     if (question.type === 'choice') {
       const correct = (question.answer || '').toUpperCase();
       const selected = (answer || '').toString().toUpperCase();

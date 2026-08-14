@@ -111,7 +111,7 @@ if (runtimeQuestions.length) {
     if (ids.has(question.id)) report.errors.push(`Duplicate effective runtime question id: ${question.id}`);
     ids.add(question.id);
     if (!question.prompt?.trim()) report.errors.push(`${question.id}: effective runtime question has no prompt`);
-    if (question.answer === undefined || question.answer === null || question.answer === '') report.errors.push(`${question.id}: effective runtime question has no answer`);
+    if ((question.answer === undefined || question.answer === null || question.answer === '') && question.type !== 'constructed') report.errors.push(`${question.id}: effective runtime question has no answer`);
     if (!question.explanation?.trim() && question.type !== 'constructed') report.errors.push(`${question.id}: effective runtime question has no explanation`);
     if (!question.knowledge.length) report.errors.push(`${question.id}: effective runtime question has no knowledge links`);
     if (Array.isArray(question.options) && question.options.length > 0 && question.answer !== undefined) {

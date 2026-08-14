@@ -1,7 +1,7 @@
 {
-  "scanned": 2,
+  "scanned": 3,
   "template": 0,
-  "realContent": 2,
+  "realContent": 3,
   "ready": 0,
   "needsRewrite": 0,
   "duplicateLegacy": false,
@@ -21,6 +21,15 @@
       "file": "lesson-02-chemistry-as-experimental-science.json",
       "day": "02",
       "title": "化学是一门以实验为基础的科学",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": []
+    },
+    {
+      "file": "lesson-03-acid-intro.json",
+      "day": "03",
+      "title": "酸入门：初识身边的酸",
       "status": "released",
       "releaseStatus": "ready",
       "templateHits": 0,
