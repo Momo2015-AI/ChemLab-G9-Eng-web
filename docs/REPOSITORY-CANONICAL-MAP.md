@@ -1,6 +1,6 @@
 # ChemLab-G9-Eng Repository Canonical Map
 
-Status: V1.9 cleanup baseline — 2026-08-12
+Status: V2.2 文档整合后刷新 — 2026-08-16
 
 ## Purpose
 
@@ -42,8 +42,9 @@ content/
      schema/
 
 modules/
-  -> runtime modules, adapters, indexes and explicitly documented compatibility/generated artifacts;
-     never a second educational source of truth
+  -> legacy V1.5 数据模型遗留区；生产代码不再引用。
+     仅 modules/questions/taxonomy/knowledge-graph.json 作为图谱加载兜底保留，
+     其余待 Source Registry 落地后随内容重建一并处理
 
 schemas/
   -> non-content/global schemas only. Content lesson/question schemas belong under content/schema.
@@ -56,13 +57,14 @@ tests/
   -> automated behavioral and architectural verification
 
 reports/
-  -> generated or dated audit evidence; not runtime source
+  -> CI 审计脚本再生文件（content-integrity-v19、lesson-content-readiness-v19）；
+     一次性日期报告已删除，不作为运行时源
 
 docs/
   -> durable engineering/content standards and architecture decisions
 
 .github/workflows/
-  -> CI, content integrity, and Pages deployment automation
+  -> 单一 workflow：Validate + build-pages dist 组装 + Pages 部署（content-integrity 独立工作流已并入）
 ```
 
 ## Cleanup rules
@@ -71,4 +73,4 @@ docs/
 2. No new legacy/compatibility copy without an explicit migration contract.
 3. A file is deleted only after production, test, CI, and documentation references are checked.
 4. Historical reports remain when they provide audit evidence; transient generated outputs should not become architecture dependencies.
-5. Future cleanup must preserve the full question bank and other large source files; use isolated modules or exact transformations instead of destructive full-file reconstruction.
+5. 全局题库文件端点已于 2026-08-16 移除：运行时题池显式由 content/questions/day01-*.js 与按课注册组成，禁止重新引入隐式题库文件端点。

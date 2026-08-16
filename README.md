@@ -94,9 +94,9 @@ Release
 
 详细规范：
 
-- `docs/SOURCE-REGISTRY-STANDARD.md`
+- `docs/README.md`（文档导航）
 - `docs/COURSE-DEVELOPMENT-STANDARD.md`
-- `docs/CONTENT-AUDIT-STANDARD.md`
+- `docs/CONTENT-STANDARD.md`
 - `content/sources/README.md`
 
 ### 内容来源原则

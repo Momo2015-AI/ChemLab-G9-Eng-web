@@ -1,4 +1,7 @@
-# ChemLab-G9-Eng Web — V1.9 Content Standard
+# ChemLab-G9-Eng 内容标准（Content Standard）
+
+> 本文合并自 V1.9-CONTENT-STANDARD（内容生产标准主体）、CONTENT-AUDIT-STANDARD（7-Gate 审计门禁）、V1.9-CONTENT-REVIEW-PROTOCOL（审查流程与清单）、V1.9-CONTENT-AUDIT-METRICS（度量口径），合并日期 2026-08-16。原文件已删除。
+
 
 ## 1. Purpose
 
@@ -342,3 +345,87 @@ A content unit is Done only when:
 - all referenced content IDs resolve;
 - automated integrity checks pass;
 - required human reviews pass.
+
+---
+
+## 附录 A：内容审计门禁（7-Gate）
+
+每个生产单元必须依次通过以下七道门禁；任何 `BLOCKER` 或未关闭的高风险问题都不得进入 `READY`。
+
+## Audit gates
+
+### Gate 1 — Source audit
+Verify authority, edition/version, scope, provenance, and traceability. Core claims must have an approved source tier.
+
+### Gate 2 — Scientific audit
+Check definitions, terminology, equations, symbols, units, reaction descriptions, experimental claims, diagrams, and safety statements against authoritative scientific references.
+
+### Gate 3 — Grade-9 suitability audit
+Check prerequisite assumptions, vocabulary, abstraction, arithmetic load, reading load, cognitive load, examples, and experiment complexity. Remove unnecessary university-level detail.
+
+### Gate 4 — Pedagogical/content audit
+Check objective alignment, conceptual progression, misconceptions, explanations, visuals, examples, practice progression, feedback, and self-study usability.
+
+### Gate 5 — Question-quality audit
+Check uniqueness of answer, wording, distractors, data sufficiency, difficulty calibration, cognitive target, scoring logic, explanation quality, and absence of answer leakage or ambiguity.
+
+### Gate 6 — Knowledge-linkage audit
+Every lesson and question must resolve to canonical lesson/knowledge IDs. Verify prerequisite relationships, question-to-knowledge mappings, misconception links, and graph integrity.
+
+### Gate 7 — Release audit
+Verify schema, references, assets, navigation, accessibility basics, tests, runtime integrity, content integrity, and deployment readiness.
+
+## Evidence requirements
+
+Each audit finding records: item ID/path, gate, severity (`BLOCKER`, `HIGH`, `MEDIUM`, `LOW`), finding, evidence/source, required correction, owner/status, and reviewer/date when applicable.
+
+## Severity rules
+
+- **BLOCKER:** scientific error, unsafe instruction, broken canonical reference, invalid answer, or content that cannot be released.
+- **HIGH:** material curriculum, pedagogical, knowledge-linkage, or accessibility defect.
+- **MEDIUM:** meaningful clarity, consistency, or quality issue.
+- **LOW:** cosmetic or non-blocking improvement.
+
+No item with an unresolved BLOCKER may reach `READY`.
+
+## Audit independence
+
+Do not treat successful rendering or passing unit tests as evidence of content correctness. Engineering validation and content validation are separate gates.
+
+## Change control
+
+Any material content change reopens the affected audit gates. New questions require fresh review; they inherit source and knowledge links but do not inherit approval from unrelated questions.
+
+---
+
+## 附录 B：内容审查流程（Review Protocol）
+
+### B.1 审查顺序
+
+所有新增或大幅修订的内容按以下顺序审查：
+
+1. 内容清点与模板检测
+2. 课程/来源核验
+3. 科学性审查
+4. 九年级适龄性审查
+5. 学习设计审查
+6. 题目质量审查（适用时）
+7. 知识关联完整性审查
+8. 误解/补救审查
+9. 自动化完整性门禁（`npm run audit:content`）
+10. 最终发布决定
+
+### B.2 课程审查清单（要点）
+
+- 学习目标映射到课程范围；前置知识已识别；内容深度适宜。
+- 讲解包含具体化学事实/关系/推理；无模板语句残留；示例具体相关。
+- 观察与结论严格区分；例题包含推理过程而非仅有答案。
+
+### B.3 度量口径
+
+文件存在、题目数量、页面数量都不构成"内容完成度"证据。接受的项目度量：
+
+- **真实内容覆盖率** = 真实课程数 / 总课程数（"真实"= 主动教学段落含具体学科内容且不匹配占位模板）。
+- **就绪覆盖率** = 通过全部 7-Gate 的课程数 / 总课程数。
+- **题库有效性** = 可解析到知识图谱节点且答案/解析完备的题目占比。
+

@@ -938,3 +938,39 @@ User asked to review the lesson-01 learning flow UI from code architecture and l
 ### Next
 
 lesson-03 迁移题建设；Source Registry 登记与 provenance 回填；题目洗牌；知识详情页覆盖；misconception 词表统一；逐课扩展（3/36）。
+
+---
+
+## 2026-08-16 — 文档整合：能合并的合并，无用的删除
+
+### Conversation / decision
+
+用户要求把旧文档中能整合的整合、无用的直接删除。执行前先盘点 docs/（106 文件/599KB）+ reports/（13 文件）+ 引用关系：全仓库仅 3 个文档被外部引用（README、content/sources/README 引用 SOURCE-REGISTRY-STANDARD / COURSE-DEVELOPMENT-STANDARD / CONTENT-AUDIT-STANDARD），测试与脚本零引用。
+
+### Actions
+
+**合并（4 份新文档吸收 12 份原文）**：
+- `docs/ARCHITECTURE.md` ← V1.6/V1.7 架构系列（ARCHITECTURE-AND-LEARNING-REDESIGN、ENGINE-BOUNDARIES、DIAGNOSIS-ARCHITECTURE、KNOWLEDGE-ENGINE-CONSOLIDATION、architecture/learning-runtime-consolidation）的现行有效内容，重写为 2026-08-16 实际代码结构。
+- `docs/CONTENT-STANDARD.md` ← V1.9-CONTENT-STANDARD（主体）+ CONTENT-AUDIT-STANDARD（7-Gate 作附录 A）+ V1.9-CONTENT-REVIEW-PROTOCOL（审查流程作附录 B）+ V1.9-CONTENT-AUDIT-METRICS（度量口径）。
+- `docs/LEARNING-FLOW.md` ← COURSE-LEARNING-FLOW-V1.0（课程级）+ course-design/LESSON-PAGE-LEARNING-FLOW-V1.0（页面级）。
+- `docs/archive/HISTORY-V1.5-V2.2.md` ← 各版本 DEVELOPMENT-PLAN/PHASE 报告/冻结审计/实施状态的结论性时间线。
+
+**重写**：`docs/PROJECT-STATUS.md`（原停留在 V1.8）→ 2026-08-16 现状；新增 `docs/README.md` 文档导航。
+
+**改名（去版本号，保留内容）**：MASTERY-STANDARD-95-V1.0→MASTERY-STANDARD、V2.1-LEARNING-UI-STANDARD→LEARNING-UI-STANDARD、CURRICULUM-MAP-G9-PEOPLE-EDITION-V1.0→CURRICULUM-MAP-G9。
+
+**保留原样**：SOURCE-REGISTRY-STANDARD（被引用）、COURSE-DEVELOPMENT-STANDARD（被引用）、SOURCE-AUTHORITY-AUDIT-V1.0 与 HUBEI-EXAM-MATERIAL-AUDIT（C0 来源证据，内容建设仍需）、RELEASE-AND-DEPLOYMENT 与 REPOSITORY-CANONICAL-MAP（已刷新为 dist 部署/单 workflow/新题池规则的现状）、DEV-REC-2026-08-16-LEARNING-LOOP-HARDENING。
+
+**删除（约 96 个文件）**：docs/audits/×11、docs/dev-log/×2、docs/ 下 DEV-REC-2026-08-1x 会话日志×20（权威日志是根 DEV-REC.md）、V1.6-V1.9 全部版本计划/Phase 报告/冻结审计、LESSON-01/02 过程审计×7、V1.9 内容审计系列×4、基准课规范×2、CONTENT-PLAN/BUILD-PLAN、ROADMAP-V2.2-FROZEN（有效部分并入 HISTORY）、DEEP-CLEANUP-V2、CI-CD-VERIFICATION、V1.5 引擎架构、CONTENT-KNOWLEDGE-MODEL（并入 ARCHITECTURE）、archive/V1.x；reports/ 日期报告×10（保留 CI 再生 3 件）。
+
+**引用同步**：根 README 详细规范清单改指 README/COURSE-DEVELOPMENT-STANDARD/CONTENT-STANDARD；RELEASE-AND-DEPLOYMENT 补 dist 构建与 V2.2 基线；CANONICAL-MAP 更新 modules/reports/workflows 职责与题库端点规则。
+
+### Verification
+
+- 引用完整性：全仓库 docs/*.md 引用共 4 处，全部指向现存文件；tests/scripts 零引用。
+- `npm test` 133/133 GREEN；runtime-audit、content integrity、lesson readiness 全部通过（文档不参与运行时）。
+- 规模：docs/ 106→16 文件（599KB→144KB），reports/ 13→3 文件。
+
+### Next
+
+Source Registry 登记（文档清理后 content/sources/ 成为最显眼的缺口）；按 docs/README.md 导航维护文档，新增一次性报告默认不入库。
