@@ -58,6 +58,11 @@ export class AssessmentEngine {
    * A group counts as a hit when any synonym appears in the answer, so
    * correct paraphrases are not punished. Passing requires hitting
    * min(2, groupCount) groups.
+   *
+   * rubric.mustMatch (array of group indices) marks polarity-critical
+   * groups that must ALL hit on their own — e.g. a control-of-variables
+   * answer must state the single-variable design, not just name the
+   * variables it wrongly changes.
    */
   checkConstructed(question, answer) {
     const text = String(answer ?? '').trim();
@@ -73,8 +78,13 @@ export class AssessmentEngine {
       .filter(synonyms => synonyms.length > 0);
     if (groups.length === 0) return Boolean(rubric.modelAnswer) && text.length >= 4;
     const normalized = normalizeText(text);
-    const hits = groups.filter(synonyms => synonyms.some(synonym => normalized.includes(synonym)));
-    return hits.length >= Math.min(2, groups.length);
+    const hit = groups.map(synonyms => synonyms.some(synonym => normalized.includes(synonym)));
+    if (Array.isArray(rubric.mustMatch)) {
+      const required = rubric.mustMatch.filter(index => Number.isInteger(index) && index >= 0 && index < hit.length);
+      if (required.length && !required.every(index => hit[index])) return false;
+    }
+    const hits = hit.filter(Boolean).length;
+    return hits >= Math.min(2, groups.length);
   }
 }
 

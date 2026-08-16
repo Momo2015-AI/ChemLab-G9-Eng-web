@@ -9,12 +9,12 @@
       "knowledgePoint": "acid-intro",
       "question": "食醋中的酸主要是？",
       "options": [
-        "盐酸",
-        "硫酸",
         "醋酸",
-        "硝酸"
+        "硝酸",
+        "盐酸",
+        "硫酸"
       ],
-      "answer": 2,
+      "answer": 0,
       "explanation": "食醋含有醋酸（乙酸），是生活中常见的弱酸。",
       "knowledgeIds": [
         "acid-property"
@@ -45,12 +45,12 @@
       "knowledgePoint": "chemical-property",
       "question": "稀盐酸能使紫色石蕊试液变为？",
       "options": [
+        "紫色",
         "蓝色",
         "红色",
-        "无色",
-        "紫色"
+        "无色"
       ],
-      "answer": 1,
+      "answer": 2,
       "explanation": "酸溶液能使紫色石蕊试液变红。",
       "knowledgeIds": [
         "chemical-property",
@@ -64,12 +64,12 @@
       "knowledgePoint": "chemical-property",
       "question": "下列金属能与稀盐酸反应的是？",
       "options": [
+        "金",
         "铜",
         "银",
-        "铁",
-        "金"
+        "铁"
       ],
-      "answer": 2,
+      "answer": 3,
       "explanation": "铁的活动性比氢强，能与稀盐酸反应生成氢气。",
       "knowledgeIds": [
         "chemical-property"
@@ -82,12 +82,12 @@
       "knowledgePoint": "chemical-property",
       "question": "实验室制取二氧化碳常用？",
       "options": [
-        "锌与稀硫酸",
         "碳酸钙与稀盐酸",
         "碳酸钠与稀硫酸",
-        "铜与浓盐酸"
+        "铜与浓盐酸",
+        "锌与稀硫酸"
       ],
-      "answer": 1,
+      "answer": 0,
       "explanation": "大理石或石灰石（主要成分碳酸钙）与稀盐酸反应是实验室制取二氧化碳的常用方法。",
       "knowledgeIds": [
         "chemical-property",
@@ -119,12 +119,12 @@
       "knowledgePoint": "evidence-reasoning",
       "question": "打开浓盐酸瓶盖出现白雾，最能说明浓盐酸具有的性质是？",
       "options": [
+        "氧化性",
         "不稳定性",
         "挥发性",
-        "酸性",
-        "氧化性"
+        "酸性"
       ],
-      "answer": 1,
+      "answer": 2,
       "explanation": "白雾是氯化氢气体与空气中水蒸气结合形成的酸雾，说明浓盐酸易挥发。",
       "knowledgeIds": [
         "physical-property",
@@ -156,12 +156,12 @@
       "knowledgePoint": "chemical-property",
       "question": "检验某无色液体是否为酸，最可靠的实验方法是？",
       "options": [
-        "闻气味",
         "滴加石蕊试液",
         "测密度",
-        "观察颜色"
+        "观察颜色",
+        "闻气味"
       ],
-      "answer": 1,
+      "answer": 0,
       "explanation": "滴加紫色石蕊试液，若变红则证明是酸性溶液。",
       "knowledgeIds": [
         "chemical-property",
@@ -175,12 +175,12 @@
       "knowledgePoint": "observation-inference",
       "question": "酸与碳酸盐反应产生气泡，气泡中一定含有的气体是？",
       "options": [
-        "氢气",
         "氧气",
         "二氧化碳",
-        "氯气"
+        "氯气",
+        "氢气"
       ],
-      "answer": 2,
+      "answer": 1,
       "explanation": "酸与碳酸盐反应生成二氧化碳气体，这是反应的产物特征。",
       "knowledgeIds": [
         "chemical-property",
@@ -194,12 +194,12 @@
       "knowledgePoint": "evidence-reasoning",
       "question": "某同学用稀盐酸清洗铁锈，发现铁锈消失。这是因为？",
       "options": [
+        "铁锈溶解在水中",
         "盐酸与铁反应",
         "盐酸与氧化铁反应生成可溶性铁盐",
-        "盐酸使铁锈升华",
-        "铁锈溶解在水中"
+        "盐酸使铁锈升华"
       ],
-      "answer": 1,
+      "answer": 2,
       "explanation": "铁锈主要成分是氧化铁，与稀盐酸反应生成可溶性的氯化铁和水。",
       "knowledgeIds": [
         "chemical-property",

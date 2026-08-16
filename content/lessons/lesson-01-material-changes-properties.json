@@ -250,7 +250,7 @@
     "minCorrect": 20,
     "mode": "unseen-transfer",
     "resourceRef": "content/lessons/lesson-01-material-changes-properties-mastery.json",
-    "description": "最终掌握验证使用学生未直接见过的变式或陌生情境；20题至少答对19题才标记本课掌握。",
+    "description": "最终掌握验证使用学生未直接见过的变式或陌生情境；21题至少答对20题才标记本课掌握。",
     "fallback": "diagnosis"
   },
   "misconceptions": [
@@ -289,7 +289,7 @@
     {
       "title": "95% Mastery",
       "body": [
-        "使用独立的20题陌生/变式题集验证迁移能力，至少答对19题才算掌握。"
+        "使用独立的21题陌生/变式题集验证迁移能力，至少答对20题才算掌握。"
       ]
     }
   ],

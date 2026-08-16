@@ -41,8 +41,18 @@ export function createApplication({ state, assessment, experimentEngine, mastery
   };
   let hydrationPromise = null;
   let stopped = false;
+  let knowledgeScope = 'term';
   const router = createRouter({ onRoute: route => { state.route = route; }, render: route => renderRoute(route) });
   const currentTerm = () => (typeof window !== 'undefined' && window.chemLabTextbookTerm === 'lower' ? 'lower' : 'upper');
+
+  // Deep links may target a lesson from the other semester; follow the user's
+  // intent by switching the whole UI to that semester (lists, portals and the
+  // shell toggle all re-sync through the term-change event).
+  function switchTermFor(semester) {
+    if (typeof window === 'undefined' || semester === currentTerm()) return;
+    if (typeof window.chemLabSetTerm === 'function') { window.chemLabSetTerm(semester); return; }
+    window.chemLabTextbookTerm = semester;
+  }
 
   function renderHomeMessage(subtitle) {
     if (!root) return;
@@ -133,6 +143,10 @@ export function createApplication({ state, assessment, experimentEngine, mastery
     if (!lesson) {
       return views.renderCourse({ root, lesson: { id: lessonId, title: '课程未找到', description: '请返回学习中心选择课程。' } });
     }
+    if (lesson.semester && lesson.semester !== currentTerm()) {
+      switchTermFor(lesson.semester);
+      return; // the term-change listener re-renders this route in the new term
+    }
     const guidedLearning = await contentService.getGuidedLearning(lesson.id || lessonId);
     const lessonState = controllers.learning.getLessonState(lessonId);
     const phase = controllers.learning.getLessonPhase(lessonId);
@@ -145,7 +159,30 @@ export function createApplication({ state, assessment, experimentEngine, mastery
       diagnosis: lessonState.diagnosis || {},
       diagnosticQuestions: Array.isArray(lesson.diagnosticQuestions) ? lesson.diagnosticQuestions : [],
       highlightStep: route.params[1] || '',
-      onGuidedCheck: (id, stepId, result) => { controllers.learning.recordGuidedCheck(id, stepId, result); window.__chemLabOnCheckDone = () => void renderRoute(route); setTimeout(() => window.__chemLabOnCheckDone?.(), 1500); },
+      onGuidedCheck: (id, stepId, result) => {
+        controllers.learning.recordGuidedCheck(id, stepId, result);
+        // Let the inline ✓/✗ feedback render first, then refresh the stage
+        // UI while preserving card expansion and scroll position.
+        setTimeout(() => {
+          const cards = typeof document !== 'undefined' ? document.querySelectorAll('.guided-learning-card') : [];
+          const expandedIds = [...cards].filter(card => !card.querySelector('.guided-card-detail')?.hidden).map(card => card.dataset.stepId).filter(Boolean);
+          const scroller = typeof document !== 'undefined' ? document.querySelector('#chem-page-root') : null;
+          const scrollTop = scroller?.scrollTop ?? 0;
+          void renderRoute(route).then(() => {
+            for (const openId of expandedIds) {
+              const selector = `.guided-learning-card[data-step-id="${typeof CSS !== 'undefined' && CSS.escape ? CSS.escape(openId) : openId}"]`;
+              const card = typeof document !== 'undefined' ? document.querySelector(selector) : null;
+              if (!card) continue;
+              const detail = card.querySelector('.guided-card-detail');
+              if (detail) detail.hidden = false;
+              card.querySelector('.guided-card-header')?.setAttribute('aria-expanded', 'true');
+              const toggle = card.querySelector('.guided-card-toggle');
+              if (toggle) toggle.textContent = '−';
+            }
+            if (scroller) scroller.scrollTop = scrollTop;
+          });
+        }, 1400);
+      },
       onStartQuiz: () => router.navigate('quiz', lessonId),
       onStartMastery: () => router.navigate('quiz', `mastery:${lessonId}`),
       onStartExperiment: id => router.navigate('experiment', id),
@@ -168,13 +205,22 @@ export function createApplication({ state, assessment, experimentEngine, mastery
   async function renderKnowledgeMapRoute() {
     const graph = await contentService.getKnowledgeGraphViewModel().catch(() => ({ nodes: [], relations: [] }));
     const homeData = await getHomeData();
+    const allNodes = graph?.nodes || [];
+    const term = currentTerm();
+    const nodes = knowledgeScope === 'all'
+      ? allNodes
+      : allNodes.filter(node => !node.semester || node.semester === term);
     return renderKnowledgePortal({
       root,
       onHome: () => router.navigate('home'),
       onLearn: lessonId => router.navigate('course', lessonId),
-      nodes: graph?.nodes || [],
+      nodes,
       relations: graph?.relations || [],
       lessons: Array.isArray(homeData?.lessons) ? homeData.lessons : [],
+      scope: knowledgeScope,
+      scopeTerm: term,
+      allCount: allNodes.length,
+      onScope: scope => { knowledgeScope = scope; void renderKnowledgeMapRoute(); },
     });
   }
 
@@ -218,6 +264,7 @@ export function createApplication({ state, assessment, experimentEngine, mastery
   async function renderProgressRoute(data) {
     const progress = createProgressProjection({ ...state.progress, mastery: masteryService.getState() });
     const graph = await contentService.getKnowledgeGraphViewModel().catch(() => ({ nodes: [] }));
+    const term = currentTerm();
     const weakPoints = (data.lessons || [])
       .flatMap(lesson => controllers.learning.getLessonState(lesson.canonicalId).diagnosis?.weakPoints || [])
       .filter((id, index, arr) => arr.indexOf(id) === index);
@@ -231,13 +278,13 @@ export function createApplication({ state, assessment, experimentEngine, mastery
         questions: progress.questions || 0,
       },
       masteryState: masteryService.getState(),
-      knowledgeNodes: graph?.nodes || [],
+      knowledgeNodes: (graph?.nodes || []).filter(node => !node.semester || node.semester === term),
       weakPoints,
     });
   }
 
   function renderQuizBlocked(lessonId, mode, status, notice) {
-    return views.renderQuizResult({ root, score: 0, correct: 0, total: 0, mode, status, lessonId, notice, onContinue: () => router.navigate('course', lessonId) });
+    return views.renderQuizResult({ root, score: 0, correct: 0, total: 0, mode, status, lessonId, notice, blocked: true, onContinue: () => router.navigate('course', lessonId) });
   }
 
   function parseQuizParam(raw) {
@@ -254,6 +301,9 @@ export function createApplication({ state, assessment, experimentEngine, mastery
     const lesson = await controllers.learning.getLesson(lessonId);
     const release = getLessonReleaseState(lesson || {});
     const lessonState = controllers.learning.getLessonState(lessonId);
+    if (lesson?.semester && lesson.semester !== currentTerm()) {
+      switchTermFor(lesson.semester);
+    }
     const gateModes = ['practice', 'mastery', 'transfer', 'recheck'];
     if (gateModes.includes(mode) && !release.available) {
       return renderQuizBlocked(lessonId, mode, 'unavailable', '该课程内容尚未发布，暂不能开始答题。');
@@ -292,7 +342,7 @@ export function createApplication({ state, assessment, experimentEngine, mastery
         score,
         correct: session.answers.filter(a => a.correct).length,
         total: session.answers.length,
-        hasRemediation: mode === 'mastery' ? result?.status !== 'passed' : lessonState.remediation?.status === 'needs-remediation',
+        hasRemediation: lessonState.remediation?.status === 'needs-remediation',
         onRemediation: () => router.navigate('remediation', lessonId),
         onContinue: () => router.navigate('course', lessonId),
         onRetry: () => { controllers.assessment.reset(); void renderRoute(route); },
@@ -316,6 +366,11 @@ export function createApplication({ state, assessment, experimentEngine, mastery
   async function renderExperimentRoute(route) {
     const experiment = await contentService.getExperiment(route.params[0]);
     if (experiment) controllers.experiment.register(experiment);
+    // A stale session for a different experiment must never be rendered for
+    // this route (the old guard short-circuited on any existing session).
+    if (controllers.experiment.session && controllers.experiment.session.id !== route.params[0]) {
+      controllers.experiment.reset();
+    }
     if (!controllers.experiment.session && !controllers.experiment.start(route.params[0])) {
       return router.navigate('course', experiment?.lessonId || CANONICAL_GOLDEN_LESSON);
     }
@@ -373,7 +428,7 @@ export function createApplication({ state, assessment, experimentEngine, mastery
       case 'dashboard': return renderProgressRoute(data);
       case 'graph': return views.renderGraph({ root, graph: await contentService.getKnowledgeGraphViewModel(), onBack: () => router.navigate('home') });
       case 'quiz': return renderQuizRoute(route);
-      case 'experiment': return route.params.length ? renderExperimentRoute(route) : renderLabPortal({ root, onHome: () => router.navigate('home') });
+      case 'experiment': return route.params.length ? renderExperimentRoute(route) : renderLabRoute();
       case 'remediation': return renderRemediationRoute(route);
       case 'ai-tutor': return views.renderAITutorPage({ root });
       case 'experiment-result':

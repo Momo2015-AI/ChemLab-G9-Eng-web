@@ -30,7 +30,7 @@ function layout(nodes) {
   return positioned;
 }
 
-export function renderKnowledgePortal({ root, nodes = [], relations = [], lessons = [], onHome = () => { window.location.hash = 'home'; }, onLearn = () => {} } = {}) {
+export function renderKnowledgePortal({ root, nodes = [], relations = [], lessons = [], onHome = () => { window.location.hash = 'home'; }, onLearn = () => {}, scope = 'term', scopeTerm = 'upper', allCount = 0, onScope = null } = {}) {
   if (!root) return;
   const laidOut = layout(nodes);
   const byId = new Map(laidOut.map(n => [n.id, n]));
@@ -40,11 +40,14 @@ export function renderKnowledgePortal({ root, nodes = [], relations = [], lesson
       if (!lessonByPoint.has(point)) lessonByPoint.set(point, lesson.id || lesson.canonicalId);
     }
   }
+  const scopeBtn = typeof onScope === 'function'
+    ? `<button class="portal-btn" data-scope>${scope === 'term' ? `查看全学年 (${allCount})` : `只看${scopeTerm === 'lower' ? '下' : '上'}册`}</button>`
+    : '';
 
   root.innerHTML = `<section class="portal-page cg-graph-page">
     <div class="portal-hero">
-      <div><div class="portal-eyebrow">KNOWLEDGE GRAPH</div><h1 class="portal-title">知识图谱</h1><p class="portal-subtitle">${nodes.length} 个知识点 · 点击节点查看前置知识、关联实验与题目</p></div>
-      <div class="portal-actions"><button class="portal-btn" data-home>⌂ 首页</button></div>
+      <div><div class="portal-eyebrow">KNOWLEDGE GRAPH</div><h1 class="portal-title">知识图谱</h1><p class="portal-subtitle">${nodes.length} 个知识点 · ${scope === 'term' ? `${scopeTerm === 'lower' ? '下' : '上'}册范围` : '全学年范围'} · 点击节点查看前置知识、关联实验与题目</p></div>
+      <div class="portal-actions">${scopeBtn}<button class="portal-btn" data-home>⌂ 首页</button></div>
     </div>
     <div class="cg-legend-row">${Object.entries(DOMAIN_LABEL).map(([b, label]) => `<span class="cg-chip" style="--c:${SPECTRAL_VARS[b]}"><i></i>${label}</span>`).join('')}</div>
     <div class="cg-graphwrap">
@@ -57,6 +60,7 @@ export function renderKnowledgePortal({ root, nodes = [], relations = [], lesson
   </section>`;
 
   root.querySelector('[data-home]')?.addEventListener('click', onHome);
+  root.querySelector('[data-scope]')?.addEventListener('click', () => onScope?.(scope === 'term' ? 'all' : 'term'));
 
   const svg = root.querySelector('#cg-svg');
   const panel = root.querySelector('#cg-panel');
