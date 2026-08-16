@@ -109,20 +109,27 @@ export class LearningController {
   getStageAvailability(lesson, guidedLearning = null) {
     const lessonId = lesson.id || lesson.canonicalId;
     const release = getLessonReleaseState(lesson);
-    if (!release.available) return { guided: false, experiment: false, practice: false, remediation: false, mastery: false, complete: false };
+    if (!release.available) return { guided: false, experiment: false, practice: false, remediation: false, mastery: false, complete: false, prerequisites: false, prerequisitesMet: false, prerequisitesMissing: [] };
+    const prerequisites = Array.isArray(lesson.prerequisites) ? lesson.prerequisites.filter(Boolean) : [];
+    const prerequisitesMissing = prerequisites.filter(id => this.getLessonMastery(id)?.status !== 'passed' && !this.getProgress(id));
+    const prerequisitesMet = prerequisitesMissing.length === 0;
     const current = this.getLessonState(lessonId);
     const guidedComplete = !guidedLearning?.steps?.length || Boolean(current.guided?.completed);
     const experimentComplete = !(lesson.experiments || []).length || Boolean(current.experiment?.completed);
     const practiceComplete = Boolean(current.practice?.completedAt);
     const remediationComplete = current.remediation?.status !== 'needs-remediation' || current.recheck?.status === 'passed';
-    return {
+    const base = {
+      prerequisites,
+      prerequisitesMet,
+      prerequisitesMissing,
       guided: guidedComplete,
       experiment: guidedComplete,
-      practice: guidedComplete && experimentComplete,
+      practice: guidedComplete && experimentComplete && prerequisitesMet,
       remediation: practiceComplete && current.remediation?.status === 'needs-remediation',
-      mastery: practiceComplete && remediationComplete,
+      mastery: practiceComplete && remediationComplete && prerequisitesMet,
       complete: this.canComplete(lesson),
     };
+    return base;
   }
 
   getRemediationPlan(diagnosis) {

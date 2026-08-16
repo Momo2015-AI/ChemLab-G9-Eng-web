@@ -4,6 +4,8 @@
   "day": "02",
   "title": "化学是一门以实验为基础的科学",
   "module": "unit-01-intro-chemistry",
+  "semester": "upper",
+  "unitId": "u01",
   "duration": "45 分钟",
   "description": "通过观察、实验、记录和证据分析建立科学探究的基本方法。",
   "status": "ready",

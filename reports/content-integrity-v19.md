@@ -1,13 +1,13 @@
 # ChemLab-G9-Eng V1.9 Content Integrity Report
 
-Generated: 2026-08-14T13:05:49.097Z
+Generated: 2026-08-16T03:50:20.164Z
 
 ## Statistics
-- sourceQuestions: 139
-- sourceReady: 139
-- sourceQuestionIds: 139
-- effectiveQuestions: 139
-- effectiveQuestionIds: 139
+- sourceQuestions: 142
+- sourceReady: 142
+- sourceQuestionIds: 142
+- effectiveQuestions: 142
+- effectiveQuestionIds: 142
 - overrides: 6
 - runtimeQuestionSources: canonical lesson/practice/diagnostic/mastery content plus runtime overrides/diagnostics
 - questionBankState: CANONICAL_RUNTIME_SOURCE

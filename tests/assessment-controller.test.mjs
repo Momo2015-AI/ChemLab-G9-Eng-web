@@ -47,7 +47,8 @@ test('assessment controller starts a lesson quiz and persists answers', async ()
   const result = controller.answer(0);
   assert.equal(result.correct, true);
   assert.equal(controller.getScore(), 100);
-  assert.equal(state.quizAnswers.q1, 'A');
+  assert.equal(controller.session.answers.length, 1);
+  assert.equal(controller.session.answers[0].answer, 'A');
   assert.equal(state.saved, true);
   assert.equal(controller.session.completed, true);
 });

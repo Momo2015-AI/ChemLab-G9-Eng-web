@@ -7,9 +7,6 @@ const STATE_SCHEMA_VERSION = 2;
 const DEFAULT_STATE = Object.freeze({
   currentRoute: 'home',
   currentDay: null,
-  currentQuiz: null,
-  quizIndex: 0,
-  quizAnswers: {},
   currentExperiment: null,
   currentExperimentSession: null,
   progress: {},
@@ -17,7 +14,7 @@ const DEFAULT_STATE = Object.freeze({
 });
 
 function cloneDefaultState() {
-  return { ...DEFAULT_STATE, quizAnswers: {}, progress: {}, learning: {} };
+  return { ...DEFAULT_STATE, progress: {}, learning: {} };
 }
 
 export function createAppState({ progressService = new ProgressService({ key: STORAGE_KEY }) } = {}) {
@@ -45,9 +42,6 @@ export function updateRoute(state, route, params = {}) {
 
 export function resetSession(state) {
   state.currentDay = null;
-  state.currentQuiz = null;
-  state.quizIndex = 0;
-  state.quizAnswers = {};
   state.currentExperiment = null;
   state.currentExperimentSession = null;
   return state;

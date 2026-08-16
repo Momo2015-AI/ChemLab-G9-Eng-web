@@ -3,6 +3,7 @@ import ContentLoader from './content-loader.js';
 import { KnowledgeEngine } from '../core/knowledge-graph/canonical-knowledge-engine.js';
 import { registerQuestion } from '../core/diagnosis/question-knowledge-map.js';
 function normalizeKnowledgeIds(question) { const value = question?.knowledgeIds ?? question?.knowledgePoints ?? question?.knowledgePoint ?? question?.knowledgeId ?? question?.knowledge ?? []; return (Array.isArray(value) ? value : [value]).filter(Boolean); }
+function isRuntimeQuestion(question) { return Boolean(question && typeof question === 'object' && question.id) && String(question.status || '').toLowerCase() !== 'draft'; }
 function normalizeKnowledgeGraph(graph = {}) { const relations = (graph.relations || graph.edges || []).map(relation => ({ ...relation, source: relation.source || relation.from, target: relation.target || relation.to })); return { ...graph, relations }; }
 class ContentService {
   constructor(loader = new ContentLoader(), knowledgeEngineFactory = graph => new KnowledgeEngine(graph)) { this.loader = loader; this.knowledgeEngineFactory = knowledgeEngineFactory; this.data = null; this.knowledgeEngine = null; }
@@ -70,7 +71,8 @@ class ContentService {
 
   registerQuestions(data, questions, fallbackKnowledge = []) {
     for (const rawQuestion of questions) {
-      if (!rawQuestion?.id) continue;
+      if (!isRuntimeQuestion(rawQuestion)) continue;
+      if (!rawQuestion.id) continue;
       const question = {
         ...rawQuestion,
         knowledgeIds: normalizeKnowledgeIds(rawQuestion).length ? normalizeKnowledgeIds(rawQuestion) : fallbackKnowledge,

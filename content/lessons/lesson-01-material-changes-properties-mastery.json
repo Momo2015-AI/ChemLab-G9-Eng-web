@@ -1,10 +1,26 @@
 {
   "lessonId": "lesson-01-material-changes-properties",
-  "version": "1.0",
+  "version": "1.1",
   "mastery": {
     "threshold": 0.95,
     "minQuestions": 20,
     "unseenTransfer": true,
+    "requiredKnowledgeIds": [
+      "matter-change",
+      "physical-change",
+      "chemical-change",
+      "physical-property",
+      "chemical-property",
+      "observation-inference",
+      "evidence-reasoning"
+    ],
+    "criticalMisconceptions": [
+      "physical-vs-chemical",
+      "change-vs-property",
+      "single-phenomenon-overgeneralization",
+      "observation-inference"
+    ],
+    "requireConstructed": true,
     "questions": [
       {
         "id": "L01-M01",
@@ -21,6 +37,9 @@
         "knowledgeIds": [
           "physical-change",
           "chemical-change"
+        ],
+        "misconceptionIds": [
+          "physical-vs-chemical"
         ]
       },
       {
@@ -69,6 +88,9 @@
         "explanation": "气泡可能来自沸腾等物理过程，单一现象只是线索，还要寻找支持生成新物质的证据。",
         "knowledgeIds": [
           "evidence-reasoning"
+        ],
+        "misconceptionIds": [
+          "single-phenomenon-overgeneralization"
         ]
       },
       {
@@ -168,6 +190,9 @@
         "knowledgeIds": [
           "matter-change",
           "observation-inference"
+        ],
+        "misconceptionIds": [
+          "change-vs-property"
         ]
       },
       {
@@ -283,6 +308,9 @@
         "explanation": "判断化学变化要回到定义性依据，最有价值的是能说明生成了不同于原物质的新物质。",
         "knowledgeIds": [
           "evidence-reasoning"
+        ],
+        "misconceptionIds": [
+          "observation-inference"
         ]
       },
       {
@@ -334,6 +362,28 @@
         "knowledgeIds": [
           "evidence-reasoning",
           "observation-inference"
+        ],
+        "misconceptionIds": [
+          "observation-inference"
+        ]
+      },
+      {
+        "id": "L01-M21",
+        "type": "constructed",
+        "difficulty": "hard",
+        "bloomLevel": "create",
+        "knowledgePoint": "evidence-reasoning",
+        "question": "蜡烛熔化又凝固，不能证明一定是化学变化。请用一句话说明：判断物理变化与化学变化的根本依据是什么？",
+        "rubric": {
+          "modelAnswer": "判断的根本依据是是否生成新物质：没有生成新物质属于物理变化，生成了新物质属于化学变化。",
+          "keywords": ["新物质", "生成"],
+          "explanation": "现象（发光、放热、气泡）只是线索，物理变化与化学变化的根本区别是是否生成新物质。"
+        },
+        "explanation": "物理变化与化学变化的根本区别是是否生成新物质。",
+        "knowledgeIds": [
+          "evidence-reasoning",
+          "physical-change",
+          "chemical-change"
         ]
       }
     ]
