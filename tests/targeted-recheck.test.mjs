@@ -4,6 +4,13 @@ import { AssessmentController } from '../controllers/assessment-controller.js';
 
 test('targeted recheck selects questions matching diagnosed knowledge', async () => {
   const state = { progress: {}, learning: {}, saveCalls: 0, save() { this.saveCalls += 1; } };
+  const learningController = {
+    updateLessonState(lessonId, patch) {
+      state.learning.lessons ||= {};
+      state.learning.lessons[lessonId] = { ...(state.learning.lessons[lessonId] || {}), ...patch, lessonId };
+    },
+    getLessonState(lessonId) { return state.learning.lessons?.[lessonId] || {}; },
+  };
   const questions = [
     { id: 'q1', knowledgeIds: ['acid-base'] },
     { id: 'q2', knowledge: ['metal'] },
@@ -13,13 +20,14 @@ test('targeted recheck selects questions matching diagnosed knowledge', async ()
     assessment: { evaluate() { return { correct: true }; } },
     contentService: { async load() { return { questions }; } },
     state,
+    learningController,
   });
 
   const session = await controller.startTargeted(['acid-base'], 5);
   assert.deepEqual(session.questions.map(q => q.id), ['q1', 'q3']);
   assert.equal(session.dayId, 'remediation-recheck');
-  assert.equal(state.learning.recheck.questionCount, 2);
-  assert.equal(state.saveCalls, 1);
+  assert.equal(state.learning.lessons['remediation-recheck'].recheck.questionCount, 2);
+  assert.equal(state.saveCalls, 0);
 });
 
 test('targeted recheck returns null when no matching questions exist', async () => {

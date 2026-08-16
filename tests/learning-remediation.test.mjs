@@ -13,6 +13,7 @@ test('learning controller persists actionable remediation plan', () => {
   });
 
   const plan = controller.getRemediationPlan({
+    lessonId: 'lesson-acid',
     status: 'incorrect',
     knowledge: ['acid-base'],
     possibleErrors: ['indicator confusion'],
@@ -20,7 +21,7 @@ test('learning controller persists actionable remediation plan', () => {
 
   assert.equal(plan.status, 'needs-remediation');
   assert.deepEqual(plan.steps.map(step => step.type), ['review', 'practice', 'recheck']);
-  assert.equal(state.learning.remediation, plan);
+  assert.equal(state.learning.lessons['lesson-acid'].remediation, plan);
   assert.equal(state.saveCalls, 1);
 });
 

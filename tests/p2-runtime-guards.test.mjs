@@ -136,6 +136,22 @@ test('practice diagnosis is stored per lesson, not globally', () => {
   assert.equal(state.learning.lessons['l2']?.diagnosis, undefined);
 });
 
+test('all-correct practice clears prior remediation for the lesson', async () => {
+  const { controller, learningController } = createHarness();
+  learningController.getRemediationPlan = diagnosis => {
+    learningController.updateLessonState(diagnosis.lessonId, { remediation: { status: 'needs-remediation', steps: [] }, phase: 'REMEDIATION' });
+    return { status: 'needs-remediation', steps: [] };
+  };
+  learningController.updateLessonState('l1', { remediation: { status: 'needs-remediation', steps: [{ type: 'review' }] }, phase: 'REMEDIATION' });
+  const question = { id: 'q1', type: 'choice', options: ['A', 'B'], answer: 0, knowledgeIds: ['k1'] };
+  controller.startAttempt('l1', [controller.normalizeQuestion(question)], 'practice');
+  controller.answer(0);
+  const lessonState = learningController.getLessonState('l1');
+  assert.equal(lessonState.diagnosis.status, 'correct');
+  assert.equal(lessonState.remediation, null);
+  assert.equal(lessonState.phase, 'MASTERY');
+});
+
 test('renderQuiz renders a textarea for constructed questions', () => {
   const root = createRoot();
   renderQuiz({ root, question: { type: 'constructed', question: '请说明判断依据' }, index: 0, total: 2, mode: 'mastery' });

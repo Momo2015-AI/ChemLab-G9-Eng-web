@@ -46,9 +46,9 @@ test('LearningController creates and persists remediation plan', () => {
     remediationCatalog: catalog
   });
 
-  const plan = controller.getRemediationPlan({ knowledgeId: 'matter-structure' });
+  const plan = controller.getRemediationPlan({ lessonId: 'day-02', knowledgeId: 'matter-structure' });
 
   assert.ok(plan);
-  assert.deepEqual(state.learning.remediation, plan);
+  assert.deepEqual(state.learning.lessons['day-02'].remediation, plan);
   assert.equal(state.saves, 1);
 });
