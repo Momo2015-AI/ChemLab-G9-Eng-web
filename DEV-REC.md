@@ -974,3 +974,33 @@ lesson-03 迁移题建设；Source Registry 登记与 provenance 回填；题目
 ### Next
 
 Source Registry 登记（文档清理后 content/sources/ 成为最显眼的缺口）；按 docs/README.md 导航维护文档，新增一次性报告默认不入库。
+
+---
+
+## 2026-08-16 — 全量修复轮：内容质量收尾 + 页面逻辑 H1/H2 + 上下册方案 A
+
+### Conversation / decision
+
+用户要求"全部修复"：覆盖上一轮核验确认的远端未修项（M15 双答案换位、L02 答案 A 偏置、L01-P06/M05 歧义、H1 引导反馈无效补丁、H2 实验粘滞会话、#experiment 空目录、阻断页 0/0 外壳、回顾按钮反拍、失败 mastery 死胡同 CTA、20/19 文案、M21 极性）以及上下册方案 A（上轮分析确认：三课全标 upper/u01、酸入门实为下册第十单元内容、term 仅过滤 3 个入口且不持久化）。
+
+### Actions
+
+**内容**：M15 锌→铜（铜不与稀盐酸反应，解析覆盖四项）；P06/M05 歧义选项反序化；L02-M21 加 `rubric.mustMatch:[3]`（必须命中"只改变温度"极性组，错误设计不再通过）；20/19 文案改 21/20；**答案分布再平衡**（轮转选项）：L02 mastery 18A→5/5/5/5、L01 practice 6C→2/2/2/2、L01 mastery 9B→5/5/5/5、L02 诊断 3A→1/1/1、L03 两池同步（跳过含"以上"选项的 L03-M16）。
+**引擎**：`checkConstructed` 支持 `mustMatch`（极性组必须全中，兼容旧行为）。
+**H1**：`onGuidedCheck` 改为 1.4s 后重渲染并**保留展开卡片与滚动位置**（清除 window 全局 hack 与死参数）；视图用 lessonState 渲染**步骤 ✓ 标记与 n/8 计数**；`recordGuidedCheck` 答对即锁定（错误重做不回退、不重锁后续阶段）。
+**H2 及页面杂项**：experiment 路由按会话 id 不匹配即 reset；`#experiment` 无参复用完整 lab 目录；阻断页新增 `blocked` 外壳（中性标题、无 0/0、无重试钮）；回顾折叠按钮文案方向修正；失败 mastery 的 CTA 只在真实存在补救计划时出现（死胡同消除，主行动改为重试）。
+**上下册方案 A**：lesson-03 移册（manifest+JSON → lower/u10）；KG v2.2.0 全节点 `semester/unitId` 学期化（acid 三节点挂单元十）+ 201 条 node.questions 全量重建；课程门户单元表同步（u10 挂酸入门、u01 移除）；term 持久化（localStorage `chemlab-term`）+ `window.chemLabSetTerm` 全局切换；**深链接跨册自动切册**（course/quiz 路由守卫）；知识地图默认本册 + "查看全学年"切换；学习报告知识节点按册过滤；下册门户空态改诚实路线图文案。
+**测试**：新增 `tests/term-and-quality-hardening.test.mjs`（11 项：册别↔单元↔manifest 三方一致、答案分布 ≤⌈n/2⌉ 不变式、M15/P06/M05 锁定、mustMatch 极性、防回退、blocked 外壳、KG 学期与引用完整性）。
+
+### 中途事故与纠正
+
+内容批处理脚本中 M15/P06/M05/mustMatch 四处编辑只改内存未落盘，被后续再平衡步骤从磁盘重读覆盖；发现后基于轮转后现状重新落盘并同步测试期望。v19-course-view 删除旧 hack 时残留多余括号导致语法错误，已修复。
+
+### Verification
+
+- `npm test`：**144/144 全绿**（基线 133 → +11）；runtime-audit、content integrity、lesson readiness、build-pages 全部通过。
+- 浏览器新源（8125，无缓存）冒烟：深链接 lesson-03 全 UI 自动切下册（侧栏/页头均为 lower）；下册门户 u10 卡片显示酸入门；知识地图"3 个知识点 · 下册范围"+ 全学年(13) 切换；迁移阻断页中性标题无 0/0；**H1 实测**：提交后 t+700ms 反馈可见（"✓ 回答正确"），1.4s 重渲染后卡片保持展开、"✓ 已完成"标记、计数 1/8、状态已记录。
+
+### Next
+
+Source Registry 登记；上册第 3 课按教材补位（第二单元 空气/氧气，可复用实验库氧气 JSON）；题目顺序洗牌；misconception 词表统一；focus 管理与端到端测试自动化。

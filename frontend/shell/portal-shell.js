@@ -14,18 +14,24 @@ export function mountPortalShell(root){
   const closeMenu=()=>{root.querySelector('.chem-sidebar')?.classList.remove('open');root.querySelector('.chem-sidebar-scrim')?.classList.remove('visible');root.querySelector('.chem-menu-toggle')?.setAttribute('aria-expanded','false')};
   const navigate=route=>{window.location.hash=route;closeMenu()};
   root.querySelectorAll('[data-nav]').forEach(button=>button.addEventListener('click',()=>navigate(button.dataset.nav)));
+  const TERM_KEY='chemlab-term';
   const setTerm=term=>{
     root.querySelectorAll('[data-term]').forEach(button=>button.classList.toggle('active',button.dataset.term===term));
     root.dataset.textbookTerm=term;
     if(typeof window!=='undefined') window.chemLabTextbookTerm=term;
+    try{ if(typeof window!=='undefined') window.localStorage.setItem(TERM_KEY,term); }catch(e){}
     window.dispatchEvent(new CustomEvent('chemlab:term-change',{detail:{term}}));
   };
+  // Exposed so deep links to a lesson from the other semester can switch the
+  // whole UI (lists + shell toggles) instead of opening out-of-context pages.
+  if(typeof window!=='undefined') window.chemLabSetTerm=setTerm;
   root.querySelectorAll('[data-term]').forEach(button=>button.addEventListener('click',()=>setTerm(button.dataset.term)));
   root.querySelector('[data-close-nav]')?.addEventListener('click',closeMenu);
   root.querySelector('.chem-menu-toggle')?.addEventListener('click',()=>{const sidebar=root.querySelector('.chem-sidebar');const button=root.querySelector('.chem-menu-toggle');const open=sidebar?.classList.toggle('open');root.querySelector('.chem-sidebar-scrim')?.classList.toggle('visible',Boolean(open));button?.setAttribute('aria-expanded',String(Boolean(open)))});
-  setTerm('upper');
+  let savedTerm='upper';
+  try{ savedTerm=(typeof window!=='undefined'&&window.localStorage.getItem(TERM_KEY))||'upper'; }catch(e){}
+  setTerm(savedTerm==='lower'?'lower':'upper');
   const THEME_KEY='chemlab-theme';
-  const TERM_KEY='chemlab-term';
   const applyTheme=theme=>{
     if(typeof document!=='undefined') document.documentElement.dataset.theme=theme;
     const toggle=root.querySelector('[data-theme-toggle]');
@@ -39,13 +45,6 @@ export function mountPortalShell(root){
     const next=document.documentElement.dataset.theme==='light'?'dark':'light';
     applyTheme(next);
   });
-  const applyTerm=term=>{
-    setTerm(term);
-    try{ if(typeof window!=='undefined') window.localStorage.setItem(TERM_KEY,term); }catch(e){}
-  };
-  let savedTerm='upper';
-  try{ savedTerm=(typeof window!=='undefined'&&window.localStorage.getItem(TERM_KEY))||'upper'; }catch(e){}
-  applyTerm(savedTerm);
   return root.querySelector('#chem-page-root');
 }
 export function syncPortalNavigation(root,route){if(!root)return;root.querySelectorAll('.chem-nav-item[data-nav]').forEach(item=>item.classList.toggle('active',item.dataset.nav===route?.page));const crumb=root.querySelector('.chem-breadcrumb');if(crumb)crumb.innerHTML=breadcrumb(route);crumb?.querySelectorAll('[data-nav]').forEach(button=>button.addEventListener('click',()=>{window.location.hash=button.dataset.nav}));}

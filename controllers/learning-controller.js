@@ -58,13 +58,16 @@ export class LearningController {
     const lessonState = this.getLessonState(lessonId);
     const guided = { ...(lessonState.guided || {}), steps: { ...(lessonState.guided?.steps || {}) } };
     const previous = guided.steps[stepId] || { attempts: 0 };
+    // A step, once answered correctly, stays completed: a later wrong
+    // re-attempt must not silently re-lock the downstream stages.
+    const stepCorrect = Boolean(previous.correct || correct);
     guided.steps[stepId] = {
       lessonId,
       stepId,
       attempts: Number(previous.attempts || 0) + Number(attempts || 1),
-      correct: Boolean(correct),
+      correct: stepCorrect,
       usedHint: Boolean(previous.usedHint || usedHint),
-      completedAt: correct ? new Date().toISOString() : previous.completedAt || null,
+      completedAt: stepCorrect ? new Date().toISOString() : previous.completedAt || null,
     };
     const completed = Object.values(guided.steps).filter(step => step.correct).length;
     const expectedSteps = Number(stepCount || guided.stepCount || completed);

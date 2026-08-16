@@ -14,12 +14,12 @@
         "knowledgePoint": "acid-intro",
         "question": "以下关于酸的说法正确的是？",
         "options": [
-          "所有酸都有刺激性气味",
           "醋酸是有机酸，存在于食醋中",
           "浓硫酸具有挥发性",
-          "酸都能与所有金属反应"
+          "酸都能与所有金属反应",
+          "所有酸都有刺激性气味"
         ],
-        "answer": 1,
+        "answer": 0,
         "explanation": "醋酸是有机弱酸，食醋中含有约3%-5%的醋酸。",
         "knowledgeIds": [
           "acid-intro",
@@ -54,12 +54,12 @@
         "knowledgePoint": "chemical-property",
         "question": "将锌粒放入稀硫酸中，观察到的现象是？",
         "options": [
+          "产生红褐色沉淀",
           "无现象",
           "产生大量气泡，锌粒逐渐减少",
-          "溶液变蓝",
-          "产生红褐色沉淀"
+          "溶液变蓝"
         ],
-        "answer": 1,
+        "answer": 2,
         "explanation": "锌与稀硫酸反应生成硫酸锌和氢气，观察到气泡产生，锌粒逐渐溶解。",
         "knowledgeIds": [
           "chemical-property",
@@ -73,12 +73,12 @@
         "knowledgePoint": "chemical-property",
         "question": "不能用铁容器盛放稀盐酸的原因是？",
         "options": [
-          "铁与盐酸不反应",
-          "铁会腐蚀容器并产生氢气",
           "铁使盐酸变质",
-          "铁会使盐酸变浑浊"
+          "铁会使盐酸变浑浊",
+          "铁与盐酸不反应",
+          "铁会腐蚀容器并产生氢气"
         ],
-        "answer": 1,
+        "answer": 3,
         "explanation": "铁与稀盐酸反应生成氯化亚铁和氢气，会腐蚀容器。",
         "knowledgeIds": [
           "chemical-property"
@@ -91,12 +91,12 @@
         "knowledgePoint": "safety-awareness",
         "question": "实验时不小心将酸液溅到皮肤上，正确的处理方法是？",
         "options": [
-          "立即用布擦掉",
           "立即用大量水冲洗，再涂碳酸氢钠溶液",
           "立即用碱中和",
-          "用清水浸泡即可"
+          "用清水浸泡即可",
+          "立即用布擦掉"
         ],
-        "answer": 1,
+        "answer": 0,
         "explanation": "先用大量水冲洗稀释，再用弱碱性的碳酸氢钠溶液中和残留酸液。",
         "knowledgeIds": [
           "safety-awareness"
@@ -112,12 +112,12 @@
         "knowledgePoint": "evidence-reasoning",
         "question": "某溶液能使酚酞不变色，该溶液？",
         "options": [
-          "一定是酸溶液",
           "一定是中性溶液",
           "可能是酸溶液或中性溶液",
-          "一定是碱溶液"
+          "一定是碱溶液",
+          "一定是酸溶液"
         ],
-        "answer": 2,
+        "answer": 1,
         "explanation": "酚酞在酸性和中性溶液中都不变色，无法仅凭此判断是酸还是中性。",
         "knowledgeIds": [
           "evidence-reasoning",
@@ -131,12 +131,12 @@
         "knowledgePoint": "chemical-property",
         "question": "稀盐酸与稀硫酸都能与碳酸钠反应，这是因为？",
         "options": [
+          "它们浓度相同",
           "它们都含有钠离子",
           "它们都含有氢离子",
-          "它们都含有硫酸根",
-          "它们浓度相同"
+          "它们都含有硫酸根"
         ],
-        "answer": 1,
+        "answer": 2,
         "explanation": "酸溶液的共性是由氢离子决定的，两种酸都含有H⁺。",
         "knowledgeIds": [
           "chemical-property",
@@ -172,12 +172,12 @@
         "knowledgePoint": "evidence-reasoning",
         "question": "某白色固体与稀盐酸反应产生无色气体，该气体能使澄清石灰水变浑浊。原固体？",
         "options": [
-          "一定是碳酸钙",
-          "一定是碳酸盐",
           "可能是碳酸盐或碳酸氢盐",
-          "一定是碳酸氢钠"
+          "一定是碳酸氢钠",
+          "一定是碳酸钙",
+          "一定是碳酸盐"
         ],
-        "answer": 2,
+        "answer": 0,
         "explanation": "碳酸盐和碳酸氢盐都能与酸反应生成二氧化碳，需进一步检验才能确定具体物质。",
         "knowledgeIds": [
           "evidence-reasoning",
@@ -191,12 +191,12 @@
         "knowledgePoint": "safety-awareness",
         "question": "下列实验操作正确的是？",
         "options": [
-          "用鼻子直接闻浓盐酸的气味",
-          "用手直接取用锌粒",
           "稀释浓硫酸时把水倒入浓硫酸",
-          "实验剩余的酸倒入指定容器"
+          "实验剩余的酸倒入指定容器",
+          "用鼻子直接闻浓盐酸的气味",
+          "用手直接取用锌粒"
         ],
-        "answer": 3,
+        "answer": 1,
         "explanation": "实验剩余的药品不能放回原瓶也不能随意丢弃，应倒入指定容器。",
         "knowledgeIds": [
           "safety-awareness"
@@ -228,12 +228,12 @@
         "knowledgePoint": "evidence-reasoning",
         "question": "鉴别稀盐酸和稀硫酸，最好选用？",
         "options": [
+          "pH试纸",
           "紫色石蕊试液",
           "无色酚酞试液",
-          "氯化钡溶液",
-          "pH试纸"
+          "氯化钡溶液"
         ],
-        "answer": 2,
+        "answer": 3,
         "explanation": "氯化钡与硫酸反应生成白色沉淀硫酸钡，与盐酸不反应，可以鉴别。",
         "knowledgeIds": [
           "chemical-property",
@@ -247,12 +247,12 @@
         "knowledgePoint": "observation-inference",
         "question": "下列叙述中，属于化学性质的是？",
         "options": [
-          "浓盐酸具有挥发性",
-          "浓硫酸具有吸水性",
           "稀盐酸能与锌反应",
-          "稀硫酸是无色液体"
+          "稀硫酸是无色液体",
+          "浓盐酸具有挥发性",
+          "浓硫酸具有吸水性"
         ],
-        "answer": 2,
+        "answer": 0,
         "explanation": "能与锌反应需要通过化学变化才能表现，属于化学性质。",
         "knowledgeIds": [
           "chemical-property",
@@ -287,10 +287,10 @@
           "钠",
           "铝",
           "铁",
-          "锌"
+          "铜"
         ],
         "answer": 2,
-        "explanation": "铁与稀盐酸反应生成氯化亚铁FeCl₂和氢气；钠生成NaCl，铝生成AlCl₃，锌生成ZnCl₂。",
+        "explanation": "钠与稀盐酸反应生成NaCl（不是XCl₂）；铝生成AlCl₃；铜不与稀盐酸反应；铁与稀盐酸反应生成FeCl₂，符合题意。",
         "knowledgeIds": [
           "chemical-property"
         ]
@@ -321,12 +321,12 @@
         "knowledgePoint": "safety-awareness",
         "question": "实验室中浓硫酸洒在实验台上，正确的处理方法是？",
         "options": [
-          "用大量水冲洗",
-          "用碳酸氢钠溶液中和后冲洗",
           "用布擦干",
-          "置之不理"
+          "置之不理",
+          "用大量水冲洗",
+          "用碳酸氢钠溶液中和后冲洗"
         ],
-        "answer": 1,
+        "answer": 3,
         "explanation": "先用碳酸氢钠溶液中和残留酸液，再用大量水冲洗。",
         "knowledgeIds": [
           "safety-awareness"
@@ -339,12 +339,12 @@
         "knowledgePoint": "chemical-property",
         "question": "下列反应不属于酸通性的是？",
         "options": [
+          "酸+盐→新酸+新盐（生成硫酸钡）",
           "酸+金属→盐+氢气",
           "酸+金属氧化物→盐+水",
-          "酸+碱→盐+水",
-          "酸+盐→新酸+新盐（生成硫酸钡）"
+          "酸+碱→盐+水"
         ],
-        "answer": 3,
+        "answer": 0,
         "explanation": "生成硫酸钡沉淀的反应是硫酸根的特性，不是所有酸的共同性质。",
         "knowledgeIds": [
           "chemical-property",

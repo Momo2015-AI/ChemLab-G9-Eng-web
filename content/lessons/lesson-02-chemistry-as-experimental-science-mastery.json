@@ -41,12 +41,12 @@
         "knowledgePoint": "observation-inference",
         "question": "下列属于直接观察的是：",
         "options": [
+          "反应放热说明是化学变化",
           "锌粒放入盐酸后有气泡产生",
           "生成的气体是氢气",
-          "发生了置换反应",
-          "反应放热说明是化学变化"
+          "发生了置换反应"
         ],
-        "answer": 0,
+        "answer": 1,
         "explanation": "“有气泡产生”可以直接看到，是观察；判断气体成分、反应类型属于解释。",
         "knowledgeIds": [
           "observation-inference"
@@ -60,12 +60,12 @@
         "knowledgePoint": "control-variables",
         "question": "要研究“水的多少是否影响糖溶解的量”，实验中的研究变量是：",
         "options": [
+          "是否搅拌",
           "糖的质量",
           "水的体积",
-          "温度",
-          "是否搅拌"
+          "温度"
         ],
-        "answer": 1,
+        "answer": 2,
         "explanation": "研究变量是我们要探究的因素，即水的体积；其他条件如糖的质量、温度、搅拌应保持不变。",
         "knowledgeIds": [
           "control-variables"
@@ -76,12 +76,12 @@
         "knowledgePoint": "data-integrity",
         "question": "实验记录中出现一个明显偏离其他数据的值，恰当的处理是：",
         "options": [
-          "当作错误直接删除",
-          "保留数据并分析可能的原因",
           "修改成接近平均值",
-          "忽略它不看"
+          "忽略它不看",
+          "当作错误直接删除",
+          "保留数据并分析可能的原因"
         ],
-        "answer": 1,
+        "answer": 3,
         "explanation": "异常数据必须保留并分析，可能反映操作失误，也可能指向新的现象。",
         "knowledgeIds": [
           "data-integrity"
@@ -108,12 +108,12 @@
         "knowledgePoint": "observation-inference",
         "question": "“蜡烛燃烧时火焰明亮”属于科学记录中的：",
         "options": [
+          "目的",
           "观察",
           "解释",
-          "假设",
-          "目的"
+          "假设"
         ],
-        "answer": 0,
+        "answer": 1,
         "explanation": "火焰明亮可以直接观察到，是观察记录，不涉及推断。",
         "knowledgeIds": [
           "observation-inference"
@@ -124,12 +124,12 @@
         "knowledgePoint": "scientific-inquiry",
         "question": "科学探究常见的基本顺序是：",
         "options": [
-          "问题→假设→方案→观察与数据→结论",
-          "结论→数据→问题",
           "方案→结论→问题",
-          "顺序随意，无需固定"
+          "顺序随意，无需固定",
+          "问题→假设→方案→观察与数据→结论",
+          "结论→数据→问题"
         ],
-        "answer": 0,
+        "answer": 2,
         "explanation": "探究一般从问题出发，提出假设，设计方案并观察记录，最后基于证据得出结论。",
         "knowledgeIds": [
           "scientific-inquiry"
@@ -140,12 +140,12 @@
         "knowledgePoint": "control-variables",
         "question": "要验证“温度影响蔗糖溶解快慢”，实验中应改变的因素是：",
         "options": [
-          "水的温度",
           "蔗糖的质量",
           "水的体积",
-          "是否搅拌"
+          "是否搅拌",
+          "水的温度"
         ],
-        "answer": 0,
+        "answer": 3,
         "explanation": "研究变量是温度，因此只改变温度，其他条件保持不变。",
         "knowledgeIds": [
           "control-variables"
@@ -178,12 +178,12 @@
         "knowledgePoint": "evidence-reasoning",
         "question": "让一次实验的结论更可靠，较好的做法是：",
         "options": [
+          "只报告成功的一次",
           "重复实验验证结果",
           "凭直觉修改结论",
-          "不再检查过程",
-          "只报告成功的一次"
+          "不再检查过程"
         ],
-        "answer": 0,
+        "answer": 1,
         "explanation": "重复实验能减小偶然误差，多次一致的结果更支持结论的可靠性。",
         "knowledgeIds": [
           "evidence-reasoning"
@@ -194,12 +194,12 @@
         "knowledgePoint": "observation-inference",
         "question": "“杯壁出现水珠，推测生成了水蒸气”中的“推测”属于：",
         "options": [
-          "解释（推断）",
-          "直接观察",
           "测量数据",
-          "实验目的"
+          "实验目的",
+          "解释（推断）",
+          "直接观察"
         ],
-        "answer": 0,
+        "answer": 2,
         "explanation": "水珠可直接看到，但把水珠解释为水蒸气冷凝是推断，属于解释。",
         "knowledgeIds": [
           "observation-inference"
@@ -210,12 +210,12 @@
         "knowledgePoint": "control-variables",
         "question": "对照实验中，除研究变量外，其他条件应当：",
         "options": [
-          "保持相同",
           "各不相同",
           "完全随意",
-          "只让温度相同"
+          "只让温度相同",
+          "保持相同"
         ],
-        "answer": 0,
+        "answer": 3,
         "explanation": "只改变研究变量、保持其他条件相同，比较才公平，结论才有说服力。",
         "knowledgeIds": [
           "control-variables"
@@ -242,12 +242,12 @@
         "knowledgePoint": "data-integrity",
         "question": "为什么异常数据也值得保留？",
         "options": [
+          "它反正不重要",
           "它可能提示操作失误或新的发现",
           "为了凑足数据量",
-          "让报告看起来更完整",
-          "它反正不重要"
+          "让报告看起来更完整"
         ],
-        "answer": 0,
+        "answer": 1,
         "explanation": "异常数据可能反映失误，也可能指向新现象，保留并分析是数据真实性的要求。",
         "knowledgeIds": [
           "data-integrity"
@@ -258,12 +258,12 @@
         "knowledgePoint": "observation-inference",
         "question": "科学观察记录应做到：",
         "options": [
-          "客观、准确、完整",
-          "符合预期结果",
           "简洁美观即可",
-          "提前写好结论"
+          "提前写好结论",
+          "客观、准确、完整",
+          "符合预期结果"
         ],
-        "answer": 0,
+        "answer": 2,
         "explanation": "记录要客观准确完整，忠于实际观察，不迁就预期或结论。",
         "knowledgeIds": [
           "observation-inference"
@@ -274,12 +274,12 @@
         "knowledgePoint": "control-variables",
         "question": "设计对照实验时，实验组与对照组的唯一区别应当是：",
         "options": [
-          "研究变量",
           "操作的同学",
           "实验日期",
-          "使用的器材品牌"
+          "使用的器材品牌",
+          "研究变量"
         ],
-        "answer": 0,
+        "answer": 3,
         "explanation": "两组之间只允许研究变量不同，其余条件相同，才能把结果的差异归因于研究变量。",
         "knowledgeIds": [
           "control-variables"
@@ -306,12 +306,12 @@
         "knowledgePoint": "evidence-reasoning",
         "question": "数据不支持预测时，下列做法正确的是：",
         "options": [
+          "重新定义预测",
           "保留数据，检查条件、操作与假设",
           "强行修改结论",
-          "隐瞒这部分数据",
-          "重新定义预测"
+          "隐瞒这部分数据"
         ],
-        "answer": 0,
+        "answer": 1,
         "explanation": "应保留原始数据，检查条件、操作与假设，这才是基于证据的科学态度。",
         "knowledgeIds": [
           "evidence-reasoning"
@@ -325,12 +325,12 @@
         "knowledgePoint": "observation-inference",
         "question": "“铁钉表面出现红棕色物质”是观察，要判断是否生成了新物质还需要：",
         "options": [
-          "进一步寻找支持“生成新物质”的证据",
-          "凭经验直接下结论",
           "看颜色是否鲜艳",
-          "无需任何证据"
+          "无需任何证据",
+          "进一步寻找支持“生成新物质”的证据",
+          "凭经验直接下结论"
         ],
-        "answer": 0,
+        "answer": 2,
         "explanation": "观察只是线索，判断是否生成新物质必须进一步寻找证据，形成证据链。",
         "knowledgeIds": [
           "observation-inference"
@@ -341,12 +341,12 @@
         "knowledgePoint": "evidence-reasoning",
         "question": "为检验“搅拌会加快食盐溶解”，最科学的做法是：",
         "options": [
-          "两杯等量等温的水和盐，一杯搅拌一杯不搅拌，比较溶解时间",
           "一杯搅拌一杯用热水",
           "两杯都搅拌，只记录结果",
-          "目测估计溶解快慢"
+          "目测估计溶解快慢",
+          "两杯等量等温的水和盐，一杯搅拌一杯不搅拌，比较溶解时间"
         ],
-        "answer": 0,
+        "answer": 3,
         "explanation": "研究搅拌的影响，应保证水量、盐量、温度相同，只改变是否搅拌，再比较溶解时间。",
         "knowledgeIds": [
           "evidence-reasoning",
@@ -388,7 +388,10 @@
               "保持"
             ]
           ],
-          "explanation": "控制变量法要求只改变研究变量，其余条件保持一致。"
+          "explanation": "控制变量法要求只改变研究变量，其余条件保持一致。",
+          "mustMatch": [
+            3
+          ]
         },
         "explanation": "控制变量：只改变温度，保持水量、盐量和搅拌等条件一致。",
         "knowledgeIds": [
