@@ -169,8 +169,48 @@ html[data-textbook-term="lower"] .chem-term-item.active{
 :root[data-theme="light"] .chem-nav-item[data-nav="progress"]{--nav-dot:var(--ph-green)}
 :root[data-theme="light"] .chem-nav-item[data-nav="ai-tutor"]{--nav-dot:var(--ph-red)}
 :root[data-theme="light"] .chem-nav-icon{
-  filter:drop-shadow(0 0 4px color-mix(in srgb, var(--nav-dot,var(--ph-blue)) 50%, transparent)) !important;
+  filter:none !important;
 }
+
+/* 学期切换按钮（侧边栏 + 顶部 header 统一样式）*/
+.chem-term-switch,
+.chem-header-terms{
+  display:flex;align-items:center;gap:8px;margin:0;padding:0 4px;
+}
+.chem-term-label{
+  font-size:10px;font-weight:700;letter-spacing:.16em;
+  color:var(--ink-faint);margin-bottom:6px;padding-left:4px;
+}
+.chem-header-terms{
+  margin-left:auto;display:flex;gap:6px;align-items:center;
+}
+.chem-term-item,
+.chem-header-term{
+  padding:7px 14px;border-radius:999px;
+  border:1.5px solid var(--ink-line);
+  background:var(--ink-bg-1);
+  color:var(--ink-dim);font-size:12px;font-weight:600;
+  cursor:pointer;text-align:center;transition:all .2s cubic-bezier(.4,0,.2,1);
+  white-space:nowrap;flex-shrink:0;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);
+}
+.chem-term-item:hover,
+.chem-header-term:hover{
+  border-color:var(--ph-blue);color:var(--ph-blue);
+  box-shadow:0 2px 8px rgba(47,127,224,.12);transform:translateY(-1px);
+}
+.chem-term-item.active,
+.chem-header-term.active{
+  background:linear-gradient(135deg,var(--term-upper-start),var(--term-upper-end));
+  border-color:transparent;color:#fff;
+  box-shadow:0 3px 12px rgba(91,106,191,.3);
+}
+html[data-textbook-term="lower"] .chem-term-item.active,
+html[data-textbook-term="lower"] .chem-header-term.active{
+  background:linear-gradient(135deg,var(--term-lower-start),var(--term-lower-end));
+  box-shadow:0 3px 12px rgba(230,81,0,.3);
+}
+.chem-header-term{padding:6px 12px;font-size:11px;}
 
 :root[data-theme="light"] .chem-status-card{
   border-color:rgba(67,160,71,.2) !important;
@@ -182,19 +222,57 @@ html[data-textbook-term="lower"] .chem-term-item.active{
   box-shadow:0 0 10px var(--ph-green) !important;
 }
 :root[data-theme="light"] .chem-header{
-  background:rgba(255,255,255,.88) !important;
+  background:rgba(255,255,255,.92) !important;
   border-bottom:1px solid var(--ink-line) !important;
-  backdrop-filter:blur(16px);
-  box-shadow:0 2px 12px rgba(0,0,0,.04);
+  backdrop-filter:blur(16px) !important;
+  box-shadow:0 2px 12px rgba(0,0,0,.05) !important;
 }
 :root[data-theme="light"] .chem-breadcrumb,
 :root[data-theme="light"] .chem-breadcrumb-home{color:var(--ink-dim) !important}
 :root[data-theme="light"] .chem-breadcrumb-home:hover{color:var(--ph-blue) !important}
 :root[data-theme="light"] .chem-breadcrumb-current{color:var(--ink) !important}
-:root[data-theme="light"] .chem-search{
-  border-color:var(--ink-line-strong) !important;
-  background:#fff !important;
+:root[data-theme="light"] .chem-search,
+:root[data-theme="light"] .chem-ai-button{
+  border:1.5px solid var(--ink-line) !important;
+  background:var(--ink-bg-1) !important;
   color:var(--ink-dim) !important;
+  border-radius:10px !important;
+  padding:8px 14px !important;
+  font-size:13px !important;
+  cursor:pointer !important;
+  box-shadow:0 1px 4px rgba(0,0,0,.06) !important;
+  transition:all .2s ease !important;
+}
+:root[data-theme="light"] .chem-search:hover{
+  border-color:var(--ph-blue) !important;
+  color:var(--ph-blue) !important;
+  box-shadow:0 2px 10px rgba(47,127,224,.12) !important;
+}
+:root[data-theme="light"] .chem-ai-button{
+  color:#4a2fd6 !important;
+  border-color:rgba(124,77,255,.25) !important;
+  background:rgba(124,77,255,.05) !important;
+}
+:root[data-theme="light"] .chem-ai-button:hover{
+  border-color:rgba(124,77,255,.45) !important;
+  background:rgba(124,77,255,.1) !important;
+  box-shadow:0 2px 12px rgba(124,77,255,.15) !important;
+}
+:root[data-theme="light"] .chem-menu-toggle{
+  color:var(--ink) !important;
+  border:1.5px solid var(--ink-line-strong) !important;
+  background:var(--ink-bg-1) !important;
+  border-radius:10px !important;
+  padding:7px 10px !important;
+  font-size:18px !important;
+  cursor:pointer !important;
+}
+:root[data-theme="light"] .chem-footer{
+  border-top:1px solid var(--ink-line) !important;
+  color:var(--ink-faint) !important;
+  background:rgba(255,255,255,.7) !important;
+}
+:root[data-theme="light"] .chem-footer-home:hover{color:var(--ph-blue) !important}
 }
 :root[data-theme="light"] .chem-ai-button{
   color:#4a2fd6 !important;
