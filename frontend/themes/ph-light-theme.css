@@ -281,12 +281,17 @@ html[data-textbook-term="lower"] .chem-header-term.active{
 }
 :root[data-theme="light"] .chem-menu-toggle{
   color:var(--ink) !important;
-  border-color:var(--ink-line-strong) !important;
-  background:#fff !important;
+  border:1.5px solid var(--ink-line-strong) !important;
+  background:var(--ink-bg-1) !important;
+  border-radius:10px !important;
+  padding:7px 10px !important;
+  font-size:18px !important;
+  cursor:pointer !important;
 }
 :root[data-theme="light"] .chem-footer{
   border-top:1px solid var(--ink-line) !important;
   color:var(--ink-faint) !important;
+  background:rgba(255,255,255,.7) !important;
 }
 :root[data-theme="light"] .chem-footer-home:hover{color:var(--ph-blue) !important}
 
