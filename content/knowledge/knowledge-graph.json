@@ -299,7 +299,7 @@
     {
       "id": "acid-intro",
       "name": "常见的酸",
-      "chapter": "单元一 走进化学世界",
+      "chapter": "第十单元 酸和碱",
       "domain": "substance",
       "bloomLevels": [
         "remember",
@@ -318,12 +318,17 @@
         "L03-M01",
         "L03-M08",
         "L03-M14"
+      ],
+      "prerequisites": [
+        "physical-property",
+        "chemical-property",
+        "safety-awareness"
       ]
     },
     {
       "id": "acid-property",
       "name": "酸的化学性质",
-      "chapter": "单元一 走进化学世界",
+      "chapter": "第十单元 酸和碱",
       "domain": "reaction",
       "bloomLevels": [
         "understand",
