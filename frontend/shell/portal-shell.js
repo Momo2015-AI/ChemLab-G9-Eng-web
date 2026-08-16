@@ -25,6 +25,7 @@ export function mountPortalShell(root){
   root.querySelector('.chem-menu-toggle')?.addEventListener('click',()=>{const sidebar=root.querySelector('.chem-sidebar');const button=root.querySelector('.chem-menu-toggle');const open=sidebar?.classList.toggle('open');root.querySelector('.chem-sidebar-scrim')?.classList.toggle('visible',Boolean(open));button?.setAttribute('aria-expanded',String(Boolean(open)))});
   setTerm('upper');
   const THEME_KEY='chemlab-theme';
+  const TERM_KEY='chemlab-term';
   const applyTheme=theme=>{
     if(typeof document!=='undefined') document.documentElement.dataset.theme=theme;
     const toggle=root.querySelector('[data-theme-toggle]');
@@ -38,6 +39,13 @@ export function mountPortalShell(root){
     const next=document.documentElement.dataset.theme==='light'?'dark':'light';
     applyTheme(next);
   });
+  const applyTerm=term=>{
+    setTerm(term);
+    try{ if(typeof window!=='undefined') window.localStorage.setItem(TERM_KEY,term); }catch(e){}
+  };
+  let savedTerm='upper';
+  try{ savedTerm=(typeof window!=='undefined'&&window.localStorage.getItem(TERM_KEY))||'upper'; }catch(e){}
+  applyTerm(savedTerm);
   return root.querySelector('#chem-page-root');
 }
 export function syncPortalNavigation(root,route){if(!root)return;root.querySelectorAll('.chem-nav-item[data-nav]').forEach(item=>item.classList.toggle('active',item.dataset.nav===route?.page));const crumb=root.querySelector('.chem-breadcrumb');if(crumb)crumb.innerHTML=breadcrumb(route);crumb?.querySelectorAll('[data-nav]').forEach(button=>button.addEventListener('click',()=>{window.location.hash=button.dataset.nav}));}

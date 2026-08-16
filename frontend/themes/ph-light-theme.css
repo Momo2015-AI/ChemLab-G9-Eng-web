@@ -1,26 +1,25 @@
 /**
- * pH Light Theme — pH 浅色主题
+ * pH Light Theme v2 — 青春活泼版
  * ------------------------------------------------------------------
- * 用 pH 试纸/通用指示剂的真实颜色（0-14，从红→橙→黄→绿→蓝→紫）
- * 划分六个学科域色块；卡片编号采用"元素周期表格子"式的辉光小标签
- * （方角圆边、居中大数字、彩色描边发光），同时满足"数字序号清晰"
- * 与"用元素周期表的辉光效果点缀"两个要求。
+ * 用 pH 试纸/通用指示剂的真实颜色（0-14）划分六个学科域色块，
+ * 卡片采用圆角、渐变、悬浮阴影，风格青春活泼。
  *
- * 通过 <html data-theme="light"> 切换；深色主题（spectral-glow-theme.css）
- * 保留不动，两者互不覆盖，只有其中一个的选择器在给定时刻生效。
+ * 学期色：上册=蓝紫渐变，下册=橙红渐变
+ * 模块色：学习=紫，实验=橙，练习=黄，诊断=红，掌握=绿，知识=靛蓝
  * ------------------------------------------------------------------
  */
 
+/* ================= 基础变量 ================= */
 :root[data-theme="light"]{
-  /* ---- pH 六色（学科域色板，语义与深色版一致，只是取值换成 pH 色）---- */
-  --ph-violet:#7c4dff;   /* pH 13 强碱 · 基础/综合 */
-  --ph-blue:#2f7fe0;     /* pH 10 碱  · 酸碱 */
-  --ph-green:#43a047;    /* pH 7  中性 · 生活应用 / 成功·掌握 */
-  --ph-yellow:#f9a825;   /* pH 6  弱酸 · 盐/化肥 / 练习 */
-  --ph-orange:#fb8c00;   /* pH 4  酸  · 金属/材料 / 实验 */
-  --ph-red:#e53935;      /* pH 1  强酸 · 反应/方程式 / 诊断·错误 */
+  /* ---- pH 六色（学科域色板）---- */
+  --ph-violet:#7c4dff;   /* pH 13 强碱 · 基础/综合/知识地图 */
+  --ph-blue:#2f7fe0;     /* pH 10 碱  · 课程学习/上册 */
+  --ph-green:#43a047;    /* pH 7  中性 · 掌握/成功/实验 */
+  --ph-yellow:#f9a825;   /* pH 6  弱酸 · 练习/盐化肥 */
+  --ph-orange:#fb8c00;   /* pH 4  酸  · 实验/金属 */
+  --ph-red:#e53935;      /* pH 1  强酸 · 诊断/错误/反应 */
 
-  /* 深色主题用同名变量，这里直接复用，浅色页面自动继承正确取色 */
+  /* ---- 兼容深色主题变量 ---- */
   --spec-violet:var(--ph-violet);
   --spec-blue:var(--ph-blue);
   --spec-green:var(--ph-green);
@@ -28,165 +27,435 @@
   --spec-orange:var(--ph-orange);
   --spec-red:var(--ph-red);
 
-  /* ---- 柔和浅色中性基调（不是纯白，带一点暖调纸感）---- */
-  --ink-bg:#faf7f2;
+  /* ---- 中性基调：活泼暖白 ---- */
+  --ink-bg:#f8f6f3;
   --ink-bg-1:#ffffff;
-  --ink-bg-2:#f2ede4;
-  --ink:#2b2620;
-  --ink-dim:#6b6358;
-  --ink-faint:#9a9184;
-  --ink-line:rgba(43,38,32,.10);
-  --ink-line-strong:rgba(43,38,32,.18);
+  --ink-bg-2:#f0ece4;
+  --ink:#1a1612;
+  --ink-dim:#5a5247;
+  --ink-faint:#8a7f72;
+  --ink-line:rgba(43,38,32,.08);
+  --ink-line-strong:rgba(43,38,32,.15);
+
+  /* ---- 学期色 ---- */
+  --term-upper-start:#5b6abf;
+  --term-upper-end:#7c4dff;
+  --term-lower-start:#e65100;
+  --term-lower-end:#ff6d00;
+
+  /* ---- 青春活力色 ---- */
+  --青春粉红:#ff6b9d;
+  --青春青绿:#00c9a7;
+  --青春柠檬:#ffd93d;
+  --青春天蓝:#6bcf7f;
+
+  /* ---- 字体 ---- */
+  --font-display:'Space Grotesk','PingFang SC','Microsoft YaHei',sans-serif;
+  --font-body:'Inter','PingFang SC','Microsoft YaHei',sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,monospace;
 }
 
-/* ================= 全局背景：柔和暖白 + 极淡的 pH 光晕 ================= */
+/* ================= 全局背景：pH 彩虹光晕 ================= */
 :root[data-theme="light"] body{
   background:
-    radial-gradient(ellipse 900px 480px at 8% -6%, rgba(124,77,255,.06), transparent 60%),
-    radial-gradient(ellipse 700px 480px at 96% 4%, rgba(67,160,71,.06), transparent 55%),
+    radial-gradient(ellipse 600px 400px at 5% -5%, rgba(229,57,53,.05), transparent 50%),
+    radial-gradient(ellipse 500px 350px at 20% 10%, rgba(251,140,0,.04), transparent 45%),
+    radial-gradient(ellipse 500px 350px at 80% -5%, rgba(249,168,37,.04), transparent 45%),
+    radial-gradient(ellipse 600px 400px at 95% 10%, rgba(124,77,255,.05), transparent 50%),
     var(--ink-bg) !important;
   color:var(--ink) !important;
+  transition:background .3s ease;
 }
+
 :root[data-theme="light"] .chem-page-root h1,
 :root[data-theme="light"] .chem-page-root h2,
-:root[data-theme="light"] .chem-page-root h3{color:var(--ink)}
-
-/* ================= 主题切换按钮（深浅两态都要可读）================= */
-.chem-theme-toggle{
-  display:flex;align-items:center;justify-content:center;gap:6px;margin:5px 5px 10px;padding:8px 10px;border-radius:10px;
-  border:1px solid rgba(0,217,255,.2);background:rgba(255,255,255,.03);color:#b9d1dd;
-  font-size:11.5px;font-weight:600;cursor:pointer;width:calc(100% - 10px);
+:root[data-theme="light"] .chem-page-root h3{
+  color:var(--ink);
+  font-weight:700;
+  letter-spacing:-.02em;
 }
-.chem-theme-toggle:hover{border-color:rgba(0,217,255,.4)}
-:root[data-theme="light"] .chem-theme-toggle{border-color:var(--ink-line-strong) !important;background:#fff !important;color:var(--ink) !important}
-:root[data-theme="light"] .chem-theme-toggle:hover{border-color:var(--ph-blue) !important}
 
-/* ================= 侧边导航 / header（浅色）================= */
+/* ================= 主题切换按钮 ================= */
+.chem-theme-toggle{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  margin:8px 5px 12px;padding:10px 12px;
+  border-radius:12px;border:1.5px solid var(--ink-line-strong);
+  background:linear-gradient(135deg,#fff,var(--ink-bg-2));
+  color:var(--ink);font-size:12px;font-weight:600;cursor:pointer;
+  width:calc(100% - 10px);
+  transition:all .2s ease;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.chem-theme-toggle:hover{
+  border-color:var(--ph-blue);
+  box-shadow:0 4px 16px rgba(47,127,224,.15);
+  transform:translateY(-1px);
+}
+
+/* ================= 侧边导航 ================= */
 :root[data-theme="light"] .chem-portal-root,
-:root[data-theme="light"] .chem-shell{background:var(--ink-bg) !important}
-:root[data-theme="light"] .chem-shell{background:radial-gradient(circle at 70% -10%, rgba(124,77,255,.06), transparent 35%), var(--ink-bg) !important}
-:root[data-theme="light"] .chem-sidebar{background:rgba(255,255,255,.86) !important;border-right:1px solid var(--ink-line) !important;backdrop-filter:blur(18px) !important}
+:root[data-theme="light"] .chem-shell{
+  background:var(--ink-bg) !important;
+}
+:root[data-theme="light"] .chem-shell{
+  background:
+    radial-gradient(circle at 80% -10%, rgba(124,77,255,.06), transparent 40%),
+    radial-gradient(circle at 10% 90%, rgba(251,140,0,.04), transparent 40%),
+    var(--ink-bg) !important;
+}
+:root[data-theme="light"] .chem-sidebar{
+  background:rgba(255,255,255,.92) !important;
+  border-right:1px solid var(--ink-line) !important;
+  backdrop-filter:blur(20px) !important;
+  box-shadow:4px 0 24px rgba(0,0,0,.04);
+}
 :root[data-theme="light"] .chem-brand-mark{
   background:linear-gradient(140deg,var(--ph-violet),var(--ph-blue)) !important;
-  border-color:transparent !important;box-shadow:0 4px 18px rgba(124,77,255,.28) !important;filter:none !important;
+  border-color:transparent !important;
+  box-shadow:0 4px 20px rgba(124,77,255,.35) !important;
+  filter:none !important;
+  animation:brand-pulse 3s ease-in-out infinite;
+}
+@keyframes brand-pulse{
+  0%,100%{box-shadow:0 4px 20px rgba(124,77,255,.35)}
+  50%{box-shadow:0 4px 28px rgba(124,77,255,.5)}
 }
 :root[data-theme="light"] .chem-brand strong{color:var(--ink) !important}
 :root[data-theme="light"] .chem-brand small{color:var(--ink-dim) !important}
 :root[data-theme="light"] .chem-sidebar-label{color:var(--ink-faint) !important}
 
+/* 学期切换按钮 */
+.chem-term-switch{margin:16px 0;padding:0 5px}
+.chem-term-label{
+  font-size:10px;font-weight:700;letter-spacing:.16em;
+  color:var(--ink-faint);margin-bottom:8px;padding-left:8px;
+}
+.chem-term-options{display:flex;gap:6px;padding:0 5px}
+.chem-term-item{
+  flex:1;padding:8px 4px;border-radius:10px;border:1.5px solid var(--ink-line);
+  background:var(--ink-bg-1);color:var(--ink-dim);font-size:12px;font-weight:600;
+  cursor:pointer;text-align:center;transition:all .2s ease;
+}
+.chem-term-item:hover{border-color:var(--ph-blue);color:var(--ph-blue)}
+.chem-term-item.active{
+  background:linear-gradient(135deg,var(--term-upper-start),var(--term-upper-end));
+  border-color:transparent;color:#fff;
+  box-shadow:0 4px 12px rgba(91,106,191,.3);
+}
+html[data-textbook-term="lower"] .chem-term-item.active{
+  background:linear-gradient(135deg,var(--term-lower-start),var(--term-lower-end));
+  box-shadow:0 4px 12px rgba(230,81,0,.3);
+}
+
 :root[data-theme="light"] .chem-nav-item{color:var(--ink-dim) !important}
-:root[data-theme="light"] .chem-nav-item:hover{color:var(--ink) !important;background:var(--ink-bg-2) !important;border-color:var(--ink-line) !important}
+:root[data-theme="light"] .chem-nav-item:hover{
+  color:var(--ink) !important;
+  background:var(--ink-bg-2) !important;
+  border-color:var(--ink-line) !important;
+  transform:translateX(3px);
+}
 :root[data-theme="light"] .chem-nav-item.active{
   color:var(--ink) !important;
-  background:linear-gradient(90deg, color-mix(in srgb, var(--nav-dot,var(--ph-blue)) 14%, white), transparent) !important;
-  border-color:color-mix(in srgb, var(--nav-dot,var(--ph-blue)) 45%, transparent) !important;
-  box-shadow:inset 2px 0 var(--nav-dot,var(--ph-blue)) !important;
+  background:linear-gradient(90deg, color-mix(in srgb, var(--nav-dot,var(--ph-blue)) 12%, white), transparent) !important;
+  border-color:color-mix(in srgb, var(--nav-dot,var(--ph-blue)) 40%, transparent) !important;
+  box-shadow:inset 3px 0 var(--nav-dot,var(--ph-blue)) !important;
+  font-weight:600;
 }
-:root[data-theme="light"] .chem-nav-item[data-nav="home"]{--nav-dot:#8a7c5c}
+:root[data-theme="light"] .chem-nav-item[data-nav="home"]{--nav-dot:var(--青春青绿)}
 :root[data-theme="light"] .chem-nav-item[data-nav="course"]{--nav-dot:var(--ph-blue)}
 :root[data-theme="light"] .chem-nav-item[data-nav="lab"]{--nav-dot:var(--ph-orange)}
 :root[data-theme="light"] .chem-nav-item[data-nav="knowledge-map"]{--nav-dot:var(--ph-violet)}
 :root[data-theme="light"] .chem-nav-item[data-nav="assessment"]{--nav-dot:var(--ph-yellow)}
 :root[data-theme="light"] .chem-nav-item[data-nav="progress"]{--nav-dot:var(--ph-green)}
 :root[data-theme="light"] .chem-nav-item[data-nav="ai-tutor"]{--nav-dot:var(--ph-red)}
-:root[data-theme="light"] .chem-nav-icon{filter:invert(30%) sepia(8%) saturate(400%) drop-shadow(0 0 4px color-mix(in srgb, var(--nav-dot,var(--ph-blue)) 55%, transparent)) !important}
+:root[data-theme="light"] .chem-nav-icon{
+  filter:drop-shadow(0 0 4px color-mix(in srgb, var(--nav-dot,var(--ph-blue)) 50%, transparent)) !important;
+}
 
-:root[data-theme="light"] .chem-status-card{border-color:rgba(67,160,71,.28) !important;color:#2d7a31 !important;background:rgba(67,160,71,.08) !important}
-:root[data-theme="light"] .chem-status-dot{background:var(--ph-green) !important;box-shadow:0 0 8px var(--ph-green) !important}
-:root[data-theme="light"] .chem-header{background:rgba(255,255,255,.82) !important;border-bottom:1px solid var(--ink-line) !important}
+:root[data-theme="light"] .chem-status-card{
+  border-color:rgba(67,160,71,.2) !important;
+  color:#2d7a31 !important;
+  background:rgba(67,160,71,.06) !important;
+}
+:root[data-theme="light"] .chem-status-dot{
+  background:var(--ph-green) !important;
+  box-shadow:0 0 10px var(--ph-green) !important;
+}
+:root[data-theme="light"] .chem-header{
+  background:rgba(255,255,255,.88) !important;
+  border-bottom:1px solid var(--ink-line) !important;
+  backdrop-filter:blur(16px);
+  box-shadow:0 2px 12px rgba(0,0,0,.04);
+}
 :root[data-theme="light"] .chem-breadcrumb,
 :root[data-theme="light"] .chem-breadcrumb-home{color:var(--ink-dim) !important}
 :root[data-theme="light"] .chem-breadcrumb-home:hover{color:var(--ph-blue) !important}
 :root[data-theme="light"] .chem-breadcrumb-current{color:var(--ink) !important}
-:root[data-theme="light"] .chem-search{border-color:var(--ink-line-strong) !important;background:#fff !important;color:var(--ink-dim) !important}
-:root[data-theme="light"] .chem-ai-button{color:#4a2fd6 !important;border-color:rgba(124,77,255,.35) !important;background:rgba(124,77,255,.07) !important}
-:root[data-theme="light"] .chem-menu-toggle{color:var(--ink) !important;border-color:var(--ink-line-strong) !important;background:#fff !important}
-:root[data-theme="light"] .chem-footer{border-top:1px solid var(--ink-line) !important;color:var(--ink-faint) !important}
+:root[data-theme="light"] .chem-search{
+  border-color:var(--ink-line-strong) !important;
+  background:#fff !important;
+  color:var(--ink-dim) !important;
+}
+:root[data-theme="light"] .chem-ai-button{
+  color:#4a2fd6 !important;
+  border-color:rgba(124,77,255,.3) !important;
+  background:rgba(124,77,255,.06) !important;
+}
+:root[data-theme="light"] .chem-menu-toggle{
+  color:var(--ink) !important;
+  border-color:var(--ink-line-strong) !important;
+  background:#fff !important;
+}
+:root[data-theme="light"] .chem-footer{
+  border-top:1px solid var(--ink-line) !important;
+  color:var(--ink-faint) !important;
+}
 :root[data-theme="light"] .chem-footer-home:hover{color:var(--ph-blue) !important}
 
-/* ================= 通用卡片 / 门户系统（浅色）================= */
+/* ================= 通用卡片 ================= */
 :root[data-theme="light"] .portal-card,
 :root[data-theme="light"] .cg-card,
 :root[data-theme="light"] .cg-spectro,
 :root[data-theme="light"] .cg-qcard,
 :root[data-theme="light"] .cg-graphbox,
-:root[data-theme="light"] .cg-gpanel{background:var(--ink-bg-1) !important;border-color:var(--ink-line) !important;box-shadow:0 1px 3px rgba(43,38,32,.05) !important}
-:root[data-theme="light"] .cg-modcard,.cg-modcard{background:var(--ink-bg-1) !important;border-color:var(--ink-line) !important}
-:root[data-theme="light"] .cg-modcard:hover{border-color:var(--ink-line-strong) !important;box-shadow:0 6px 20px rgba(43,38,32,.07) !important}
-:root[data-theme="light"] .cg-opt{color:var(--ink) !important;border-color:var(--ink-line) !important;background:#fff !important}
-:root[data-theme="light"] .cg-opt:hover{border-color:var(--ink-line-strong) !important}
+:root[data-theme="light"] .cg-gpanel{
+  background:var(--ink-bg-1) !important;
+  border:1.5px solid var(--ink-line) !important;
+  border-radius:18px !important;
+  box-shadow:0 2px 12px rgba(0,0,0,.05) !important;
+  transition:all .2s ease;
+}
+:root[data-theme="light"] .cg-card:hover,
+:root[data-theme="light"] .portal-card:hover{
+  box-shadow:0 8px 32px rgba(0,0,0,.1) !important;
+  transform:translateY(-2px);
+}
+:root[data-theme="light"] .cg-modcard{
+  background:var(--ink-bg-1) !important;
+  border:1.5px solid var(--ink-line) !important;
+  border-radius:16px !important;
+}
+:root[data-theme="light"] .cg-modcard:hover{
+  border-color:var(--ph-blue) !important;
+  box-shadow:0 6px 24px rgba(47,127,224,.12) !important;
+}
+:root[data-theme="light"] .cg-opt{
+  color:var(--ink) !important;
+  border:1.5px solid var(--ink-line) !important;
+  background:#fff !important;
+  border-radius:12px !important;
+  transition:all .15s ease;
+}
+:root[data-theme="light"] .cg-opt:hover{
+  border-color:var(--ph-blue) !important;
+  background:rgba(47,127,224,.04) !important;
+}
 :root[data-theme="light"] a{color:var(--ph-blue) !important}
 
-/* ================= 首页：Golden Lesson 入口 / 流程 / 网格（浅色）================= */
+/* ================= 首页 ================= */
 :root[data-theme="light"] .golden-lesson-entry{
-  border-color:var(--ink-line-strong) !important;
-  background:linear-gradient(120deg, rgba(124,77,255,.06), rgba(67,160,71,.05)) !important;
+  border:2px solid var(--ph-violet) !important;
+  background:linear-gradient(135deg, rgba(124,77,255,.06), rgba(47,127,224,.04)) !important;
+  box-shadow:0 4px 24px rgba(124,77,255,.12) !important;
+  border-radius:24px !important;
+}
+:root[data-theme="light"] .golden-lesson-entry:hover{
+  box-shadow:0 8px 40px rgba(124,77,255,.18) !important;
+  transform:translateY(-2px);
 }
 :root[data-theme="light"] .golden-lesson-entry__body h2{color:var(--ink) !important}
 :root[data-theme="light"] .golden-lesson-entry__body p{color:var(--ink-dim) !important}
 :root[data-theme="light"] .learning-flow-card,
 :root[data-theme="light"] .lesson-card,
 :root[data-theme="light"] .support-card,
-:root[data-theme="light"] .course-resource-card{background:var(--ink-bg-1) !important;border-color:var(--ink-line) !important}
+:root[data-theme="light"] .course-resource-card{
+  background:var(--ink-bg-1) !important;
+  border:1.5px solid var(--ink-line) !important;
+  border-radius:16px !important;
+  transition:all .2s ease;
+}
+:root[data-theme="light"] .learning-flow-card:hover,
+:root[data-theme="light"] .lesson-card:hover,
+:root[data-theme="light"] .support-card:hover{
+  box-shadow:0 6px 24px rgba(0,0,0,.08) !important;
+  transform:translateY(-2px);
+  border-color:var(--ph-blue);
+}
 :root[data-theme="light"] .learning-flow-card strong,
 :root[data-theme="light"] .lesson-card strong,
 :root[data-theme="light"] .support-card strong{color:var(--ink) !important}
-:root[data-theme="light"] .home-stats{background:var(--ink-line) !important;border-color:var(--ink-line) !important}
-:root[data-theme="light"] .home-stats>div{background:var(--ink-bg-1) !important}
+:root[data-theme="light"] .home-stats{
+  background:var(--ink-line) !important;
+  border:1.5px solid var(--ink-line) !important;
+  border-radius:20px !important;
+}
+:root[data-theme="light"] .home-stats>div{
+  background:var(--ink-bg-1) !important;
+  border-radius:16px !important;
+}
 :root[data-theme="light"] .home-stats strong{color:var(--ph-green) !important}
 
-/* ================= 课程门户：单元网格（浅色，ready/planned 用 pH 色区分）================= */
-:root[data-theme="light"] .unit-card{background:var(--ink-bg-1) !important;border-color:var(--ink-line) !important}
-:root[data-theme="light"] .unit-card.ready{border-color:color-mix(in srgb, var(--ph-blue) 40%, transparent) !important;box-shadow:0 2px 10px rgba(47,127,224,.08) !important}
-:root[data-theme="light"] .unit-card.planned{opacity:.55}
+/* ================= 课程门户：单元卡片 ================= */
+:root[data-theme="light"] .unit-card{
+  background:var(--ink-bg-1) !important;
+  border:2px solid var(--ink-line) !important;
+  border-radius:20px !important;
+  transition:all .25s ease;
+}
+:root[data-theme="light"] .unit-card:hover{
+  box-shadow:0 8px 32px rgba(0,0,0,.1) !important;
+  transform:translateY(-3px);
+}
+:root[data-theme="light"] .unit-card.ready{
+  border-color:color-mix(in srgb, var(--ph-blue) 35%, transparent) !important;
+  box-shadow:0 4px 20px rgba(47,127,224,.1) !important;
+}
+:root[data-theme="light"] .unit-card.planned{opacity:.6}
 :root[data-theme="light"] .unit-body h3{color:var(--ink) !important}
-:root[data-theme="light"] .unit-lesson{background:var(--ink-bg-2) !important;color:var(--ink) !important}
+:root[data-theme="light"] .unit-lesson{
+  background:var(--ink-bg-2) !important;
+  color:var(--ink) !important;
+  border-radius:10px !important;
+}
 
-/* ================= 课程学习页 v21（浅色）================= */
+/* ================= 课程学习页 v21 ================= */
 :root[data-theme="light"] .course-hero-card{
-  border-color:var(--ink-line) !important;
-  background:linear-gradient(135deg, #ffffff, #f7f3ff) !important;
-  box-shadow:0 2px 14px rgba(43,38,32,.05) !important;
+  border:2px solid var(--ink-line) !important;
+  background:linear-gradient(135deg, #ffffff, #f0ecff) !important;
+  box-shadow:0 4px 24px rgba(124,77,255,.1) !important;
+  border-radius:24px !important;
 }
 :root[data-theme="light"] .course-hero-main h1{color:var(--ink) !important}
 :root[data-theme="light"] .course-hero-main p{color:var(--ink-dim) !important}
-:root[data-theme="light"] .course-kicker{color:var(--ph-violet) !important}
-:root[data-theme="light"] .course-status{background:var(--ink-bg-2) !important;color:var(--ph-blue) !important}
-:root[data-theme="light"] .course-status.done{background:rgba(67,160,71,.12) !important;color:#2d7a31 !important}
-:root[data-theme="light"] .course-hero-icon{background:linear-gradient(145deg, rgba(124,77,255,.12), rgba(47,127,224,.1)) !important;border-color:var(--ink-line) !important}
+:root[data-theme="light"] .course-kicker{color:var(--ph-violet) !important;font-weight:700}
+:root[data-theme="light"] .course-status{
+  background:var(--ink-bg-2) !important;
+  color:var(--ph-blue) !important;
+  border-radius:999px !important;
+  padding:6px 14px !important;
+  font-weight:600;
+}
+:root[data-theme="light"] .course-status.done{
+  background:rgba(67,160,71,.12) !important;
+  color:#2d7a31 !important;
+}
+:root[data-theme="light"] .course-hero-icon{
+  background:linear-gradient(145deg, rgba(124,77,255,.15), rgba(47,127,224,.1)) !important;
+  border:2px solid var(--ink-line) !important;
+  border-radius:20px !important;
+}
 :root[data-theme="light"] .course-back{color:var(--ink-dim) !important}
-:root[data-theme="light"] .course-action{border-color:var(--ink-line) !important;background:#fff !important;color:var(--ink) !important}
-:root[data-theme="light"] .course-action.primary{background:linear-gradient(135deg, var(--ph-blue), #58a6f2) !important;color:#fff !important;border-color:transparent !important}
-:root[data-theme="light"] .course-action.quiet{background:var(--ink-bg-2) !important;color:var(--ink-faint) !important}
-:root[data-theme="light"] .course-action:disabled{opacity:.5}
-:root[data-theme="light"] .action-icon{background:var(--ink-bg-2) !important;color:var(--ph-blue) !important}
-:root[data-theme="light"] .course-section-block{background:var(--ink-bg-1) !important;border:1px solid var(--ink-line) !important;border-radius:16px !important;padding:22px !important;margin-bottom:16px !important}
-:root[data-theme="light"] .section-eyebrow{font-family:var(--font-mono);letter-spacing:.4px}
+:root[data-theme="light"] .course-action{
+  border:1.5px solid var(--ink-line) !important;
+  background:#fff !important;
+  color:var(--ink) !important;
+  border-radius:16px !important;
+  transition:all .2s ease;
+}
+:root[data-theme="light"] .course-action:hover{
+  box-shadow:0 4px 16px rgba(0,0,0,.08) !important;
+  transform:translateY(-1px);
+}
+:root[data-theme="light"] .course-action.primary{
+  background:linear-gradient(135deg, var(--ph-blue), #58a6f2) !important;
+  color:#fff !important;
+  border-color:transparent !important;
+  box-shadow:0 4px 16px rgba(47,127,224,.25) !important;
+}
+:root[data-theme="light"] .course-action.primary:hover{
+  box-shadow:0 6px 24px rgba(47,127,224,.35) !important;
+}
+:root[data-theme="light"] .course-action.quiet{
+  background:var(--ink-bg-2) !important;
+  color:var(--ink-faint) !important;
+}
+:root[data-theme="light"] .action-icon{
+  background:var(--ink-bg-2) !important;
+  color:var(--ph-blue) !important;
+  border-radius:12px !important;
+}
+:root[data-theme="light"] .course-section-block{
+  background:var(--ink-bg-1) !important;
+  border:1.5px solid var(--ink-line) !important;
+  border-radius:20px !important;
+  padding:24px !important;
+  margin-bottom:20px !important;
+  box-shadow:0 2px 12px rgba(0,0,0,.04);
+}
+:root[data-theme="light"] .section-eyebrow{
+  font-family:var(--font-mono);
+  letter-spacing:.4px;
+  font-weight:700;
+}
 :root[data-theme="light"] .section-description{color:var(--ink-dim) !important}
 :root[data-theme="light"] .section-count{color:var(--ink-faint) !important;font-family:var(--font-mono)}
-:root[data-theme="light"] .knowledge-card-v21{background:var(--ink-bg-2) !important;border-radius:12px !important;padding:12px !important}
+:root[data-theme="light"] .knowledge-card-v21{
+  background:var(--ink-bg-2) !important;
+  border-radius:14px !important;
+  padding:14px !important;
+  border:1px solid var(--ink-line) !important;
+}
 :root[data-theme="light"] .knowledge-card-v21 strong{color:var(--ink) !important}
 :root[data-theme="light"] .guided-learning-card,
 :root[data-theme="light"] .lesson-section-item,
 :root[data-theme="light"] .diagnostic-error-card,
-:root[data-theme="light"] .preset-question-card{background:var(--ink-bg-1) !important;border:1px solid var(--ink-line) !important;border-radius:12px !important}
+:root[data-theme="light"] .preset-question-card{
+  background:var(--ink-bg-1) !important;
+  border:1.5px solid var(--ink-line) !important;
+  border-radius:16px !important;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
 :root[data-theme="light"] .guided-card-main strong{color:var(--ink) !important}
-:root[data-theme="light"] .guided-card-label{color:var(--ph-violet) !important}
+:root[data-theme="light"] .guided-card-label{color:var(--ph-violet) !important;font-weight:700}
 :root[data-theme="light"] .guided-step-body p{color:var(--ink-dim) !important}
-:root[data-theme="light"] .guided-check{background:var(--ink-bg-2) !important;border-radius:10px !important}
+:root[data-theme="light"] .guided-check{
+  background:var(--ink-bg-2) !important;
+  border-radius:12px !important;
+}
 :root[data-theme="light"] .guided-options label{color:var(--ink) !important}
-:root[data-theme="light"] .guided-submit{background:var(--ph-blue) !important;color:#fff !important;border:0 !important;border-radius:8px !important;padding:8px 16px !important}
-:root[data-theme="light"] .guided-result.correct{color:#2d7a31 !important}
-:root[data-theme="light"] .guided-result.retry{color:var(--ph-red) !important}
-:root[data-theme="light"] .mastery-gate-card{background:linear-gradient(120deg, rgba(67,160,71,.07), rgba(67,160,71,.02)) !important;border:1px solid rgba(67,160,71,.25) !important;border-radius:14px !important;padding:18px !important}
-:root[data-theme="light"] .diagnostic-empty,.empty-card{color:var(--ink-dim) !important;background:var(--ink-bg-2) !important;border-radius:12px !important}
-:root[data-theme="light"] .diagnostic-next{background:rgba(229,57,53,.05) !important;border:1px solid rgba(229,57,53,.2) !important;border-radius:12px !important;padding:16px !important}
-:root[data-theme="light"] .link-btn{color:var(--ph-blue) !important}
-:root[data-theme="light"] .course-completion-bar{background:var(--ink-bg-1) !important;border:1px solid var(--ink-line) !important;border-radius:14px !important;padding:16px 20px !important}
+:root[data-theme="light"] .guided-submit{
+  background:linear-gradient(135deg, var(--ph-blue), #58a6f2) !important;
+  color:#fff !important;
+  border:0 !important;
+  border-radius:10px !important;
+  padding:10px 20px !important;
+  font-weight:600;
+  box-shadow:0 4px 12px rgba(47,127,224,.2);
+  transition:all .2s ease;
+}
+:root[data-theme="light"] .guided-submit:hover{
+  box-shadow:0 6px 20px rgba(47,127,224,.3) !important;
+  transform:translateY(-1px);
+}
+:root[data-theme="light"] .guided-result.correct{color:#2d7a31 !important;font-weight:700}
+:root[data-theme="light"] .guided-result.retry{color:var(--ph-red) !important;font-weight:700}
+:root[data-theme="light"] .mastery-gate-card{
+  background:linear-gradient(135deg, rgba(67,160,71,.08), rgba(67,160,71,.02)) !important;
+  border:2px solid rgba(67,160,71,.25) !important;
+  border-radius:18px !important;
+  padding:20px !important;
+}
+:root[data-theme="light"] .diagnostic-empty,.empty-card{
+  color:var(--ink-dim) !important;
+  background:var(--ink-bg-2) !important;
+  border-radius:14px !important;
+}
+:root[data-theme="light"] .diagnostic-next{
+  background:rgba(229,57,53,.04) !important;
+  border:1.5px solid rgba(229,57,53,.15) !important;
+  border-radius:14px !important;
+  padding:18px !important;
+}
+:root[data-theme="light"] .link-btn{color:var(--ph-blue) !important;font-weight:600}
+:root[data-theme="light"] .course-completion-bar{
+  background:var(--ink-bg-1) !important;
+  border:1.5px solid var(--ink-line) !important;
+  border-radius:16px !important;
+  padding:18px 22px !important;
+}
 :root[data-theme="light"] .completion-hint{color:var(--ink-faint) !important}
 
-/* 五个学习阶段各配一个 pH 色，贯穿 eyebrow / 流程条 / 圆点，含义与颜色对应：
-   学习=紫(基础) 实验=橙(动手) 练习=黄(检验) 诊断/补救=红(错误/警示) 掌握=绿(成功) */
+/* ================= 五个学习阶段 pH 色 ================= */
 :root[data-theme="light"] #guided-learning .section-eyebrow{color:var(--ph-violet) !important}
 :root[data-theme="light"] #experiment-section .section-eyebrow{color:var(--ph-orange) !important}
 :root[data-theme="light"] #practice-section .section-eyebrow{color:var(--ph-yellow) !important}
@@ -196,10 +465,7 @@
 :root[data-theme="light"] .course-flow span.active{color:var(--ph-violet) !important;font-weight:700}
 :root[data-theme="light"] .course-flow span.passed{color:var(--ph-green) !important;font-weight:700}
 
-/* ================= "元素周期格"式数字徽标（辉光效果）================= */
-/* 用在每一处步骤/序号：guided-card-index、lesson-section-index、
-   preset-question-index、diagnostic-error-index、knowledge-index、unit-number。
-   视觉参考元素周期表格子：方角圆边小方块 + 居中数字 + 彩色描边辉光。 */
+/* ================= 元素周期格式数字徽标 ================= */
 :root[data-theme="light"] .guided-card-index,
 :root[data-theme="light"] .lesson-section-index,
 :root[data-theme="light"] .preset-question-index,
@@ -208,29 +474,111 @@
 :root[data-theme="light"] .unit-number,
 :root[data-theme="light"] .cg-unit-num{
   display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
-  width:36px;height:36px;border-radius:10px;
-  font-family:var(--font-mono);font-weight:700;font-size:13px;
-  background:#fff;border:1.5px solid var(--tile,var(--ph-blue));color:var(--tile,var(--ph-blue));
-  box-shadow:0 0 0 3px color-mix(in srgb, var(--tile,var(--ph-blue)) 10%, transparent), 0 0 14px color-mix(in srgb, var(--tile,var(--ph-blue)) 30%, transparent);
+  width:38px;height:38px;border-radius:12px;
+  font-family:var(--font-mono);font-weight:800;font-size:14px;
+  background:#fff;border:2px solid var(--tile,var(--ph-blue));color:var(--tile,var(--ph-blue));
+  box-shadow:0 0 0 3px color-mix(in srgb, var(--tile,var(--ph-blue)) 12%, transparent),
+              0 4px 12px color-mix(in srgb, var(--tile,var(--ph-blue)) 25%, transparent);
+  transition:all .2s ease;
+}
+:root[data-theme="light"] .guided-card-index:hover,
+:root[data-theme="light"] .lesson-section-index:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 0 4px color-mix(in srgb, var(--tile,var(--ph-blue)) 15%, transparent),
+              0 6px 16px color-mix(in srgb, var(--tile,var(--ph-blue)) 35%, transparent);
 }
 :root[data-theme="light"] .guided-card-index{--tile:var(--ph-violet)}
 :root[data-theme="light"] .lesson-section-index{--tile:var(--ph-blue)}
 :root[data-theme="light"] .preset-question-index{--tile:var(--ph-yellow)}
 :root[data-theme="light"] .diagnostic-error-index{--tile:var(--ph-red)}
 :root[data-theme="light"] .knowledge-index{--tile:var(--ph-violet)}
-:root[data-theme="light"] .unit-number,:root[data-theme="light"] .cg-unit-num{--tile:var(--ph-blue);width:auto;height:auto;padding:6px 10px}
+:root[data-theme="light"] .unit-number,:root[data-theme="light"] .cg-unit-num{
+  --tile:var(--ph-blue);width:auto;height:auto;padding:8px 12px;border-radius:10px;
+}
 
-/* cg- 通用组件库（图谱/看板/测验，浅色覆盖） */
-:root[data-theme="light"] .cg-hero-title,:root[data-theme="light"] .cg-sec-head h2,:root[data-theme="light"] .cg-stat b{color:var(--ink) !important}
-:root[data-theme="light"] .cg-hero-sub,:root[data-theme="light"] .cg-sec-head p,:root[data-theme="light"] .cg-stat span{color:var(--ink-dim) !important}
-:root[data-theme="light"] .cg-stats{background:var(--ink-line) !important;border-color:var(--ink-line) !important}
-:root[data-theme="light"] .cg-stat{background:var(--ink-bg-1) !important}
-:root[data-theme="light"] .cg-btn-primary{background:var(--ink) !important;color:#fff !important}
-:root[data-theme="light"] .cg-btn-ghost{color:var(--ink) !important;border-color:var(--ink-line-strong) !important}
-:root[data-theme="light"] .cg-day,:root[data-theme="light"] .cg-unit-bar h4,:root[data-theme="light"] .cg-mname,:root[data-theme="light"] .cg-wname,:root[data-theme="light"] .cg-gpanel h4{color:var(--ink) !important}
-:root[data-theme="light"] .cg-unit{background:var(--ink-bg-1) !important;border-color:var(--ink-line) !important}
-:root[data-theme="light"] .cg-track,:root[data-theme="light"] .cg-mtrack,:root[data-theme="light"] .cg-quiz-track{background:var(--ink-bg-2) !important}
-:root[data-theme="light"] .cg-spectro-band{background:#12141a !important}
-:root[data-theme="light"] .cg-k{background:var(--ink-bg-2) !important;color:var(--ink) !important}
+/* ================= cg- 通用组件库 ================= */
+:root[data-theme="light"] .cg-hero-title,
+:root[data-theme="light"] .cg-sec-head h2,
+:root[data-theme="light"] .cg-stat b{color:var(--ink) !important}
+:root[data-theme="light"] .cg-hero-sub,
+:root[data-theme="light"] .cg-sec-head p,
+:root[data-theme="light"] .cg-stat span{color:var(--ink-dim) !important}
+:root[data-theme="light"] .cg-stats{
+  background:var(--ink-line) !important;
+  border:1.5px solid var(--ink-line) !important;
+  border-radius:16px !important;
+}
+:root[data-theme="light"] .cg-stat{
+  background:var(--ink-bg-1) !important;
+  border-radius:14px !important;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+:root[data-theme="light"] .cg-btn-primary{
+  background:linear-gradient(135deg, var(--ph-blue), #58a6f2) !important;
+  color:#fff !important;
+  border-radius:12px !important;
+  box-shadow:0 4px 12px rgba(47,127,224,.25);
+}
+:root[data-theme="light"] .cg-btn-ghost{
+  color:var(--ink) !important;
+  border:1.5px solid var(--ink-line-strong) !important;
+  border-radius:12px !important;
+}
+:root[data-theme="light"] .cg-day,
+:root[data-theme="light"] .cg-unit-bar h4,
+:root[data-theme="light"] .cg-mname,
+:root[data-theme="light"] .cg-wname,
+:root[data-theme="light"] .cg-gpanel h4{color:var(--ink) !important}
+:root[data-theme="light"] .cg-unit{
+  background:var(--ink-bg-1) !important;
+  border:1.5px solid var(--ink-line) !important;
+  border-radius:14px !important;
+}
+:root[data-theme="light"] .cg-track,
+:root[data-theme="light"] .cg-mtrack,
+:root[data-theme="light"] .cg-quiz-track{background:var(--ink-bg-2) !important}
+:root[data-theme="light"] .cg-spectro-band{background:rgba(124,77,255,.04) !important}
+:root[data-theme="light"] .cg-k{
+  background:var(--ink-bg-2) !important;
+  color:var(--ink) !important;
+  border-radius:10px !important;
+}
 
-@media(prefers-reduced-motion:reduce){:root[data-theme="light"] *{transition:none !important}}
+/* ================= 知识图谱节点 ================= */
+:root[data-theme="light"] .portal-node{
+  background:rgba(255,255,255,.95) !important;
+  border:2px solid var(--ph-blue) !important;
+  border-radius:16px !important;
+  box-shadow:0 4px 16px rgba(47,127,224,.12) !important;
+  color:var(--ink) !important;
+}
+:root[data-theme="light"] .portal-node small{color:var(--ink-dim) !important}
+
+/* ================= 训练中心 ================= */
+:root[data-theme="light"] .cg-qcard{
+  background:var(--ink-bg-1) !important;
+  border:2px solid var(--ink-line) !important;
+  border-radius:18px !important;
+  box-shadow:0 2px 12px rgba(0,0,0,.05);
+}
+:root[data-theme="light"] .cg-qcard:hover{
+  border-color:var(--ph-yellow) !important;
+  box-shadow:0 4px 20px rgba(249,168,37,.15) !important;
+}
+
+/* ================= 实验卡 ================= */
+:root[data-theme="light"] .cg-experiment-card{
+  background:var(--ink-bg-1) !important;
+  border:2px solid var(--ph-orange) !important;
+  border-radius:18px !important;
+  box-shadow:0 4px 16px rgba(251,140,0,.1);
+}
+:root[data-theme="light"] .cg-experiment-card:hover{
+  box-shadow:0 6px 24px rgba(251,140,0,.18) !important;
+  transform:translateY(-2px);
+}
+
+/* ================= 响应式 ================= */
+@media(prefers-reduced-motion:reduce){
+  :root[data-theme="light"] *{transition:none !important;animation:none !important}
+}
