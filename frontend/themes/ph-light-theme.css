@@ -10,7 +10,7 @@
  */
 
 /* ================= 基础变量 ================= */
-:root[data-theme="light"]{
+html:root[data-theme="light"]{
   /* ---- pH 六色（学科域色板）---- */
   --ph-violet:#7c4dff;   /* pH 13 强碱 · 基础/综合/知识地图 */
   --ph-blue:#2f7fe0;     /* pH 10 碱  · 课程学习/上册 */
@@ -56,7 +56,7 @@
 }
 
 /* ================= 全局背景：pH 彩虹光晕 ================= */
-:root[data-theme="light"] body{
+html:root[data-theme="light"] body{
   background:
     radial-gradient(ellipse 600px 400px at 5% -5%, rgba(229,57,53,.05), transparent 50%),
     radial-gradient(ellipse 500px 350px at 20% 10%, rgba(251,140,0,.04), transparent 45%),
@@ -67,9 +67,9 @@
   transition:background .3s ease;
 }
 
-:root[data-theme="light"] .chem-page-root h1,
-:root[data-theme="light"] .chem-page-root h2,
-:root[data-theme="light"] .chem-page-root h3{
+html:root[data-theme="light"] .chem-page-root h1,
+html:root[data-theme="light"] .chem-page-root h2,
+html:root[data-theme="light"] .chem-page-root h3{
   color:var(--ink);
   font-weight:700;
   letter-spacing:-.02em;
@@ -93,23 +93,23 @@
 }
 
 /* ================= 侧边导航 ================= */
-:root[data-theme="light"] .chem-portal-root,
-:root[data-theme="light"] .chem-shell{
+html:root[data-theme="light"] .chem-portal-root,
+html:root[data-theme="light"] .chem-shell{
   background:var(--ink-bg) !important;
 }
-:root[data-theme="light"] .chem-shell{
+html:root[data-theme="light"] .chem-shell{
   background:
     radial-gradient(circle at 80% -10%, rgba(124,77,255,.06), transparent 40%),
     radial-gradient(circle at 10% 90%, rgba(251,140,0,.04), transparent 40%),
     var(--ink-bg) !important;
 }
-:root[data-theme="light"] .chem-sidebar{
+html:root[data-theme="light"] .chem-sidebar{
   background:rgba(255,255,255,.92) !important;
   border-right:1px solid var(--ink-line) !important;
   backdrop-filter:blur(20px) !important;
   box-shadow:4px 0 24px rgba(0,0,0,.04);
 }
-:root[data-theme="light"] .chem-brand-mark{
+html:root[data-theme="light"] .chem-brand-mark{
   background:linear-gradient(140deg,var(--ph-violet),var(--ph-blue)) !important;
   border-color:transparent !important;
   box-shadow:0 4px 20px rgba(124,77,255,.35) !important;
@@ -120,9 +120,9 @@
   0%,100%{box-shadow:0 4px 20px rgba(124,77,255,.35)}
   50%{box-shadow:0 4px 28px rgba(124,77,255,.5)}
 }
-:root[data-theme="light"] .chem-brand strong{color:var(--ink) !important}
-:root[data-theme="light"] .chem-brand small{color:var(--ink-dim) !important}
-:root[data-theme="light"] .chem-sidebar-label{color:var(--ink-faint) !important}
+html:root[data-theme="light"] .chem-brand strong{color:var(--ink) !important}
+html:root[data-theme="light"] .chem-brand small{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .chem-sidebar-label{color:var(--ink-faint) !important}
 
 /* 学期切换按钮 */
 .chem-term-switch{margin:16px 0;padding:0 5px}
@@ -147,28 +147,28 @@ html[data-textbook-term="lower"] .chem-term-item.active{
   box-shadow:0 4px 12px rgba(230,81,0,.3);
 }
 
-:root[data-theme="light"] .chem-nav-item{color:var(--ink-dim) !important}
-:root[data-theme="light"] .chem-nav-item:hover{
+html:root[data-theme="light"] .chem-nav-item{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .chem-nav-item:hover{
   color:var(--ink) !important;
   background:var(--ink-bg-2) !important;
   border-color:var(--ink-line) !important;
   transform:translateX(3px);
 }
-:root[data-theme="light"] .chem-nav-item.active{
+html:root[data-theme="light"] .chem-nav-item.active{
   color:var(--ink) !important;
   background:linear-gradient(90deg, color-mix(in srgb, var(--nav-dot,var(--ph-blue)) 12%, white), transparent) !important;
   border-color:color-mix(in srgb, var(--nav-dot,var(--ph-blue)) 40%, transparent) !important;
   box-shadow:inset 3px 0 var(--nav-dot,var(--ph-blue)) !important;
   font-weight:600;
 }
-:root[data-theme="light"] .chem-nav-item[data-nav="home"]{--nav-dot:var(--青春青绿)}
-:root[data-theme="light"] .chem-nav-item[data-nav="course"]{--nav-dot:var(--ph-blue)}
-:root[data-theme="light"] .chem-nav-item[data-nav="lab"]{--nav-dot:var(--ph-orange)}
-:root[data-theme="light"] .chem-nav-item[data-nav="knowledge-map"]{--nav-dot:var(--ph-violet)}
-:root[data-theme="light"] .chem-nav-item[data-nav="assessment"]{--nav-dot:var(--ph-yellow)}
-:root[data-theme="light"] .chem-nav-item[data-nav="progress"]{--nav-dot:var(--ph-green)}
-:root[data-theme="light"] .chem-nav-item[data-nav="ai-tutor"]{--nav-dot:var(--ph-red)}
-:root[data-theme="light"] .chem-nav-icon{
+html:root[data-theme="light"] .chem-nav-item[data-nav="home"]{--nav-dot:var(--青春青绿)}
+html:root[data-theme="light"] .chem-nav-item[data-nav="course"]{--nav-dot:var(--ph-blue)}
+html:root[data-theme="light"] .chem-nav-item[data-nav="lab"]{--nav-dot:var(--ph-orange)}
+html:root[data-theme="light"] .chem-nav-item[data-nav="knowledge-map"]{--nav-dot:var(--ph-violet)}
+html:root[data-theme="light"] .chem-nav-item[data-nav="assessment"]{--nav-dot:var(--ph-yellow)}
+html:root[data-theme="light"] .chem-nav-item[data-nav="progress"]{--nav-dot:var(--ph-green)}
+html:root[data-theme="light"] .chem-nav-item[data-nav="ai-tutor"]{--nav-dot:var(--ph-red)}
+html:root[data-theme="light"] .chem-nav-icon{
   filter:none !important;
 }
 
@@ -212,27 +212,27 @@ html[data-textbook-term="lower"] .chem-header-term.active{
 }
 .chem-header-term{padding:6px 12px;font-size:11px;}
 
-:root[data-theme="light"] .chem-status-card{
+html:root[data-theme="light"] .chem-status-card{
   border-color:rgba(67,160,71,.2) !important;
   color:#2d7a31 !important;
   background:rgba(67,160,71,.06) !important;
 }
-:root[data-theme="light"] .chem-status-dot{
+html:root[data-theme="light"] .chem-status-dot{
   background:var(--ph-green) !important;
   box-shadow:0 0 10px var(--ph-green) !important;
 }
-:root[data-theme="light"] .chem-header{
+html:root[data-theme="light"] .chem-header{
   background:rgba(255,255,255,.92) !important;
   border-bottom:1px solid var(--ink-line) !important;
   backdrop-filter:blur(16px) !important;
   box-shadow:0 2px 12px rgba(0,0,0,.05) !important;
 }
-:root[data-theme="light"] .chem-breadcrumb,
-:root[data-theme="light"] .chem-breadcrumb-home{color:var(--ink-dim) !important}
-:root[data-theme="light"] .chem-breadcrumb-home:hover{color:var(--ph-blue) !important}
-:root[data-theme="light"] .chem-breadcrumb-current{color:var(--ink) !important}
-:root[data-theme="light"] .chem-search,
-:root[data-theme="light"] .chem-ai-button{
+html:root[data-theme="light"] .chem-breadcrumb,
+html:root[data-theme="light"] .chem-breadcrumb-home{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .chem-breadcrumb-home:hover{color:var(--ph-blue) !important}
+html:root[data-theme="light"] .chem-breadcrumb-current{color:var(--ink) !important}
+html:root[data-theme="light"] .chem-search,
+html:root[data-theme="light"] .chem-ai-button{
   border:1.5px solid var(--ink-line) !important;
   background:var(--ink-bg-1) !important;
   color:var(--ink-dim) !important;
@@ -243,22 +243,22 @@ html[data-textbook-term="lower"] .chem-header-term.active{
   box-shadow:0 1px 4px rgba(0,0,0,.06) !important;
   transition:all .2s ease !important;
 }
-:root[data-theme="light"] .chem-search:hover{
+html:root[data-theme="light"] .chem-search:hover{
   border-color:var(--ph-blue) !important;
   color:var(--ph-blue) !important;
   box-shadow:0 2px 10px rgba(47,127,224,.12) !important;
 }
-:root[data-theme="light"] .chem-ai-button{
+html:root[data-theme="light"] .chem-ai-button{
   color:#4a2fd6 !important;
   border-color:rgba(124,77,255,.25) !important;
   background:rgba(124,77,255,.05) !important;
 }
-:root[data-theme="light"] .chem-ai-button:hover{
+html:root[data-theme="light"] .chem-ai-button:hover{
   border-color:rgba(124,77,255,.45) !important;
   background:rgba(124,77,255,.1) !important;
   box-shadow:0 2px 12px rgba(124,77,255,.15) !important;
 }
-:root[data-theme="light"] .chem-menu-toggle{
+html:root[data-theme="light"] .chem-menu-toggle{
   color:var(--ink) !important;
   border:1.5px solid var(--ink-line-strong) !important;
   background:var(--ink-bg-1) !important;
@@ -267,19 +267,19 @@ html[data-textbook-term="lower"] .chem-header-term.active{
   font-size:18px !important;
   cursor:pointer !important;
 }
-:root[data-theme="light"] .chem-footer{
+html:root[data-theme="light"] .chem-footer{
   border-top:1px solid var(--ink-line) !important;
   color:var(--ink-faint) !important;
   background:rgba(255,255,255,.7) !important;
 }
-:root[data-theme="light"] .chem-footer-home:hover{color:var(--ph-blue) !important}
+html:root[data-theme="light"] .chem-footer-home:hover{color:var(--ph-blue) !important}
 }
-:root[data-theme="light"] .chem-ai-button{
+html:root[data-theme="light"] .chem-ai-button{
   color:#4a2fd6 !important;
   border-color:rgba(124,77,255,.3) !important;
   background:rgba(124,77,255,.06) !important;
 }
-:root[data-theme="light"] .chem-menu-toggle{
+html:root[data-theme="light"] .chem-menu-toggle{
   color:var(--ink) !important;
   border:1.5px solid var(--ink-line-strong) !important;
   background:var(--ink-bg-1) !important;
@@ -288,176 +288,176 @@ html[data-textbook-term="lower"] .chem-header-term.active{
   font-size:18px !important;
   cursor:pointer !important;
 }
-:root[data-theme="light"] .chem-footer{
+html:root[data-theme="light"] .chem-footer{
   border-top:1px solid var(--ink-line) !important;
   color:var(--ink-faint) !important;
   background:rgba(255,255,255,.7) !important;
 }
-:root[data-theme="light"] .chem-footer-home:hover{color:var(--ph-blue) !important}
+html:root[data-theme="light"] .chem-footer-home:hover{color:var(--ph-blue) !important}
 
 /* ================= 通用卡片 ================= */
-:root[data-theme="light"] .portal-card,
-:root[data-theme="light"] .cg-card,
-:root[data-theme="light"] .cg-spectro,
-:root[data-theme="light"] .cg-qcard,
-:root[data-theme="light"] .cg-graphbox,
-:root[data-theme="light"] .cg-gpanel{
+html:root[data-theme="light"] .portal-card,
+html:root[data-theme="light"] .cg-card,
+html:root[data-theme="light"] .cg-spectro,
+html:root[data-theme="light"] .cg-qcard,
+html:root[data-theme="light"] .cg-graphbox,
+html:root[data-theme="light"] .cg-gpanel{
   background:var(--ink-bg-1) !important;
   border:1.5px solid var(--ink-line) !important;
   border-radius:18px !important;
   box-shadow:0 2px 12px rgba(0,0,0,.05) !important;
   transition:all .2s ease;
 }
-:root[data-theme="light"] .cg-card:hover,
-:root[data-theme="light"] .portal-card:hover{
+html:root[data-theme="light"] .cg-card:hover,
+html:root[data-theme="light"] .portal-card:hover{
   box-shadow:0 8px 32px rgba(0,0,0,.1) !important;
   transform:translateY(-2px);
 }
-:root[data-theme="light"] .cg-modcard{
+html:root[data-theme="light"] .cg-modcard{
   background:var(--ink-bg-1) !important;
   border:1.5px solid var(--ink-line) !important;
   border-radius:16px !important;
 }
-:root[data-theme="light"] .cg-modcard:hover{
+html:root[data-theme="light"] .cg-modcard:hover{
   border-color:var(--ph-blue) !important;
   box-shadow:0 6px 24px rgba(47,127,224,.12) !important;
 }
-:root[data-theme="light"] .cg-opt{
+html:root[data-theme="light"] .cg-opt{
   color:var(--ink) !important;
   border:1.5px solid var(--ink-line) !important;
   background:#fff !important;
   border-radius:12px !important;
   transition:all .15s ease;
 }
-:root[data-theme="light"] .cg-opt:hover{
+html:root[data-theme="light"] .cg-opt:hover{
   border-color:var(--ph-blue) !important;
   background:rgba(47,127,224,.04) !important;
 }
-:root[data-theme="light"] a{color:var(--ph-blue) !important}
+html:root[data-theme="light"] a{color:var(--ph-blue) !important}
 
 /* ================= 首页 ================= */
-:root[data-theme="light"] .golden-lesson-entry{
+html:root[data-theme="light"] .golden-lesson-entry{
   border:2px solid var(--ph-violet) !important;
   background:linear-gradient(135deg, rgba(124,77,255,.06), rgba(47,127,224,.04)) !important;
   box-shadow:0 4px 24px rgba(124,77,255,.12) !important;
   border-radius:24px !important;
 }
-:root[data-theme="light"] .golden-lesson-entry:hover{
+html:root[data-theme="light"] .golden-lesson-entry:hover{
   box-shadow:0 8px 40px rgba(124,77,255,.18) !important;
   transform:translateY(-2px);
 }
-:root[data-theme="light"] .golden-lesson-entry__body h2{color:var(--ink) !important}
-:root[data-theme="light"] .golden-lesson-entry__body p{color:var(--ink-dim) !important}
-:root[data-theme="light"] .learning-flow-card,
-:root[data-theme="light"] .lesson-card,
-:root[data-theme="light"] .support-card,
-:root[data-theme="light"] .course-resource-card{
+html:root[data-theme="light"] .golden-lesson-entry__body h2{color:var(--ink) !important}
+html:root[data-theme="light"] .golden-lesson-entry__body p{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .learning-flow-card,
+html:root[data-theme="light"] .lesson-card,
+html:root[data-theme="light"] .support-card,
+html:root[data-theme="light"] .course-resource-card{
   background:var(--ink-bg-1) !important;
   border:1.5px solid var(--ink-line) !important;
   border-radius:16px !important;
   transition:all .2s ease;
 }
-:root[data-theme="light"] .learning-flow-card:hover,
-:root[data-theme="light"] .lesson-card:hover,
-:root[data-theme="light"] .support-card:hover{
+html:root[data-theme="light"] .learning-flow-card:hover,
+html:root[data-theme="light"] .lesson-card:hover,
+html:root[data-theme="light"] .support-card:hover{
   box-shadow:0 6px 24px rgba(0,0,0,.08) !important;
   transform:translateY(-2px);
   border-color:var(--ph-blue);
 }
-:root[data-theme="light"] .learning-flow-card strong,
-:root[data-theme="light"] .lesson-card strong,
-:root[data-theme="light"] .support-card strong{color:var(--ink) !important}
-:root[data-theme="light"] .home-stats{
+html:root[data-theme="light"] .learning-flow-card strong,
+html:root[data-theme="light"] .lesson-card strong,
+html:root[data-theme="light"] .support-card strong{color:var(--ink) !important}
+html:root[data-theme="light"] .home-stats{
   background:var(--ink-line) !important;
   border:1.5px solid var(--ink-line) !important;
   border-radius:20px !important;
 }
-:root[data-theme="light"] .home-stats>div{
+html:root[data-theme="light"] .home-stats>div{
   background:var(--ink-bg-1) !important;
   border-radius:16px !important;
 }
-:root[data-theme="light"] .home-stats strong{color:var(--ph-green) !important}
+html:root[data-theme="light"] .home-stats strong{color:var(--ph-green) !important}
 
 /* ================= 课程门户：单元卡片 ================= */
-:root[data-theme="light"] .unit-card{
+html:root[data-theme="light"] .unit-card{
   background:var(--ink-bg-1) !important;
   border:2px solid var(--ink-line) !important;
   border-radius:20px !important;
   transition:all .25s ease;
 }
-:root[data-theme="light"] .unit-card:hover{
+html:root[data-theme="light"] .unit-card:hover{
   box-shadow:0 8px 32px rgba(0,0,0,.1) !important;
   transform:translateY(-3px);
 }
-:root[data-theme="light"] .unit-card.ready{
+html:root[data-theme="light"] .unit-card.ready{
   border-color:color-mix(in srgb, var(--ph-blue) 35%, transparent) !important;
   box-shadow:0 4px 20px rgba(47,127,224,.1) !important;
 }
-:root[data-theme="light"] .unit-card.planned{opacity:.6}
-:root[data-theme="light"] .unit-body h3{color:var(--ink) !important}
-:root[data-theme="light"] .unit-lesson{
+html:root[data-theme="light"] .unit-card.planned{opacity:.6}
+html:root[data-theme="light"] .unit-body h3{color:var(--ink) !important}
+html:root[data-theme="light"] .unit-lesson{
   background:var(--ink-bg-2) !important;
   color:var(--ink) !important;
   border-radius:10px !important;
 }
 
 /* ================= 课程学习页 v21 ================= */
-:root[data-theme="light"] .course-hero-card{
+html:root[data-theme="light"] .course-hero-card{
   border:2px solid var(--ink-line) !important;
   background:linear-gradient(135deg, #ffffff, #f0ecff) !important;
   box-shadow:0 4px 24px rgba(124,77,255,.1) !important;
   border-radius:24px !important;
 }
-:root[data-theme="light"] .course-hero-main h1{color:var(--ink) !important}
-:root[data-theme="light"] .course-hero-main p{color:var(--ink-dim) !important}
-:root[data-theme="light"] .course-kicker{color:var(--ph-violet) !important;font-weight:700}
-:root[data-theme="light"] .course-status{
+html:root[data-theme="light"] .course-hero-main h1{color:var(--ink) !important}
+html:root[data-theme="light"] .course-hero-main p{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .course-kicker{color:var(--ph-violet) !important;font-weight:700}
+html:root[data-theme="light"] .course-status{
   background:var(--ink-bg-2) !important;
   color:var(--ph-blue) !important;
   border-radius:999px !important;
   padding:6px 14px !important;
   font-weight:600;
 }
-:root[data-theme="light"] .course-status.done{
+html:root[data-theme="light"] .course-status.done{
   background:rgba(67,160,71,.12) !important;
   color:#2d7a31 !important;
 }
-:root[data-theme="light"] .course-hero-icon{
+html:root[data-theme="light"] .course-hero-icon{
   background:linear-gradient(145deg, rgba(124,77,255,.15), rgba(47,127,224,.1)) !important;
   border:2px solid var(--ink-line) !important;
   border-radius:20px !important;
 }
-:root[data-theme="light"] .course-back{color:var(--ink-dim) !important}
-:root[data-theme="light"] .course-action{
+html:root[data-theme="light"] .course-back{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .course-action{
   border:1.5px solid var(--ink-line) !important;
   background:#fff !important;
   color:var(--ink) !important;
   border-radius:16px !important;
   transition:all .2s ease;
 }
-:root[data-theme="light"] .course-action:hover{
+html:root[data-theme="light"] .course-action:hover{
   box-shadow:0 4px 16px rgba(0,0,0,.08) !important;
   transform:translateY(-1px);
 }
-:root[data-theme="light"] .course-action.primary{
+html:root[data-theme="light"] .course-action.primary{
   background:linear-gradient(135deg, var(--ph-blue), #58a6f2) !important;
   color:#fff !important;
   border-color:transparent !important;
   box-shadow:0 4px 16px rgba(47,127,224,.25) !important;
 }
-:root[data-theme="light"] .course-action.primary:hover{
+html:root[data-theme="light"] .course-action.primary:hover{
   box-shadow:0 6px 24px rgba(47,127,224,.35) !important;
 }
-:root[data-theme="light"] .course-action.quiet{
+html:root[data-theme="light"] .course-action.quiet{
   background:var(--ink-bg-2) !important;
   color:var(--ink-faint) !important;
 }
-:root[data-theme="light"] .action-icon{
+html:root[data-theme="light"] .action-icon{
   background:var(--ink-bg-2) !important;
   color:var(--ph-blue) !important;
   border-radius:12px !important;
 }
-:root[data-theme="light"] .course-section-block{
+html:root[data-theme="light"] .course-section-block{
   background:var(--ink-bg-1) !important;
   border:1.5px solid var(--ink-line) !important;
   border-radius:20px !important;
@@ -465,38 +465,38 @@ html[data-textbook-term="lower"] .chem-header-term.active{
   margin-bottom:20px !important;
   box-shadow:0 2px 12px rgba(0,0,0,.04);
 }
-:root[data-theme="light"] .section-eyebrow{
+html:root[data-theme="light"] .section-eyebrow{
   font-family:var(--font-mono);
   letter-spacing:.4px;
   font-weight:700;
 }
-:root[data-theme="light"] .section-description{color:var(--ink-dim) !important}
-:root[data-theme="light"] .section-count{color:var(--ink-faint) !important;font-family:var(--font-mono)}
-:root[data-theme="light"] .knowledge-card-v21{
+html:root[data-theme="light"] .section-description{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .section-count{color:var(--ink-faint) !important;font-family:var(--font-mono)}
+html:root[data-theme="light"] .knowledge-card-v21{
   background:var(--ink-bg-2) !important;
   border-radius:14px !important;
   padding:14px !important;
   border:1px solid var(--ink-line) !important;
 }
-:root[data-theme="light"] .knowledge-card-v21 strong{color:var(--ink) !important}
-:root[data-theme="light"] .guided-learning-card,
-:root[data-theme="light"] .lesson-section-item,
-:root[data-theme="light"] .diagnostic-error-card,
-:root[data-theme="light"] .preset-question-card{
+html:root[data-theme="light"] .knowledge-card-v21 strong{color:var(--ink) !important}
+html:root[data-theme="light"] .guided-learning-card,
+html:root[data-theme="light"] .lesson-section-item,
+html:root[data-theme="light"] .diagnostic-error-card,
+html:root[data-theme="light"] .preset-question-card{
   background:var(--ink-bg-1) !important;
   border:1.5px solid var(--ink-line) !important;
   border-radius:16px !important;
   box-shadow:0 2px 8px rgba(0,0,0,.04);
 }
-:root[data-theme="light"] .guided-card-main strong{color:var(--ink) !important}
-:root[data-theme="light"] .guided-card-label{color:var(--ph-violet) !important;font-weight:700}
-:root[data-theme="light"] .guided-step-body p{color:var(--ink-dim) !important}
-:root[data-theme="light"] .guided-check{
+html:root[data-theme="light"] .guided-card-main strong{color:var(--ink) !important}
+html:root[data-theme="light"] .guided-card-label{color:var(--ph-violet) !important;font-weight:700}
+html:root[data-theme="light"] .guided-step-body p{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .guided-check{
   background:var(--ink-bg-2) !important;
   border-radius:12px !important;
 }
-:root[data-theme="light"] .guided-options label{color:var(--ink) !important}
-:root[data-theme="light"] .guided-submit{
+html:root[data-theme="light"] .guided-options label{color:var(--ink) !important}
+html:root[data-theme="light"] .guided-submit{
   background:linear-gradient(135deg, var(--ph-blue), #58a6f2) !important;
   color:#fff !important;
   border:0 !important;
@@ -506,56 +506,56 @@ html[data-textbook-term="lower"] .chem-header-term.active{
   box-shadow:0 4px 12px rgba(47,127,224,.2);
   transition:all .2s ease;
 }
-:root[data-theme="light"] .guided-submit:hover{
+html:root[data-theme="light"] .guided-submit:hover{
   box-shadow:0 6px 20px rgba(47,127,224,.3) !important;
   transform:translateY(-1px);
 }
-:root[data-theme="light"] .guided-result.correct{color:#2d7a31 !important;font-weight:700}
-:root[data-theme="light"] .guided-result.retry{color:var(--ph-red) !important;font-weight:700}
-:root[data-theme="light"] .mastery-gate-card{
+html:root[data-theme="light"] .guided-result.correct{color:#2d7a31 !important;font-weight:700}
+html:root[data-theme="light"] .guided-result.retry{color:var(--ph-red) !important;font-weight:700}
+html:root[data-theme="light"] .mastery-gate-card{
   background:linear-gradient(135deg, rgba(67,160,71,.08), rgba(67,160,71,.02)) !important;
   border:2px solid rgba(67,160,71,.25) !important;
   border-radius:18px !important;
   padding:20px !important;
 }
-:root[data-theme="light"] .diagnostic-empty,.empty-card{
+html:root[data-theme="light"] .diagnostic-empty,.empty-card{
   color:var(--ink-dim) !important;
   background:var(--ink-bg-2) !important;
   border-radius:14px !important;
 }
-:root[data-theme="light"] .diagnostic-next{
+html:root[data-theme="light"] .diagnostic-next{
   background:rgba(229,57,53,.04) !important;
   border:1.5px solid rgba(229,57,53,.15) !important;
   border-radius:14px !important;
   padding:18px !important;
 }
-:root[data-theme="light"] .link-btn{color:var(--ph-blue) !important;font-weight:600}
-:root[data-theme="light"] .course-completion-bar{
+html:root[data-theme="light"] .link-btn{color:var(--ph-blue) !important;font-weight:600}
+html:root[data-theme="light"] .course-completion-bar{
   background:var(--ink-bg-1) !important;
   border:1.5px solid var(--ink-line) !important;
   border-radius:16px !important;
   padding:18px 22px !important;
 }
-:root[data-theme="light"] .completion-hint{color:var(--ink-faint) !important}
+html:root[data-theme="light"] .completion-hint{color:var(--ink-faint) !important}
 
 /* ================= 五个学习阶段 pH 色 ================= */
-:root[data-theme="light"] #guided-learning .section-eyebrow{color:var(--ph-violet) !important}
-:root[data-theme="light"] #experiment-section .section-eyebrow{color:var(--ph-orange) !important}
-:root[data-theme="light"] #practice-section .section-eyebrow{color:var(--ph-yellow) !important}
-:root[data-theme="light"] #diagnostic-section .section-eyebrow{color:var(--ph-red) !important}
-:root[data-theme="light"] #mastery-section .section-eyebrow{color:var(--ph-green) !important}
-:root[data-theme="light"] .course-flow{color:var(--ink-faint) !important}
-:root[data-theme="light"] .course-flow span.active{color:var(--ph-violet) !important;font-weight:700}
-:root[data-theme="light"] .course-flow span.passed{color:var(--ph-green) !important;font-weight:700}
+html:root[data-theme="light"] #guided-learning .section-eyebrow{color:var(--ph-violet) !important}
+html:root[data-theme="light"] #experiment-section .section-eyebrow{color:var(--ph-orange) !important}
+html:root[data-theme="light"] #practice-section .section-eyebrow{color:var(--ph-yellow) !important}
+html:root[data-theme="light"] #diagnostic-section .section-eyebrow{color:var(--ph-red) !important}
+html:root[data-theme="light"] #mastery-section .section-eyebrow{color:var(--ph-green) !important}
+html:root[data-theme="light"] .course-flow{color:var(--ink-faint) !important}
+html:root[data-theme="light"] .course-flow span.active{color:var(--ph-violet) !important;font-weight:700}
+html:root[data-theme="light"] .course-flow span.passed{color:var(--ph-green) !important;font-weight:700}
 
 /* ================= 元素周期格式数字徽标 ================= */
-:root[data-theme="light"] .guided-card-index,
-:root[data-theme="light"] .lesson-section-index,
-:root[data-theme="light"] .preset-question-index,
-:root[data-theme="light"] .diagnostic-error-index,
-:root[data-theme="light"] .knowledge-index,
-:root[data-theme="light"] .unit-number,
-:root[data-theme="light"] .cg-unit-num{
+html:root[data-theme="light"] .guided-card-index,
+html:root[data-theme="light"] .lesson-section-index,
+html:root[data-theme="light"] .preset-question-index,
+html:root[data-theme="light"] .diagnostic-error-index,
+html:root[data-theme="light"] .knowledge-index,
+html:root[data-theme="light"] .unit-number,
+html:root[data-theme="light"] .cg-unit-num{
   display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
   width:38px;height:38px;border-radius:12px;
   font-family:var(--font-mono);font-weight:800;font-size:14px;
@@ -564,104 +564,298 @@ html[data-textbook-term="lower"] .chem-header-term.active{
               0 4px 12px color-mix(in srgb, var(--tile,var(--ph-blue)) 25%, transparent);
   transition:all .2s ease;
 }
-:root[data-theme="light"] .guided-card-index:hover,
-:root[data-theme="light"] .lesson-section-index:hover{
+html:root[data-theme="light"] .guided-card-index:hover,
+html:root[data-theme="light"] .lesson-section-index:hover{
   transform:scale(1.1);
   box-shadow:0 0 0 4px color-mix(in srgb, var(--tile,var(--ph-blue)) 15%, transparent),
               0 6px 16px color-mix(in srgb, var(--tile,var(--ph-blue)) 35%, transparent);
 }
-:root[data-theme="light"] .guided-card-index{--tile:var(--ph-violet)}
-:root[data-theme="light"] .lesson-section-index{--tile:var(--ph-blue)}
-:root[data-theme="light"] .preset-question-index{--tile:var(--ph-yellow)}
-:root[data-theme="light"] .diagnostic-error-index{--tile:var(--ph-red)}
-:root[data-theme="light"] .knowledge-index{--tile:var(--ph-violet)}
-:root[data-theme="light"] .unit-number,:root[data-theme="light"] .cg-unit-num{
+html:root[data-theme="light"] .guided-card-index{--tile:var(--ph-violet)}
+html:root[data-theme="light"] .lesson-section-index{--tile:var(--ph-blue)}
+html:root[data-theme="light"] .preset-question-index{--tile:var(--ph-yellow)}
+html:root[data-theme="light"] .diagnostic-error-index{--tile:var(--ph-red)}
+html:root[data-theme="light"] .knowledge-index{--tile:var(--ph-violet)}
+html:root[data-theme="light"] .unit-number,html:root[data-theme="light"] .cg-unit-num{
   --tile:var(--ph-blue);width:auto;height:auto;padding:8px 12px;border-radius:10px;
 }
 
 /* ================= cg- 通用组件库 ================= */
-:root[data-theme="light"] .cg-hero-title,
-:root[data-theme="light"] .cg-sec-head h2,
-:root[data-theme="light"] .cg-stat b{color:var(--ink) !important}
-:root[data-theme="light"] .cg-hero-sub,
-:root[data-theme="light"] .cg-sec-head p,
-:root[data-theme="light"] .cg-stat span{color:var(--ink-dim) !important}
-:root[data-theme="light"] .cg-stats{
+html:root[data-theme="light"] .cg-hero-title,
+html:root[data-theme="light"] .cg-sec-head h2,
+html:root[data-theme="light"] .cg-stat b{color:var(--ink) !important}
+html:root[data-theme="light"] .cg-hero-sub,
+html:root[data-theme="light"] .cg-sec-head p,
+html:root[data-theme="light"] .cg-stat span{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .cg-stats{
   background:var(--ink-line) !important;
   border:1.5px solid var(--ink-line) !important;
   border-radius:16px !important;
 }
-:root[data-theme="light"] .cg-stat{
+html:root[data-theme="light"] .cg-stat{
   background:var(--ink-bg-1) !important;
   border-radius:14px !important;
   box-shadow:0 2px 8px rgba(0,0,0,.04);
 }
-:root[data-theme="light"] .cg-btn-primary{
+html:root[data-theme="light"] .cg-btn-primary{
   background:linear-gradient(135deg, var(--ph-blue), #58a6f2) !important;
   color:#fff !important;
   border-radius:12px !important;
   box-shadow:0 4px 12px rgba(47,127,224,.25);
 }
-:root[data-theme="light"] .cg-btn-ghost{
+html:root[data-theme="light"] .cg-btn-ghost{
   color:var(--ink) !important;
   border:1.5px solid var(--ink-line-strong) !important;
   border-radius:12px !important;
 }
-:root[data-theme="light"] .cg-day,
-:root[data-theme="light"] .cg-unit-bar h4,
-:root[data-theme="light"] .cg-mname,
-:root[data-theme="light"] .cg-wname,
-:root[data-theme="light"] .cg-gpanel h4{color:var(--ink) !important}
-:root[data-theme="light"] .cg-unit{
+html:root[data-theme="light"] .cg-day,
+html:root[data-theme="light"] .cg-unit-bar h4,
+html:root[data-theme="light"] .cg-mname,
+html:root[data-theme="light"] .cg-wname,
+html:root[data-theme="light"] .cg-gpanel h4{color:var(--ink) !important}
+html:root[data-theme="light"] .cg-unit{
   background:var(--ink-bg-1) !important;
   border:1.5px solid var(--ink-line) !important;
   border-radius:14px !important;
 }
-:root[data-theme="light"] .cg-track,
-:root[data-theme="light"] .cg-mtrack,
-:root[data-theme="light"] .cg-quiz-track{background:var(--ink-bg-2) !important}
-:root[data-theme="light"] .cg-spectro-band{background:rgba(124,77,255,.04) !important}
-:root[data-theme="light"] .cg-k{
+html:root[data-theme="light"] .cg-track,
+html:root[data-theme="light"] .cg-mtrack,
+html:root[data-theme="light"] .cg-quiz-track{background:var(--ink-bg-2) !important}
+html:root[data-theme="light"] .cg-spectro-band{background:rgba(124,77,255,.04) !important}
+html:root[data-theme="light"] .cg-k{
   background:var(--ink-bg-2) !important;
   color:var(--ink) !important;
   border-radius:10px !important;
 }
 
 /* ================= 知识图谱节点 ================= */
-:root[data-theme="light"] .portal-node{
+html:root[data-theme="light"] .portal-node{
   background:rgba(255,255,255,.95) !important;
   border:2px solid var(--ph-blue) !important;
   border-radius:16px !important;
   box-shadow:0 4px 16px rgba(47,127,224,.12) !important;
   color:var(--ink) !important;
 }
-:root[data-theme="light"] .portal-node small{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .portal-node small{color:var(--ink-dim) !important}
 
 /* ================= 训练中心 ================= */
-:root[data-theme="light"] .cg-qcard{
+html:root[data-theme="light"] .cg-qcard{
   background:var(--ink-bg-1) !important;
   border:2px solid var(--ink-line) !important;
   border-radius:18px !important;
   box-shadow:0 2px 12px rgba(0,0,0,.05);
 }
-:root[data-theme="light"] .cg-qcard:hover{
+html:root[data-theme="light"] .cg-qcard:hover{
   border-color:var(--ph-yellow) !important;
   box-shadow:0 4px 20px rgba(249,168,37,.15) !important;
 }
 
 /* ================= 实验卡 ================= */
-:root[data-theme="light"] .cg-experiment-card{
+html:root[data-theme="light"] .cg-experiment-card{
   background:var(--ink-bg-1) !important;
   border:2px solid var(--ph-orange) !important;
   border-radius:18px !important;
   box-shadow:0 4px 16px rgba(251,140,0,.1);
 }
-:root[data-theme="light"] .cg-experiment-card:hover{
+html:root[data-theme="light"] .cg-experiment-card:hover{
   box-shadow:0 6px 24px rgba(251,140,0,.18) !important;
   transform:translateY(-2px);
 }
 
+/* ================= portal-content.css 深色样式浅色覆盖 ================= */
+/* portal-content.css 是深色主题硬编码，浅色模式下必须全面覆盖 */
+html:root[data-theme="light"] .chem-page-root .page{color:var(--ink) !important}
+html:root[data-theme="light"] .portal-title{color:var(--ink) !important}
+html:root[data-theme="light"] .portal-eyebrow{color:var(--ph-blue) !important}
+html:root[data-theme="light"] .portal-subtitle,.portal-muted{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .portal-btn{
+  border:1.5px solid var(--ink-line) !important;
+  background:var(--ink-bg-1) !important;
+  color:var(--ink) !important;
+  box-shadow:0 1px 4px rgba(0,0,0,.06) !important;
+}
+html:root[data-theme="light"] .portal-btn.primary{
+  background:linear-gradient(135deg,var(--ph-blue),#58a6f2) !important;
+  color:#fff !important;border-color:transparent !important;
+  box-shadow:0 3px 12px rgba(47,127,224,.25) !important;
+}
+html:root[data-theme="light"] .portal-card{
+  background:var(--ink-bg-1) !important;
+  border:1.5px solid var(--ink-line) !important;
+  box-shadow:0 2px 12px rgba(0,0,0,.06) !important;
+  color:var(--ink) !important;
+}
+html:root[data-theme="light"] .portal-card h2,
+html:root[data-theme="light"] .portal-card h3{color:var(--ink) !important}
+html:root[data-theme="light"] .portal-list button{
+  background:var(--ink-bg-1) !important;
+  border:1.5px solid var(--ink-line) !important;
+  color:var(--ink) !important;
+  box-shadow:0 1px 4px rgba(0,0,0,.05) !important;
+}
+html:root[data-theme="light"] .portal-list button:hover{
+  border-color:var(--ph-blue) !important;
+  background:rgba(47,127,224,.04) !important;
+}
+html:root[data-theme="light"] .portal-node{
+  background:var(--ink-bg-1) !important;
+  border:2px solid var(--ph-blue) !important;
+  color:var(--ink) !important;
+  box-shadow:0 3px 12px rgba(47,127,224,.12) !important;
+}
+html:root[data-theme="light"] .portal-node small{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .portal-instrument{
+  background:var(--ink-bg-2) !important;
+  border:1.5px solid var(--ink-line) !important;
+  color:var(--ink) !important;
+}
+html:root[data-theme="light"] .portal-bench{
+  border-color:var(--ph-orange) !important;
+  background:rgba(251,140,0,.04) !important;
+  color:var(--ink-dim) !important;
+}
+html:root[data-theme="light"] .portal-message{
+  background:var(--ink-bg-2) !important;
+  color:var(--ink) !important;
+}
+html:root[data-theme="light"] .chem-page-root .home-actions button{
+  border:1.5px solid var(--ink-line) !important;
+  background:var(--ink-bg-1) !important;
+  color:var(--ink) !important;
+  box-shadow:0 1px 4px rgba(0,0,0,.06) !important;
+}
+html:root[data-theme="light"] .chem-page-root .home-actions button:hover{
+  border-color:var(--ph-blue) !important;
+  box-shadow:0 4px 16px rgba(47,127,224,.15) !important;
+}
+html:root[data-theme="light"] .chem-page-root .home-stats>div{
+  background:var(--ink-bg-1) !important;
+  border:1.5px solid var(--ink-line) !important;
+}
+html:root[data-theme="light"] .chem-page-root .home-stats span{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .chem-page-root .learning-center-list{
+  border:1.5px solid var(--ink-line) !important;
+  background:var(--ink-bg-1) !important;
+}
+html:root[data-theme="light"] .chem-page-root .lesson-card{
+  background:var(--ink-bg-1) !important;
+  border:1.5px solid var(--ink-line) !important;
+  color:var(--ink) !important;
+  box-shadow:0 2px 8px rgba(0,0,0,.05) !important;
+}
+html:root[data-theme="light"] .chem-page-root .lesson-card:hover{
+  border-color:var(--ph-blue) !important;
+  box-shadow:0 4px 16px rgba(47,127,224,.12) !important;
+}
+html:root[data-theme="light"] .chem-page-root .lesson-card span,
+html:root[data-theme="light"] .chem-page-root .lesson-card small{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .golden-lesson-entry{
+  background:linear-gradient(135deg,rgba(124,77,255,.06),rgba(47,127,224,.04)) !important;
+  border:2px solid var(--ph-violet) !important;
+  box-shadow:0 4px 24px rgba(124,77,255,.12) !important;
+}
+html:root[data-theme="light"] .golden-lesson-entry__meta{color:var(--ph-violet) !important}
+html:root[data-theme="light"] .golden-lesson-entry__number{
+  background:linear-gradient(135deg,var(--ph-violet),var(--ph-blue)) !important;
+  color:#fff !important;border-color:transparent !important;
+}
+html:root[data-theme="light"] .golden-lesson-entry__body h2{color:var(--ink) !important}
+html:root[data-theme="light"] .golden-lesson-entry__body p{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .golden-lesson-entry__flow{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .golden-lesson-entry__flow span{
+  background:var(--ink-bg-2) !important;color:var(--ink-dim) !important;
+}
+html:root[data-theme="light"] .golden-lesson-entry button{
+  background:linear-gradient(135deg,var(--ph-blue),#58a6f2) !important;
+  color:#fff !important;border-color:transparent !important;
+  box-shadow:0 3px 12px rgba(47,127,224,.25) !important;
+}
+html:root[data-theme="light"] .section-heading>span{color:var(--ph-blue) !important}
+html:root[data-theme="light"] .section-heading h2{color:var(--ink) !important}
+html:root[data-theme="light"] .section-heading p{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .learning-flow-card{
+  background:var(--ink-bg-1) !important;
+  border:1.5px solid var(--ink-line) !important;
+  color:var(--ink) !important;
+}
+html:root[data-theme="light"] .learning-flow-number{
+  background:linear-gradient(135deg,var(--ph-violet),var(--ph-blue)) !important;
+  color:#fff !important;
+  box-shadow:0 2px 8px rgba(124,77,255,.25) !important;
+}
+html:root[data-theme="light"] .learning-flow-card small{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .support-card{
+  background:var(--ink-bg-1) !important;
+  border:1.5px solid var(--ink-line) !important;
+  color:var(--ink) !important;
+  box-shadow:0 2px 8px rgba(0,0,0,.05) !important;
+}
+html:root[data-theme="light"] .support-number{color:var(--ph-orange) !important}
+html:root[data-theme="light"] .support-card small{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .lesson-card-number{
+  background:linear-gradient(135deg,var(--ph-orange),var(--ph-yellow)) !important;
+  color:#fff !important;
+  box-shadow:0 2px 8px rgba(251,140,0,.25) !important;
+}
+html:root[data-theme="light"] .course-hero-card{
+  background:linear-gradient(135deg,#fff,#f7f3ff) !important;
+  border:2px solid var(--ink-line) !important;
+  box-shadow:0 4px 24px rgba(124,77,255,.1) !important;
+}
+html:root[data-theme="light"] .course-kicker,.course-kicker,.section-eyebrow{color:var(--ph-violet) !important}
+html:root[data-theme="light"] .course-hero-main p{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .course-back{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .course-flow{
+  border-top:1.5px solid var(--ink-line) !important;
+  color:var(--ink-dim) !important;
+}
+html:root[data-theme="light"] .course-flow span{background:var(--ink-bg-2) !important;color:var(--ink-dim) !important}
+html:root[data-theme="light"] .course-flow span.active{
+  background:rgba(124,77,255,.1) !important;color:var(--ph-violet) !important;
+}
+html:root[data-theme="light"] .course-flow i{color:var(--ink-faint) !important}
+html:root[data-theme="light"] .course-action{
+  background:var(--ink-bg-1) !important;
+  border:1.5px solid var(--ink-line) !important;
+  color:var(--ink) !important;
+}
+html:root[data-theme="light"] .course-action:hover{
+  border-color:var(--ph-blue) !important;
+  box-shadow:0 4px 16px rgba(47,127,224,.1) !important;
+}
+html:root[data-theme="light"] .course-action small{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .action-icon{
+  background:var(--ink-bg-2) !important;color:var(--ph-blue) !important;
+}
+html:root[data-theme="light"] .knowledge-card-v21{
+  background:var(--ink-bg-2) !important;
+  border:1.5px solid var(--ink-line) !important;
+  color:var(--ink) !important;
+}
+html:root[data-theme="light"] .knowledge-index{color:var(--ph-violet) !important}
+html:root[data-theme="light"] .knowledge-card-v21 small{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .knowledge-arrow{color:var(--ink-faint) !important}
+html:root[data-theme="light"] .empty-card{
+  background:var(--ink-bg-2) !important;
+  color:var(--ink-dim) !important;
+}
+html:root[data-theme="light"] .lesson-module-card{
+  background:var(--ink-bg-1) !important;
+  border:1.5px solid var(--ink-line) !important;
+  color:var(--ink) !important;
+}
+html:root[data-theme="light"] .module-marker span{
+  background:linear-gradient(135deg,var(--ph-blue),#58a6f2) !important;
+  color:#fff !important;
+  box-shadow:0 2px 8px rgba(47,127,224,.2) !important;
+}
+html:root[data-theme="light"] .module-marker em{color:var(--ink-faint) !important}
+html:root[data-theme="light"] .module-label{color:var(--ph-blue) !important}
+html:root[data-theme="light"] .module-content h3{color:var(--ink) !important}
+html:root[data-theme="light"] .lesson-paragraph{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .course-section-heading h2{color:var(--ink) !important}
+html:root[data-theme="light"] .section-count{color:var(--ink-faint) !important}
+
 /* ================= 响应式 ================= */
 @media(prefers-reduced-motion:reduce){
-  :root[data-theme="light"] *{transition:none !important;animation:none !important}
+  html:root[data-theme="light"] *{transition:none !important;animation:none !important}
 }
