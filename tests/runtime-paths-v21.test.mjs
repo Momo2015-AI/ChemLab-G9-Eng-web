@@ -51,17 +51,24 @@ test('recheck filters the full registered pool including practice and diagnostic
 
 test('transfer starts a session from the mastery pool and records completion', async () => {
   const state = makeState();
-  const controller = new AssessmentRuntimeController({ assessment: assessmentEngine, contentService: makeContentService({ mastery: [{ id: 'M1', type: 'choice', options: ['A', 'B'], answer: 0, knowledgeIds: ['physical-property'] }, { id: 'M2', type: 'choice', options: ['A', 'B'], answer: 1, knowledgeIds: ['chemical-property'] }] }), state });
+  const learningController = {
+    updateLessonState(lessonId, patch) {
+      state.learning.lessons ||= {};
+      state.learning.lessons[lessonId] = { ...(state.learning.lessons[lessonId] || {}), ...patch, lessonId };
+    },
+    getLessonState(lessonId) { return state.learning.lessons?.[lessonId] || {}; },
+  };
+  const controller = new AssessmentRuntimeController({ assessment: assessmentEngine, contentService: makeContentService({ mastery: [{ id: 'M1', type: 'choice', options: ['A', 'B'], answer: 0, knowledgeIds: ['physical-property'] }, { id: 'M2', type: 'choice', options: ['A', 'B'], answer: 1, knowledgeIds: ['chemical-property'] }] }), state, learningController });
   const session = await controller.startTransfer('lesson-01-material-changes-properties', 2);
   assert.ok(session);
   assert.equal(session.mode, 'transfer');
   assert.equal(session.questions.length, 2);
-  assert.equal(state.learning.transfer.status, 'in-progress');
+  assert.equal(state.learning.lessons['lesson-01-material-changes-properties'].transfer.status, 'in-progress');
   controller.answer(0);
   controller.answer(1);
   assert.equal(controller.session.completed, true);
-  assert.equal(state.learning.transfer.status, 'completed');
-  assert.equal(state.learning.transfer.total, 2);
+  assert.equal(state.learning.lessons['lesson-01-material-changes-properties'].transfer.status, 'completed');
+  assert.equal(state.learning.lessons['lesson-01-material-changes-properties'].transfer.total, 2);
 });
 
 test('course view renders lesson sections and preset diagnostic questions', () => {

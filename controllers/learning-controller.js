@@ -134,13 +134,8 @@ export class LearningController {
 
   getRemediationPlan(diagnosis) {
     const plan = createRemediationPlan(diagnosis, { catalog: this.remediationCatalog });
-    const lessonId = diagnosis?.lessonId || this.state.learning?.diagnosis?.lessonId;
+    const lessonId = diagnosis?.lessonId;
     if (lessonId) this.updateLessonState(lessonId, { remediation: plan, diagnosis, phase: plan.status === 'needs-remediation' ? 'REMEDIATION' : 'TRANSFER' });
-    else {
-      this.state.learning ||= {};
-      this.state.learning.remediation = plan;
-      this.state.save?.();
-    }
     return plan;
   }
 }

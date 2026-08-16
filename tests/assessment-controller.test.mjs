@@ -23,6 +23,14 @@ function createController() {
     learning: {},
     save() { this.saved = true; },
   };
+  const learningController = {
+    updateLessonState(lessonId, patch) {
+      state.learning.lessons ||= {};
+      state.learning.lessons[lessonId] = { ...(state.learning.lessons[lessonId] || {}), ...patch, lessonId };
+    },
+    getLessonState(lessonId) { return state.learning.lessons?.[lessonId] || {}; },
+    getRemediationPlan(diagnosis) { return { status: diagnosis.status === 'incorrect' ? 'needs-remediation' : 'correct', steps: [] }; },
+  };
   const assessment = {
     evaluate(item, answer) {
       return { correct: answer === 'A', score: answer === 'A' ? 1 : 0 };
@@ -37,7 +45,7 @@ function createController() {
     },
     getState() { return Object.fromEntries(masteryValues); },
   };
-  return { controller: new AssessmentController({ assessment, contentService, state, masteryService }), state, masteryService };
+  return { controller: new AssessmentController({ assessment, contentService, state, masteryService, learningController }), state, masteryService };
 }
 
 test('assessment controller starts a lesson quiz and persists answers', async () => {
@@ -67,7 +75,7 @@ test('assessment controller starts a targeted recheck and feeds new evidence int
 
   assert.equal(session.dayId, 'remediation-recheck');
   assert.equal(session.questions.length, 1);
-  assert.deepEqual(state.learning.recheck, { lessonId: 'remediation-recheck', knowledgeIds: ['atom'], status: 'in-progress', questionCount: 1 });
+  assert.deepEqual(state.learning.lessons['remediation-recheck'].recheck, { lessonId: 'remediation-recheck', knowledgeIds: ['atom'], status: 'in-progress', questionCount: 1 });
 
   const result = controller.answer(0);
   assert.equal(result.correct, true);

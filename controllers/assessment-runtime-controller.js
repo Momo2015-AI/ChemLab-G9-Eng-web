@@ -33,23 +33,20 @@ export class AssessmentRuntimeController {
     const lesson = typeof this.contentService.getLesson === 'function' ? await this.contentService.getLesson(lessonId).catch(() => null) : null;
     const questions = (data?.questions || []).map(question => this.normalizeQuestion(question));
     if (!questions.length) return null;
-    this.state.learning ||= {};
-    this.state.learning.mastery ||= {};
     const requiredKnowledgeIds = data.requiredKnowledgeIds || data.knowledgeIds || lesson?.knowledgePoints || [...new Set(questions.flatMap(question => this.knowledge(question)))];
     const criteria = {
       requiredKnowledgeIds: Array.isArray(requiredKnowledgeIds) ? requiredKnowledgeIds : [requiredKnowledgeIds].filter(Boolean),
       criticalMisconceptions: data.criticalMisconceptions || lesson?.mastery?.criticalMisconceptions || [],
       requireConstructed: Boolean(data.requireConstructed || lesson?.mastery?.requireConstructed),
     };
-    this.state.learning.mastery[lessonId] = {
-      ...(this.state.learning.mastery[lessonId] || {}),
+    const mastery = {
       lessonId,
       status: 'in-progress',
       questionCount: questions.length,
       threshold: Number(data.threshold || .95),
       criteria,
     };
-    this.state.save?.();
+    this.learningController?.updateLessonState?.(lessonId, { mastery, phase: 'MASTERY' });
     return this.startAttempt(lessonId, questions, 'mastery');
   }
 
@@ -66,14 +63,10 @@ export class AssessmentRuntimeController {
       .slice(0, limit)
       .map(question => this.normalizeQuestion(question));
     if (!questions.length) return null;
-    this.state.learning ||= {};
-    this.state.learning.recheck = {
-      lessonId,
-      knowledgeIds: ids,
-      status: 'in-progress',
-      questionCount: questions.length,
-    };
-    this.state.save?.();
+    this.learningController?.updateLessonState?.(lessonId, {
+      recheck: { lessonId, knowledgeIds: ids, status: 'in-progress', questionCount: questions.length },
+      phase: 'RECHECK',
+    });
     return this.startAttempt(lessonId, questions, 'recheck');
   }
 
@@ -85,13 +78,10 @@ export class AssessmentRuntimeController {
       .slice(0, limit)
       .map(question => this.normalizeQuestion(question));
     if (!questions.length) return null;
-    this.state.learning ||= {};
-    this.state.learning.transfer = {
-      lessonId,
-      status: 'in-progress',
-      questionCount: questions.length,
-    };
-    this.state.save?.();
+    this.learningController?.updateLessonState?.(lessonId, {
+      transfer: { lessonId, status: 'in-progress', questionCount: questions.length },
+      phase: 'TRANSFER',
+    });
     return this.startAttempt(lessonId, questions, 'transfer');
   }
 
@@ -205,21 +195,18 @@ export class AssessmentRuntimeController {
       score,
       completedAt: new Date().toISOString(),
     };
-    this.state.learning ||= {};
-    this.state.learning.practice = { lessonId: this.session.lessonId, attemptId: this.session.attemptId, correct, total, score, completedAt: diagnosis.completedAt };
-    this.learningController?.updateLessonState?.(this.session.lessonId, { practice: this.state.learning.practice, diagnosis, phase: errors.length ? 'REMEDIATION' : 'MASTERY' });
+    const practice = { lessonId: this.session.lessonId, attemptId: this.session.attemptId, correct, total, score, completedAt: diagnosis.completedAt };
+    this.learningController?.updateLessonState?.(this.session.lessonId, { practice, diagnosis, phase: errors.length ? 'REMEDIATION' : 'MASTERY' });
     if (errors.length) {
       this.learningController?.getRemediationPlan({ ...diagnosis, lessonId: this.session.lessonId, status: 'incorrect', knowledge: weakPoints, possibleErrors, source: 'practice-attempt' });
     } else {
-      this.state.learning.remediation = null;
+      this.learningController?.updateLessonState?.(this.session.lessonId, { remediation: null });
     }
   }
 
   finishRecheck(correct, total, score) {
     const passed = total > 0 && correct === total;
-    this.state.learning ||= {};
-    this.state.learning.recheck = {
-      ...(this.state.learning.recheck || {}),
+    const recheck = {
       lessonId: this.session.lessonId,
       attemptId: this.session.attemptId,
       status: passed ? 'passed' : 'failed',
@@ -228,13 +215,14 @@ export class AssessmentRuntimeController {
       score,
       completedAt: new Date().toISOString(),
     };
-    this.learningController?.updateLessonState?.(this.session.lessonId, { recheck: this.state.learning.recheck, phase: passed ? 'MASTERY' : 'REMEDIATION' });
-    if (passed) this.state.learning.remediation = null;
+    this.learningController?.updateLessonState?.(this.session.lessonId, { recheck, phase: passed ? 'MASTERY' : 'REMEDIATION' });
   }
 
   finishMastery(correct, total, score) {
     const lessonId = this.session.lessonId;
-    const existing = this.state.learning?.mastery?.[lessonId] || {};
+    const existing = this.learningController?.getLessonState?.(lessonId).mastery
+      || this.state.learning?.mastery?.[lessonId]
+      || {};
     const threshold = Number(existing.threshold || .95);
     const decision = evaluateMastery({
       questions: this.session.questions,
@@ -245,9 +233,7 @@ export class AssessmentRuntimeController {
       requireConstructed: existing.criteria?.requireConstructed,
     });
     const passed = decision.passed;
-    this.state.learning ||= {};
-    this.state.learning.mastery ||= {};
-    this.state.learning.mastery[lessonId] = {
+    const mastery = {
       ...existing,
       lessonId,
       attemptId: this.session.attemptId,
@@ -259,17 +245,14 @@ export class AssessmentRuntimeController {
       criteria: decision,
       completedAt: new Date().toISOString(),
     };
-    this.learningController?.updateLessonState?.(lessonId, { mastery: this.state.learning.mastery[lessonId], phase: passed ? 'MASTERED' : 'REMEDIATION' });
+    this.learningController?.updateLessonState?.(lessonId, { mastery, phase: passed ? 'MASTERED' : 'REMEDIATION' });
     this.state.progress.lessonMastery ||= {};
     this.state.progress.lessonMastery[lessonId] = passed;
-    if (passed) this.state.learning.remediation = null;
   }
 
   finishTransfer(correct, total, score) {
     const lessonId = this.session.lessonId;
-    this.state.learning ||= {};
-    this.state.learning.transfer = {
-      ...(this.state.learning.transfer || {}),
+    const transfer = {
       lessonId,
       attemptId: this.session.attemptId,
       status: 'completed',
@@ -278,7 +261,7 @@ export class AssessmentRuntimeController {
       score,
       completedAt: new Date().toISOString(),
     };
-    this.learningController?.updateLessonState?.(lessonId, { transfer: this.state.learning.transfer, phase: 'TRANSFER' });
+    this.learningController?.updateLessonState?.(lessonId, { transfer, phase: 'TRANSFER' });
     this.state.save?.();
   }
 
