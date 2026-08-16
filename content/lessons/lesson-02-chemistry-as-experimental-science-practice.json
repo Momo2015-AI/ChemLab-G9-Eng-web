@@ -208,7 +208,28 @@
       "difficulty": "medium",
       "knowledgePoint": "evidence-reasoning",
       "question": "请说明为什么实验记录中应先写\"观察到的现象\"，再写\"根据现象得到的解释\"。",
-      "rubric": "指出两者性质不同；说明现象是直接证据，解释是基于证据的推断；避免把推断写成观察。",
+      "rubric": {
+        "modelAnswer": "现象是直接证据，解释是基于证据的推断；两者性质不同，不能把推断写成观察。",
+        "keywords": [
+          [
+            "性质不同",
+            "不同"
+          ],
+          [
+            "直接证据",
+            "证据"
+          ],
+          [
+            "基于证据的推断",
+            "推断"
+          ],
+          [
+            "避免把推断写成观察",
+            "区分观察和解释"
+          ]
+        ],
+        "explanation": "现象是观察到的直接事实，解释是对现象的原因说明，两者不可混淆。"
+      },
       "misconception": "M02-observation-inference",
       "knowledgeIds": [
         "observation-inference",
@@ -221,7 +242,35 @@
       "difficulty": "medium",
       "knowledgePoint": "control-variables",
       "question": "设计一个简单的公平比较方案，研究\"搅拌是否影响某固体在水中的溶解快慢\"。写出应控制的主要条件。",
-      "rubric": "明确只改变是否搅拌；保持水量、固体质量/规格、温度等主要条件一致，并采用一致的观察指标。",
+      "rubric": {
+        "modelAnswer": "只改变是否搅拌，保持水量、固体质量、温度等条件一致，采用一致的观察指标。",
+        "keywords": [
+          [
+            "只改变是否搅拌",
+            "唯一变量",
+            "改变搅拌"
+          ],
+          [
+            "水量",
+            "水的体积",
+            "水的质量"
+          ],
+          [
+            "固体质量",
+            "固体规格",
+            "溶质质量"
+          ],
+          [
+            "温度",
+            "水温"
+          ],
+          [
+            "观察指标",
+            "溶解时间"
+          ]
+        ],
+        "explanation": "对照实验只改变研究变量，其他条件保持一致。"
+      },
       "misconception": "M02-control-variable",
       "knowledgeIds": [
         "control-variables",

@@ -145,7 +145,7 @@ export function createApplication({ state, assessment, experimentEngine, mastery
       diagnosis: lessonState.diagnosis || {},
       diagnosticQuestions: Array.isArray(lesson.diagnosticQuestions) ? lesson.diagnosticQuestions : [],
       highlightStep: route.params[1] || '',
-      onGuidedCheck: (id, stepId, result) => { controllers.learning.recordGuidedCheck(id, stepId, result); void renderRoute(route); },
+      onGuidedCheck: (id, stepId, result) => { controllers.learning.recordGuidedCheck(id, stepId, result); window.__chemLabOnCheckDone = () => void renderRoute(route); setTimeout(() => window.__chemLabOnCheckDone?.(), 1500); },
       onStartQuiz: () => router.navigate('quiz', lessonId),
       onStartMastery: () => router.navigate('quiz', `mastery:${lessonId}`),
       onStartExperiment: id => router.navigate('experiment', id),

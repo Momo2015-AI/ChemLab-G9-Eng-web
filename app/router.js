@@ -9,7 +9,7 @@ const ROUTES = new Set([
 ]);
 const hasWindow=()=>typeof window!=='undefined';
 function parseHash(hash=hasWindow()?window.location.hash:''){
-  const value=hash.replace(/^#/,'')||'home';
+  const value=hash.replace(/^#\/?/,'')||'home';
   const [page,...parts]=value.split('/');
   return {page:ROUTES.has(page)?page:'home',params:parts};
 }

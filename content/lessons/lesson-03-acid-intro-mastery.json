@@ -285,12 +285,12 @@
         "question": "某金属X与稀盐酸反应生成XCl₂，则X可能是？",
         "options": [
           "钠",
-          "镁",
           "铝",
-          "铁"
+          "铁",
+          "锌"
         ],
-        "answer": 3,
-        "explanation": "铁与稀盐酸反应生成氯化亚铁FeCl₂和氢气；钠生成NaCl，铝生成AlCl₃。",
+        "answer": 2,
+        "explanation": "铁与稀盐酸反应生成氯化亚铁FeCl₂和氢气；钠生成NaCl，铝生成AlCl₃，锌生成ZnCl₂。",
         "knowledgeIds": [
           "chemical-property"
         ]
@@ -400,24 +400,29 @@
           "modelAnswer": "应把浓硫酸沿容器壁缓慢倒入水中，并不断搅拌；不能把水倒入浓硫酸，因为稀释会放出大量热，水密度小浮在酸面，沸腾飞溅会造成危险。",
           "keywords": [
             [
-              "酸",
-              "浓硫酸",
-              "酸入水"
+              "酸入水",
+              "浓硫酸倒入水",
+              "沿壁倒",
+              "缓慢倒入"
             ],
             [
-              "水"
+              "搅拌",
+              "不断搅拌"
             ],
             [
-              "搅拌"
+              "不能把水倒入",
+              "禁止水入酸",
+              "不可水倒入"
             ]
           ],
-          "explanation": "稀释浓硫酸应“酸入水、沿壁倒、慢慢搅”，把水倒入浓硫酸会因局部过热飞溅。"
+          "explanation": "稀释浓硫酸应酸入水并搅拌，禁止把水倒入浓硫酸。"
         },
         "explanation": "稀释浓硫酸的正确做法是酸入水并搅拌，防止液体飞溅。",
         "knowledgeIds": [
           "safety-awareness",
           "acid-property"
-        ]
+        ],
+        "answer": null
       }
     ],
     "requiredKnowledgeIds": [

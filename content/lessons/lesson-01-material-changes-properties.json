@@ -244,29 +244,6 @@
       "explanation": "颜色改变不是充分条件，需要结合证据判断是否生成新物质。"
     }
   ],
-  "diagnosticQuestions": [
-    {
-      "id": "L01-D01",
-      "knowledgePoint": "physical-vs-chemical-change",
-      "question": "你能否用“是否生成新物质”解释物理变化与化学变化的区别？",
-      "answer": true,
-      "remediationStep": "L01-S02/L01-S03/L01-S04"
-    },
-    {
-      "id": "L01-D02",
-      "knowledgePoint": "change-vs-property",
-      "question": "你能区分“发生了什么”与“物质具有什么特征”吗？",
-      "answer": true,
-      "remediationStep": "L01-S05/L01-S06/L01-S07"
-    },
-    {
-      "id": "L01-D03",
-      "knowledgePoint": "observation-inference",
-      "question": "你能把观察到的现象和依据、结论分开表达吗？",
-      "answer": true,
-      "remediationStep": "L01-S01/L01-S04"
-    }
-  ],
   "mastery": {
     "threshold": 0.95,
     "questionCount": 21,

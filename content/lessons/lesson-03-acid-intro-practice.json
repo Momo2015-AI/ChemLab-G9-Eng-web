@@ -212,7 +212,30 @@
       "difficulty": "medium",
       "knowledgePoint": "safety-awareness",
       "question": "请说明为什么稀释浓硫酸时必须将浓硫酸倒入水中，而不能将水倒入浓硫酸中。",
-      "rubric": "指出浓硫酸密度大于水；说明浓硫酸溶于水放热；说明水倒入浓硫酸会导致暴沸飞溅。",
+      "rubric": {
+        "modelAnswer": "浓硫酸密度大于水且溶于水放出大量热，若将水倒入浓硫酸会因局部过热导致暴沸飞溅。",
+        "keywords": [
+          [
+            "密度大于水",
+            "密度比水大"
+          ],
+          [
+            "放热",
+            "热量",
+            "温度升高"
+          ],
+          [
+            "暴沸",
+            "飞溅",
+            "液体飞溅"
+          ],
+          [
+            "酸入水",
+            "浓硫酸倒入水"
+          ]
+        ],
+        "explanation": "稀释浓硫酸必须酸入水并搅拌，防止暴沸飞溅。"
+      },
       "misconception": "M03-safety-dilution",
       "knowledgeIds": [
         "safety-awareness",
@@ -225,7 +248,29 @@
       "difficulty": "medium",
       "knowledgePoint": "chemical-property",
       "question": "设计一个简单的实验方案，区分稀盐酸和稀硫酸两种无色液体。写出实验步骤、预期现象和结论。",
-      "rubric": "使用氯化钡溶液或硝酸钡溶液；硫酸会产生白色沉淀，盐酸无明显现象；或先用石蕊确认酸性后再区分。",
+      "rubric": {
+        "modelAnswer": "分别取少量样品于试管中，滴加氯化钡溶液，产生白色沉淀的是稀硫酸，无明显现象的是稀盐酸。",
+        "keywords": [
+          [
+            "氯化钡",
+            "硝酸钡",
+            "钡盐"
+          ],
+          [
+            "白色沉淀"
+          ],
+          [
+            "石蕊",
+            "紫色石蕊",
+            "酸碱指示剂"
+          ],
+          [
+            "酸性",
+            "变色"
+          ]
+        ],
+        "explanation": "硫酸根离子与钡离子生成不溶于酸的白色沉淀，可区别于盐酸。"
+      },
       "misconception": "M03-acid-distinguish",
       "knowledgeIds": [
         "chemical-property",
