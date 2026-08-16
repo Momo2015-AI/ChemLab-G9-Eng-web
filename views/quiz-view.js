@@ -25,7 +25,7 @@ export function renderQuiz({ root, question = {}, index = 0, total = 0, mode = '
   }
 }
 
-export function renderQuizResult({ root, score = 0, correct = 0, total = 0, hasRemediation = false, onRemediation, onContinue, mode = 'practice', status = '', lessonId = '', answers = [], questions = [], criteria = {}, notice = '' } = {}) {
+export function renderQuizResult({ root, score = 0, correct = 0, total = 0, hasRemediation = false, onRemediation, onContinue, onRetry, mode = 'practice', status = '', lessonId = '', answers = [], questions = [], criteria = {}, notice = '' } = {}) {
   if (!root) return;
   const isMastery = mode === 'mastery'; const isRecheck = mode === 'recheck'; const isTransfer = mode === 'transfer'; const passed = status === 'passed';
   const heading = isMastery ? (passed ? '本课掌握' : '还需要继续学习') : isRecheck ? (passed ? '补救完成' : '再检查一次') : isTransfer ? '迁移挑战完成' : '练习完成';
@@ -33,6 +33,8 @@ export function renderQuizResult({ root, score = 0, correct = 0, total = 0, hasR
   const nextText = isMastery ? (passed ? '返回本课，完成最后一步' : '返回本课，查看需要补救的知识点') : isRecheck ? (passed ? '返回本课，进入95%掌握检查' : '返回本课，再次补救') : isTransfer ? '迁移完成，可以返回课程查看掌握状态' : '返回本课查看诊断与下一步学习';
   const remediationAction = (hasRemediation && !isTransfer) ? `<button type="button" class="cg-btn cg-btn-primary" data-remediation>${isMastery ? '继续针对性补救 →' : '开始针对性补救 →'}</button>` : '';
   const transferAction = isTransfer && passed ? `<button type="button" class="cg-btn cg-btn-primary" data-transfer>返回课程 →</button>` : '';
+  const retryLabel = isMastery ? '再考一次掌握测试 →' : isRecheck ? '再做一次再检测 →' : isTransfer ? '再次挑战迁移题 →' : '再练一次 →';
+  const retryAction = (typeof onRetry === 'function' && !passed) ? `<button type="button" class="cg-btn cg-btn-ghost" data-retry>${retryLabel}</button>` : '';
   const criteriaHtml = renderCriteria(criteria, passed);
   const noticeHtml = notice ? `<p style="color:var(--ink-dim);background:var(--spec-yellow-soft,var(--panel-soft));border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:0 auto 20px;max-width:520px;font-size:14px;line-height:1.6">${escapeHtml(notice)}</p>` : '';
   const questionMap = new Map((Array.isArray(questions) ? questions : []).map(q => [q.id, q]));
@@ -42,17 +44,21 @@ export function renderQuizResult({ root, score = 0, correct = 0, total = 0, hasR
     const isConstructedAnswer = q.type === 'constructed' || q.type === 'short-answer';
     const correctFlag = a.correct ? '✓' : '✗';
     const color = a.correct ? 'var(--spec-green)' : 'var(--spec-red)';
-    const userAns = isConstructedAnswer ? String(a.answer ?? '') : (a.answer ? String.fromCharCode(65 + a.answer) : '—');
-    const correctAns = q.answer !== undefined ? String.fromCharCode(65 + Number(q.answer)) : '—';
+    // a.answer / q.answer are already option letters ('A'..'F') for choice
+    // questions — render them directly instead of re-encoding through
+    // fromCharCode, which produced garbage control characters.
+    const userAns = isConstructedAnswer ? String(a.answer ?? '') : (/^[A-F]$/.test(String(a.answer)) ? String(a.answer) : '—');
+    const correctAns = /^[A-F]$/.test(String(q.answer)) ? String(q.answer) : '—';
     const answerLine = isConstructedAnswer
       ? `<p>你的回答：${escapeHtml(userAns || '—')}</p>${a.rubricPassed !== undefined ? `<p>主观题评分：${a.rubricPassed ? '通过' : '未通过'}</p>` : ''}`
       : `<p>你的答案：${escapeHtml(userAns)}${a.answer !== undefined ? `（正确：${escapeHtml(correctAns)}）` : ''}</p>`;
     return `<article class="quiz-review-item ${a.correct ? 'correct' : 'incorrect'}"><div class="quiz-review-header"><span class="quiz-review-index">${String(i + 1).padStart(2, '0')}</span><span class="quiz-review-status" style="color:${color}">${correctFlag}</span><strong>${escapeHtml(q.prompt || q.question || a.questionId || '')}</strong></div><div class="quiz-review-detail">${answerLine}${isConstructedAnswer && q.rubric?.modelAnswer ? `<p class="quiz-review-explanation">参考标准：${escapeHtml(q.rubric.modelAnswer)}</p>` : ''}${q.explanation ? `<p class="quiz-review-explanation">${escapeHtml(q.explanation)}</p>` : ''}${a.explanation ? `<p class="quiz-review-explanation">${escapeHtml(a.explanation)}</p>` : ''}</div></article>`;
   }).join('')}</div></div>` : '';
-  root.innerHTML = `<section class="page quiz-result-page cg-quizwrap"><div class="cg-qcard" style="text-align:center"><div class="cg-eyebrow" style="justify-content:center">${eyebrow}</div><h1 style="font-family:var(--font-display);font-size:26px;margin-bottom:8px;color:var(--ink)">${heading}</h1><p style="font-size:18px;margin-bottom:4px;color:var(--ink)">${correct} / ${total} 正确</p><p style="color:var(--ink-dim);margin-bottom:12px">得分 ${Number(score)}%</p><p style="color:var(--ink-dim);margin:0 auto 24px;max-width:520px">${nextText}</p>${noticeHtml}${criteriaHtml}<div class="cg-hero-actions" style="justify-content:center">${remediationAction}${transferAction}<button type="button" class="cg-btn cg-btn-ghost" data-continue>返回本课 →</button></div></div>${reviewHtml}</section>`;
+  root.innerHTML = `<section class="page quiz-result-page cg-quizwrap"><div class="cg-qcard" style="text-align:center"><div class="cg-eyebrow" style="justify-content:center">${eyebrow}</div><h1 style="font-family:var(--font-display);font-size:26px;margin-bottom:8px;color:var(--ink)">${heading}</h1><p style="font-size:18px;margin-bottom:4px;color:var(--ink)">${correct} / ${total} 正确</p><p style="color:var(--ink-dim);margin-bottom:12px">得分 ${Number(score)}%</p><p style="color:var(--ink-dim);margin:0 auto 24px;max-width:520px">${nextText}</p>${noticeHtml}${criteriaHtml}<div class="cg-hero-actions" style="justify-content:center">${remediationAction}${transferAction}${retryAction}<button type="button" class="cg-btn cg-btn-ghost" data-continue>返回本课 →</button></div></div>${reviewHtml}</section>`;
   root.querySelector('[data-remediation]')?.addEventListener('click', () => { if (lessonId && typeof window !== 'undefined') window.location.hash = `remediation/${lessonId}`; else onRemediation?.(); });
   root.querySelector('[data-continue]')?.addEventListener('click', () => { if (lessonId && typeof window !== 'undefined') window.location.hash = `course/${lessonId}`; else onContinue?.(); });
   root.querySelector('[data-transfer]')?.addEventListener('click', () => { if (lessonId && typeof window !== 'undefined') window.location.hash = `course/${lessonId}`; else onContinue?.(); });
+  root.querySelector('[data-retry]')?.addEventListener('click', () => onRetry?.());
   const toggle = root.querySelector('[data-review-toggle]');
   const list = root.querySelector('.quiz-review-list');
   toggle?.addEventListener('click', () => { const open = !list.hidden; list.hidden = open; toggle.textContent = open ? '收起每题详情' : `查看每题详情 (${answerItems.length} 题)`; });

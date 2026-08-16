@@ -1,6 +1,6 @@
 # V1.9 Lesson Content Readiness Audit
 
-Generated: 2026-08-16T04:09:39.798Z
+Generated: 2026-08-16T04:59:14.196Z
 
 ## Baseline
 - Lessons scanned: 3
@@ -15,8 +15,8 @@ Generated: 2026-08-16T04:09:39.798Z
 ## Lesson matrix
 | File | Day | Title | Status | Release status | Template hits | Missing | Runtime questions | Manifest contract |
 |---|---:|---|---|---|---:|---|---|---|
-| lesson-01-material-changes-properties.json | 01 | 物质的变化和性质 | released | ready | 0 | - | 8+8+3+21 | - |
-| lesson-02-chemistry-as-experimental-science.json | 02 | 化学是一门以实验为基础的科学 | released | ready | 0 | - | 8+13+3+21 | - |
+| lesson-01-material-changes-properties.json | 01 | 物质的变化和性质 | released | ready | 0 | - | 8+8+3+21+4 | - |
+| lesson-02-chemistry-as-experimental-science.json | 02 | 化学是一门以实验为基础的科学 | released | ready | 0 | - | 8+13+3+21+4 | - |
 | lesson-03-acid-intro.json | 03 | 酸入门：初识身边的酸 | released | ready | 0 | - | 6+13+3+21 | - |
 
 ## Issues

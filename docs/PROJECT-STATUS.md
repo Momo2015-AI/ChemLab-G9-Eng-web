@@ -1,151 +1,57 @@
-# ChemLab-G9 Project Status
+# ChemLab-G9-Eng 项目状态
 
-> Refreshed for V1.8 after the V1.7 baseline and production-wiring audit.
+> 更新于 2026-08-16（V2.2 学习闭环加固之后）。历史版本状态见 `archive/HISTORY-V1.5-V2.2.md`。
 
-## Current release state
+## 当前阶段
 
-**V1.7 — Architecture baseline**
+**架构冻结 + 内容优先（Phase C3 → C4）**：3 门基准课程已交付并发布，进入逐课扩展阶段。
 
-Previous verified baseline:
-
-```text
-55 tests
-55 pass
-0 fail
-0 skipped
-0 cancelled
-```
-
-V1.7 established the canonical application architecture. V1.8 now focuses on product completion and production wiring rather than another broad refactor.
-
-## V1.7 architecture established
-
-- V1.7 browser entry and Composition Root.
-- Canonical ContentService boundary.
-- Manifest-driven content loading.
-- Canonical Knowledge Engine ownership.
-- Assessment → Evidence → Mastery integration.
-- Experiment → Evidence → Mastery integration.
-- Canonical diagnosis contract.
-- Remediation and targeted recheck flow.
-- Progress projection and persistence boundaries.
-- Node/CI-safe application construction and router behavior.
-- CI baseline for syntax, tests, JSON and entrypoint validation.
-- Legacy cleanup governed by KEEP / ARCHIVE / DELETE rather than directory-name heuristics.
-
-## Production wiring audit status
-
-The V1.8 production audit identified and repaired the remaining wiring/data-boundary gaps:
+## 质量基线
 
 ```text
-canonical graph path
-→ graph normalization
-→ question registration
-→ assessment diagnosis
-→ remediation generation
-→ targeted recheck
-→ multi-knowledge experiment evidence
-→ data-derived remediation catalog
+tests:            133 / 133 GREEN
+runtime audit:    GREEN
+content gates:    integrity + lesson readiness GREEN
+deployment:       GitHub Pages（runtime-only dist/）
 ```
 
-The production path is now explicitly tested by `tests/production-wiring-v18.test.mjs`.
+## 课程覆盖
 
-## V1.8 objective
-
-V1.8 turns the stable learning architecture into an adaptive learning product.
-
-The product should continuously transform learner evidence into a justified next action:
-
-```text
-content
-→ learning
-→ practice / experiment
-→ evidence
-→ mastery
-→ diagnosis
-→ remediation
-→ recheck
-→ recommendation
-```
-
-## V1.8 workstreams
-
-| Phase | Workstream | Primary outcome |
+| 课程 | 状态 | 内容 |
 |---|---|---|
-| P1 | Learning Center 2.0 | Actionable learner home and daily tasks |
-| P2 | Semantic content mapping | Knowledge ↔ lesson ↔ question ↔ experiment |
-| P3 | Assessment 2.0 | Diagnostic/adaptive assessment |
-| P4 | Diagnosis 2.0 | Evidence-based diagnosis output |
-| P5 | Remediation 2.0 | Dynamic personalized recovery paths |
-| P6 | Experiment Lab 2.0 | Experiment as a first-class learning evidence source |
-| P7 | Dashboard 2.0 | Learning cockpit and recommendation rationale |
-| P8 | End-to-end integration | Complete learning-loop verification |
-| P9 | Final baseline | Release-grade CI and regression protection |
+| lesson-01 物质的变化与性质 | ready | 8 步引导学习、实验、练习 8、诊断 3、mastery 21、迁移 4 |
+| lesson-02 化学是一门以实验为基础的科学 | ready | 引导学习、实验、练习 13、诊断 3、mastery 21、迁移 4 |
+| lesson-03 酸入门 | ready | 引导学习、实验、练习 13、诊断 3、mastery 21（迁移题待建） |
 
-Detailed plan: `docs/V1.8-DEVELOPMENT-PLAN.md`.
+课程清单：`content/curriculum/lesson-manifest.js`（3/36 课，扩展须逐课过 7-Gate）。
 
-Production wiring audit: `docs/V1.8-PRODUCTION-WIRING-AUDIT.md`.
-
-Release/deployment workflow: `docs/RELEASE-AND-DEPLOYMENT.md`.
-
-## Architecture contract
+## 学习闭环（2026-08-16 加固后）
 
 ```text
-app/          application orchestration
-controllers/  workflow coordination
-views/        presentation
-engine/       domain engines
-core/         canonical domain modules / adapters
-modules/      primary content
-content/      supporting canonical content
-schemas/      contracts
-docs/         project documentation
+引导学习 → 实验 → 练习 → 诊断 → 补救 → 再检测(本课池+错题优先)
+  → 95% Mastery(可重试) → 迁移(专属题池, ≥80%) → 完成本课
 ```
 
-Domain ownership remains explicit:
+- 掌握判定 = 分数≥95% ∧ 知识点覆盖 ∧ 关键误解清零 ∧ 主观题(同义词组评分)通过。
+- 实验观察：空白不计证据；无效观察不中途锁定补救，实验完成时统一裁决。
+- 持久化：配额容错、损坏备份、历史上限 100、遗留状态自动迁移。
 
-```text
-ContentService       → content access + normalization + registration boundary
-Knowledge Engine     → graph semantics
-MasteryEngine        → mastery calculation
-DiagnosisEngine      → diagnosis
-RemediationEngine    → remediation planning
-Controllers          → orchestration only
-Views                → rendering only
-```
+## 内容治理状态
 
-## Release discipline
+- **Source Registry：PENDING**（`content/sources/`）——批量生产新题库前必须完成教材/课程标准登记。
+- 知识图谱 v2.1：13 节点 / 221 关系（含 safety-awareness）。
+- 全局题池 = day01 已审定替换题 + 按课注册；旧 320 题永久退役。
 
-All V1.8 work remains on `main`.
+## 已知缺口（按优先级）
 
-```text
-code
-→ tests
-→ npm test GREEN
-→ CI GREEN
-→ Pages deploy
-→ docs refreshed
-→ commit
-```
+1. lesson-03 迁移题未建设（入口有诚实提示，不阻塞）。
+2. 题目顺序固定（无洗牌），存在背题空间。
+3. 知识详情页仅覆盖 2/13 节点。
+4. misconception 词表（slug / M0x-* / mc-acid-*）未统一。
+5. 浏览器端到端回归测试缺失（当前为 Node 单元/集成测试）。
 
-The single canonical repository is `Momo2015-AI/ChemLab-G9-Eng-web`. No secondary development or publication repository is part of the active workflow.
+## 工程约定
 
-## Definition of V1.8 complete
-
-V1.8 is complete when a learner can complete the full adaptive loop:
-
-```text
-lesson
-→ evidence
-→ diagnosis
-→ remediation
-→ targeted recheck
-→ mastery update
-→ next-task recommendation
-```
-
-and the complete regression suite remains GREEN.
-
-## Explicit non-goals
-
-V1.8 does not require a frontend framework, backend service, cloud account system, second state-management solution, or new build system.
+- `main` 唯一分支；变更流程：实现 → 测试 → runtime/content 审计 → 文档（DEV-REC.md）→ 提交 → CI GREEN → Pages。
+- 本地开发：`python3 -m http.server 8080`（不能双击 index.html）。
+- 文档导航见 `docs/README.md`。

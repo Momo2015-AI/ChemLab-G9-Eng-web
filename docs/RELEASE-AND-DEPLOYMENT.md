@@ -60,11 +60,12 @@ The deployment workflow should therefore use:
 ```text
 ChemLab-G9-Eng-web/main
         ↓
-GitHub Actions
+GitHub Actions（单一 workflow：Validate → build-pages → Deploy）
         ↓
-build / validation
+scripts/build-pages.mjs 组装 runtime-only dist/
         ↓
-GitHub Pages
+GitHub Pages（仅发布运行时资产：app/、content/、views/、frontend/ 等；
+  docs/、reports/、tests/、scripts/ 不进入学生端站点）
 ```
 
 There should be no second source repository and no manual copy step between development and publication.
@@ -82,43 +83,12 @@ For V1.8 and later:
 
 ## Current baseline
 
-V1.7 architecture baseline:
+V2.2 学习闭环加固基线（2026-08-16）：
 
 ```text
-55 tests
-55 passed
-0 failed
-0 skipped
+tests: 133 / 133 GREEN
+runtime audit / content integrity / lesson readiness: GREEN
+deployment: GitHub Pages（runtime-only dist/）
 ```
 
-The V1.8 development baseline starts from this GREEN state.
-
-## V1.8 delivery sequence
-
-```text
-V1.7 55/55 GREEN
-      ↓
-V1.8 P1 Learning Center 2.0
-      ↓
-V1.8 P2 Knowledge mappings
-      ↓
-V1.8 P3 Assessment 2.0
-      ↓
-V1.8 P4 Diagnosis 2.0
-      ↓
-V1.8 P5 Remediation 2.0
-      ↓
-V1.8 P6 Experiment Lab 2.0
-      ↓
-V1.8 P7 Dashboard 2.0
-      ↓
-V1.8 P8 End-to-End integration
-      ↓
-V1.8 P9 final baseline
-      ↓
-release from main
-```
-
-## Repository ownership statement
-
-This document intentionally establishes `Momo2015-AI/ChemLab-G9-Eng-web` as the only active project repository. Future project instructions should reference this repository first.
+版本历史见 `archive/HISTORY-V1.5-V2.2.md`。

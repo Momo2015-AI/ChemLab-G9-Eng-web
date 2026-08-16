@@ -908,3 +908,69 @@ User asked to review the lesson-01 learning flow UI from code architecture and l
 - `node scripts/runtime-audit.mjs`: **passed**。
 - Changed JavaScript `node --check`: **passed**。
 - `git diff --check`: **passed**。
+
+---
+
+## 2026-08-16 — 学习闭环加固与工程清理（Learning Loop Hardening）
+
+### Conversation / decision
+
+用户提供全项目审查报告（架构 + 学习流程），要求按报告的修复优先级清单在本地仓库 `E:\CHATGPT\ChemLab-ENG`（与远端 main 同步的正式路径）完成修复并输出总结文档。审查报告指出学习闭环 4 个硬伤（recheck 跨课污染、mastery 失败无法重试、主观题子串评分、实验观察劫持阶段）、transfer 复读 mastery、静默题库端点、localStorage 无容错、死代码双管道、application.js 压缩风格、quiz 乱码、内容计数/图谱缺口、整仓部署等 12 类问题。注意：远端在审查后已合入 `68dc16b`/`876cabc`（扁平状态收敛、draft 门禁、mastery criteria），本次先 fast-forward 到 `876cabc` 并逐项复核哪些问题仍然存在，再动手。
+
+### Actions
+
+1. **学习闭环**：recheck 改为本课池（lesson+practice+diagnostic+mastery）且错题优先；结果页新增重试按钮调用 `assessment.reset()`；评估门户 Mastery 任务在未通过时保持可见；主观题评分支持同义词组关键词 + 全半角/空白归一化，三课 M21 关键词改为同义词组；实验空白观察不再计负证据、无效观察不再中途锁 REMEDIATION（补救判定推迟到实验完成），观察验证要求 ≥2 字符。
+2. **transfer 接线**：新增 lesson-01/02 `-transfer.json`（各 4 题，迁移自死内容层），`loadTransfer/getTransfer/startTransfer` 链路，≥80% 记 passed；lesson-03 无迁移内容时给出明确提示。
+3. **题库端点**：删除 question-bank/topics 死端点与 `loadOptionalJSON` 静默兜底；新增契约测试防止端点回归。
+4. **localStorage**：save 全 try/catch、损坏备份至 `chemlab_v16_corrupt`、历史上限 100、迁移器支持 map 形态 mastery、STORAGE_KEY 单一来源。
+5. **死代码**（引用图谱验证后删除）：旧 AssessmentController 门面、engine/content-loader 壳、learning-diagnosis、dashboard/、dashboard-view 注册、孤儿 lesson-02 .js、content/assessment 整层 11 文件（含与运行时同 ID 不同题的冲突源）、8 个死/坏脚本、冗余 content-integrity.yml。
+6. **重构**：application.js 重写为每路由独立函数；quiz-view 修复 fromCharCode 乱码；normalizeQuestion 剥离选项 "A. " 前缀；知识点提取统一为 `knowledgeIdsOf`（替换 5 处变体）。
+7. **内容**：三课 mastery 计数 21/20；KG 升 v2.1.0：新增 safety-awareness 节点、L03 全部题目与 transfer 题 +85 条 question 关联。
+8. **CI/部署**：新增 `scripts/build-pages.mjs` 组装 runtime-only `dist/`（114 文件/858KB），部署上传 dist（不再发布 docs/reports/tests）；审计脚本纳入 transfer 资源；.gitignore 补齐；index.html 加 noscript。
+
+### Verification
+
+- `npm test`：133/133 全绿（基线 117；+16 个新契约测试）。
+- runtime-audit / content integrity / lesson readiness 全部通过，报告已再生。
+- build-pages 本地验证通过。
+- 详见 `docs/DEV-REC-2026-08-16-LEARNING-LOOP-HARDENING.md`。
+
+### Next
+
+lesson-03 迁移题建设；Source Registry 登记与 provenance 回填；题目洗牌；知识详情页覆盖；misconception 词表统一；逐课扩展（3/36）。
+
+---
+
+## 2026-08-16 — 文档整合：能合并的合并，无用的删除
+
+### Conversation / decision
+
+用户要求把旧文档中能整合的整合、无用的直接删除。执行前先盘点 docs/（106 文件/599KB）+ reports/（13 文件）+ 引用关系：全仓库仅 3 个文档被外部引用（README、content/sources/README 引用 SOURCE-REGISTRY-STANDARD / COURSE-DEVELOPMENT-STANDARD / CONTENT-AUDIT-STANDARD），测试与脚本零引用。
+
+### Actions
+
+**合并（4 份新文档吸收 12 份原文）**：
+- `docs/ARCHITECTURE.md` ← V1.6/V1.7 架构系列（ARCHITECTURE-AND-LEARNING-REDESIGN、ENGINE-BOUNDARIES、DIAGNOSIS-ARCHITECTURE、KNOWLEDGE-ENGINE-CONSOLIDATION、architecture/learning-runtime-consolidation）的现行有效内容，重写为 2026-08-16 实际代码结构。
+- `docs/CONTENT-STANDARD.md` ← V1.9-CONTENT-STANDARD（主体）+ CONTENT-AUDIT-STANDARD（7-Gate 作附录 A）+ V1.9-CONTENT-REVIEW-PROTOCOL（审查流程作附录 B）+ V1.9-CONTENT-AUDIT-METRICS（度量口径）。
+- `docs/LEARNING-FLOW.md` ← COURSE-LEARNING-FLOW-V1.0（课程级）+ course-design/LESSON-PAGE-LEARNING-FLOW-V1.0（页面级）。
+- `docs/archive/HISTORY-V1.5-V2.2.md` ← 各版本 DEVELOPMENT-PLAN/PHASE 报告/冻结审计/实施状态的结论性时间线。
+
+**重写**：`docs/PROJECT-STATUS.md`（原停留在 V1.8）→ 2026-08-16 现状；新增 `docs/README.md` 文档导航。
+
+**改名（去版本号，保留内容）**：MASTERY-STANDARD-95-V1.0→MASTERY-STANDARD、V2.1-LEARNING-UI-STANDARD→LEARNING-UI-STANDARD、CURRICULUM-MAP-G9-PEOPLE-EDITION-V1.0→CURRICULUM-MAP-G9。
+
+**保留原样**：SOURCE-REGISTRY-STANDARD（被引用）、COURSE-DEVELOPMENT-STANDARD（被引用）、SOURCE-AUTHORITY-AUDIT-V1.0 与 HUBEI-EXAM-MATERIAL-AUDIT（C0 来源证据，内容建设仍需）、RELEASE-AND-DEPLOYMENT 与 REPOSITORY-CANONICAL-MAP（已刷新为 dist 部署/单 workflow/新题池规则的现状）、DEV-REC-2026-08-16-LEARNING-LOOP-HARDENING。
+
+**删除（约 96 个文件）**：docs/audits/×11、docs/dev-log/×2、docs/ 下 DEV-REC-2026-08-1x 会话日志×20（权威日志是根 DEV-REC.md）、V1.6-V1.9 全部版本计划/Phase 报告/冻结审计、LESSON-01/02 过程审计×7、V1.9 内容审计系列×4、基准课规范×2、CONTENT-PLAN/BUILD-PLAN、ROADMAP-V2.2-FROZEN（有效部分并入 HISTORY）、DEEP-CLEANUP-V2、CI-CD-VERIFICATION、V1.5 引擎架构、CONTENT-KNOWLEDGE-MODEL（并入 ARCHITECTURE）、archive/V1.x；reports/ 日期报告×10（保留 CI 再生 3 件）。
+
+**引用同步**：根 README 详细规范清单改指 README/COURSE-DEVELOPMENT-STANDARD/CONTENT-STANDARD；RELEASE-AND-DEPLOYMENT 补 dist 构建与 V2.2 基线；CANONICAL-MAP 更新 modules/reports/workflows 职责与题库端点规则。
+
+### Verification
+
+- 引用完整性：全仓库 docs/*.md 引用共 4 处，全部指向现存文件；tests/scripts 零引用。
+- `npm test` 133/133 GREEN；runtime-audit、content integrity、lesson readiness 全部通过（文档不参与运行时）。
+- 规模：docs/ 106→16 文件（599KB→144KB），reports/ 13→3 文件。
+
+### Next
+
+Source Registry 登记（文档清理后 content/sources/ 成为最显眼的缺口）；按 docs/README.md 导航维护文档，新增一次性报告默认不入库。

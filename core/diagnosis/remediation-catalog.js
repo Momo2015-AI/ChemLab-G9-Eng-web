@@ -1,3 +1,5 @@
+import { knowledgeIdsOf } from './question-knowledge-map.js';
+
 /**
  * V1.8 data-driven remediation catalog.
  *
@@ -11,16 +13,7 @@ export function createRemediationCatalog(data = {}) {
   const knowledgeNodes = Array.isArray(data.knowledgeGraph?.nodes) ? data.knowledgeGraph.nodes : [];
 
   for (const node of knowledgeNodes) {
-    const practice = questions.find(question => {
-      const ids = question.knowledgeIds
-        ?? question.knowledgePoints
-        ?? question.knowledgeId
-        ?? question.knowledge
-        ?? [];
-      const values = Array.isArray(ids) ? ids : [ids];
-      return values.includes(node.id);
-    });
-
+    const practice = questions.find(question => knowledgeIdsOf(question).includes(node.id));
     catalog[node.id] = {
       reviewId: node.id,
       practiceId: practice?.id || null,

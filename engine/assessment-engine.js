@@ -1,16 +1,17 @@
 /**
- * ChemLab-G9 V1.6 Assessment Engine
- * Evaluates answers, computes scores, tracks mistakes
+ * ChemLab-G9 Assessment Engine
+ * Evaluates answers and returns per-question evidence for diagnosis.
  */
 
-export class AssessmentEngine {
-  constructor() {
-    this.mistakes = new Map();
-  }
+const normalizeText = value => String(value ?? '')
+  .replace(/[\s\u3000]/g, '')
+  .replace(/[\uFF01-\uFF5E]/g, ch => String.fromCharCode(ch.charCodeAt(0) - 0xFEE0))
+  .toLowerCase();
 
+export class AssessmentEngine {
   evaluate(question, userAnswer) {
     const isCorrect = this.checkAnswer(question, userAnswer);
-    const result = {
+    return {
       questionId: question.id,
       correct: isCorrect,
       rubricPassed: this.isConstructed(question) ? isCorrect : undefined,
@@ -20,21 +21,10 @@ export class AssessmentEngine {
       explanation: isCorrect ? null : this.explanationFor(question),
       commonMistake: isCorrect ? null : question.commonMistake || null,
     };
-
-    if (!isCorrect) {
-      const key = question.id;
-      if (!this.mistakes.has(key)) {
-        this.mistakes.set(key, { count: 0, knowledge: result.knowledge, mistake: result.commonMistake });
-      }
-      const m = this.mistakes.get(key);
-      m.count++;
-    }
-
-    return result;
   }
 
   isConstructed(question) {
-    return Boolean(question?.type === 'constructed' || question?.type === 'short-answer' || question?.rubric);
+    return Boolean(question?.type === 'constructed' || question?.type === 'short-answer' || question.rubric);
   }
 
   explanationFor(question) {
@@ -50,8 +40,8 @@ export class AssessmentEngine {
       return selected === correct;
     }
     if (question.type === 'fill' || question.type === 'calculation') {
-      const correct = (question.answer || '').trim().toLowerCase();
-      const selected = (answer || '').toString().trim().toLowerCase();
+      const correct = normalizeText(question.answer);
+      const selected = normalizeText(answer);
       return correct !== '' && selected === correct;
     }
     if (question.type === 'constructed' || question.type === 'short-answer') {
@@ -60,41 +50,31 @@ export class AssessmentEngine {
     return false;
   }
 
+  /**
+   * Keyword rubric grading for constructed answers.
+   * rubric.keywords supports two shapes:
+   *   - flat strings: ['新物质', '生成']
+   *   - synonym groups (arrays): [['新物质'], ['生成', '产生', '形成']]
+   * A group counts as a hit when any synonym appears in the answer, so
+   * correct paraphrases are not punished. Passing requires hitting
+   * min(2, groupCount) groups.
+   */
   checkConstructed(question, answer) {
     const text = String(answer ?? '').trim();
     if (!text) return false;
     const rubric = question.rubric || {};
-    const keywords = Array.isArray(rubric.keywords) ? rubric.keywords.filter(Boolean) : [];
-    if (keywords.length === 0) {
+    const rawKeywords = Array.isArray(rubric.keywords) ? rubric.keywords.filter(Boolean) : [];
+    if (rawKeywords.length === 0) {
       return Boolean(rubric.modelAnswer) && text.length >= 4;
     }
-    const normalized = text.toLowerCase();
-    const hits = keywords.filter(keyword => normalized.includes(String(keyword).toLowerCase()));
-    return hits.length >= Math.min(2, keywords.length);
-  }
-
-  computeQuizScore(results) {
-    if (!results || results.length === 0) return 0;
-    const correct = results.filter(r => r.correct).length;
-    return Math.round(correct / results.length * 100);
-  }
-
-  getMistakeSummary() {
-    const summary = {};
-    for (const [qid, m] of this.mistakes) {
-      for (const k of m.knowledge) {
-        if (!summary[k]) summary[k] = { count: 0, questions: [] };
-        summary[k].count += m.count;
-        summary[k].questions.push(qid);
-      }
-    }
-    return summary;
-  }
-
-  getWeakKnowledge(threshold = 0.5) {
-    return Object.entries(this.getMistakeSummary())
-      .filter(([, v]) => v.count > 0)
-      .sort((a, b) => b[1].count - a[1].count);
+    const groups = rawKeywords
+      .map(keyword => (Array.isArray(keyword) ? keyword : [keyword]))
+      .map(synonyms => synonyms.map(normalizeText).filter(Boolean))
+      .filter(synonyms => synonyms.length > 0);
+    if (groups.length === 0) return Boolean(rubric.modelAnswer) && text.length >= 4;
+    const normalized = normalizeText(text);
+    const hits = groups.filter(synonyms => synonyms.some(synonym => normalized.includes(synonym)));
+    return hits.length >= Math.min(2, groups.length);
   }
 }
 

@@ -1,5 +1,6 @@
 import { diagnoseAssessment } from '../core/diagnosis/diagnosis-engine.js';
 import { evaluateMastery } from '../core/assessment/mastery-policy.js';
+import { knowledgeIdsOf } from '../core/diagnosis/question-knowledge-map.js';
 
 export class AssessmentRuntimeController {
   constructor({ assessment, contentService, state, masteryService = null, learningController = null }) {
@@ -53,16 +54,36 @@ export class AssessmentRuntimeController {
   async startRecheck(lessonId, knowledgeIds, limit = 5) {
     const ids = Array.isArray(knowledgeIds) ? knowledgeIds.filter(Boolean) : [knowledgeIds].filter(Boolean);
     if (!ids.length) return null;
+    // Recheck draws only from this lesson's own pools (embedded questions,
+    // practice, diagnostic, mastery): mixing the global bank previously
+    // served questions from unrelated lessons (e.g. legacy day01 acid items
+    // inside a lesson-03 recheck).
     const data = await this.contentService.load();
-    if (typeof this.contentService.getLesson === 'function') await this.contentService.getLesson(lessonId).catch(() => null);
-    if (typeof this.contentService.getPractice === 'function') await this.contentService.getPractice(lessonId).catch(() => null);
-    if (typeof this.contentService.getDiagnostic === 'function') await this.contentService.getDiagnostic(lessonId).catch(() => null);
+    const [lesson, practice, diagnostic, mastery] = await Promise.all([
+      this.contentService.getLesson?.(lessonId).catch(() => null),
+      this.contentService.getPractice?.(lessonId).catch(() => null),
+      this.contentService.getDiagnostic?.(lessonId).catch(() => null),
+      this.contentService.getMastery?.(lessonId).catch(() => null),
+    ]);
+    const pool = [];
+    const seen = new Set();
+    const push = question => {
+      const resolved = typeof question === 'object' ? question : data.questionById?.get(question);
+      if (resolved?.id && !seen.has(resolved.id)) { seen.add(resolved.id); pool.push(resolved); }
+    };
+    for (const question of [...(practice || []), ...(diagnostic || []), ...(mastery?.questions || []), ...(Array.isArray(lesson?.questions) ? lesson.questions : [])]) push(question);
     const wanted = new Set(ids);
-    const questions = data.questions
-      .filter(question => this.knowledge(question).some(id => wanted.has(id)))
-      .slice(0, limit)
-      .map(question => this.normalizeQuestion(question));
-    if (!questions.length) return null;
+    const matches = pool.filter(question => this.knowledge(question).some(id => wanted.has(id)));
+    if (!matches.length) return null;
+    // Questions the student actually got wrong come first, so a recheck
+    // re-tests the failure rather than easy items that share a knowledge tag.
+    const failedIds = new Set((this.learningController?.getLessonState?.(lessonId)?.diagnosis?.errors || [])
+      .map(error => error.questionId).filter(Boolean));
+    const ordered = [
+      ...matches.filter(question => failedIds.has(question.id)),
+      ...matches.filter(question => !failedIds.has(question.id)),
+    ];
+    const questions = ordered.slice(0, limit).map(question => this.normalizeQuestion(question));
     this.learningController?.updateLessonState?.(lessonId, {
       recheck: { lessonId, knowledgeIds: ids, status: 'in-progress', questionCount: questions.length },
       phase: 'RECHECK',
@@ -71,8 +92,12 @@ export class AssessmentRuntimeController {
   }
 
   async startTransfer(lessonId, limit = 5) {
-    const data = await this.contentService.getMastery(lessonId).catch(() => null);
-    const pool = Array.isArray(data?.questions) ? data.questions : [];
+    const data = typeof this.contentService.getTransfer === 'function'
+      ? await this.contentService.getTransfer(lessonId).catch(() => null)
+      : null;
+    const pool = Array.isArray(data?.questions) && data.questions.length
+      ? data.questions
+      : (Array.isArray(data) ? data : []);
     if (!pool.length) return null;
     const questions = pool
       .slice(0, limit)
@@ -255,7 +280,7 @@ export class AssessmentRuntimeController {
     const transfer = {
       lessonId,
       attemptId: this.session.attemptId,
-      status: 'completed',
+      status: total > 0 && score >= 0.8 ? 'passed' : 'completed',
       correct,
       total,
       score,
@@ -266,20 +291,24 @@ export class AssessmentRuntimeController {
   }
 
   knowledge(question) {
-    const raw = question?.knowledgeIds || question?.knowledgePoints || question?.knowledgePoint || question?.knowledgeId || question?.knowledge || [];
-    return (Array.isArray(raw) ? raw : [raw]).filter(Boolean);
+    return knowledgeIdsOf(question);
   }
 
   normalizeQuestion(question = {}, fallbackKnowledge = []) {
     const options = question.options || question.o || [];
     const rawAnswer = question.correctIndex ?? question.answer ?? question.correctAnswer ?? question.correctOption ?? question.correct ?? question.a;
     const isChoice = Array.isArray(options) && options.length > 0 && question.type !== 'constructed';
-    const knowledgeIds = this.knowledge(question).length ? this.knowledge(question) : fallbackKnowledge;
+    const knowledgeIds = knowledgeIdsOf(question, fallbackKnowledge);
     if (isChoice) {
       return {
         ...question,
         type: 'choice',
-        options: options.map(option => typeof option === 'object' ? option.text ?? option.label ?? '' : option),
+        // Some legacy items bake "A. " into the option text; the view already
+        // renders its own letter badge, so strip the duplicated prefix.
+        options: options.map(option => {
+          const text = typeof option === 'object' ? option.text ?? option.label ?? '' : String(option);
+          return text.replace(/^\s*[A-Ha-h][.、．)）:：]\s*/, '').trim() || text;
+        }),
         correctIndex: this.toIndex(rawAnswer),
         answer: this.toLetter(this.toIndex(rawAnswer)),
         knowledgeIds,

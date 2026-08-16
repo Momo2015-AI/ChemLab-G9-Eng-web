@@ -1,13 +1,12 @@
 /** ChemLab content service: stable application-facing boundary over content loader. */
 import ContentLoader from './content-loader.js';
 import { KnowledgeEngine } from '../core/knowledge-graph/canonical-knowledge-engine.js';
-import { registerQuestion } from '../core/diagnosis/question-knowledge-map.js';
-function normalizeKnowledgeIds(question) { const value = question?.knowledgeIds ?? question?.knowledgePoints ?? question?.knowledgePoint ?? question?.knowledgeId ?? question?.knowledge ?? []; return (Array.isArray(value) ? value : [value]).filter(Boolean); }
+import { registerQuestion, knowledgeIdsOf } from '../core/diagnosis/question-knowledge-map.js';
 function isRuntimeQuestion(question) { return Boolean(question && typeof question === 'object' && question.id) && String(question.status || '').toLowerCase() !== 'draft'; }
 function normalizeKnowledgeGraph(graph = {}) { const relations = (graph.relations || graph.edges || []).map(relation => ({ ...relation, source: relation.source || relation.from, target: relation.target || relation.to })); return { ...graph, relations }; }
 class ContentService {
   constructor(loader = new ContentLoader(), knowledgeEngineFactory = graph => new KnowledgeEngine(graph)) { this.loader = loader; this.knowledgeEngineFactory = knowledgeEngineFactory; this.data = null; this.knowledgeEngine = null; }
-  async load() { if (!this.data) { this.data = await this.loader.loadAll(); this.data.knowledgeGraph = normalizeKnowledgeGraph(this.data.knowledgeGraph); this.data.questionById = new Map(this.data.questions.map(q => [q.id, q])); for (const question of this.data.questions) { const knowledge = normalizeKnowledgeIds(question); const commonMistake = question.commonMistake || question.mistake || null; const misconceptionIds = Array.isArray(question.misconceptionIds) ? question.misconceptionIds : []; const legacyErrors = Array.isArray(question.errors) ? question.errors : commonMistake ? [commonMistake] : []; registerQuestion(question.id, { knowledge, errors: [...new Set([...legacyErrors, ...misconceptionIds])] }); } this.knowledgeEngine = this.knowledgeEngineFactory(this.data.knowledgeGraph); } return this.data; }
+  async load() { if (!this.data) { this.data = await this.loader.loadAll(); this.data.knowledgeGraph = normalizeKnowledgeGraph(this.data.knowledgeGraph); this.data.questionById = new Map(this.data.questions.map(q => [q.id, q])); for (const question of this.data.questions) { const knowledge = knowledgeIdsOf(question); const commonMistake = question.commonMistake || question.mistake || null; const misconceptionIds = Array.isArray(question.misconceptionIds) ? question.misconceptionIds : []; const legacyErrors = Array.isArray(question.errors) ? question.errors : commonMistake ? [commonMistake] : []; registerQuestion(question.id, { knowledge, errors: [...new Set([...legacyErrors, ...misconceptionIds])] }); } this.knowledgeEngine = this.knowledgeEngineFactory(this.data.knowledgeGraph); } return this.data; }
   async getLesson(dayId) {
     const data = await this.load();
     const lesson = await this.loader.loadLesson(dayId).catch(() => null);
@@ -35,12 +34,17 @@ class ContentService {
     if (Array.isArray(questions) && questions.length) this.registerQuestions(this.data || await this.load(), questions);
     return questions;
   }
+  async getTransfer(lessonId) {
+    const questions = await this.loader.loadTransfer(lessonId).catch(() => null);
+    if (Array.isArray(questions) && questions.length) this.registerQuestions(this.data || await this.load(), questions);
+    return questions;
+  }
   async getQuestion(questionId) { const data = await this.load(); return data.questionById.get(questionId) || null; }
   async getLessons({ semester = null } = {}) {
     const data = await this.load();
     return data.days.filter(lesson => !semester || lesson.semester === semester);
   }
-  async getQuestionsByKnowledge(knowledgeId) { const data = await this.load(); return data.questions.filter(q => normalizeKnowledgeIds(q).includes(knowledgeId)); }
+  async getQuestionsByKnowledge(knowledgeId) { const data = await this.load(); return data.questions.filter(q => knowledgeIdsOf(q).includes(knowledgeId)); }
   async getKnowledgeGraph() { const data = await this.load(); return data.knowledgeGraph; }
   async getKnowledgeGraphViewModel() { const engine = await this.getKnowledgeEngine(); return { nodes: Array.from(engine.nodes.values()), relations: [...engine.relations] }; }
   async getKnowledgeEngine() { await this.load(); return this.knowledgeEngine; }
@@ -75,7 +79,7 @@ class ContentService {
       if (!rawQuestion.id) continue;
       const question = {
         ...rawQuestion,
-        knowledgeIds: normalizeKnowledgeIds(rawQuestion).length ? normalizeKnowledgeIds(rawQuestion) : fallbackKnowledge,
+        knowledgeIds: knowledgeIdsOf(rawQuestion).length ? knowledgeIdsOf(rawQuestion) : fallbackKnowledge,
       };
       data.questionById.set(question.id, question);
       if (!data.questions.some(item => item.id === question.id)) data.questions.push(question);

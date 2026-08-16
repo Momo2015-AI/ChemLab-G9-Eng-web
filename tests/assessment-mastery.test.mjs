@@ -1,31 +1,27 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { AssessmentController } from '../controllers/assessment-controller.js';
+import { AssessmentRuntimeController } from '../controllers/assessment-runtime-controller.js';
 import { MasteryService } from '../app/mastery-service.js';
 
-function createAssessment() {
-  return {
+function createController(initialMastery = {}) {
+  const masteryService = new MasteryService();
+  const state = { progress: { mastery: initialMastery }, learning: {}, save() {} };
+  masteryService.hydrate(state.progress.mastery);
+  const assessment = {
     evaluate(question, answer) {
       return { correct: question.answer === answer };
     },
   };
-}
-
-function createController(initialMastery = {}) {
-  const masteryService = new MasteryService();
-  const state = { progress: { mastery: initialMastery } };
-  masteryService.hydrate(state.progress.mastery);
-  const assessment = createAssessment();
-  const controller = new AssessmentController({
+  const controller = new AssessmentRuntimeController({
     assessment,
     contentService: {},
     state,
     masteryService,
   });
 
-  controller.createSession('test-day', [
-    { id: 'q1', type: 'choice', knowledgeId: 'oxygen-properties', answer: 'A' },
-  ]);
+  controller.startAttempt('test-day', [
+    { id: 'q1', type: 'choice', options: ['x', 'y'], answer: 'A', knowledgeIds: ['oxygen-properties'] },
+  ], 'practice');
 
   return { controller, state };
 }

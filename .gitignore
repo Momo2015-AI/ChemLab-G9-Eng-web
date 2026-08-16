@@ -1,2 +1,11 @@
 # 本地记忆与 skill（不推送到远端）
 .monkeycode/
+
+# 依赖与构建产物
+node_modules/
+dist/
+
+# 系统与编辑器杂项
+.DS_Store
+Thumbs.db
+*.log

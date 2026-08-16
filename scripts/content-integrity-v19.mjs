@@ -37,7 +37,7 @@ function normalizeLessonQuestion(question, lesson, source = 'lesson') {
 function loadRuntimeQuestions() {
   if (!fs.existsSync(lessonsPath)) return [];
   const questions = [];
-  const lessonFiles = fs.readdirSync(lessonsPath).filter(file => file.endsWith('.json') && !/(?:-practice|-mastery|-diagnostic|-guided-learning|-experiment)\.json$/.test(file));
+  const lessonFiles = fs.readdirSync(lessonsPath).filter(file => file.endsWith('.json') && !/(?:-practice|-mastery|-diagnostic|-guided-learning|-experiment|-transfer)\.json$/.test(file));
   for (const name of lessonFiles) {
     const lesson = load(path.join(lessonsPath, name));
     if (!lesson) continue;
@@ -54,6 +54,8 @@ function loadRuntimeQuestions() {
     add(diagnostic?.diagnostics || diagnostic, 'diagnostic');
     const masteryResource = load(path.join(lessonsPath, name.replace(/\.json$/, '-mastery.json')));
     add(masteryResource?.mastery?.questions || masteryResource?.questions, 'mastery');
+    const transferResource = load(path.join(lessonsPath, name.replace(/\.json$/, '-transfer.json')));
+    add(transferResource?.questions || transferResource, 'transfer');
   }
   return questions;
 }

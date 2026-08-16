@@ -1,8 +1,15 @@
 /**
- * V1.7 Experiment Controller
+ * Experiment Controller
  * Owns experiment-session state; ExperimentEngine remains responsible for domain rules.
+ *
+ * Observation policy: an empty or too-short observation is treated as "not yet
+ * recorded" — it produces no mastery evidence and never changes the lesson
+ * phase. A substantive but invalid observation records zero-value evidence but
+ * remediation is only decided when the experiment completes, so a mid-experiment
+ * typo cannot lock the lesson into REMEDIATION.
  */
 import { diagnoseExperiment } from '../core/diagnosis/diagnosis-engine.js';
+import { knowledgeIdsOf } from '../core/diagnosis/question-knowledge-map.js';
 
 export class ExperimentController {
   constructor({ experimentEngine, state, masteryService = null, learningController = null }) {
@@ -45,15 +52,22 @@ export class ExperimentController {
     const validation = this.engine.validateStep(this.session, observation);
     this.session = this.engine.recordObservation(this.session, observation);
     this.session.lastValidation = validation;
+    if (observation.length > 0 && !validation.valid) this.session.hadInvalidObservation = true;
     this.#persistSession();
-    this.#recordEvidence(validation);
+    if (observation.length > 0) this.#recordEvidence(validation);
     return this.session;
   }
 
   complete() {
     if (!this.session) return null;
     this.session = this.engine.complete(this.session);
-    this.#persistSession({ phase: 'PRACTICE', completed: true, completedAt: this.session.completedAt });
+    if (this.session.hadInvalidObservation) {
+      const diagnosis = diagnoseExperiment({ knowledgeIds: this.session.knowledgeIds || [], validation: { valid: false } });
+      this.learningController?.getRemediationPlan?.({ ...diagnosis, lessonId: this.session.lessonId || undefined });
+      this.#persistSession({ phase: 'REMEDIATION', completed: true, completedAt: this.session.completedAt });
+    } else {
+      this.#persistSession({ phase: 'PRACTICE', completed: true, completedAt: this.session.completedAt });
+    }
     return this.session;
   }
 
@@ -62,8 +76,7 @@ export class ExperimentController {
   }
 
   getKnowledgeIds(experiment) {
-    const ids = experiment?.knowledgeIds ?? experiment?.knowledgeId ?? experiment?.knowledge ?? [];
-    return (Array.isArray(ids) ? ids : [ids]).filter(Boolean);
+    return knowledgeIdsOf(experiment);
   }
 
   #recordEvidence(validation) {
@@ -84,10 +97,11 @@ export class ExperimentController {
       }
     }
 
-    if (diagnosis.status === 'incorrect' && this.learningController) {
-      this.learningController.getRemediationPlan({ ...diagnosis, lessonId: this.session.lessonId || undefined });
+    if (this.session.lessonId) {
+      this.learningController?.updateLessonState?.(this.session.lessonId, {
+        diagnosis: { ...diagnosis, lessonId: this.session.lessonId },
+      });
     }
-    if (this.session.lessonId) this.learningController?.updateLessonState?.(this.session.lessonId, { diagnosis: { ...diagnosis, lessonId: this.session.lessonId } , phase: diagnosis.status === 'incorrect' ? 'REMEDIATION' : 'PRACTICE' });
     this.state.save?.();
   }
 

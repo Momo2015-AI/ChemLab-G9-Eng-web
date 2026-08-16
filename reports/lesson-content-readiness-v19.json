@@ -20,7 +20,8 @@
         "lesson": 8,
         "practice": 8,
         "diagnostic": 3,
-        "mastery": 21
+        "mastery": 21,
+        "transfer": 4
       },
       "contractErrors": []
     },
@@ -36,7 +37,8 @@
         "lesson": 8,
         "practice": 13,
         "diagnostic": 3,
-        "mastery": 21
+        "mastery": 21,
+        "transfer": 4
       },
       "contractErrors": []
     },
