@@ -27,7 +27,7 @@ function makeContentService(overrides = {}) {
     async load() { return { questionById: new Map(questionPool.map(item => [item.id, item])), questions: questionPool }; },
     async getPractice() { return overrides.practice ? overrides.practice.map(item => item.id) : null; },
     async getDiagnostic() { return overrides.diagnostic ? overrides.diagnostic.map(item => item.id) : null; },
-    async getMastery() { return { threshold: 0.95, questions: overrides.mastery || questionPool }; },
+    async getMastery() { return { threshold: 0.95, questions: overrides.mastery !== undefined ? overrides.mastery : questionPool }; },
     ...overrides,
   };
 }
@@ -39,17 +39,20 @@ test('practice uses the dedicated practice.json pool when available', async () =
   assert.deepEqual(session.questions.map(q => q.id), ['PC1']);
 });
 
-test('recheck filters the full registered pool including practice and diagnostic questions', async () => {
-  const controller = new AssessmentRuntimeController({ assessment: assessmentEngine, contentService: makeContentService({ practice: [{ id: 'PC1', type: 'choice', options: ['A', 'B'], answer: 0, knowledgeIds: ['physical-property'] }], diagnostic: [{ id: 'DC1', type: 'choice', options: ['A', 'B'], answer: 1, knowledgeIds: ['chemical-property'] }] }), state: makeState() });
+test('recheck selects from lesson-scoped pools (practice + diagnostic) only', async () => {
+  const controller = new AssessmentRuntimeController({ assessment: assessmentEngine, contentService: makeContentService({ practice: [{ id: 'PC1', type: 'choice', options: ['A', 'B'], answer: 0, knowledgeIds: ['physical-property'] }], diagnostic: [{ id: 'DC1', type: 'choice', options: ['A', 'B'], answer: 1, knowledgeIds: ['chemical-property'] }], mastery: [] }), state: makeState() });
   const session = await controller.startRecheck('lesson-01-material-changes-properties', ['physical-property', 'chemical-property'], 10);
   assert.ok(session);
-  const ids = session.questions.map(q => q.id).sort();
+  const ids = session.questions.map(q => q.id);
   assert.ok(ids.includes('PC1'), `practice question should be included: ${ids}`);
   assert.ok(ids.includes('DC1'), `diagnostic question should be included: ${ids}`);
-  assert.ok(ids.includes('P1') && ids.includes('P2'), 'lesson inline questions should be included');
+  // Foreign pool questions that share the knowledge tag but belong to no
+  // lesson-scoped pool (P1: physical-property, P2: chemical-property) must
+  // never leak into a recheck.
+  assert.ok(!ids.includes('P1') && !ids.includes('P2'), `foreign pool questions must be excluded: ${ids}`);
 });
 
-test('transfer starts a session from the mastery pool and records completion', async () => {
+test('transfer starts a session from the dedicated transfer pool and evaluates a pass line', async () => {
   const state = makeState();
   const learningController = {
     updateLessonState(lessonId, patch) {
@@ -58,17 +61,28 @@ test('transfer starts a session from the mastery pool and records completion', a
     },
     getLessonState(lessonId) { return state.learning.lessons?.[lessonId] || {}; },
   };
-  const controller = new AssessmentRuntimeController({ assessment: assessmentEngine, contentService: makeContentService({ mastery: [{ id: 'M1', type: 'choice', options: ['A', 'B'], answer: 0, knowledgeIds: ['physical-property'] }, { id: 'M2', type: 'choice', options: ['A', 'B'], answer: 1, knowledgeIds: ['chemical-property'] }] }), state, learningController });
+  const transferPool = [
+    { id: 'T1', type: 'choice', options: ['A', 'B'], answer: 0, knowledgeIds: ['physical-property'] },
+    { id: 'T2', type: 'choice', options: ['A', 'B'], answer: 1, knowledgeIds: ['chemical-property'] },
+  ];
+  const contentService = makeContentService({ mastery: [{ id: 'M1', type: 'choice', options: ['A', 'B'], answer: 0, knowledgeIds: ['physical-property'] }] });
+  contentService.getTransfer = async () => transferPool;
+  const controller = new AssessmentRuntimeController({ assessment: assessmentEngine, contentService, state, learningController });
   const session = await controller.startTransfer('lesson-01-material-changes-properties', 2);
   assert.ok(session);
   assert.equal(session.mode, 'transfer');
-  assert.equal(session.questions.length, 2);
+  assert.deepEqual(session.questions.map(q => q.id), ['T1', 'T2']);
   assert.equal(state.learning.lessons['lesson-01-material-changes-properties'].transfer.status, 'in-progress');
   controller.answer(0);
   controller.answer(1);
   assert.equal(controller.session.completed, true);
-  assert.equal(state.learning.lessons['lesson-01-material-changes-properties'].transfer.status, 'completed');
+  assert.equal(state.learning.lessons['lesson-01-material-changes-properties'].transfer.status, 'passed');
   assert.equal(state.learning.lessons['lesson-01-material-changes-properties'].transfer.total, 2);
+});
+
+test('transfer returns null when no dedicated transfer content exists', async () => {
+  const controller = new AssessmentRuntimeController({ assessment: assessmentEngine, contentService: makeContentService(), state: makeState() });
+  assert.equal(await controller.startTransfer('lesson-01-material-changes-properties'), null);
 });
 
 test('course view renders lesson sections and preset diagnostic questions', () => {

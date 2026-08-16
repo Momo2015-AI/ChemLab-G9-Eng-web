@@ -908,3 +908,33 @@ User asked to review the lesson-01 learning flow UI from code architecture and l
 - `node scripts/runtime-audit.mjs`: **passed**。
 - Changed JavaScript `node --check`: **passed**。
 - `git diff --check`: **passed**。
+
+---
+
+## 2026-08-16 — 学习闭环加固与工程清理（Learning Loop Hardening）
+
+### Conversation / decision
+
+用户提供全项目审查报告（架构 + 学习流程），要求按报告的修复优先级清单在本地仓库 `E:\CHATGPT\ChemLab-ENG`（与远端 main 同步的正式路径）完成修复并输出总结文档。审查报告指出学习闭环 4 个硬伤（recheck 跨课污染、mastery 失败无法重试、主观题子串评分、实验观察劫持阶段）、transfer 复读 mastery、静默题库端点、localStorage 无容错、死代码双管道、application.js 压缩风格、quiz 乱码、内容计数/图谱缺口、整仓部署等 12 类问题。注意：远端在审查后已合入 `68dc16b`/`876cabc`（扁平状态收敛、draft 门禁、mastery criteria），本次先 fast-forward 到 `876cabc` 并逐项复核哪些问题仍然存在，再动手。
+
+### Actions
+
+1. **学习闭环**：recheck 改为本课池（lesson+practice+diagnostic+mastery）且错题优先；结果页新增重试按钮调用 `assessment.reset()`；评估门户 Mastery 任务在未通过时保持可见；主观题评分支持同义词组关键词 + 全半角/空白归一化，三课 M21 关键词改为同义词组；实验空白观察不再计负证据、无效观察不再中途锁 REMEDIATION（补救判定推迟到实验完成），观察验证要求 ≥2 字符。
+2. **transfer 接线**：新增 lesson-01/02 `-transfer.json`（各 4 题，迁移自死内容层），`loadTransfer/getTransfer/startTransfer` 链路，≥80% 记 passed；lesson-03 无迁移内容时给出明确提示。
+3. **题库端点**：删除 question-bank/topics 死端点与 `loadOptionalJSON` 静默兜底；新增契约测试防止端点回归。
+4. **localStorage**：save 全 try/catch、损坏备份至 `chemlab_v16_corrupt`、历史上限 100、迁移器支持 map 形态 mastery、STORAGE_KEY 单一来源。
+5. **死代码**（引用图谱验证后删除）：旧 AssessmentController 门面、engine/content-loader 壳、learning-diagnosis、dashboard/、dashboard-view 注册、孤儿 lesson-02 .js、content/assessment 整层 11 文件（含与运行时同 ID 不同题的冲突源）、8 个死/坏脚本、冗余 content-integrity.yml。
+6. **重构**：application.js 重写为每路由独立函数；quiz-view 修复 fromCharCode 乱码；normalizeQuestion 剥离选项 "A. " 前缀；知识点提取统一为 `knowledgeIdsOf`（替换 5 处变体）。
+7. **内容**：三课 mastery 计数 21/20；KG 升 v2.1.0：新增 safety-awareness 节点、L03 全部题目与 transfer 题 +85 条 question 关联。
+8. **CI/部署**：新增 `scripts/build-pages.mjs` 组装 runtime-only `dist/`（114 文件/858KB），部署上传 dist（不再发布 docs/reports/tests）；审计脚本纳入 transfer 资源；.gitignore 补齐；index.html 加 noscript。
+
+### Verification
+
+- `npm test`：133/133 全绿（基线 117；+16 个新契约测试）。
+- runtime-audit / content integrity / lesson readiness 全部通过，报告已再生。
+- build-pages 本地验证通过。
+- 详见 `docs/DEV-REC-2026-08-16-LEARNING-LOOP-HARDENING.md`。
+
+### Next
+
+lesson-03 迁移题建设；Source Registry 登记与 provenance 回填；题目洗牌；知识详情页覆盖；misconception 词表统一；逐课扩展（3/36）。

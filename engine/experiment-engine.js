@@ -38,8 +38,9 @@ export class ExperimentEngine {
     const expected = String(current.observation || current.expectedObservation || current.record || '').trim().toLowerCase();
     const actual = String(expectedObservation || '').trim().toLowerCase();
     if (!expected || !actual) return { valid: false, message: '请记录你观察到的实验现象', expected: current.observation };
+    if (actual.length < 2) return { valid: false, message: '观察记录过短，请完整描述你看到的现象', expected: current.observation };
     const sample = expected.slice(0, Math.min(10, expected.length));
-    const match = actual.includes(sample) || expected.includes(actual.slice(0, Math.min(10, actual.length)));
+    const match = (sample.length >= 2 && actual.includes(sample)) || expected.includes(actual);
     return { valid: match, message: match ? '观察记录与预期现象一致' : '请仔细观察并重新记录实验现象', expected: current.observation };
   }
 

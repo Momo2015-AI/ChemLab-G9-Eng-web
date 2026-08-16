@@ -3,7 +3,7 @@
  * Canonical lesson IDs are the only production lesson source.
  */
 import { day01DiagnosticQuestions } from '../content/questions/day01-diagnostics.js';
-import { day01ProductionOverrides, day01ProductionOverrideIds } from '../content/questions/day01-production-overrides.js';
+import { day01ProductionOverrides } from '../content/questions/day01-production-overrides.js';
 import lessonManifest from '../content/curriculum/lesson-manifest.js';
 
 const APP_ROOT = new URL('../', import.meta.url);
@@ -13,21 +13,25 @@ const guidedLearningUrl = id => assetUrl(`content/lessons/${id}-guided-learning.
 const masteryUrl = id => assetUrl(`content/lessons/${id}-mastery.json`);
 const practiceUrl = id => assetUrl(`content/lessons/${id}-practice.json`);
 const diagnosticUrl = id => assetUrl(`content/lessons/${id}-diagnostic.json`);
-const ENDPOINTS = { questionBank: assetUrl('content/questions/question-bank.json'), knowledgeGraph: assetUrl('content/knowledge/knowledge-graph.json'), legacyKnowledgeGraph: assetUrl('modules/questions/taxonomy/knowledge-graph.json'), topicBank: assetUrl('modules/questions/bank/questions-by-topic.json') };
+const transferUrl = id => assetUrl(`content/lessons/${id}-transfer.json`);
+const ENDPOINTS = { knowledgeGraph: assetUrl('content/knowledge/knowledge-graph.json'), legacyKnowledgeGraph: assetUrl('modules/questions/taxonomy/knowledge-graph.json') };
 const DEFAULT_TIMEOUT_MS = 12000;
-const normalizeQuestion = question => { if (!question || typeof question !== 'object') return question; if (question.answer !== undefined || question.ans === undefined) return question; return { ...question, answer: question.ans }; };
 const isRuntimeQuestion = question => Boolean(question && typeof question === 'object' && question.id) && String(question.status || '').toLowerCase() !== 'draft';
 class ContentLoader {
   constructor({ timeoutMs = DEFAULT_TIMEOUT_MS } = {}) { this.cache = new Map(); this.timeoutMs = timeoutMs; }
   async fetchJSON(url) { if (this.cache.has(url)) return this.cache.get(url); const promise = (async () => { const controller = typeof AbortController !== 'undefined' ? new AbortController() : null; const timer = controller ? setTimeout(() => controller.abort(), this.timeoutMs) : null; try { const res = await fetch(url, controller ? { signal: controller.signal } : undefined); if (!res.ok) throw new Error(`Failed to load ${url} (${res.status})`); return await res.json(); } catch (error) { if (error?.name === 'AbortError') throw new Error(`Timed out loading ${url} after ${this.timeoutMs}ms`); throw error; } finally { if (timer) clearTimeout(timer); } })(); this.cache.set(url, promise); try { return await promise; } catch (error) { this.cache.delete(url); throw error; } }
   async loadKnowledgeGraph() { try { return await this.fetchJSON(ENDPOINTS.knowledgeGraph); } catch (error) { return this.fetchJSON(ENDPOINTS.legacyKnowledgeGraph).catch(() => { throw error; }); } }
-  async loadOptionalJSON(url, fallback) { try { return await this.fetchJSON(url); } catch { return fallback; } }
-  async loadAll() { const [qb, kg, topics] = await Promise.all([this.loadOptionalJSON(ENDPOINTS.questionBank, { questions: [] }), this.loadKnowledgeGraph(), this.loadOptionalJSON(ENDPOINTS.topicBank, { topics: [] })]); const productionQuestions = Array.isArray(qb.questions) ? qb.questions.map(normalizeQuestion).filter(isRuntimeQuestion) : []; const sanitizedProductionQuestions = productionQuestions.filter(q => !day01ProductionOverrideIds.has(q.id)); const questions = [...sanitizedProductionQuestions, ...day01ProductionOverrides, ...day01DiagnosticQuestions.filter(q => q.status !== 'archived')]; const days = Array.isArray(lessonManifest.lessons) ? lessonManifest.lessons : []; return { questions, questionById: new Map(questions.map(q => [q.id, q])), knowledgeGraph: kg, manifest: lessonManifest, topics: topics.topics, days, dayById: new Map(days.map(d => [d.day, d])) }; }
+  // The runtime question pool is explicitly composed of the reviewed day01
+  // replacement modules plus questions registered per lesson at runtime.
+  // The implicit global question-bank file endpoint was removed: a missing
+  // bank file used to be swallowed silently here, masking a content outage.
+  async loadAll() { const kg = await this.loadKnowledgeGraph(); const questions = [...day01ProductionOverrides, ...day01DiagnosticQuestions.filter(q => q.status !== 'archived')]; const days = Array.isArray(lessonManifest.lessons) ? lessonManifest.lessons : []; return { questions, questionById: new Map(questions.map(q => [q.id, q])), knowledgeGraph: kg, manifest: lessonManifest, days, dayById: new Map(days.map(d => [d.day, d])) }; }
   async loadLesson(id) { if (!String(id).startsWith('lesson-')) { const manifestEntry = (await this.loadAll()).days.find(day => day.day === String(id) || day.canonicalId === String(id)); id = manifestEntry?.canonicalId || id; } if (!String(id).startsWith('lesson-')) return null; return this.fetchJSON(canonicalLessonUrl(id)); }
   async loadGuidedLearning(id) { if (!String(id).startsWith('lesson-')) return null; try { return await this.fetchJSON(guidedLearningUrl(id)); } catch { if (id === 'lesson-01-material-changes-properties') return this.fetchJSON(assetUrl('content/lessons/lesson-01-guided-learning.json')).catch(() => null); return null; } }
   async loadMastery(id) { if (!String(id).startsWith('lesson-')) return null; const data = await this.fetchJSON(masteryUrl(id)).catch(() => null); const mastery = data?.mastery || data || null; if (mastery && Array.isArray(mastery.questions)) mastery.questions = mastery.questions.filter(isRuntimeQuestion); return mastery; }
   async loadPractice(id) { if (!String(id).startsWith('lesson-')) return null; const data = await this.fetchJSON(practiceUrl(id)).catch(() => null); if (!data) return null; const questions = Array.isArray(data.questions) ? data.questions : data; return Array.isArray(questions) ? questions.filter(isRuntimeQuestion) : questions; }
   async loadDiagnostic(id) { if (!String(id).startsWith('lesson-')) return null; const data = await this.fetchJSON(diagnosticUrl(id)).catch(() => null); if (!data) return null; const questions = Array.isArray(data.diagnostics) ? data.diagnostics : data; return Array.isArray(questions) ? questions.filter(isRuntimeQuestion) : questions; }
+  async loadTransfer(id) { if (!String(id).startsWith('lesson-')) return null; const data = await this.fetchJSON(transferUrl(id)).catch(() => null); if (!data) return null; const questions = Array.isArray(data.questions) ? data.questions : Array.isArray(data) ? data : null; return questions ? questions.filter(isRuntimeQuestion) : null; }
   async loadExperiment(id) {
     const direct = await this.fetchJSON(assetUrl(`content/experiments/${id}.json`)).catch(() => null);
     if (direct) return direct;

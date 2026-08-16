@@ -1,0 +1,67 @@
+{
+  "lessonId": "lesson-02-chemistry-as-experimental-science",
+  "version": "1.0.0",
+  "source": "migrated from content/assessment/lesson-02-transfer-v1.js into the canonical per-lesson runtime pipeline",
+  "questions": [
+    {
+      "id": "L02-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledgePoint": "control-variables",
+      "question": "某方案同时改变温度和搅拌速度，最后只比较反应快慢。指出方案中最关键的问题，并说明怎样使比较更公平。",
+      "rubric": {
+        "modelAnswer": "方案同时改变了多个变量，无法判断是哪个变量影响结果；应只改变要研究的主要变量，其余条件保持一致。",
+        "keywords": [["变量"], ["控制", "保持一致", "只改变"]],
+        "explanation": "公平比较的前提是单一变量原则：只改一个条件，其余保持相同。"
+      },
+      "explanation": "公平比较的前提是单一变量原则：只改一个条件，其余保持相同。",
+      "knowledgeIds": ["control-variables"]
+    },
+    {
+      "id": "L02-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledgePoint": "observation-inference",
+      "question": "实验记录显示液体出现气泡。同学据此写“生成了新物质”。判断是否充分，并说明还需要怎样的证据。",
+      "rubric": {
+        "modelAnswer": "不充分。气泡只是观察到的现象；需要结合其他证据判断是否生成新物质，不能把单一现象直接当结论。",
+        "keywords": [["气泡", "现象"], ["证据"], ["新物质"]],
+        "explanation": "现象与结论之间需要证据链；单一现象支持多种可能解释。"
+      },
+      "explanation": "现象与结论之间需要证据链；单一现象支持多种可能解释。",
+      "knowledgeIds": ["observation-inference", "evidence-reasoning"]
+    },
+    {
+      "id": "L02-T03",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledgePoint": "data-integrity",
+      "question": "一次实验结果与预测不一致。应该修改记录使它符合预测吗？请说明理由和下一步做法。",
+      "rubric": {
+        "modelAnswer": "不应该修改真实记录；应检查条件、操作、测量和假设，并提出复核或重复验证方案。",
+        "keywords": [["不应", "不能", "不可以"], ["修改", "改", "篡改"], ["重复", "复核", "检查", "验证"]],
+        "explanation": "数据诚信是实验科学的基础；异常结果本身就是重要信息。"
+      },
+      "explanation": "数据诚信是实验科学的基础；异常结果本身就是重要信息。",
+      "knowledgeIds": ["data-integrity", "scientific-inquiry"]
+    },
+    {
+      "id": "L02-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledgePoint": "data-integrity",
+      "question": "两组实验记录只有最终结论，没有观察数据。你能否可靠评价结论？还缺少什么？",
+      "rubric": {
+        "modelAnswer": "不能充分评价；需要原始观察数据、比较条件及必要的记录，才能判断证据是否支持结论。",
+        "keywords": [["不能", "无法"], ["数据", "记录"], ["原始", "条件", "过程"]],
+        "explanation": "没有可核查的原始记录，结论无法被评价，也就不满足可重复性的要求。"
+      },
+      "explanation": "没有可核查的原始记录，结论无法被评价，也就不满足可重复性的要求。",
+      "knowledgeIds": ["data-integrity", "evidence-reasoning"]
+    }
+  ]
+}

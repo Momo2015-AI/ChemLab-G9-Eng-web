@@ -10,7 +10,6 @@ import { renderHome } from '../views/home-view.js';
 import { renderV19Course } from '../views/v19-course-view.js';
 import { renderQuiz, renderQuizResult } from '../views/quiz-view.js';
 import { renderV19Experiment, renderV19ExperimentResult } from '../views/v19-experiment-view.js';
-import { renderDashboard } from '../views/dashboard-view.js';
 import { renderGraph } from '../views/graph-view.js';
 import { renderRemediation } from '../views/remediation-view.js';
 import { renderAITutorPage } from '../frontend/pages/ai-tutor/ai-tutor-page.js';
@@ -21,44 +20,380 @@ import { renderAssessmentPortal } from '../frontend/pages/assessment/assessment-
 import { renderProgressPortal } from '../frontend/pages/progress/progress-portal-page.js';
 import { createRemediationCatalog } from '../core/diagnosis/remediation-catalog.js';
 import { getLessonReleaseState } from '../content/release-policy.js';
-const getDefaultRoot=()=>typeof document==='undefined'?null:document.querySelector('#app-root');
-const CANONICAL_GOLDEN_LESSON='lesson-01-material-changes-properties';
-export function createApplication({state,assessment,experimentEngine,masteryService=new MasteryService(),root=getDefaultRoot()}={}){
- const learning=new LearningController({contentService,state,remediationCatalog:{}});
- const controllers={learning,assessment:new AssessmentRuntimeController({assessment,contentService,state,masteryService,learningController:learning}),experiment:new ExperimentController({experimentEngine,state,masteryService,learningController:learning})};
- const views={renderHome,renderCourse:renderV19Course,renderQuiz,renderQuizResult,renderExperiment:renderV19Experiment,renderExperimentResult:renderV19ExperimentResult,renderDashboard,renderGraph,renderRemediation,renderAITutorPage};
- let hydrationPromise=null,stopped=false;
- const router=createRouter({onRoute:route=>{state.route=route;},render:route=>renderRoute(route)});
- const currentTerm=()=>typeof window!=='undefined'&&window.chemLabTextbookTerm==='lower'?'lower':'upper';
- function renderHomeLoading(){if(!root)return;views.renderHome({root,data:{title:'九年级化学智能学习中心',subtitle:'正在准备学习内容…',lessons:[],stats:{completed:0,mastery:0,questions:0}},onCourse:()=>router.navigate('course'),onDashboard:()=>router.navigate('progress'),onGraph:()=>router.navigate('knowledge-map')});}
- async function hydrateContent(){if(hydrationPromise)return hydrationPromise;hydrationPromise=contentService.load().then(data=>{learning.remediationCatalog=createRemediationCatalog(data);state.contentReady=true;state.contentLoadError=null;if(!stopped)renderRoute(router.current());return data;}).catch(error=>{state.contentLoadError=error;state.contentReady=false;if(root&&!stopped&&router.current().page==='home')views.renderHome({root,data:{title:'九年级化学智能学习中心',subtitle:'课程内容暂时无法加载，请刷新后重试。',lessons:[],stats:{completed:0,mastery:0,questions:0}},onCourse:()=>router.navigate('course'),onDashboard:()=>router.navigate('progress'),onGraph:()=>router.navigate('knowledge-map')});throw error;});return hydrationPromise;}
- async function getHomeData(){if(!contentService.data)return null;const progress=createProgressProjection({...state.progress,mastery:masteryService.getState()});const lessons=(await contentService.getLessons({semester:currentTerm()})).filter(day=>Boolean(day.canonicalId)).sort((a,b)=>Number(a.day||0)-Number(b.day||0)).map(day=>{const lessonId=day.canonicalId;const release=getLessonReleaseState(day);const stateView=controllers.learning.getLessonCardState({...day,id:lessonId});return({...day,id:lessonId,completed:Boolean(progress.completed?.[lessonId]),phase:stateView.phase,cardLabel:stateView.available?`${stateView.label} · ${release.label}`:release.label,available:stateView.available,releaseStatus:release.key});});const weakPoints=lessons.flatMap(lesson=>controllers.learning.getLessonState(lesson.id).diagnosis?.weakPoints||[]);return{title:'九年级化学智能学习中心',subtitle:'学习 → 实验 → 答题 → 诊断 → 补救 → 再检测 → Mastery',lessons,term:currentTerm(),hasRemediation:weakPoints.length>0,stats:{completed:lessons.filter(day=>day.completed).length,mastery:Math.round((progress.masteryScore||0)*100),questions:progress.questions||0,weak:new Set(weakPoints).size}};}
- async function renderRoute(route){if(!root)return;const needsContent=['home','course','progress','assessment','quiz','knowledge-map','graph'].includes(route.page);if(needsContent&&!state.contentReady){if(route.page==='home')renderHomeLoading();return;}const data=['home','course','progress','assessment'].includes(route.page)?await getHomeData():null;
-  if(route.page==='home')return views.renderHome({root,data,onCourse:id=>router.navigate('course',id||firstIncompleteLesson(data)),onDashboard:()=>router.navigate('progress'),onGraph:()=>router.navigate('knowledge-map'),onRemediation:()=>router.navigate('assessment')});
-  if(route.page==='course'&&!route.params.length)return renderCoursePortal({root,lessons:data?.lessons,term:currentTerm(),onLesson:id=>router.navigate('course',id),onHome:()=>router.navigate('home')});
-  if(route.page==='course'){const lessonId=route.params[0]||firstIncompleteLesson(data)||CANONICAL_GOLDEN_LESSON;const lesson=await controllers.learning.getLesson(lessonId);if(!lesson)return views.renderCourse({root,lesson:{id:lessonId,title:'课程未找到',description:'请返回学习中心选择课程。'}});const guidedLearning=await contentService.getGuidedLearning(lesson.id||lessonId);const lessonState=controllers.learning.getLessonState(lessonId);const phase=controllers.learning.getLessonPhase(lessonId);const stages=controllers.learning.getStageAvailability(lesson,guidedLearning);const masteryState=controllers.learning.getLessonMastery(lessonId);return views.renderCourse({root,lesson,guidedLearning,lessonState,phase,stages,progress:controllers.learning.getProgress(lessonId),masteryPassed:masteryState?.status==='passed',diagnosis:lessonState.diagnosis||{},diagnosticQuestions:Array.isArray(lesson.diagnosticQuestions)?lesson.diagnosticQuestions:[],highlightStep:route.params[1]||'',onGuidedCheck:(id,stepId,result)=>{controllers.learning.recordGuidedCheck(id,stepId,result);void renderRoute(route);},onStartQuiz:()=>router.navigate('quiz',lessonId),onStartMastery:()=>router.navigate('quiz',`mastery:${lessonId}`),onStartExperiment:id=>router.navigate('experiment',id),onStartRemediation:()=>router.navigate('remediation',lessonId),onStartTransfer:()=>router.navigate('quiz',`transfer:${lessonId}`),onComplete:()=>{if(controllers.learning.markComplete(lessonId,lesson))void renderRoute(route);},onBack:()=>router.navigate('course')});}
-  if(route.page==='lab'&&!route.params.length){const experiments=await contentService.getExperimentCatalog({semester:currentTerm()});return renderLabPortal({root,experiments,onHome:()=>router.navigate('home'),onExperiment:experiment=>{if(experiment?.id)router.navigate('experiment',experiment.id);}});}
-  if(route.page==='knowledge-map'){const graph=await contentService.getKnowledgeGraphViewModel().catch(()=>({nodes:[],relations:[]}));const homeData=await getHomeData();return renderKnowledgePortal({root,onHome:()=>router.navigate('home'),onLearn:lessonId=>router.navigate('course',lessonId),nodes:graph?.nodes||[],relations:graph?.relations||[],lessons:Array.isArray(homeData?.lessons)?homeData.lessons:[]});}
-  if(route.page==='assessment'){const progress=createProgressProjection({...state.progress,mastery:masteryService.getState()});const tasks=[];const weakPoints=[];for(const lesson of data.lessons||[]){const lessonId=lesson.canonicalId;const lessonState=controllers.learning.getLessonState(lessonId);weakPoints.push(...(lessonState.diagnosis?.weakPoints||[]));const fullLesson=await controllers.learning.getLesson(lessonId);const stages=controllers.learning.getStageAvailability({...lesson,...fullLesson,id:lessonId},await contentService.getGuidedLearning(lessonId));if(stages.practice&&!lessonState.practice&&Array.isArray(fullLesson?.questions)&&fullLesson.questions.length)tasks.push({id:`practice:${lessonId}`,title:`${lesson.title} · 基础练习`,description:'完成本课基础练习并生成诊断证据。',label:'开始练习'});if(lessonState.remediation?.status==='needs-remediation')tasks.push({id:`remediation:${lessonId}`,title:`${lesson.title} · 针对性补救`,description:'复习薄弱点并完成定向再检测。',label:'继续补救'});if(stages.mastery&&!lessonState.mastery&&fullLesson?.mastery?.resourceRef)tasks.push({id:`mastery:${lessonId}`,title:`${lesson.title} · Mastery`,description:'通过陌生情境题检验是否达到掌握标准。',label:'开始掌握测试'});}return renderAssessmentPortal({root,onHome:()=>router.navigate('home'),score:Math.round((progress.masteryScore||0)*100),weakPoints:weakPoints.filter((id,index)=>weakPoints.indexOf(id)===index),tasks,onTask:task=>{if(!task)return;if(task.id.startsWith('practice:'))router.navigate('quiz',task.id.slice(9));else if(task.id.startsWith('mastery:'))router.navigate('quiz',task.id);else if(task.id.startsWith('remediation:'))router.navigate('remediation',task.id.slice(12));}});}
-  if(route.page==='progress'||route.page==='dashboard'){const progress=createProgressProjection({...state.progress,mastery:masteryService.getState()}),graph=await contentService.getKnowledgeGraphViewModel().catch(()=>({nodes:[]}));const weakPoints=(data.lessons||[]).flatMap(lesson=>controllers.learning.getLessonState(lesson.canonicalId).diagnosis?.weakPoints||[]).filter((id,index,arr)=>arr.indexOf(id)===index);return renderProgressPortal({root,onHome:()=>router.navigate('home'),onQuiz:id=>router.navigate('quiz',id),summary:{completed:Object.values(progress.completed||{}).filter(Boolean).length,mastery:Math.round((progress.masteryScore||0)*100),questions:progress.questions||0},masteryState:masteryService.getState(),knowledgeNodes:graph?.nodes||[],weakPoints});}
-  if(route.page==='graph')return views.renderGraph({root,graph:await contentService.getKnowledgeGraphViewModel(),onBack:()=>router.navigate('home')});
-  if(route.page==='quiz'){const raw=route.params[0]||firstIncompleteLesson(await getHomeData());const text=String(raw||'');let mode='practice';let lessonId=text;if(text.startsWith('mastery:')){mode='mastery';lessonId=text.slice(8);}if(text.startsWith('recheck:')){mode='recheck';lessonId=text.slice(8);}if(text.startsWith('transfer:')){mode='transfer';lessonId=text.slice(9);}const lesson=await controllers.learning.getLesson(lessonId);const release=getLessonReleaseState(lesson||{});const lessonState=controllers.learning.getLessonState(lessonId);
-  const gateModes=['practice','mastery','transfer','recheck'];
-  const releaseBlocked=gateModes.includes(mode)&&!release.available;
-  if(releaseBlocked){return views.renderQuizResult({root,score:0,correct:0,total:0,mode,status:'unavailable',lessonId,notice:'该课程内容尚未发布，暂不能开始答题。',onContinue:()=>router.navigate('course',lessonId)});}
-  const reviewBlocked=gateModes.includes(mode)&&release.key==='review';
-  if(reviewBlocked){return views.renderQuizResult({root,score:0,correct:0,total:0,mode,status:'review',lessonId,notice:'该课程正在审核中，可浏览内容但暂不能开始答题。',onContinue:()=>router.navigate('course',lessonId)});}
-  if((mode==='practice'||mode==='mastery')&&lesson){const guidedLearning=await contentService.getGuidedLearning(lessonId);const stages=controllers.learning.getStageAvailability({...lesson,id:lessonId},guidedLearning);if(mode==='practice'&&!stages.practice)return router.navigate('course',lessonId);if(mode==='mastery'&&!stages.mastery)return router.navigate('course',lessonId);}
-  if(mode==='practice'&&!controllers.assessment.hasSession(lessonId,'practice')){const started=await controllers.assessment.startPractice(lessonId);if(!started)return views.renderQuizResult({root,score:0,correct:0,total:0,mode,status:'empty',lessonId,notice:'本课暂无可用练习题目，请联系内容维护后再试。',onContinue:()=>router.navigate('course',lessonId)});}
-  if(mode==='mastery'&&!controllers.assessment.hasSession(lessonId,'mastery')){const started=await controllers.assessment.startMastery(lessonId);if(!started)return views.renderQuizResult({root,score:0,correct:0,total:0,mode,status:'empty',lessonId,notice:'本课暂无可用掌握测试题，请联系内容维护后再试。',onContinue:()=>router.navigate('course',lessonId)});}
-  if(mode==='recheck'&&!controllers.assessment.hasSession(lessonId,'recheck')){const started=await controllers.assessment.startRecheck(lessonId,lessonState.recheck?.knowledgeIds||lessonState.diagnosis?.weakPoints||[]);if(!started)return views.renderQuizResult({root,score:0,correct:0,total:0,mode,status:'empty',lessonId,notice:'暂无待复查的题目，请先完成练习或补救。',onContinue:()=>router.navigate('course',lessonId)});}
-  if(mode==='transfer'&&!controllers.assessment.hasSession(lessonId,'transfer')){const started=await controllers.assessment.startTransfer(lessonId);if(!started)return views.renderQuizResult({root,score:0,correct:0,total:0,mode,status:'empty',lessonId,notice:'暂无可用迁移挑战题，请联系内容维护后再试。',onContinue:()=>router.navigate('course',lessonId)});}
-  const session=controllers.assessment.session;if(!session||session.lessonId!==lessonId||session.mode!==mode)return router.navigate('course',lessonId);if(session.completed){const score=controllers.assessment.getScore();const result=mode==='mastery'?lessonState.mastery:mode==='recheck'?lessonState.recheck:mode==='transfer'?lessonState.transfer:lessonState.practice;return views.renderQuizResult({root,score,correct:session.answers.filter(a=>a.correct).length,total:session.answers.length,hasRemediation:mode==='mastery'?result?.status!=='passed':lessonState.remediation?.status==='needs-remediation',onRemediation:()=>router.navigate('remediation',lessonId),onContinue:()=>router.navigate('course',lessonId),status:result?.status,mode,lessonId,answers:session.answers,questions:session.questions,criteria:result?.criteria||{}});}return views.renderQuiz({root,question:session.questions[session.index],index:session.index,total:session.questions.length,mode,onAnswer:value=>{if(controllers.assessment.answer(value))renderRoute(route);}});}
-  if(route.page==='experiment'&&!route.params.length)return renderLabPortal({root,onHome:()=>router.navigate('home')});
-  if(route.page==='experiment'){const experiment=await contentService.getExperiment(route.params[0]);if(experiment)controllers.experiment.register(experiment);if(!controllers.experiment.session&&!controllers.experiment.start(route.params[0]))return router.navigate('course',experiment?.lessonId||CANONICAL_GOLDEN_LESSON);const session=controllers.experiment.session;return views.renderExperiment({root,experiment:session.experiment||{},session,onNext:()=>{controllers.experiment.next();renderRoute(route);},onObserve:text=>controllers.experiment.observe(text),onComplete:()=>views.renderExperimentResult({root,result:controllers.experiment.complete()||{},onContinue:()=>router.navigate('course',session.experiment?.lessonId||CANONICAL_GOLDEN_LESSON)})});}
-  if(route.page==='remediation'){const homeData=await getHomeData();const remediationLesson=(homeData?.lessons||[]).find(lesson=>controllers.learning.getLessonState(lesson.id).remediation?.status==='needs-remediation');const lessonId=route.params[0]||remediationLesson?.id||firstIncompleteLesson(homeData);const lessonState=controllers.learning.getLessonState(lessonId);const plan=lessonState.remediation||null;const lesson=await controllers.learning.getLesson(lessonId);const guidedLearning=await contentService.getGuidedLearning(lesson?.id||lessonId);return views.renderRemediation({root,plan,lessonId,guidedLearning,onRecheck:async selectedPlan=>{const ids=(selectedPlan?.steps||[]).find(step=>step.type==='recheck')?.knowledgeIds||lessonState.diagnosis?.weakPoints||[];if(await controllers.assessment.startRecheck(lessonId,ids))router.navigate('quiz',`recheck:${lessonId}`);},onTransfer:async ()=>{if(await controllers.assessment.startTransfer(lessonId))router.navigate('quiz',`transfer:${lessonId}`);else router.navigate('course',lessonId);},onReview:stepId=>{router.navigate('course',lessonId,stepId);}});}
-  if(route.page==='ai-tutor')return views.renderAITutorPage({root});if(route.page==='experiment-result'||route.page==='result')return router.navigate('progress');
- }
- return{state,router,contentService,masteryService,controllers,views,hydrateContent,start(){stopped=false;if(typeof window!=='undefined')window.addEventListener('chemlab:term-change',()=>{if(['home','course','lab','assessment','knowledge-map','progress'].includes(router.current().page))void renderRoute(router.current());});router.start();void hydrateContent().catch(()=>undefined);},stop(){stopped=true;router.stop();}};
+
+const getDefaultRoot = () => (typeof document === 'undefined' ? null : document.querySelector('#app-root'));
+const CANONICAL_GOLDEN_LESSON = 'lesson-01-material-changes-properties';
+const CONTENT_ROUTES = new Set(['home', 'course', 'progress', 'assessment', 'quiz', 'knowledge-map', 'graph']);
+const HOME_DATA_ROUTES = new Set(['home', 'course', 'progress', 'assessment']);
+const QUIZ_MODES = { 'mastery:': 'mastery', 'recheck:': 'recheck', 'transfer:': 'transfer' };
+
+export function createApplication({ state, assessment, experimentEngine, masteryService = new MasteryService(), root = getDefaultRoot() } = {}) {
+  const learning = new LearningController({ contentService, state, remediationCatalog: {} });
+  const controllers = {
+    learning,
+    assessment: new AssessmentRuntimeController({ assessment, contentService, state, masteryService, learningController: learning }),
+    experiment: new ExperimentController({ experimentEngine, state, masteryService, learningController: learning }),
+  };
+  const views = {
+    renderHome, renderCourse: renderV19Course, renderQuiz, renderQuizResult,
+    renderExperiment: renderV19Experiment, renderExperimentResult: renderV19ExperimentResult,
+    renderGraph, renderRemediation, renderAITutorPage,
+  };
+  let hydrationPromise = null;
+  let stopped = false;
+  const router = createRouter({ onRoute: route => { state.route = route; }, render: route => renderRoute(route) });
+  const currentTerm = () => (typeof window !== 'undefined' && window.chemLabTextbookTerm === 'lower' ? 'lower' : 'upper');
+
+  function renderHomeMessage(subtitle) {
+    if (!root) return;
+    views.renderHome({
+      root,
+      data: { title: '九年级化学智能学习中心', subtitle, lessons: [], stats: { completed: 0, mastery: 0, questions: 0 } },
+      onCourse: () => router.navigate('course'),
+      onDashboard: () => router.navigate('progress'),
+      onGraph: () => router.navigate('knowledge-map'),
+    });
+  }
+
+  async function hydrateContent() {
+    if (hydrationPromise) return hydrationPromise;
+    hydrationPromise = contentService.load()
+      .then(data => {
+        learning.remediationCatalog = createRemediationCatalog(data);
+        state.contentReady = true;
+        state.contentLoadError = null;
+        if (!stopped) renderRoute(router.current());
+        return data;
+      })
+      .catch(error => {
+        state.contentLoadError = error;
+        state.contentReady = false;
+        if (root && !stopped && router.current().page === 'home') renderHomeMessage('课程内容暂时无法加载，请刷新后重试。');
+        throw error;
+      });
+    return hydrationPromise;
+  }
+
+  async function getHomeData() {
+    if (!contentService.data) return null;
+    const progress = createProgressProjection({ ...state.progress, mastery: masteryService.getState() });
+    const lessons = (await contentService.getLessons({ semester: currentTerm() }))
+      .filter(day => Boolean(day.canonicalId))
+      .sort((a, b) => Number(a.day || 0) - Number(b.day || 0))
+      .map(day => {
+        const lessonId = day.canonicalId;
+        const release = getLessonReleaseState(day);
+        const stateView = controllers.learning.getLessonCardState({ ...day, id: lessonId });
+        return {
+          ...day,
+          id: lessonId,
+          completed: Boolean(progress.completed?.[lessonId]),
+          phase: stateView.phase,
+          cardLabel: stateView.available ? `${stateView.label} · ${release.label}` : release.label,
+          available: stateView.available,
+          releaseStatus: release.key,
+        };
+      });
+    const weakPoints = lessons.flatMap(lesson => controllers.learning.getLessonState(lesson.id).diagnosis?.weakPoints || []);
+    return {
+      title: '九年级化学智能学习中心',
+      subtitle: '学习 → 实验 → 答题 → 诊断 → 补救 → 再检测 → Mastery',
+      lessons,
+      term: currentTerm(),
+      hasRemediation: weakPoints.length > 0,
+      stats: {
+        completed: lessons.filter(day => day.completed).length,
+        mastery: Math.round((progress.masteryScore || 0) * 100),
+        questions: progress.questions || 0,
+        weak: new Set(weakPoints).size,
+      },
+    };
+  }
+
+  function firstIncompleteLesson(data) {
+    return data?.lessons?.find(lesson => !lesson.completed)?.id || data?.lessons?.[0]?.id || CANONICAL_GOLDEN_LESSON;
+  }
+
+  async function renderHomeRoute(data) {
+    views.renderHome({
+      root, data,
+      onCourse: id => router.navigate('course', id || firstIncompleteLesson(data)),
+      onDashboard: () => router.navigate('progress'),
+      onGraph: () => router.navigate('knowledge-map'),
+      onRemediation: () => router.navigate('assessment'),
+    });
+  }
+
+  async function renderCourseRoute(route, data) {
+    if (!route.params.length) {
+      return renderCoursePortal({ root, lessons: data?.lessons, term: currentTerm(), onLesson: id => router.navigate('course', id), onHome: () => router.navigate('home') });
+    }
+    const lessonId = route.params[0] || firstIncompleteLesson(data) || CANONICAL_GOLDEN_LESSON;
+    const lesson = await controllers.learning.getLesson(lessonId);
+    if (!lesson) {
+      return views.renderCourse({ root, lesson: { id: lessonId, title: '课程未找到', description: '请返回学习中心选择课程。' } });
+    }
+    const guidedLearning = await contentService.getGuidedLearning(lesson.id || lessonId);
+    const lessonState = controllers.learning.getLessonState(lessonId);
+    const phase = controllers.learning.getLessonPhase(lessonId);
+    const stages = controllers.learning.getStageAvailability(lesson, guidedLearning);
+    const masteryState = controllers.learning.getLessonMastery(lessonId);
+    return views.renderCourse({
+      root, lesson, guidedLearning, lessonState, phase, stages,
+      progress: controllers.learning.getProgress(lessonId),
+      masteryPassed: masteryState?.status === 'passed',
+      diagnosis: lessonState.diagnosis || {},
+      diagnosticQuestions: Array.isArray(lesson.diagnosticQuestions) ? lesson.diagnosticQuestions : [],
+      highlightStep: route.params[1] || '',
+      onGuidedCheck: (id, stepId, result) => { controllers.learning.recordGuidedCheck(id, stepId, result); void renderRoute(route); },
+      onStartQuiz: () => router.navigate('quiz', lessonId),
+      onStartMastery: () => router.navigate('quiz', `mastery:${lessonId}`),
+      onStartExperiment: id => router.navigate('experiment', id),
+      onStartRemediation: () => router.navigate('remediation', lessonId),
+      onStartTransfer: () => router.navigate('quiz', `transfer:${lessonId}`),
+      onComplete: () => { if (controllers.learning.markComplete(lessonId, lesson)) void renderRoute(route); },
+      onBack: () => router.navigate('course'),
+    });
+  }
+
+  async function renderLabRoute() {
+    const experiments = await contentService.getExperimentCatalog({ semester: currentTerm() });
+    return renderLabPortal({
+      root, experiments,
+      onHome: () => router.navigate('home'),
+      onExperiment: experiment => { if (experiment?.id) router.navigate('experiment', experiment.id); },
+    });
+  }
+
+  async function renderKnowledgeMapRoute() {
+    const graph = await contentService.getKnowledgeGraphViewModel().catch(() => ({ nodes: [], relations: [] }));
+    const homeData = await getHomeData();
+    return renderKnowledgePortal({
+      root,
+      onHome: () => router.navigate('home'),
+      onLearn: lessonId => router.navigate('course', lessonId),
+      nodes: graph?.nodes || [],
+      relations: graph?.relations || [],
+      lessons: Array.isArray(homeData?.lessons) ? homeData.lessons : [],
+    });
+  }
+
+  async function renderAssessmentRoute(data) {
+    const progress = createProgressProjection({ ...state.progress, mastery: masteryService.getState() });
+    const tasks = [];
+    const weakPoints = [];
+    for (const lesson of data.lessons || []) {
+      const lessonId = lesson.canonicalId;
+      const lessonState = controllers.learning.getLessonState(lessonId);
+      weakPoints.push(...(lessonState.diagnosis?.weakPoints || []));
+      const fullLesson = await controllers.learning.getLesson(lessonId);
+      const stages = controllers.learning.getStageAvailability({ ...lesson, ...fullLesson, id: lessonId }, await contentService.getGuidedLearning(lessonId));
+      if (stages.practice && !lessonState.practice && Array.isArray(fullLesson?.questions) && fullLesson.questions.length) {
+        tasks.push({ id: `practice:${lessonId}`, title: `${lesson.title} · 基础练习`, description: '完成本课基础练习并生成诊断证据。', label: '开始练习' });
+      }
+      if (lessonState.remediation?.status === 'needs-remediation') {
+        tasks.push({ id: `remediation:${lessonId}`, title: `${lesson.title} · 针对性补救`, description: '复习薄弱点并完成定向再检测。', label: '继续补救' });
+      }
+      // A failed mastery attempt must keep the task visible so students can
+      // retry without refreshing the page.
+      if (stages.mastery && lessonState.mastery?.status !== 'passed' && fullLesson?.mastery?.resourceRef) {
+        tasks.push({ id: `mastery:${lessonId}`, title: `${lesson.title} · Mastery`, description: '通过陌生情境题检验是否达到掌握标准。', label: lessonState.mastery ? '再次挑战掌握测试' : '开始掌握测试' });
+      }
+    }
+    return renderAssessmentPortal({
+      root,
+      onHome: () => router.navigate('home'),
+      score: Math.round((progress.masteryScore || 0) * 100),
+      weakPoints: weakPoints.filter((id, index) => weakPoints.indexOf(id) === index),
+      tasks,
+      onTask: task => {
+        if (!task) return;
+        if (task.id.startsWith('practice:')) router.navigate('quiz', task.id.slice(9));
+        else if (task.id.startsWith('mastery:')) router.navigate('quiz', task.id);
+        else if (task.id.startsWith('remediation:')) router.navigate('remediation', task.id.slice(12));
+      },
+    });
+  }
+
+  async function renderProgressRoute(data) {
+    const progress = createProgressProjection({ ...state.progress, mastery: masteryService.getState() });
+    const graph = await contentService.getKnowledgeGraphViewModel().catch(() => ({ nodes: [] }));
+    const weakPoints = (data.lessons || [])
+      .flatMap(lesson => controllers.learning.getLessonState(lesson.canonicalId).diagnosis?.weakPoints || [])
+      .filter((id, index, arr) => arr.indexOf(id) === index);
+    return renderProgressPortal({
+      root,
+      onHome: () => router.navigate('home'),
+      onQuiz: id => router.navigate('quiz', id),
+      summary: {
+        completed: Object.values(progress.completed || {}).filter(Boolean).length,
+        mastery: Math.round((progress.masteryScore || 0) * 100),
+        questions: progress.questions || 0,
+      },
+      masteryState: masteryService.getState(),
+      knowledgeNodes: graph?.nodes || [],
+      weakPoints,
+    });
+  }
+
+  function renderQuizBlocked(lessonId, mode, status, notice) {
+    return views.renderQuizResult({ root, score: 0, correct: 0, total: 0, mode, status, lessonId, notice, onContinue: () => router.navigate('course', lessonId) });
+  }
+
+  function parseQuizParam(raw) {
+    const text = String(raw || '');
+    for (const [prefix, mode] of Object.entries(QUIZ_MODES)) {
+      if (text.startsWith(prefix)) return { mode, lessonId: text.slice(prefix.length) };
+    }
+    return { mode: 'practice', lessonId: text };
+  }
+
+  async function renderQuizRoute(route) {
+    const raw = route.params[0] || firstIncompleteLesson(await getHomeData());
+    const { mode, lessonId } = parseQuizParam(raw);
+    const lesson = await controllers.learning.getLesson(lessonId);
+    const release = getLessonReleaseState(lesson || {});
+    const lessonState = controllers.learning.getLessonState(lessonId);
+    const gateModes = ['practice', 'mastery', 'transfer', 'recheck'];
+    if (gateModes.includes(mode) && !release.available) {
+      return renderQuizBlocked(lessonId, mode, 'unavailable', '该课程内容尚未发布，暂不能开始答题。');
+    }
+    if (gateModes.includes(mode) && release.key === 'review') {
+      return renderQuizBlocked(lessonId, mode, 'review', '该课程正在审核中，可浏览内容但暂不能开始答题。');
+    }
+    if ((mode === 'practice' || mode === 'mastery') && lesson) {
+      const guidedLearning = await contentService.getGuidedLearning(lessonId);
+      const stages = controllers.learning.getStageAvailability({ ...lesson, id: lessonId }, guidedLearning);
+      if (mode === 'practice' && !stages.practice) return router.navigate('course', lessonId);
+      if (mode === 'mastery' && !stages.mastery) return router.navigate('course', lessonId);
+    }
+    if (!controllers.assessment.hasSession(lessonId, mode)) {
+      const started = mode === 'practice' ? await controllers.assessment.startPractice(lessonId)
+        : mode === 'mastery' ? await controllers.assessment.startMastery(lessonId)
+        : mode === 'recheck' ? await controllers.assessment.startRecheck(lessonId, lessonState.recheck?.knowledgeIds || lessonState.diagnosis?.weakPoints || [])
+        : await controllers.assessment.startTransfer(lessonId);
+      if (!started) {
+        const notices = {
+          practice: '本课暂无可用练习题目，请联系内容维护后再试。',
+          mastery: '本课暂无可用掌握测试题，请联系内容维护后再试。',
+          recheck: '暂无待复查的题目，请先完成练习或补救。',
+          transfer: '本课暂无迁移挑战题，迁移内容建设完成后开放。',
+        };
+        return renderQuizBlocked(lessonId, mode, 'empty', notices[mode] || notices.practice);
+      }
+    }
+    const session = controllers.assessment.session;
+    if (!session || session.lessonId !== lessonId || session.mode !== mode) return router.navigate('course', lessonId);
+    if (session.completed) {
+      const score = controllers.assessment.getScore();
+      const result = mode === 'mastery' ? lessonState.mastery : mode === 'recheck' ? lessonState.recheck : mode === 'transfer' ? lessonState.transfer : lessonState.practice;
+      return views.renderQuizResult({
+        root,
+        score,
+        correct: session.answers.filter(a => a.correct).length,
+        total: session.answers.length,
+        hasRemediation: mode === 'mastery' ? result?.status !== 'passed' : lessonState.remediation?.status === 'needs-remediation',
+        onRemediation: () => router.navigate('remediation', lessonId),
+        onContinue: () => router.navigate('course', lessonId),
+        onRetry: () => { controllers.assessment.reset(); void renderRoute(route); },
+        status: result?.status,
+        mode, lessonId,
+        answers: session.answers,
+        questions: session.questions,
+        criteria: result?.criteria || {},
+      });
+    }
+    return views.renderQuiz({
+      root,
+      question: session.questions[session.index],
+      index: session.index,
+      total: session.questions.length,
+      mode,
+      onAnswer: value => { if (controllers.assessment.answer(value)) renderRoute(route); },
+    });
+  }
+
+  async function renderExperimentRoute(route) {
+    const experiment = await contentService.getExperiment(route.params[0]);
+    if (experiment) controllers.experiment.register(experiment);
+    if (!controllers.experiment.session && !controllers.experiment.start(route.params[0])) {
+      return router.navigate('course', experiment?.lessonId || CANONICAL_GOLDEN_LESSON);
+    }
+    const session = controllers.experiment.session;
+    return views.renderExperiment({
+      root,
+      experiment: session.experiment || {},
+      session,
+      onNext: () => { controllers.experiment.next(); renderRoute(route); },
+      onObserve: text => controllers.experiment.observe(text),
+      onComplete: () => views.renderExperimentResult({
+        root,
+        result: controllers.experiment.complete() || {},
+        onContinue: () => router.navigate('course', session.experiment?.lessonId || CANONICAL_GOLDEN_LESSON),
+      }),
+    });
+  }
+
+  async function renderRemediationRoute(route) {
+    const homeData = await getHomeData();
+    const remediationLesson = (homeData?.lessons || []).find(lesson => controllers.learning.getLessonState(lesson.id).remediation?.status === 'needs-remediation');
+    const lessonId = route.params[0] || remediationLesson?.id || firstIncompleteLesson(homeData);
+    const lessonState = controllers.learning.getLessonState(lessonId);
+    const plan = lessonState.remediation || null;
+    const lesson = await controllers.learning.getLesson(lessonId);
+    const guidedLearning = await contentService.getGuidedLearning(lesson?.id || lessonId);
+    return views.renderRemediation({
+      root, plan, lessonId, guidedLearning,
+      onRecheck: async selectedPlan => {
+        const ids = (selectedPlan?.steps || []).find(step => step.type === 'recheck')?.knowledgeIds || lessonState.diagnosis?.weakPoints || [];
+        if (await controllers.assessment.startRecheck(lessonId, ids)) router.navigate('quiz', `recheck:${lessonId}`);
+      },
+      onTransfer: async () => {
+        if (await controllers.assessment.startTransfer(lessonId)) router.navigate('quiz', `transfer:${lessonId}`);
+        else router.navigate('course', lessonId);
+      },
+      onReview: stepId => { router.navigate('course', lessonId, stepId); },
+    });
+  }
+
+  async function renderRoute(route) {
+    if (!root) return;
+    if (CONTENT_ROUTES.has(route.page) && !state.contentReady) {
+      if (route.page === 'home') renderHomeMessage('正在准备学习内容…');
+      return;
+    }
+    const data = HOME_DATA_ROUTES.has(route.page) ? await getHomeData() : null;
+    switch (route.page) {
+      case 'home': return renderHomeRoute(data);
+      case 'course': return renderCourseRoute(route, data);
+      case 'lab': return renderLabRoute();
+      case 'knowledge-map': return renderKnowledgeMapRoute();
+      case 'assessment': return renderAssessmentRoute(data);
+      case 'progress':
+      case 'dashboard': return renderProgressRoute(data);
+      case 'graph': return views.renderGraph({ root, graph: await contentService.getKnowledgeGraphViewModel(), onBack: () => router.navigate('home') });
+      case 'quiz': return renderQuizRoute(route);
+      case 'experiment': return route.params.length ? renderExperimentRoute(route) : renderLabPortal({ root, onHome: () => router.navigate('home') });
+      case 'remediation': return renderRemediationRoute(route);
+      case 'ai-tutor': return views.renderAITutorPage({ root });
+      case 'experiment-result':
+      case 'result': return router.navigate('progress');
+      default: return renderHomeRoute(data);
+    }
+  }
+
+  return {
+    state, router, contentService, masteryService, controllers, views, hydrateContent,
+    start() {
+      stopped = false;
+      if (typeof window !== 'undefined') {
+        window.addEventListener('chemlab:term-change', () => {
+          if (['home', 'course', 'lab', 'assessment', 'knowledge-map', 'progress'].includes(router.current().page)) void renderRoute(router.current());
+        });
+      }
+      router.start();
+      void hydrateContent().catch(() => undefined);
+    },
+    stop() { stopped = true; router.stop(); },
+  };
 }
-function firstIncompleteLesson(data){return data?.lessons?.find(lesson=>!lesson.completed)?.id||data?.lessons?.[0]?.id||CANONICAL_GOLDEN_LESSON;}

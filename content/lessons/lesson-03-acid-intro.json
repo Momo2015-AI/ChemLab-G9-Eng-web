@@ -256,8 +256,8 @@
   ],
   "mastery": {
     "threshold": 0.95,
-    "questionCount": 20,
-    "minCorrect": 19,
+    "questionCount": 21,
+    "minCorrect": 20,
     "mode": "unseen-transfer",
     "resourceRef": "content/lessons/lesson-03-acid-intro-mastery.json",
     "description": "使用陌生情境题验证是否掌握酸的性质。",

@@ -39,11 +39,13 @@ test('incorrect observation records negative learning evidence', () => {
   assert.deepEqual(evidence, [['acid-reaction', 0, 0.2]]);
 });
 
-test('blank observation is normalized before validation', () => {
+test('blank observation is normalized but records no mastery evidence', () => {
   const { controller, evidence } = createController();
   controller.start('acid');
   const session = controller.observe('   ');
   assert.equal(session.observations[0].observation, '');
   assert.equal(session.lastValidation.valid, false);
-  assert.deepEqual(evidence, [['acid-reaction', 0, 0.2]]);
+  // An empty submission means "not recorded yet" — it must not be scored as
+  // wrong evidence, and it must not hijack the lesson phase.
+  assert.deepEqual(evidence, []);
 });

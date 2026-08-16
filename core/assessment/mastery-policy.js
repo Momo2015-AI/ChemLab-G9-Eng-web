@@ -1,7 +1,6 @@
-function knowledgeIds(question = {}) {
-  const raw = question.knowledgeIds || question.knowledgePoints || question.knowledgePoint || question.knowledgeId || question.knowledge || [];
-  return (Array.isArray(raw) ? raw : [raw]).filter(Boolean);
-}
+import { knowledgeIdsOf } from '../diagnosis/question-knowledge-map.js';
+
+const knowledgeIds = question => knowledgeIdsOf(question);
 
 function misconceptionIds(question = {}) {
   const raw = question.misconceptionIds || question.misconception || question.errorType || [];

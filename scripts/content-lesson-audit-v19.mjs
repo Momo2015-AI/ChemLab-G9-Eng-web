@@ -9,10 +9,10 @@ const reportDir = path.join(root, 'reports');
 const questionBankPath = path.join(root, 'content/questions/question-bank.json');
 const questionBankExists = fs.existsSync(questionBankPath);
 const files = fs.existsSync(lessonsDir)
-  ? fs.readdirSync(lessonsDir).filter((name) => /^lesson-.*\.json$/.test(name) && !name.endsWith('-guided-learning.json') && !name.endsWith('-experiment.json') && !name.endsWith('-practice.json') && !name.endsWith('-diagnostic.json') && !name.endsWith('-mastery.json')).sort()
+  ? fs.readdirSync(lessonsDir).filter((name) => /^lesson-.*\.json$/.test(name) && !name.endsWith('-guided-learning.json') && !name.endsWith('-experiment.json') && !name.endsWith('-practice.json') && !name.endsWith('-diagnostic.json') && !name.endsWith('-mastery.json') && !name.endsWith('-transfer.json')).sort()
   : [];
 
-const SUB_RESOURCES = ['-practice.json', '-diagnostic.json', '-mastery.json'];
+const SUB_RESOURCES = ['-practice.json', '-diagnostic.json', '-mastery.json', '-transfer.json'];
 
 function loadJson(relativePath) {
   const full = path.join(root, relativePath);

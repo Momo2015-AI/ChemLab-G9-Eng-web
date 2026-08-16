@@ -50,16 +50,13 @@ ChemLab-G9 CI/CD
 │   ├── npm test
 │   ├── runtime audit
 │   ├── JSON validation
-│   ├── content integrity
+│   ├── content integrity + lesson readiness
 │   └── deployment entry
-└── Deploy
-    └── GitHub Pages
-
-Content Integrity
-└── 内容专项审计
+└── Deploy (needs: validate)
+    └── build-pages (runtime-only dist/) → GitHub Pages
 ```
 
-仓库只保留一个自有 Pages deployment workflow。GitHub Pages 的内部 `pages-build-deployment` 属于平台基础设施，不计入仓库 workflow 数量。
+仓库只保留一个自有 workflow（构建校验 + Pages 部署一体）。部署产物由 `scripts/build-pages.mjs` 从显式运行时清单组装，docs/、reports/、tests/、scripts/ 等工程目录不会发布到学生端站点。GitHub Pages 的内部 `pages-build-deployment` 属于平台基础设施，不计入仓库 workflow 数量。
 
 当前生产门禁必须保持全绿：**tests / runtime audit / content integrity / Pages deployment**。
 

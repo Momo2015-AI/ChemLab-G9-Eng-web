@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import ContentService from '../app/content-service.js';
-import { AssessmentController } from '../controllers/assessment-controller.js';
+import { AssessmentRuntimeController } from '../controllers/assessment-runtime-controller.js';
 import { ExperimentController } from '../controllers/experiment-controller.js';
 import { diagnoseAssessment } from '../core/diagnosis/diagnosis-engine.js';
 import { createRemediationCatalog } from '../core/diagnosis/remediation-catalog.js';
@@ -23,7 +23,6 @@ function fakeContentLoader() {
           edges: [{ from: 'k0', to: 'k1', type: 'prerequisite' }],
         },
         manifest: { days: [] },
-        topics: [],
         days: [],
         dayById: new Map(),
       };
@@ -56,13 +55,14 @@ test('assessment production flow stores diagnosis and creates remediation', () =
       state.learning.lessons ||= {};
       state.learning.lessons[lessonId] = { ...(state.learning.lessons[lessonId] || {}), ...patch, lessonId };
     },
+    getLessonState(lessonId) { return state.learning.lessons?.[lessonId] || {}; },
     getRemediationPlan(diagnosis) {
       assert.equal(diagnosis.status, 'incorrect');
       state.learning.remediation = remediation;
       return remediation;
     },
   };
-  const controller = new AssessmentController({
+  const controller = new AssessmentRuntimeController({
     assessment: { evaluate: () => ({ correct: false }) },
     contentService: {},
     state,
@@ -70,7 +70,7 @@ test('assessment production flow stores diagnosis and creates remediation', () =
   });
 
   registerQuestion('q-production', { knowledge: ['k1'], errors: ['concept-confusion'] });
-  controller.createSession('day-01', [{ id: 'q-production', type: 'choice', knowledge: ['k1'], answer: 'A' }]);
+  controller.startAttempt('day-01', [{ id: 'q-production', type: 'choice', options: ['x', 'y'], answer: 'A', knowledge: ['k1'] }], 'practice');
   controller.answer(0);
 
   assert.equal(state.learning.lessons['day-01'].diagnosis.status, 'incorrect');

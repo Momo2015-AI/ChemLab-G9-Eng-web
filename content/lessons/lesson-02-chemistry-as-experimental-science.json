@@ -292,8 +292,8 @@
   ],
   "mastery": {
     "threshold": 0.95,
-    "questionCount": 20,
-    "minCorrect": 19,
+    "questionCount": 21,
+    "minCorrect": 20,
     "mode": "unseen-transfer",
     "resourceRef": "content/lessons/lesson-02-chemistry-as-experimental-science-mastery.json",
     "description": "最终掌握验证使用未直接见过的探究情境变式；20题至少答对19题才标记本课掌握。",
