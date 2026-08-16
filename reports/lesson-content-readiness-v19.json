@@ -15,7 +15,14 @@
       "status": "released",
       "releaseStatus": "ready",
       "templateHits": 0,
-      "missing": []
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 8,
+        "practice": 8,
+        "diagnostic": 3,
+        "mastery": 21
+      },
+      "contractErrors": []
     },
     {
       "file": "lesson-02-chemistry-as-experimental-science.json",
@@ -24,7 +31,14 @@
       "status": "released",
       "releaseStatus": "ready",
       "templateHits": 0,
-      "missing": []
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 8,
+        "practice": 13,
+        "diagnostic": 3,
+        "mastery": 21
+      },
+      "contractErrors": []
     },
     {
       "file": "lesson-03-acid-intro.json",
@@ -33,7 +47,14 @@
       "status": "released",
       "releaseStatus": "ready",
       "templateHits": 0,
-      "missing": []
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 13,
+        "diagnostic": 3,
+        "mastery": 21
+      },
+      "contractErrors": []
     }
   ]
 }

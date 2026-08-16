@@ -73,7 +73,6 @@ export class ExperimentController {
 
     const diagnosis = diagnoseExperiment({ knowledgeIds, validation });
     this.state.learning ||= {};
-    this.state.learning.diagnosis = { ...diagnosis, lessonId: this.session.lessonId || undefined };
 
     if (this.masteryService) {
       for (const knowledgeId of knowledgeIds) {
@@ -88,7 +87,7 @@ export class ExperimentController {
     if (diagnosis.status === 'incorrect' && this.learningController) {
       this.learningController.getRemediationPlan({ ...diagnosis, lessonId: this.session.lessonId || undefined });
     }
-    if (this.session.lessonId) this.learningController?.updateLessonState?.(this.session.lessonId, { diagnosis: this.state.learning.diagnosis, phase: diagnosis.status === 'incorrect' ? 'REMEDIATION' : 'PRACTICE' });
+    if (this.session.lessonId) this.learningController?.updateLessonState?.(this.session.lessonId, { diagnosis: { ...diagnosis, lessonId: this.session.lessonId } , phase: diagnosis.status === 'incorrect' ? 'REMEDIATION' : 'PRACTICE' });
     this.state.save?.();
   }
 

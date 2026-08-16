@@ -61,10 +61,18 @@ test('lesson-02 mastery content satisfies the declared contract', () => {
   const questions = mastery.mastery.questions;
   assert.ok(questions.length >= lesson.mastery.questionCount);
   assert.equal(lesson.mastery.threshold, mastery.mastery.threshold);
-  for (const question of questions) {
+  const choiceQuestions = questions.filter(question => question.type !== 'constructed');
+  assert.ok(choiceQuestions.length > 0, 'at least one choice question');
+  for (const question of choiceQuestions) {
     assert.ok(question.id, 'mastery question has id');
     assert.ok(Array.isArray(question.options) && question.options.length > 1);
     assert.ok(question.answer >= 0 && question.answer < question.options.length);
+  }
+  const constructed = questions.filter(question => question.type === 'constructed');
+  assert.ok(constructed.length >= 1, 'mastery includes at least one constructed question');
+  for (const question of constructed) {
+    assert.ok(question.rubric, `constructed question ${question.id} declares a rubric`);
+    assert.ok(Array.isArray(question.rubric.keywords) && question.rubric.keywords.length > 0, `constructed question ${question.id} rubric has keywords`);
   }
 });
 

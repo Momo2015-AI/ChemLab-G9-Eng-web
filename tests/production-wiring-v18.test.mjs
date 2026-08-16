@@ -52,6 +52,10 @@ test('assessment production flow stores diagnosis and creates remediation', () =
   const state = { progress: { mastery: {} }, learning: {}, save() {} };
   const remediation = { status: 'needs-remediation', steps: [{ type: 'review', knowledgeId: 'k1' }] };
   const learningController = {
+    updateLessonState(lessonId, patch) {
+      state.learning.lessons ||= {};
+      state.learning.lessons[lessonId] = { ...(state.learning.lessons[lessonId] || {}), ...patch, lessonId };
+    },
     getRemediationPlan(diagnosis) {
       assert.equal(diagnosis.status, 'incorrect');
       state.learning.remediation = remediation;
@@ -69,7 +73,7 @@ test('assessment production flow stores diagnosis and creates remediation', () =
   controller.createSession('day-01', [{ id: 'q-production', type: 'choice', knowledge: ['k1'], answer: 'A' }]);
   controller.answer(0);
 
-  assert.equal(state.learning.diagnosis.status, 'incorrect');
+  assert.equal(state.learning.lessons['day-01'].diagnosis.status, 'incorrect');
   assert.equal(state.learning.remediation.status, 'needs-remediation');
 });
 
@@ -81,21 +85,28 @@ test('experiment production flow preserves multi-knowledge evidence', () => {
     getState() { return { k1: 0.2, k2: 0.2 }; },
   };
   const experimentEngine = {
-    get: () => ({ id: 'exp-1', title: 'Experiment', knowledge: ['k1', 'k2'], steps: [{ observation: 'blue' }] }),
+    get: () => ({ id: 'exp-1', lessonId: 'exp-1', title: 'Experiment', knowledge: ['k1', 'k2'], steps: [{ observation: 'blue' }] }),
     start: () => ({ id: 'exp-1', currentStep: 0, steps: [{ observation: 'blue' }], observations: [], completed: false }),
     validateStep: () => ({ valid: false, message: 'wrong observation' }),
     recordObservation: (session, observation) => ({ ...session, observations: [{ step: 0, observation }] }),
     next: session => session,
     complete: session => ({ ...session, completed: true }),
   };
-  const learningController = { getRemediationPlan: () => ({ status: 'needs-remediation', steps: [] }) };
+  const learningController = {
+    getLessonState() { return {}; },
+    updateLessonState(lessonId, patch) {
+      state.learning.lessons ||= {};
+      state.learning.lessons[lessonId] = { ...(state.learning.lessons[lessonId] || {}), ...patch, lessonId };
+    },
+    getRemediationPlan: () => ({ status: 'needs-remediation', steps: [] }),
+  };
   const controller = new ExperimentController({ experimentEngine, state, masteryService, learningController });
 
   controller.start('exp-1');
   controller.observe('red');
 
   assert.deepEqual(evidence.map(item => item.id), ['k1', 'k2']);
-  assert.deepEqual(state.learning.diagnosis.knowledge, ['k1', 'k2']);
+  assert.deepEqual(state.learning.lessons['exp-1'].diagnosis.knowledge, ['k1', 'k2']);
 });
 
 test('remediation catalog is derived from canonical content rather than a second hard-coded source', () => {

@@ -3,8 +3,8 @@
   "version": "1.0",
   "mastery": {
     "threshold": 0.95,
-    "questionCount": 20,
-    "minCorrect": 19,
+    "questionCount": 21,
+    "minCorrect": 20,
     "mode": "unseen-transfer",
     "questions": [
       {
@@ -24,6 +24,9 @@
         "knowledgeIds": [
           "acid-intro",
           "acid-property"
+        ],
+        "misconceptionIds": [
+          "necessary-sufficient-confusion"
         ]
       },
       {
@@ -97,6 +100,9 @@
         "explanation": "先用大量水冲洗稀释，再用弱碱性的碳酸氢钠溶液中和残留酸液。",
         "knowledgeIds": [
           "safety-awareness"
+        ],
+        "misconceptionIds": [
+          "safety-violation"
         ]
       },
       {
@@ -135,6 +141,9 @@
         "knowledgeIds": [
           "chemical-property",
           "evidence-reasoning"
+        ],
+        "misconceptionIds": [
+          "metal-activity-mistake"
         ]
       },
       {
@@ -379,7 +388,44 @@
           "observation-inference",
           "evidence-reasoning"
         ]
+      },
+      {
+        "id": "L03-M21",
+        "type": "constructed",
+        "difficulty": "hard",
+        "bloomLevel": "create",
+        "knowledgePoint": "safety-awareness",
+        "question": "实验室里需要把浓硫酸稀释成稀硫酸。请写出正确的操作顺序，并说明为什么不能把水倒入浓硫酸。",
+        "rubric": {
+          "modelAnswer": "应把浓硫酸沿容器壁缓慢倒入水中，并不断搅拌；不能把水倒入浓硫酸，因为稀释会放出大量热，水密度小浮在酸面，沸腾飞溅会造成危险。",
+          "keywords": [
+            "酸",
+            "水",
+            "搅拌"
+          ],
+          "explanation": "稀释浓硫酸应“酸入水、沿壁倒、慢慢搅”，把水倒入浓硫酸会因局部过热飞溅。"
+        },
+        "explanation": "稀释浓硫酸的正确做法是酸入水并搅拌，防止液体飞溅。",
+        "knowledgeIds": [
+          "safety-awareness",
+          "acid-property"
+        ]
       }
-    ]
+    ],
+    "requiredKnowledgeIds": [
+      "acid-intro",
+      "acid-property",
+      "physical-property",
+      "chemical-property",
+      "safety-awareness",
+      "observation-inference",
+      "evidence-reasoning"
+    ],
+    "criticalMisconceptions": [
+      "necessary-sufficient-confusion",
+      "safety-violation",
+      "metal-activity-mistake"
+    ],
+    "requireConstructed": true
   }
 }

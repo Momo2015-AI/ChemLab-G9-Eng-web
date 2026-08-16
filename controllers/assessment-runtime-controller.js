@@ -24,6 +24,7 @@ export class AssessmentRuntimeController {
       .map(item => data.questionById.get(typeof item === 'object' ? item.id : item) || (typeof item === 'object' ? item : null))
       .filter(Boolean)
       .map(question => this.normalizeQuestion(question, fallbackKnowledge));
+    if (!source.length) return null;
     return this.startAttempt(lessonId, source, 'practice');
   }
 
@@ -107,9 +108,6 @@ export class AssessmentRuntimeController {
       completed: questions.length === 0,
       startedAt: new Date().toISOString(),
     };
-    this.state.currentQuiz = attemptId;
-    this.state.quizIndex = 0;
-    this.state.quizAnswers = {};
     this.learningController?.updateLessonState?.(lessonId, { phase: mode === 'mastery' ? 'MASTERY' : mode === 'recheck' ? 'RECHECK' : mode === 'transfer' ? 'TRANSFER' : 'PRACTICE', activeAttemptId: attemptId });
     return this.session;
   }
@@ -134,16 +132,15 @@ export class AssessmentRuntimeController {
       selectedIndex: typeof value === 'number' ? value : null,
       answer,
       correct: evaluated.correct,
+      rubricPassed: evaluated.rubricPassed,
       score: evaluated.score,
       explanation: evaluated.explanation,
       diagnosis,
       question,
     });
     this.recordEvidence(knowledgeIds, evaluated, question);
-    this.state.quizAnswers[question.id] = answer;
     this.session.index += 1;
     this.session.completed = this.session.index >= this.session.questions.length;
-    this.state.quizIndex = this.session.index;
     if (this.session.completed) this.finish();
     else this.state.save?.();
     return evaluated;
@@ -210,10 +207,9 @@ export class AssessmentRuntimeController {
     };
     this.state.learning ||= {};
     this.state.learning.practice = { lessonId: this.session.lessonId, attemptId: this.session.attemptId, correct, total, score, completedAt: diagnosis.completedAt };
-    this.state.learning.diagnosis = diagnosis;
     this.learningController?.updateLessonState?.(this.session.lessonId, { practice: this.state.learning.practice, diagnosis, phase: errors.length ? 'REMEDIATION' : 'MASTERY' });
     if (errors.length) {
-      this.learningController?.getRemediationPlan({ status: 'incorrect', knowledge: weakPoints, possibleErrors, source: 'practice-attempt' });
+      this.learningController?.getRemediationPlan({ ...diagnosis, lessonId: this.session.lessonId, status: 'incorrect', knowledge: weakPoints, possibleErrors, source: 'practice-attempt' });
     } else {
       this.state.learning.remediation = null;
     }
@@ -326,6 +322,7 @@ export class AssessmentRuntimeController {
   toLetter(index) { return String.fromCharCode(65 + Number(index)); }
 
   toDomainAnswer(question, value) {
+    if (question.type === 'constructed' || question.type === 'short-answer') return String(value ?? '').trim();
     return question.type === 'choice' ? this.toLetter(value) : value;
   }
 
@@ -336,8 +333,5 @@ export class AssessmentRuntimeController {
 
   reset() {
     this.session = null;
-    this.state.currentQuiz = null;
-    this.state.quizIndex = 0;
-    this.state.quizAnswers = {};
   }
 }

@@ -1,10 +1,24 @@
 {
   "lessonId": "lesson-02-chemistry-as-experimental-science",
-  "version": "1.0",
+  "version": "1.1",
   "mastery": {
     "threshold": 0.95,
     "minQuestions": 20,
     "unseenTransfer": true,
+    "requiredKnowledgeIds": [
+      "scientific-inquiry",
+      "observation-inference",
+      "control-variables",
+      "evidence-reasoning",
+      "data-integrity"
+    ],
+    "criticalMisconceptions": [
+      "observation-inference-confusion",
+      "control-variable-violation",
+      "data-fabrication",
+      "evidence-logic-gap"
+    ],
+    "requireConstructed": true,
     "questions": [
       {
         "id": "L02-M01",
@@ -36,6 +50,9 @@
         "explanation": "“有气泡产生”可以直接看到，是观察；判断气体成分、反应类型属于解释。",
         "knowledgeIds": [
           "observation-inference"
+        ],
+        "misconceptionIds": [
+          "observation-inference-confusion"
         ]
       },
       {
@@ -132,6 +149,9 @@
         "explanation": "研究变量是温度，因此只改变温度，其他条件保持不变。",
         "knowledgeIds": [
           "control-variables"
+        ],
+        "misconceptionIds": [
+          "control-variable-violation"
         ]
       },
       {
@@ -148,6 +168,9 @@
         "explanation": "数据真实性要求完整、如实记录，异常值也要保留，不能补写或估计。",
         "knowledgeIds": [
           "data-integrity"
+        ],
+        "misconceptionIds": [
+          "data-fabrication"
         ]
       },
       {
@@ -292,6 +315,9 @@
         "explanation": "应保留原始数据，检查条件、操作与假设，这才是基于证据的科学态度。",
         "knowledgeIds": [
           "evidence-reasoning"
+        ],
+        "misconceptionIds": [
+          "evidence-logic-gap"
         ]
       },
       {
@@ -325,6 +351,29 @@
         "knowledgeIds": [
           "evidence-reasoning",
           "observation-inference"
+        ]
+      },
+      {
+        "id": "L02-M21",
+        "type": "constructed",
+        "difficulty": "hard",
+        "bloomLevel": "create",
+        "knowledgePoint": "evidence-reasoning",
+        "question": "为检验“温度对食盐溶解速度的影响”，需要控制哪些变量？请写出至少两个应保持相同的条件，并说明为什么。",
+        "rubric": {
+          "modelAnswer": "应保持水量（水的体积）、盐量、是否搅拌等条件相同，只改变温度。控制变量能让结论归因于温度变化。",
+          "keywords": [
+            "水",
+            "盐",
+            "搅拌",
+            "温度"
+          ],
+          "explanation": "控制变量是科学实验的基本要求：只改变一个因素（温度），其余条件保持一致。"
+        },
+        "explanation": "控制变量：只改变温度，保持水量、盐量和搅拌等条件一致。",
+        "knowledgeIds": [
+          "control-variables",
+          "evidence-reasoning"
         ]
       }
     ]

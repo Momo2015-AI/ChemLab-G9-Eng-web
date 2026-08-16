@@ -13,10 +13,11 @@ export class AssessmentEngine {
     const result = {
       questionId: question.id,
       correct: isCorrect,
+      rubricPassed: this.isConstructed(question) ? isCorrect : undefined,
       score: isCorrect ? 1 : 0,
       knowledge: question.knowledge || [],
       bloomLevel: question.bloomLevel,
-      explanation: isCorrect ? null : question.explanation || '',
+      explanation: isCorrect ? null : this.explanationFor(question),
       commonMistake: isCorrect ? null : question.commonMistake || null,
     };
 
@@ -32,6 +33,14 @@ export class AssessmentEngine {
     return result;
   }
 
+  isConstructed(question) {
+    return Boolean(question?.type === 'constructed' || question?.type === 'short-answer' || question?.rubric);
+  }
+
+  explanationFor(question) {
+    return question.rubric?.explanation || question.explanation || '';
+  }
+
   checkAnswer(question, answer) {
     if (!question || answer === undefined) return false;
     if (!question.type) question.type = 'choice';
@@ -45,7 +54,23 @@ export class AssessmentEngine {
       const selected = (answer || '').toString().trim().toLowerCase();
       return correct !== '' && selected === correct;
     }
+    if (question.type === 'constructed' || question.type === 'short-answer') {
+      return this.checkConstructed(question, answer);
+    }
     return false;
+  }
+
+  checkConstructed(question, answer) {
+    const text = String(answer ?? '').trim();
+    if (!text) return false;
+    const rubric = question.rubric || {};
+    const keywords = Array.isArray(rubric.keywords) ? rubric.keywords.filter(Boolean) : [];
+    if (keywords.length === 0) {
+      return Boolean(rubric.modelAnswer) && text.length >= 4;
+    }
+    const normalized = text.toLowerCase();
+    const hits = keywords.filter(keyword => normalized.includes(String(keyword).toLowerCase()));
+    return hits.length >= Math.min(2, keywords.length);
   }
 
   computeQuizScore(results) {
