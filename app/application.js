@@ -2,7 +2,7 @@
 import { createRouter } from './router.js';
 import { contentService } from './content-service.js';
 import { MasteryService } from './mastery-service.js';
-import { createProgressProjection } from './progress-projection.js';
+import { createProgressProjection, isLessonCompleted } from './progress-projection.js';
 import { AssessmentRuntimeController } from '../controllers/assessment-runtime-controller.js';
 import { ExperimentController } from '../controllers/experiment-controller.js';
 import { LearningController } from '../controllers/learning-controller.js';
@@ -97,7 +97,7 @@ export function createApplication({ state, assessment, experimentEngine, mastery
         return {
           ...day,
           id: lessonId,
-          completed: Boolean(progress.completed?.[lessonId]),
+          completed: isLessonCompleted(progress.completed, lessonId),
           phase: stateView.phase,
           cardLabel: stateView.available ? `${stateView.label} · ${release.label}` : release.label,
           available: stateView.available,
@@ -164,6 +164,8 @@ export function createApplication({ state, assessment, experimentEngine, mastery
         // Let the inline ✓/✗ feedback render first, then refresh the stage
         // UI while preserving card expansion and scroll position.
         setTimeout(() => {
+          const current = router.current();
+          if (current.page !== route.page || (current.params[0] || '') !== (route.params[0] || '')) return;
           const cards = typeof document !== 'undefined' ? document.querySelectorAll('.guided-learning-card') : [];
           const expandedIds = [...cards].filter(card => !card.querySelector('.guided-card-detail')?.hidden).map(card => card.dataset.stepId).filter(Boolean);
           const scroller = typeof document !== 'undefined' ? document.querySelector('#chem-page-root') : null;
@@ -267,7 +269,11 @@ export function createApplication({ state, assessment, experimentEngine, mastery
     const term = currentTerm();
     const weakPoints = (data.lessons || [])
       .flatMap(lesson => controllers.learning.getLessonState(lesson.canonicalId).diagnosis?.weakPoints || [])
-      .filter((id, index, arr) => arr.indexOf(id) === index);
+      .filter((id, index, arr) => arr.indexOf(id) === index)
+      .map(id => {
+        const node = (graph?.nodes || []).find(node => node.id === id);
+        return { id, name: node?.name || id };
+      });
     return renderProgressPortal({
       root,
       onHome: () => router.navigate('home'),
@@ -415,6 +421,7 @@ export function createApplication({ state, assessment, experimentEngine, mastery
     if (!root) return;
     if (CONTENT_ROUTES.has(route.page) && !state.contentReady) {
       if (route.page === 'home') renderHomeMessage('正在准备学习内容…');
+      else if (root) root.innerHTML = `<section class="page"><p style="padding:80px 24px;text-align:center;color:var(--ink-dim);font-size:15px">${state.contentLoadError ? '课程内容暂时无法加载，请刷新后重试。' : '正在准备学习内容…'}</p></section>`;
       return;
     }
     const data = HOME_DATA_ROUTES.has(route.page) ? await getHomeData() : null;

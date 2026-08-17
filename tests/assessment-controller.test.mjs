@@ -85,6 +85,8 @@ test('assessment controller starts a lesson-scoped recheck and feeds new evidenc
   assert.deepEqual(masteryService.getState(), { atom: { score: 1, weight: 0.5 } });
   assert.deepEqual(state.progress.mastery, masteryService.getState());
   assert.equal(state.saved, true);
+  assert.equal(state.learning.lessons['day-01'].recheck.status, 'passed');
+  assert.deepEqual(state.learning.lessons['day-01'].recheck.knowledgeIds, ['atom']);
 });
 
 test('assessment controller ignores answers without an active session', () => {

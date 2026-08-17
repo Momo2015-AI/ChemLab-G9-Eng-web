@@ -36,6 +36,11 @@ html:root[data-theme="light"]{
   --ink-faint:#8a7f72;
   --ink-line:rgba(43,38,32,.08);
   --ink-line-strong:rgba(43,38,32,.15);
+  --line:rgba(43,38,32,.14);
+  --panel-soft:rgba(43,38,32,.045);
+  --spec-yellow-soft:rgba(249,168,37,.14);
+  --spec-green-soft:rgba(67,160,71,.14);
+  --spec-red-soft:rgba(229,57,53,.14);
 
   /* ---- 学期色 ---- */
   --term-upper-start:#5b6abf;
@@ -273,27 +278,18 @@ html:root[data-theme="light"] .chem-footer{
   background:rgba(255,255,255,.7) !important;
 }
 html:root[data-theme="light"] .chem-footer-home:hover{color:var(--ph-blue) !important}
-}
-html:root[data-theme="light"] .chem-ai-button{
-  color:#4a2fd6 !important;
-  border-color:rgba(124,77,255,.3) !important;
-  background:rgba(124,77,255,.06) !important;
-}
-html:root[data-theme="light"] .chem-menu-toggle{
-  color:var(--ink) !important;
-  border:1.5px solid var(--ink-line-strong) !important;
-  background:var(--ink-bg-1) !important;
-  border-radius:10px !important;
-  padding:7px 10px !important;
-  font-size:18px !important;
-  cursor:pointer !important;
-}
-html:root[data-theme="light"] .chem-footer{
-  border-top:1px solid var(--ink-line) !important;
-  color:var(--ink-faint) !important;
-  background:rgba(255,255,255,.7) !important;
-}
-html:root[data-theme="light"] .chem-footer-home:hover{color:var(--ph-blue) !important}
+
+/* ================= AI 导师页 ================= */
+html:root[data-theme="light"] .chem-ai-chat-head strong{color:var(--ink) !important}
+html:root[data-theme="light"] .chem-ai-chat-head span{color:var(--ink-faint) !important}
+html:root[data-theme="light"] .chem-ai-chat-head{border-bottom:1px solid var(--ink-line) !important}
+html:root[data-theme="light"] .chem-ai-avatar{background:color-mix(in srgb, var(--ph-violet) 14%, var(--ink-bg-1)) !important;color:var(--ph-violet) !important}
+html:root[data-theme="light"] .chem-ai-message p{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .chem-ai-input{color:var(--ink-dim) !important;border:1px solid var(--ink-line) !important;background:var(--ink-bg-2) !important}
+html:root[data-theme="light"] .chem-ai-input button{background:var(--ph-violet) !important;color:#fff !important}
+html:root[data-theme="light"] .chem-ai-context>div{border-bottom:1px solid var(--ink-line) !important}
+html:root[data-theme="light"] .chem-ai-context span{color:var(--ink-faint) !important}
+html:root[data-theme="light"] .chem-ai-context strong{color:var(--ink) !important}
 
 /* ================= 通用卡片 ================= */
 html:root[data-theme="light"] .portal-card,
@@ -868,6 +864,18 @@ html:root[data-theme="light"] .module-content h3{color:var(--ink) !important}
 html:root[data-theme="light"] .lesson-paragraph{color:var(--ink-dim) !important}
 html:root[data-theme="light"] .course-section-heading h2{color:var(--ink) !important}
 html:root[data-theme="light"] .section-count{color:var(--ink-faint) !important}
+
+/* ================= 杂项可读性 ================= */
+html:root[data-theme="light"] .chem-mobile-title{color:var(--ink) !important}
+html:root[data-theme="light"] .chem-loading{color:var(--ink-faint) !important}
+html:root[data-theme="light"] .chem-breadcrumb-sep{color:var(--ink-faint) !important}
+html:root[data-theme="light"] .cg-gp-row h5{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .cg-gp-empty{color:var(--ink-dim) !important}
+html:root[data-theme="light"] .cg-dstate{color:var(--ink-dim) !important;background:var(--ink-bg-2) !important}
+html:root[data-theme="light"] .cg-dstate.now{color:#fff !important}
+html:root[data-theme="light"] .cg-chip{background:var(--ink-bg-1) !important;border:1px solid var(--ink-line) !important;color:color-mix(in srgb, var(--c,var(--ink-dim)) 62%, #1a1612) !important}
+html:root[data-theme="light"] .guided-card-detail{border-top:1px solid var(--ink-line) !important}
+html:root[data-theme="light"] .course-action b{color:var(--ph-blue) !important}
 
 /* ================= 响应式 ================= */
 @media(prefers-reduced-motion:reduce){

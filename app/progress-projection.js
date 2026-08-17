@@ -16,6 +16,7 @@ export function createProgressProjection(progress = {}) {
   const weakPoints = Object.entries(mastery)
     .map(([id, value]) => ({ id, mastery: typeof value === 'number' ? value : value?.score }))
     .filter(item => Number.isFinite(item.mastery) && item.mastery < 0.6);
+  const questionsAnswered = history.reduce((sum, h) => sum + Number(h?.total ?? 0), 0) || history.length;
 
   return Object.freeze({
     mastery: Object.freeze(mastery),
@@ -23,7 +24,7 @@ export function createProgressProjection(progress = {}) {
     history: Object.freeze(history),
     masteryScore,
     weakPoints: Object.freeze(weakPoints),
-    questions: history.length,
+    questions: questionsAnswered,
   });
 }
 
@@ -35,4 +36,9 @@ function normalizeCompleted(value) {
 
 export function getMasteryScore(projection, knowledgeId) {
   return projection?.mastery?.[knowledgeId] ?? 0;
+}
+
+export function isLessonCompleted(completed, lessonId) {
+  if (Array.isArray(completed)) return completed.includes(lessonId);
+  return Boolean(completed?.[lessonId]);
 }

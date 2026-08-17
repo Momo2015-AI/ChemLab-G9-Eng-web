@@ -46,7 +46,7 @@ export function renderProgressPortal({ root, onHome = () => { window.location.ha
       </div>
       <div class="cg-card">
         <h3>薄弱点 · 建议优先补练</h3>
-        ${weakPoints.length ? weakPoints.slice(0, 8).map(w => `<div class="cg-weak"><div class="cg-wdot"></div><div class="cg-wname">${escapeHtml(w.name || w.id)}</div><button type="button" class="cg-wact" data-quiz="${escapeHtml(w.id || '')}">补练 →</button></div>`).join('') : '<p class="portal-muted">暂无明显薄弱点，继续保持。</p>'}
+        ${weakPoints.length ? weakPoints.slice(0, 8).map(w => { const name = typeof w === 'string' ? w : (w.name || w.id || ''); const id = typeof w === 'string' ? w : (w.id || ''); return `<div class="cg-weak"><div class="cg-wdot"></div><div class="cg-wname">${escapeHtml(name)}</div>${id ? `<button type="button" class="cg-wact" data-quiz="${escapeHtml(id)}">补练 →</button>` : ''}</div>`; }).join('') : '<p class="portal-muted">暂无明显薄弱点，继续保持。</p>'}
       </div>
     </div>
   </section>`;

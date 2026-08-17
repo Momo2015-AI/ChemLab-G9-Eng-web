@@ -49,12 +49,13 @@ export class ExperimentController {
   observe(text) {
     if (!this.session) return null;
     const observation = String(text ?? '').trim();
+    const substantive = observation.length >= 2;
     const validation = this.engine.validateStep(this.session, observation);
     this.session = this.engine.recordObservation(this.session, observation);
     this.session.lastValidation = validation;
-    if (observation.length > 0 && !validation.valid) this.session.hadInvalidObservation = true;
+    if (substantive && !validation.valid) this.session.hadInvalidObservation = true;
     this.#persistSession();
-    if (observation.length > 0) this.#recordEvidence(validation);
+    if (substantive) this.#recordEvidence(validation);
     return this.session;
   }
 
@@ -98,9 +99,13 @@ export class ExperimentController {
     }
 
     if (this.session.lessonId) {
-      this.learningController?.updateLessonState?.(this.session.lessonId, {
-        diagnosis: { ...diagnosis, lessonId: this.session.lessonId },
-      });
+      const current = this.learningController?.getLessonState?.(this.session.lessonId)?.diagnosis || {};
+      const hasPracticeDiagnosis = (Array.isArray(current.errors) && current.errors.length > 0) || (Array.isArray(current.weakPoints) && current.weakPoints.length > 0);
+      if (!hasPracticeDiagnosis) {
+        this.learningController?.updateLessonState?.(this.session.lessonId, {
+          diagnosis: { ...diagnosis, lessonId: this.session.lessonId },
+        });
+      }
     }
     this.state.save?.();
   }

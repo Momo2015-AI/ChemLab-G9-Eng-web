@@ -231,7 +231,9 @@ export class AssessmentRuntimeController {
 
   finishRecheck(correct, total, score) {
     const passed = total > 0 && correct === total;
+    const existing = this.learningController?.getLessonState?.(this.session.lessonId)?.recheck || {};
     const recheck = {
+      ...existing,
       lessonId: this.session.lessonId,
       attemptId: this.session.attemptId,
       status: passed ? 'passed' : 'failed',

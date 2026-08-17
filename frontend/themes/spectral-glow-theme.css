@@ -35,6 +35,11 @@
   --ink-faint:#5b6779;
   --ink-line:rgba(138,151,172,.14);
   --ink-line-strong:rgba(138,151,172,.28);
+  --line:rgba(138,151,172,.16);
+  --panel-soft:rgba(234,242,251,.05);
+  --spec-yellow-soft:rgba(255,209,102,.12);
+  --spec-green-soft:rgba(110,231,183,.12);
+  --spec-red-soft:rgba(255,92,104,.12);
 
   --font-display:'Space Grotesk','PingFang SC','Microsoft YaHei',sans-serif;
   --font-body:'Inter','PingFang SC','Microsoft YaHei',sans-serif;

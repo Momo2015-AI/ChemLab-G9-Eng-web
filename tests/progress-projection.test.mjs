@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createProgressProjection, getMasteryScore } from '../app/progress-projection.js';
+import { createProgressProjection, getMasteryScore, isLessonCompleted } from '../app/progress-projection.js';
 
 test('progress projection exposes a stable read model', () => {
   const progress = {
@@ -43,4 +43,19 @@ test('projection remains unchanged when source progress mutates', () => {
 
   assert.equal(projection.mastery.oxygen, 0.5);
   assert.deepEqual(projection.completed, []);
+});
+
+test('isLessonCompleted reads both array and object completed shapes', () => {
+  assert.equal(isLessonCompleted(['day-01', 'day-03'], 'day-01'), true);
+  assert.equal(isLessonCompleted(['day-01'], 'day-03'), false);
+  assert.equal(isLessonCompleted({ 'day-01': true, 'day-02': false }, 'day-01'), true);
+  assert.equal(isLessonCompleted({ 'day-01': true }, 'day-02'), false);
+  assert.equal(isLessonCompleted(undefined, 'day-01'), false);
+});
+
+test('projection questions counts answered totals, falling back to round count', () => {
+  const withTotals = createProgressProjection({ history: [{ total: 20 }, { total: 10 }] });
+  assert.equal(withTotals.questions, 30);
+  const legacy = createProgressProjection({ history: [{ activity: 'q1' }] });
+  assert.equal(legacy.questions, 1);
 });

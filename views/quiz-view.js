@@ -21,7 +21,10 @@ export function renderQuiz({ root, question = {}, index = 0, total = 0, mode = '
       input.addEventListener('keydown', e => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) fire(); });
     }
   } else if (typeof onAnswer === 'function') {
-    root.querySelectorAll('[data-option]').forEach(button => button.addEventListener('click', () => onAnswer(Number(button.dataset.option))));
+    root.querySelectorAll('[data-option]').forEach(button => button.addEventListener('click', () => {
+      root.querySelectorAll('[data-option]').forEach(b => { b.disabled = true; b.style.pointerEvents = 'none'; });
+      onAnswer(Number(button.dataset.option));
+    }));
   }
 }
 
@@ -55,9 +58,9 @@ export function renderQuizResult({ root, score = 0, correct = 0, total = 0, hasR
     return `<article class="quiz-review-item ${a.correct ? 'correct' : 'incorrect'}"><div class="quiz-review-header"><span class="quiz-review-index">${String(i + 1).padStart(2, '0')}</span><span class="quiz-review-status" style="color:${color}">${correctFlag}</span><strong>${escapeHtml(q.prompt || q.question || a.questionId || '')}</strong></div><div class="quiz-review-detail">${answerLine}${isConstructedAnswer && q.rubric?.modelAnswer ? `<p class="quiz-review-explanation">参考标准：${escapeHtml(q.rubric.modelAnswer)}</p>` : ''}${q.explanation ? `<p class="quiz-review-explanation">${escapeHtml(q.explanation)}</p>` : ''}${a.explanation ? `<p class="quiz-review-explanation">${escapeHtml(a.explanation)}</p>` : ''}</div></article>`;
   }).join('')}</div></div>` : '';
   root.innerHTML = `<section class="page quiz-result-page cg-quizwrap"><div class="cg-qcard" style="text-align:center"><div class="cg-eyebrow" style="justify-content:center">${eyebrow}</div><h1 style="font-family:var(--font-display);font-size:26px;margin-bottom:8px;color:var(--ink)">${heading}</h1>${blocked ? '' : `<p style="font-size:18px;margin-bottom:4px;color:var(--ink)">${correct} / ${total} 正确</p><p style="color:var(--ink-dim);margin-bottom:12px">得分 ${Number(score)}%</p>`}<p style="color:var(--ink-dim);margin:0 auto 24px;max-width:520px">${blocked ? notice : nextText}</p>${blocked ? '' : noticeHtml}${criteriaHtml}<div class="cg-hero-actions" style="justify-content:center">${remediationAction}${transferAction}${retryAction}<button type="button" class="cg-btn cg-btn-ghost" data-continue>返回本课 →</button></div></div>${reviewHtml}</section>`;
-  root.querySelector('[data-remediation]')?.addEventListener('click', () => { if (lessonId && typeof window !== 'undefined') window.location.hash = `remediation/${lessonId}`; else onRemediation?.(); });
-  root.querySelector('[data-continue]')?.addEventListener('click', () => { if (lessonId && typeof window !== 'undefined') window.location.hash = `course/${lessonId}`; else onContinue?.(); });
-  root.querySelector('[data-transfer]')?.addEventListener('click', () => { if (lessonId && typeof window !== 'undefined') window.location.hash = `course/${lessonId}`; else onContinue?.(); });
+  root.querySelector('[data-remediation]')?.addEventListener('click', () => onRemediation?.());
+  root.querySelector('[data-continue]')?.addEventListener('click', () => onContinue?.());
+  root.querySelector('[data-transfer]')?.addEventListener('click', () => onContinue?.());
   root.querySelector('[data-retry]')?.addEventListener('click', () => onRetry?.());
   const toggle = root.querySelector('[data-review-toggle]');
   const list = root.querySelector('.quiz-review-list');
