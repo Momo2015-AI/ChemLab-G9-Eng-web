@@ -34,6 +34,9 @@
         "explanation": "“木炭燃烧后质量会减少吗”可以通过称量实验检验；其余是主观问题，无法用实验回答。",
         "knowledgeIds": [
           "scientific-inquiry"
+        ],
+        "misconceptionIds": [
+          "mc-method-observation-inference"
         ]
       },
       {
@@ -69,6 +72,9 @@
         "explanation": "研究变量是我们要探究的因素，即水的体积；其他条件如糖的质量、温度、搅拌应保持不变。",
         "knowledgeIds": [
           "control-variables"
+        ],
+        "misconceptionIds": [
+          "mc-method-control-variable"
         ]
       },
       {
@@ -85,6 +91,9 @@
         "explanation": "异常数据必须保留并分析，可能反映操作失误，也可能指向新的现象。",
         "knowledgeIds": [
           "data-integrity"
+        ],
+        "misconceptionIds": [
+          "mc-method-data-integrity"
         ]
       },
       {
@@ -101,6 +110,10 @@
         "explanation": "结论应由实验证据支持，而不是迁就课本、预期或他人意见。",
         "knowledgeIds": [
           "evidence-reasoning"
+        ],
+        "misconceptionIds": [
+          "mc-method-evidence-logic",
+          "mc-method-single-phenomenon-overgeneralization"
         ]
       },
       {
@@ -117,6 +130,9 @@
         "explanation": "火焰明亮可以直接观察到，是观察记录，不涉及推断。",
         "knowledgeIds": [
           "observation-inference"
+        ],
+        "misconceptionIds": [
+          "mc-method-observation-inference"
         ]
       },
       {
@@ -133,6 +149,9 @@
         "explanation": "探究一般从问题出发，提出假设，设计方案并观察记录，最后基于证据得出结论。",
         "knowledgeIds": [
           "scientific-inquiry"
+        ],
+        "misconceptionIds": [
+          "mc-method-observation-inference"
         ]
       },
       {
@@ -187,6 +206,10 @@
         "explanation": "重复实验能减小偶然误差，多次一致的结果更支持结论的可靠性。",
         "knowledgeIds": [
           "evidence-reasoning"
+        ],
+        "misconceptionIds": [
+          "mc-method-evidence-logic",
+          "mc-method-single-phenomenon-overgeneralization"
         ]
       },
       {
@@ -203,6 +226,9 @@
         "explanation": "水珠可直接看到，但把水珠解释为水蒸气冷凝是推断，属于解释。",
         "knowledgeIds": [
           "observation-inference"
+        ],
+        "misconceptionIds": [
+          "mc-method-observation-inference"
         ]
       },
       {
@@ -219,6 +245,9 @@
         "explanation": "只改变研究变量、保持其他条件相同，比较才公平，结论才有说服力。",
         "knowledgeIds": [
           "control-variables"
+        ],
+        "misconceptionIds": [
+          "mc-method-control-variable"
         ]
       },
       {
@@ -235,6 +264,9 @@
         "explanation": "假设是对问题的可检验解释，关键在“可检验”，而不是正确、复杂或专业。",
         "knowledgeIds": [
           "scientific-inquiry"
+        ],
+        "misconceptionIds": [
+          "mc-method-observation-inference"
         ]
       },
       {
@@ -251,6 +283,9 @@
         "explanation": "异常数据可能反映失误，也可能指向新现象，保留并分析是数据真实性的要求。",
         "knowledgeIds": [
           "data-integrity"
+        ],
+        "misconceptionIds": [
+          "mc-method-data-integrity"
         ]
       },
       {
@@ -267,6 +302,9 @@
         "explanation": "记录要客观准确完整，忠于实际观察，不迁就预期或结论。",
         "knowledgeIds": [
           "observation-inference"
+        ],
+        "misconceptionIds": [
+          "mc-method-observation-inference"
         ]
       },
       {
@@ -283,6 +321,9 @@
         "explanation": "两组之间只允许研究变量不同，其余条件相同，才能把结果的差异归因于研究变量。",
         "knowledgeIds": [
           "control-variables"
+        ],
+        "misconceptionIds": [
+          "mc-method-control-variable"
         ]
       },
       {
@@ -299,6 +340,9 @@
         "explanation": "报告应保留原始数据与观察记录，结论才有依据可查。",
         "knowledgeIds": [
           "data-integrity"
+        ],
+        "misconceptionIds": [
+          "mc-method-data-integrity"
         ]
       },
       {
@@ -334,6 +378,9 @@
         "explanation": "观察只是线索，判断是否生成新物质必须进一步寻找证据，形成证据链。",
         "knowledgeIds": [
           "observation-inference"
+        ],
+        "misconceptionIds": [
+          "mc-method-observation-inference"
         ]
       },
       {
@@ -351,6 +398,125 @@
         "knowledgeIds": [
           "evidence-reasoning",
           "observation-inference"
+        ],
+        "misconceptionIds": [
+          "mc-method-evidence-logic",
+          "mc-method-observation-inference",
+          "mc-method-single-phenomenon-overgeneralization"
+        ]
+      },
+      {
+        "id": "L02-M22",
+        "knowledgePoint": "scientific-inquiry",
+        "question": "在探究光照对种子发芽率的影响时，下列哪项是最恰当的假设？",
+        "options": [
+          "种子一定在光照下发芽更多",
+          "光照可能会影响种子的发芽率",
+          "所有种子都会在黑暗中发芽",
+          "发芽率与光照无关"
+        ],
+        "answer": 1,
+        "explanation": "假设是对问题的可检验预测，应表述为可能的形式，而不是断言结论。",
+        "knowledgeIds": [
+          "scientific-inquiry"
+        ],
+        "misconceptionIds": [
+          "mc-method-observation-inference"
+        ]
+      },
+      {
+        "id": "L02-M23",
+        "knowledgePoint": "scientific-inquiry",
+        "question": "探究水温是否影响碘的溶解量时，下列哪个问题是可检验的？",
+        "options": [
+          "碘溶于水是好事还是坏事？",
+          "水温升高时，碘的溶解量会增加吗？",
+          "碘的颜色为什么会变化？",
+          "哪种溶剂最美？"
+        ],
+        "answer": 1,
+        "explanation": "可检验的问题应当能通过实验或观察获得数据来回答，B选项可以设计对照实验验证。",
+        "knowledgeIds": [
+          "scientific-inquiry"
+        ],
+        "misconceptionIds": [
+          "mc-method-observation-inference"
+        ]
+      },
+      {
+        "id": "L02-M24",
+        "knowledgePoint": "scientific-inquiry",
+        "question": "小明猜测搅拌能加快食盐溶解，他最应该做的下一步是：",
+        "options": [
+          "直接告诉老师答案",
+          "设计一个对照实验来检验这个猜测",
+          "上网搜索别人怎么做",
+          "背诵搅拌能加快溶解的结论"
+        ],
+        "answer": 1,
+        "explanation": "科学探究中，猜测之后应当通过实验设计来检验，而不是直接接受或搜索答案。",
+        "knowledgeIds": [
+          "scientific-inquiry"
+        ],
+        "misconceptionIds": [
+          "mc-method-observation-inference"
+        ]
+      },
+      {
+        "id": "L02-M25",
+        "knowledgePoint": "scientific-inquiry",
+        "question": "下列哪项不属于科学探究的基本环节？",
+        "options": [
+          "提出问题",
+          "作出假设",
+          "背诵标准答案",
+          "分析证据得出结论"
+        ],
+        "answer": 2,
+        "explanation": "科学探究强调基于证据的思考过程，背诵标准答案不是探究的环节。",
+        "knowledgeIds": [
+          "scientific-inquiry"
+        ],
+        "misconceptionIds": [
+          "mc-method-observation-inference"
+        ]
+      },
+      {
+        "id": "L02-M26",
+        "knowledgePoint": "scientific-inquiry",
+        "question": "探究结束后，发现实验数据不支持假设，最合理的做法是：",
+        "options": [
+          "修改数据使结果符合假设",
+          "重新审视假设，检查实验设计是否有问题",
+          "忽略这次实验，不做报告",
+          "直接写下相反的结论"
+        ],
+        "answer": 1,
+        "explanation": "科学探究的核心是实事求是，数据不支持假设时应反思假设或改进实验设计。",
+        "knowledgeIds": [
+          "scientific-inquiry"
+        ],
+        "misconceptionIds": [
+          "mc-method-evidence-logic"
+        ]
+      },
+      {
+        "id": "L02-M27",
+        "knowledgePoint": "scientific-inquiry",
+        "question": "小红要研究声音在水中和空气中传播速度哪个更快，她首先应该做的是：",
+        "options": [
+          "直接给出结论",
+          "查阅资料，提出可检验的假设和探究方案",
+          "询问同学的答案",
+          "先做实验再想问题"
+        ],
+        "answer": 1,
+        "explanation": "科学探究从明确问题和提出可检验的假设开始，再进行实验设计和数据收集。",
+        "knowledgeIds": [
+          "scientific-inquiry"
+        ],
+        "misconceptionIds": [
+          "mc-method-observation-inference"
         ]
       },
       {
@@ -397,6 +563,11 @@
         "knowledgeIds": [
           "control-variables",
           "evidence-reasoning"
+        ],
+        "misconceptionIds": [
+          "mc-method-control-variable",
+          "mc-method-evidence-logic",
+          "mc-method-single-phenomenon-overgeneralization"
         ]
       }
     ]
