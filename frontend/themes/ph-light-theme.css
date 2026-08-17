@@ -486,6 +486,8 @@ html:root[data-theme="light"] .preset-question-card{
 }
 html:root[data-theme="light"] .guided-card-main strong{color:var(--ink) !important}
 html:root[data-theme="light"] .guided-card-label{color:var(--ph-violet) !important;font-weight:700}
+html:root[data-theme="light"] .lesson-section-item > div strong{color:var(--ink) !important;font-weight:700}
+html:root[data-theme="light"] .lesson-section-item > div p{color:var(--ink-dim) !important;font-size:12px;line-height:1.6}
 html:root[data-theme="light"] .guided-step-body p{color:var(--ink-dim) !important}
 html:root[data-theme="light"] .guided-check{
   background:var(--ink-bg-2) !important;
