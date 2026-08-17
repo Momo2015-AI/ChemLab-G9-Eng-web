@@ -9,10 +9,23 @@ export function renderHome({ root, data = {}, onCourse, onDashboard, onGraph, on
   const firstLessonId = firstLesson?.canonicalId || firstLesson?.id || GOLDEN_LESSON_ID;
   root.innerHTML = `
     <section class="page home-page">
-      <header class="page-header">
-        <span class="eyebrow">ChemLab-G9 · Golden Lesson v1.0</span>
-        <h1>${escapeHtml(data.title || '九年级化学智能学习中心')}</h1>
-        <p>${escapeHtml(data.subtitle || '学习 → 理解 → 实验 → 练习 → 诊断 → 补救 → 掌握')}</p>
+      <header class="learning-record-header">
+        <div class="lrh-top">
+          <div class="lrh-title-group">
+            <span class="lrh-eyebrow">ChemLab-G9 · 学习记录表</span>
+            <h1>学习记录表</h1>
+          </div>
+          <div class="lrh-progress-block">
+            <div class="lrh-progress-label"><span class="lrh-pct">${stats.progressPercent || 0}%</span> 整体进度 · 已完成 ${stats.completed || 0} / ${stats.total || 0} 课</div>
+            <div class="lrh-progress-bar"><span class="lrh-progress-fill" style="width:${stats.progressPercent || 0}%"></span></div>
+          </div>
+        </div>
+        ${lessons.length ? `<div class="lrh-course-list" aria-label="课程列表">
+          ${lessons.map((lesson, i) => {
+            const dayNum = String(Number(lesson.day || i + 1)).padStart(2, '0');
+            return `<button type="button" class="lrh-course-item${lesson.completed ? ' lrh-course-item--done' : ''}" data-lesson-id="${escapeHtml(lesson.id)}"><span class="lrh-course-num">${dayNum}</span><span class="lrh-course-name">${escapeHtml(lesson.title || lesson.id)}</span>${lesson.completed ? '<span class="lrh-course-tag">已完成</span>' : '<span class="lrh-course-tag lrh-course-tag--pending">待学</span>'}</button>`;
+          }).join('')}
+        </div>` : '<div class="lrh-course-list"><p class="lrh-empty">课程内容正在准备中。</p></div>'}
       </header>
       ${firstLesson ? `<section class="golden-lesson-entry" aria-label="精品首课">
         <div class="golden-lesson-entry__meta"><span>GOLDEN LESSON · 01</span><span>95% MASTERY</span></div>
@@ -49,11 +62,6 @@ export function renderHome({ root, data = {}, onCourse, onDashboard, onGraph, on
         <button type="button" class="support-card" data-dashboard><span class="support-number">◎</span><strong>学习报告</strong><small>查看掌握度、完成度与学习记录</small></button>
         <button type="button" class="support-card" data-graph><span class="support-number">⌘</span><strong>知识地图</strong><small>查看知识点之间的关联</small></button>
         ${data.hasRemediation ? '<button type="button" class="support-card" data-remediation><span class="support-number">↻</span><strong>针对性补救</strong><small>回到尚未掌握的知识点</small></button>' : ''}
-      </section>
-      <section class="home-stats" aria-label="学习数据">
-        <div><strong>${Number(stats.completed || 0)}</strong><span>已完成课程</span></div>
-        <div><strong>${Number(stats.mastery || 0)}%</strong><span>当前掌握度</span></div>
-        <div><strong>${Number(stats.questions || 0)}</strong><span>已答题</span></div>
       </section>
     </section>`;
   root.querySelector('[data-course]')?.addEventListener('click', () => onCourse?.());

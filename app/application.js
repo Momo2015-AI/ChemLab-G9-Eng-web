@@ -58,7 +58,7 @@ export function createApplication({ state, assessment, experimentEngine, mastery
     if (!root) return;
     views.renderHome({
       root,
-      data: { title: '九年级化学智能学习中心', subtitle, lessons: [], stats: { completed: 0, mastery: 0, questions: 0 } },
+      data: { title: '九年级化学智能学习中心', subtitle, lessons: [], stats: { completed: 0, total: 0, progressPercent: 0, mastery: 0, questions: 0 } },
       onCourse: () => router.navigate('course'),
       onDashboard: () => router.navigate('progress'),
       onGraph: () => router.navigate('knowledge-map'),
@@ -113,6 +113,8 @@ export function createApplication({ state, assessment, experimentEngine, mastery
       hasRemediation: weakPoints.length > 0,
       stats: {
         completed: lessons.filter(day => day.completed).length,
+        total: lessons.length,
+        progressPercent: lessons.length ? Math.round((lessons.filter(day => day.completed).length / lessons.length) * 100) : 0,
         mastery: Math.round((progress.masteryScore || 0) * 100),
         questions: progress.questions || 0,
         weak: new Set(weakPoints).size,
