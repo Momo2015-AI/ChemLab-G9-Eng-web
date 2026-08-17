@@ -512,6 +512,20 @@ html:root[data-theme="light"] .guided-submit:hover{
 }
 html:root[data-theme="light"] .guided-result.correct{color:#2d7a31 !important;font-weight:700}
 html:root[data-theme="light"] .guided-result.retry{color:var(--ph-red) !important;font-weight:700}
+
+html:root[data-theme="light"] .guided-card-header{color:var(--ink) !important}
+html:root[data-theme="light"] .guided-card-header:hover{background:color-mix(in srgb, var(--ph-violet) 6%, transparent) !important}
+html:root[data-theme="light"] .guided-card-main small{color:var(--ink-faint) !important}
+html:root[data-theme="light"] .guided-card-toggle{color:var(--ink-faint) !important}
+html:root[data-theme="light"] .guided-check-title{color:var(--ph-blue) !important}
+html:root[data-theme="light"] .guided-question{color:var(--ink) !important}
+html:root[data-theme="light"] .guided-options label{
+  border:1px solid var(--ink-line) !important;
+  background:var(--ink-bg-1) !important;
+}
+html:root[data-theme="light"] .guided-options label:hover{border-color:var(--ph-blue) !important;background:color-mix(in srgb, var(--ph-blue) 8%, var(--ink-bg-1)) !important}
+html:root[data-theme="light"] .guided-options input[type="radio"]:checked + span{color:var(--ph-blue) !important;font-weight:700}
+html:root[data-theme="light"] .guided-result{color:var(--ink-dim) !important}
 html:root[data-theme="light"] .mastery-gate-card{
   background:linear-gradient(135deg, rgba(67,160,71,.08), rgba(67,160,71,.02)) !important;
   border:2px solid rgba(67,160,71,.25) !important;
