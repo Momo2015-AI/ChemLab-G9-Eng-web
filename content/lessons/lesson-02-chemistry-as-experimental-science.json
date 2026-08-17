@@ -243,7 +243,7 @@
         "两句都是观察",
         "两句都是解释"
       ],
-      "errorType": "observation-inference-confusion",
+      "errorType": "mc-method-observation-inference",
       "remediationStep": "L02-S02/L02-S03",
       "knowledgeIds": [
         "observation-inference"
@@ -260,7 +260,7 @@
         "温度不需要控制",
         "溶解快慢无法比较"
       ],
-      "errorType": "control-variable-violation",
+      "errorType": "mc-method-control-variable",
       "remediationStep": "L02-S04",
       "knowledgeIds": [
         "control-variables"
@@ -277,7 +277,7 @@
         "观察的客观性",
         "结论的可检验性"
       ],
-      "errorType": "data-fabrication",
+      "errorType": "mc-method-data-integrity",
       "remediationStep": "L02-S06/L02-S07",
       "knowledgeIds": [
         "data-integrity"
@@ -285,10 +285,10 @@
     }
   ],
   "misconceptions": [
-    "M02-observation-inference",
-    "M02-control-variable",
-    "M02-data-integrity",
-    "M02-evidence-logic"
+    "mc-method-observation-inference",
+    "mc-method-control-variable",
+    "mc-method-data-integrity",
+    "mc-method-evidence-logic"
   ],
   "mastery": {
     "threshold": 0.95,

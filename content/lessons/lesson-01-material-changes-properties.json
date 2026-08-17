@@ -254,10 +254,10 @@
     "fallback": "diagnosis"
   },
   "misconceptions": [
-    "observation-inference",
-    "change-vs-property",
-    "physical-vs-chemical",
-    "single-phenomenon-overgeneralization"
+    "mc-method-observation-inference",
+    "mc-matter-change-vs-property",
+    "mc-matter-physical-vs-chemical",
+    "mc-method-single-phenomenon-overgeneralization"
   ],
   "sections": [
     {

@@ -13,7 +13,7 @@
         "两句都错误"
       ],
       "answer": 1,
-      "errorType": "necessary-sufficient-confusion",
+      "errorType": "mc-acid-necessary-sufficient",
       "remediationStep": "L03-S04",
       "knowledgeIds": [
         "acid-property",
@@ -31,7 +31,7 @@
         "浪费药品"
       ],
       "answer": 1,
-      "errorType": "safety-violation",
+      "errorType": "mc-acid-safety-violation",
       "remediationStep": "L03-S07",
       "knowledgeIds": [
         "safety-awareness",
@@ -49,7 +49,7 @@
         "铜"
       ],
       "answer": 3,
-      "errorType": "metal-activity-mistake",
+      "errorType": "mc-acid-metal-activity",
       "remediationStep": "L03-S05",
       "knowledgeIds": [
         "chemical-property"

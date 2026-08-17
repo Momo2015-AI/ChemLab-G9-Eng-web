@@ -211,7 +211,7 @@
         "前者错误，后者正确",
         "两句都错误"
       ],
-      "errorType": "necessary-sufficient-confusion",
+      "errorType": "mc-acid-necessary-sufficient",
       "remediationStep": "L03-S04",
       "knowledgeIds": [
         "acid-property",
@@ -229,7 +229,7 @@
         "生成新物质",
         "浪费药品"
       ],
-      "errorType": "safety-violation",
+      "errorType": "mc-acid-safety-violation",
       "remediationStep": "L03-S07",
       "knowledgeIds": [
         "safety-awareness",
@@ -247,7 +247,7 @@
         "镁",
         "铜"
       ],
-      "errorType": "metal-activity-mistake",
+      "errorType": "mc-acid-metal-activity",
       "remediationStep": "L03-S05",
       "knowledgeIds": [
         "chemical-property"
@@ -264,9 +264,9 @@
     "fallback": "diagnosis"
   },
   "misconceptions": [
-    "acid-property",
-    "safety-awareness",
-    "single-phenomenon-overgeneralization"
+    "mc-acid-property",
+    "mc-acid-safety-awareness",
+    "mc-method-single-phenomenon-overgeneralization"
   ],
   "sections": [
     {

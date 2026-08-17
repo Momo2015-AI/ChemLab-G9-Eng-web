@@ -13,7 +13,7 @@
         "两句都是解释"
       ],
       "answer": 0,
-      "errorType": "observation-inference-confusion",
+      "errorType": "mc-method-observation-inference",
       "remediationStep": "L02-S02/L02-S03",
       "knowledgeIds": [
         "observation-inference"
@@ -30,7 +30,7 @@
         "温度不需要控制"
       ],
       "answer": 1,
-      "errorType": "control-variable-violation",
+      "errorType": "mc-method-control-variable",
       "remediationStep": "L02-S04",
       "knowledgeIds": [
         "control-variables"
@@ -47,7 +47,7 @@
         "控制变量原则"
       ],
       "answer": 2,
-      "errorType": "data-fabrication",
+      "errorType": "mc-method-data-integrity",
       "remediationStep": "L02-S06/L02-S07",
       "knowledgeIds": [
         "data-integrity"

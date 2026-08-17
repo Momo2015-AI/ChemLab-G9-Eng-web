@@ -13,10 +13,10 @@
       "data-integrity"
     ],
     "criticalMisconceptions": [
-      "observation-inference-confusion",
-      "control-variable-violation",
-      "data-fabrication",
-      "evidence-logic-gap"
+      "mc-method-observation-inference",
+      "mc-method-control-variable",
+      "mc-method-data-integrity",
+      "mc-method-evidence-logic"
     ],
     "requireConstructed": true,
     "questions": [
@@ -52,7 +52,7 @@
           "observation-inference"
         ],
         "misconceptionIds": [
-          "observation-inference-confusion"
+          "mc-method-observation-inference"
         ]
       },
       {
@@ -151,7 +151,7 @@
           "control-variables"
         ],
         "misconceptionIds": [
-          "control-variable-violation"
+          "mc-method-control-variable"
         ]
       },
       {
@@ -170,7 +170,7 @@
           "data-integrity"
         ],
         "misconceptionIds": [
-          "data-fabrication"
+          "mc-method-data-integrity"
         ]
       },
       {
@@ -317,7 +317,7 @@
           "evidence-reasoning"
         ],
         "misconceptionIds": [
-          "evidence-logic-gap"
+          "mc-method-evidence-logic"
         ]
       },
       {

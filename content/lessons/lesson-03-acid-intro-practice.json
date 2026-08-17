@@ -236,7 +236,7 @@
         ],
         "explanation": "稀释浓硫酸必须酸入水并搅拌，防止暴沸飞溅。"
       },
-      "misconception": "M03-safety-dilution",
+      "misconception": "mc-acid-safety-dilution",
       "knowledgeIds": [
         "safety-awareness",
         "data-integrity"
@@ -271,7 +271,7 @@
         ],
         "explanation": "硫酸根离子与钡离子生成不溶于酸的白色沉淀，可区别于盐酸。"
       },
-      "misconception": "M03-acid-distinguish",
+      "misconception": "mc-acid-hcl-solution",
       "knowledgeIds": [
         "chemical-property",
         "evidence-reasoning",

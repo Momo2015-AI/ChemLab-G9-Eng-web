@@ -13,7 +13,7 @@
         "两个都没有现象"
       ],
       "answer": 0,
-      "errorType": "definition-confusion",
+      "errorType": "mc-matter-definition-confusion",
       "remediationStep": "L01-S02/L01-S03",
       "knowledgeIds": [
         "physical-change",
@@ -31,7 +31,7 @@
         "忽略其他现象"
       ],
       "answer": 1,
-      "errorType": "single-phenomenon-overgeneralization",
+      "errorType": "mc-method-single-phenomenon-overgeneralization",
       "remediationStep": "L01-S04",
       "knowledgeIds": [
         "evidence-reasoning"
@@ -48,7 +48,7 @@
         "现象和温度"
       ],
       "answer": 1,
-      "errorType": "property-change-confusion",
+      "errorType": "mc-matter-property-change-confusion",
       "remediationStep": "L01-S05/L01-S06/L01-S07",
       "knowledgeIds": [
         "matter-change",

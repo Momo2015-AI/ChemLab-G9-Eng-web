@@ -26,7 +26,7 @@
           "acid-property"
         ],
         "misconceptionIds": [
-          "necessary-sufficient-confusion"
+          "mc-acid-necessary-sufficient"
         ]
       },
       {
@@ -102,7 +102,7 @@
           "safety-awareness"
         ],
         "misconceptionIds": [
-          "safety-violation"
+          "mc-acid-safety-violation"
         ]
       },
       {
@@ -143,7 +143,7 @@
           "evidence-reasoning"
         ],
         "misconceptionIds": [
-          "metal-activity-mistake"
+          "mc-acid-metal-activity"
         ]
       },
       {
@@ -435,9 +435,9 @@
       "evidence-reasoning"
     ],
     "criticalMisconceptions": [
-      "necessary-sufficient-confusion",
-      "safety-violation",
-      "metal-activity-mistake"
+      "mc-acid-necessary-sufficient",
+      "mc-acid-safety-violation",
+      "mc-acid-metal-activity"
     ],
     "requireConstructed": true
   }

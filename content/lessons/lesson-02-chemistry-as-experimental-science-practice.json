@@ -230,7 +230,7 @@
         ],
         "explanation": "现象是观察到的直接事实，解释是对现象的原因说明，两者不可混淆。"
       },
-      "misconception": "M02-observation-inference",
+      "misconception": "mc-method-observation-inference",
       "knowledgeIds": [
         "observation-inference",
         "evidence-reasoning"
@@ -271,7 +271,7 @@
         ],
         "explanation": "对照实验只改变研究变量，其他条件保持一致。"
       },
-      "misconception": "M02-control-variable",
+      "misconception": "mc-method-control-variable",
       "knowledgeIds": [
         "control-variables",
         "data-integrity"

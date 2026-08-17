@@ -15,10 +15,10 @@
       "evidence-reasoning"
     ],
     "criticalMisconceptions": [
-      "physical-vs-chemical",
-      "change-vs-property",
-      "single-phenomenon-overgeneralization",
-      "observation-inference"
+      "mc-matter-physical-vs-chemical",
+      "mc-matter-change-vs-property",
+      "mc-method-single-phenomenon-overgeneralization",
+      "mc-method-observation-inference"
     ],
     "requireConstructed": true,
     "questions": [
@@ -39,7 +39,7 @@
           "chemical-change"
         ],
         "misconceptionIds": [
-          "physical-vs-chemical"
+          "mc-matter-physical-vs-chemical"
         ]
       },
       {
@@ -90,7 +90,7 @@
           "evidence-reasoning"
         ],
         "misconceptionIds": [
-          "single-phenomenon-overgeneralization"
+          "mc-method-single-phenomenon-overgeneralization"
         ]
       },
       {
@@ -192,7 +192,7 @@
           "observation-inference"
         ],
         "misconceptionIds": [
-          "change-vs-property"
+          "mc-matter-change-vs-property"
         ]
       },
       {
@@ -310,7 +310,7 @@
           "evidence-reasoning"
         ],
         "misconceptionIds": [
-          "observation-inference"
+          "mc-method-observation-inference"
         ]
       },
       {
@@ -364,7 +364,7 @@
           "observation-inference"
         ],
         "misconceptionIds": [
-          "observation-inference"
+          "mc-method-observation-inference"
         ]
       },
       {
