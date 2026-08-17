@@ -149,3 +149,66 @@ test('knowledge portal renders learn action for nodes covered by a lesson', () =
   clickHandlers.forEach(handler => handler());
   assert.match(fakePanel.innerHTML, /去学习这个知识点/);
 });
+
+test('disabled experiment button does not trigger onStartExperiment', () => {
+  let experimentCalled = false;
+  const clickHandlers = [];
+  const fakeBtn = {
+    disabled: true,
+    addEventListener(type, handler) { if (type === 'click') clickHandlers.push(handler); },
+  };
+  const root = {
+    innerHTML: '',
+    querySelector(selector) {
+      if (selector === '[data-experiment]') return fakeBtn;
+      return null;
+    },
+    querySelectorAll() { return []; },
+  };
+  renderV19Course({
+    root,
+    lesson: { id: 'l1', knowledgePoints: ['physical-change'], experiments: [{ id: 'exp1' }] },
+    stages: { experiment: false },
+    onStartExperiment: () => { experimentCalled = true; },
+  });
+  // Simulate click on disabled button
+  clickHandlers.forEach(h => h());
+  assert.equal(experimentCalled, false, 'onStartExperiment should not fire when button is disabled');
+});
+
+test('enabled experiment button triggers onStartExperiment', () => {
+  let experimentCalled = false;
+  const clickHandlers = [];
+  const fakeBtn = {
+    disabled: false,
+    addEventListener(type, handler) { if (type === 'click') clickHandlers.push(handler); },
+  };
+  const root = {
+    innerHTML: '',
+    querySelector(selector) {
+      if (selector === '[data-experiment]') return fakeBtn;
+      return null;
+    },
+    querySelectorAll() { return []; },
+  };
+  renderV19Course({
+    root,
+    lesson: { id: 'l1', knowledgePoints: ['physical-change'], experiments: [{ id: 'exp1' }] },
+    stages: { experiment: true },
+    onStartExperiment: (exp) => { experimentCalled = true; assert.equal(exp, 'exp1'); },
+  });
+  clickHandlers.forEach(h => h());
+  assert.equal(experimentCalled, true, 'onStartExperiment should fire when button is enabled');
+});
+
+test('knowledge cards carry data-kp-index for CSS theming', () => {
+  const root = { innerHTML: '', querySelector() { return null; }, querySelectorAll() { return []; } };
+  renderV19Course({
+    root,
+    lesson: { id: 'l1', knowledgePoints: ['physical-change', 'chemical-change', 'observation-inference'], sections: [] },
+  });
+  assert.match(root.innerHTML, /data-kp-index="0"/);
+  assert.match(root.innerHTML, /data-kp-index="1"/);
+  assert.match(root.innerHTML, /data-kp-index="2"/);
+  assert.equal((root.innerHTML.match(/data-kp-index/g) || []).length, 3);
+});
