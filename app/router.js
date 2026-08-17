@@ -5,7 +5,7 @@
  */
 const ROUTES = new Set([
   'home','course','lab','knowledge-map','assessment','progress','ai-tutor',
-  'dashboard','graph','quiz','experiment','experiment-result','result','remediation'
+  'dashboard','graph','quiz','experiment','experiment-result','result','remediation','knowledge-detail'
 ]);
 const hasWindow=()=>typeof window!=='undefined';
 function parseHash(hash=hasWindow()?window.location.hash:''){

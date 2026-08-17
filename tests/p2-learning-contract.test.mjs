@@ -25,7 +25,7 @@ test('Mastery requires score, knowledge coverage, and critical misconception cle
   assert.equal(decision.misconceptionsPassed, false);
   assert.equal(decision.passed, false);
   assert.deepEqual(decision.uncoveredKnowledge, ['chemical-change']);
-  assert.deepEqual(decision.unclearedMisconceptions, ['definition-confusion']);
+  assert.deepEqual(decision.unclearedMisconceptions, ['mc-matter-definition-confusion']);
 });
 
 test('Mastery passes when all declared dimensions are satisfied', () => {

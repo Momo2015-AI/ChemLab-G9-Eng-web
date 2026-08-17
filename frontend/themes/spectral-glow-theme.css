@@ -288,7 +288,7 @@ body{
 
 /* -- 知识图谱 -- */
 .cg-legend-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-.cg-graphwrap{display:grid;grid-template-columns:1fr 300px;gap:18px;align-items:start}
+.cg-graphwrap{display:flex;flex-direction:column;gap:18px}
 .cg-graphbox{background:var(--ink-bg-1);border:1px solid var(--ink-line);border-radius:18px;padding:8px;height:460px}
 .cg-graphbox svg{width:100%;height:100%}
 .cg-gnode{cursor:pointer}

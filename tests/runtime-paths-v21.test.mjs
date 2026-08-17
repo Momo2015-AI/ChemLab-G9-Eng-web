@@ -117,6 +117,7 @@ test('course view renders lesson sections and preset diagnostic questions', () =
 
 test('knowledge portal renders learn action for nodes covered by a lesson', () => {
   const clickHandlers = [];
+  const selectedNodes = [];
   const fakeElement = () => ({
     setAttribute() {}, appendChild() {}, style: {}, dataset: {},
     classList: { toggle() {} },
@@ -126,12 +127,10 @@ test('knowledge portal renders learn action for nodes covered by a lesson', () =
     createElementNS: () => fakeElement(),
   };
   const fakeSvg = { appendChild() {} };
-  const fakePanel = { innerHTML: '' };
   const root = {
     innerHTML: '',
     querySelector(selector) {
       if (selector === '#cg-svg') return fakeSvg;
-      if (selector === '#cg-panel') return fakePanel;
       return null;
     },
     querySelectorAll() { return []; },
@@ -142,12 +141,14 @@ test('knowledge portal renders learn action for nodes covered by a lesson', () =
       nodes: [{ id: 'physical-property', name: '物理性质', domain: 'matter', chapter: '单元一 走进化学世界' }],
       relations: [],
       lessons: [{ id: 'lesson-01-material-changes-properties', knowledgePoints: ['physical-property'] }],
+      onSelectNode: id => selectedNodes.push(id),
     });
   } finally {
     delete global.document;
   }
   clickHandlers.forEach(handler => handler());
-  assert.match(fakePanel.innerHTML, /去学习这个知识点/);
+  assert.equal(selectedNodes.length, 1);
+  assert.equal(selectedNodes[0], 'physical-property');
 });
 
 test('disabled experiment button does not trigger onStartExperiment', () => {

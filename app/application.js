@@ -18,12 +18,13 @@ import { renderLabPortal } from '../frontend/pages/lab/lab-portal-page.js';
 import { renderKnowledgePortal } from '../frontend/pages/knowledge/knowledge-portal-page.js';
 import { renderAssessmentPortal } from '../frontend/pages/assessment/assessment-portal-page.js';
 import { renderProgressPortal } from '../frontend/pages/progress/progress-portal-page.js';
+import { renderKnowledgeDetail } from '../views/knowledge-detail-view.js';
 import { createRemediationCatalog } from '../core/diagnosis/remediation-catalog.js';
 import { getLessonReleaseState } from '../content/release-policy.js';
 
 const getDefaultRoot = () => (typeof document === 'undefined' ? null : document.querySelector('#app-root'));
 const CANONICAL_GOLDEN_LESSON = 'lesson-01-material-changes-properties';
-const CONTENT_ROUTES = new Set(['home', 'course', 'progress', 'assessment', 'quiz', 'knowledge-map', 'graph']);
+const CONTENT_ROUTES = new Set(['home', 'course', 'progress', 'assessment', 'quiz', 'knowledge-map', 'knowledge-detail', 'graph']);
 const HOME_DATA_ROUTES = new Set(['home', 'course', 'progress', 'assessment']);
 const QUIZ_MODES = { 'mastery:': 'mastery', 'recheck:': 'recheck', 'transfer:': 'transfer' };
 
@@ -218,6 +219,7 @@ export function createApplication({ state, assessment, experimentEngine, mastery
       root,
       onHome: () => router.navigate('home'),
       onLearn: lessonId => router.navigate('course', lessonId),
+      onSelectNode: id => router.navigate('knowledge-detail', id),
       nodes,
       relations: graph?.relations || [],
       lessons: Array.isArray(homeData?.lessons) ? homeData.lessons : [],
@@ -225,6 +227,20 @@ export function createApplication({ state, assessment, experimentEngine, mastery
       scopeTerm: term,
       allCount: allNodes.length,
       onScope: scope => { knowledgeScope = scope; void renderKnowledgeMapRoute(); },
+    });
+  }
+
+  async function renderKnowledgeDetailRoute(nodeId) {
+    const graph = await contentService.getKnowledgeGraphViewModel().catch(() => ({ nodes: [], relations: [] }));
+    const homeData = await getHomeData();
+    const node = (graph?.nodes || []).find(n => n.id === nodeId);
+    const lessons = Array.isArray(homeData?.lessons) ? homeData.lessons : [];
+    return renderKnowledgeDetail({
+      root,
+      node,
+      lessonId: '',
+      onBack: () => router.navigate('knowledge-map'),
+      onLearn: lessonId => router.navigate('course', lessonId),
     });
   }
 
@@ -432,6 +448,7 @@ export function createApplication({ state, assessment, experimentEngine, mastery
       case 'course': return renderCourseRoute(route, data);
       case 'lab': return renderLabRoute();
       case 'knowledge-map': return renderKnowledgeMapRoute();
+      case 'knowledge-detail': return renderKnowledgeDetailRoute(route.params[0]);
       case 'assessment': return renderAssessmentRoute(data);
       case 'progress':
       case 'dashboard': return renderProgressRoute(data);

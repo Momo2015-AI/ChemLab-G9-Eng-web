@@ -25,7 +25,14 @@
         "L01-M19"
       ],
       "semester": "upper",
-      "unitId": "u01"
+      "unitId": "u01",
+      "definition": "物质发生变化时，可能产生新物质（化学变化），也可能不产生新物质（物理变化）。判断依据是是否有新物质生成。",
+      "prerequisiteIds": [],
+      "misconceptionIds": [
+        "mc-matter-change-vs-property",
+        "mc-matter-physical-vs-chemical"
+      ],
+      "remediationGoal": "理解\"是否生成新物质\"是判断物理变化与化学变化的根本标准，而非外观或状态改变。"
     },
     {
       "id": "physical-change",
@@ -49,7 +56,16 @@
         "L01-M21"
       ],
       "semester": "upper",
-      "unitId": "u01"
+      "unitId": "u01",
+      "definition": "没有生成其他物质的变化，如状态改变、形状改变、破碎等，变化前后物质的化学组成不变。",
+      "prerequisiteIds": [
+        "matter-change"
+      ],
+      "misconceptionIds": [
+        "mc-matter-physical-vs-chemical",
+        "mc-method-single-phenomenon-overgeneralization"
+      ],
+      "remediationGoal": "能用\"生成新物质\"判断变化类别，不将颜色、形态改变等同于化学变化。"
     },
     {
       "id": "chemical-change",
@@ -73,7 +89,16 @@
         "L01-T02"
       ],
       "semester": "upper",
-      "unitId": "u01"
+      "unitId": "u01",
+      "definition": "生成其他物质的变化，常伴随发光、发热、颜色改变、产生气体或沉淀等现象，但现象只是证据，本质是生成新物质。",
+      "prerequisiteIds": [
+        "matter-change"
+      ],
+      "misconceptionIds": [
+        "mc-matter-physical-vs-chemical",
+        "mc-method-single-phenomenon-overgeneralization"
+      ],
+      "remediationGoal": "以\"生成新物质\"为判断依据，现象只是辅助证据，不能以单一现象代替本质判断。"
     },
     {
       "id": "physical-property",
@@ -100,7 +125,15 @@
         "L03-M02"
       ],
       "semester": "upper",
-      "unitId": "u01"
+      "unitId": "u01",
+      "definition": "物质不需要发生化学变化就能表现出来的性质，如颜色、状态、气味、熔点、沸点、密度、硬度、导电性等。",
+      "prerequisiteIds": [
+        "physical-change"
+      ],
+      "misconceptionIds": [
+        "mc-matter-change-vs-property"
+      ],
+      "remediationGoal": "区分\"性质\"（能力描述）与\"变化\"（过程描述），不将性质判断等同于变化发生。"
     },
     {
       "id": "chemical-property",
@@ -141,7 +174,15 @@
         "L03-M19"
       ],
       "semester": "upper",
-      "unitId": "u01"
+      "unitId": "u01",
+      "definition": "物质在化学变化中表现出来的性质，如可燃性、氧化性、还原性、酸碱性、稳定性等。",
+      "prerequisiteIds": [
+        "chemical-change"
+      ],
+      "misconceptionIds": [
+        "mc-matter-change-vs-property"
+      ],
+      "remediationGoal": "理解化学性质必须通过化学变化才能表现，能用\"能否发生某反应\"判断化学性质。"
     },
     {
       "id": "observation-inference",
@@ -190,7 +231,15 @@
         "L03-M20"
       ],
       "semester": "upper",
-      "unitId": "u01"
+      "unitId": "u01",
+      "definition": "观察是直接用感官或仪器获取信息（证据），推断是根据证据得出结论。两者不可混为一谈。",
+      "prerequisiteIds": [
+        "scientific-inquiry"
+      ],
+      "misconceptionIds": [
+        "mc-method-observation-inference"
+      ],
+      "remediationGoal": "建立\"观察→证据→推理→结论\"的科学思维链，区分可观察现象与主观解释。"
     },
     {
       "id": "evidence-reasoning",
@@ -250,7 +299,16 @@
         "L03-M20"
       ],
       "semester": "upper",
-      "unitId": "u01"
+      "unitId": "u01",
+      "definition": "以证据为基础进行推理，结论必须能被证据支撑；单一现象不足以得出确定结论，需要多角度证据验证。",
+      "prerequisiteIds": [
+        "observation-inference"
+      ],
+      "misconceptionIds": [
+        "mc-method-single-phenomenon-overgeneralization",
+        "mc-method-evidence-logic"
+      ],
+      "remediationGoal": "养成用多源证据支持结论的习惯，避免以单一现象直接下判断。"
     },
     {
       "id": "scientific-inquiry",
@@ -274,7 +332,13 @@
         "L03-M16"
       ],
       "semester": "upper",
-      "unitId": "u01"
+      "unitId": "u01",
+      "definition": "科学探究的基本过程：提出问题→作出假设→设计实验→收集证据→得出结论→反思评价，强调证据驱动和逻辑推理。",
+      "prerequisiteIds": [],
+      "misconceptionIds": [
+        "mc-method-observation-inference"
+      ],
+      "remediationGoal": "掌握科学探究的基本流程，理解每个环节的逻辑关系，能独立设计简单对照实验。"
     },
     {
       "id": "control-variables",
@@ -301,7 +365,13 @@
         "L03-P13"
       ],
       "semester": "upper",
-      "unitId": "u01"
+      "unitId": "u01",
+      "definition": "对照实验中只改变一个因素（自变量），其他因素保持不变（控制变量），以确保实验结果的变化确实由该因素引起。",
+      "prerequisiteIds": [],
+      "misconceptionIds": [
+        "mc-method-control-variable"
+      ],
+      "remediationGoal": "能识别实验中的自变量、因变量和控制变量，设计合理的对照实验方案。"
     },
     {
       "id": "data-integrity",
@@ -328,7 +398,13 @@
         "L03-D02"
       ],
       "semester": "upper",
-      "unitId": "u01"
+      "unitId": "u01",
+      "definition": "实验数据必须真实、完整、可重复；不能选择性记录或编造数据，异常数据需要如实记录并分析原因。",
+      "prerequisiteIds": [],
+      "misconceptionIds": [
+        "mc-method-data-integrity"
+      ],
+      "remediationGoal": "理解数据真实性是科学结论的基础，掌握重复实验和样本量对结论可靠性的意义。"
     },
     {
       "id": "acid-intro",
@@ -351,7 +427,15 @@
         "safety-awareness"
       ],
       "semester": "lower",
-      "unitId": "u10"
+      "unitId": "u10",
+      "definition": "酸在水溶液中都能电离出氢离子（H⁺），这是酸的共性；不同酸的强弱由电离程度决定，与浓度是两个独立概念。",
+      "prerequisiteIds": [],
+      "misconceptionIds": [
+        "mc-acid-hcl-solution",
+        "mc-acid-property",
+        "mc-method-single-phenomenon-overgeneralization"
+      ],
+      "remediationGoal": "理解酸的共性源于H⁺，区分\"强弱\"（电离程度）与\"浓稀\"（浓度）是两个独立概念。"
     },
     {
       "id": "acid-property",
@@ -372,7 +456,16 @@
         "L03-M21"
       ],
       "semester": "lower",
-      "unitId": "u10"
+      "unitId": "u10",
+      "definition": "酸能与活泼金属反应生成盐和氢气，能与金属氧化物反应生成盐和水，能使指示剂变色；不同酸的特殊性质由酸根离子决定。",
+      "prerequisiteIds": [
+        "acid-intro"
+      ],
+      "misconceptionIds": [
+        "mc-acid-metal-overgeneralization",
+        "mc-acid-observation-inference"
+      ],
+      "remediationGoal": "掌握酸的通性与个性，用金属活动性顺序判断置换反应，区分观察现象与化学解释。"
     },
     {
       "id": "safety-awareness",
@@ -394,7 +487,14 @@
         "L03-M21"
       ],
       "semester": "lower",
-      "unitId": "u10"
+      "unitId": "u10",
+      "definition": "化学实验安全规范：佩戴护目镜和手套、酸入水而非水入酸、在通风处操作、正确处理意外泄漏。",
+      "prerequisiteIds": [],
+      "misconceptionIds": [
+        "mc-acid-safety-dilution",
+        "mc-acid-safety-violation"
+      ],
+      "remediationGoal": "熟记并严格执行酸碱实验安全操作规程，理解违规操作的潜在危害。"
     }
   ],
   "relations": [

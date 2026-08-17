@@ -30,7 +30,7 @@ function layout(nodes) {
   return positioned;
 }
 
-export function renderKnowledgePortal({ root, nodes = [], relations = [], lessons = [], onHome = () => { window.location.hash = 'home'; }, onLearn = () => {}, scope = 'term', scopeTerm = 'upper', allCount = 0, onScope = null } = {}) {
+export function renderKnowledgePortal({ root, nodes = [], relations = [], lessons = [], onHome = () => { window.location.hash = 'home'; }, onLearn = () => {}, onSelectNode = () => {}, scope = 'term', scopeTerm = 'upper', allCount = 0, onScope = null } = {}) {
   if (!root) return;
   const laidOut = layout(nodes);
   const byId = new Map(laidOut.map(n => [n.id, n]));
@@ -46,7 +46,7 @@ export function renderKnowledgePortal({ root, nodes = [], relations = [], lesson
 
   root.innerHTML = `<section class="portal-page cg-graph-page">
     <div class="portal-hero">
-      <div><div class="portal-eyebrow">KNOWLEDGE GRAPH</div><h1 class="portal-title">知识图谱</h1><p class="portal-subtitle">${nodes.length} 个知识点 · ${scope === 'term' ? `${scopeTerm === 'lower' ? '下' : '上'}册范围` : '全学年范围'} · 点击节点查看前置知识、关联实验与题目</p></div>
+      <div><div class="portal-eyebrow">KNOWLEDGE GRAPH</div><h1 class="portal-title">知识图谱</h1><p class="portal-subtitle">${nodes.length} 个知识点 · 点击节点查看定义、前置知识与常见误解</p></div>
       <div class="portal-actions">${scopeBtn}<button class="portal-btn" data-home>⌂ 首页</button></div>
     </div>
     <div class="cg-legend-row">${Object.entries(DOMAIN_LABEL).map(([b, label]) => `<span class="cg-chip" style="--c:${SPECTRAL_VARS[b]}"><i></i>${label}</span>`).join('')}</div>
@@ -55,7 +55,6 @@ export function renderKnowledgePortal({ root, nodes = [], relations = [], lesson
         <input class="cg-gsearch" type="search" placeholder="搜索知识点…" data-search>
         <svg viewBox="0 0 600 450" id="cg-svg"></svg>
       </div>
-      <div class="cg-gpanel" id="cg-panel"><div class="cg-gp-empty">点击左侧任意节点<br>查看知识点详情</div></div>
     </div>
   </section>`;
 
@@ -63,10 +62,7 @@ export function renderKnowledgePortal({ root, nodes = [], relations = [], lesson
   root.querySelector('[data-scope]')?.addEventListener('click', () => onScope?.(scope === 'term' ? 'all' : 'term'));
 
   const svg = root.querySelector('#cg-svg');
-  const panel = root.querySelector('#cg-panel');
   const svgns = 'http://www.w3.org/2000/svg';
-  let edgeLayer = document.createElementNS(svgns, 'g');
-  svg.appendChild(edgeLayer);
 
   laidOut.forEach(n => {
     const g = document.createElementNS(svgns, 'g');
@@ -81,39 +77,9 @@ export function renderKnowledgePortal({ root, nodes = [], relations = [], lesson
     t.setAttribute('x', n.x); t.setAttribute('y', n.y + 20); t.setAttribute('text-anchor', 'middle');
     t.textContent = n.name?.length > 8 ? n.name.slice(0, 7) + '…' : n.name || n.id;
     g.appendChild(t);
-    g.addEventListener('click', () => selectNode(n.id));
+    g.addEventListener('click', () => onSelectNode(n.id));
     svg.appendChild(g);
   });
-
-  function selectNode(id) {
-    const node = byId.get(id);
-    if (!node) return;
-    root.querySelectorAll('.cg-gnode').forEach(g => g.classList.toggle('sel', g.dataset.id === id));
-    const linked = relations.filter(r => r.source === id || r.target === id);
-    edgeLayer.innerHTML = '';
-    linked.forEach(r => {
-      const a = byId.get(r.source), b = byId.get(r.target);
-      if (!a || !b) return;
-      const line = document.createElementNS(svgns, 'line');
-      line.setAttribute('x1', a.x); line.setAttribute('y1', a.y);
-      line.setAttribute('x2', b.x); line.setAttribute('y2', b.y);
-      line.setAttribute('class', 'cg-gedge');
-      edgeLayer.appendChild(line);
-    });
-    const byType = {};
-    linked.forEach(r => {
-      const other = r.source === id ? r.target : r.source;
-      (byType[r.type] ||= []).push(r.type === 'experiment' || r.type === 'question' ? other : (byId.get(other)?.name || other));
-    });
-    panel.innerHTML = `
-      <span class="cg-chip" style="--c:${SPECTRAL_VARS[node.bucket]}"><i></i>${DOMAIN_LABEL[node.bucket]}</span>
-      <h4>${escapeHtml(node.name || node.id)}</h4>
-      ${node.chapter ? `<p class="portal-muted">${escapeHtml(node.chapter)}</p>` : ''}
-      ${Object.entries(TYPE_LABEL).map(([type, label]) => `<div class="cg-gp-row"><h5>${label}</h5><ul>${(byType[type]?.length ? byType[type] : ['—']).slice(0, 6).map(x => `<li>${escapeHtml(String(x))}</li>`).join('')}</ul></div>`).join('')}
-      ${lessonByPoint.has(node.id) ? `<button type="button" class="portal-btn cg-learn-btn" data-learn>去学习这个知识点 →</button>` : ''}
-    `;
-    root.querySelector('[data-learn]')?.addEventListener('click', () => onLearn(lessonByPoint.get(node.id)));
-  }
 
   root.querySelector('[data-search]')?.addEventListener('input', e => {
     const q = e.target.value.trim().toLowerCase();
