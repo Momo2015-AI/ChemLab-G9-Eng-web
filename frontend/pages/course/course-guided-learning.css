@@ -27,3 +27,5 @@
 .v21-course .lesson-section-item > div strong{display:block;font-size:14px;line-height:1.45;margin-bottom:4px;color:#e8f7ff}
 .v21-course .lesson-section-item > div p{margin:0 0 4px;color:#b8ced7;font-size:12px;line-height:1.6}
 @media(max-width:680px){.v21-course .lesson-section-item{flex-direction:column;gap:8px}}
+/* 禁用按钮视觉反馈 */
+.v21-course .course-action[disabled],.v21-course .course-action[aria-disabled="true"]{cursor:not-allowed;opacity:.45;pointer-events:none}
