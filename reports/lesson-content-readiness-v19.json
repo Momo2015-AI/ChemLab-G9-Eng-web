@@ -1,8 +1,8 @@
 {
-  "scanned": 4,
+  "scanned": 5,
   "template": 0,
-  "realContent": 4,
-  "ready": 4,
+  "realContent": 5,
+  "ready": 5,
   "needsRewrite": 0,
   "duplicateLegacy": false,
   "questionBankState": "CANONICAL_RUNTIME_SOURCE",
@@ -63,6 +63,23 @@
       "file": "lesson-04-lab-safety-operations.json",
       "day": "04",
       "title": "实验安全与基本操作",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 16,
+        "diagnostic": 3,
+        "mastery": 21,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-05-oxygen.json",
+      "day": "05",
+      "title": "空气与氧气",
       "status": "released",
       "releaseStatus": "ready",
       "templateHits": 0,

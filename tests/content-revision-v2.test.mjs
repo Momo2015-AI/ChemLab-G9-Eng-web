@@ -19,6 +19,10 @@ const lessonFiles = [
   'lesson-04-lab-safety-operations-mastery',
   'lesson-04-lab-safety-operations-practice',
   'lesson-04-lab-safety-operations-diagnostic',
+  'lesson-05-oxygen',
+  'lesson-05-oxygen-mastery',
+  'lesson-05-oxygen-practice',
+  'lesson-05-oxygen-diagnostic',
 ];
 
 const VOCABULARY = new Set([
@@ -27,6 +31,7 @@ const VOCABULARY = new Set([
   'observation-inference', 'evidence-reasoning',
   'scientific-inquiry', 'control-variables', 'data-integrity',
   'lab-operations', 'safety-awareness',
+  'air-composition', 'oxygen-physical', 'oxygen-chemical', 'oxygen-preparation',
 ]);
 
 test('lesson-01 reaches completed phase through markComplete when ready', () => {

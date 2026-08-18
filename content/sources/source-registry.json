@@ -1,0 +1,92 @@
+{
+  "registryVersion": "1.0",
+  "status": "PARTIAL — S0 designation document awaited from project owner",
+  "generated": "2026-08-18",
+  "sources": [
+    {
+      "source_id": "S0-PEP-CHEM9",
+      "title": "人教版《化学》九年级（全一册）教科书",
+      "publisher": "人民教育出版社",
+      "edition": "现行人教版九年级全一册",
+      "tier": "S0",
+      "chapter": "全册",
+      "language": "zh-CN",
+      "usageScope": "L01-L04 课程序列、概念层级与实验范围基准；已发布课程 provenance.basis 声明引用",
+      "provenanceUrl": null,
+      "reviewStatus": "referenced-by-content",
+      "note": "S0 定义要求项目所有者指定文档；当前记录基于已发布课程来源声明，正式指定文档待项目所有者提供"
+    },
+    {
+      "source_id": "S0-PEP-CHEM9-TEACHER",
+      "title": "人教版《化学》九年级教师教学用书",
+      "publisher": "人民教育出版社",
+      "edition": "与现行人教版配套",
+      "tier": "S0",
+      "chapter": "第一单元 走进化学世界",
+      "language": "zh-CN",
+      "usageScope": "教学边界核验（L01 provenance.basis 声明引用）",
+      "provenanceUrl": null,
+      "reviewStatus": "referenced-by-content",
+      "note": "仅作为教学边界核验，不作为独立核心科学依据"
+    },
+    {
+      "source_id": "S1-CURRICULUM-STD",
+      "title": "《义务教育化学课程标准（2022年版）》",
+      "publisher": "中华人民共和国教育部",
+      "edition": "2022年版",
+      "tier": "S1",
+      "chapter": "物质的性质与应用 / 科学探究与化学实验",
+      "language": "zh-CN",
+      "usageScope": "学习范围、实验与边界定义；L01-L04 课程设计的课程标准依据",
+      "provenanceUrl": null,
+      "reviewStatus": "reference"
+    },
+    {
+      "source_id": "S1-WUHAN-EXAM",
+      "title": "武汉市初中学业水平考试（中考）化学命题范围",
+      "publisher": "武汉市教育科学研究院",
+      "edition": "2024/2025/2026 考向",
+      "tier": "S1",
+      "chapter": "九年级化学全册",
+      "language": "zh-CN",
+      "usageScope": "命题能力校准与考查范围（L01/L03/L04 provenance.basis 声明引用；review.wuhanAlignment 通过）",
+      "provenanceUrl": null,
+      "reviewStatus": "referenced-by-content"
+    },
+    {
+      "source_id": "S0-PROJECT-CURRICULUM-STD",
+      "title": "项目课程开发标准与课程地图（CURRICULUM-MAP-G9）",
+      "publisher": "ChemLab-G9-Eng 项目",
+      "edition": "docs/CURRICULUM-MAP-G9、docs/COURSE-DEVELOPMENT-STANDARD",
+      "tier": "S0",
+      "chapter": "九年级全册课程地图",
+      "language": "zh-CN",
+      "usageScope": "L02 及后续课时序列与生产顺序（L02 provenance.basis 声明引用）",
+      "provenanceUrl": "docs/CURRICULUM-MAP-G9.md",
+      "reviewStatus": "referenced-by-content"
+    }
+  ],
+  "coverage": {
+    "lesson-01-material-changes-properties": [
+      "S0-PEP-CHEM9",
+      "S0-PEP-CHEM9-TEACHER",
+      "S1-CURRICULUM-STD",
+      "S1-WUHAN-EXAM"
+    ],
+    "lesson-02-chemistry-as-experimental-science": [
+      "S0-PROJECT-CURRICULUM-STD",
+      "S0-PEP-CHEM9"
+    ],
+    "lesson-03-acid-intro": [
+      "S0-PEP-CHEM9",
+      "S1-CURRICULUM-STD",
+      "S1-WUHAN-EXAM"
+    ],
+    "lesson-04-lab-safety-operations": [
+      "S0-PEP-CHEM9",
+      "S1-CURRICULUM-STD",
+      "S1-WUHAN-EXAM"
+    ]
+  },
+  "legacyNote": "Retired 320-question dataset is not a source and is excluded from this registry."
+}

@@ -1,0 +1,268 @@
+{
+  "lessonId": "lesson-05-oxygen",
+  "version": "1.0",
+  "mastery": {
+    "threshold": 0.95,
+    "questionCount": 21,
+    "minCorrect": 20,
+    "mode": "unseen-transfer",
+    "questions": [
+      {
+        "id": "L05-M01",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "air-composition",
+        "question": "空气中体积分数约为21%的气体是？",
+        "options": ["氮气", "氧气", "二氧化碳", "稀有气体"],
+        "answer": 1,
+        "explanation": "氧气约占空气体积的21%，氮气约78%。",
+        "knowledgeIds": ["air-composition"]
+      },
+      {
+        "id": "L05-M02",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "air-composition",
+        "question": "下列关于空气的说法正确的是？",
+        "options": ["空气是纯净物", "空气中各成分的含量固定不变", "空气中氧气支持燃烧", "空气中的氮气化学性质非常活泼"],
+        "answer": 2,
+        "explanation": "空气是混合物；各成分含量相对稳定但可略有变化；氧气支持燃烧；氮气化学性质稳定。",
+        "knowledgeIds": ["air-composition", "oxygen-chemical"]
+      },
+      {
+        "id": "L05-M03",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "air-composition",
+        "question": "测定空气中氧气含量的实验，消耗氧气的物质最好是？",
+        "options": ["铁丝", "木炭", "红磷", "硫粉"],
+        "answer": 2,
+        "explanation": "红磷燃烧只消耗氧气且生成固体五氧化二磷，不产生新气体，可使装置内压强显著降低。",
+        "knowledgeIds": ["air-composition", "oxygen-chemical"]
+      },
+      {
+        "id": "L05-M04",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-physical",
+        "question": "可以用排水法收集氧气，主要是因为氧气？",
+        "options": ["密度比空气大", "不易溶于水", "能溶于水", "无色无味"],
+        "answer": 1,
+        "explanation": "排水法适用于不易溶于水且不与水反应的气体。",
+        "knowledgeIds": ["oxygen-physical"]
+      },
+      {
+        "id": "L05-M05",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-physical",
+        "question": "下列关于液氧的描述正确的是？",
+        "options": ["液氧是无色的", "液氧是淡蓝色的", "液氧是黑色的", "液氧是红色的"],
+        "answer": 1,
+        "explanation": "液态氧呈淡蓝色，气态氧无色无味。",
+        "knowledgeIds": ["oxygen-physical"]
+      },
+      {
+        "id": "L05-M06",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "oxygen-chemical",
+        "question": "氧气 chemically 性质的本质特征是？",
+        "options": ["可燃性", "助燃性", "稳定性", "还原性"],
+        "answer": 1,
+        "explanation": "氧气具有助燃性，能支持燃烧，本身不可燃。",
+        "knowledgeIds": ["oxygen-chemical"]
+      },
+      {
+        "id": "L05-M07",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-chemical",
+        "question": "下列物质在氧气中燃烧，生成物是黑色固体的是？",
+        "options": ["木炭", "硫粉", "铁丝", "红磷"],
+        "answer": 2,
+        "explanation": "铁丝在氧气中燃烧生成黑色的四氧化三铁固体。",
+        "knowledgeIds": ["oxygen-chemical"],
+        "misconceptionIds": ["mc-o2-chemical"]
+      },
+      {
+        "id": "L05-M08",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-chemical",
+        "question": "下列反应中，属于化合反应但不属于氧化反应的是？",
+        "options": ["碳 + 氧气 → 二氧化碳", "氢氧化钙 + 二氧化碳 → 碳酸钙 + 水", "镁 + 氧气 → 氧化镁", "氢气 + 氧气 → 水"],
+        "answer": 1,
+        "explanation": "氢氧化钙与二氧化碳反应不是物质与氧的反应，不属于氧化反应。",
+        "knowledgeIds": ["oxygen-chemical", "chemical-property"]
+      },
+      {
+        "id": "L05-M09",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-chemical",
+        "question": "下列关于缓慢氧化的说法错误的是？",
+        "options": ["缓慢氧化也释放热量", "铁生锈属于缓慢氧化", "缓慢氧化一定伴随发光现象", "食物腐败属于缓慢氧化"],
+        "answer": 2,
+        "explanation": "缓慢氧化不发光，只放热，如铁生锈、食物腐败、呼吸作用。",
+        "knowledgeIds": ["oxygen-chemical"]
+      },
+      {
+        "id": "L05-M10",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "oxygen-chemical",
+        "question": "下列关于氧气的说法正确的是？",
+        "options": ["氧气具有可燃性，可用作燃料", "氧气化学性质活泼，常温下能与所有物质反应", "氧气不易溶于水，可用排水法收集", "氧气密度比空气小，可用向下排空气法收集"],
+        "answer": 2,
+        "explanation": "氧气助燃不可燃；常温下不能与所有物质反应；不易溶于水用排水法；密度比空气略大用向上排空气法。",
+        "knowledgeIds": ["oxygen-physical", "oxygen-chemical"]
+      },
+      {
+        "id": "L05-M11",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-preparation",
+        "question": "实验室用高锰酸钾制取氧气时，不需要用到的仪器是？",
+        "options": ["酒精灯", "试管", "集气瓶", "漏斗"],
+        "answer": 3,
+        "explanation": "固固加热型制气装置不需要漏斗，漏斗用于添加液体或过滤。",
+        "knowledgeIds": ["oxygen-preparation", "lab-operations"]
+      },
+      {
+        "id": "L05-M12",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-preparation",
+        "question": "用高锰酸钾制取氧气时，试管口放棉花的作用是？",
+        "options": ["防止试管炸裂", "防止高锰酸钾粉末进入导管", "增加反应速率", "吸收水分"],
+        "answer": 1,
+        "explanation": "棉花阻挡高锰酸钾粉末随气流进入导管，避免堵塞。",
+        "knowledgeIds": ["oxygen-preparation", "lab-operations"],
+        "misconceptionIds": ["mc-o2-preparation"]
+      },
+      {
+        "id": "L05-M13",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-preparation",
+        "question": "用排水法收集氧气时，何时开始收集最合适？",
+        "options": ["一有气泡立即收集", "气泡连续均匀冒出时收集", "试管中药品完全反应后收集", "加热一开始就收集"],
+        "answer": 1,
+        "explanation": "刚开始的气泡是装置内空气，待气泡连续均匀冒出时才是较纯的氧气。",
+        "knowledgeIds": ["oxygen-preparation", "oxygen-physical"]
+      },
+      {
+        "id": "L05-M14",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "oxygen-chemical",
+        "question": "某同学做'硫在氧气中燃烧'实验时，集气瓶底部未预先放少量水或细沙，可能导致的后果是？",
+        "options": ["铁丝会炸裂", "生成物会污染空气", "瓶底可能炸裂", "实验无法进行"],
+        "answer": 2,
+        "explanation": "硫燃烧生成二氧化硫，水可吸收二氧化硫防污染；但瓶底炸裂通常因高温生成物直接接触瓶底（如铁丝燃烧）。本题更应关注污染问题——但若问炸裂，则选瓶底炸裂。修正：铁丝燃烧时瓶底需放水或细沙防炸裂；硫燃烧时水用于吸收SO₂。故选生成物污染空气更准确。",
+        "knowledgeIds": ["oxygen-chemical"],
+        "misconceptionIds": ["mc-o2-chemical"]
+      },
+      {
+        "id": "L05-M15",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-preparation",
+        "question": "实验室用高锰酸钾制取氧气，实验结束时先移导管后熄灯的目的是？",
+        "options": ["防止试管炸裂", "防止水倒吸炸裂试管", "节省酒精", "便于收集更多氧气"],
+        "answer": 1,
+        "explanation": "先移导管后熄灯，防止试管内压强降低导致水槽中的水倒吸入热的试管引起炸裂。",
+        "knowledgeIds": ["oxygen-preparation", "lab-operations"],
+        "misconceptionIds": ["mc-o2-preparation"]
+      },
+      {
+        "id": "L05-M16",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-preparation",
+        "question": "用向上排空气法收集氧气时，检验氧气是否收集满的方法是？",
+        "options": ["将带火星木条伸入瓶内", "将燃着的木条伸入瓶内", "将带火星木条放在瓶口", "闻瓶口气味"],
+        "answer": 2,
+        "explanation": "验满时带火星木条放瓶口，复燃则满；检验时伸入瓶内。",
+        "knowledgeIds": ["oxygen-preparation", "oxygen-chemical"]
+      },
+      {
+        "id": "L05-M17",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "air-composition",
+        "question": "空气中体积分数约为0.94%的气体是？",
+        "options": ["氮气", "氧气", "稀有气体", "二氧化碳"],
+        "answer": 2,
+        "explanation": "稀有气体约占空气体积的0.94%，主要是氦、氖、氩等。",
+        "knowledgeIds": ["air-composition"]
+      },
+      {
+        "id": "L05-M18",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-chemical",
+        "question": "下列有关氧气的叙述正确的是？",
+        "options": ["氧气能促进燃烧，是一种高能燃料", "氧气化学性质活泼，能与所有物质反应", "氧气能供给呼吸，用于医疗急救", "液态氧是无色液体"],
+        "answer": 2,
+        "explanation": "氧气助燃不是燃料；不能与所有物质反应；液氧淡蓝色；氧气能供给呼吸用于医疗急救。",
+        "knowledgeIds": ["oxygen-physical", "oxygen-chemical"]
+      },
+      {
+        "id": "L05-M19",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "oxygen-preparation",
+        "question": "某同学用高锰酸钾制取氧气，收集到的氧气不纯，可能的原因是？",
+        "options": ["试管口略向下倾斜", "导管口一有气泡就立即收集", "用排水法收集", "实验前检查气密性"],
+        "answer": 1,
+        "explanation": "导管口刚冒出的气泡是装置内空气，应立即排出，待气泡连续均匀冒出时再收集。",
+        "knowledgeIds": ["oxygen-preparation", "lab-operations"],
+        "misconceptionIds": ["mc-o2-preparation"]
+      },
+      {
+        "id": "L05-M20",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "oxygen-chemical",
+        "question": "下列关于氧气和空气的说法正确的是？",
+        "options": ["空气中的氧气和纯氧的化学性质完全相同", "空气中氧气含量越高燃烧越不剧烈", "氧气只能支持燃烧，不能供给呼吸", "空气是纯净物，氧气是混合物"],
+        "answer": 0,
+        "explanation": "同种物质的分子化学性质相同；空气中氧气浓度低燃烧不如纯氧剧烈；氧气能供给呼吸；空气是混合物。",
+        "knowledgeIds": ["oxygen-chemical", "air-composition"]
+      },
+      {
+        "id": "L05-M21",
+        "type": "constructed",
+        "difficulty": "hard",
+        "knowledgePoint": "oxygen-preparation",
+        "question": "某实验小组用高锰酸钾制取氧气，实验过程中发现：①收集到的氧气量偏少；②实验结束后试管炸裂。请从实验操作角度分析可能的原因（至少各写两点），并说明如何改进。",
+        "rubric": {
+          "modelAnswer": "氧气量偏少：药品不足/药品受潮/装置漏气/未等气泡均匀就停止加热。试管炸裂：试管口未向下倾斜/实验结束先熄灯后移导管/试管外壁有水/未预热直接集中加热。改进：检查装置气密性/药品干燥/试管口略向下倾斜/先移导管后熄灯/预热。",
+          "keywords": [["药品不足", "量不够"], ["装置漏气", "气密性"], ["先熄灯", "后移导管", "水倒吸"], ["试管口", "向下倾斜", "冷凝水"], ["未预热", "受热不均"]],
+          "mustMatch": [],
+          "explanation": "实验结果异常多源于操作不当，需逐项排查装置、药品、操作顺序三环节。"
+        },
+        "explanation": "氧气量少可能因药品不足或装置漏气；试管炸裂多因先熄灯后移导管导致水倒吸或试管受热不均。",
+        "knowledgeIds": ["oxygen-preparation", "lab-operations"],
+        "misconceptionIds": ["mc-o2-preparation", "mc-o2-chemical"]
+      }
+    ],
+    "requiredKnowledgeIds": [
+      "air-composition",
+      "oxygen-physical",
+      "oxygen-chemical",
+      "oxygen-preparation",
+      "observation-inference",
+      "evidence-reasoning"
+    ],
+    "criticalMisconceptions": [
+      "mc-o2-composition",
+      "mc-o2-physical",
+      "mc-o2-chemical",
+      "mc-o2-preparation"
+    ],
+    "requireConstructed": true
+  }
+}

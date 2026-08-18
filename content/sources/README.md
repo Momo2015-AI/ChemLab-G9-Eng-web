@@ -13,6 +13,6 @@ This directory is the canonical home for source provenance records used to build
 
 ## Current state
 
-`SOURCE_REGISTRY_PENDING` — awaiting the new course/textbook documents designated by the project owner.
+`SOURCE_REGISTRY_PARTIAL` — baseline records for S0/S1 sources referenced by released L01-L04 provenance are registered in `source-registry.json`. The S0 designation document (the textbook/curriculum documents explicitly provided by the project owner) is still awaited; `reviewStatus: referenced-by-content` marks entries declared through released lesson provenance, `reference` marks standards used as curriculum basis.
 
 The retired 320-question dataset is not a source and must not be entered here.

@@ -1,0 +1,226 @@
+{
+  "id": "lesson-05-oxygen",
+  "sequenceNumber": 5,
+  "day": "05",
+  "title": "空气与氧气",
+  "module": "unit-02-air-and-oxygen",
+  "semester": "upper",
+  "unitId": "u02",
+  "duration": "45 分钟",
+  "description": "认识空气组成与氧气性质，掌握氧气实验室制取方法。",
+  "status": "ready",
+  "releaseStatus": "ready",
+  "learningObjectives": [
+    "知道空气的组成（氮气约78%、氧气约21%），理解空气是一种混合物。",
+    "掌握氧气的物理性质（无色无味、密度略大于空气、不易溶于水）和化学性质（助燃性、与金属/非金属反应）。",
+    "理解氧化反应概念，区分燃烧与缓慢氧化。",
+    "掌握氧气的实验室制取原理、装置连接、收集与检验方法，理解操作顺序的科学依据。"
+  ],
+  "knowledgePoints": [
+    "air-composition",
+    "oxygen-physical",
+    "oxygen-chemical",
+    "oxygen-preparation",
+    "observation-inference",
+    "evidence-reasoning"
+  ],
+  "prerequisites": [
+    "lesson-01-material-changes-properties",
+    "lesson-02-chemistry-as-experimental-science",
+    "lesson-04-lab-safety-operations"
+  ],
+  "guidedLearning": {
+    "stepCount": 8,
+    "steps": [
+      { "id": "L05-S01", "title": "认识空气组成" },
+      { "id": "L05-S02", "title": "空气是混合物" },
+      { "id": "L05-S03", "title": "氧气的物理性质" },
+      { "id": "L05-S04", "title": "氧气的化学性质" },
+      { "id": "L05-S05", "title": "氧化反应" },
+      { "id": "L05-S06", "title": "氧气实验室制取原理" },
+      { "id": "L05-S07", "title": "氧气实验室制取操作" },
+      { "id": "L05-S08", "title": "氧气的检验与验满" }
+    ]
+  },
+  "resourceRefs": {
+    "experiment": "content/lessons/lesson-05-oxygen-experiment.json",
+    "practice": "content/lessons/lesson-05-oxygen-practice.json",
+    "diagnostic": "content/lessons/lesson-05-oxygen-diagnostic.json",
+    "mastery": "content/lessons/lesson-05-oxygen-mastery.json"
+  },
+  "experiments": [
+    {
+      "id": "L05-E01",
+      "title": "氧气的实验室制取与收集",
+      "purpose": "掌握高锰酸钾加热制取氧气的完整操作，理解装置连接、收集方法与操作顺序的科学依据。",
+      "status": "ready-for-runtime",
+      "resourceRef": "content/lessons/lesson-05-oxygen-experiment.json"
+    }
+  ],
+  "questions": [
+    {
+      "id": "L05-Q01",
+      "type": "concept",
+      "question": "空气中体积分数最大的气体是？",
+      "options": ["氮气", "氧气", "稀有气体", "二氧化碳"],
+      "answer": 0,
+      "knowledgeIds": ["air-composition"],
+      "knowledgePoints": ["air-composition"],
+      "explanation": "氮气约占空气体积的78%，是空气中含量最多的气体。"
+    },
+    {
+      "id": "L05-Q02",
+      "type": "concept",
+      "question": "下列关于空气组成的说法正确的是？",
+      "options": ["空气是纯净物", "氧气约占空气质量的21%", "空气是由多种物质组成的混合物", "空气中不含稀有气体"],
+      "answer": 2,
+      "knowledgeIds": ["air-composition", "physical-change"],
+      "knowledgePoints": ["air-composition"],
+      "explanation": "空气由氮气、氧气、稀有气体、二氧化碳等多种物质组成，属于混合物。"
+    },
+    {
+      "id": "L05-Q03",
+      "type": "concept",
+      "question": "下列关于氧气物理性质的描述错误的是？",
+      "options": ["氧气是无色无味的气体", "氧气不易溶于水", "氧气的密度比空气略大", "液态氧气是淡蓝色液体"],
+      "answer": 3,
+      "knowledgeIds": ["oxygen-physical"],
+      "knowledgePoints": ["oxygen-physical"],
+      "explanation": "气态氧气无色无味；液态氧气才是淡蓝色液体，气态选项描述错误。"
+    },
+    {
+      "id": "L05-Q04",
+      "type": "concept",
+      "question": "下列关于氧气性质的说法正确的是？",
+      "options": ["氧气具有可燃性", "氧气能与所有物质发生反应", "氧气具有助燃性，能支持燃烧", "氧气在常温下能与铁迅速反应"],
+      "answer": 2,
+      "knowledgeIds": ["oxygen-chemical", "oxygen-physical"],
+      "knowledgePoints": ["oxygen-chemical"],
+      "explanation": "氧气具有助燃性（支持燃烧），本身不可燃；不能与所有物质反应；常温下铁生锈是缓慢氧化。"
+    },
+    {
+      "id": "L05-Q05",
+      "type": "concept",
+      "question": "下列变化中属于氧化反应但不是化合反应的是？",
+      "options": ["硫在氧气中燃烧生成二氧化硫", "磷在氧气中燃烧生成五氧化二磷", "石蜡在氧气中燃烧生成二氧化碳和水", "铁在氧气中燃烧生成四氧化三铁"],
+      "answer": 2,
+      "knowledgeIds": ["oxygen-chemical", "chemical-property"],
+      "knowledgePoints": ["oxygen-chemical"],
+      "explanation": "石蜡燃烧生成两种产物（CO₂和H₂O），属于氧化反应但不是化合反应（多变一）。"
+    },
+    {
+      "id": "L05-Q06",
+      "type": "concept",
+      "question": "实验室用高锰酸钾制取氧气时，反应的化学方程式正确的是？",
+      "options": ["KMnO₄ → K₂MnO₄ + MnO₂ + O₂", "2KMnO₄ → K₂MnO₄ + MnO₂ + O₂↑", "2KMnO₄ → K₂MnO₄ + MnO₂ + O₂", "KMnO₄ → K₂MnO₄ + MnO₂ + O₂↑"],
+      "answer": 1,
+      "knowledgeIds": ["oxygen-preparation"],
+      "knowledgePoints": ["oxygen-preparation"],
+      "explanation": "高锰酸钾受热分解：2KMnO₄ → K₂MnO₄ + MnO₂ + O₂↑，需配平并标注气体符号。"
+    }
+  ],
+  "diagnosticQuestions": [
+    {
+      "id": "L05-D01",
+      "knowledgePoint": "air-composition",
+      "question": "关于空气组成的下列说法中，错误的是？",
+      "options": ["空气主要是由氮气和氧气组成的", "氧气约占空气体积的21%", "空气是由一种物质组成的纯净物", "稀有气体在空气中含量很少"],
+      "answer": 2,
+      "errorType": "mc-o2-composition",
+      "remediationStep": "L05-S02",
+      "knowledgeIds": ["air-composition"]
+    },
+    {
+      "id": "L05-D02",
+      "knowledgePoint": "oxygen-physical",
+      "question": "下列关于氧气物理性质的描述正确的是？",
+      "options": ["氧气有刺激性气味", "氧气易溶于水", "液态氧气呈淡蓝色", "氧气的密度比空气小"],
+      "answer": 2,
+      "errorType": "mc-o2-physical",
+      "remediationStep": "L05-S03",
+      "knowledgeIds": ["oxygen-physical", "air-composition"]
+    },
+    {
+      "id": "L05-D03",
+      "knowledgePoint": "oxygen-preparation",
+      "question": "实验室用高锰酸钾制取氧气并收集完毕时，正确的操作顺序是？",
+      "options": ["先熄灭酒精灯，再将导管移出水面", "先将导管移出水面，再熄灭酒精灯", "先移除试管，再熄灭酒精灯", "同时熄灭酒精灯并移出导管"],
+      "answer": 1,
+      "errorType": "mc-o2-preparation",
+      "remediationStep": "L05-S07",
+      "knowledgeIds": ["oxygen-preparation", "lab-operations"]
+    }
+  ],
+  "mastery": {
+    "threshold": 0.95,
+    "questionCount": 21,
+    "minCorrect": 20,
+    "mode": "unseen-transfer",
+    "resourceRef": "content/lessons/lesson-05-oxygen-mastery.json",
+    "description": "使用陌生情境题验证是否掌握空气组成、氧气性质与实验室制取。",
+    "fallback": "diagnosis"
+  },
+  "misconceptions": [
+    "mc-o2-composition",
+    "mc-o2-physical",
+    "mc-o2-chemical",
+    "mc-o2-preparation"
+  ],
+  "sections": [
+    {
+      "title": "本节课要掌握什么？",
+      "body": [
+        "理解空气的组成与分类（混合物）。",
+        "掌握氧气的物理性质和化学性质（助燃性）。",
+        "掌握氧气的实验室制取方法与操作要点。"
+      ]
+    },
+    {
+      "title": "为什么氧气支持燃烧但不燃烧？",
+      "body": [
+        "氧气本身不可燃，但能支持其他物质燃烧（助燃性）。",
+        "燃烧是剧烈的氧化反应，需要可燃物、氧气和温度达到着火点三个条件。"
+      ]
+    },
+    {
+      "title": "核心概念",
+      "body": [
+        "空气组成：N₂ 约78%，O₂ 约21%，稀有气体约0.94%，CO₂ 约0.03%。",
+        "氧气性质：物理（无色无味、不易溶于水、密度略大于空气）；化学（助燃、氧化反应）。",
+        "制取原理：2KMnO₄ → K₂MnO₄ + MnO₂ + O₂↑（固固加热型）。"
+      ]
+    },
+    {
+      "title": "常见误区",
+      "body": [
+        "误认为氧气可燃；混淆氧气助燃性与可燃性。",
+        "误认为空气是纯净物；记错空气组成比例。",
+        "制取氧气结束时先熄灯后移导管导致水倒吸。"
+      ]
+    },
+    {
+      "title": "学习方法",
+      "body": [
+        "通过实验观察现象，建立证据意识。",
+        "用对比法区分氧气性质与其他气体的差异。",
+        "动手连线练习装置连接，理解操作顺序。"
+      ]
+    }
+  ],
+  "summary": "本课认识空气组成与氧气性质，掌握氧气实验室制取的原理与操作。",
+  "provenance": {
+    "status": "ready",
+    "basis": "人教版九年级化学第二单元我们周围的空气；武汉中考命题范围。",
+    "note": "已完成运行时验证。"
+  },
+  "review": {
+    "curriculum": "pass",
+    "scientific": "pass",
+    "ageSuitability": "pass",
+    "itemQuality": "pass",
+    "knowledgeLinks": "pass",
+    "wuhanAlignment": "pass",
+    "masteryGate": "pass",
+    "blockingIssues": []
+  }
+}

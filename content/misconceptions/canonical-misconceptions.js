@@ -338,6 +338,66 @@ export const canonicalMisconceptions = [
       practiceQuestionIds: ['L04-P10'],
       recheckQuestionIds: ['L04-M11']
     }
+  },
+  {
+    id: 'mc-o2-composition',
+    title: '空气组成与分类误解',
+    description: '将空气视为纯净物、误记氧气在空气中的比例过高、混淆氮气与氧气的体积分数。',
+    knowledgeIds: ['air-composition', 'physical-change'],
+    signals: ['concept-confusion', 'fact-error'],
+    severity: 'medium',
+    source: 'lesson-05 audit',
+    remediation: {
+      goal: '准确记忆空气组成体积分数（N₂ 约 78%、O₂ 约 21%），理解空气是混合物。',
+      lessonIds: ['lesson-05-oxygen'],
+      practiceQuestionIds: ['L05-P01'],
+      recheckQuestionIds: ['L05-M01']
+    }
+  },
+  {
+    id: 'mc-o2-physical',
+    title: '氧气物理性质误解',
+    description: '认为氧气有颜色或有气味、认为氧气易溶于水、混淆液态氧的颜色。',
+    knowledgeIds: ['oxygen-physical', 'air-composition'],
+    signals: ['perception-error', 'concept-confusion'],
+    severity: 'medium',
+    source: 'lesson-05 audit',
+    remediation: {
+      goal: '掌握氧气无色无味、不易溶于水、密度比空气略大、液氧淡蓝色的物理性质。',
+      lessonIds: ['lesson-05-oxygen'],
+      practiceQuestionIds: ['L05-P05'],
+      recheckQuestionIds: ['L05-M07']
+    }
+  },
+  {
+    id: 'mc-o2-chemical',
+    title: '氧气化学性质与氧化反应误解',
+    description: '认为氧气具有可燃性、认为氧气能与所有物质反应、将氧化反应等同于燃烧。',
+    knowledgeIds: ['oxygen-chemical', 'oxygen-physical', 'chemical-property'],
+    signals: ['concept-confusion', 'overgeneralization'],
+    severity: 'high',
+    source: 'lesson-05 audit',
+    remediation: {
+      goal: '区分氧气助燃性与可燃性；理解氧化反应是物质与氧发生的反应，不限于燃烧。',
+      lessonIds: ['lesson-05-oxygen'],
+      practiceQuestionIds: ['L05-P09'],
+      recheckQuestionIds: ['L05-M10']
+    }
+  },
+  {
+    id: 'mc-o2-preparation',
+    title: '氧气实验室制取操作误解',
+    description: '实验结束时先熄灭酒精灯后移导管导致水倒吸炸裂试管、试管口朝上倾斜、药品未平铺。',
+    knowledgeIds: ['oxygen-preparation', 'lab-operations', 'oxygen-physical'],
+    signals: ['procedure-mistake', 'condition-omission'],
+    severity: 'high',
+    source: 'lesson-05 audit',
+    remediation: {
+      goal: '掌握"先移导管后熄灯"的操作顺序及科学依据，理解各步骤的安全意义。',
+      lessonIds: ['lesson-05-oxygen'],
+      practiceQuestionIds: ['L05-P02'],
+      recheckQuestionIds: ['L05-M15']
+    }
   }
 ];
 
@@ -379,7 +439,12 @@ export const ALIAS_MAP = {
   'lab-sense-safety': 'mc-lab-sense-safety',
   'alcohol-lamp': 'mc-lab-alcohol-lamp',
   'heating-safety': 'mc-lab-heating-safety',
-  'measurement-safety': 'mc-lab-measurement'
+  'measurement-safety': 'mc-lab-measurement',
+  // L05 oxygen aliases
+  'air-composition-mistake': 'mc-o2-composition',
+  'o2-physical-mistake': 'mc-o2-physical',
+  'o2-chemical-mistake': 'mc-o2-chemical',
+  'o2-preparation-mistake': 'mc-o2-preparation'
 };
 
 /**

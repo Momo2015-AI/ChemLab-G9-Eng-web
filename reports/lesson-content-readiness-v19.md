@@ -1,12 +1,12 @@
 # V1.9 Lesson Content Readiness Audit
 
-Generated: 2026-08-18T07:43:39.283Z
+Generated: 2026-08-18T09:01:24.945Z
 
 ## Baseline
-- Lessons scanned: 4
+- Lessons scanned: 5
 - Template lessons: 0
-- Real-content candidates: 4
-- Ready by automated scan: 4
+- Real-content candidates: 5
+- Ready by automated scan: 5
 - Lessons requiring rewrite/incompletion work: 0
 - Question bank state: CANONICAL_RUNTIME_SOURCE
 - Legacy duplicate day01.json present: NO
@@ -19,6 +19,7 @@ Generated: 2026-08-18T07:43:39.283Z
 | lesson-02-chemistry-as-experimental-science.json | 02 | 化学是一门以实验为基础的科学 | released | ready | 0 | - | 8+16+3+27+4 | - |
 | lesson-03-acid-intro.json | 03 | 酸入门：初识身边的酸 | released | ready | 0 | - | 6+13+3+21+4 | - |
 | lesson-04-lab-safety-operations.json | 04 | 实验安全与基本操作 | released | ready | 0 | - | 6+16+3+21+4 | - |
+| lesson-05-oxygen.json | 05 | 空气与氧气 | released | ready | 0 | - | 6+16+3+21+4 | - |
 
 ## Issues
 - None

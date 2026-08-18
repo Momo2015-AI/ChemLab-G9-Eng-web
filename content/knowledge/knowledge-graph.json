@@ -572,6 +572,86 @@
         "mc-lab-measurement"
       ],
       "remediationGoal": "掌握实验室安全守则与规范操作，理解违规操作的危险后果，能在陌生情境中正确判断与处理。"
+    },
+    {
+      "id": "air-composition",
+      "name": "空气组成",
+      "chapter": "第二单元 我们周围的空气",
+      "domain": "matter",
+      "bloomLevels": ["remember", "understand"],
+      "questions": [
+        "L05-Q01", "L05-Q02", "L05-Q03", "L05-Q04", "L05-Q05", "L05-Q06",
+        "L05-P01", "L05-P02", "L05-P03", "L05-P04", "L05-P05", "L05-P06", "L05-P07", "L05-P08", "L05-P09", "L05-P10",
+        "L05-D01",
+        "L05-M01", "L05-M02", "L05-M03", "L05-M04", "L05-M05", "L05-M06",
+        "L05-T01"
+      ],
+      "semester": "upper",
+      "unitId": "u02",
+      "definition": "空气是一种混合物，主要由氮气（约78%）和氧气（约21%）组成，还含有稀有气体、二氧化碳和其他杂质。",
+      "prerequisiteIds": ["physical-change"],
+      "misconceptionIds": ["mc-o2-composition"],
+      "remediationGoal": "理解空气是混合物而非纯净物，能准确表述空气组成体积分数。"
+    },
+    {
+      "id": "oxygen-physical",
+      "name": "氧气的物理性质",
+      "chapter": "第二单元 我们周围的空气",
+      "domain": "matter",
+      "bloomLevels": ["remember", "understand"],
+      "questions": [
+        "L05-Q05", "L05-Q06",
+        "L05-P05", "L05-P06", "L05-P07", "L05-P08",
+        "L05-D02",
+        "L05-M07", "L05-M08", "L05-M09",
+        "L05-T02"
+      ],
+      "semester": "upper",
+      "unitId": "u02",
+      "definition": "氧气是无色无味的气体，密度略大于空气，不易溶于水；液态氧呈淡蓝色。",
+      "prerequisiteIds": ["air-composition"],
+      "misconceptionIds": ["mc-o2-physical"],
+      "remediationGoal": "准确记忆氧气的物理性质，不将气味、颜色与溶解性混淆。"
+    },
+    {
+      "id": "oxygen-chemical",
+      "name": "氧气的化学性质",
+      "chapter": "第二单元 我们周围的空气",
+      "domain": "reaction",
+      "bloomLevels": ["remember", "understand", "apply", "analyze"],
+      "questions": [
+        "L05-Q04", "L05-Q05",
+        "L05-P09", "L05-P10", "L05-P11", "L05-P12", "L05-P13", "L05-P14",
+        "L05-D02",
+        "L05-M10", "L05-M11", "L05-M12", "L05-M13", "L05-M14",
+        "L05-T03"
+      ],
+      "semester": "upper",
+      "unitId": "u02",
+      "definition": "氧气具有助燃性，能与多种金属（如铁、镁、铜）、非金属（如碳、硫、磷）及化合物发生氧化反应，生成相应的氧化物。",
+      "prerequisiteIds": ["oxygen-physical", "chemical-property"],
+      "misconceptionIds": ["mc-o2-chemical"],
+      "remediationGoal": "区分氧气的助燃性与可燃性，理解氧化反应的本质是物质与氧结合。"
+    },
+    {
+      "id": "oxygen-preparation",
+      "name": "氧气的实验室制取",
+      "chapter": "第二单元 我们周围的空气",
+      "domain": "method",
+      "bloomLevels": ["understand", "apply", "evaluate"],
+      "questions": [
+        "L05-Q01", "L05-Q02", "L05-Q03",
+        "L05-P01", "L05-P02", "L05-P03", "L05-P04",
+        "L05-D03",
+        "L05-M15", "L05-M16", "L05-M17", "L05-M18", "L05-M19", "L05-M20",
+        "L05-T04"
+      ],
+      "semester": "upper",
+      "unitId": "u02",
+      "definition": "高锰酸钾加热分解制取氧气：2KMnO4 → K2MnO4 + MnO2 + O2↑；采用固固加热型装置，用排水法或向上排空气法收集；实验结束先移导管后熄灭酒精灯。",
+      "prerequisiteIds": ["lab-operations", "oxygen-physical"],
+      "misconceptionIds": ["mc-o2-preparation"],
+      "remediationGoal": "掌握氧气实验室制取的完整操作流程与安全要点，理解操作顺序的科学依据。"
     }
   ],
   "relations": [
@@ -1718,6 +1798,66 @@
     {
       "source": "lab-operations",
       "target": "L04-T01",
+      "type": "question"
+    },
+    {
+      "source": "physical-change",
+      "target": "air-composition",
+      "type": "prerequisite"
+    },
+    {
+      "source": "air-composition",
+      "target": "oxygen-physical",
+      "type": "prerequisite"
+    },
+    {
+      "source": "oxygen-physical",
+      "target": "oxygen-chemical",
+      "type": "prerequisite"
+    },
+    {
+      "source": "lab-operations",
+      "target": "oxygen-preparation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "oxygen-physical",
+      "target": "evidence-reasoning",
+      "type": "related"
+    },
+    {
+      "source": "oxygen-chemical",
+      "target": "observation-inference",
+      "type": "related"
+    },
+    {
+      "source": "oxygen-chemical",
+      "target": "evidence-reasoning",
+      "type": "related"
+    },
+    {
+      "source": "air-composition",
+      "target": "L05-Q01",
+      "type": "question"
+    },
+    {
+      "source": "air-composition",
+      "target": "L05-P01",
+      "type": "question"
+    },
+    {
+      "source": "air-composition",
+      "target": "L05-D01",
+      "type": "question"
+    },
+    {
+      "source": "air-composition",
+      "target": "L05-M01",
+      "type": "question"
+    },
+    {
+      "source": "air-composition",
+      "target": "L05-T01",
       "type": "question"
     }
   ]

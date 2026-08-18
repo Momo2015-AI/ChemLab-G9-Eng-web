@@ -1,0 +1,186 @@
+{
+  "lessonId": "lesson-05-oxygen",
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "L05-P01",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "air-composition",
+      "question": "空气中含量最多的气体是？",
+      "options": ["氮气", "氧气", "二氧化碳", "稀有气体"],
+      "answer": 0,
+      "explanation": "氮气约占空气体积的78%，是空气中含量最多的气体。",
+      "knowledgeIds": ["air-composition"]
+    },
+    {
+      "id": "L05-P02",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "oxygen-preparation",
+      "question": "实验室用高锰酸钾制取氧气时，试管口放一团棉花的目的是？",
+      "options": ["防止高锰酸钾粉末进入导管", "增加反应速率", "防止试管炸裂", "吸收生成的水分"],
+      "answer": 0,
+      "explanation": "棉花可阻挡高锰酸钾粉末随气流进入导管，避免堵塞。",
+      "knowledgeIds": ["oxygen-preparation", "lab-operations"]
+    },
+    {
+      "id": "L05-P03",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "oxygen-physical",
+      "question": "下列关于氧气物理性质的描述正确的是？",
+      "options": ["氧气易溶于水", "氧气有刺激性气味", "液态氧是无色的", "氧气密度比空气略大"],
+      "answer": 3,
+      "explanation": "氧气不易溶于水；无色无味；液氧淡蓝色；密度略大于空气。",
+      "knowledgeIds": ["oxygen-physical"]
+    },
+    {
+      "id": "L05-P04",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "oxygen-chemical",
+      "question": "铁丝在氧气中燃烧的现象是？",
+      "options": ["发出淡蓝色火焰", "产生大量白烟", "剧烈燃烧，火星四射，生成黑色固体", "发出耀眼白光"],
+      "answer": 2,
+      "explanation": "铁丝在氧气中剧烈燃烧，火星四射，生成黑色四氧化三铁固体。",
+      "knowledgeIds": ["oxygen-chemical"]
+    },
+    {
+      "id": "L05-P05",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "oxygen-physical",
+      "question": "实验室用排水法收集氧气，是因为氧气？",
+      "options": ["密度比空气大", "不易溶于水", "能溶于水", "无色无味"],
+      "answer": 1,
+      "explanation": "排水法适用于不易溶于水且不与水反应的气体。",
+      "knowledgeIds": ["oxygen-physical"]
+    },
+    {
+      "id": "L05-P06",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "oxygen-chemical",
+      "question": "下列关于氧气的说法正确的是？",
+      "options": ["氧气具有可燃性", "氧气能与所有物质反应", "氧气化学性质活泼，常温下能与所有金属反应", "氧气能支持燃烧，具有助燃性"],
+      "answer": 3,
+      "explanation": "氧气具有助燃性，本身不可燃；不能与所有物质反应；常温下只有少数金属（如钾、钠）能与氧气反应。",
+      "knowledgeIds": ["oxygen-chemical"]
+    },
+    {
+      "id": "L05-P07",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "air-composition",
+      "question": "空气中氧气的体积分数约为？",
+      "options": ["78%", "21%", "0.94%", "0.03%"],
+      "answer": 1,
+      "explanation": "空气中氧气约占21%（体积分数），氮气约占78%。",
+      "knowledgeIds": ["air-composition"]
+    },
+    {
+      "id": "L05-P08",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "oxygen-preparation",
+      "question": "用高锰酸钾制取氧气时，下列操作顺序正确的是？",
+      "options": ["先加热再检查气密性", "先检查气密性再装药品", "先熄灭酒精灯再移导管", "试管口向上倾斜固定"],
+      "answer": 1,
+      "explanation": "实验前必须先检查装置气密性，再装药品；试管口略向下倾斜。",
+      "knowledgeIds": ["oxygen-preparation", "lab-operations"]
+    },
+    {
+      "id": "L05-P09",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "oxygen-chemical",
+      "question": "下列关于氧化反应的说法正确的是？",
+      "options": ["氧化反应都是化合反应", "氧化反应一定有氧气参加", "有氧气参加的反应一定是氧化反应", "缓慢氧化不释放热量"],
+      "answer": 2,
+      "explanation": "物质与氧发生的反应是氧化反应，有氧气参加必为氧化反应；氧化反应不一定是化合反应（如石蜡燃烧）。",
+      "knowledgeIds": ["oxygen-chemical", "oxygen-physical"]
+    },
+    {
+      "id": "L05-P10",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "oxygen-physical",
+      "question": "下列哪种方法可以区分氧气和空气？",
+      "options": ["闻气味", "观察颜色", "用带火星的木条检验", "倒入澄清石灰水"],
+      "answer": 2,
+      "explanation": "氧气能使带火星木条复燃，空气不能，这是鉴别方法。",
+      "knowledgeIds": ["oxygen-physical", "oxygen-chemical"]
+    },
+    {
+      "id": "L05-P11",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "oxygen-chemical",
+      "question": "硫在氧气中燃烧比在空气中燃烧更剧烈，原因是？",
+      "options": ["氧气温度更高", "氧气浓度更高", "硫在氧气中更易燃烧", "空气中不含氧气"],
+      "answer": 1,
+      "explanation": "氧气浓度越高，反应越剧烈；空气中氧气约占21%，纯氧浓度更高。",
+      "knowledgeIds": ["oxygen-chemical"]
+    },
+    {
+      "id": "L05-P12",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "air-composition",
+      "question": "下列关于空气成分的说法错误的是？",
+      "options": ["氮气常用作保护气", "氧气可用于医疗急救", "二氧化碳是空气污染物", "稀有气体通电时发出不同颜色的光"],
+      "answer": 2,
+      "explanation": "二氧化碳是空气正常成分（约0.03%），不属于污染物；过量才会造成温室效应。",
+      "knowledgeIds": ["air-composition", "oxygen-physical"]
+    },
+    {
+      "id": "L05-P13",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "oxygen-preparation",
+      "question": "实验室用高锰酸钾制取氧气结束时，应先将导管移出水面再熄灭酒精灯，主要目的是？",
+      "options": ["防止水倒吸炸裂试管", "节省酒精", "加快反应速率", "便于收集更多氧气"],
+      "answer": 0,
+      "explanation": "先移导管后熄灯，防止试管冷却内压降低导致水槽中的水倒吸入热试管引起炸裂。",
+      "knowledgeIds": ["oxygen-preparation", "lab-operations"]
+    },
+    {
+      "id": "L05-P14",
+      "type": "single",
+      "difficulty": "hard",
+      "knowledgePoint": "oxygen-chemical",
+      "question": "下列反应中，既是氧化反应又是化合反应的是？",
+      "options": ["石蜡 + 氧气 → 二氧化碳 + 水", "硫 + 氧气 → 二氧化硫", "甲烷 + 氧气 → 二氧化碳 + 水", "酒精 + 氧气 → 二氧化碳 + 水"],
+      "answer": 1,
+      "explanation": "硫燃烧生成单一产物SO₂，既是氧化反应（有O₂参加）又是化合反应（多变一）。",
+      "knowledgeIds": ["oxygen-chemical", "chemical-property"]
+    },
+    {
+      "id": "L05-P15",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "oxygen-preparation",
+      "question": "用向上排空气法收集氧气，检验氧气是否收集满的方法是？",
+      "options": ["将带火星木条伸入瓶内", "将燃着的木条伸入瓶内", "将带火星木条放在瓶口", "闻瓶口气味"],
+      "answer": 2,
+      "explanation": "验满时带火星木条放瓶口，复燃则满；检验时伸入瓶内。",
+      "knowledgeIds": ["oxygen-preparation", "oxygen-chemical"]
+    },
+    {
+      "id": "L05-P16",
+      "type": "constructed",
+      "difficulty": "hard",
+      "knowledgePoint": "oxygen-preparation",
+      "question": "某同学在实验室用高锰酸钾制取氧气时，发现试管炸裂了。请从实验操作角度分析至少两种可能的原因。",
+      "rubric": {
+        "modelAnswer": "可能的原因：1. 试管口未略向下倾斜，冷凝水回流；2. 实验结束时先熄灭酒精灯后移导管，水倒吸；3. 加热前未预热；4. 试管外壁有水；5. 试管接触灯芯。",
+        "keywords": [["试管口", "向下倾斜", "冷凝水"], ["先熄灯", "后移导管", "倒吸"], ["未预热", "受热不均"], ["外壁有水"]],
+        "explanation": "试管炸裂多因受热不均或骤冷骤热导致，需分析操作不当之处。"
+      },
+      "explanation": "试管炸裂可能因试管口未向下倾斜、先熄灯后移导管导致水倒吸、未预热、外壁有水等。",
+      "knowledgeIds": ["oxygen-preparation", "lab-operations"],
+      "misconceptionIds": ["mc-o2-preparation"]
+    }
+  ]
+}

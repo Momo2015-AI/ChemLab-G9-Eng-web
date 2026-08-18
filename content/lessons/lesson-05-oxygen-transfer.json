@@ -1,0 +1,74 @@
+{
+  "lessonId": "lesson-05-oxygen",
+  "version": "1.0.0",
+  "source": "built from canonical lesson-05 oxygen content, modeled on lesson-01/02/03/04 transfer patterns",
+  "questions": [
+    {
+      "id": "L05-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "knowledgePoint": "air-composition",
+      "question": "某兴趣小组测定空气中氧气含量，实验后发现测得的氧气体积分数明显小于21%。请分析可能导致该误差的两个实验操作原因，并说明每个原因造成误差的方向（偏大或偏小）。",
+      "rubric": {
+        "modelAnswer": "原因1：红磷量不足，氧气未完全消耗，结果偏小。原因2：装置漏气，冷却时空气进入，结果偏小。原因3：未冷却至室温就打开止水夹，气体膨胀，结果偏小。",
+        "keywords": [["红磷不足", "药品不足"], ["装置漏气", "气密性不好"], ["未冷却", "室温"], ["偏小"]],
+        "explanation": "测定空气中氧气含量实验误差多源于药品量、装置气密性、温度控制。"
+      },
+      "explanation": "红磷不足或装置漏气都会导致测量值偏小。",
+      "knowledgeIds": ["air-composition", "evidence-reasoning"],
+      "misconceptionIds": ["mc-o2-composition"]
+    },
+    {
+      "id": "L05-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledgePoint": "oxygen-preparation",
+      "question": "实验室需要制取一瓶较纯净的氧气，现有排水法和向上排空气法两种收集方法。请选择合适的方法并说明理由，同时指出该方法的不足之处。",
+      "rubric": {
+        "modelAnswer": "选择排水法，因为排水法收集的氧气纯度更高（不含空气）；不足是氧气中含少量水蒸气，需要干燥处理。",
+        "keywords": [["排水法"], ["纯", "纯净", "不含空气"], ["水蒸气", "潮湿", "干燥"]],
+        "mustMatch": [],
+        "explanation": "排水法优于排空气法在于纯度高，缺点在于含水蒸气。"
+      },
+      "explanation": "排水法收集更纯净，但含少量水蒸气需干燥。",
+      "knowledgeIds": ["oxygen-preparation", "oxygen-physical"],
+      "misconceptionIds": ["mc-o2-preparation"]
+    },
+    {
+      "id": "L05-T03",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledgePoint": "oxygen-chemical",
+      "question": "某同学在做'铁丝在氧气中燃烧'实验时，发现集气瓶底炸裂了。请分析可能的原因，并说明在实验前应如何预防此类事故发生。",
+      "rubric": {
+        "modelAnswer": "可能原因：集气瓶底未放少量水或细沙；铁丝触及瓶壁。预防措施：实验前在瓶底铺一层细沙或加少量水；铁丝绕成螺旋状，下端系火柴梗，待火柴快燃尽时伸入。",
+        "keywords": [["瓶底", "细沙", "水"], ["铁丝", "接触瓶壁"], ["预热", "螺旋"]],
+        "mustMatch": [],
+        "explanation": "瓶底炸裂因高温生成物直接接触瓶底或铁丝碰壁，需预先防护。"
+      },
+      "explanation": "瓶底未放水或细沙是炸裂主因，应在实验前预防。",
+      "knowledgeIds": ["oxygen-chemical", "lab-operations"],
+      "misconceptionIds": ["mc-o2-chemical"]
+    },
+    {
+      "id": "L05-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "create",
+      "knowledgePoint": "oxygen-preparation",
+      "question": "请设计一个实验方案，验证实验室制取的氧气是否已收集满。要求写出实验步骤、预期现象和结论，并说明所用方法的科学依据。",
+      "rubric": {
+        "modelAnswer": "步骤：将带火星的木条放在集气瓶口。现象：木条复燃。结论：氧气已收集满。依据：氧气具有助燃性，能使带火星木条复燃；验满时木条放瓶口，若满则瓶口处氧气浓度足够高。",
+        "keywords": [["带火星", "木条", "瓶口"], ["复燃"], ["助燃性", "验满"]],
+        "mustMatch": [],
+        "explanation": "验满利用氧气助燃性，木条放瓶口判断是否溢出。"
+      },
+      "explanation": "验满用带火星木条放瓶口，复燃则满，依据氧气助燃性。",
+      "knowledgeIds": ["oxygen-preparation", "oxygen-chemical"],
+      "misconceptionIds": ["mc-o2-preparation"]
+    }
+  ]
+}

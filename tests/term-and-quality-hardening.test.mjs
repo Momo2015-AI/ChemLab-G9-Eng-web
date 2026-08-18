@@ -154,5 +154,5 @@ test('knowledge graph: every node is semester-tagged and acid nodes belong to un
   }
   const upperCount = graph.nodes.filter(n => n.semester === 'upper').length;
   const lowerCount = graph.nodes.filter(n => n.semester === 'lower').length;
-  assert.ok(upperCount === 11 && lowerCount === 3, `expected 11 upper / 3 lower nodes, got ${upperCount}/${lowerCount}`);
+  assert.ok(upperCount === 15 && lowerCount === 3, `expected 15 upper / 3 lower nodes, got ${upperCount}/${lowerCount}`);
 });
