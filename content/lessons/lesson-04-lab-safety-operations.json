@@ -1,0 +1,267 @@
+{
+  "id": "lesson-04-lab-safety-operations",
+  "sequenceNumber": 4,
+  "day": "04",
+  "title": "实验安全与基本操作",
+  "module": "unit-01-intro-chemistry",
+  "semester": "upper",
+  "unitId": "u01",
+  "duration": "45 分钟",
+  "description": "建立实验室安全意识，掌握药品取用、酒精灯使用、加热与测量读数等基本操作规范。",
+  "status": "ready",
+  "releaseStatus": "ready",
+  "learningObjectives": [
+    "了解实验室安全守则与危险化学品标志，形成安全意识。",
+    "掌握固体与液体药品取用、酒精灯使用、加热与量筒读数等基本操作规范。",
+    "知道常见违规操作的危险后果，掌握着火、烫伤、腐蚀等意外的正确处理。",
+    "能在陌生情境中判断实验操作对错并说明理由，理解规范操作是证据可靠的前提。"
+  ],
+  "knowledgePoints": [
+    "lab-operations",
+    "observation-inference",
+    "evidence-reasoning",
+    "scientific-inquiry",
+    "safety-awareness"
+  ],
+  "prerequisites": [
+    "lesson-01-material-changes-properties",
+    "lesson-02-chemistry-as-experimental-science"
+  ],
+  "guidedLearning": {
+    "stepCount": 8,
+    "steps": [
+      { "id": "L04-S01", "title": "实验室安全守则" },
+      { "id": "L04-S02", "title": "药品取用规范" },
+      { "id": "L04-S03", "title": "酒精灯的使用" },
+      { "id": "L04-S04", "title": "加热操作" },
+      { "id": "L04-S05", "title": "测量与读数" },
+      { "id": "L04-S06", "title": "意外事故处理" },
+      { "id": "L04-S07", "title": "规范操作与证据可靠" },
+      { "id": "L04-S08", "title": "综合判断操作对错" }
+    ]
+  },
+  "resourceRefs": {
+    "experiment": "content/lessons/lesson-04-lab-safety-operations-experiment.json",
+    "practice": "content/lessons/lesson-04-lab-safety-operations-practice.json",
+    "diagnostic": "content/lessons/lesson-04-lab-safety-operations-diagnostic.json",
+    "mastery": "content/lessons/lesson-04-lab-safety-operations-mastery.json"
+  },
+  "experiments": [
+    {
+      "id": "L04-E01",
+      "title": "观察规范操作：识别实验中的违规行为",
+      "purpose": "通过观察规范操作演示，识别常见违规行为及其危害，强化安全与规范操作意识。",
+      "status": "ready-for-runtime",
+      "resourceRef": "content/lessons/lesson-04-lab-safety-operations-experiment.json"
+    }
+  ],
+  "questions": [
+    {
+      "id": "L04-Q01",
+      "type": "concept",
+      "question": "进入化学实验室进行实验时，下列做法正确的是？",
+      "options": [
+        "佩戴护目镜并保持实验室通风",
+        "用舌头尝一下药品确认味道",
+        "把取出的多余药品放回原瓶",
+        "用手直接抓取块状固体药品"
+      ],
+      "answer": 0,
+      "knowledgeIds": ["lab-operations", "safety-awareness"],
+      "knowledgePoints": ["lab-operations"],
+      "explanation": "护目镜与通风是基本防护；不得尝、闻、摸化学药品，剩余药品不能放回原瓶，固体药品要用药匙或镊子取用。"
+    },
+    {
+      "id": "L04-Q02",
+      "type": "concept",
+      "question": "向试管中滴加少量液体药品时，正确的操作是？",
+      "options": [
+        "将滴管伸入试管内滴加",
+        "将滴管悬空竖直滴加",
+        "用滴管连续吸取多次不换",
+        "把瓶塞正放在实验桌上"
+      ],
+      "answer": 1,
+      "knowledgeIds": ["lab-operations"],
+      "knowledgePoints": ["lab-operations"],
+      "explanation": "滴管要悬空竖直滴加，不能伸入容器内；滴管不可倒置或平放，取液后不能横放桌面；倒液体时瓶塞应倒放、标签朝向手心。"
+    },
+    {
+      "id": "L04-Q03",
+      "type": "concept",
+      "question": "实验结束后，熄灭酒精灯的正确方法是？",
+      "options": [
+        "用嘴吹灭",
+        "用扇子扇灭",
+        "用灯帽盖灭",
+        "向灯内倒少量水"
+      ],
+      "answer": 2,
+      "knowledgeIds": ["lab-operations"],
+      "knowledgePoints": ["lab-operations"],
+      "explanation": "熄灭酒精灯必须用灯帽盖灭，不能用嘴吹或用水浇，否则易引起酒精洒出着火。"
+    },
+    {
+      "id": "L04-Q04",
+      "type": "concept",
+      "question": "用量筒量取液体体积时，读数时视线应？",
+      "options": [
+        "与凹液面最低处相平",
+        "俯视液面",
+        "仰视液面",
+        "与液面凸起最高处相平"
+      ],
+      "answer": 0,
+      "knowledgeIds": ["lab-operations", "observation-inference"],
+      "knowledgePoints": ["lab-operations"],
+      "explanation": "量筒读数时视线要与凹液面最低处保持水平，俯视读数偏大、仰视读数偏小，都会使数据失真。"
+    },
+    {
+      "id": "L04-Q05",
+      "type": "concept",
+      "question": "用试管加热少量液体时，下列做法正确的是？",
+      "options": [
+        "将试管口对着旁边的同学",
+        "用酒精灯内焰直接加热",
+        "先均匀预热再集中加热",
+        "液体装到试管容积的三分之二以上"
+      ],
+      "answer": 2,
+      "knowledgeIds": ["lab-operations", "safety-awareness"],
+      "knowledgePoints": ["lab-operations"],
+      "explanation": "加热试管要先预热再集中加热，用外焰加热；试管口不能对着人，液体量一般不超过试管容积的三分之一。"
+    },
+    {
+      "id": "L04-Q06",
+      "type": "concept",
+      "question": "实验时不慎将酒精灯碰倒，酒精洒出在实验桌上燃烧，正确的处理方法是？",
+      "options": [
+        "立即用水冲",
+        "用湿抹布盖灭",
+        "用嘴吹灭火焰",
+        "迅速用手拍打"
+      ],
+      "answer": 1,
+      "knowledgeIds": ["lab-operations", "safety-awareness"],
+      "knowledgePoints": ["lab-operations"],
+      "explanation": "酒精着火用水冲会扩大火势，正确做法是用湿抹布盖灭，隔绝空气灭火。"
+    }
+  ],
+  "diagnosticQuestions": [
+    {
+      "id": "L04-D01",
+      "knowledgePoint": "lab-operations",
+      "question": "小明用燃着的酒精灯去点燃另一只酒精灯。这一做法的危险主要在于？",
+      "options": [
+        "酒精易洒出并引起火灾",
+        "会降低火焰温度",
+        "会浪费酒精",
+        "这是正确做法"
+      ],
+      "answer": 0,
+      "errorType": "mc-lab-alcohol-lamp",
+      "remediationStep": "L04-S03",
+      "knowledgeIds": ["lab-operations"]
+    },
+    {
+      "id": "L04-D02",
+      "knowledgePoint": "lab-operations",
+      "question": "需要闻容器中药品的气味时，正确的做法是？",
+      "options": [
+        "凑近容器口直接闻",
+        "用手在瓶口轻轻扇动气流，闻少量气味",
+        "用舌头尝一下",
+        "不必注意，直接闻即可"
+      ],
+      "answer": 1,
+      "errorType": "mc-lab-sense-safety",
+      "remediationStep": "L04-S01",
+      "knowledgeIds": ["lab-operations", "observation-inference"]
+    },
+    {
+      "id": "L04-D03",
+      "knowledgePoint": "lab-operations",
+      "question": "加热试管中的液体时，试管口对着人的主要危险是？",
+      "options": [
+        "试管容易破裂",
+        "火焰温度不稳定",
+        "液体可能受热喷溅伤人",
+        "没有任何危险"
+      ],
+      "answer": 2,
+      "errorType": "mc-lab-heating-safety",
+      "remediationStep": "L04-S04",
+      "knowledgeIds": ["lab-operations", "safety-awareness"]
+    }
+  ],
+  "mastery": {
+    "threshold": 0.95,
+    "questionCount": 21,
+    "minCorrect": 20,
+    "mode": "unseen-transfer",
+    "resourceRef": "content/lessons/lesson-04-lab-safety-operations-mastery.json",
+    "description": "使用陌生实验情境题验证是否掌握安全守则与基本操作规范。",
+    "fallback": "diagnosis"
+  },
+  "misconceptions": [
+    "mc-lab-sense-safety",
+    "mc-lab-alcohol-lamp",
+    "mc-lab-heating-safety",
+    "mc-lab-measurement"
+  ],
+  "sections": [
+    {
+      "title": "本节课要掌握什么？",
+      "body": [
+        "牢记实验室安全守则：护目镜、通风、不得闻尝摸药品。",
+        "掌握药品取用、酒精灯使用、加热与量筒读数等基本操作。",
+        "知道常见违规操作的危害和意外事故的处理方法。"
+      ]
+    },
+    {
+      "title": "为什么安全很重要？",
+      "body": [
+        "化学实验离不开操作，错误的操作会引发烫伤、着火、腐蚀等事故。",
+        "只有规范操作，观察到的现象才是可靠的证据，推理才有基础。"
+      ]
+    },
+    {
+      "title": "核心概念",
+      "body": [
+        "安全守则：护目镜、通风、不闻不尝不摸、按量取药。",
+        "规范操作：药品取用、酒精灯使用、加热、量筒读数。",
+        "意外处理：着火用湿抹布盖灭，烫伤用冷水冲洗，腐蚀立即冲洗并报告。"
+      ]
+    },
+    {
+      "title": "常见误区",
+      "body": [
+        "认为少量违规操作没有危险，忽视酒精灯互点、试管口对人等隐患。",
+        "认为读数随意不影响实验，忽视俯视仰视对数据的影响。"
+      ]
+    },
+    {
+      "title": "学习方法",
+      "body": [
+        "边看演示边说出每一步操作的理由。",
+        "用违规情境题反复练习，形成条件反射式的安全判断。"
+      ]
+    }
+  ],
+  "summary": "本课建立实验室安全守则与基本操作规范，理解规范操作是证据可靠的前提。",
+  "provenance": {
+    "status": "ready",
+    "basis": "人教版九年级化学第一单元走进化学世界；武汉中考命题范围。",
+    "note": "已完成运行时验证。"
+  },
+  "review": {
+    "curriculum": "pass",
+    "scientific": "pass",
+    "ageSuitability": "pass",
+    "itemQuality": "pass",
+    "knowledgeLinks": "pass",
+    "wuhanAlignment": "pass",
+    "masteryGate": "pass",
+    "blockingIssues": []
+  }
+}

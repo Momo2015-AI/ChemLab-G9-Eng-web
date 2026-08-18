@@ -1,0 +1,272 @@
+{
+  "lessonId": "lesson-04-lab-safety-operations",
+  "version": "1.0",
+  "mastery": {
+    "threshold": 0.95,
+    "questionCount": 21,
+    "minCorrect": 20,
+    "mode": "unseen-transfer",
+    "questions": [
+      {
+        "id": "L04-M01",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "lab-operations",
+        "question": "进入化学实验室，下列行为符合安全守则的是？",
+        "options": ["佩戴护目镜并保持通风", "品尝药品确认味道", "用手直接抓取药品", "把废液倒入下水道"],
+        "answer": 0,
+        "explanation": "护目镜与通风是基本防护；不得尝药品、不得手抓药品、废液要倒入指定容器。",
+        "knowledgeIds": ["lab-operations", "safety-awareness"]
+      },
+      {
+        "id": "L04-M02",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "lab-operations",
+        "question": "打开一瓶装有气体的试剂瓶，需要了解其气味时，正确的操作是？",
+        "options": ["把鼻子凑到瓶口深吸", "用手轻轻扇动瓶口气流闻少量气味", "用嘴对着瓶口吹气", "取少量气体在口中尝"],
+        "answer": 1,
+        "explanation": "扇闻法用手扇动气流，只让少量气体进入鼻腔，安全卫生。",
+        "knowledgeIds": ["lab-operations", "observation-inference"],
+        "misconceptionIds": ["mc-lab-sense-safety"]
+      },
+      {
+        "id": "L04-M03",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "lab-operations",
+        "question": "做加热液体的实验时，下列防护措施最重要的是？",
+        "options": ["穿拖鞋", "佩戴护目镜", "戴手套", "佩戴口罩"],
+        "answer": 2,
+        "explanation": "液体加热可能飞溅，护目镜是保护眼睛最重要的一环。",
+        "knowledgeIds": ["lab-operations", "safety-awareness"]
+      },
+      {
+        "id": "L04-M04",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "lab-operations",
+        "question": "向试管中倾倒液体药品时，试剂瓶标签应朝向？",
+        "options": ["朝外", "朝下", "朝上", "朝手心"],
+        "answer": 3,
+        "explanation": "标签朝向手心，防止残留液体腐蚀标签，也便于随时看清。",
+        "knowledgeIds": ["lab-operations"]
+      },
+      {
+        "id": "L04-M05",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "lab-operations",
+        "question": "用胶头滴管吸取试剂后，滴管应如何放置？",
+        "options": ["胶头向上竖直放置", "平放在桌面上", "倒置", "插在试管中"],
+        "answer": 0,
+        "explanation": "滴管胶头向上竖直放置，防止液体倒流腐蚀胶头，也不能平放或倒置。",
+        "knowledgeIds": ["lab-operations"]
+      },
+      {
+        "id": "L04-M06",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "lab-operations",
+        "question": "下列点燃酒精灯的方法中，正确的是？",
+        "options": ["用燃着的酒精灯去点燃", "用火柴点燃", "用嘴对着灯焰吹", "直接用打火机对着酒精灯口喷"],
+        "answer": 1,
+        "explanation": "用火柴（或点火器）点燃；严禁灯对灯点火。",
+        "knowledgeIds": ["lab-operations", "safety-awareness"],
+        "misconceptionIds": ["mc-lab-alcohol-lamp"]
+      },
+      {
+        "id": "L04-M07",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "lab-operations",
+        "question": "实验结束后熄灭酒精灯，正确的方法是？",
+        "options": ["用嘴吹灭", "用扇子扇灭", "用灯帽盖灭", "加水浇灭"],
+        "answer": 2,
+        "explanation": "酒精灯必须用灯帽盖灭，用嘴吹易引起灯内酒精燃烧甚至爆炸。",
+        "knowledgeIds": ["lab-operations"]
+      },
+      {
+        "id": "L04-M08",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "lab-operations",
+        "question": "给酒精灯添加酒精时，正确的要求是？",
+        "options": ["在燃着时添加", "用嘴对着瓶口倒", "添加时先熄灭火焰", "酒精量装满"],
+        "answer": 3,
+        "explanation": "添加酒精必须等火焰熄灭，用漏斗沿器壁倒入，量不超过灯容积的三分之二。",
+        "knowledgeIds": ["lab-operations", "safety-awareness"]
+      },
+      {
+        "id": "L04-M09",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "lab-operations",
+        "question": "加热试管中的液体时，试管口对着无人处是因为？",
+        "options": ["防止液体喷溅伤人", "方便观察现象", "让火焰更旺", "为了加快蒸发"],
+        "answer": 0,
+        "explanation": "液体受热沸腾可能喷溅，试管口对着无人处可避免烫伤他人或自己。",
+        "knowledgeIds": ["lab-operations", "safety-awareness"],
+        "misconceptionIds": ["mc-lab-heating-safety"]
+      },
+      {
+        "id": "L04-M10",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "lab-operations",
+        "question": "加热烧杯中的液体时，应使用酒精灯的？",
+        "options": ["焰心", "内焰", "外焰", "火焰上方"],
+        "answer": 1,
+        "explanation": "外焰温度最高，加热效果好，应使用外焰。",
+        "knowledgeIds": ["lab-operations"]
+      },
+      {
+        "id": "L04-M11",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "lab-operations",
+        "question": "加热试管前先移动酒精灯使试管均匀受热，这样做是为了？",
+        "options": ["节省时间", "使火焰稳定", "防止试管受热不均而炸裂", "提高酒精灯效率"],
+        "answer": 2,
+        "explanation": "预热使试管受热均匀，避免局部高温导致玻璃炸裂。",
+        "knowledgeIds": ["lab-operations", "safety-awareness"],
+        "misconceptionIds": ["mc-lab-heating-safety"]
+      },
+      {
+        "id": "L04-M12",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "lab-operations",
+        "question": "用量筒量取液体并读数时，正确的操作是？",
+        "options": ["读数时拿起量筒离开桌面", "视线与凹液面最低处相平", "俯视读数", "仰视读数"],
+        "answer": 1,
+        "explanation": "量筒放平，视线与凹液面最低处相平，俯视偏大仰视偏小。",
+        "knowledgeIds": ["lab-operations", "observation-inference"],
+        "misconceptionIds": ["mc-lab-measurement"]
+      },
+      {
+        "id": "L04-M13",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "lab-operations",
+        "question": "用托盘天平称量固体药品时，正确的做法是？",
+        "options": ["药品直接放在托盘上", "药品放在称量纸上，左物右码", "游码不需要归零", "用手直接调平衡螺母"],
+        "answer": 0,
+        "explanation": "药品放在称量纸上，左盘放药品、右盘放砝码，游码归零后调平衡。",
+        "knowledgeIds": ["lab-operations"]
+      },
+      {
+        "id": "L04-M14",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "lab-operations",
+        "question": "没有规定药品用量时，固体药品的取用原则是？",
+        "options": ["越多越好", "盖满试管底部即可", "装满试管", "必须精确到克"],
+        "answer": 1,
+        "explanation": "未规定用量时固体盖满试管底部即可，既节约又安全。",
+        "knowledgeIds": ["lab-operations"],
+        "misconceptionIds": ["mc-lab-measurement"]
+      },
+      {
+        "id": "L04-M15",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "lab-operations",
+        "question": "实验后试管中剩余的少量液体药品，正确的处理是？",
+        "options": ["倒回原试剂瓶", "倒入指定废液缸", "倒在实验桌上", "倒入水槽"],
+        "answer": 2,
+        "explanation": "剩余药品不能放回原瓶以防污染，也不能随意倾倒，应倒入指定废液缸。",
+        "knowledgeIds": ["lab-operations", "evidence-reasoning"],
+        "misconceptionIds": ["mc-lab-measurement"]
+      },
+      {
+        "id": "L04-M16",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "lab-operations",
+        "question": "实验中要闻某种可能有刺激性气味的药品，除扇闻法外，还应该？",
+        "options": ["关闭门窗", "在通风橱内操作", "用手捂口鼻", "快速完成不呼吸"],
+        "answer": 3,
+        "explanation": "产生或打开刺激性气味药品应在通风环境（如通风橱）中进行，减少吸入。",
+        "knowledgeIds": ["lab-operations", "safety-awareness"],
+        "misconceptionIds": ["mc-lab-sense-safety"]
+      },
+      {
+        "id": "L04-M17",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "lab-operations",
+        "question": "不小心碰倒酒精灯，酒精洒出在桌面燃烧，正确的处理是？",
+        "options": ["用湿抹布盖灭", "用嘴吹", "用水泼", "用手扑打"],
+        "answer": 0,
+        "explanation": "湿抹布盖灭可隔绝空气灭火；用水泼会使酒精流动扩大火势。",
+        "knowledgeIds": ["lab-operations", "safety-awareness"],
+        "misconceptionIds": ["mc-lab-alcohol-lamp"]
+      },
+      {
+        "id": "L04-M18",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "lab-operations",
+        "question": "皮肤不小心被开水烫伤，第一步的正确处理是？",
+        "options": ["涂药膏", "用大量冷水冲洗", "立刻穿衣服保暖", "用力揉搓"],
+        "answer": 1,
+        "explanation": "先用大量冷水冲洗降温，减轻伤害，再报告老师处理。",
+        "knowledgeIds": ["lab-operations"]
+      },
+      {
+        "id": "L04-M19",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "lab-operations",
+        "question": "稀释浓硫酸时，正确的操作是？",
+        "options": ["将水倒入浓硫酸中", "将浓硫酸沿器壁缓缓倒入水中并搅拌", "将浓硫酸倒入量筒中稀释", "直接在试剂瓶中加水"],
+        "answer": 2,
+        "explanation": "浓硫酸稀释时放热，应将浓硫酸沿器壁缓缓倒入水中并不断搅拌，防止液体飞溅。",
+        "knowledgeIds": ["lab-operations", "safety-awareness"]
+      },
+      {
+        "id": "L04-M20",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "lab-operations",
+        "question": "关于规范操作与实验结论的关系，下列说法正确的是？",
+        "options": ["结论正确即可，操作是否规范不重要", "数据整理美观比操作规范更重要", "规范操作是得到可靠证据的前提", "只要现象明显，操作误差可忽略"],
+        "answer": 3,
+        "explanation": "读数、取量等操作不规范会使数据失真，规范操作是证据可靠、结论可信的前提。",
+        "knowledgeIds": ["lab-operations", "evidence-reasoning", "scientific-inquiry"],
+        "misconceptionIds": ["mc-lab-measurement"]
+      },
+      {
+        "id": "L04-M21",
+        "type": "constructed",
+        "difficulty": "hard",
+        "knowledgePoint": "lab-operations",
+        "question": "小明做实验时：直接把鼻子凑近试剂瓶闻气味，用燃着的酒精灯点燃另一只酒精灯，加热试管时试管口对着同学。请指出他这三处操作各错在哪里，并写出每处的正确做法。",
+        "rubric": {
+          "modelAnswer": "闻气味要用扇闻法不能凑近直接闻；点燃酒精灯要用火柴，不能灯对灯点火；加热时试管口不能对着人。",
+          "keywords": [["扇闻", "扇动"], ["火柴", "点火器"], ["试管口", "对着无人", "不对人"]],
+          "mustMatch": [],
+          "explanation": "三处错误分别属于气味辨别、酒精灯使用和加热安全，均须按规范操作。"
+        },
+        "explanation": "正确做法：扇闻法闻气味、火柴点燃酒精灯、试管口不对人。",
+        "knowledgeIds": ["lab-operations", "safety-awareness"],
+        "misconceptionIds": ["mc-lab-sense-safety", "mc-lab-alcohol-lamp", "mc-lab-heating-safety"]
+      }
+    ],
+    "requiredKnowledgeIds": [
+      "lab-operations",
+      "observation-inference",
+      "evidence-reasoning",
+      "scientific-inquiry",
+      "safety-awareness"
+    ],
+    "criticalMisconceptions": [
+      "mc-lab-sense-safety",
+      "mc-lab-alcohol-lamp",
+      "mc-lab-heating-safety",
+      "mc-lab-measurement"
+    ],
+    "requireConstructed": true
+  }
+}

@@ -1032,3 +1032,34 @@ recheck 测试失败：最初测试 harness 的 getMastery 返回了非空题目
 ### Next
 
 Source Registry 登记；上册第 3 课（空气/氧气，可复用实验库）补位；Playwright e2e（L01/L02 完整学习闭环：引导→实验→练习→诊断→补救→再检测→Mastery→迁移）作为下一批内容产出后的验证手段。
+
+---
+
+## 2026-08-18 — L04 实验安全与基本操作：u01 收口内容建设
+
+### Conversation / decision
+
+用户确认继续上一会话计划，审计建议先收口 u01"走进化学世界"剩余课时。方向决策：L04 = 实验安全与基本操作（能力主线"观察→实验操作→记录证据"的下一步），补齐 u01 的"实验安全与基本实验操作"学习任务；第二单元"空气与氧气"因 legacy 素材为简版、属上册新单元，按"先做深再做广"原则延后。
+
+### Actions
+
+**规格**：`.monkeycode/specs/lesson-04-lab-safety/` 新增 `requirements.md`（EARS 需求）与 `design.md`（技术设计）。
+**知识图谱 v2.3.0**：新增 `lab-operations` 节点（upper/u01/method，50 条 question 引用，misconceptionIds 4 条）；relations 新增 `observation-inference→lab-operations`（prerequisite）、`lab-operations→evidence-reasoning` 与 `scientific-inquiry→lab-operations`（related）。
+**misconception 词表**：canonical 18→22（新增 mc-lab-sense-safety / mc-lab-alcohol-lamp / mc-lab-heating-safety / mc-lab-measurement），ALIAS_MAP 23→27（新增 lab-sense-safety / alcohol-lamp / heating-safety / measurement-safety）。
+**L04 内容（7 文件，day 04 / upper / u01）**：base JSON（6 题 + 3 诊断 + mastery 契约 0.95/21/20）+ guided-learning 8 步 + experiment L04-E01（观察辨识型）+ practice 16 题（答案 0-3 各 4 平衡）+ diagnostic 3 题 + mastery 21 题（20 整数答案 0-3 各 5 + 1 constructed）+ transfer 4 题；manifest 注册 day 04。
+**测试同步**：`misconception-vocab`（18→22、23→27、两处硬编码图谱节点集合加入 lab-operations、resolve 新 alias 断言）；`term-and-quality-hardening` 图谱节点分布 10/3→11/3；`p2-learning-contract` released 课程列表加入 L04；`content-revision-v2` 的 lessonFiles 纳入 L04 四文件、VOCABULARY 加入 lab-operations/safety-awareness（防词汇漂移）。
+
+### 中途事故与纠正
+
+首跑 `node --test tests/` 因目录参数不可用失败（需 `tests/*.test.mjs`），随后按 package.json 脚本执行；首轮全量出现 1 失败（`p2-learning-contract` 的 released 硬编码列表），按 manifest 实际顺序补齐 L04 后全绿。
+
+### Verification
+
+- `npm test`：**179/179 全绿**。
+- `npm run audit:content`：Gate PASS，4 课全部 released/ready（lesson-04 = 6+16+3+21+4），0 issues。
+- `node scripts/runtime-audit.mjs`：PASS。
+- `node scripts/build-pages.mjs`：98 文件复制成功。
+
+### Next
+
+Source Registry 登记（`exp-001-oxygen.json` / `oxygen.js` 等 legacy 素材 pending）；第二单元"空气/氧气"按课程地图生产顺序补位（可复用实验库氧气素材）；Playwright e2e（完整学习闭环验证）随下一批内容产出推进。

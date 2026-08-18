@@ -1,0 +1,73 @@
+{
+  "lessonId": "lesson-04-lab-safety-operations",
+  "version": "1.0.0",
+  "source": "built from canonical lesson-04 lab-safety-operations content, modeled on lesson-01/02/03 transfer patterns",
+  "questions": [
+    {
+      "id": "L04-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledgePoint": "lab-operations",
+      "question": "小红的实验报告里写着这样的过程：“我用量筒量取液体时俯视读数，为的是让读数更准确。”请评价这个说法，说明俯视读数对取液体积的影响，并写出正确的读数方法。",
+      "rubric": {
+        "modelAnswer": "俯视读数会使读数偏大，实际量取的液体偏少，并不能让读数更准确；正确方法是视线与量筒内凹液面最低处保持水平。",
+        "keywords": [["偏大"], ["偏少", "不足", "实际量取少"], ["凹液面", "相平", "水平"]],
+        "explanation": "俯视读数偏大、仰视偏小，只有平视才准确。"
+      },
+      "explanation": "俯视读数偏大、实际取液偏少；应平视凹液面最低处。",
+      "knowledgeIds": ["lab-operations", "observation-inference"],
+      "misconceptionIds": ["mc-lab-measurement"]
+    },
+    {
+      "id": "L04-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "create",
+      "knowledgePoint": "lab-operations",
+      "question": "你要在一个陌生实验室里独立完成“用试管加热少量水并观察沸腾现象”的实验。请写出你的完整操作流程，要求至少包含三个必须遵守的安全要点，并说明每一个要点保护的是谁、避免什么伤害。",
+      "rubric": {
+        "modelAnswer": "流程：检查仪器→佩戴护目镜→用酒精灯外焰加热盛有少量水的试管，先预热，试管口不对人。安全要点：护目镜防飞溅；先预热防试管炸裂；试管口不对人防液体喷溅伤人；用灯帽熄灭酒精灯防火灾。",
+        "keywords": [["外焰"], ["预热", "均匀受热"], ["试管口", "不对人"], ["护目镜", "灯帽", "熄灭"]],
+        "mustMatch": [],
+        "explanation": "完整的规范操作流程需要同时体现防护、加热与灭火安全要点。"
+      },
+      "explanation": "规范流程包含防护、加热、熄灭三个维度的安全要点。",
+      "knowledgeIds": ["lab-operations", "scientific-inquiry"],
+      "misconceptionIds": ["mc-lab-heating-safety", "mc-lab-alcohol-lamp"]
+    },
+    {
+      "id": "L04-T03",
+      "type": "constructed",
+      "difficulty": "medium",
+      "bloomLevel": "apply",
+      "knowledgePoint": "lab-operations",
+      "question": "实验课上发生两种情况：一是酒精灯被打翻，酒精在桌面燃烧；二是同学手被加热后的试管烫伤。请分别写出正确的处理步骤，并说明各步骤的科学依据（隔绝空气、降温等）。",
+      "rubric": {
+        "modelAnswer": "酒精燃烧用湿抹布盖灭，隔绝空气灭火；烫伤用大量冷水冲洗，降低皮肤温度并冲走热量。",
+        "keywords": [["湿抹布", "盖灭"], ["隔绝空气", "隔绝氧气"], ["冷水", "冲洗", "降温"]],
+        "explanation": "灭火用隔绝空气原理，烫伤处理用降温原理。"
+      },
+      "explanation": "酒精着火盖灭靠隔绝空气，烫伤冲冷水靠降温。",
+      "knowledgeIds": ["lab-operations", "evidence-reasoning"],
+      "misconceptionIds": ["mc-lab-alcohol-lamp"]
+    },
+    {
+      "id": "L04-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledgePoint": "lab-operations",
+      "question": "两组同学用同样的药品做“食盐是否溶于水”的实验，用量都是5克食盐和20毫升水，但甲组俯视量取水，乙组平视量取水。实验结果都显示食盐完全溶解。请分析：两组同学的结论是否都可靠？他们记录的“20毫升水”能作为公平比较的数据吗？为什么？",
+      "rubric": {
+        "modelAnswer": "甲组俯视量取的水实际偏少（不足20毫升），虽然两组都观察到完全溶解，但甲组的“20毫升水”记录与乙组不一致，数据不可靠，不能作为公平比较的数据。规范操作是数据可信的前提。",
+        "keywords": [["偏少", "不足", "实际少"], ["不可靠", "不准确", "不能比较"], ["规范", "可靠"]],
+        "mustMatch": [],
+        "explanation": "操作不规范导致记录数据失真，即使现象相同，数据也不能用于公平比较。"
+      },
+      "explanation": "俯视取液偏少使记录失真，规范操作才是数据可靠的前提。",
+      "knowledgeIds": ["lab-operations", "evidence-reasoning", "data-integrity"],
+      "misconceptionIds": ["mc-lab-measurement"]
+    }
+  ]
+}

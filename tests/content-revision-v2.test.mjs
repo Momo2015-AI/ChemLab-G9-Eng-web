@@ -15,6 +15,10 @@ const lessonFiles = [
   'lesson-02-chemistry-as-experimental-science-mastery',
   'lesson-02-chemistry-as-experimental-science-practice',
   'lesson-02-chemistry-as-experimental-science-diagnostic',
+  'lesson-04-lab-safety-operations',
+  'lesson-04-lab-safety-operations-mastery',
+  'lesson-04-lab-safety-operations-practice',
+  'lesson-04-lab-safety-operations-diagnostic',
 ];
 
 const VOCABULARY = new Set([
@@ -22,6 +26,7 @@ const VOCABULARY = new Set([
   'physical-property', 'chemical-property',
   'observation-inference', 'evidence-reasoning',
   'scientific-inquiry', 'control-variables', 'data-integrity',
+  'lab-operations', 'safety-awareness',
 ]);
 
 test('lesson-01 reaches completed phase through markComplete when ready', () => {

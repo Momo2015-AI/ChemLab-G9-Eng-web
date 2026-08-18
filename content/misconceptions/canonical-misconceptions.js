@@ -278,6 +278,66 @@ export const canonicalMisconceptions = [
       practiceQuestionIds: ['L03-D05'],
       recheckQuestionIds: ['L03-M06']
     }
+  },
+  {
+    id: 'mc-lab-sense-safety',
+    title: '对未知物质直接闻、尝、摸',
+    description: '学生用鼻子凑近容器口闻气体、用手触碰或品尝药品，忽略"不得闻、尝、摸任何化学药品"的基本安全守则。',
+    knowledgeIds: ['lab-operations', 'observation-inference', 'safety-awareness'],
+    signals: ['condition-omission', 'habit-unsafe'],
+    severity: 'high',
+    source: 'lesson-04 audit',
+    remediation: {
+      goal: '掌握"扇闻法"等安全闻味方式，牢记不得闻、尝、摸任何化学药品。',
+      lessonIds: ['lesson-04-lab-safety-operations'],
+      practiceQuestionIds: ['L04-P01'],
+      recheckQuestionIds: ['L04-M02']
+    }
+  },
+  {
+    id: 'mc-lab-alcohol-lamp',
+    title: '酒精灯使用违规',
+    description: '用酒精灯点燃另一只酒精灯、用嘴吹灭酒精灯、向燃着的酒精灯添加酒精，造成酒精溢出着火风险。',
+    knowledgeIds: ['lab-operations', 'safety-awareness'],
+    signals: ['procedure-mistake', 'condition-omission'],
+    severity: 'high',
+    source: 'lesson-04 audit',
+    remediation: {
+      goal: '掌握酒精灯正确点燃（火柴/打火机）、熄灭（灯帽盖灭）与添加酒精的规范。',
+      lessonIds: ['lesson-04-lab-safety-operations'],
+      practiceQuestionIds: ['L04-P05'],
+      recheckQuestionIds: ['L04-M06']
+    }
+  },
+  {
+    id: 'mc-lab-heating-safety',
+    title: '加热操作违规',
+    description: '加热时试管口对着人、未预热直接用外焰加热、用酒精灯内焰或焰心加热，引发液体喷溅或试管破裂。',
+    knowledgeIds: ['lab-operations', 'safety-awareness'],
+    signals: ['procedure-mistake', 'condition-omission'],
+    severity: 'high',
+    source: 'lesson-04 audit',
+    remediation: {
+      goal: '掌握试管加热规范：外焰加热、先预热、试管口不对人、夹持位置正确。',
+      lessonIds: ['lesson-04-lab-safety-operations'],
+      practiceQuestionIds: ['L04-P07'],
+      recheckQuestionIds: ['L04-M09']
+    }
+  },
+  {
+    id: 'mc-lab-measurement',
+    title: '药品取用与读数错误',
+    description: '取用药品过多、用手直接抓取固体药品、量筒俯视或仰视读数，导致实验数据失真。',
+    knowledgeIds: ['lab-operations', 'observation-inference', 'evidence-reasoning'],
+    signals: ['condition-omission', 'data-error'],
+    severity: 'medium',
+    source: 'lesson-04 audit',
+    remediation: {
+      goal: '掌握药品取用"量不宜过多、严格按量取用"原则与量筒正确读数姿势（视线与凹液面最低处相平）。',
+      lessonIds: ['lesson-04-lab-safety-operations'],
+      practiceQuestionIds: ['L04-P10'],
+      recheckQuestionIds: ['L04-M11']
+    }
   }
 ];
 
@@ -314,7 +374,12 @@ export const ALIAS_MAP = {
   'metal-activity-mistake': 'mc-acid-metal-activity',
   // Existing mc- IDs (identity映射)
   'mc-acid-metal-overgeneralization': 'mc-acid-metal-overgeneralization',
-  'mc-acid-observation-inference': 'mc-acid-observation-inference'
+  'mc-acid-observation-inference': 'mc-acid-observation-inference',
+  // L04 lab-safety aliases
+  'lab-sense-safety': 'mc-lab-sense-safety',
+  'alcohol-lamp': 'mc-lab-alcohol-lamp',
+  'heating-safety': 'mc-lab-heating-safety',
+  'measurement-safety': 'mc-lab-measurement'
 };
 
 /**

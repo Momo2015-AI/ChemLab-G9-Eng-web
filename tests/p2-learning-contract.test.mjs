@@ -71,6 +71,7 @@ test('lesson manifest exposes every released canonical lesson with textbook meta
     'lesson-01-material-changes-properties',
     'lesson-02-chemistry-as-experimental-science',
     'lesson-03-acid-intro',
+    'lesson-04-lab-safety-operations',
   ]);
   for (const lesson of released) {
     assert.ok(['upper', 'lower'].includes(lesson.semester));

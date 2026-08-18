@@ -1,0 +1,185 @@
+{
+  "lessonId": "lesson-04-lab-safety-operations",
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "L04-P01",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "lab-operations",
+      "question": "需要闻某药品的气味时，正确的做法是？",
+      "options": ["凑近瓶口直接闻", "用手轻轻扇动气流闻少量气味", "用舌头尝一下", "完全不用管气味"],
+      "answer": 1,
+      "explanation": "扇闻法只让少量气体进入鼻腔，安全又能获取信息。",
+      "knowledgeIds": ["lab-operations", "observation-inference"]
+    },
+    {
+      "id": "L04-P02",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "lab-operations",
+      "question": "进行有加热或可能喷溅的化学实验时，必须佩戴的防护用品是？",
+      "options": ["护目镜", "手套", "口罩", "帽子"],
+      "answer": 0,
+      "explanation": "护目镜保护眼睛免受飞溅液滴和碎片伤害，是加热类实验的基本防护。",
+      "knowledgeIds": ["lab-operations", "safety-awareness"]
+    },
+    {
+      "id": "L04-P03",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "lab-operations",
+      "question": "取用块状固体药品（如大理石）时，应使用？",
+      "options": ["药匙", "镊子", "手", "胶头滴管"],
+      "answer": 2,
+      "explanation": "块状固体用镊子夹取，粉末状药品用药匙，不能用手直接抓取。",
+      "knowledgeIds": ["lab-operations"]
+    },
+    {
+      "id": "L04-P04",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "lab-operations",
+      "question": "用胶头滴管向试管中滴加液体时，正确的操作是？",
+      "options": ["将滴管伸入试管内滴加", "将滴管倒置", "悬空竖直滴加在试管口上方", "把滴管横放在桌面上"],
+      "answer": 3,
+      "explanation": "滴管要悬空竖直滴加，不能伸入容器内，不能倒置或横放，防止污染试剂。",
+      "knowledgeIds": ["lab-operations"]
+    },
+    {
+      "id": "L04-P05",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "lab-operations",
+      "question": "用一只燃着的酒精灯去点燃另一只酒精灯，最大的隐患是？",
+      "options": ["会浪费酒精", "容易使酒精洒出并引燃", "火焰温度不够高", "点燃速度太慢"],
+      "answer": 1,
+      "explanation": "灯对灯点火时容易把酒精洒出并引燃，引发火灾，必须用火柴或点火器。",
+      "knowledgeIds": ["lab-operations", "safety-awareness"]
+    },
+    {
+      "id": "L04-P06",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "lab-operations",
+      "question": "熄灭酒精灯的正确方法是？",
+      "options": ["用灯帽盖灭", "用嘴吹灭", "用扇子扇灭", "用湿抹布盖住灯口"],
+      "answer": 0,
+      "explanation": "用灯帽盖灭，盖灭后取下灯帽再盖一次放回，防止灯帽冷却后打不开。",
+      "knowledgeIds": ["lab-operations"]
+    },
+    {
+      "id": "L04-P07",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "lab-operations",
+      "question": "加热试管中的液体时，试管口应该？",
+      "options": ["对着自己", "对着旁边的同学", "对着无人处，不对着任何人", "随意放置"],
+      "answer": 3,
+      "explanation": "液体受热可能喷溅，试管口必须朝向无人处，防止烫伤。",
+      "knowledgeIds": ["lab-operations", "safety-awareness"]
+    },
+    {
+      "id": "L04-P08",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "lab-operations",
+      "question": "酒精灯火焰中温度最高的部分是？",
+      "options": ["焰心", "内焰", "外焰", "火焰上方"],
+      "answer": 2,
+      "explanation": "外焰燃烧最充分、温度最高，加热应使用外焰。",
+      "knowledgeIds": ["lab-operations"]
+    },
+    {
+      "id": "L04-P09",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "lab-operations",
+      "question": "加热试管前先移动酒精灯使试管均匀受热（预热），主要目的是？",
+      "options": ["节省酒精", "防止试管因受热不均而破裂", "让液体更快沸腾", "提高火焰温度"],
+      "answer": 1,
+      "explanation": "预热让试管受热均匀，避免局部高温导致玻璃炸裂。",
+      "knowledgeIds": ["lab-operations", "safety-awareness"]
+    },
+    {
+      "id": "L04-P10",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "lab-operations",
+      "question": "用量筒量取液体时，读数视线应？",
+      "options": ["与凹液面最低处相平", "俯视凹液面", "仰视凹液面", "与量筒顶端相平"],
+      "answer": 0,
+      "explanation": "读数时视线与凹液面最低处相平，俯视偏大、仰视偏小。",
+      "knowledgeIds": ["lab-operations", "observation-inference"]
+    },
+    {
+      "id": "L04-P11",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "lab-operations",
+      "question": "没有规定用量时，液体药品一般取用的最少量是？",
+      "options": ["装满试管", "半试管", "1-2毫升", "10毫升"],
+      "answer": 3,
+      "explanation": "节约药品是安全守则之一，未规定用量时液体取1-2毫升、固体盖满试管底部即可。",
+      "knowledgeIds": ["lab-operations"]
+    },
+    {
+      "id": "L04-P12",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "lab-operations",
+      "question": "取用药品后，试管中剩余的固体药品应？",
+      "options": ["放回原瓶", "倒回原瓶并摇匀", "倒入指定废液缸或指定容器", "留在桌面上"],
+      "answer": 2,
+      "explanation": "剩余药品不能放回原瓶，防止污染整瓶试剂，应放入指定容器。",
+      "knowledgeIds": ["lab-operations", "evidence-reasoning"]
+    },
+    {
+      "id": "L04-P13",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "lab-operations",
+      "question": "实验室使用可能产生刺激性气体的药品时，应保持？",
+      "options": ["室内通风", "门窗紧闭", "空调制冷", "点燃酒精灯驱散"],
+      "answer": 0,
+      "explanation": "通风可以把有害气体排出室外，是基本安全要求。",
+      "knowledgeIds": ["lab-operations", "safety-awareness"]
+    },
+    {
+      "id": "L04-P14",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "lab-operations",
+      "question": "酒精洒在实验桌上燃烧起来，正确的灭火方法是？",
+      "options": ["用水浇", "用湿抹布盖灭", "用嘴吹", "打开窗户让它自然熄灭"],
+      "answer": 1,
+      "explanation": "用湿抹布盖灭可隔绝空气，用水浇反而会使酒精流淌扩大火势。",
+      "knowledgeIds": ["lab-operations", "safety-awareness"]
+    },
+    {
+      "id": "L04-P15",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "lab-operations",
+      "question": "不小心被加热的试管烫伤，首先应？",
+      "options": ["涂牙膏", "涂抹红花油", "立即用大量冷水冲洗", "用热水浸泡"],
+      "answer": 3,
+      "explanation": "烫伤后用大量冷水冲洗降低皮肤温度，减轻伤害，然后报告老师。",
+      "knowledgeIds": ["lab-operations"]
+    },
+    {
+      "id": "L04-P16",
+      "type": "constructed",
+      "difficulty": "hard",
+      "knowledgePoint": "lab-operations",
+      "question": "两位同学做同一实验，甲用量筒量取液体时俯视读数，乙按平视读数。请说明：谁的读数更可能偏大？如果用量筒量取10毫升液体，俯视读数实际量取会偏多还是偏少？",
+      "rubric": {
+        "modelAnswer": "俯视读数会使读数偏大，实际量取的液体体积偏小（不足10毫升）；乙的平视读数更准确。",
+        "keywords": [["俯视"], ["偏大"], ["偏少", "不足", "不够10毫升"]],
+        "explanation": "俯视时视线偏高，读到的刻度偏大，实际量取体积偏少。"
+      },
+      "explanation": "俯视读数偏大，实际取液偏少；平视读数准确。",
+      "knowledgeIds": ["lab-operations", "observation-inference", "evidence-reasoning"]
+    }
+  ]
+}

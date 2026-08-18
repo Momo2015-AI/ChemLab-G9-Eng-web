@@ -9,8 +9,8 @@ import {
 } from '../content/misconceptions/canonical-misconceptions.js';
 import { evaluateMastery } from '../core/assessment/mastery-policy.js';
 
-test('canonical vocabulary has 18 entries with required fields', () => {
-  assert.equal(canonicalMisconceptions.length, 18);
+test('canonical vocabulary has 22 entries with required fields', () => {
+  assert.equal(canonicalMisconceptions.length, 22);
   for (const mc of canonicalMisconceptions) {
     assert.ok(mc.id, 'each entry has id');
     assert.ok(mc.title, 'each entry has title');
@@ -23,8 +23,8 @@ test('canonical vocabulary has 18 entries with required fields', () => {
   }
 });
 
-test('ALIAS_MAP has 23 entries covering all legacy ID variants', () => {
-  assert.equal(Object.keys(ALIAS_MAP).length, 23);
+test('ALIAS_MAP has 27 entries covering all legacy ID variants', () => {
+  assert.equal(Object.keys(ALIAS_MAP).length, 27);
 });
 
 test('resolveMisconceptionId resolves all known aliases to canonical form', () => {
@@ -56,6 +56,11 @@ test('resolveMisconceptionId resolves all known aliases to canonical form', () =
   // Identity mappings (already canonical)
   assert.equal(resolveMisconceptionId('mc-acid-metal-overgeneralization'), 'mc-acid-metal-overgeneralization');
   assert.equal(resolveMisconceptionId('mc-acid-observation-inference'), 'mc-acid-observation-inference');
+  // L04 lab-safety aliases
+  assert.equal(resolveMisconceptionId('lab-sense-safety'), 'mc-lab-sense-safety');
+  assert.equal(resolveMisconceptionId('alcohol-lamp'), 'mc-lab-alcohol-lamp');
+  assert.equal(resolveMisconceptionId('heating-safety'), 'mc-lab-heating-safety');
+  assert.equal(resolveMisconceptionId('measurement-safety'), 'mc-lab-measurement');
 });
 
 test('resolveMisconceptionId passes through unknown IDs unchanged', () => {
@@ -139,7 +144,8 @@ test('canonical IDs do not overlap with knowledge graph node IDs', () => {
     'acid-intro', 'acid-property', 'chemical-change', 'chemical-property',
     'control-variables', 'data-integrity', 'evidence-reasoning',
     'matter-change', 'observation-inference', 'physical-change',
-    'physical-property', 'safety-awareness', 'scientific-inquiry'
+    'physical-property', 'safety-awareness', 'scientific-inquiry',
+    'lab-operations'
   ]);
   for (const mc of canonicalMisconceptions) {
     assert.ok(!kgNodes.has(mc.id), `${mc.id} must not collide with knowledge graph node IDs`);
@@ -151,7 +157,8 @@ test('every canonical misconception maps to at least one knowledge graph node', 
     'acid-intro', 'acid-property', 'chemical-change', 'chemical-property',
     'control-variables', 'data-integrity', 'evidence-reasoning',
     'matter-change', 'observation-inference', 'physical-change',
-    'physical-property', 'safety-awareness', 'scientific-inquiry'
+    'physical-property', 'safety-awareness', 'scientific-inquiry',
+    'lab-operations'
   ]);
   for (const mc of canonicalMisconceptions) {
     const allValid = mc.knowledgeIds.every(kid => validKgNodes.has(kid));

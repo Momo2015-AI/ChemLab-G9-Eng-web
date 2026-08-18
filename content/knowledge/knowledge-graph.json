@@ -495,6 +495,83 @@
         "mc-acid-safety-violation"
       ],
       "remediationGoal": "熟记并严格执行酸碱实验安全操作规程，理解违规操作的潜在危害。"
+    },
+    {
+      "id": "lab-operations",
+      "name": "实验基本操作",
+      "chapter": "单元一 走进化学世界",
+      "domain": "method",
+      "bloomLevels": [
+        "remember",
+        "understand",
+        "apply",
+        "evaluate"
+      ],
+      "questions": [
+        "L04-Q01",
+        "L04-Q02",
+        "L04-Q03",
+        "L04-Q04",
+        "L04-Q05",
+        "L04-Q06",
+        "L04-P01",
+        "L04-P02",
+        "L04-P03",
+        "L04-P04",
+        "L04-P05",
+        "L04-P06",
+        "L04-P07",
+        "L04-P08",
+        "L04-P09",
+        "L04-P10",
+        "L04-P11",
+        "L04-P12",
+        "L04-P13",
+        "L04-P14",
+        "L04-P15",
+        "L04-P16",
+        "L04-D01",
+        "L04-D02",
+        "L04-D03",
+        "L04-M01",
+        "L04-M02",
+        "L04-M03",
+        "L04-M04",
+        "L04-M05",
+        "L04-M06",
+        "L04-M07",
+        "L04-M08",
+        "L04-M09",
+        "L04-M10",
+        "L04-M11",
+        "L04-M12",
+        "L04-M13",
+        "L04-M14",
+        "L04-M15",
+        "L04-M16",
+        "L04-M17",
+        "L04-M18",
+        "L04-M19",
+        "L04-M20",
+        "L04-M21",
+        "L04-T01",
+        "L04-T02",
+        "L04-T03",
+        "L04-T04"
+      ],
+      "semester": "upper",
+      "unitId": "u01",
+      "definition": "实验安全守则与基本实验操作规范，包括药品取用、酒精灯使用、加热、测量读数以及意外事故的正确处理。",
+      "prerequisiteIds": [
+        "observation-inference"
+      ],
+      "misconceptionIds": [
+        "mc-lab-sense-safety",
+        "mc-lab-alcohol-lamp",
+        "mc-lab-heating-safety",
+        "mc-lab-measurement"
+      ],
+      "remediationGoal": "掌握实验室安全守则与规范操作，理解违规操作的危险后果，能在陌生情境中正确判断与处理。"
     }
   ],
   "relations": [
@@ -1601,6 +1678,46 @@
     {
       "source": "evidence-reasoning",
       "target": "L02-T04",
+      "type": "question"
+    },
+    {
+      "source": "observation-inference",
+      "target": "lab-operations",
+      "type": "prerequisite"
+    },
+    {
+      "source": "lab-operations",
+      "target": "evidence-reasoning",
+      "type": "related"
+    },
+    {
+      "source": "scientific-inquiry",
+      "target": "lab-operations",
+      "type": "related"
+    },
+    {
+      "source": "lab-operations",
+      "target": "L04-Q01",
+      "type": "question"
+    },
+    {
+      "source": "lab-operations",
+      "target": "L04-P01",
+      "type": "question"
+    },
+    {
+      "source": "lab-operations",
+      "target": "L04-D01",
+      "type": "question"
+    },
+    {
+      "source": "lab-operations",
+      "target": "L04-M01",
+      "type": "question"
+    },
+    {
+      "source": "lab-operations",
+      "target": "L04-T01",
       "type": "question"
     }
   ]

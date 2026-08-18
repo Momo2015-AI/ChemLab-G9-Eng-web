@@ -1,8 +1,8 @@
 {
-  "scanned": 3,
+  "scanned": 4,
   "template": 0,
-  "realContent": 3,
-  "ready": 3,
+  "realContent": 4,
+  "ready": 4,
   "needsRewrite": 0,
   "duplicateLegacy": false,
   "questionBankState": "CANONICAL_RUNTIME_SOURCE",
@@ -53,6 +53,23 @@
       "runtimeQuestions": {
         "lesson": 6,
         "practice": 13,
+        "diagnostic": 3,
+        "mastery": 21,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-04-lab-safety-operations.json",
+      "day": "04",
+      "title": "实验安全与基本操作",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 16,
         "diagnostic": 3,
         "mastery": 21,
         "transfer": 4

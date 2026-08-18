@@ -1,0 +1,41 @@
+{
+  "lessonId": "lesson-04-lab-safety-operations",
+  "version": "1.0",
+  "diagnostics": [
+    {
+      "id": "L04-D01",
+      "knowledgePoint": "lab-operations",
+      "question": "小明用燃着的酒精灯去点燃另一只酒精灯。这一做法的危险主要在于？",
+      "options": ["酒精易洒出并引起火灾", "会降低火焰温度", "会浪费酒精", "这是正确做法"],
+      "answer": 0,
+      "errorType": "mc-lab-alcohol-lamp",
+      "remediationStep": "L04-S03",
+      "knowledgeIds": ["lab-operations"]
+    },
+    {
+      "id": "L04-D02",
+      "knowledgePoint": "lab-operations",
+      "question": "需要闻容器中药品的气味时，正确的做法是？",
+      "options": ["凑近容器口直接闻", "用手在瓶口轻轻扇动气流，闻少量气味", "用舌头尝一下", "不必注意，直接闻即可"],
+      "answer": 1,
+      "errorType": "mc-lab-sense-safety",
+      "remediationStep": "L04-S01",
+      "knowledgeIds": ["lab-operations", "observation-inference"]
+    },
+    {
+      "id": "L04-D03",
+      "knowledgePoint": "lab-operations",
+      "question": "加热试管中的液体时，试管口对着人的主要危险是？",
+      "options": ["试管容易破裂", "火焰温度不稳定", "液体可能受热喷溅伤人", "没有任何危险"],
+      "answer": 2,
+      "errorType": "mc-lab-heating-safety",
+      "remediationStep": "L04-S04",
+      "knowledgeIds": ["lab-operations", "safety-awareness"]
+    }
+  ],
+  "remediation": {
+    "L04-S01": "复习实验室安全守则，重点练习扇闻法与不得闻尝摸的要求。",
+    "L04-S03": "重新学习酒精灯点燃与熄灭的正确步骤，牢记严禁灯对灯点火。",
+    "L04-S04": "复习加热操作规范：外焰加热、先预热、试管口不对人。"
+  }
+}
