@@ -35,9 +35,9 @@
       "missing": [],
       "runtimeQuestions": {
         "lesson": 8,
-        "practice": 13,
+        "practice": 16,
         "diagnostic": 3,
-        "mastery": 21,
+        "mastery": 27,
         "transfer": 4
       },
       "contractErrors": []
@@ -54,7 +54,8 @@
         "lesson": 6,
         "practice": 13,
         "diagnostic": 3,
-        "mastery": 21
+        "mastery": 21,
+        "transfer": 4
       },
       "contractErrors": []
     }

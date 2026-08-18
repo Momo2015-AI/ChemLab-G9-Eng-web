@@ -19,6 +19,9 @@
       "knowledgeIds": [
         "physical-change",
         "chemical-change"
+      ],
+      "misconceptionIds": [
+        "mc-matter-physical-vs-chemical"
       ]
     },
     {
@@ -38,6 +41,9 @@
       "knowledgeIds": [
         "physical-change",
         "chemical-change"
+      ],
+      "misconceptionIds": [
+        "mc-matter-physical-vs-chemical"
       ]
     },
     {
@@ -56,6 +62,9 @@
       "explanation": "密度可以在不发生化学变化的情况下测定，属于物理性质。",
       "knowledgeIds": [
         "physical-property"
+      ],
+      "misconceptionIds": [
+        "mc-matter-change-vs-property"
       ]
     },
     {
@@ -74,6 +83,9 @@
       "explanation": "可燃性描述物质在化学变化中表现出的性质。",
       "knowledgeIds": [
         "chemical-property"
+      ],
+      "misconceptionIds": [
+        "mc-matter-change-vs-property"
       ]
     },
     {
@@ -92,6 +104,10 @@
       "explanation": "单一现象可能有多种原因，必须结合证据判断是否生成新物质。",
       "knowledgeIds": [
         "evidence-reasoning"
+      ],
+      "misconceptionIds": [
+        "mc-method-evidence-logic",
+        "mc-method-single-phenomenon-overgeneralization"
       ]
     },
     {
@@ -111,6 +127,10 @@
       "knowledgeIds": [
         "matter-change",
         "observation-inference"
+      ],
+      "misconceptionIds": [
+        "mc-matter-change-vs-property",
+        "mc-method-observation-inference"
       ]
     },
     {
@@ -129,6 +149,10 @@
       "explanation": "状态改变且可逆通常提示物理变化，但定义性依据仍是是否生成新物质。",
       "knowledgeIds": [
         "evidence-reasoning"
+      ],
+      "misconceptionIds": [
+        "mc-method-evidence-logic",
+        "mc-method-single-phenomenon-overgeneralization"
       ]
     },
     {
@@ -148,6 +172,10 @@
       "knowledgeIds": [
         "matter-change",
         "observation-inference"
+      ],
+      "misconceptionIds": [
+        "mc-matter-change-vs-property",
+        "mc-method-observation-inference"
       ]
     }
   ]

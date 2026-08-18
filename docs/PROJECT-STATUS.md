@@ -1,6 +1,6 @@
 # ChemLab-G9-Eng 项目状态
 
-> 更新于 2026-08-16（V2.2 学习闭环加固之后）。历史版本状态见 `archive/HISTORY-V1.5-V2.2.md`。
+> 更新于 2026-08-18（V2.2 学习闭环加固 + 知识详情覆盖 + misconception 词表统一之后）。历史版本状态见 `archive/HISTORY-V1.5-V2.2.md`。
 
 ## 当前阶段
 
@@ -9,7 +9,7 @@
 ## 质量基线
 
 ```text
-tests:            133 / 133 GREEN
+tests:            174 / 174 GREEN
 runtime audit:    GREEN
 content gates:    integrity + lesson readiness GREEN
 deployment:       GitHub Pages（runtime-only dist/）
@@ -20,10 +20,12 @@ deployment:       GitHub Pages（runtime-only dist/）
 | 课程 | 状态 | 内容 |
 |---|---|---|
 | lesson-01 物质的变化与性质 | ready | 8 步引导学习、实验、练习 8、诊断 3、mastery 21、迁移 4 |
-| lesson-02 化学是一门以实验为基础的科学 | ready | 引导学习、实验、练习 13、诊断 3、mastery 21、迁移 4 |
+| lesson-02 化学是一门以实验为基础的科学 | ready | 引导学习、实验、练习 16、诊断 3、mastery 27、迁移 4 |
 | lesson-03 酸入门 | ready | 引导学习、实验、练习 13、诊断 3、mastery 21（迁移题待建） |
 
 课程清单：`content/curriculum/lesson-manifest.js`（3/36 课，扩展须逐课过 7-Gate）。
+
+**覆盖广度说明**：当前 3/36 课时、2/12 单元有内容（L01/L02 属上册第一单元"走进化学世界"，L03 属下册第十单元"酸和碱"）。这是项目"先做深、再做广"的主动选择——已完成课程内容完整、判分链路可运行，但覆盖面仍窄；完整性与覆盖广度是两个维度，进度评估需区分看待。
 
 ## 学习闭环（2026-08-16 加固后）
 
@@ -39,16 +41,15 @@ deployment:       GitHub Pages（runtime-only dist/）
 ## 内容治理状态
 
 - **Source Registry：PENDING**（`content/sources/`）——批量生产新题库前必须完成教材/课程标准登记。
-- 知识图谱 v2.1：13 节点 / 221 关系（含 safety-awareness）。
+- 知识图谱 v2.1：13 节点 / 221 关系（含 safety-awareness），**全部 13 个节点均具备详情内容**（定义 / 补救目标 / 认知层次 / 误解 / 前置）。
+- misconception 词表已统一：18 个 canonical ID + 23 个 alias，`core/assessment/mastery-policy.js` 负责别名解析到 canonical 形式。
 - 全局题池 = day01 已审定替换题 + 按课注册；旧 320 题永久退役。
 
 ## 已知缺口（按优先级）
 
 1. lesson-03 迁移题未建设（入口有诚实提示，不阻塞）。
 2. 题目顺序固定（无洗牌），存在背题空间。
-3. 知识详情页仅覆盖 2/13 节点。
-4. misconception 词表（slug / M0x-* / mc-acid-*）未统一。
-5. 浏览器端到端回归测试缺失（当前为 Node 单元/集成测试）。
+3. 浏览器端到端回归测试缺失（当前为 Node 单元/集成测试）。
 
 ## 工程约定
 

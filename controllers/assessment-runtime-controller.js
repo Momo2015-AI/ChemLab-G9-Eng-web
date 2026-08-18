@@ -3,14 +3,24 @@ import { evaluateMastery } from '../core/assessment/mastery-policy.js';
 import { knowledgeIdsOf } from '../core/diagnosis/question-knowledge-map.js';
 
 export class AssessmentRuntimeController {
-  constructor({ assessment, contentService, state, masteryService = null, learningController = null }) {
+  constructor({ assessment, contentService, state, masteryService = null, learningController = null, rng = Math.random }) {
     this.assessment = assessment;
     this.contentService = contentService;
     this.state = state;
     this.masteryService = masteryService;
     this.learningController = learningController;
+    this.rng = typeof rng === 'function' ? rng : Math.random;
     this.session = null;
     masteryService?.hydrate?.(state.progress?.mastery || {});
+  }
+
+  shuffleQuestions(questions) {
+    const copy = [...questions];
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(this.rng() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
   }
 
   async startPractice(lessonId) {
@@ -26,13 +36,13 @@ export class AssessmentRuntimeController {
       .filter(Boolean)
       .map(question => this.normalizeQuestion(question, fallbackKnowledge));
     if (!source.length) return null;
-    return this.startAttempt(lessonId, source, 'practice');
+    return this.startAttempt(lessonId, this.shuffleQuestions(source), 'practice');
   }
 
   async startMastery(lessonId) {
     const data = await this.contentService.getMastery(lessonId);
     const lesson = typeof this.contentService.getLesson === 'function' ? await this.contentService.getLesson(lessonId).catch(() => null) : null;
-    const questions = (data?.questions || []).map(question => this.normalizeQuestion(question));
+    const questions = this.shuffleQuestions((data?.questions || []).map(question => this.normalizeQuestion(question)));
     if (!questions.length) return null;
     const requiredKnowledgeIds = data.requiredKnowledgeIds || data.knowledgeIds || lesson?.knowledgePoints || [...new Set(questions.flatMap(question => this.knowledge(question)))];
     const criteria = {
@@ -79,10 +89,12 @@ export class AssessmentRuntimeController {
     // re-tests the failure rather than easy items that share a knowledge tag.
     const failedIds = new Set((this.learningController?.getLessonState?.(lessonId)?.diagnosis?.errors || [])
       .map(error => error.questionId).filter(Boolean));
-    const ordered = [
-      ...matches.filter(question => failedIds.has(question.id)),
-      ...matches.filter(question => !failedIds.has(question.id)),
-    ];
+    const failed = matches.filter(question => failedIds.has(question.id));
+    const rest = matches.filter(question => !failedIds.has(question.id));
+    // Failed items keep their stable order (they are the priority re-test
+    // targets); only the correctly-answered tail is shuffled so the full
+    // recheck run does not become a memorizable sequence.
+    const ordered = [...failed, ...this.shuffleQuestions(rest)];
     const questions = ordered.slice(0, limit).map(question => this.normalizeQuestion(question));
     this.learningController?.updateLessonState?.(lessonId, {
       recheck: { lessonId, knowledgeIds: ids, status: 'in-progress', questionCount: questions.length },

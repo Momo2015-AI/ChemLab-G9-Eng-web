@@ -1,0 +1,152 @@
+{
+  "lessonId": "lesson-03-acid-intro",
+  "version": "1.0.0",
+  "source": "built from canonical lesson-03 acid-intro content, modeled on lesson-01/02 transfer template",
+  "questions": [
+    {
+      "id": "L03-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledgePoint": "acid-intro",
+      "question": "同学观察后说：“稀盐酸能使石蕊变红，浓硫酸能使蔗糖脱水变黑，所以这两种性质都是所有酸的共同性质。”指出这句话错在哪里，并说明酸的共同性质与不同酸的特殊性质分别由什么决定。",
+      "rubric": {
+        "modelAnswer": "使石蕊变红是酸在水溶液中电离出H⁺带来的共同性质；浓硫酸的脱水性属于该酸的特殊性质，由酸根（或该酸自身）决定，不能推广到所有酸。",
+        "keywords": [
+          [
+            "氢离子",
+            "H+",
+            "H⁺"
+          ],
+          [
+            "共同性质",
+            "共性"
+          ],
+          [
+            "特殊性质",
+            "酸根",
+            "不是所有酸"
+          ]
+        ],
+        "explanation": "酸的共性（H⁺决定）与个体酸的特殊性质（酸根决定）是两个层次，观察到的单个性质不能直接推广为所有酸的共性。"
+      },
+      "explanation": "酸的共性由H⁺决定，不同酸的特殊性质由酸根决定，不能把某一种酸的性质推广为所有酸的共性。",
+      "knowledgeIds": [
+        "acid-intro",
+        "acid-property"
+      ],
+      "misconceptionIds": [
+        "mc-acid-property"
+      ]
+    },
+    {
+      "id": "L03-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledgePoint": "acid-property",
+      "question": "把锌片放入稀盐酸有气泡产生，把铜片放入稀盐酸无明显现象。有同学由此得出“铜在任何条件下都不与酸反应”。判断这个结论是否严谨，并说明判断金属能否与酸反应的正确依据。",
+      "rubric": {
+        "modelAnswer": "不严谨。铜在金属活动性顺序中位于氢之后，不能与稀盐酸这类非氧化性酸反应，但结论只能限定在酸的性质范围内，应依据金属活动性顺序判断，而不是绝对化。",
+        "keywords": [
+          [
+            "不严谨",
+            "不准确",
+            "错误"
+          ],
+          [
+            "金属活动性顺序",
+            "活动性"
+          ],
+          [
+            "铜",
+            "氢之后"
+          ]
+        ],
+        "explanation": "金属与酸能否反应由金属活动性顺序决定；把一次实验现象推广成绝对结论属于过度泛化。"
+      },
+      "explanation": "判断金属与酸能否反应应依据金属活动性顺序，不能把单次现象绝对化。",
+      "knowledgeIds": [
+        "acid-property",
+        "chemical-property"
+      ],
+      "misconceptionIds": [
+        "mc-acid-metal-activity",
+        "mc-acid-metal-overgeneralization"
+      ]
+    },
+    {
+      "id": "L03-T03",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledgePoint": "safety-awareness",
+      "question": "实验室需要配制稀硫酸。同学为了省时间，打算把水直接倒入浓硫酸中并快速搅拌。评价这个操作并写出正确做法及理由。",
+      "rubric": {
+        "modelAnswer": "该操作错误且危险：把水倒入浓硫酸会因放热剧烈导致液体飞溅伤人。正确做法是把浓硫酸沿器壁缓慢倒入水中，边倒边搅拌散热，必要时佩戴护目镜。",
+        "keywords": [
+          [
+            "错误",
+            "危险",
+            "飞溅"
+          ],
+          [
+            "酸入水",
+            "把浓硫酸倒入水中",
+            "缓慢"
+          ],
+          [
+            "搅拌",
+            "护目镜",
+            "散热"
+          ]
+        ],
+        "explanation": "浓硫酸稀释是强放热过程，顺序和速度决定安全性；“酸入水”是必须遵守的安全规范。"
+      },
+      "explanation": "稀释浓硫酸必须“酸入水、沿器壁、慢倒入、不断搅拌”，颠倒顺序会导致液体飞溅。",
+      "knowledgeIds": [
+        "safety-awareness",
+        "acid-intro"
+      ],
+      "misconceptionIds": [
+        "mc-acid-safety-dilution",
+        "mc-acid-safety-violation"
+      ]
+    },
+    {
+      "id": "L03-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "knowledgePoint": "evidence-reasoning",
+      "question": "两份探究报告：甲组把观察记录写成“生成了氢气”；乙组写的是“金属表面产生大量气泡”，并补充了收集气体后点火发出爆鸣声的验证。哪份记录更符合科学证据的要求？请说明“现象”与“结论”的区别。",
+      "rubric": {
+        "modelAnswer": "乙组更符合要求。甲组把解释性结论（生成氢气）直接写成观察；乙组先记录可直接观察的现象（气泡），再用爆鸣实验提供证据支持“生成氢气”的结论。现象是直接观察到的，结论需要证据支撑。",
+        "keywords": [
+          [
+            "乙",
+            "乙组"
+          ],
+          [
+            "现象",
+            "观察"
+          ],
+          [
+            "证据",
+            "验证",
+            "爆鸣"
+          ]
+        ],
+        "explanation": "可观察现象与需证据支持的结论必须分开记录；乙组用额外实验把推断变成有证据支撑的结论。"
+      },
+      "explanation": "现象是直接观察，结论需要证据；把“生成氢气”这种推断写进观察记录会混淆两个层次。",
+      "knowledgeIds": [
+        "evidence-reasoning",
+        "observation-inference"
+      ],
+      "misconceptionIds": [
+        "mc-acid-observation-inference"
+      ]
+    }
+  ]
+}

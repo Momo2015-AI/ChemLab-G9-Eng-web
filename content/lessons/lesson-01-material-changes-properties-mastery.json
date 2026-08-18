@@ -39,6 +39,7 @@
           "chemical-change"
         ],
         "misconceptionIds": [
+          "mc-matter-change-vs-property",
           "mc-matter-physical-vs-chemical"
         ]
       },
@@ -56,6 +57,9 @@
         "explanation": "硬度可以在不改变物质种类的情况下测定，属于物理性质；其余描述都涉及化学变化倾向。",
         "knowledgeIds": [
           "physical-property"
+        ],
+        "misconceptionIds": [
+          "mc-matter-change-vs-property"
         ]
       },
       {
@@ -72,6 +76,9 @@
         "explanation": "“容易被氧化”描述物质发生化学变化的倾向，属于化学性质。",
         "knowledgeIds": [
           "chemical-property"
+        ],
+        "misconceptionIds": [
+          "mc-matter-change-vs-property"
         ]
       },
       {
@@ -108,6 +115,9 @@
         "knowledgeIds": [
           "matter-change",
           "observation-inference"
+        ],
+        "misconceptionIds": [
+          "mc-matter-change-vs-property"
         ]
       },
       {
@@ -125,6 +135,9 @@
         "knowledgeIds": [
           "physical-change",
           "chemical-change"
+        ],
+        "misconceptionIds": [
+          "mc-matter-physical-vs-chemical"
         ]
       },
       {
@@ -141,6 +154,9 @@
         "explanation": "“能与氧气反应”描述镁发生化学变化的能力，属于化学性质。",
         "knowledgeIds": [
           "chemical-property"
+        ],
+        "misconceptionIds": [
+          "mc-matter-change-vs-property"
         ]
       },
       {
@@ -157,6 +173,9 @@
         "explanation": "导电性可以在不改变铜丝种类的情况下表现和测定，属于物理性质。",
         "knowledgeIds": [
           "physical-property"
+        ],
+        "misconceptionIds": [
+          "mc-matter-change-vs-property"
         ]
       },
       {
@@ -173,6 +192,10 @@
         "explanation": "颜色改变是可记录的现象，但可能由多种原因造成，不能单独替代是否生成新物质的结论。",
         "knowledgeIds": [
           "evidence-reasoning"
+        ],
+        "misconceptionIds": [
+          "mc-method-evidence-logic",
+          "mc-method-single-phenomenon-overgeneralization"
         ]
       },
       {
@@ -210,6 +233,9 @@
         "knowledgeIds": [
           "physical-change",
           "chemical-change"
+        ],
+        "misconceptionIds": [
+          "mc-matter-physical-vs-chemical"
         ]
       },
       {
@@ -226,6 +252,10 @@
         "explanation": "放热可以出现在不同过程中，只能作为现象记录，仍需结合生成新物质的证据判断。",
         "knowledgeIds": [
           "evidence-reasoning"
+        ],
+        "misconceptionIds": [
+          "mc-method-evidence-logic",
+          "mc-method-single-phenomenon-overgeneralization"
         ]
       },
       {
@@ -242,6 +272,9 @@
         "explanation": "密度可以通过质量和体积测定而不改变物质种类，属于物理性质。",
         "knowledgeIds": [
           "physical-property"
+        ],
+        "misconceptionIds": [
+          "mc-matter-change-vs-property"
         ]
       },
       {
@@ -258,6 +291,9 @@
         "explanation": "“容易生锈”表示铁发生氧化变化的倾向，属于化学性质。",
         "knowledgeIds": [
           "chemical-property"
+        ],
+        "misconceptionIds": [
+          "mc-matter-change-vs-property"
         ]
       },
       {
@@ -275,6 +311,9 @@
         "knowledgeIds": [
           "matter-change",
           "observation-inference"
+        ],
+        "misconceptionIds": [
+          "mc-matter-change-vs-property"
         ]
       },
       {
@@ -292,6 +331,9 @@
         "knowledgeIds": [
           "matter-change",
           "observation-inference"
+        ],
+        "misconceptionIds": [
+          "mc-matter-change-vs-property"
         ]
       },
       {
@@ -310,7 +352,9 @@
           "evidence-reasoning"
         ],
         "misconceptionIds": [
-          "mc-method-observation-inference"
+          "mc-method-evidence-logic",
+          "mc-method-observation-inference",
+          "mc-method-single-phenomenon-overgeneralization"
         ]
       },
       {
@@ -328,6 +372,9 @@
         "knowledgeIds": [
           "physical-change",
           "chemical-change"
+        ],
+        "misconceptionIds": [
+          "mc-matter-physical-vs-chemical"
         ]
       },
       {
@@ -345,6 +392,9 @@
         "knowledgeIds": [
           "matter-change",
           "observation-inference"
+        ],
+        "misconceptionIds": [
+          "mc-matter-change-vs-property"
         ]
       },
       {
@@ -364,7 +414,9 @@
           "observation-inference"
         ],
         "misconceptionIds": [
-          "mc-method-observation-inference"
+          "mc-method-evidence-logic",
+          "mc-method-observation-inference",
+          "mc-method-single-phenomenon-overgeneralization"
         ]
       },
       {
@@ -393,6 +445,10 @@
           "evidence-reasoning",
           "physical-change",
           "chemical-change"
+        ],
+        "misconceptionIds": [
+          "mc-method-evidence-logic",
+          "mc-method-single-phenomenon-overgeneralization"
         ]
       }
     ]

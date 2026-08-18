@@ -41,7 +41,7 @@ test('targeted recheck selects questions matching diagnosed knowledge from lesso
   });
 
   const session = await controller.startRecheck('lesson-03-acid-intro', ['acid-base'], 5);
-  assert.deepEqual(session.questions.map(q => q.id), ['L03-P1', 'L03-P2']);
+  assert.deepEqual([...session.questions.map(q => q.id)].sort(), ['L03-P1', 'L03-P2']);
   assert.equal(session.lessonId, 'lesson-03-acid-intro');
   assert.equal(state.learning.lessons['lesson-03-acid-intro'].recheck.questionCount, 2);
 });
@@ -63,7 +63,7 @@ test('recheck never mixes foreign-lesson questions that share a knowledge tag', 
   });
 
   const session = await controller.startRecheck('lesson-03-acid-intro', ['acid-intro'], 5);
-  assert.deepEqual(session.questions.map(q => q.id), ['L03-P1', 'L03-D1']);
+  assert.deepEqual([...session.questions.map(q => q.id)].sort(), ['L03-D1', 'L03-P1']);
 });
 
 test('recheck puts previously failed questions first', async () => {

@@ -18,6 +18,9 @@
       "explanation": "颜色变化可以直接看到，是观察；判断反应类型属于解释。",
       "knowledgeIds": [
         "observation-inference"
+      ],
+      "misconceptionIds": [
+        "mc-method-observation-inference"
       ]
     },
     {
@@ -36,6 +39,9 @@
       "explanation": "探究从能通过观察或实验检验的问题开始。",
       "knowledgeIds": [
         "scientific-inquiry"
+      ],
+      "misconceptionIds": [
+        "mc-method-observation-inference"
       ]
     },
     {
@@ -54,6 +60,9 @@
       "explanation": "研究变量是温度，其他条件应保持一致，比较才公平。",
       "knowledgeIds": [
         "control-variables"
+      ],
+      "misconceptionIds": [
+        "mc-method-control-variable"
       ]
     },
     {
@@ -72,6 +81,9 @@
       "explanation": "数据真实性要求保留并分析异常，而不是篡改。",
       "knowledgeIds": [
         "data-integrity"
+      ],
+      "misconceptionIds": [
+        "mc-method-data-integrity"
       ]
     },
     {
@@ -90,6 +102,10 @@
       "explanation": "重复实验能发现偶然误差，多次一致的结果更可靠。",
       "knowledgeIds": [
         "evidence-reasoning"
+      ],
+      "misconceptionIds": [
+        "mc-method-evidence-logic",
+        "mc-method-single-phenomenon-overgeneralization"
       ]
     },
     {
@@ -108,6 +124,9 @@
       "explanation": "水珠可直接看到，是观察；它说明什么属于解释。",
       "knowledgeIds": [
         "observation-inference"
+      ],
+      "misconceptionIds": [
+        "mc-method-observation-inference"
       ]
     },
     {
@@ -126,6 +145,9 @@
       "explanation": "只改变是否搅拌，保持水量、盐量、温度相同，比较才公平。",
       "knowledgeIds": [
         "control-variables"
+      ],
+      "misconceptionIds": [
+        "mc-method-control-variable"
       ]
     },
     {
@@ -144,6 +166,10 @@
       "explanation": "结论要有原始数据与观察记录支撑，才经得起检验。",
       "knowledgeIds": [
         "evidence-reasoning"
+      ],
+      "misconceptionIds": [
+        "mc-method-evidence-logic",
+        "mc-method-single-phenomenon-overgeneralization"
       ]
     },
     {
@@ -162,6 +188,10 @@
       "explanation": "没有原始观察或数据，就无法充分检查结论是否有证据支持。",
       "knowledgeIds": [
         "evidence-reasoning"
+      ],
+      "misconceptionIds": [
+        "mc-method-evidence-logic",
+        "mc-method-single-phenomenon-overgeneralization"
       ]
     },
     {
@@ -181,6 +211,11 @@
       "knowledgeIds": [
         "observation-inference",
         "evidence-reasoning"
+      ],
+      "misconceptionIds": [
+        "mc-method-evidence-logic",
+        "mc-method-observation-inference",
+        "mc-method-single-phenomenon-overgeneralization"
       ]
     },
     {
@@ -200,6 +235,11 @@
       "knowledgeIds": [
         "scientific-inquiry",
         "evidence-reasoning"
+      ],
+      "misconceptionIds": [
+        "mc-method-evidence-logic",
+        "mc-method-observation-inference",
+        "mc-method-single-phenomenon-overgeneralization"
       ]
     },
     {
@@ -234,6 +274,11 @@
       "knowledgeIds": [
         "observation-inference",
         "evidence-reasoning"
+      ],
+      "misconceptionIds": [
+        "mc-method-evidence-logic",
+        "mc-method-observation-inference",
+        "mc-method-single-phenomenon-overgeneralization"
       ]
     },
     {
@@ -275,6 +320,73 @@
       "knowledgeIds": [
         "control-variables",
         "data-integrity"
+      ],
+      "misconceptionIds": [
+        "mc-method-control-variable",
+        "mc-method-data-integrity"
+      ]
+    },
+    {
+      "id": "L02-P14",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "knowledgePoint": "control-variables",
+      "question": "研究土壤湿度对蚯蚓分布的影响时，实验组与对照组唯一的不同条件应当是：",
+      "options": [
+        "土壤的湿度",
+        "蚯蚓的种类",
+        "容器的大小",
+        "环境温度"
+      ],
+      "answer": 0,
+      "explanation": "对照实验中只允许研究变量不同，其他条件均应相同。",
+      "knowledgeIds": [
+        "control-variables"
+      ],
+      "misconceptionIds": [
+        "mc-method-control-variable"
+      ]
+    },
+    {
+      "id": "L02-P15",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "knowledgePoint": "data-integrity",
+      "question": "实验记录中某次读数明显偏离其他三次，以下做法最恰当的是：",
+      "options": [
+        "删除该次数据，只保留一致的",
+        "保留该数据，分析可能原因并在报告中说明",
+        "修改该数据使其接近其他值",
+        "假装没注意到这次数据"
+      ],
+      "answer": 1,
+      "explanation": "数据真实性要求如实记录所有数据，包括异常值；异常值需要分析原因并如实报告。",
+      "knowledgeIds": [
+        "data-integrity"
+      ],
+      "misconceptionIds": [
+        "mc-method-data-integrity"
+      ]
+    },
+    {
+      "id": "L02-P16",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "knowledgePoint": "scientific-inquiry",
+      "question": "科学探究中，假设与结论的区别在于：",
+      "options": [
+        "假设是猜测，结论是经过证据支持的判断",
+        "假设和结论没有区别",
+        "结论是猜测，假设是经过验证的",
+        "假设必须正确，结论可以错误"
+      ],
+      "answer": 0,
+      "explanation": "假设是对问题的预测性解释，尚未经过检验；结论是基于实验证据得出的判断。",
+      "knowledgeIds": [
+        "scientific-inquiry"
+      ],
+      "misconceptionIds": [
+        "mc-method-observation-inference"
       ]
     }
   ]

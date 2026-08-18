@@ -43,7 +43,10 @@ for (const lessonFile of [
     const session = controller.session;
     const choiceItems = session.questions.filter(q => q.type === 'choice');
     assert.ok(choiceItems.length >= 15, `expected a real mastery bank, got ${choiceItems.length} choice items`);
+    // Answer each item in its own fresh attempt: session order is shuffled,
+    // so evaluating every key must not depend on the presentation sequence.
     for (const question of choiceItems) {
+      controller.startAttempt(lessonId, [question], 'mastery');
       const result = controller.answer(question.correctIndex);
       assert.equal(result.correct, true, `${question.id} expected key ${question.answer}`);
     }

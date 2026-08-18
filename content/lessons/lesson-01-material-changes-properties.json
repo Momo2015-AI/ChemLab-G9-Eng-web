@@ -98,7 +98,11 @@
         "physical-change",
         "matter-change"
       ],
-      "explanation": "状态发生改变，没有证据表明生成新物质。"
+      "explanation": "状态发生改变，没有证据表明生成新物质。",
+      "misconceptionIds": [
+        "mc-matter-change-vs-property",
+        "mc-matter-physical-vs-chemical"
+      ]
     },
     {
       "id": "L01-Q02",
@@ -119,7 +123,11 @@
         "chemical-change",
         "matter-change"
       ],
-      "explanation": "物理变化和化学变化的本质区别是是否生成新的物质。"
+      "explanation": "物理变化和化学变化的本质区别是是否生成新的物质。",
+      "misconceptionIds": [
+        "mc-matter-change-vs-property",
+        "mc-matter-physical-vs-chemical"
+      ]
     },
     {
       "id": "L01-Q03",
@@ -138,7 +146,10 @@
       "knowledgePoints": [
         "physical-property"
       ],
-      "explanation": "颜色和状态属于不需要发生化学变化即可表现的物理性质。"
+      "explanation": "颜色和状态属于不需要发生化学变化即可表现的物理性质。",
+      "misconceptionIds": [
+        "mc-matter-change-vs-property"
+      ]
     },
     {
       "id": "L01-Q04",
@@ -157,7 +168,10 @@
       "knowledgePoints": [
         "chemical-property"
       ],
-      "explanation": "它描述铁发生化学变化的倾向，属于化学性质。"
+      "explanation": "它描述铁发生化学变化的倾向，属于化学性质。",
+      "misconceptionIds": [
+        "mc-matter-change-vs-property"
+      ]
     },
     {
       "id": "L01-Q05",
@@ -178,7 +192,12 @@
         "observation-inference",
         "evidence-reasoning"
       ],
-      "explanation": "单一现象只是线索，最终仍要判断是否生成新物质。"
+      "explanation": "单一现象只是线索，最终仍要判断是否生成新物质。",
+      "misconceptionIds": [
+        "mc-method-evidence-logic",
+        "mc-method-observation-inference",
+        "mc-method-single-phenomenon-overgeneralization"
+      ]
     },
     {
       "id": "L01-Q06",
@@ -199,7 +218,12 @@
         "observation-inference",
         "evidence-reasoning"
       ],
-      "explanation": "化学学习强调基于证据形成结论。"
+      "explanation": "化学学习强调基于证据形成结论。",
+      "misconceptionIds": [
+        "mc-method-evidence-logic",
+        "mc-method-observation-inference",
+        "mc-method-single-phenomenon-overgeneralization"
+      ]
     },
     {
       "id": "L01-Q07",
@@ -220,7 +244,11 @@
         "physical-change",
         "matter-change"
       ],
-      "explanation": "状态改变且可逆通常提示物理变化，但定义性依据仍是是否生成新物质。"
+      "explanation": "状态改变且可逆通常提示物理变化，但定义性依据仍是是否生成新物质。",
+      "misconceptionIds": [
+        "mc-matter-change-vs-property",
+        "mc-matter-physical-vs-chemical"
+      ]
     },
     {
       "id": "L01-Q08",
@@ -241,7 +269,12 @@
         "evidence-reasoning",
         "observation-inference"
       ],
-      "explanation": "颜色改变不是充分条件，需要结合证据判断是否生成新物质。"
+      "explanation": "颜色改变不是充分条件，需要结合证据判断是否生成新物质。",
+      "misconceptionIds": [
+        "mc-method-evidence-logic",
+        "mc-method-observation-inference",
+        "mc-method-single-phenomenon-overgeneralization"
+      ]
     }
   ],
   "mastery": {

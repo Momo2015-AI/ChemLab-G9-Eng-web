@@ -18,6 +18,9 @@
       "knowledgeIds": [
         "physical-change",
         "chemical-change"
+      ],
+      "misconceptionIds": [
+        "mc-matter-physical-vs-chemical"
       ]
     },
     {
@@ -35,6 +38,10 @@
       "remediationStep": "L01-S04",
       "knowledgeIds": [
         "evidence-reasoning"
+      ],
+      "misconceptionIds": [
+        "mc-method-evidence-logic",
+        "mc-method-single-phenomenon-overgeneralization"
       ]
     },
     {
@@ -54,6 +61,9 @@
         "matter-change",
         "physical-property",
         "chemical-property"
+      ],
+      "misconceptionIds": [
+        "mc-matter-change-vs-property"
       ]
     }
   ],

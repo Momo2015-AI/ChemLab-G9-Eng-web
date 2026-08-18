@@ -1004,3 +1004,31 @@ Source Registry 登记（文档清理后 content/sources/ 成为最显眼的缺�
 ### Next
 
 Source Registry 登记；上册第 3 课按教材补位（第二单元 空气/氧气，可复用实验库氧气 JSON）；题目顺序洗牌；misconception 词表统一；focus 管理与端到端测试自动化。
+
+---
+
+## 2026-08-18 — 审计核验 + 关闭内容缺口：L03 transfer、题目洗牌、文档同步
+
+### Conversation / decision
+
+用户提供一份对 L01/L02 的抽查审计，列出剩余缺口（L03 无 transfer、无洗牌、知识详情 2/13、misconception 词表、缺 e2e），并请求给出观点与执行计划。核验后确认：审计第 3 条（知识详情 2/13）与第 4 条（misconception 词表）已被此前提交解决，属文档漂移而非代码缺口；真正待关闭的缺口为 L03 transfer、题目洗牌、e2e。按性价比执行前三项（e2e 延后）。
+
+### Actions
+
+**文档同步**：`docs/PROJECT-STATUS.md` 更新为 2026-08-18 —— 质量基线 174→179 测试、L02 题量刷新（练习 16 / mastery 27）、已知缺口收敛为 3 项（删除已解决的详情覆盖与词表两条）、新增"覆盖广度"说明（3/36 课、2/12 单元，先做深再做广是主动选择）。
+**L03 transfer**：新建 `content/lessons/lesson-03-acid-intro-transfer.json`（4 道 constructed 迁移题，L03-T01~T04），覆盖 acid-intro/acid-property/safety-awareness/evidence-reasoning，误解绑定 canonical mc-acid-* 词条；lesson audit 现在显示 L03 = 6+13+3+21+4。
+**审计 gate 加固**：`scripts/content-lesson-audit-v19.mjs` 新增 released/review 课程必须携带 `-transfer.json` 的契约检查；`tests/content-integrity-v19.test.mjs` 的 transfer 契约测试升级为遍历 manifest 中所有 released 课程，强制每课必有 transfer 文件。
+**题目洗牌**：`AssessmentRuntimeController` 新增 `shuffleQuestions`（Fisher-Yates，构造器可注入 `rng` 保证确定性测试）；practice/mastery 全量洗牌；recheck 保留错题优先（错题组内保序）+ 仅洗牌答对尾组；transfer 保持作者顺序（池小、单次完成，避免背书）。受影响的顺序依赖测试已改为顺序无关：`lesson01-runtime-regression` 每题独立会话作答；`targeted-recheck` 两处断言改集合比较。新增 `tests/question-shuffle.test.mjs`（5 项确定性验证）。
+
+### 中途事故与纠正
+
+recheck 测试失败：最初测试 harness 的 getMastery 返回了非空题目，混入 recheck 池导致集合断言不符——将默认 getMastery 改为空池、mastery 测试单独覆写。随后 `.sort()` 与实际未排序期望字面量不匹配，期望值改为按字典序书写。
+
+### Verification
+
+- `npm test`：**179/179 全绿**（基线 174 → +5：shuffle 5 项；transfer/audit 测试仍绿）。
+- `npm run audit:content`（integrity + lesson readiness）：Gate PASS，L03 迁移题已入运行时计数；`runtime-audit` GREEN；`build-pages` 91 文件复制成功。
+
+### Next
+
+Source Registry 登记；上册第 3 课（空气/氧气，可复用实验库）补位；Playwright e2e（L01/L02 完整学习闭环：引导→实验→练习→诊断→补救→再检测→Mastery→迁移）作为下一批内容产出后的验证手段。

@@ -17,6 +17,9 @@
       "remediationStep": "L02-S02/L02-S03",
       "knowledgeIds": [
         "observation-inference"
+      ],
+      "misconceptionIds": [
+        "mc-method-observation-inference"
       ]
     },
     {
@@ -34,6 +37,9 @@
       "remediationStep": "L02-S04",
       "knowledgeIds": [
         "control-variables"
+      ],
+      "misconceptionIds": [
+        "mc-method-control-variable"
       ]
     },
     {
@@ -51,6 +57,9 @@
       "remediationStep": "L02-S06/L02-S07",
       "knowledgeIds": [
         "data-integrity"
+      ],
+      "misconceptionIds": [
+        "mc-method-data-integrity"
       ]
     }
   ],

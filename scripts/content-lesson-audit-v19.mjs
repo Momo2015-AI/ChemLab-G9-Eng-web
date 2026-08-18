@@ -123,6 +123,9 @@ for (const file of files) {
     if (totalRuntimeQuestions === 0) {
       contractErrors.push(`released/review lesson '${lessonId}' has no runtime question pool (lesson[]/practice/diagnostic/mastery all empty)`);
     }
+    if (!runtimeQuestionCounts.transfer) {
+      contractErrors.push(`released/review lesson '${lessonId}' must ship a dedicated transfer pool (${file.replace(/\.json$/, '-transfer.json')})`);
+    }
     if (!manifestEntry) {
       contractErrors.push(`lesson '${lessonId}' is not registered in the canonical lesson manifest`);
     }

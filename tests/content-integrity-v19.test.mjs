@@ -107,6 +107,13 @@ test('transfer pools follow the per-lesson runtime contract', async () => {
   const files = (await fs.readdir(lessonsDir)).filter(file => file.endsWith('-transfer.json'));
   assert.ok(files.length >= 2, 'lesson-01 and lesson-02 must ship dedicated transfer pools');
 
+  const manifest = (await import('../content/curriculum/lesson-manifest.js')).default;
+  const releasedLessons = (manifest.lessons || []).filter(lesson => ['ready', 'released', 'published'].includes(String(lesson.releaseStatus || lesson.status).toLowerCase()));
+  for (const lesson of releasedLessons) {
+    const transferFile = `${lesson.canonicalId}-transfer.json`;
+    assert.ok(files.includes(transferFile), `released lesson ${lesson.canonicalId} must ship ${transferFile}`);
+  }
+
   for (const file of files) {
     const data = await readJson(path.join('content/lessons', file));
     assert.ok(Array.isArray(data.questions), `${file}: questions[] required`);
