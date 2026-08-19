@@ -39,7 +39,6 @@ export function renderV19Course({ root, lesson = {}, guidedLearning = null, prog
   if (remediationBtn) remediationBtn.addEventListener('click', () => onStartRemediation?.());
   const transferBtn = root.querySelector('[data-transfer]');
   if (transferBtn) transferBtn.addEventListener('click', () => onStartTransfer?.());
-  root.querySelectorAll('.guided-submit').forEach(button => button.addEventListener('click', () => { const check = button.closest('.guided-check'); const selected = check?.querySelector('input[type="radio"]:checked'); if (!selected) return; onGuidedCheck?.(lessonId, check?.dataset.stepId, { correct: Number(selected.value) === Number.parseInt(check?.dataset.answer || '', 10), stepCount: steps.length }); }));
   if (highlightStep) { const card = root.querySelector(`.guided-learning-card[data-step-id="${CSS.escape(highlightStep)}"]`); if (card) { const detail = card.querySelector('.guided-card-detail'); if (detail) { detail.hidden = false; card.querySelector('.guided-card-header')?.setAttribute('aria-expanded', 'true'); const toggle = card.querySelector('.guided-card-toggle'); if (toggle) toggle.textContent = '−'; } requestAnimationFrame(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' })); } }
 }
 const KNOWLEDGE_LABELS={'matter-change':'物质的变化','physical-change':'物理变化','chemical-change':'化学变化','physical-property':'物理性质','chemical-property':'化学性质','observation-inference':'观察与推理','evidence-reasoning':'证据与结论'};

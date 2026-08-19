@@ -9,7 +9,7 @@
 ## 质量基线
 
 ```text
-tests:            174 / 174 GREEN
+tests:            179 / 179 GREEN
 runtime audit:    GREEN
 content gates:    integrity + lesson readiness GREEN
 deployment:       GitHub Pages（runtime-only dist/）

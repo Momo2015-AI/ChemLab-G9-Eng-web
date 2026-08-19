@@ -67,7 +67,6 @@ class ContentService {
     }
     return experiments;
   }
-  async getKnowledgeContent(id) { return this.loader.loadKnowledgeContent(id); }
 
   registerLessonQuestions(data, lesson) {
     const questions = Array.isArray(lesson?.questions) ? lesson.questions : [];

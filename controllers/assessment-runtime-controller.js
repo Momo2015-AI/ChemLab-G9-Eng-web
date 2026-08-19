@@ -11,6 +11,16 @@ export class AssessmentRuntimeController {
     this.learningController = learningController;
     this.rng = typeof rng === 'function' ? rng : Math.random;
     this.session = null;
+    // Restore in-progress session from localStorage to survive page refresh
+    try {
+      const saved = localStorage.getItem('chemlab_session');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed && parsed.attemptId && parsed.lessonId && !parsed.completed) {
+          this.session = parsed;
+        }
+      }
+    } catch (_) { /* ignore corrupt session data */ }
     masteryService?.hydrate?.(state.progress?.mastery || {});
   }
 
@@ -136,6 +146,7 @@ export class AssessmentRuntimeController {
       startedAt: new Date().toISOString(),
     };
     this.learningController?.updateLessonState?.(lessonId, { phase: mode === 'mastery' ? 'MASTERY' : mode === 'recheck' ? 'RECHECK' : mode === 'transfer' ? 'TRANSFER' : 'PRACTICE', activeAttemptId: attemptId });
+    try { localStorage.setItem('chemlab_session', JSON.stringify(this.session)); } catch (_) { /* quota */ }
     return this.session;
   }
 
@@ -168,8 +179,13 @@ export class AssessmentRuntimeController {
     this.recordEvidence(knowledgeIds, evaluated, question);
     this.session.index += 1;
     this.session.completed = this.session.index >= this.session.questions.length;
-    if (this.session.completed) this.finish();
-    else this.state.save?.();
+    if (this.session.completed) {
+      this.finish();
+      try { localStorage.removeItem('chemlab_session'); } catch (_) { /* quota */ }
+    } else {
+      try { localStorage.setItem('chemlab_session', JSON.stringify(this.session)); } catch (_) { /* quota */ }
+      this.state.save?.();
+    }
     return evaluated;
   }
 

@@ -238,7 +238,7 @@ export function createApplication({ state, assessment, experimentEngine, mastery
     return renderKnowledgeDetail({
       root,
       node,
-      lessonId: '',
+      lessonId: state.currentLessonId || '',
       onBack: () => router.navigate('knowledge-map'),
       onLearn: lessonId => router.navigate('course', lessonId),
     });

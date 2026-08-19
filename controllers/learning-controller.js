@@ -126,7 +126,7 @@ export class LearningController {
       prerequisitesMet,
       prerequisitesMissing,
       guided: guidedComplete,
-      experiment: guidedComplete,
+      experiment: experimentComplete,
       practice: guidedComplete && experimentComplete && prerequisitesMet,
       remediation: practiceComplete && current.remediation?.status === 'needs-remediation',
       mastery: practiceComplete && remediationComplete && prerequisitesMet,
