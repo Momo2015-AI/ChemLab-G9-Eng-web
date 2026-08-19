@@ -29,8 +29,13 @@ for (const dir of jsRoots) {
 const importPattern = /(?:import\s+(?:[\s\S]*?\s+from\s+)?|export\s+(?:[\s\S]*?\s+from\s+)?|import\s*\()(['"])(\.\.?\/[^'"\n]+)\1/g;
 for (const file of files) {
   const source = read(file);
+  const lines = source.split('\n');
   for (const match of source.matchAll(importPattern)) {
     const specifier = match[2];
+    // Skip dynamic imports with string concatenation (runtime path assembly)
+    const lineStart = source.lastIndexOf('\n', match.index) + 1;
+    const line = source.slice(lineStart, source.indexOf('\n', lineStart));
+    if (/['"]\s*\+\s*|\+\s*['"]/.test(line)) continue;
     const resolved = path.normalize(path.join(path.dirname(file), specifier));
     const candidates = path.extname(resolved) ? [resolved] : [resolved, `${resolved}.js`, `${resolved}.mjs`, path.join(resolved, 'index.js')];
     if (!candidates.some(exists)) errors.push(`${file}: missing relative import ${specifier}`);

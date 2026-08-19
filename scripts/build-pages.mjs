@@ -23,8 +23,7 @@ const RUNTIME_DIRS = [
 
 // Runtime content actually fetched or imported at runtime. Deliberately
 // excludes content/schema, content/review, content/sources, content/misconceptions,
-// docs/, reports/, tests/, scripts/, and all of modules/ except the legacy
-// knowledge-graph fallback endpoint the loader can still request.
+// docs/, reports/, tests/, scripts/.
 const RUNTIME_FILES = [
   'index.html',
   'package.json',
@@ -33,7 +32,6 @@ const RUNTIME_FILES = [
   'content/release-policy.js',
   'content/questions/day01-diagnostics.js',
   'content/questions/day01-production-overrides.js',
-  'modules/questions/taxonomy/knowledge-graph.json',
 ];
 
 function copyDirRecursive(src, dest) {

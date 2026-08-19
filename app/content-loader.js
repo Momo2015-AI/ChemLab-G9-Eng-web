@@ -14,13 +14,13 @@ const masteryUrl = id => assetUrl(`content/lessons/${id}-mastery.json`);
 const practiceUrl = id => assetUrl(`content/lessons/${id}-practice.json`);
 const diagnosticUrl = id => assetUrl(`content/lessons/${id}-diagnostic.json`);
 const transferUrl = id => assetUrl(`content/lessons/${id}-transfer.json`);
-const ENDPOINTS = { knowledgeGraph: assetUrl('content/knowledge/knowledge-graph.json'), legacyKnowledgeGraph: assetUrl('modules/questions/taxonomy/knowledge-graph.json') };
+const ENDPOINTS = { knowledgeGraph: assetUrl('content/knowledge/knowledge-graph.json') };
 const DEFAULT_TIMEOUT_MS = 12000;
 const isRuntimeQuestion = question => Boolean(question && typeof question === 'object' && question.id) && String(question.status || '').toLowerCase() !== 'draft';
 class ContentLoader {
   constructor({ timeoutMs = DEFAULT_TIMEOUT_MS } = {}) { this.cache = new Map(); this.timeoutMs = timeoutMs; }
   async fetchJSON(url) { if (this.cache.has(url)) return this.cache.get(url); const promise = (async () => { const controller = typeof AbortController !== 'undefined' ? new AbortController() : null; const timer = controller ? setTimeout(() => controller.abort(), this.timeoutMs) : null; try { const res = await fetch(url, controller ? { signal: controller.signal } : undefined); if (!res.ok) throw new Error(`Failed to load ${url} (${res.status})`); return await res.json(); } catch (error) { if (error?.name === 'AbortError') throw new Error(`Timed out loading ${url} after ${this.timeoutMs}ms`); throw error; } finally { if (timer) clearTimeout(timer); } })(); this.cache.set(url, promise); try { return await promise; } catch (error) { this.cache.delete(url); throw error; } }
-  async loadKnowledgeGraph() { try { return await this.fetchJSON(ENDPOINTS.knowledgeGraph); } catch (error) { return this.fetchJSON(ENDPOINTS.legacyKnowledgeGraph).catch(() => { throw error; }); } }
+  async loadKnowledgeGraph() { return await this.fetchJSON(ENDPOINTS.knowledgeGraph); }
   // The runtime question pool is explicitly composed of the reviewed day01
   // replacement modules plus questions registered per lesson at runtime.
   // The implicit global question-bank file endpoint was removed: a missing
