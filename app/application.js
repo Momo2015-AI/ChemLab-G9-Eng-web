@@ -399,10 +399,12 @@ export function createApplication({ state, assessment, experimentEngine, mastery
       return router.navigate('course', experiment?.lessonId || CANONICAL_GOLDEN_LESSON);
     }
     const session = controllers.experiment.session;
+    const instruments = await contentService.getInstruments();
     return views.renderExperiment({
       root,
       experiment: session.experiment || {},
       session,
+      instruments,
       onNext: () => { controllers.experiment.next(); renderRoute(route); },
       onObserve: text => controllers.experiment.observe(text),
       onComplete: () => views.renderExperimentResult({

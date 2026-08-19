@@ -6,6 +6,7 @@
       "id": "L01-E01",
       "title": "观察物质变化：物理变化与化学变化",
       "type": "guided-observation",
+      "instruments": ["test-tube", "thermometer", "scissors", "candle", "beaker"],
       "safety": "只使用课程提供的安全演示或教师指导实验；学生不得自行操作火焰、腐蚀性试剂或未知物质。",
       "goal": "通过可观察现象建立“现象—证据—结论”的判断习惯。",
       "steps": [
@@ -46,6 +47,7 @@
       "id": "L01-E02",
       "title": "对比实验：判断变化的类型",
       "type": "hands-on",
+      "instruments": ["beaker", "scissors", "candle", "test-tube"],
       "safety": "使用教师提供的安全材料；不得自行点燃蜡烛或使用加热装置，须在教师指导下操作。",
       "goal": "通过亲手操作和对比观察，建立物理变化与化学变化的判断标准。",
       "materials": [

@@ -54,6 +54,7 @@ class ContentService {
   async getQuestionsByKnowledgeGraph(id) { const engine = await this.getKnowledgeEngine(); return engine.questions(id); }
   async getCommonMistakes(id) { const engine = await this.getKnowledgeEngine(); return engine.commonMistakes(id); }
   async getExperiment(id) { return this.loader.loadExperiment(id); }
+  async getInstruments() { return this.loader.loadInstruments(); }
   async getExperimentCatalog({ semester = null } = {}) {
     const lessons = await this.getLessons({ semester });
     const experiments = [];

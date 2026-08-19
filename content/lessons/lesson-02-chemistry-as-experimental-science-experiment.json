@@ -6,6 +6,7 @@
       "id": "L02-E01",
       "title": "控制变量探究：温度对蔗糖溶解快慢的影响",
       "type": "guided-observation",
+      "instruments": ["beaker", "graduated-cylinder", "thermometer", "glass-rod"],
       "safety": "只使用教师提供的安全温度水源；学生不得自行接触沸水或加热装置。",
       "goal": "通过对比实验练习“控制变量—观察记录—证据结论”的科学方法。",
       "steps": [

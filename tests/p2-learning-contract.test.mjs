@@ -70,9 +70,9 @@ test('lesson manifest exposes every released canonical lesson with textbook meta
   assert.deepEqual(released.map(lesson => lesson.canonicalId), [
     'lesson-01-material-changes-properties',
     'lesson-02-chemistry-as-experimental-science',
-    'lesson-03-acid-intro',
     'lesson-04-lab-safety-operations',
     'lesson-05-oxygen',
+    'lesson-03-acid-intro',
   ]);
   for (const lesson of released) {
     assert.ok(['upper', 'lower'].includes(lesson.semester));

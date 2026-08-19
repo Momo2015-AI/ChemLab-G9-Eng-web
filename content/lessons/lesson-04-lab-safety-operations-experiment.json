@@ -6,6 +6,7 @@
       "id": "L04-E01",
       "title": "观察规范操作：识别实验中的违规行为",
       "type": "guided-observation",
+      "instruments": ["alcohol-lamp", "dropper", "graduated-cylinder", "tweezers", "test-tube"],
       "safety": "本实验为观察与辨识型实验，不接触危险药品；所有演示由教师完成，学生只观察并记录。",
       "goal": "通过观察规范与违规操作的对比演示，识别常见违规行为及其危害，强化安全与规范操作意识。",
       "steps": [

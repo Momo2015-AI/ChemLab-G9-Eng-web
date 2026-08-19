@@ -1,6 +1,6 @@
 # V1.9 Lesson Content Readiness Audit
 
-Generated: 2026-08-18T09:01:24.945Z
+Generated: 2026-08-19T01:10:06.316Z
 
 ## Baseline
 - Lessons scanned: 5
@@ -17,9 +17,9 @@ Generated: 2026-08-18T09:01:24.945Z
 |---|---:|---|---|---|---:|---|---|---|
 | lesson-01-material-changes-properties.json | 01 | 物质的变化和性质 | released | ready | 0 | - | 8+8+3+21+4 | - |
 | lesson-02-chemistry-as-experimental-science.json | 02 | 化学是一门以实验为基础的科学 | released | ready | 0 | - | 8+16+3+27+4 | - |
-| lesson-03-acid-intro.json | 03 | 酸入门：初识身边的酸 | released | ready | 0 | - | 6+13+3+21+4 | - |
-| lesson-04-lab-safety-operations.json | 04 | 实验安全与基本操作 | released | ready | 0 | - | 6+16+3+21+4 | - |
-| lesson-05-oxygen.json | 05 | 空气与氧气 | released | ready | 0 | - | 6+16+3+21+4 | - |
+| lesson-03-acid-intro.json | 05 | 酸入门：初识身边的酸 | released | ready | 0 | - | 6+13+3+21+4 | - |
+| lesson-04-lab-safety-operations.json | 03 | 实验安全与基本操作 | released | ready | 0 | - | 6+16+3+21+4 | - |
+| lesson-05-oxygen.json | 04 | 空气与氧气 | released | ready | 0 | - | 6+16+3+21+4 | - |
 
 ## Issues
 - None

@@ -1,0 +1,132 @@
+{
+  "version": "1.0",
+  "description": "ChemLab-G9 实验器材库。每个器材带内联 SVG 图标（24x24 stroke 风格），供虚拟实验视图渲染器材清单。",
+  "instruments": [
+    {
+      "id": "test-tube",
+      "name": "试管",
+      "category": "玻璃仪器",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 3h6M10 3v5l-4 8a3 3 0 0 0 2.7 4.5h6.6A3 3 0 0 0 18 16l-4-8V3\"/><path d=\"M9 11h6\"/></svg>",
+      "usage": ["盛放少量液体或固体试剂", "少量液体加热的容器"],
+      "safety": ["加热时试管口不得对着人", "液体量不超过试管容积的三分之一"],
+      "experiments": ["L01-E01", "L01-E02", "L03-E01", "L05-E01"]
+    },
+    {
+      "id": "beaker",
+      "name": "烧杯",
+      "category": "玻璃仪器",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 3v13a5 5 0 0 0 5 5h4a5 5 0 0 0 5-5V3\"/><path d=\"M8 3v3M12 3v3M16 3v3\"/><path d=\"M5 9h14\"/></svg>",
+      "usage": ["盛放较多量液体", "配制溶液、进行反应"],
+      "safety": ["加热时垫石棉网", "不能直接加热空烧杯"],
+      "experiments": ["L01-E01", "L01-E02", "L02-E01"]
+    },
+    {
+      "id": "alcohol-lamp",
+      "name": "酒精灯",
+      "category": "加热仪器",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 3v5a4 4 0 0 1-4 4 4 4 0 0 0 4 4h8a4 4 0 0 0 4-4 4 4 0 0 1-4-4V3z\"/><path d=\"M8 3h8\"/><path d=\"M12 9v2.5\"/><path d=\"M12 11.5c-1.2 0-1.8.8-1.8 1.8s.8 1.8 1.8 1.8 1.8-.8 1.8-1.8-.6-1.8-1.8-1.8z\"/></svg>",
+      "usage": ["给物质加热"],
+      "safety": ["用灯帽盖灭，不能用嘴吹", "不可用酒精灯对点酒精灯"],
+      "experiments": ["L04-E01", "L05-E01"]
+    },
+    {
+      "id": "iron-stand",
+      "name": "铁架台",
+      "category": "固定仪器",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 21h16\"/><path d=\"M8 21V4h8\"/><path d=\"M8 7h7\"/><path d=\"M15 7v3\"/></svg>",
+      "usage": ["固定和支撑实验装置"],
+      "safety": ["夹持试管时松紧适度", "装置固定后不得用力扳动"],
+      "experiments": ["L05-E01"]
+    },
+    {
+      "id": "gas-jar",
+      "name": "集气瓶",
+      "category": "玻璃仪器",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 3h10v13a5 5 0 0 1-5 5 5 5 0 0 1-5-5z\"/><path d=\"M7 8h10\"/><path d=\"M9 3v3M12 3v3M15 3v3\"/></svg>",
+      "usage": ["收集气体", "进行气体性质实验"],
+      "safety": ["磨砂面朝上并盖玻璃片", "不能用于加热"],
+      "experiments": ["L05-E01"]
+    },
+    {
+      "id": "delivery-tube",
+      "name": "导管",
+      "category": "玻璃仪器",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 18h6l3-6 3 6h6\"/><path d=\"M9 18v-2a3 3 0 0 1 6 0v2\"/></svg>",
+      "usage": ["连接装置，导送气体或液体"],
+      "safety": ["连接时用水湿润玻璃管端口", "插入橡皮塞时手握部位正确"],
+      "experiments": ["L05-E01"]
+    },
+    {
+      "id": "water-trough",
+      "name": "水槽",
+      "category": "玻璃仪器",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"4\" y=\"6\" width=\"16\" height=\"12\" rx=\"2\"/><path d=\"M4 10h16\"/><path d=\"M8 6V4h8v2\"/></svg>",
+      "usage": ["排水法收集气体的容器"],
+      "safety": ["水位不宜过满", "实验结束先移导管再熄灯防止倒吸"],
+      "experiments": ["L05-E01"]
+    },
+    {
+      "id": "thermometer",
+      "name": "温度计",
+      "category": "计量仪器",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3v9a4 4 0 1 0 4 4V3z\"/><path d=\"M12 15h.01M12 17h.01M12 13h.01\"/><path d=\"M9 3h6\"/></svg>",
+      "usage": ["测量温度"],
+      "safety": ["测量时不能接触容器底部或壁", "不能当玻璃棒搅拌"],
+      "experiments": ["L01-E01", "L02-E01"]
+    },
+    {
+      "id": "glass-rod",
+      "name": "玻璃棒",
+      "category": "玻璃仪器",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 20L20 4\"/><circle cx=\"5\" cy=\"19\" r=\"1.2\" fill=\"currentColor\"/><circle cx=\"19\" cy=\"5\" r=\"1.2\" fill=\"currentColor\"/></svg>",
+      "usage": ["搅拌液体", "引流液体，转移固体"],
+      "safety": ["搅拌时不能碰撞容器壁", "使用后及时清洗"],
+      "experiments": ["L02-E01"]
+    },
+    {
+      "id": "graduated-cylinder",
+      "name": "量筒",
+      "category": "计量仪器",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 3h6M9 3v16a3 3 0 0 0 3 3 3 3 0 0 0 3-3V3\"/><path d=\"M8 3h8\"/><path d=\"M10 7h4M10 11h4M10 15h4\"/></svg>",
+      "usage": ["量取一定体积的液体"],
+      "safety": ["不能用于加热或配制溶液", "读数时视线与凹液面最低处相平"],
+      "experiments": ["L02-E01"]
+    },
+    {
+      "id": "dropper",
+      "name": "胶头滴管",
+      "category": "玻璃仪器",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10 3h4M12 3v4M9 7h6l-2 6h-2z\"/><path d=\"M10 13h4\"/><path d=\"M10 16h4\"/></svg>",
+      "usage": ["滴加少量液体试剂"],
+      "safety": ["胶头在上，不能倒置", "滴管不能伸入容器内接触液面"],
+      "experiments": ["L03-E01"]
+    },
+    {
+      "id": "tweezers",
+      "name": "镊子",
+      "category": "夹持工具",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 4l4 5M19 4l-4 5\"/><path d=\"M9 9l-3 10M15 9l3 10\"/></svg>",
+      "usage": ["夹取固体药品或块状物"],
+      "safety": ["夹取后轻放，不抛掷", "夹热物体时注意防护"],
+      "experiments": ["L03-E01", "L05-E01"]
+    },
+    {
+      "id": "scissors",
+      "name": "剪刀",
+      "category": "夹持工具",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"6\" cy=\"6\" r=\"2.5\"/><circle cx=\"6\" cy=\"18\" r=\"2.5\"/><path d=\"M8 7l12 9M8 17l12-9\"/></svg>",
+      "usage": ["剪碎纸片等固体材料"],
+      "safety": ["不指向他人，用后归位"],
+      "experiments": ["L01-E01", "L01-E02"]
+    },
+    {
+      "id": "candle",
+      "name": "蜡烛",
+      "category": "材料",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10 4h4v14a3 3 0 0 1-3 3 3 3 0 0 1-3-3z\"/><path d=\"M12 1v3\"/><path d=\"M12 3c1.5 0 2 1.5 0 2.5\"/></svg>",
+      "usage": ["观察燃烧与熔化现象"],
+      "safety": ["点燃须在教师指导下进行", "火焰附近不放易燃物"],
+      "experiments": ["L01-E01", "L01-E02"]
+    }
+  ]
+}

@@ -62,6 +62,7 @@ export class ExperimentController {
   complete() {
     if (!this.session) return null;
     this.session = this.engine.complete(this.session);
+    this.session.score = typeof this.engine.getScore === 'function' ? this.engine.getScore(this.session) : 0;
     if (this.session.hadInvalidObservation) {
       const diagnosis = diagnoseExperiment({ knowledgeIds: this.session.knowledgeIds || [], validation: { valid: false } });
       this.learningController?.getRemediationPlan?.({ ...diagnosis, lessonId: this.session.lessonId || undefined });

@@ -6,6 +6,7 @@
       "id": "L05-E01",
       "title": "氧气的实验室制取与收集",
       "type": "laboratory",
+      "instruments": ["iron-stand", "test-tube", "alcohol-lamp", "delivery-tube", "gas-jar", "water-trough", "tweezers"],
       "safety": "使用酒精灯加热；试管口略向下倾斜；实验结束先移导管后熄灯；高锰酸钾有腐蚀性，避免接触皮肤。",
       "goal": "掌握高锰酸钾加热制取氧气的装置连接、操作顺序、收集方法与检验方法，理解各步骤的科学依据。",
       "steps": [

@@ -44,7 +44,7 @@
     },
     {
       "file": "lesson-03-acid-intro.json",
-      "day": "03",
+      "day": "05",
       "title": "酸入门：初识身边的酸",
       "status": "released",
       "releaseStatus": "ready",
@@ -61,7 +61,7 @@
     },
     {
       "file": "lesson-04-lab-safety-operations.json",
-      "day": "04",
+      "day": "03",
       "title": "实验安全与基本操作",
       "status": "released",
       "releaseStatus": "ready",
@@ -78,7 +78,7 @@
     },
     {
       "file": "lesson-05-oxygen.json",
-      "day": "05",
+      "day": "04",
       "title": "空气与氧气",
       "status": "released",
       "releaseStatus": "ready",

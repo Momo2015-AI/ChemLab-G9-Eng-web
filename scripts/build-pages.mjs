@@ -40,6 +40,7 @@ const RUNTIME_GLOBS = [
   ['content/lessons', /\.json$/],
   ['content/knowledge', /\.json$/],
   ['content/experiments', /\.json$/],
+  ['content/equipment', /\.json$/],
 ];
 
 function copyFile(relative) {

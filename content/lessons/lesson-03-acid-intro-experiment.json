@@ -6,6 +6,7 @@
       "id": "L03-E01",
       "title": "观察酸的性质：指示剂变色与气体生成",
       "type": "guided-observation",
+      "instruments": ["test-tube", "dropper", "tweezers", "delivery-tube"],
       "safety": "只使用课程提供的安全演示或教师指导实验；学生不得自行操作腐蚀性试剂。",
       "goal": "通过实验观察酸使指示剂变色及与碳酸盐反应的现象，建立证据意识。",
       "steps": [

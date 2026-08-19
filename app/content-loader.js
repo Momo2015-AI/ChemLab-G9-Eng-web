@@ -52,6 +52,7 @@ class ContentLoader {
     return null;
   }
   async loadKnowledgeContent(id) { return this.fetchJSON(assetUrl(`content/knowledge/${id}.json`)).catch(() => null); }
+  async loadInstruments() { const data = await this.fetchJSON(assetUrl('content/equipment/instruments.json')).catch(() => null); return Array.isArray(data?.instruments) ? data.instruments : []; }
 }
 export const contentLoader = new ContentLoader();
 export default ContentLoader;
