@@ -36,6 +36,21 @@ const RUNTIME_FILES = [
   'modules/questions/taxonomy/knowledge-graph.json',
 ];
 
+function copyDirRecursive(src, dest) {
+  if (!fs.existsSync(src)) return;
+  fs.mkdirSync(dest, { recursive: true });
+  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    const srcPath = path.join(src, entry.name);
+    const destPath = path.join(dest, entry.name);
+    if (entry.isDirectory()) {
+      copyDirRecursive(srcPath, destPath);
+    } else if (/\.(js|css)$/.test(entry.name)) {
+      fs.copyFileSync(srcPath, destPath);
+      copied++;
+    }
+  }
+}
+
 const RUNTIME_GLOBS = [
   ['content/lessons', /\.json$/],
   ['content/knowledge', /\.json$/],
@@ -79,6 +94,9 @@ for (const [dir, pattern] of RUNTIME_GLOBS) {
     copyFile(path.join(dir, name));
   }
 }
+
+// Copy content/labs recursively (JS + CSS)
+copyDirRecursive(path.join(root, 'content/labs'), path.join(dist, 'content/labs'));
 
 console.log(`[build-pages] copied ${copied} files to dist/`);
 if (missing.length) {

@@ -11,10 +11,17 @@
         "法国化学家拉瓦锡通过实验首先确定了空气的组成：氮气约占78%，氧气约占21%。",
         "现代测定表明：氮气约78%、氧气约21%、稀有气体约0.94%、二氧化碳约0.03%、其他气体和杂质约0.03%。"
       ],
-      "knowledgePoints": ["air-composition"],
+      "knowledgePoints": [
+        "air-composition"
+      ],
       "check": {
         "question": "空气中含量最多的气体是？",
-        "options": ["氧气", "氮气", "二氧化碳", "稀有气体"],
+        "options": [
+          "氧气",
+          "氮气",
+          "二氧化碳",
+          "稀有气体"
+        ],
         "answer": 1,
         "explanation": "氮气约占空气体积的78%，是空气中含量最多的气体。"
       }
@@ -28,10 +35,18 @@
         "混合物没有固定的组成，各成分保持原有的化学性质。",
         "空气的组成相对稳定，但不同地点（如高山、城市）可能略有差异。"
       ],
-      "knowledgePoints": ["air-composition", "physical-change"],
+      "knowledgePoints": [
+        "air-composition",
+        "physical-change"
+      ],
       "check": {
         "question": "空气属于？",
-        "options": ["纯净物", "混合物", "化合物", "单质"],
+        "options": [
+          "纯净物",
+          "混合物",
+          "化合物",
+          "单质"
+        ],
         "answer": 1,
         "explanation": "空气由氮气、氧气等多种物质组成，是混合物。"
       }
@@ -46,13 +61,32 @@
         "氧气不易溶于水（室温下1L水仅溶解约30mL氧气），可用排水法收集。",
         "液态氧呈淡蓝色，固态氧也是淡蓝色雪花状。"
       ],
-      "knowledgePoints": ["oxygen-physical", "air-composition"],
+      "knowledgePoints": [
+        "oxygen-physical",
+        "air-composition"
+      ],
       "check": {
         "question": "下列关于氧气物理性质的描述正确的是？",
-        "options": ["氧气有刺激性气味", "氧气易溶于水", "液态氧是淡蓝色的", "氧气的密度比空气小"],
+        "options": [
+          "氧气有刺激性气味",
+          "氧气易溶于水",
+          "液态氧是淡蓝色的",
+          "氧气的密度比空气小"
+        ],
         "answer": 2,
         "explanation": "液态氧呈淡蓝色；气态氧气无色无味，不易溶于水，密度比空气略大。"
       }
+    },
+    {
+      "id": "L05-S02-LAB",
+      "title": "空气成分与燃烧剧场 · 交互实验",
+      "type": "lab-zone",
+      "zone": "zone4",
+      "body": [
+        "通过互动实验直观感受空气的组成和不同物质在空气与氧气中的燃烧差异。",
+        "注意观察：同一物质在氧气中燃烧比在空气中更剧烈——这与氧气浓度直接相关。"
+      ],
+      "check": null
     },
     {
       "id": "L05-S04",
@@ -64,10 +98,18 @@
         "硫在氧气中燃烧发出明亮的蓝紫色火焰，生成有刺激性气味的气体（SO₂）。",
         "铁丝在氧气中剧烈燃烧，火星四射，生成黑色固体（Fe₃O₄）。"
       ],
-      "knowledgePoints": ["oxygen-chemical", "oxygen-physical"],
+      "knowledgePoints": [
+        "oxygen-chemical",
+        "oxygen-physical"
+      ],
       "check": {
         "question": "铁丝在氧气中燃烧的现象是？",
-        "options": ["发出淡蓝色火焰", "剧烈燃烧，火星四射，生成黑色固体", "产生大量白烟", "发出耀眼的白光"],
+        "options": [
+          "发出淡蓝色火焰",
+          "剧烈燃烧，火星四射，生成黑色固体",
+          "产生大量白烟",
+          "发出耀眼的白光"
+        ],
         "answer": 1,
         "explanation": "铁丝在氧气中剧烈燃烧，火星四射，生成黑色四氧化三铁固体。"
       }
@@ -81,10 +123,18 @@
         "燃烧是剧烈的氧化反应，缓慢氧化是不剧烈、不易察觉的氧化反应（如铁生锈、食物腐败、呼吸作用）。",
         "化合反应：多种物质生成一种物质的反应（多变一）。氧化反应不一定是化合反应。"
       ],
-      "knowledgePoints": ["oxygen-chemical", "chemical-property"],
+      "knowledgePoints": [
+        "oxygen-chemical",
+        "chemical-property"
+      ],
       "check": {
         "question": "下列变化中属于氧化反应但不属于化合反应的是？",
-        "options": ["红磷燃烧生成五氧化二磷", "石蜡燃烧生成二氧化碳和水", "硫燃烧生成二氧化硫", "铁燃烧生成四氧化三铁"],
+        "options": [
+          "红磷燃烧生成五氧化二磷",
+          "石蜡燃烧生成二氧化碳和水",
+          "硫燃烧生成二氧化硫",
+          "铁燃烧生成四氧化三铁"
+        ],
         "answer": 1,
         "explanation": "石蜡燃烧生成两种产物（CO₂和H₂O），属于氧化反应但不是化合反应。"
       }
@@ -99,10 +149,18 @@
         "高锰酸钾是暗紫色固体，加热分解生成锰酸钾（K₂MnO₄）、二氧化锰（MnO₂）和氧气（O₂）。",
         "反应装置：固固加热型（试管、酒精灯、铁架台等）。"
       ],
-      "knowledgePoints": ["oxygen-preparation", "chemical-equation"],
+      "knowledgePoints": [
+        "oxygen-preparation",
+        "chemical-equation"
+      ],
       "check": {
         "question": "实验室用高锰酸钾制取氧气时，反应后试管内剩余固体是？",
-        "options": ["只有锰酸钾", "锰酸钾和二氧化锰", "高锰酸钾和二氧化锰", "只有二氧化锰"],
+        "options": [
+          "只有锰酸钾",
+          "锰酸钾和二氧化锰",
+          "高锰酸钾和二氧化锰",
+          "只有二氧化锰"
+        ],
         "answer": 1,
         "explanation": "高锰酸钾完全分解后生成锰酸钾（K₂MnO₄）和二氧化锰（MnO₂）两种固体。"
       }
@@ -121,10 +179,18 @@
         "离：收集完毕先将导管移出水面。",
         "熄：最后熄灭酒精灯（防止水倒吸炸裂试管）。"
       ],
-      "knowledgePoints": ["oxygen-preparation", "lab-operations"],
+      "knowledgePoints": [
+        "oxygen-preparation",
+        "lab-operations"
+      ],
       "check": {
         "question": "实验结束时，正确的操作顺序是？",
-        "options": ["先熄灭酒精灯，再移导管", "先移导管出水面，再熄灭酒精灯", "同时熄灭酒精灯和移导管", "先取下试管再移导管"],
+        "options": [
+          "先熄灭酒精灯，再移导管",
+          "先移导管出水面，再熄灭酒精灯",
+          "同时熄灭酒精灯和移导管",
+          "先取下试管再移导管"
+        ],
         "answer": 1,
         "explanation": "先移导管后熄灯，防止水倒吸入热的试管导致炸裂。"
       }
@@ -139,10 +205,18 @@
         "验满（向上排空气法）：将带火星的木条放在集气瓶口，若木条复燃，则已满。",
         "氧气能使带火星的木条复燃，这是氧气特有的性质，可用于检验和验满。"
       ],
-      "knowledgePoints": ["oxygen-physical", "oxygen-chemical"],
+      "knowledgePoints": [
+        "oxygen-physical",
+        "oxygen-chemical"
+      ],
       "check": {
         "question": "检验一瓶气体是否为氧气，正确的方法是？",
-        "options": ["用燃着的木条伸入瓶内", "用带火星的木条伸入瓶内", "闻气味", "观察颜色"],
+        "options": [
+          "用燃着的木条伸入瓶内",
+          "用带火星的木条伸入瓶内",
+          "闻气味",
+          "观察颜色"
+        ],
         "answer": 1,
         "explanation": "检验氧气用带火星的木条伸入瓶内，复燃则为氧气；验满时木条放瓶口。"
       }

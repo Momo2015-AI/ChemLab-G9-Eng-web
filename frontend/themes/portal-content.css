@@ -49,3 +49,293 @@
 @media(max-width:640px){.kd-header{flex-wrap:wrap}.kd-title{font-size:18px}}
 
 .v19-experiment .v19-exp-goal,.v19-experiment .v19-exp-safety{padding:14px 18px;border:1px solid rgba(0,217,255,.16);border-radius:14px;background:rgba(0,217,255,.05);margin-bottom:14px}.v19-exp-goal p,.v19-exp-safety p{margin:0;color:#cfe8f2;font-size:13.5px;line-height:1.6}.v19-exp-section-title{margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5ce6ff}.v19-exp-instruments{margin-bottom:14px}.v19-exp-instrument-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}.v19-exp-instrument{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:rgba(255,255,255,.03)}.v19-exp-instrument-icon{flex:none;width:30px;height:30px;color:#7fe7ff;display:flex;align-items:center;justify-content:center}.v19-exp-instrument-icon svg{width:26px;height:26px}.v19-exp-instrument-name{display:block;color:#f1fbff;font-size:13px;margin-bottom:4px}.v19-exp-instrument-usage{margin:0;padding-left:14px}.v19-exp-instrument-usage li{color:#8faec1;font-size:11.5px;line-height:1.5}.v19-exp-step{padding:16px 18px;border:1px solid rgba(0,255,168,.18);border-radius:14px;background:rgba(0,255,168,.05);margin-bottom:14px}.v19-exp-action{margin:0 0 8px;color:#e8f7ff;font-size:14px;line-height:1.6}.v19-exp-record{color:#9fd7ff;font-size:12.5px;line-height:1.5;margin:0 0 6px}.v19-exp-prompt{margin:8px 0 0;color:#ffd9a0;font-size:12.5px;font-style:italic}.v19-exp-score{display:flex;align-items:baseline;gap:10px;justify-content:center;margin:18px 0}.v19-exp-score-value{font-size:40px;font-weight:900;color:#00ffa8;letter-spacing:-.02em}.v19-exp-score-label{font-size:13px;color:#8faec1}.v19-exp-observations{margin:0 0 18px;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:rgba(255,255,255,.03);padding:12px 16px;color:#b8ced7;font-size:13px}.v19-exp-observations summary{cursor:pointer;color:#9fd7ff;font-weight:600}.v19-exp-observations ul{margin:10px 0 0;padding-left:18px}.v19-exp-observations li{line-height:1.6;margin-bottom:6px}.v19-exp-obs-step{display:inline-block;min-width:52px;font-weight:700;color:#5ce6ff}
+
+/* Chemistry Lab - Equation Display */
+.chem-eq { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; }
+.chem-eq-left, .chem-eq-right { font-family: var(--mono), monospace; }
+.chem-eq-line { color: var(--spec-cyan, #22d3ee); font-weight: 700; letter-spacing: 1px; }
+.chem-eq-cond { font-size: 11px; color: var(--spec-faint, #64748b); position: absolute; top: -14px; }
+.chem-eq-sign { position: relative; display: flex; align-items: center; padding: 0 4px; }
+.chem-gas { color: var(--red, #f87171); font-weight: 600; }
+.chem-ppt { color: var(--amber, #fbbf24); font-weight: 600; }
+
+/* ============================================================
+   Zone 04 · 空气与氧气（.z4- 前缀，避免与其他板块冲突）
+   ============================================================ */
+
+.z4-stage-a { height: 380px; }
+.z4-stage-b { height: 480px; }
+
+/* Panel A：成分说明卡（覆盖在画布底部） */
+.z4-info {
+  position: absolute; left: 12px; right: 12px; bottom: 12px;
+  background: rgba(10, 14, 20, 0.84);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border); border-radius: 10px;
+  padding: 10px 14px; font-size: 13px; line-height: 1.7;
+  color: var(--text-dim); pointer-events: none;
+}
+.z4-info b { font-size: 14px; margin-right: 8px; }
+
+/* Panel A：图例 */
+.z4-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.z4-legend-item {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 12px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--border-soft);
+  font-size: 13px; color: var(--text-dim);
+  transition: all 0.2s; user-select: none;
+}
+.z4-legend-item:hover, .z4-legend-item.on {
+  border-color: rgba(34, 211, 238, 0.45);
+  color: var(--text); background: var(--bg-panel-2);
+}
+.z4-dot { width: 11px; height: 11px; border-radius: 50%; box-shadow: 0 0 8px currentColor; }
+
+/* Panel B：控制区 */
+.z4-ctrl { margin-bottom: 14px; display: flex; flex-direction: column; gap: 12px; }
+.z4-ctrl-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.z4-ctrl-label { font-size: 12px; color: var(--text-faint); letter-spacing: 1px; min-width: 44px; }
+.z4-hint { margin-top: 10px; font-size: 12.5px; color: var(--text-faint); line-height: 1.7; }
+
+/* console 卡片逐条浮现 */
+.z4-reveal { animation: z4In 0.5s ease both; }
+@keyframes z4In {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* 现象 / 故事文本 */
+.z4-phen { font-size: 14px; line-height: 1.9; color: var(--text); }
+.z4-phen b { color: var(--cyan); }
+.z4-phen .tag { margin-right: 8px; }
+.z4-story { font-size: 13.5px; line-height: 1.9; color: var(--text-dim); }
+.z4-story b { color: var(--cyan); }
+.z4-eq-wrap { padding: 8px 0 2px; }
+/* ============================================================
+   ZONE 10 · 酸和碱（仅本板块自定义样式，全部 z10- 前缀）
+   ============================================================ */
+
+/* 方程式展示条 */
+.z10-eq-wrap {
+  margin-top: 10px;
+  padding: 10px 16px;
+  background: var(--bg-panel-2);
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* 通性条目 */
+.z10-prop {
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-top: 12px;
+  background: rgba(0, 0, 0, 0.18);
+}
+.z10-prop-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text);
+  flex-wrap: wrap;
+}
+.z10-prop-body {
+  margin-top: 8px;
+  font-size: 13.5px;
+  color: var(--text-dim);
+  line-height: 1.9;
+}
+.z10-prop-body b { color: var(--cyan); }
+.z10-phen {
+  font-size: 12.5px;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+.z10-phen b { color: var(--amber); }
+
+/* 列表 */
+.z10-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+.z10-list li::before { content: "✦ "; color: var(--cyan); }
+.z10-list b { color: var(--text); }
+
+/* 结论/说明正文 */
+.z10-concl {
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: var(--text-dim);
+}
+.z10-concl b { color: var(--cyan); }
+
+/* 状态条（琥珀虚线框） */
+.z10-status {
+  margin-top: 12px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px dashed rgba(251, 191, 36, 0.35);
+  background: rgba(251, 191, 36, 0.05);
+  font-size: 13.5px;
+  color: var(--text-dim);
+  line-height: 1.9;
+  min-height: 52px;
+}
+.z10-status b { color: var(--amber); }
+.z10-status .ok { color: var(--green); font-weight: 700; }
+.z10-status .bad { color: var(--red); font-weight: 700; }
+
+/* ---------- Panel A · 指示剂试管 ---------- */
+.z10-group-label {
+  font-size: 12px;
+  color: var(--text-faint);
+  margin: 12px 0 8px;
+  letter-spacing: 1px;
+}
+.z10-tube-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 0 8px;
+  flex-wrap: wrap;
+}
+.z10-tube {
+  width: 66px;
+  height: 196px;
+  border: 2.5px solid rgba(226, 232, 240, 0.65);
+  border-top: none;
+  border-radius: 0 0 32px 32px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+}
+.z10-tube::before {
+  content: "";
+  position: absolute;
+  left: 8px; top: 6px; bottom: 14px;
+  width: 7px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.10);
+  z-index: 2;
+}
+.z10-liquid {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 62%;
+  transition: background-color 0.55s ease, box-shadow 0.55s ease;
+}
+.z10-tube-info { max-width: 300px; }
+.z10-tube-mix {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.z10-tube-result {
+  font-size: 13.5px;
+  color: var(--text-dim);
+  line-height: 1.9;
+}
+.z10-tube-result b { color: var(--cyan); }
+
+/* ---------- Panel A · pH 彩虹条 ---------- */
+.z10-ph-bar {
+  position: relative;
+  height: 26px;
+  border-radius: 8px;
+  border: 1px solid var(--border-soft);
+  background: linear-gradient(90deg,
+    #dc2626 0%, #f97316 16%, #fbbf24 32%, #a3e635 44%,
+    #22c55e 50%, #14b8a6 60%, #3b82f6 74%, #6366f1 87%, #7c3aed 100%);
+  box-shadow: 0 0 14px rgba(34, 211, 238, 0.12);
+}
+.z10-ph-marker {
+  position: absolute;
+  top: -7px;
+  width: 0; height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 9px solid #fff;
+  transform: translateX(-50%);
+  transition: left 0.15s ease;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+}
+.z10-ph-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-faint);
+  margin: 5px 2px 12px;
+}
+.z10-verdict {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+.z10-verdict.acid { color: var(--red); }
+.z10-verdict.base { color: #60a5fa; }
+.z10-verdict.neutral { color: var(--green); }
+.z10-ph-match {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.9;
+  min-height: 26px;
+}
+.z10-ph-match b { color: var(--cyan); }
+.z10-ph-match .warn { color: var(--amber); font-weight: 600; }
+
+/* ---------- Panel D · 应用卡网格 ---------- */
+.z10-app-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+@media (max-width: 900px) {
+  .z10-app-grid { grid-template-columns: 1fr; }
+}
+.z10-app {
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: rgba(0, 0, 0, 0.18);
+  font-size: 13.5px;
+  color: var(--text-dim);
+  line-height: 1.9;
+}
+.z10-app b { color: var(--cyan); }
+.z10-app .eq { font-size: 15px; margin-top: 6px; }
+
+/* 小节分隔标题 */
+.z10-sub {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--text-faint);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.z10-sub::before { content: "▸ "; color: var(--magenta); }
+
+/* Lab Zone interactive card */
+.lab-zone-container{min-height:500px;overflow:auto}
+.lab-zone-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:400px}
+.lab-zone-placeholder .course-action{border:1px solid rgba(0,217,255,.3);background:linear-gradient(135deg,rgba(0,217,255,.15),rgba(139,92,255,.1));color:#e8f7ff;border-radius:10px;padding:10px 24px;cursor:pointer;font-size:14px;transition:all .2s ease}
+.lab-zone-placeholder .course-action:hover{border-color:rgba(0,217,255,.5);box-shadow:0 0 20px rgba(0,217,255,.2);transform:translateY(-1px)}
+.lab-zone-placeholder .course-action:disabled{opacity:.6;cursor:not-allowed;transform:none;box-shadow:none}
+
