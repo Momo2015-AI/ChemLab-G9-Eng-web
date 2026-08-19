@@ -1,6 +1,6 @@
 # ChemLab-G9-Eng V1.9 Content Integrity Report
 
-Generated: 2026-08-19T08:20:45.667Z
+Generated: 2026-08-19T08:28:00.914Z
 
 ## Statistics
 - sourceQuestions: 263
@@ -11,7 +11,7 @@ Generated: 2026-08-19T08:20:45.667Z
 - overrides: 6
 - runtimeQuestionSources: canonical lesson/practice/diagnostic/mastery content plus runtime overrides/diagnostics
 - questionBankState: CANONICAL_RUNTIME_SOURCE
-- graphNodes: 18
+- graphNodes: 22
 - graphMissingQuestions: 0
 
 ## Errors

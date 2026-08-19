@@ -578,19 +578,45 @@
       "name": "空气组成",
       "chapter": "第二单元 我们周围的空气",
       "domain": "matter",
-      "bloomLevels": ["remember", "understand"],
+      "bloomLevels": [
+        "remember",
+        "understand"
+      ],
       "questions": [
-        "L05-Q01", "L05-Q02", "L05-Q03", "L05-Q04", "L05-Q05", "L05-Q06",
-        "L05-P01", "L05-P02", "L05-P03", "L05-P04", "L05-P05", "L05-P06", "L05-P07", "L05-P08", "L05-P09", "L05-P10",
+        "L05-Q01",
+        "L05-Q02",
+        "L05-Q03",
+        "L05-Q04",
+        "L05-Q05",
+        "L05-Q06",
+        "L05-P01",
+        "L05-P02",
+        "L05-P03",
+        "L05-P04",
+        "L05-P05",
+        "L05-P06",
+        "L05-P07",
+        "L05-P08",
+        "L05-P09",
+        "L05-P10",
         "L05-D01",
-        "L05-M01", "L05-M02", "L05-M03", "L05-M04", "L05-M05", "L05-M06",
+        "L05-M01",
+        "L05-M02",
+        "L05-M03",
+        "L05-M04",
+        "L05-M05",
+        "L05-M06",
         "L05-T01"
       ],
       "semester": "upper",
       "unitId": "u02",
       "definition": "空气是一种混合物，主要由氮气（约78%）和氧气（约21%）组成，还含有稀有气体、二氧化碳和其他杂质。",
-      "prerequisiteIds": ["physical-change"],
-      "misconceptionIds": ["mc-o2-composition"],
+      "prerequisiteIds": [
+        "physical-change"
+      ],
+      "misconceptionIds": [
+        "mc-o2-composition"
+      ],
       "remediationGoal": "理解空气是混合物而非纯净物，能准确表述空气组成体积分数。"
     },
     {
@@ -598,19 +624,32 @@
       "name": "氧气的物理性质",
       "chapter": "第二单元 我们周围的空气",
       "domain": "matter",
-      "bloomLevels": ["remember", "understand"],
+      "bloomLevels": [
+        "remember",
+        "understand"
+      ],
       "questions": [
-        "L05-Q05", "L05-Q06",
-        "L05-P05", "L05-P06", "L05-P07", "L05-P08",
+        "L05-Q05",
+        "L05-Q06",
+        "L05-P05",
+        "L05-P06",
+        "L05-P07",
+        "L05-P08",
         "L05-D02",
-        "L05-M07", "L05-M08", "L05-M09",
+        "L05-M07",
+        "L05-M08",
+        "L05-M09",
         "L05-T02"
       ],
       "semester": "upper",
       "unitId": "u02",
       "definition": "氧气是无色无味的气体，密度略大于空气，不易溶于水；液态氧呈淡蓝色。",
-      "prerequisiteIds": ["air-composition"],
-      "misconceptionIds": ["mc-o2-physical"],
+      "prerequisiteIds": [
+        "air-composition"
+      ],
+      "misconceptionIds": [
+        "mc-o2-physical"
+      ],
       "remediationGoal": "准确记忆氧气的物理性质，不将气味、颜色与溶解性混淆。"
     },
     {
@@ -618,19 +657,39 @@
       "name": "氧气的化学性质",
       "chapter": "第二单元 我们周围的空气",
       "domain": "reaction",
-      "bloomLevels": ["remember", "understand", "apply", "analyze"],
+      "bloomLevels": [
+        "remember",
+        "understand",
+        "apply",
+        "analyze"
+      ],
       "questions": [
-        "L05-Q04", "L05-Q05",
-        "L05-P09", "L05-P10", "L05-P11", "L05-P12", "L05-P13", "L05-P14",
+        "L05-Q04",
+        "L05-Q05",
+        "L05-P09",
+        "L05-P10",
+        "L05-P11",
+        "L05-P12",
+        "L05-P13",
+        "L05-P14",
         "L05-D02",
-        "L05-M10", "L05-M11", "L05-M12", "L05-M13", "L05-M14",
+        "L05-M10",
+        "L05-M11",
+        "L05-M12",
+        "L05-M13",
+        "L05-M14",
         "L05-T03"
       ],
       "semester": "upper",
       "unitId": "u02",
       "definition": "氧气具有助燃性，能与多种金属（如铁、镁、铜）、非金属（如碳、硫、磷）及化合物发生氧化反应，生成相应的氧化物。",
-      "prerequisiteIds": ["oxygen-physical", "chemical-property"],
-      "misconceptionIds": ["mc-o2-chemical"],
+      "prerequisiteIds": [
+        "oxygen-physical",
+        "chemical-property"
+      ],
+      "misconceptionIds": [
+        "mc-o2-chemical"
+      ],
       "remediationGoal": "区分氧气的助燃性与可燃性，理解氧化反应的本质是物质与氧结合。"
     },
     {
@@ -638,20 +697,123 @@
       "name": "氧气的实验室制取",
       "chapter": "第二单元 我们周围的空气",
       "domain": "method",
-      "bloomLevels": ["understand", "apply", "evaluate"],
+      "bloomLevels": [
+        "understand",
+        "apply",
+        "evaluate"
+      ],
       "questions": [
-        "L05-Q01", "L05-Q02", "L05-Q03",
-        "L05-P01", "L05-P02", "L05-P03", "L05-P04",
+        "L05-Q01",
+        "L05-Q02",
+        "L05-Q03",
+        "L05-P01",
+        "L05-P02",
+        "L05-P03",
+        "L05-P04",
         "L05-D03",
-        "L05-M15", "L05-M16", "L05-M17", "L05-M18", "L05-M19", "L05-M20",
+        "L05-M15",
+        "L05-M16",
+        "L05-M17",
+        "L05-M18",
+        "L05-M19",
+        "L05-M20",
         "L05-T04"
       ],
       "semester": "upper",
       "unitId": "u02",
       "definition": "高锰酸钾加热分解制取氧气：2KMnO4 → K2MnO4 + MnO2 + O2↑；采用固固加热型装置，用排水法或向上排空气法收集；实验结束先移导管后熄灭酒精灯。",
-      "prerequisiteIds": ["lab-operations", "oxygen-physical"],
-      "misconceptionIds": ["mc-o2-preparation"],
+      "prerequisiteIds": [
+        "lab-operations",
+        "oxygen-physical"
+      ],
+      "misconceptionIds": [
+        "mc-o2-preparation"
+      ],
       "remediationGoal": "掌握氧气实验室制取的完整操作流程与安全要点，理解操作顺序的科学依据。"
+    },
+    {
+      "id": "particle-model",
+      "name": "粒子模型",
+      "chapter": "第三单元 物质构成的奥秘",
+      "domain": "particle",
+      "bloomLevels": [
+        "remember",
+        "understand"
+      ],
+      "semester": "upper",
+      "unitId": "u03",
+      "definition": "物质由微小的粒子（分子、原子、离子）构成，粒子在不断运动，粒子之间有间隔。",
+      "prerequisiteIds": [
+        "matter-change"
+      ],
+      "misconceptionIds": [
+        "mc-particle-physical"
+      ],
+      "remediationGoal": "理解物质由微观粒子构成，粒子间存在间隔且永不停息地运动。",
+      "questions": []
+    },
+    {
+      "id": "atomic-structure",
+      "name": "原子结构",
+      "chapter": "第三单元 物质构成的奥秘",
+      "domain": "particle",
+      "bloomLevels": [
+        "remember",
+        "understand"
+      ],
+      "semester": "upper",
+      "unitId": "u03",
+      "definition": "原子由原子核（含质子和中子）和核外电子构成；质子数决定元素种类。",
+      "prerequisiteIds": [
+        "particle-model"
+      ],
+      "misconceptionIds": [
+        "mc-atom-electron-loss"
+      ],
+      "remediationGoal": "理解原子核式结构，知道质子数=核电荷数=原子序数。",
+      "questions": []
+    },
+    {
+      "id": "ion-bond",
+      "name": "离子与离子键",
+      "chapter": "第三单元 物质构成的奥秘",
+      "domain": "particle",
+      "bloomLevels": [
+        "understand",
+        "apply"
+      ],
+      "semester": "upper",
+      "unitId": "u03",
+      "definition": "原子得失电子形成离子；阴阳离子通过静电作用形成离子化合物。",
+      "prerequisiteIds": [
+        "atomic-structure"
+      ],
+      "misconceptionIds": [
+        "mc-ion-only-metal"
+      ],
+      "remediationGoal": "理解离子是带电原子或原子团，阴阳离子均可形成离子化合物。",
+      "questions": []
+    },
+    {
+      "id": "element-classify",
+      "name": "元素与物质分类",
+      "chapter": "第三单元 物质构成的奥秘",
+      "domain": "particle",
+      "bloomLevels": [
+        "remember",
+        "understand"
+      ],
+      "semester": "upper",
+      "unitId": "u03",
+      "definition": "元素是质子数相同的一类原子的总称；物质可分为纯净物和混合物。",
+      "prerequisiteIds": [
+        "atomic-structure"
+      ],
+      "misconceptionIds": [
+        "mc-mixture-pure"
+      ],
+      "remediationGoal": "能用元素概念区分纯净物与混合物，理解同种元素可组成不同单质。",
+      "questions": []
     }
   ],
   "relations": [
@@ -1859,6 +2021,26 @@
       "source": "air-composition",
       "target": "L05-T01",
       "type": "question"
+    },
+    {
+      "source": "matter-change",
+      "target": "particle-model",
+      "type": "prerequisite"
+    },
+    {
+      "source": "particle-model",
+      "target": "atomic-structure",
+      "type": "prerequisite"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "ion-bond",
+      "type": "prerequisite"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "element-classify",
+      "type": "prerequisite"
     }
   ]
 }

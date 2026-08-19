@@ -398,6 +398,66 @@ export const canonicalMisconceptions = [
       practiceQuestionIds: ['L05-P02'],
       recheckQuestionIds: ['L05-M15']
     }
+  },
+  {
+    id: 'mc-particle-physical',
+    title: '将宏观物质性质等同于微观粒子性质',
+    description: '认为分子、原子等微观粒子具有与宏观物质相同的颜色、气味、状态等性质，或将粒子本身等同于可见的固体颗粒。',
+    knowledgeIds: ['particle-model'],
+    signals: ['scale-confusion', 'macro-micro-mix'],
+    severity: 'high',
+    source: 'knowledge-graph v2.1 u03 extension',
+    remediation: {
+      goal: '理解微观粒子是模型概念，不能直接用宏观感官属性描述。',
+      lessonIds: [],
+      practiceQuestionIds: [],
+      recheckQuestionIds: []
+    }
+  },
+  {
+    id: 'mc-atom-electron-loss',
+    title: '认为原子失去电子后质子数改变',
+    description: '误认为原子失电子变成离子时，原子核内的质子数也发生变化，从而改变元素种类。',
+    knowledgeIds: ['atomic-structure'],
+    signals: ['structural-confusion'],
+    severity: 'high',
+    source: 'knowledge-graph v2.1 u03 extension',
+    remediation: {
+      goal: '明确电子转移只改变电荷，质子数不变，元素种类不变。',
+      lessonIds: [],
+      practiceQuestionIds: [],
+      recheckQuestionIds: []
+    }
+  },
+  {
+    id: 'mc-ion-only-metal',
+    title: '认为只有金属能形成离子',
+    description: '误认为阴离子（如O²⁻、Cl⁻）不存在或不属于离子，认为离子只指金属阳离子。',
+    knowledgeIds: ['ion-bond'],
+    signals: ['concept-narrowing'],
+    severity: 'medium',
+    source: 'knowledge-graph v2.1 u03 extension',
+    remediation: {
+      goal: '理解阴阳离子均可通过电子转移形成，非金属原子也能得电子形成阴离子。',
+      lessonIds: [],
+      practiceQuestionIds: [],
+      recheckQuestionIds: []
+    }
+  },
+  {
+    id: 'mc-mixture-pure',
+    title: '将均一稳定的混合物误认为纯净物',
+    description: '认为溶液（如食盐水）是纯净物，因为外观均一透明；或用"看起来干净"判断纯净物。',
+    knowledgeIds: ['element-classify'],
+    signals: ['visual-overgeneralization'],
+    severity: 'medium',
+    source: 'knowledge-graph v2.1 u03 extension',
+    remediation: {
+      goal: '以是否由同种物质组成判断纯净物，均一透明不是纯净物的充分条件。',
+      lessonIds: [],
+      practiceQuestionIds: [],
+      recheckQuestionIds: []
+    }
   }
 ];
 
@@ -444,7 +504,12 @@ export const ALIAS_MAP = {
   'air-composition-mistake': 'mc-o2-composition',
   'o2-physical-mistake': 'mc-o2-physical',
   'o2-chemical-mistake': 'mc-o2-chemical',
-  'o2-preparation-mistake': 'mc-o2-preparation'
+  'o2-preparation-mistake': 'mc-o2-preparation',
+  // L06 chemistry-equation aliases
+  'particle-physical-mistake': 'mc-particle-physical',
+  'atom-electron-loss': 'mc-atom-electron-loss',
+  'ion-only-metal': 'mc-ion-only-metal',
+  'mixture-pure': 'mc-mixture-pure'
 };
 
 /**
