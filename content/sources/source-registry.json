@@ -86,6 +86,10 @@
       "S0-PEP-CHEM9",
       "S1-CURRICULUM-STD",
       "S1-WUHAN-EXAM"
+    ],
+    "lesson-05-oxygen": [
+      "S0-PEP-CHEM9",
+      "S1-WUHAN-EXAM"
     ]
   },
   "legacyNote": "Retired 320-question dataset is not a source and is excluded from this registry."

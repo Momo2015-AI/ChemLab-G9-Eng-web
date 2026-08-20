@@ -44,8 +44,8 @@ deployment:       GitHub Pages（runtime-only dist/）
 ## 内容治理状态
 
 - **Source Registry：PARTIAL — S0 designation document awaited from project owner**（`content/sources/source-registry.json`）——状态待确认。当前 4/5 课程有来源标注。
-- 知识图谱 v2.1：18 节点（upper 15 / lower 3）/ 241 关系，**全部节点均具备详情内容**（定义 / 补救目标 / 认知层次 / 误解 / 前置）。
-- misconception 词表：26 个 canonical ID + 31 个 alias，`core/assessment/mastery-policy.js` 负责别名解析到 canonical 形式。
+- 知识图谱 v2.1：22 节点（upper 19 / lower 3）/ 245 关系，**全部节点均具备详情内容**（定义 / 补救目标 / 认知层次 / 误解 / 前置）。
+- misconception 词表：30 个 canonical ID + 35 个 alias，`core/assessment/mastery-policy.js` 负责别名解析到 canonical 形式。
 - 全局题池：263 题（CANONICAL_RUNTIME_SOURCE），旧 320 题永久退役。
 
 ## 虚拟实验

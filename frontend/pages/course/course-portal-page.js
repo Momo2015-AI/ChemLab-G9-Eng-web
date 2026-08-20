@@ -1,8 +1,8 @@
 const GOLDEN_LESSON_ID = 'lesson-01-material-changes-properties';
 
 const UPPER_UNITS = [
-  { id: 'unit-01-intro-chemistry', number: '01', title: '走进化学世界', description: '物质的变化、性质与化学实验基础', lessonIds: ['lesson-01-material-changes-properties', 'lesson-02-chemistry-as-experimental-science'] },
-  { id: 'unit-02-air', number: '02', title: '我们周围的空气', description: '空气组成、氧气与相关实验', lessonIds: [] },
+  { id: 'unit-01-intro-chemistry', number: '01', title: '走进化学世界', description: '物质的变化、性质与化学实验基础', lessonIds: ['lesson-01-material-changes-properties', 'lesson-02-chemistry-as-experimental-science', 'lesson-04-lab-safety-operations'] },
+  { id: 'unit-02-air', number: '02', title: '我们周围的空气', description: '空气组成、氧气与相关实验', lessonIds: ['lesson-05-oxygen'] },
   { id: 'unit-03-matter-structure', number: '03', title: '物质构成的奥秘', description: '分子、原子、离子与元素', lessonIds: [] },
   { id: 'unit-04-water', number: '04', title: '自然界的水', description: '水的组成、净化与爱护', lessonIds: [] },
   { id: 'unit-05-equations', number: '05', title: '化学方程式', description: '质量守恒、方程式与计算', lessonIds: [] },
