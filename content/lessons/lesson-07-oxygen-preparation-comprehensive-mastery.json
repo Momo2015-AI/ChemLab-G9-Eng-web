@@ -1,0 +1,440 @@
+{
+  "lessonId": "lesson-07-oxygen-preparation-comprehensive",
+  "version": "1.0",
+  "mastery": {
+    "threshold": 0.95,
+    "questionCount": 21,
+    "minCorrect": 20,
+    "mode": "unseen-transfer",
+    "resourceRef": "content/lessons/lesson-07-oxygen-preparation-comprehensive-mastery.json",
+    "description": "使用陌生情境题验证是否掌握两种制氧方法对比和分解反应。",
+    "fallback": "diagnosis",
+    "questions": [
+      {
+        "id": "L07-M01",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "oxygen-preparation",
+        "question": "用高锰酸钾制取氧气时，不需要用到的仪器是？",
+        "options": [
+          "酒精灯",
+          "试管",
+          "集气瓶",
+          "漏斗"
+        ],
+        "answer": 3,
+        "explanation": "固固加热型制气装置不需要漏斗，漏斗用于添加液体或过滤。",
+        "knowledgeIds": [
+          "oxygen-preparation",
+          "lab-operations"
+        ]
+      },
+      {
+        "id": "L07-M02",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "decomposition-reaction",
+        "question": "下列反应中，属于分解反应的是？",
+        "options": [
+          "S + O₂ → SO₂",
+          "2KMnO₄ → K₂MnO₄ + MnO₂ + O₂↑",
+          "2H₂ + O₂ → 2H₂O",
+          "C + 2CuO → 2Cu + CO₂↑"
+        ],
+        "answer": 1,
+        "explanation": "高锰酸钾分解生成三种物质，是一变多的分解反应。",
+        "knowledgeIds": [
+          "decomposition-reaction"
+        ]
+      },
+      {
+        "id": "L07-M03",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-preparation-h2o2",
+        "question": "用过氧化氢制取氧气时，关于MnO₂的说法正确的是？",
+        "options": [
+          "MnO₂是反应物",
+          "MnO₂是生成物",
+          "MnO₂是催化剂，反应前后质量不变",
+          "MnO₂增加了氧气产量"
+        ],
+        "answer": 2,
+        "explanation": "MnO₂是催化剂，反应前后质量和化学性质不变，不增加产物产量。",
+        "knowledgeIds": [
+          "oxygen-catalyst",
+          "oxygen-preparation-h2o2"
+        ]
+      },
+      {
+        "id": "L07-M04",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-preparation",
+        "question": "用高锰酸钾制取氧气时，试管口放棉花的作用是？",
+        "options": [
+          "防止试管炸裂",
+          "防止高锰酸钾粉末进入导管",
+          "增加反应速率",
+          "吸收水分"
+        ],
+        "answer": 1,
+        "explanation": "棉花阻挡高锰酸钾粉末随气流进入导管，避免堵塞。",
+        "knowledgeIds": [
+          "oxygen-preparation",
+          "lab-operations"
+        ],
+        "misconceptionIds": [
+          "mc-o2-preparation"
+        ]
+      },
+      {
+        "id": "L07-M05",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "oxygen-preparation",
+        "question": "高锰酸钾制取氧气的文字表达式是？",
+        "options": [
+          "高锰酸钾 → 锰酸钾 + 二氧化锰 + 氧气",
+          "高锰酸钾 → 锰酸钾 + 氧气",
+          "高锰酸钾 → 二氧化锰 + 氧气",
+          "高锰酸钾 → 钾 + 锰 + 氧气"
+        ],
+        "answer": 0,
+        "explanation": "高锰酸钾加热分解生成锰酸钾、二氧化锰和氧气。",
+        "knowledgeIds": [
+          "oxygen-preparation"
+        ]
+      },
+      {
+        "id": "L07-M06",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-catalyst",
+        "question": "下列关于催化剂的说法正确的是？",
+        "options": [
+          "催化剂在反应前后质量增加",
+          "催化剂只能加快反应速率",
+          "催化剂在反应前后化学性质不变",
+          "不使用催化剂反应不能发生"
+        ],
+        "answer": 2,
+        "explanation": "催化剂在反应前后质量和化学性质都不变；可以加快或减慢速率。",
+        "knowledgeIds": [
+          "oxygen-catalyst"
+        ]
+      },
+      {
+        "id": "L07-M07",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "oxygen-preparation-h2o2",
+        "question": "用过氧化氢制取氧气时，若要获得平稳气流，最佳方案是？",
+        "options": [
+          "用长颈漏斗快速加入双氧水",
+          "用分液漏斗控制双氧水滴加速率",
+          "增加MnO₂用量",
+          "加热双氧水"
+        ],
+        "answer": 1,
+        "explanation": "分液漏斗可逐滴加入双氧水，控制反应速率，获得平稳气流。",
+        "knowledgeIds": [
+          "oxygen-preparation-h2o2",
+          "lab-operations"
+        ]
+      },
+      {
+        "id": "L07-M08",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "decomposition-reaction",
+        "question": "下列反应中，不属于分解反应的是？",
+        "options": [
+          "2H₂O₂ → 2H₂O + O₂↑",
+          "2KMnO₄ → K₂MnO₄ + MnO₂ + O₂↑",
+          "CaCO₃ → CaO + CO₂↑",
+          "2H₂ + O₂ → 2H₂O"
+        ],
+        "answer": 3,
+        "explanation": "氢气和氧气生成水是化合反应（多变一），不是分解反应。",
+        "knowledgeIds": [
+          "decomposition-reaction"
+        ]
+      },
+      {
+        "id": "L07-M09",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-preparation",
+        "question": "用高锰酸钾制取氧气时，实验结束时应先？",
+        "options": [
+          "熄灭酒精灯",
+          "将导管移出水面",
+          "移除试管",
+          "停止加热"
+        ],
+        "answer": 1,
+        "explanation": "先移导管后熄灯，防止水倒吸炸裂试管。",
+        "knowledgeIds": [
+          "oxygen-preparation",
+          "lab-operations"
+        ],
+        "misconceptionIds": [
+          "mc-o2-preparation"
+        ]
+      },
+      {
+        "id": "L07-M10",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "oxygen-preparation",
+        "question": "某同学用高锰酸钾制氧，发现收集的氧气量偏少，可能的原因不包括？",
+        "options": [
+          "药品量不足",
+          "装置漏气",
+          "导管口一有气泡就收集",
+          "用排水法收集"
+        ],
+        "answer": 3,
+        "explanation": "用排水法收集不影响氧气产量；药品不足、装置漏气、过早收集都会导致产量偏少。",
+        "knowledgeIds": [
+          "oxygen-preparation",
+          "lab-operations"
+        ],
+        "misconceptionIds": [
+          "mc-o2-preparation"
+        ]
+      },
+      {
+        "id": "L07-M11",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-preparation-h2o2",
+        "question": "对比过氧化氢法和高锰酸钾法，下列哪项是两者的共同点？",
+        "options": [
+          "都需要加热",
+          "都使用MnO₂作催化剂",
+          "都能用排水法收集氧气",
+          "都是分解反应"
+        ],
+        "answer": 2,
+        "explanation": "两种方法产生的氧气都可以用排水法收集（氧气不易溶于水）。",
+        "knowledgeIds": [
+          "oxygen-preparation",
+          "oxygen-preparation-h2o2",
+          "oxygen-physical"
+        ]
+      },
+      {
+        "id": "L07-M12",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-preparation",
+        "question": "用高锰酸钾制取氧气时，试管口略向下倾斜的原因是？",
+        "options": [
+          "便于药品平铺",
+          "防止冷凝水回流炸裂试管",
+          "增加受热面积",
+          "便于观察反应"
+        ],
+        "answer": 1,
+        "explanation": "试管口略向下倾斜防止加热时产生的冷凝水回流到热的试管底部导致炸裂。",
+        "knowledgeIds": [
+          "oxygen-preparation",
+          "lab-operations"
+        ]
+      },
+      {
+        "id": "L07-M13",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "decomposition-reaction",
+        "question": "下列关于分解反应和化合反应的说法正确的是？",
+        "options": [
+          "分解反应和化合反应一定互为逆反应",
+          "分解反应的反应物一定是化合物",
+          "化合反应一定有氧气参加",
+          "分解反应一定需要加热"
+        ],
+        "answer": 1,
+        "explanation": "分解反应的反应物一定是化合物（一种物质生成多种）；不一定是逆反应；化合反应不一定有氧气；不一定需要加热。",
+        "knowledgeIds": [
+          "decomposition-reaction"
+        ]
+      },
+      {
+        "id": "L07-M14",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-catalyst",
+        "question": "MnO₂可以作为下列哪些反应的催化剂？①过氧化氢分解 ②高锰酸钾分解 ③氯酸钾分解",
+        "options": [
+          "只有①",
+          "①和③",
+          "①和②",
+          "①②③"
+        ],
+        "answer": 1,
+        "explanation": "MnO₂可催化H₂O₂分解和KClO₃分解；高锰酸钾分解自身产生MnO₂，不需要额外催化。",
+        "knowledgeIds": [
+          "oxygen-catalyst",
+          "oxygen-preparation"
+        ]
+      },
+      {
+        "id": "L07-M15",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-preparation",
+        "question": "实验室用高锰酸钾制取氧气，下列操作正确的是？",
+        "options": [
+          "试管口向上倾斜",
+          "先加热再检查气密性",
+          "用向上排空气法收集",
+          "收集满后立即盖上玻璃片正放"
+        ],
+        "answer": 2,
+        "explanation": "氧气密度比空气大，用向上排空气法收集；试管口应略向下倾斜；应先检查气密性再加热。",
+        "knowledgeIds": [
+          "oxygen-preparation",
+          "oxygen-physical"
+        ]
+      },
+      {
+        "id": "L07-M16",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "oxygen-preparation-h2o2",
+        "question": "某同学用过氧化氢制氧，发现反应一段时间后速率明显减慢，最可能的原因是？",
+        "options": [
+          "MnO₂被消耗了",
+          "H₂O₂浓度降低",
+          "温度升高了",
+          "产生了 inhibitor"
+        ],
+        "answer": 1,
+        "explanation": "随着反应进行，H₂O₂浓度降低，反应速率减慢；MnO₂作为催化剂不被消耗。",
+        "knowledgeIds": [
+          "oxygen-preparation-h2o2",
+          "oxygen-catalyst"
+        ]
+      },
+      {
+        "id": "L07-M17",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "oxygen-physical",
+        "question": "下列收集氧气的方法中，收集到的氧气最纯净的是？",
+        "options": [
+          "向上排空气法",
+          "向下排空气法",
+          "排水法",
+          "任意方法纯度相同"
+        ],
+        "answer": 2,
+        "explanation": "排水法收集的氧气纯度高于排空气法，因为排空气法会混入少量空气。",
+        "knowledgeIds": [
+          "oxygen-physical"
+        ]
+      },
+      {
+        "id": "L07-M18",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "oxygen-preparation",
+        "question": "用高锰酸钾制取氧气时，发现试管炸裂了。下列哪项不可能是原因？",
+        "options": [
+          "试管口未向下倾斜",
+          "实验结束先熄灯后移导管",
+          "试管外壁有水",
+          "使用了MnO₂作催化剂"
+        ],
+        "answer": 3,
+        "explanation": "高锰酸钾法制氧不需要MnO₂作催化剂；试管炸裂与催化剂无关。",
+        "knowledgeIds": [
+          "oxygen-preparation",
+          "lab-operations"
+        ]
+      },
+      {
+        "id": "L07-M19",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "decomposition-reaction",
+        "question": "下列反应中，属于分解反应但不是氧化还原反应的是？",
+        "options": [
+          "2H₂O → 2H₂ + O₂",
+          "CaCO₃ → CaO + CO₂↑",
+          "2KMnO₄ → K₂MnO₄ + MnO₂ + O₂↑",
+          "2H₂O₂ → 2H₂O + O₂↑"
+        ],
+        "answer": 1,
+        "explanation": "碳酸钙分解生成氧化钙和二氧化碳，各元素化合价不变，不是氧化还原反应。",
+        "knowledgeIds": [
+          "decomposition-reaction"
+        ]
+      },
+      {
+        "id": "L07-M20",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "oxygen-preparation-h2o2",
+        "question": "下列哪种方案可以用来区分氧气和二氧化碳？",
+        "options": [
+          "闻气味",
+          "观察颜色",
+          "用带火星木条检验",
+          "倒入水中看溶解性"
+        ],
+        "answer": 2,
+        "explanation": "氧气使带火星木条复燃，二氧化碳使木条熄灭；两者均为无色无味气体。",
+        "knowledgeIds": [
+          "oxygen-physical",
+          "oxygen-chemical"
+        ]
+      },
+      {
+        "id": "L07-M21",
+        "type": "constructed",
+        "difficulty": "hard",
+        "knowledgePoint": "oxygen-preparation",
+        "question": "某实验小组用高锰酸钾制取氧气，实验过程中发现：①收集到的氧气量偏少；②实验结束后试管炸裂。请从实验操作角度分析可能的原因（至少各写两点），并说明改进措施。",
+        "rubric": {
+          "modelAnswer": "氧气量偏少：药品不足/装置漏气/未等气泡均匀就停止收集。试管炸裂：试管口未向下倾斜/实验结束先熄灯后移导管/试管外壁有水/未预热直接集中加热。改进：检查气密性/药品足量/试管口略向下倾斜/先移导管后熄灯/预热。",
+          "keywords": [
+            [
+              "药品不足",
+              "量不够",
+              "漏气"
+            ],
+            [
+              "先熄灯",
+              "后移导管",
+              "倒吸"
+            ],
+            [
+              "试管口",
+              "向下倾斜",
+              "冷凝水"
+            ],
+            [
+              "未预热",
+              "外壁有水"
+            ]
+          ],
+          "mustMatch": [],
+          "explanation": "实验结果异常多源于操作不当，需逐项排查装置、药品、操作顺序三环节。"
+        },
+        "explanation": "氧气量少可能因药品不足或装置漏气；试管炸裂多因先熄灯后移导管导致水倒吸或试管受热不均。",
+        "knowledgeIds": [
+          "oxygen-preparation",
+          "lab-operations"
+        ],
+        "misconceptionIds": [
+          "mc-o2-preparation",
+          "mc-o2-chemical"
+        ]
+      }
+    ]
+  }
+}
