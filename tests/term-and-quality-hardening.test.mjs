@@ -30,6 +30,13 @@ test('every manifest lesson resolves to a course-map unit with matching semester
   }
 });
 
+test('manifest displayOrder is a continuous global sequence (authoritative ordering)', () => {
+  const orders = lessonManifest.lessons.map(lesson => lesson.displayOrder);
+  assert.ok(orders.every(Number.isInteger), 'every lesson must declare an integer displayOrder');
+  assert.deepEqual([...orders].sort((a, b) => a - b), orders, 'displayOrder must be unique and already ascending');
+  assert.deepEqual(orders, [...Array(orders.length).keys()].map(i => i + 1), 'displayOrder must be a continuous 1..N sequence');
+});
+
 test('lesson-03 (acid intro) is catalogued as lower-semester unit 10 content', () => {
   const entry = lessonManifest.lessons.find(lesson => lesson.canonicalId === 'lesson-03-acid-intro');
   assert.equal(entry.semester, 'lower');

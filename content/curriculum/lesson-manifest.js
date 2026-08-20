@@ -1,12 +1,21 @@
-/** Canonical student-facing lesson registry. Numeric sequence is display/order only. */
+/**
+ * Canonical student-facing lesson registry.
+ *
+ * - canonicalId: stable, history-safe identifier (never rename; it anchors URLs,
+ *   localStorage progress keys, knowledge-graph relations and test assertions).
+ * - displayOrder: authoritative display sequence across the whole G9 course
+ *   (1..N, continuous). It is the ONLY ordering field the UI should rely on;
+ *   the numeric suffix in canonicalId is a legacy artifact and must NOT be used
+ *   for ordering or numbering.
+ */
 export const lessonManifest = {
-  version: '1.0.0',
+  version: '1.1.0',
   lessons: [
-    { day: '01', sequenceNumber: 1, canonicalId: 'lesson-01-material-changes-properties', title: '物质的变化和性质', semester: 'upper', unitId: 'u01', status: 'ready', releaseStatus: 'ready' },
-    { day: '02', sequenceNumber: 2, canonicalId: 'lesson-02-chemistry-as-experimental-science', title: '化学是一门以实验为基础的科学', semester: 'upper', unitId: 'u01', status: 'ready', releaseStatus: 'ready' },
-    { day: '03', sequenceNumber: 3, canonicalId: 'lesson-04-lab-safety-operations', title: '实验安全与基本操作', semester: 'upper', unitId: 'u01', status: 'ready', releaseStatus: 'ready' },
-    { day: '04', sequenceNumber: 4, canonicalId: 'lesson-05-oxygen', title: '空气与氧气', semester: 'upper', unitId: 'u02', status: 'ready', releaseStatus: 'ready' },
-    { day: '05', sequenceNumber: 5, canonicalId: 'lesson-03-acid-intro', title: '酸入门：初识身边的酸', semester: 'lower', unitId: 'u10', status: 'ready', releaseStatus: 'ready' }
+    { day: '01', sequenceNumber: 1, displayOrder: 1, canonicalId: 'lesson-01-material-changes-properties', title: '物质的变化和性质', semester: 'upper', unitId: 'u01', status: 'ready', releaseStatus: 'ready' },
+    { day: '02', sequenceNumber: 2, displayOrder: 2, canonicalId: 'lesson-02-chemistry-as-experimental-science', title: '化学是一门以实验为基础的科学', semester: 'upper', unitId: 'u01', status: 'ready', releaseStatus: 'ready' },
+    { day: '03', sequenceNumber: 3, displayOrder: 3, canonicalId: 'lesson-04-lab-safety-operations', title: '实验安全与基本操作', semester: 'upper', unitId: 'u01', status: 'ready', releaseStatus: 'ready' },
+    { day: '04', sequenceNumber: 4, displayOrder: 4, canonicalId: 'lesson-05-oxygen', title: '空气与氧气', semester: 'upper', unitId: 'u02', status: 'ready', releaseStatus: 'ready' },
+    { day: '05', sequenceNumber: 5, displayOrder: 5, canonicalId: 'lesson-03-acid-intro', title: '酸入门：初识身边的酸', semester: 'lower', unitId: 'u10', status: 'ready', releaseStatus: 'ready' }
   ]
 };
 export default lessonManifest;
