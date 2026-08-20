@@ -1,0 +1,104 @@
+{
+  "lessonId": "lesson-06-water-composition",
+  "version": "1.0",
+  "transfer": {
+    "scenarios": [
+      {
+        "id": "L06-T01",
+        "title": "家用电解水器的选择",
+        "context": "小明家买了一台电解水饮水机，说明书上说可以电解普通自来水，产生富氢水和碱性水。小明对这个过程产生了疑问。",
+        "question": "关于电解水饮水机的原理，以下说法正确的是？",
+        "options": [
+          "电解水时，与电源正极相连的电极产生氢气",
+          "电解水时，正负极产生的气体质量比约为1:2",
+          "电解水实验说明水是由氢气和氧气组成的",
+          "电解水时，正极产生的气体能使带火星的木条复燃"
+        ],
+        "answer": 3,
+        "explanation": "A错误，正极产生的是氧气；B错误，正负极气体体积比为1:2，质量比为8:1；C错误，水是由氢元素和氧元素组成的，不是由氢气和氧气组成的；D正确，正极产生氧气，能使带火星的木条复燃。",
+        "knowledgeIds": ["electrolysis-experiment", "water-composition"],
+        "misconceptionIds": ["mc-water-electrolysis-polarity", "mc-water-composition"],
+        "difficulty": "medium",
+        "source": "家庭应用场景",
+        "tags": ["生活应用", "实验结论迁移"]
+      },
+      {
+        "id": "L06-T02",
+        "title": "古代对水的认识",
+        "context": "古希腊哲学家亚里士多德认为水是一种基本元素，这种观点统治了西方思想界近2000年。直到1781年，卡文迪许通过实验发现氢气燃烧生成水，才揭开了水的组成之谜。",
+        "question": "卡文迪许实验说明水是由什么组成的？他得出这一结论的依据是什么科学定律？",
+        "rubric": {
+          "modelAnswer": "水是由氢元素和氧元素组成的。依据是质量守恒定律：化学反应前后元素种类不变，氢气由氢元素组成，氧气由氧元素组成，它们化合生成水，所以水一定含有氢元素和氧元素。",
+          "keywords": [["氢元素", "氧元素"], ["质量守恒", "元素种类不变"]],
+          "explanation": "卡文迪许实验证明了水的组成，其理论依据是质量守恒定律——反应前后元素种类不变。"
+        },
+        "explanation": "卡文迪许通过氢气燃烧生成水的实验，证明水是由氢元素和氧元素组成的。依据是质量守恒定律：反应前后元素种类不变。",
+        "knowledgeIds": ["water-composition", "element-concept", "evidence-reasoning"],
+        "misconceptionIds": ["mc-water-composition"],
+        "difficulty": "hard",
+        "source": "科学史情境",
+        "tags": ["科学史", "证据推理"]
+      },
+      {
+        "id": "L06-T03",
+        "title": "判断物质的分类",
+        "context": "某化学实验室中有以下物质：①空气 ②氧气 ③水 ④铁 ⑤二氧化碳 ⑥氯化钠 ⑦臭氧(O₃) ⑧液态氧",
+        "question": "请将上述物质按单质、化合物、混合物分类（填写序号）。",
+        "rubric": {
+          "modelAnswer": "单质：②④⑦⑧（只由一种元素组成的纯净物）；化合物：③⑤⑥（由不同种元素组成的纯净物）；混合物：①（由多种物质组成）。注意⑦臭氧和⑧液态氧都是氧元素组成的单质，②氧气和⑧液态氧是同种物质的不同状态。",
+          "keywords": [["单质", "一种元素"], ["化合物", "多种元素"], ["混合物", "多种物质"]],
+          "explanation": "单质和化合物的区别是组成元素的种类数；混合物和化合物的区别是是否由同种物质组成。"
+        },
+        "explanation": "单质：②④⑦⑧；化合物：③⑤⑥；混合物：①。注意臭氧和氧气是同种元素的不同单质（同素异形体），液态氧是氧气的液态形式。",
+        "knowledgeIds": ["single-substance-compound", "element-concept"],
+        "misconceptionIds": ["mc-single-compound-distinguish", "mc-pure-mixture"],
+        "difficulty": "hard",
+        "source": "实验室分类情境",
+        "tags": ["概念应用", "分类辨析"]
+      },
+      {
+        "id": "L06-T04",
+        "title": "氢能的实际应用",
+        "context": "氢能被誉为21世纪最有前景的清洁能源之一。我国在氢能源汽车领域取得了重要进展，氢燃料电池汽车已经实现商业化运营。",
+        "question": "下列关于氢能源的说法正确的是？",
+        "options": [
+          "氢气燃烧产生大量有害气体",
+          "氢能源储存和运输非常方便",
+          "氢气作为燃料热值高且产物无污染",
+          "目前氢能源已完全替代化石燃料"
+        ],
+        "answer": 2,
+        "explanation": "A错误，氢气燃烧产物是水，无污染；B错误，氢气密度小、易泄漏，储存和运输困难；C正确，氢气热值高（约142kJ/g），燃烧产物是水，是最清洁的能源；D错误，氢能源尚未完全替代化石燃料。",
+        "knowledgeIds": ["hydrogen-property", "energy-sources"],
+        "misconceptionIds": ["mc-hydrogen-burn"],
+        "difficulty": "basic",
+        "source": "新能源应用情境",
+        "tags": ["能源应用", "性质决定用途"]
+      },
+      {
+        "id": "L06-T05",
+        "title": "微观示意图分析",
+        "context": "电解水的微观过程可以用示意图表示：水分子分裂成氢原子和氧原子，每两个氢原子结合成一个氢分子，每两个氧原子结合成一个氧分子。",
+        "question": "根据电解水的微观示意图，回答下列问题：(1) 该变化的实质是什么？(2) 在此变化中，不变的微粒是什么？",
+        "rubric": {
+          "modelAnswer": "(1) 该变化的实质是水分子分裂成氢原子和氧原子，氢原子重新组合成氢分子，氧原子重新组合成氧分子（或：分子分裂成原子，原子重新组合成新分子）。(2) 在此变化中，不变的微粒是氢原子和氧原子（或：原子是化学变化中的最小粒子）。",
+          "keywords": [["分子分裂", "原子重组"], ["氢原子", "氧原子"], ["原子是最小粒子"]],
+          "explanation": "化学变化的微观实质是分子分裂成原子，原子重新组合成新分子。在化学变化中，分子可分，原子不可分，原子是化学变化中的最小粒子。"
+        },
+        "explanation": "(1) 化学变化的实质：水分子分裂成氢原子和氧原子，原子重新组合成氢分子和氧分子。(2) 不变的微粒是氢原子和氧原子，原子是化学变化中的最小粒子。",
+        "knowledgeIds": ["water-composition", "particle-model"],
+        "misconceptionIds": ["mc-particle-molecular"],
+        "difficulty": "hard",
+        "source": "微观模型情境",
+        "tags": ["微观本质", "模型建构"]
+      }
+    ],
+    "requiredScenarioCount": 3,
+    "mustIncludeConstructed": true,
+    "scoringCriteria": {
+      "conceptApplication": "能将电解水结论迁移到新情境",
+      "evidenceReasoning": "能从实验现象得出合理结论",
+      "microMacroConnection": "能建立宏观现象与微观本质的联系"
+    }
+  }
+}

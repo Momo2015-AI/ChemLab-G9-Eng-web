@@ -1,0 +1,153 @@
+{
+  "lessonId": "lesson-06-water-composition",
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "L06-P01",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "electrolysis-experiment",
+      "question": "电解水时，正极产生的气体是？",
+      "options": ["氢气", "氧气", "氮气", "二氧化碳"],
+      "answer": 1,
+      "explanation": "电解水时，正极产生氧气，负极产生氢气，体积比约为1:2。记忆口诀：正氧负氢，氢二氧一。",
+      "knowledgeIds": ["electrolysis-experiment", "oxygen-property"]
+    },
+    {
+      "id": "L06-P02",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "electrolysis-experiment",
+      "question": "电解水时，负极产生的气体体积与正极产生的气体体积之比约为？",
+      "options": ["1:1", "1:2", "2:1", "8:1"],
+      "answer": 2,
+      "explanation": "电解水时，负极产生氢气，正极产生氧气，体积比约为2:1。",
+      "knowledgeIds": ["electrolysis-experiment"]
+    },
+    {
+      "id": "L06-P03",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "water-composition",
+      "question": "电解水实验说明水是由什么组成的？",
+      "options": ["氢气和氧气", "氢元素和氧元素", "氢原子和氧原子", "水分子"],
+      "answer": 1,
+      "explanation": "电解水生成氢气和氧气，根据质量守恒定律，反应前后元素种类不变，说明水是由氢元素和氧元素组成的。",
+      "knowledgeIds": ["water-composition", "element-concept"]
+    },
+    {
+      "id": "L06-P04",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "single-substance-compound",
+      "question": "下列物质中，属于单质的是？",
+      "options": ["水", "二氧化碳", "氧气", "氯化钠"],
+      "answer": 2,
+      "explanation": "氧气只由一种元素组成，属于单质；水、二氧化碳、氯化钠都由多种元素组成，属于化合物。",
+      "knowledgeIds": ["single-substance-compound", "element-concept"]
+    },
+    {
+      "id": "L06-P05",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "single-substance-compound",
+      "question": "下列各组物质中，前者是单质，后者是化合物的是？",
+      "options": ["空气、水", "铁、水", "氧气、空气", "二氧化碳、氧气"],
+      "answer": 1,
+      "explanation": "铁只含铁元素，是单质；水含氢、氧两种元素，是化合物。空气是混合物，不是化合物。",
+      "knowledgeIds": ["single-substance-compound", "element-concept"]
+    },
+    {
+      "id": "L06-P06",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "element-concept",
+      "question": "下列关于元素的说法正确的是？",
+      "options": ["元素是微观概念", "元素可以论个数", "元素是具有相同质子数的一类原子的总称", "同种元素的原子质子数可以不同"],
+      "answer": 2,
+      "explanation": "元素是宏观概念，具有相同核电荷数（质子数）的一类原子的总称。元素只讲种类，不讲个数。",
+      "knowledgeIds": ["element-concept"]
+    },
+    {
+      "id": "L06-P07",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "hydrogen-property",
+      "question": "检验氢气纯度的方法是？",
+      "options": ["用带火星的木条伸入试管", "用燃着的木条靠近试管口，听声音", "通入澄清石灰水", "闻气体气味"],
+      "answer": 1,
+      "explanation": "检验氢气纯度时，用拇指堵住试管口，靠近火焰移开拇指，若听到尖锐爆鸣声，说明氢气不纯；若声音很小，说明氢气较纯。",
+      "knowledgeIds": ["hydrogen-property", "lab-operations"]
+    },
+    {
+      "id": "L06-P08",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "electrolysis-experiment",
+      "question": "电解水实验中，通常加入少量稀硫酸的目的是？",
+      "options": ["增强水的导电性", "催化反应", "增加氧气产量", "调节水的pH值"],
+      "answer": 0,
+      "explanation": "纯水导电性很弱，加入少量电解质（如稀硫酸、氢氧化钠）可以增强水的导电性，使电解反应顺利进行。",
+      "knowledgeIds": ["electrolysis-experiment", "lab-operations"]
+    },
+    {
+      "id": "L06-P09",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "water-composition",
+      "question": "下列关于水的说法错误的是？",
+      "options": ["水是由氢元素和氧元素组成的", "水是由水分子构成的", "水是由氢气和氧气组成的", "一个水分子由两个氢原子和一个氧原子构成"],
+      "answer": 2,
+      "explanation": "水是由氢元素和氧元素组成的纯净物，不是由氢气和氧气混合而成。氢气和氧气是水电解的产物。",
+      "knowledgeIds": ["water-composition", "element-concept"]
+    },
+    {
+      "id": "L06-P10",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "element-concept",
+      "question": "下列说法正确的是？",
+      "options": ["同种元素组成的物质一定是单质", "化合物中一定含有不同种元素", "含有氧元素的物质一定是化合物", "混合物中一定含有多种元素"],
+      "answer": 1,
+      "explanation": "化合物是由不同种元素组成的纯净物，所以化合物中一定含有不同种元素。同种元素组成的物质可能是单质，也可能是混合物（如O₂和O₃混合）。",
+      "knowledgeIds": ["element-concept", "single-substance-compound"]
+    },
+    {
+      "id": "L06-P11",
+      "type": "single",
+      "difficulty": "hard",
+      "knowledgePoint": "electrolysis-experiment",
+      "question": "电解水时，若正极产生10mL气体，则负极产生气体的体积约为？",
+      "options": ["5mL", "10mL", "20mL", "30mL"],
+      "answer": 2,
+      "explanation": "电解水时，正负极气体体积比约为1:2。正极产生10mL氧气，则负极产生约20mL氢气。",
+      "knowledgeIds": ["electrolysis-experiment"]
+    },
+    {
+      "id": "L06-P12",
+      "type": "single",
+      "difficulty": "hard",
+      "knowledgePoint": "single-substance-compound",
+      "question": "下列各组物质按单质、化合物、混合物顺序排列的是？",
+      "options": ["氧气、水、空气", "铁、冰、海水", "氮气、氯化钠、石墨", "金刚石、二氧化碳、冰水混合物"],
+      "answer": 0,
+      "explanation": "氧气是单质，水是化合物，空气是混合物。冰水混合物是同种物质的不同状态，属于纯净物（化合物）。",
+      "knowledgeIds": ["single-substance-compound", "element-concept"]
+    },
+    {
+      "id": "L06-P13",
+      "type": "constructed",
+      "difficulty": "hard",
+      "knowledgePoint": "water-composition",
+      "question": "某同学做电解水实验时，发现正负极产生的气体体积比大于1:2，请分析可能的原因。",
+      "rubric": {
+        "modelAnswer": "可能原因有：1. 氧气在水中的溶解度比氢气大，部分氧气溶于水；2. 氧气具有氧化性，可能与电极发生反应被消耗；3. 装置漏气，导致气体体积测量不准确；4. 读数时未等装置冷却至室温。",
+        "keywords": [["氧气溶解", "溶解度差异"], ["电极反应", "氧气消耗"], ["装置漏气", "测量误差"]],
+        "explanation": "理论上氢氧体积比为2:1，实际测量偏大的原因主要是氧气溶解度大于氢气或与电极反应消耗。"
+      },
+      "explanation": "正极气体体积偏小的原因：氧气在水中溶解度比氢气大；氧气可能与电极发生氧化反应被消耗；装置可能漏气。",
+      "knowledgeIds": ["electrolysis-experiment", "oxygen-property"],
+      "misconceptionIds": ["mc-water-electrolysis-polarity"]
+    }
+  ]
+}

@@ -814,6 +814,120 @@
       ],
       "remediationGoal": "能用元素概念区分纯净物与混合物，理解同种元素可组成不同单质。",
       "questions": []
+    },
+    {
+      "id": "water-composition",
+      "name": "水的组成",
+      "chapter": "第四单元 自然界的水",
+      "domain": "substance",
+      "bloomLevels": ["remember", "understand", "apply"],
+      "semester": "upper",
+      "unitId": "u04",
+      "definition": "水是由氢元素和氧元素组成的化合物，化学式为H₂O。电解水实验证明水由氢、氧两种元素组成。",
+      "prerequisiteIds": ["chemical-change", "evidence-reasoning"],
+      "misconceptionIds": ["mc-water-composition", "mc-water-electrolysis-polarity"],
+      "remediationGoal": "能从电解水实验现象推理出水的组成，区分宏观（元素）与微观（分子原子）描述角度。",
+      "questions": [
+        "L06-Q01",
+        "L06-Q03",
+        "L06-D02",
+        "L06-M02",
+        "L06-M08",
+        "L06-M12"
+      ]
+    },
+    {
+      "id": "electrolysis-experiment",
+      "name": "电解水实验",
+      "chapter": "第四单元 自然界的水",
+      "domain": "method",
+      "bloomLevels": ["understand", "apply", "analyze"],
+      "semester": "upper",
+      "unitId": "u04",
+      "definition": "通电条件下水分解为氢气和氧气：2H₂O → 2H₂↑ + O₂↑。正极产生氧气（体积小），负极产生氢气（体积大），体积比约1:2。",
+      "prerequisiteIds": ["lab-operations", "observation-inference"],
+      "misconceptionIds": ["mc-water-electrolysis-polarity"],
+      "remediationGoal": "准确描述电解水实验现象，正确检验两种气体，从实验现象得出水组成的结论。",
+      "questions": [
+        "L06-Q01",
+        "L06-D01",
+        "L06-M01",
+        "L06-M06",
+        "L06-M11",
+        "L06-M15",
+        "L06-M21"
+      ]
+    },
+    {
+      "id": "hydrogen-property",
+      "name": "氢气的性质",
+      "chapter": "第四单元 自然界的水",
+      "domain": "substance",
+      "bloomLevels": ["remember", "understand"],
+      "semester": "upper",
+      "unitId": "u04",
+      "definition": "氢气是无色无味的气体，密度最小，难溶于水；具有可燃性，燃烧产生淡蓝色火焰，产物是水。点燃前必须验纯。",
+      "prerequisiteIds": ["physical-property", "chemical-property"],
+      "misconceptionIds": ["mc-hydrogen-burn"],
+      "remediationGoal": "掌握氢气物理性质和化学性质，能正确检验氢气纯度。",
+      "questions": [
+        "L06-Q04",
+        "L06-M05",
+        "L06-M13"
+      ]
+    },
+    {
+      "id": "oxygen-property",
+      "name": "氧气的性质",
+      "chapter": "第二单元 我们周围的空气",
+      "domain": "substance",
+      "bloomLevels": ["remember", "understand"],
+      "semester": "upper",
+      "unitId": "u02",
+      "definition": "氧气是无色无味的气体，密度略大于空气，不易溶于水；具有助燃性，能使带火星的木条复燃。",
+      "prerequisiteIds": ["air-composition"],
+      "misconceptionIds": ["mc-o2-physical"],
+      "remediationGoal": "准确记忆氧气的物理性质和助燃性，不混淆助燃性与可燃性。",
+      "questions": [
+        "L06-M06"
+      ]
+    },
+    {
+      "id": "single-substance-compound",
+      "name": "单质与化合物",
+      "chapter": "第四单元 自然界的水",
+      "domain": "substance",
+      "bloomLevels": ["remember", "understand", "apply"],
+      "semester": "upper",
+      "unitId": "u04",
+      "definition": "单质是由同种元素组成的纯净物；化合物是由不同种元素组成的纯净物。根本区别是组成元素的种类数。",
+      "prerequisiteIds": ["element-concept"],
+      "misconceptionIds": ["mc-single-compound-distinguish", "mc-pure-mixture"],
+      "remediationGoal": "能用元素种类数区分单质和化合物，不将混合物与化合物混淆。",
+      "questions": [
+        "L06-Q02",
+        "L06-P05",
+        "L06-D03",
+        "L06-M03",
+        "L06-M07"
+      ]
+    },
+    {
+      "id": "element-concept",
+      "name": "元素概念",
+      "chapter": "第三单元 物质构成的奥秘",
+      "domain": "particle",
+      "bloomLevels": ["remember", "understand"],
+      "semester": "upper",
+      "unitId": "u03",
+      "definition": "元素是具有相同核电荷数（质子数）的一类原子的总称。元素是宏观概念，只讲种类不讲个数。",
+      "prerequisiteIds": ["atomic-structure"],
+      "misconceptionIds": ["mc-element-pure-substance", "mc-element-misunderstanding"],
+      "remediationGoal": "理解元素的定义和宏观属性，能用电素概念分析物质分类。",
+      "questions": [
+        "L06-M04",
+        "L06-M10"
+      ]
     }
   ],
   "relations": [
@@ -2041,6 +2155,166 @@
       "source": "atomic-structure",
       "target": "element-classify",
       "type": "prerequisite"
+    },
+    {
+      "source": "water-composition",
+      "target": "L06-Q01",
+      "type": "question"
+    },
+    {
+      "source": "water-composition",
+      "target": "L06-Q03",
+      "type": "question"
+    },
+    {
+      "source": "water-composition",
+      "target": "L06-D02",
+      "type": "question"
+    },
+    {
+      "source": "water-composition",
+      "target": "L06-M02",
+      "type": "question"
+    },
+    {
+      "source": "water-composition",
+      "target": "L06-M08",
+      "type": "question"
+    },
+    {
+      "source": "electrolysis-experiment",
+      "target": "L06-Q01",
+      "type": "question"
+    },
+    {
+      "source": "electrolysis-experiment",
+      "target": "L06-D01",
+      "type": "question"
+    },
+    {
+      "source": "electrolysis-experiment",
+      "target": "L06-M01",
+      "type": "question"
+    },
+    {
+      "source": "electrolysis-experiment",
+      "target": "L06-M06",
+      "type": "question"
+    },
+    {
+      "source": "electrolysis-experiment",
+      "target": "L06-M11",
+      "type": "question"
+    },
+    {
+      "source": "electrolysis-experiment",
+      "target": "L06-M15",
+      "type": "question"
+    },
+    {
+      "source": "electrolysis-experiment",
+      "target": "L06-M21",
+      "type": "question"
+    },
+    {
+      "source": "hydrogen-property",
+      "target": "L06-Q04",
+      "type": "question"
+    },
+    {
+      "source": "hydrogen-property",
+      "target": "L06-M05",
+      "type": "question"
+    },
+    {
+      "source": "hydrogen-property",
+      "target": "L06-M13",
+      "type": "question"
+    },
+    {
+      "source": "oxygen-property",
+      "target": "L06-M06",
+      "type": "question"
+    },
+    {
+      "source": "single-substance-compound",
+      "target": "L06-Q02",
+      "type": "question"
+    },
+    {
+      "source": "single-substance-compound",
+      "target": "L06-P05",
+      "type": "question"
+    },
+    {
+      "source": "single-substance-compound",
+      "target": "L06-D03",
+      "type": "question"
+    },
+    {
+      "source": "single-substance-compound",
+      "target": "L06-M03",
+      "type": "question"
+    },
+    {
+      "source": "single-substance-compound",
+      "target": "L06-M07",
+      "type": "question"
+    },
+    {
+      "source": "element-concept",
+      "target": "L06-Q02",
+      "type": "question"
+    },
+    {
+      "source": "element-concept",
+      "target": "L06-M04",
+      "type": "question"
+    },
+    {
+      "source": "element-concept",
+      "target": "L06-M10",
+      "type": "question"
+    },
+    {
+      "source": "element-concept",
+      "target": "L06-M14",
+      "type": "question"
+    },
+    {
+      "source": "evidence-reasoning",
+      "target": "L06-Q03",
+      "type": "question"
+    },
+    {
+      "source": "particle-model",
+      "target": "L06-M19",
+      "type": "question"
+    },
+    {
+      "source": "water-composition",
+      "target": "electrolysis-experiment",
+      "type": "prerequisite"
+    },
+    {
+      "source": "electrolysis-experiment",
+      "target": "single-substance-compound",
+      "type": "related"
+    },
+    {
+      "source": "single-substance-compound",
+      "target": "element-concept",
+      "type": "prerequisite"
+    },
+    {
+      "source": "element-concept",
+      "target": "particle-model",
+      "type": "related"
+    },
+    {
+      "source": "observation-inference",
+      "target": "electrolysis-experiment",
+      "type": "related"
     }
   ]
 }

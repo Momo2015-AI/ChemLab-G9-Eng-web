@@ -1,0 +1,20 @@
+{
+  "id": "u04",
+  "title": "自然界的水",
+  "module": "unit-04-natural-water",
+  "lessons": [
+    {
+      "id": "lesson-06-water-composition",
+      "sequenceNumber": 6,
+      "displayOrder": 6,
+      "title": "水的组成"
+    }
+  ],
+  "overview": "本单元研究水的组成、净化方法和水资源保护，涉及电解水实验、单质化合物概念、元素概念、化学式与化合价等核心内容。",
+  "bigIdeas": [
+    "水是由氢元素和氧元素组成的化合物",
+    "单质和化合物的根本区别是组成元素的种类数",
+    "元素是具有相同质子数的一类原子的总称",
+    "化学变化中分子可分，原子不可分"
+  ]
+}
