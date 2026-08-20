@@ -68,10 +68,13 @@ test('ContentService filters canonical lessons by textbook semester', async () =
 test('lesson manifest exposes every released canonical lesson with textbook metadata', () => {
   const released = lessonManifest.lessons.filter(lesson => lesson.releaseStatus === 'ready');
   assert.deepEqual(released.map(lesson => lesson.canonicalId), [
-    'lesson-01-material-changes-properties',
+        'lesson-01-material-changes-properties',
     'lesson-02-chemistry-as-experimental-science',
     'lesson-04-lab-safety-operations',
     'lesson-05-oxygen',
+    'lesson-06-water-composition',
+    'lesson-07-oxygen-preparation-comprehensive',
+    'lesson-08-h2o2-oxygen-preparation',
     'lesson-03-acid-intro',
   ]);
   for (const lesson of released) {

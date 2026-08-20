@@ -1,0 +1,64 @@
+{
+  "lessonId": "lesson-08-h2o2-oxygen-preparation",
+  "version": "1.0",
+  "diagnostics": [
+    {
+      "id": "L08-D01",
+      "knowledgePoint": "oxygen-catalyst",
+      "question": "下列关于催化剂的说法中，错误的是？",
+      "options": [
+        "催化剂在反应前后质量不变",
+        "催化剂在反应前后化学性质不变",
+        "催化剂能提高生成物的产量",
+        "催化剂能改变反应速率"
+      ],
+      "answer": 2,
+      "errorType": "mc-o2-preparation",
+      "remediationStep": "L08-S03",
+      "knowledgeIds": [
+        "oxygen-catalyst"
+      ]
+    },
+    {
+      "id": "L08-D02",
+      "knowledgePoint": "oxygen-preparation-h2o2",
+      "question": "用过氧化氢制取氧气时，下列操作顺序正确的是？",
+      "options": [
+        "先加H₂O₂溶液，再加MnO₂固体",
+        "先检查气密性，再加药品",
+        "先点燃酒精灯，再检查气密性",
+        "实验结束时先熄灭酒精灯，再移导管"
+      ],
+      "answer": 1,
+      "errorType": "mc-o2-preparation",
+      "remediationStep": "L08-S05",
+      "knowledgeIds": [
+        "oxygen-preparation-h2o2",
+        "lab-operations"
+      ]
+    },
+    {
+      "id": "L08-D03",
+      "knowledgePoint": "oxygen-physical",
+      "question": "下列关于氧气的说法正确的是？",
+      "options": [
+        "氧气易溶于水",
+        "氧气具有可燃性",
+        "氧气密度比空气小",
+        "氧气能使带火星木条复燃"
+      ],
+      "answer": 3,
+      "errorType": "mc-o2-physical",
+      "remediationStep": "L08-S05",
+      "knowledgeIds": [
+        "oxygen-physical",
+        "oxygen-chemical"
+      ]
+    }
+  ],
+  "remediation": {
+    "L08-D01": "复习催化剂概念：一变两不变，不改变生成物质量。",
+    "L08-D02": "复习实验操作顺序：先检查气密性，再加药品。",
+    "L08-D03": "复习氧气物理性质：无色无味、不易溶于水、密度略大于空气。"
+  }
+}
