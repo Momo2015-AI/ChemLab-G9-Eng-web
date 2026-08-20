@@ -21,8 +21,9 @@ const LOWER_UNITS = [
   { id: 'unit-12-life', number: '12', title: '化学与生活', description: '营养物质、材料与健康生活' },
 ];
 
-// Map course-map unit ids (u01..u12) to portal unit ids (unit-01..unit-12).
-const PORTAL_UNIT_ID_BY_MANIFEST = unitId => `unit-${String(unitId).replace(/^u/, '').padStart(2, '0')}`;
+// Extract numeric part from manifest unitId (e.g. 'u01' -> '01') for matching
+// with portal unit 'number' field (e.g. '01' matches 'unit-01-intro-chemistry').
+const MANIFEST_UNIT_NUMBER = unitId => String(unitId).replace(/^u/, '');
 
 export function renderCoursePortal({ root, lessons = [], term = 'upper', onLesson = id => { window.location.hash = `course/${id}` }, onHome = () => { window.location.hash = 'home'; } } = {}) {
   if (!root) return;
@@ -39,7 +40,7 @@ export function renderCoursePortal({ root, lessons = [], term = 'upper', onLesso
       <article class="portal-card full"><h2>学习流程</h2><div class="portal-list flow-list"><div><strong>01 学习理解</strong><span>概念、现象、模型</span></div><div><strong>02 实验探究</strong><span>观察与证据</span></div><div><strong>03 基础练习</strong><span>理解 → 应用</span></div><div><strong>04 诊断与补救</strong><span>错误原因 → 再学习</span></div><div><strong>05 陌生题掌握</strong><span>95% 掌握门槛</span></div><div><strong>06 迁移</strong><span>陌生情境迁移</span></div></div></article>
       <article class="portal-card full"><h2>学习单元 · ${term === 'lower' ? '下册' : '上册'}</h2><div class="unit-grid">${units.map(unit => {
         const unitLessons = canonicalLessons
-          .filter(lesson => PORTAL_UNIT_ID_BY_MANIFEST(lesson.unitId) === unit.id)
+          .filter(lesson => MANIFEST_UNIT_NUMBER(lesson.unitId) === unit.number)
           .sort((a, b) => (a.displayOrder ?? a.sequenceNumber ?? Infinity) - (b.displayOrder ?? b.sequenceNumber ?? Infinity));
         const ready = unitLessons.length > 0;
         return `<article class="unit-card ${ready ? 'ready' : 'planned'}"><div class="unit-number">${unit.number}</div><div class="unit-body"><h3>${escapeHtml(unit.title)}</h3><p>${escapeHtml(unit.description)}</p>${ready ? `<div class="unit-lessons">${unitLessons.map((lesson, index) => `<button class="unit-lesson" data-lesson="${escapeHtml(lesson.id)}" ${lesson.available===false?'disabled':''}><span>${String((lesson.displayOrder ?? index + 1)).padStart(2,'0')}</span><strong>${escapeHtml(lesson.title)}</strong><small>${escapeHtml(lesson.cardLabel || (lesson.completed ? '已完成' : '开始学习'))}</small></button>`).join('')}</div>` : '<span class="portal-chip">内容建设中</span>'}</div></article>`;
