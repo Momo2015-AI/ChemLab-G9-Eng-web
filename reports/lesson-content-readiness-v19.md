@@ -1,12 +1,12 @@
 # V1.9 Lesson Content Readiness Audit
 
-Generated: 2026-08-20T01:01:30.712Z
+Generated: 2026-08-20T09:12:48.538Z
 
 ## Baseline
-- Lessons scanned: 5
+- Lessons scanned: 6
 - Template lessons: 0
-- Real-content candidates: 5
-- Ready by automated scan: 5
+- Real-content candidates: 6
+- Ready by automated scan: 6
 - Lessons requiring rewrite/incompletion work: 0
 - Question bank state: CANONICAL_RUNTIME_SOURCE
 - Legacy duplicate day01.json present: NO
@@ -20,6 +20,7 @@ Generated: 2026-08-20T01:01:30.712Z
 | lesson-03-acid-intro.json | 05 | 酸入门：初识身边的酸 | released | ready | 0 | - | 6+13+3+21+4 | - |
 | lesson-04-lab-safety-operations.json | 03 | 实验安全与基本操作 | released | ready | 0 | - | 6+16+3+21+4 | - |
 | lesson-05-oxygen.json | 04 | 空气与氧气 | released | ready | 0 | - | 6+16+3+21+4 | - |
+| lesson-06-molecules-and-atoms.json | 06 | 分子和原子 | released | ready | 0 | - | 6+10+3+21+4 | - |
 
 ## Issues
 - None

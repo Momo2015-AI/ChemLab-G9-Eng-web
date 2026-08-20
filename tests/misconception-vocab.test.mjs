@@ -9,8 +9,8 @@ import {
 } from '../content/misconceptions/canonical-misconceptions.js';
 import { evaluateMastery } from '../core/assessment/mastery-policy.js';
 
-test('canonical vocabulary has 30 entries with required fields', () => {
-  assert.equal(canonicalMisconceptions.length, 30);
+test('canonical vocabulary has 31 entries with required fields', () => {
+  assert.equal(canonicalMisconceptions.length, 31);
   for (const mc of canonicalMisconceptions) {
     assert.ok(mc.id, 'each entry has id');
     assert.ok(mc.title, 'each entry has title');
@@ -26,8 +26,8 @@ test('canonical vocabulary has 30 entries with required fields', () => {
   }
 });
 
-test('ALIAS_MAP has 35 entries covering all legacy ID variants', () => {
-  assert.equal(Object.keys(ALIAS_MAP).length, 35);
+test('ALIAS_MAP has 36 entries covering all legacy ID variants', () => {
+  assert.equal(Object.keys(ALIAS_MAP).length, 36);
 });
 
 test('resolveMisconceptionId resolves all known aliases to canonical form', () => {

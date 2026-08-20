@@ -1,8 +1,8 @@
 {
-  "scanned": 5,
+  "scanned": 6,
   "template": 0,
-  "realContent": 5,
-  "ready": 5,
+  "realContent": 6,
+  "ready": 6,
   "needsRewrite": 0,
   "duplicateLegacy": false,
   "questionBankState": "CANONICAL_RUNTIME_SOURCE",
@@ -87,6 +87,23 @@
       "runtimeQuestions": {
         "lesson": 6,
         "practice": 16,
+        "diagnostic": 3,
+        "mastery": 21,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-06-molecules-and-atoms.json",
+      "day": "06",
+      "title": "分子和原子",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 10,
         "diagnostic": 3,
         "mastery": 21,
         "transfer": 4

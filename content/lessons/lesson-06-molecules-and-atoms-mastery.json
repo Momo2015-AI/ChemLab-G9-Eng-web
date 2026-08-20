@@ -1,0 +1,248 @@
+{
+  "lessonId": "lesson-06-molecules-and-atoms",
+  "version": "1.0",
+  "mastery": {
+    "threshold": 0.95,
+    "questionCount": 21,
+    "minCorrect": 20,
+    "mode": "unseen-transfer",
+    "questions": [
+      {
+        "id": "L06-M01",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "particle-model",
+        "question": "一粒沙子单独看不出细腻感，但一大堆细沙摸起来却是细腻光滑的。这个类比最适合帮助理解分子的哪一条性质？",
+        "options": ["分子本身没有宏观感官属性，宏观性质是大量分子聚集产生的", "分子之间没有间隔", "分子不会运动", "分子会发生化学反应"],
+        "answer": 0,
+        "explanation": "单个沙粒的“细腻感”是无意义的，只有大量沙粒聚集才有细腻的宏观触感；同理，单个分子没有颜色、气味等宏观属性，这些性质由大量分子聚集产生。",
+        "knowledgeIds": ["particle-model"]
+      },
+      {
+        "id": "L06-M02",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "particle-model",
+        "question": "打开一瓶香水后，隔着一段距离也能闻到香味，这是因为？",
+        "options": ["香水分子受热膨胀变大后飘散过来", "香水分子在不断运动，扩散到了周围的空气中", "空气把香水“吹”成了气味", "鼻子能主动“吸出”远处的分子"],
+        "answer": 1,
+        "explanation": "香水分子在不断运动，扩散到周围空气中并到达鼻腔，从而被闻到，这是分子不断运动的直接证据。",
+        "knowledgeIds": ["particle-model"]
+      },
+      {
+        "id": "L06-M03",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "particle-model",
+        "question": "100 mL水和100 mL酒精混合后，测得总体积小于200 mL，最合理的解释是？",
+        "options": ["水和酒精发生了化学反应，生成了新物质", "混合过程中有液体蒸发损失", "水分子和酒精分子大小不同、间隔不同，混合时相互填充了间隔", "水分子和酒精分子的体积在混合后变小了"],
+        "answer": 2,
+        "explanation": "分子之间存在间隔，两种分子的大小和间隔不同，混合后彼此填充间隔，导致总体积小于简单相加的结果，分子本身的体积并未改变。",
+        "knowledgeIds": ["particle-model"]
+      },
+      {
+        "id": "L06-M04",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "particle-model",
+        "question": "气体很容易被压缩到较小的体积，而液体、固体很难被压缩，最主要的原因是？",
+        "options": ["气体分子比液体、固体分子更小", "气体分子之间的间隔比液体、固体分子间隔大得多", "气体分子不运动，液体、固体分子在运动", "气体分子的质量比液体、固体分子小"],
+        "answer": 1,
+        "explanation": "气体分子之间的间隔远大于液体和固体，压缩时主要是分子间隔被压缩变小，所以气体容易被压缩；液体、固体分子间隔本来就小，难以再被压缩。",
+        "knowledgeIds": ["particle-model"]
+      },
+      {
+        "id": "L06-M05",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "particle-model",
+        "question": "铁轨在夏天铺设时通常会预留缝隙，这是因为温度升高时铁轨会膨胀。从分子角度看，最主要的原因是？",
+        "options": ["温度升高，铁原子的体积变大了", "温度升高，铁原子之间的间隔增大了", "温度升高，铁原子的数目增多了", "温度升高，铁原子变成了铁分子"],
+        "answer": 1,
+        "explanation": "热胀冷缩的微观原因是：温度升高使粒子运动加剧、粒子间平均间隔增大，而不是粒子本身体积变大或数目增多。",
+        "knowledgeIds": ["particle-model"]
+      },
+      {
+        "id": "L06-M06",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "particle-model",
+        "question": "分别将一滴红墨水滴入热水和冷水中，观察到热水中墨水扩散得更快、更均匀。这说明？",
+        "options": ["热水中墨水分子数目更多", "温度越高，分子运动速率越快，扩散也越快", "冷水会阻止分子运动", "墨水在热水中发生了化学反应"],
+        "answer": 1,
+        "explanation": "温度越高，分子运动越剧烈，扩散速率越快，因此热水中墨水扩散得更快更均匀。",
+        "knowledgeIds": ["particle-model"]
+      },
+      {
+        "id": "L06-M07",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "particle-model",
+        "question": "下列物质中，由原子直接构成而不是先构成分子的是？",
+        "options": ["水（H₂O）", "氧气（O₂）", "铁（Fe）", "二氧化碳（CO₂）"],
+        "answer": 2,
+        "explanation": "铁是金属，由铁原子直接构成；水、氧气、二氧化碳都是由相应的分子构成的。",
+        "knowledgeIds": ["particle-model"]
+      },
+      {
+        "id": "L06-M08",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "particle-model",
+        "question": "小明认为：“原子一定比分子小，所以原子是比分子更基本的粒子，二者除了大小没有其他区别。”这个说法的主要问题是？",
+        "options": ["这个说法完全正确，不需要纠正", "混淆了“大小”和“化学变化中能否再分”这两个不同的判据，忽略了分子由原子构成、分子可分裂为原子这一根本关系", "原子其实比分子大，小明说反了", "分子和原子其实是完全相同的粒子"],
+        "answer": 1,
+        "explanation": "区分分子和原子的本质判据不是“大小”，而是“在化学变化中能否再分”：分子可分裂为原子，原子不能再分；同时分子是由原子构成的，这才是二者的根本关系。",
+        "knowledgeIds": ["particle-model"]
+      },
+      {
+        "id": "L06-M09",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "particle-model",
+        "question": "“原子是由分子构成的。”这种说法对不对？",
+        "options": ["正确，原子确实由分子构成", "不正确，应该是分子由原子构成，说反了", "无法判断，取决于具体物质", "正确，但只适用于气体"],
+        "answer": 1,
+        "explanation": "正确的关系是：分子是由原子构成的。原子是化学变化中的最小粒子，不能反过来说“原子由分子构成”。",
+        "knowledgeIds": ["particle-model"]
+      },
+      {
+        "id": "L06-M10",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "particle-model",
+        "question": "关于“原子不能再分”，下列表述最准确的是？",
+        "options": ["原子在任何情况下都绝对不能再分", "原子在化学变化中不能再分，这是本课要掌握的范围", "原子只有在通电时才不能再分", "原子不能再分是指原子不能运动"],
+        "answer": 1,
+        "explanation": "严谨的表述必须限定在“化学变化中”：在化学变化范围内，原子不能再分。笼统地说“原子绝对不能再分”是不准确的表述。",
+        "knowledgeIds": ["particle-model"]
+      },
+      {
+        "id": "L06-M11",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "particle-model",
+        "question": "“保持水化学性质的最小粒子”指的是？",
+        "options": ["氢原子", "氧原子", "水分子", "水元素"],
+        "answer": 2,
+        "explanation": "水分子是保持水化学性质的最小粒子；单个氢原子或氧原子已经不具有水的化学性质。",
+        "knowledgeIds": ["particle-model"]
+      },
+      {
+        "id": "L06-M12",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "particle-model",
+        "question": "“所有物质都是由分子构成的。”对这句话的评价，正确的是？",
+        "options": ["完全正确，没有例外", "不准确，例如铁、氦气等是由原子直接构成的，并非所有物质都由分子构成", "不准确，因为物质都是由原子直接构成的，不存在分子", "无法判断"],
+        "answer": 1,
+        "explanation": "这句话以偏概全，金属（如铁）、稀有气体（如氦气）等是由原子直接构成的，并非所有物质都先构成分子。",
+        "knowledgeIds": ["particle-model"]
+      },
+      {
+        "id": "L06-M13",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "particle-model",
+        "question": "将少量二氧化氮气体（红棕色）通入一个装有空气的密闭玻璃容器中，一段时间后发现红棕色均匀充满了整个容器。这个现象同时体现了分子的哪两条性质？",
+        "options": ["分子很小 + 分子不运动", "分子在不断运动 + 分子之间有间隔（能相互扩散渗透）", "分子会消失 + 分子会重新出现", "分子有颜色 + 分子有气味"],
+        "answer": 1,
+        "explanation": "红棕色气体能均匀扩散到整个容器，说明分子在不断运动；能够扩散渗透到空气分子中间，说明分子之间存在间隔。",
+        "knowledgeIds": ["particle-model"]
+      },
+      {
+        "id": "L06-M14",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "physical-change",
+        "question": "湿玻璃上的水珠逐渐消失（变干）属于物理变化。从分子角度看，正确的解释是？",
+        "options": ["水分子分解成了氢原子和氧原子", "水分子本身没有变化，只是运动到空气中去了", "水分子的数目减少了", "水分子变成了新的物质"],
+        "answer": 1,
+        "explanation": "水珠变干是水分子不断运动、扩散到空气中的物理变化，水分子本身没有发生变化，仍是水分子。",
+        "knowledgeIds": ["particle-model", "physical-change"]
+      },
+      {
+        "id": "L06-M15",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "physical-change",
+        "question": "干冰（固态二氧化碳）在常温下直接变为二氧化碳气体（升华），这是物理变化。从分子角度看，正确的说法是？",
+        "options": ["二氧化碳分子分解为碳原子和氧原子", "二氧化碳分子本身没有变化，只是分子间隔变大、运动加快", "生成了新的气体分子", "二氧化碳分子的数目增多了"],
+        "answer": 1,
+        "explanation": "升华是物理变化，二氧化碳分子本身不发生改变，只是分子间隔和运动状态发生变化，物质仍然是二氧化碳（CO₂）。",
+        "knowledgeIds": ["particle-model", "physical-change"]
+      },
+      {
+        "id": "L06-M16",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "chemical-change",
+        "question": "蜡烛燃烧生成二氧化碳和水，这是化学变化。从微观角度看，下列描述正确的是？",
+        "options": ["构成石蜡的分子只是形状发生了改变", "构成石蜡的分子分裂为碳、氢、氧等原子，原子重新组合成二氧化碳分子和水分子", "反应前后原子的种类和数目发生了改变", "石蜡分子本身没有参与反应"],
+        "answer": 1,
+        "explanation": "蜡烛燃烧的微观实质是：构成石蜡的分子分裂为碳、氢等原子，与氧原子重新组合成二氧化碳分子和水分子；反应前后原子种类和数目不变。",
+        "knowledgeIds": ["particle-model", "chemical-change"]
+      },
+      {
+        "id": "L06-M17",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "chemical-change",
+        "question": "下列关于化学变化微观实质的描述，正确的是？",
+        "options": ["化学变化中，分子变大、原子种类改变", "化学变化中，分子分裂为原子，原子重新组合成新分子，原子种类和数目不变", "化学变化中，原子分裂为更小的粒子后重新组合", "化学变化中，分子的数目一定保持不变"],
+        "answer": 1,
+        "explanation": "化学变化的微观实质是：原有分子分裂为原子，原子按新的方式重新组合成新分子；在这个过程中，原子的种类和数目保持不变，原子本身不分裂。",
+        "knowledgeIds": ["particle-model", "chemical-change"]
+      },
+      {
+        "id": "L06-M18",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "chemical-change",
+        "question": "过氧化氢（双氧水）在催化剂作用下分解生成水和氧气。从分子和原子的角度，下列描述正确的是？",
+        "options": ["过氧化氢分子直接变成了水分子，没有涉及原子", "过氧化氢分子分裂为氢原子和氧原子，氢、氧原子按新的方式重新组合成水分子和氧分子", "过氧化氢分子只是失去了颜色", "这个变化中没有生成新物质"],
+        "answer": 1,
+        "explanation": "过氧化氢分解是化学变化：过氧化氢分子（H₂O₂）分裂为氢原子和氧原子，这些原子重新组合，生成水分子（H₂O）和氧分子（O₂）。",
+        "knowledgeIds": ["particle-model", "chemical-change"]
+      },
+      {
+        "id": "L06-M19",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "evidence-reasoning",
+        "question": "要用实验证明“分子在不断运动”，下列实验设计中最合理的是？",
+        "options": ["只观察一杯静置的清水，看它是否变浑浊", "在密闭容器一端放有色气体或挥发性物质，观察它是否逐渐扩散到容器另一端，并设置对照排除其他干扰", "测量一块固体的质量，看是否发生变化", "将两种固体粉末混合后立即观察颜色"],
+        "answer": 1,
+        "explanation": "观察有色或挥发性物质在密闭空间中的扩散现象，并设置对照排除干扰因素，是证明分子运动的合理实验设计。",
+        "knowledgeIds": ["evidence-reasoning", "particle-model"]
+      },
+      {
+        "id": "L06-M20",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "evidence-reasoning",
+        "question": "下列现象中，最适合作为“分子之间存在间隔”这一结论证据的是？",
+        "options": ["糖块放入水中逐渐溶解消失", "打开香水瓶后能闻到香味", "同体积的水和酒精混合后总体积变小", "湿衣服在阳光下比阴凉处干得快"],
+        "answer": 2,
+        "explanation": "水和酒精混合后总体积变小，说明分子之间存在间隔、混合时相互填充。其余选项主要说明的是分子在不断运动，而不是分子间隔本身。",
+        "knowledgeIds": ["evidence-reasoning", "particle-model"]
+      },
+      {
+        "id": "L06-M21",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "particle-model",
+        "question": "下列关于分子和原子的说法中，完全正确的一组是？",
+        "options": [
+          "①分子在化学变化中可分裂为原子；②原子在化学变化中不能再分；③分子由原子构成",
+          "①分子一定比原子大；②原子由分子构成；③所有物质都由分子构成",
+          "①分子和原子没有本质区别；②原子在任何条件下都不能再分；③分子不能运动",
+          "①原子在化学变化中可以继续分裂；②分子间没有间隔；③分子本身有颜色和气味"
+        ],
+        "answer": 0,
+        "explanation": "正确表述为：分子在化学变化中可分裂为原子，原子在化学变化中不能再分，分子由原子构成——这三点是本课的核心结论，其余选项均包含至少一处科学性错误。",
+        "knowledgeIds": ["particle-model"]
+      }
+    ]
+  }
+}

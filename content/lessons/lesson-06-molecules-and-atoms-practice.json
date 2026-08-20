@@ -1,0 +1,116 @@
+{
+  "lessonId": "lesson-06-molecules-and-atoms",
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "L06-P01",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "particle-model",
+      "question": "关于分子的质量和体积，下列说法正确的是？",
+      "options": ["分子的质量和体积都很大，用天平能直接称量", "分子的质量和体积都非常小", "分子没有质量，只有体积", "分子的质量因物质不同而没有规律"],
+      "answer": 1,
+      "explanation": "分子的质量和体积都非常小，例如一个水分子的质量约为3×10⁻²⁶ kg，普通仪器无法直接称量。",
+      "knowledgeIds": ["particle-model"]
+    },
+    {
+      "id": "L06-P02",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "particle-model",
+      "question": "下列生活现象中，能说明分子在不断运动的是？",
+      "options": ["把一块铁放在桌上，形状不变", "走进花店能闻到花香", "冰块放置后会融化", "一杯水静置后水面保持水平"],
+      "answer": 1,
+      "explanation": "闻到花香是花香分子不断运动、扩散到空气中并到达鼻腔的结果，说明分子在不断运动。",
+      "knowledgeIds": ["particle-model"]
+    },
+    {
+      "id": "L06-P03",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "particle-model",
+      "question": "将50 mL黄豆和50 mL芝麻混合后，总体积小于100 mL；这个现象常被用来类比说明分子的哪一条性质？",
+      "options": ["分子的质量很小", "分子在不断运动", "分子之间有间隔", "分子能发生化学反应"],
+      "answer": 2,
+      "explanation": "黄豆和芝麻混合后体积变小，是因为小颗粒填充了大颗粒间的空隙，这可以类比说明分子之间存在间隔，混合时分子相互填充间隔。",
+      "knowledgeIds": ["particle-model"]
+    },
+    {
+      "id": "L06-P04",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "particle-model",
+      "question": "同一杯红糖水，放在热水中比放在冷水中更快变甜均匀，这说明？",
+      "options": ["温度越高，分子体积越大", "温度越高，分子运动速率越快", "温度越高，分子数目越多", "温度对分子运动没有影响"],
+      "answer": 1,
+      "explanation": "温度升高会使分子运动速率加快，因此糖分子扩散得更快，红糖水更快变得均匀香甜。",
+      "knowledgeIds": ["particle-model"]
+    },
+    {
+      "id": "L06-P05",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "particle-model",
+      "question": "下列关于分子和原子区别的说法，正确的是？",
+      "options": ["分子一定比原子大，这是二者的本质区别", "在化学变化中，分子可以分裂为原子，原子不能再分", "分子和原子是完全独立、互不相关的两种粒子", "原子是由分子构成的"],
+      "answer": 1,
+      "explanation": "分子和原子的本质区别在于“化学变化中能否再分”：分子可分裂为原子，原子不能再分；分子是由原子构成的，而不是相反。",
+      "knowledgeIds": ["particle-model"]
+    },
+    {
+      "id": "L06-P06",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "particle-model",
+      "question": "原子的定义是？",
+      "options": ["保持物质物理性质的最小粒子", "化学变化中的最小粒子", "能被继续分割的最小粒子", "只存在于金属中的粒子"],
+      "answer": 1,
+      "explanation": "原子是化学变化中的最小粒子，在化学变化范围内不能再分。",
+      "knowledgeIds": ["particle-model"]
+    },
+    {
+      "id": "L06-P07",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "particle-model",
+      "question": "下列说法中，不准确的是？",
+      "options": ["水分子由氢原子和氧原子构成", "铁是由铁原子直接构成的，不是先构成分子", "所有物质都是先由原子构成分子，再构成物质", "氧气是由氧分子构成的"],
+      "answer": 2,
+      "explanation": "并不是所有物质都由分子构成，金属（如铁）、稀有气体等是由原子直接构成的，笼统地说“所有物质都由分子构成”是不准确的。",
+      "knowledgeIds": ["particle-model"]
+    },
+    {
+      "id": "L06-P08",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "physical-change",
+      "question": "碘受热直接由固体变为紫色气体（碘的升华），这是物理变化。从分子角度看，正确的说法是？",
+      "options": ["碘分子分解成了原子", "碘分子本身没有变化，只是分子间隔变大、运动加快", "生成了新的物质碘蒸气分子", "碘分子的数目减少了"],
+      "answer": 1,
+      "explanation": "升华是物理变化，碘分子本身不发生改变，只是分子间隔和运动状态发生了变化，物质仍然是碘（I₂）。",
+      "knowledgeIds": ["particle-model", "physical-change"]
+    },
+    {
+      "id": "L06-P09",
+      "type": "single",
+      "difficulty": "hard",
+      "knowledgePoint": "chemical-change",
+      "question": "氧化汞受热分解生成汞和氧气，这是化学变化。从微观角度看，下列描述正确的是？",
+      "options": ["氧化汞分子只是外形发生了改变", "氧化汞分子分裂为汞原子和氧原子，氧原子重新结合成氧分子", "反应前后原子的种类和数目发生了改变", "汞原子和氧原子在反应中也发生了分裂"],
+      "answer": 1,
+      "explanation": "氧化汞受热分解的微观实质是：氧化汞分子分裂为汞原子和氧原子，氧原子两两结合成氧分子；反应前后原子种类和数目不变，原子本身没有再分裂。",
+      "knowledgeIds": ["particle-model", "chemical-change"]
+    },
+    {
+      "id": "L06-P10",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "evidence-reasoning",
+      "question": "在探究“分子是否在不断运动”的实验中，设置不加浓氨水、只放酚酞溶液的对照组，其科学价值主要体现在？",
+      "options": ["让实验步骤看起来更严谨，但没有实际意义", "排除酚酞溶液自身变色或其他环境因素的干扰，使“氨分子运动导致变色”的结论更可靠", "可以节省浓氨水的用量", "对照组是为了让实验时间变短"],
+      "answer": 1,
+      "explanation": "对照组的作用是控制变量、排除干扰因素，使实验现象与结论之间的因果关系更加可信，这是科学探究中证据推理的重要方法。",
+      "knowledgeIds": ["evidence-reasoning", "particle-model"]
+    }
+  ]
+}

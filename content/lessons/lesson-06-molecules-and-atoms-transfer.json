@@ -1,0 +1,91 @@
+{
+  "lessonId": "lesson-06-molecules-and-atoms",
+  "version": "1.0.0",
+  "source": "built from canonical lesson-06 molecules-and-atoms content, modeled on lesson-01/02/03/04/05 transfer patterns",
+  "questions": [
+    {
+      "id": "L06-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "knowledgePoint": "evidence-reasoning",
+      "question": "某同学做“浓氨水使酚酞变红”实验时，没有设置任何对照组，只观察到酚酞变红就直接得出“分子在不断运动”的结论。请分析这样做在证据推理上存在什么问题，并说明应该如何改进实验设计。",
+      "rubric": {
+        "modelAnswer": "问题：没有对照组就无法排除其他可能原因，例如酚酞溶液本身随时间变色、或教室空气中其他因素导致变色，因此不能严谨地证明是氨分子扩散导致的。改进：应增设一杯不接触浓氨水、不做任何处理的酚酞溶液作为对照，若对照组不变色而实验组变色，才能更有说服力地证明是氨分子运动扩散所致。",
+        "keywords": [
+          ["没有对照", "缺少对照组", "无法排除"],
+          ["其他原因", "自身变色", "空气影响"],
+          ["增设对照", "设置对照组", "不做处理"],
+          ["更有说服力", "更严谨", "排除干扰"]
+        ],
+        "explanation": "科学结论需要用对照实验排除干扰因素，仅凭单一现象得出结论缺乏说服力。"
+      },
+      "explanation": "缺少对照组会削弱结论的可信度，应增设对照组以排除干扰因素。",
+      "knowledgeIds": ["evidence-reasoning", "particle-model"],
+      "misconceptionIds": ["mc-method-observation-inference"]
+    },
+    {
+      "id": "L06-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledgePoint": "particle-model",
+      "question": "小华说：“分子和原子的区别就是分子比原子大，原子是最小的粒子，所以原子在任何情况下都不能再分。”请指出小华这段话中的科学性错误，并给出准确的说法。",
+      "rubric": {
+        "modelAnswer": "错误1：分子和原子的本质区别不是“大小”，而是“在化学变化中能否再分”——分子可分裂为原子，原子不能再分。错误2：“原子在任何情况下都不能再分”表述不准确，应限定为“在化学变化中，原子不能再分”，这句话不涉及原子内部结构等其他情形。准确说法：分子是保持物质化学性质的最小粒子，在化学变化中可分裂为原子；原子是化学变化中的最小粒子，在化学变化范围内不能再分。",
+        "keywords": [
+          ["不是大小", "本质区别不在大小", "判据错误"],
+          ["化学变化中能否再分", "能否再分"],
+          ["任何情况", "限定", "化学变化范围内"],
+          ["原子不能再分", "分子可分裂"]
+        ],
+        "explanation": "区分分子原子的关键判据是“化学变化中能否再分”，且“原子不能再分”必须限定在化学变化范围内表述。"
+      },
+      "explanation": "小华把“大小”当成了区分标准，且表述“原子不能再分”时缺少必要的限定条件。",
+      "knowledgeIds": ["particle-model"],
+      "misconceptionIds": ["mc-molecule-atom-distinction"]
+    },
+    {
+      "id": "L06-T03",
+      "type": "constructed",
+      "difficulty": "medium",
+      "bloomLevel": "apply",
+      "knowledgePoint": "particle-model",
+      "question": "食品包装袋上常印有“开封后请尽快食用”的提示，很多零食（如饼干、薯片）也会用密封袋包装。请运用分子的性质，解释为什么食物开封后暴露在空气中容易变潮、变味。",
+      "rubric": {
+        "modelAnswer": "空气中的水蒸气分子和其他气味分子在不断运动，食物开封后，这些分子会不断扩散进入食物内部或表面，同时食物本身的香味分子也会不断运动扩散到空气中散失。密封包装可以减少食物与外界分子的相互扩散，从而延缓变潮、变味。",
+        "keywords": [
+          ["分子不断运动", "分子运动"],
+          ["水蒸气分子", "扩散进入"],
+          ["食物分子", "香味分子", "散失"],
+          ["密封", "减少扩散", "延缓"]
+        ],
+        "explanation": "分子在不断运动、相互扩散，是食物开封后变潮变味以及需要密封保存的微观原因。"
+      },
+      "explanation": "空气中的分子与食物中的分子相互扩散是变潮变味的微观原因，密封能减少这种扩散。",
+      "knowledgeIds": ["particle-model"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L06-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "knowledgePoint": "physical-change",
+      "question": "碘单质是紫黑色固体，加热后不经过液态直接变成紫红色的碘蒸气（碘的升华）。有同学认为“颜色都变了，肯定是化学变化，生成了新物质”。请你判断这个说法是否正确，并从分子的角度说明理由。",
+      "rubric": {
+        "modelAnswer": "这个说法不正确。碘的升华是物理变化：碘分子（I₂）本身没有发生变化，仍然是碘分子，只是分子间的间隔变大、运动加快，物质由固态直接变为气态；固态和气态下碘分子的聚集状态不同，导致光的吸收和反射情况不同，因此看起来颜色略有差异，但这并不意味着生成了新物质，判断是否为化学变化的依据是“是否有新物质生成”，而不是颜色是否发生变化。",
+        "keywords": [
+          ["不正确", "物理变化"],
+          ["碘分子没有变化", "分子本身不变"],
+          ["间隔变大", "运动加快"],
+          ["是否生成新物质", "判断依据"]
+        ],
+        "explanation": "判断化学变化的依据是是否有新物质生成，而不是颜色等外观是否发生变化；碘升华中分子本身未变，属于物理变化。"
+      },
+      "explanation": "颜色变化不是判断化学变化的依据，碘升华中分子本身没有改变，属于物理变化。",
+      "knowledgeIds": ["particle-model", "physical-change"],
+      "misconceptionIds": ["mc-matter-physical-vs-chemical"]
+    }
+  ]
+}

@@ -747,10 +747,17 @@
         "matter-change"
       ],
       "misconceptionIds": [
-        "mc-particle-physical"
+        "mc-particle-physical",
+        "mc-molecule-atom-distinction"
       ],
-      "remediationGoal": "理解物质由微观粒子构成，粒子间存在间隔且永不停息地运动。",
-      "questions": []
+      "remediationGoal": "理解物质由微观粒子构成，粒子间存在间隔且永不停息地运动；能用化学变化中能否再分区分分子与原子。",
+      "questions": [
+        "L06-Q01", "L06-Q02", "L06-Q03", "L06-Q04", "L06-Q05", "L06-Q06",
+        "L06-P01", "L06-P02", "L06-P03", "L06-P04", "L06-P05", "L06-P06", "L06-P07", "L06-P08", "L06-P09", "L06-P10",
+        "L06-D01", "L06-D02",
+        "L06-M01", "L06-M02", "L06-M03", "L06-M04", "L06-M05", "L06-M06", "L06-M07", "L06-M08", "L06-M09", "L06-M10", "L06-M11", "L06-M12", "L06-M13", "L06-M21",
+        "L06-T01", "L06-T02", "L06-T03"
+      ]
     },
     {
       "id": "atomic-structure",

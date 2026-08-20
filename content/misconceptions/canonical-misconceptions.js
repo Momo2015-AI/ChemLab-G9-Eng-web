@@ -409,9 +409,24 @@ export const canonicalMisconceptions = [
     source: 'knowledge-graph v2.1 u03 extension',
     remediation: {
       goal: '理解微观粒子是模型概念，不能直接用宏观感官属性描述。',
-      lessonIds: [],
-      practiceQuestionIds: [],
-      recheckQuestionIds: []
+      lessonIds: ['lesson-06-molecules-and-atoms'],
+      practiceQuestionIds: ['L06-P01'],
+      recheckQuestionIds: ['L06-M01']
+    }
+  },
+  {
+    id: 'mc-molecule-atom-distinction',
+    title: '混淆分子与原子的本质区别',
+    description: '认为分子和原子没有本质区别，或认为分子比原子"大"、原子比分子"小"是唯一区别；误认为化学变化中原子还能够继续分裂，而不理解"分子在化学变化中可分、原子在化学变化中不可分"这一判据。',
+    knowledgeIds: ['particle-model'],
+    signals: ['concept-confusion', 'macro-micro-mix'],
+    severity: 'high',
+    source: 'lesson-06 authoring',
+    remediation: {
+      goal: '能用"化学变化中是否可分"区分分子与原子：分子是保持物质化学性质的最小粒子，在化学变化中可分裂为原子；原子是化学变化中的最小粒子，在化学变化范围内不能再分。',
+      lessonIds: ['lesson-06-molecules-and-atoms'],
+      practiceQuestionIds: ['L06-P05'],
+      recheckQuestionIds: ['L06-M08']
     }
   },
   {
@@ -505,8 +520,9 @@ export const ALIAS_MAP = {
   'o2-physical-mistake': 'mc-o2-physical',
   'o2-chemical-mistake': 'mc-o2-chemical',
   'o2-preparation-mistake': 'mc-o2-preparation',
-  // L06 chemistry-equation aliases
+  // L06 molecules-and-atoms aliases
   'particle-physical-mistake': 'mc-particle-physical',
+  'molecule-atom-confusion': 'mc-molecule-atom-distinction',
   'atom-electron-loss': 'mc-atom-electron-loss',
   'ion-only-metal': 'mc-ion-only-metal',
   'mixture-pure': 'mc-mixture-pure'
