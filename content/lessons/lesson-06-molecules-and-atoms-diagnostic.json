@@ -3,39 +3,39 @@
   "version": "1.0",
   "diagnostics": [
     {
-      "id": "L06-D01",
+      "id": "L11-D01",
       "knowledgePoint": "particle-model",
       "question": "“白糖有甜味，所以白糖分子也是甜的。”这种说法错误的原因是？",
       "options": ["白糖根本不含分子", "分子本身没有颜色、气味、味道等宏观属性，甜味是大量分子共同作用于味蕾产生的宏观感受", "甜味只跟原子有关，跟分子无关", "白糖是原子直接构成的，不是分子构成的"],
       "answer": 1,
       "errorType": "mc-particle-physical",
-      "remediationStep": "L06-S02",
+      "remediationStep": "L11-S02",
       "knowledgeIds": ["particle-model"]
     },
     {
-      "id": "L06-D02",
+      "id": "L11-D02",
       "knowledgePoint": "particle-model",
       "question": "关于分子和原子的关系，下列说法正确的是？",
       "options": ["分子和原子没有本质区别，只是叫法不同", "分子比原子大是分子和原子的唯一区别", "在化学变化中，分子可以分裂为原子，原子不能再分", "在化学变化中，原子还能继续分裂成更小的粒子"],
       "answer": 2,
       "errorType": "mc-molecule-atom-distinction",
-      "remediationStep": "L06-S07",
+      "remediationStep": "L11-S07",
       "knowledgeIds": ["particle-model"]
     },
     {
-      "id": "L06-D03",
+      "id": "L11-D03",
       "knowledgePoint": "evidence-reasoning",
       "question": "在“浓氨水使酚酞溶液变红”实验中，同时在教室另一处放一杯不做任何处理的酚酞溶液作为对照，这样设计的主要作用是？",
       "options": ["让实验看起来更复杂", "排除“酚酞溶液自己变红”或“空气本身导致变红”的可能，从而更有力地证明是氨分子扩散所致", "对照组没有实际作用，只是增加实验步骤", "为了节省浓氨水的用量"],
       "answer": 1,
       "errorType": "mc-method-observation-inference",
-      "remediationStep": "L06-S03",
+      "remediationStep": "L11-S03",
       "knowledgeIds": ["evidence-reasoning", "particle-model"]
     }
   ],
   "remediation": {
-    "L06-S02": "复习分子的性质一：质量和体积都很小，分子本身不具有宏观感官属性（颜色、气味、味道），这些是大量分子聚集产生的宏观效应。",
-    "L06-S07": "复习分子和原子的判据：在化学变化中，分子可分裂为原子，原子不能再分；不要用“大小”作为区分标准。",
-    "L06-S03": "复习对照实验的设计思路：设置不做处理的对照组，用于排除干扰因素，让结论更有说服力。"
+    "L11-S02": "复习分子的性质一：质量和体积都很小，分子本身不具有宏观感官属性（颜色、气味、味道），这些是大量分子聚集产生的宏观效应。",
+    "L11-S07": "复习分子和原子的判据：在化学变化中，分子可分裂为原子，原子不能再分；不要用“大小”作为区分标准。",
+    "L11-S03": "复习对照实验的设计思路：设置不做处理的对照组，用于排除干扰因素，让结论更有说服力。"
   }
 }

@@ -410,8 +410,8 @@ export const canonicalMisconceptions = [
     remediation: {
       goal: '理解微观粒子是模型概念，不能直接用宏观感官属性描述。',
       lessonIds: ['lesson-06-molecules-and-atoms'],
-      practiceQuestionIds: ['L06-P01'],
-      recheckQuestionIds: ['L06-M01']
+      practiceQuestionIds: ['L11-P01'],
+      recheckQuestionIds: ['L11-M01']
     }
   },
   {
@@ -425,8 +425,8 @@ export const canonicalMisconceptions = [
     remediation: {
       goal: '能用"化学变化中是否可分"区分分子与原子：分子是保持物质化学性质的最小粒子，在化学变化中可分裂为原子；原子是化学变化中的最小粒子，在化学变化范围内不能再分。',
       lessonIds: ['lesson-06-molecules-and-atoms'],
-      practiceQuestionIds: ['L06-P05'],
-      recheckQuestionIds: ['L06-M08']
+      practiceQuestionIds: ['L11-P05'],
+      recheckQuestionIds: ['L11-M08']
     }
   },
   {

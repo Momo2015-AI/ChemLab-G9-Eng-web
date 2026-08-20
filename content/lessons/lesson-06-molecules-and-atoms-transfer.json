@@ -4,7 +4,7 @@
   "source": "built from canonical lesson-06 molecules-and-atoms content, modeled on lesson-01/02/03/04/05 transfer patterns",
   "questions": [
     {
-      "id": "L06-T01",
+      "id": "L11-T01",
       "type": "constructed",
       "difficulty": "hard",
       "bloomLevel": "analyze",
@@ -25,7 +25,7 @@
       "misconceptionIds": ["mc-method-observation-inference"]
     },
     {
-      "id": "L06-T02",
+      "id": "L11-T02",
       "type": "constructed",
       "difficulty": "hard",
       "bloomLevel": "evaluate",
@@ -46,7 +46,7 @@
       "misconceptionIds": ["mc-molecule-atom-distinction"]
     },
     {
-      "id": "L06-T03",
+      "id": "L11-T03",
       "type": "constructed",
       "difficulty": "medium",
       "bloomLevel": "apply",
@@ -67,7 +67,7 @@
       "misconceptionIds": []
     },
     {
-      "id": "L06-T04",
+      "id": "L11-T04",
       "type": "constructed",
       "difficulty": "hard",
       "bloomLevel": "analyze",

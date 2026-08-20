@@ -1,0 +1,56 @@
+{
+  "lessonId": "lesson-07-water-purification",
+  "version": "1.0",
+  "diagnostics": [
+    {
+      "id": "L07-D01",
+      "knowledgePoint": "filtration-operation",
+      "question": "过滤操作中，下列做法错误的是？",
+      "options": ["滤纸紧贴漏斗内壁", "用玻璃棒引流", "液面高于滤纸边缘", "漏斗下端紧靠烧杯内壁"],
+      "answer": 2,
+      "errorType": "mc-filtration-operation",
+      "remediationStep": "L07-S05",
+      "knowledgeIds": ["filtration-operation", "lab-operations"]
+    },
+    {
+      "id": "L07-D02",
+      "knowledgePoint": "hard-soft-water",
+      "question": "区分硬水和软水，可选用的物质是？",
+      "options": ["食盐水", "肥皂水", "糖水", "白醋"],
+      "answer": 1,
+      "errorType": "mc-hard-soft-distinguish",
+      "remediationStep": "L07-S07",
+      "knowledgeIds": ["hard-soft-water"]
+    },
+    {
+      "id": "L07-D03",
+      "knowledgePoint": "water-purification",
+      "question": "下列净水方法中，一定能使硬水软化的是？",
+      "options": ["沉淀", "过滤", "吸附", "蒸馏"],
+      "answer": 3,
+      "errorType": "mc-purification-level",
+      "remediationStep": "L07-S08",
+      "knowledgeIds": ["water-purification", "distillation"]
+    },
+    {
+      "id": "L07-D04",
+      "knowledgePoint": "adsorption",
+      "question": "下列关于活性炭的说法错误的是？",
+      "options": ["活性炭具有吸附性", "活性炭吸附是物理变化", "活性炭可以除去水中所有杂质", "活性炭可以除去水中的色素和异味"],
+      "answer": 2,
+      "errorType": "mc-adsorption-limit",
+      "remediationStep": "L07-S06",
+      "knowledgeIds": ["adsorption", "water-purification"]
+    },
+    {
+      "id": "L07-D05",
+      "knowledgePoint": "water-purification",
+      "question": "下列关于水的净化说法正确的是？",
+      "options": ["经过沉淀、过滤、吸附后的水是纯水", "蒸馏是净化程度最高的方法", "过滤可以除去水中的可溶性杂质", "硬水和软水都是纯净物"],
+      "answer": 1,
+      "errorType": "mc-purification-complete",
+      "remediationStep": "L07-S02",
+      "knowledgeIds": ["water-purification", "distillation", "hard-soft-water"]
+    }
+  ]
+}

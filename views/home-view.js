@@ -22,7 +22,7 @@ export function renderHome({ root, data = {}, onCourse, onDashboard, onGraph, on
         </div>
         ${lessons.length ? `<div class="lrh-course-list" aria-label="课程列表">
           ${lessons.map((lesson, i) => {
-            const dayNum = String(Number(lesson.day || i + 1)).padStart(2, '0');
+            const dayNum = String(Number(lesson.displayOrder ?? lesson.day ?? i + 1)).padStart(2, '0');
             return `<button type="button" class="lrh-course-item${lesson.completed ? ' lrh-course-item--done' : ''}" data-lesson-id="${escapeHtml(lesson.id)}"><span class="lrh-course-num">${dayNum}</span><span class="lrh-course-name">${escapeHtml(lesson.title || lesson.id)}</span>${lesson.completed ? '<span class="lrh-course-tag">已完成</span>' : '<span class="lrh-course-tag lrh-course-tag--pending">待学</span>'}</button>`;
           }).join('')}
         </div>` : '<div class="lrh-course-list"><p class="lrh-empty">课程内容正在准备中。</p></div>'}
@@ -52,7 +52,7 @@ export function renderHome({ root, data = {}, onCourse, onDashboard, onGraph, on
         <div class="section-heading"><span>CURRICULUM · ${data.term === 'lower' ? '下册' : '上册'}</span><h2>学习单元</h2><p>只显示已经建立 canonical 内容的课程；旧版课程不再作为当前学习入口。</p></div>
         ${lessons.length ? `<div class="lesson-grid">${lessons.map((lesson, index) => `
           <button type="button" class="lesson-card" data-lesson-id="${escapeHtml(lesson.canonicalId || lesson.id)}">
-            <span class="lesson-card-number">${String(Number(lesson.day || index + 1)).padStart(2, '0')}</span>
+            <span class="lesson-card-number">${String(Number(lesson.displayOrder ?? lesson.day ?? index + 1)).padStart(2, '0')}</span>
             <strong>${escapeHtml(lesson.title || lesson.id || 'Lesson')}</strong>
             <small>${lesson.completed ? '已完成' : '开始学习'}</small>
           </button>`).join('')}</div>` : '<p>课程内容正在准备中。</p>'}

@@ -13,8 +13,10 @@ class ContentService {
     if (lesson) {
       data.dayById.set(dayId, lesson);
       const index = data.days.findIndex(day => day.day === dayId || day.canonicalId === dayId);
-      if (index >= 0) data.days[index] = { ...data.days[index], ...lesson, canonicalId: data.days[index].canonicalId || lesson.id, id: lesson.id };
+      const manifestEntry = index >= 0 ? data.days[index] : null;
+      if (index >= 0) data.days[index] = { ...manifestEntry, ...lesson, canonicalId: manifestEntry.canonicalId || lesson.id, id: lesson.id };
       this.registerLessonQuestions(data, lesson);
+      if (manifestEntry?.displayOrder != null) lesson.displayOrder = manifestEntry.displayOrder;
     }
     return lesson || data.dayById.get(dayId) || null;
   }

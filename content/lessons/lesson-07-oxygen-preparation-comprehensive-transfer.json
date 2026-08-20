@@ -1,0 +1,161 @@
+{
+  "lessonId": "lesson-07-oxygen-preparation-comprehensive",
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "L07-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledgePoint": "oxygen-preparation",
+      "question": "实验室需要制取一瓶较纯净的氧气，现有排水法和向上排空气法两种收集方法。请选择合适的方法并说明理由，同时指出该方法的不足之处。",
+      "rubric": {
+        "modelAnswer": "选择排水法，因为排水法收集的氧气纯度更高（不含空气）；不足是氧气中含少量水蒸气，需要干燥处理。",
+        "keywords": [
+          [
+            "排水法"
+          ],
+          [
+            "纯",
+            "纯净",
+            "不含空气"
+          ],
+          [
+            "水蒸气",
+            "潮湿",
+            "干燥"
+          ]
+        ],
+        "mustMatch": [],
+        "explanation": "排水法优于排空气法在于纯度高，缺点在于含水蒸气。"
+      },
+      "explanation": "排水法收集更纯净，但含少量水蒸气需干燥。",
+      "knowledgeIds": [
+        "oxygen-preparation",
+        "oxygen-physical"
+      ],
+      "misconceptionIds": [
+        "mc-o2-preparation"
+      ]
+    },
+    {
+      "id": "L07-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "create",
+      "knowledgePoint": "decomposition-reaction",
+      "question": "请设计一个实验方案，验证高锰酸钾分解后的剩余固体中含有二氧化锰。要求写出实验步骤、预期现象和结论。",
+      "rubric": {
+        "modelAnswer": "步骤1：将反应后的剩余固体溶于足量水中，过滤。步骤2：洗涤、干燥滤渣。步骤3：将滤渣加入过氧化氢溶液中，观察现象。步骤4：过滤、洗涤、干燥滤渣，称重。现象：步骤3中产生大量气泡；步骤4中滤渣质量与反应前加入的MnO₂质量相近。结论：剩余固体中含有MnO₂。",
+        "keywords": [
+          [
+            "溶解",
+            "过滤",
+            "洗涤"
+          ],
+          [
+            "加入H₂O₂",
+            "气泡"
+          ],
+          [
+            "质量不变"
+          ]
+        ],
+        "mustMatch": [],
+        "explanation": "利用MnO₂不溶于水但能催化H₂O₂分解的性质，通过过滤分离和催化实验验证。"
+      },
+      "explanation": "通过溶解过滤分离MnO₂，再利用其催化H₂O₂分解的性质验证。",
+      "knowledgeIds": [
+        "decomposition-reaction",
+        "oxygen-catalyst",
+        "lab-operations"
+      ],
+      "misconceptionIds": [
+        "mc-o2-preparation"
+      ]
+    },
+    {
+      "id": "L07-T03",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "knowledgePoint": "oxygen-preparation",
+      "question": "某同学用高锰酸钾制取氧气，实验后发现试管内剩余固体有三种。请分析这三种固体的成分，并设计实验验证其中含有二氧化锰。",
+      "rubric": {
+        "modelAnswer": "剩余固体：锰酸钾（K₂MnO₄）、二氧化锰（MnO₂）、可能未完全分解的高锰酸钾（KMnO₄）。验证MnO₂：将剩余固体溶于水，锰酸钾易溶，二氧化锰不溶；过滤得到黑色固体，加入H₂O₂溶液，若产生大量气泡则证明是MnO₂。",
+        "keywords": [
+          [
+            "锰酸钾",
+            "二氧化锰",
+            "高锰酸钾"
+          ],
+          [
+            "溶于水",
+            "过滤",
+            "黑色固体"
+          ],
+          [
+            "H₂O₂",
+            "气泡",
+            "催化"
+          ]
+        ],
+        "explanation": "高锰酸钾分解产物为锰酸钾、二氧化锰和氧气；MnO₂不溶于水但能催化H₂O₂分解。"
+      },
+      "explanation": "剩余固体含锰酸钾和二氧化锰；通过溶解过滤和催化实验验证MnO₂。",
+      "knowledgeIds": [
+        "oxygen-preparation",
+        "oxygen-catalyst",
+        "lab-operations"
+      ],
+      "misconceptionIds": [
+        "mc-o2-preparation"
+      ]
+    },
+    {
+      "id": "L07-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "create",
+      "knowledgePoint": "decomposition-reaction",
+      "question": "已知碳酸氢铵（NH₄HCO₃）受热分解生成氨气、水和二氧化碳。请写出该反应的化学方程式，判断其反应类型，并设计实验验证分解产物。",
+      "rubric": {
+        "modelAnswer": "方程式：NH₄HCO₃ → NH₃↑ + H₂O + CO₂↑。反应类型：分解反应。验证：用湿润红色石蕊试纸检验氨气（变蓝）；用无水硫酸铜检验水（变蓝）；用澄清石灰水检验二氧化碳（变浑浊）。",
+        "keywords": [
+          [
+            "NH₄HCO₃",
+            "分解",
+            "氨气",
+            "水",
+            "二氧化碳"
+          ],
+          [
+            "分解反应"
+          ],
+          [
+            "石蕊试纸",
+            "氨气",
+            "变蓝"
+          ],
+          [
+            "无水硫酸铜",
+            "水",
+            "变蓝"
+          ],
+          [
+            "石灰水",
+            "二氧化碳",
+            "浑浊"
+          ]
+        ],
+        "explanation": "碳酸氢铵受热分解为三种产物，属分解反应；各产物有特征检验方法。"
+      },
+      "explanation": "碳酸氢铵分解生成氨气、水和二氧化碳；用石蕊试纸、无水硫酸铜、石灰水分别验证。",
+      "knowledgeIds": [
+        "decomposition-reaction",
+        "oxygen-physical"
+      ],
+      "misconceptionIds": []
+    }
+  ]
+}

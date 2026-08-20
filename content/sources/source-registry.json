@@ -95,6 +95,31 @@
       "S0-PEP-CHEM9",
       "S1-CURRICULUM-STD",
       "S1-WUHAN-EXAM"
+    ],
+    "lesson-06-water-composition": [
+      "S0-PEP-CHEM9",
+      "S1-CURRICULUM-STD",
+      "S1-WUHAN-EXAM"
+    ],
+    "lesson-07-water-purification": [
+      "S0-PEP-CHEM9",
+      "S1-CURRICULUM-STD",
+      "S1-WUHAN-EXAM"
+    ],
+    "lesson-08-water-conservation": [
+      "S0-PEP-CHEM9",
+      "S1-CURRICULUM-STD",
+      "S1-WUHAN-EXAM"
+    ],
+    "lesson-09-chemical-formula": [
+      "S0-PEP-CHEM9",
+      "S1-CURRICULUM-STD",
+      "S1-WUHAN-EXAM"
+    ],
+    "lesson-10-chemical-equation": [
+      "S0-PEP-CHEM9",
+      "S1-CURRICULUM-STD",
+      "S1-WUHAN-EXAM"
     ]
   },
   "legacyNote": "Retired 320-question dataset is not a source and is excluded from this registry."

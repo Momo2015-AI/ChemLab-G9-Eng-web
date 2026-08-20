@@ -1,0 +1,56 @@
+{
+  "lessonId": "lesson-09-chemical-formula",
+  "version": "1.0",
+  "diagnostics": [
+    {
+      "id": "L09-D01",
+      "knowledgePoint": "chemical-formula",
+      "question": "下列关于H₂O的说法错误的是？",
+      "options": ["表示水这种物质","表示水由氢元素和氧元素组成","表示一个水分子","表示水由两个氢原子和一个氧原子构成"],
+      "answer": 3,
+      "errorType": "mc-formula-meaning",
+      "remediationStep": "L09-S02",
+      "knowledgeIds": ["chemical-formula"]
+    },
+    {
+      "id": "L09-D02",
+      "knowledgePoint": "valence-concept",
+      "question": "下列物质中，锰元素化合价最高的是？",
+      "options": ["MnO₂","KMnO₄","MnCl₂","Mn"],
+      "answer": 1,
+      "errorType": "mc-valence-calculation",
+      "remediationStep": "L09-S06",
+      "knowledgeIds": ["valence-concept","valence-table"]
+    },
+    {
+      "id": "L09-D03",
+      "knowledgePoint": "formula-writing",
+      "question": "硝酸铵(NH₄NO₃)中氮元素的化合价分别为？",
+      "options": ["-3, +5","+5, -3","-3, -3","+5, +5"],
+      "answer": 0,
+      "errorType": "mc-valence-multiple",
+      "remediationStep": "L09-S07",
+      "knowledgeIds": ["valence-concept","formula-writing"]
+    },
+    {
+      "id": "L09-D04",
+      "knowledgePoint": "valence-table",
+      "question": "下列关于化合价的叙述正确的是？",
+      "options": ["一种元素在同一化合物中只能有一种化合价","化合价有正负之分","化合物中各元素化合价之和不一定为零","单质中元素的化合价不为零"],
+      "answer": 1,
+      "errorType": "mc-valence-confusion",
+      "remediationStep": "L09-S05",
+      "knowledgeIds": ["valence-concept","valence-table"]
+    },
+    {
+      "id": "L09-D05",
+      "knowledgePoint": "chemical-formula",
+      "question": "下列化学式中，正确的是？",
+      "options": ["氯化铁FeCl₂","硫酸钠NaSO₄","氢氧化钙CaOH","硝酸银AgNO₃"],
+      "answer": 3,
+      "errorType": "mc-formula-writing",
+      "remediationStep": "L09-S08",
+      "knowledgeIds": ["formula-writing","chemical-name"]
+    }
+  ]
+}

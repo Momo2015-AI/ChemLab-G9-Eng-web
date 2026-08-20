@@ -1,0 +1,246 @@
+{
+  "lessonId": "lesson-08-h2o2-oxygen-preparation",
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "L08-P01",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "oxygen-preparation-h2o2",
+      "question": "实验室用过氧化氢制取氧气时，通常加入的物质是？",
+      "options": [
+        "高锰酸钾",
+        "二氧化锰",
+        "氯酸钾",
+        "碳酸钙"
+      ],
+      "answer": 1,
+      "explanation": "过氧化氢分解制氧气常用二氧化锰（MnO₂）作催化剂。",
+      "knowledgeIds": [
+        "oxygen-preparation-h2o2"
+      ]
+    },
+    {
+      "id": "L08-P02",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "oxygen-catalyst",
+      "question": "下列关于催化剂的说法正确的是？",
+      "options": [
+        "催化剂在反应前后质量增大",
+        "催化剂只能加快反应速率",
+        "催化剂在反应前后化学性质不变",
+        "不使用催化剂反应不能发生"
+      ],
+      "answer": 2,
+      "explanation": "催化剂在反应前后质量和化学性质都不变；可以加快或减慢反应速率；不使用催化剂反应仍能进行。",
+      "knowledgeIds": [
+        "oxygen-catalyst"
+      ]
+    },
+    {
+      "id": "L08-P03",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "oxygen-preparation-h2o2",
+      "question": "过氧化氢分解制取氧气的化学方程式为？",
+      "options": [
+        "H₂O₂ → H₂O + O₂",
+        "2H₂O₂ → 2H₂O + O₂↑",
+        "H₂O₂ → H₂ + O₂",
+        "2H₂O₂ → 2H₂ + O₂↑"
+      ],
+      "answer": 1,
+      "explanation": "过氧化氢分解：2H₂O₂ → 2H₂O + O₂↑，MnO₂作催化剂。",
+      "knowledgeIds": [
+        "oxygen-preparation-h2o2"
+      ]
+    },
+    {
+      "id": "L08-P04",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "oxygen-preparation-h2o2",
+      "question": "用过氧化氢制取氧气时，收集氧气可用的方法是？",
+      "options": [
+        "只能用排水法",
+        "只能用向上排空气法",
+        "排水法或向上排空气法",
+        "向下排空气法"
+      ],
+      "answer": 2,
+      "explanation": "氧气不易溶于水（排水法），密度比空气大（向上排空气法），两种方法均可。",
+      "knowledgeIds": [
+        "oxygen-preparation-h2o2",
+        "oxygen-physical"
+      ]
+    },
+    {
+      "id": "L08-P05",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "oxygen-catalyst",
+      "question": "下列物质中，能作为过氧化氢分解催化剂的是？",
+      "options": [
+        "NaCl",
+        "MnO₂",
+        "CuSO₄晶体",
+        "CaCO₃"
+      ],
+      "answer": 1,
+      "explanation": "MnO₂是过氧化氢分解最常用的催化剂；NaCl和CaCO₃不能催化该反应。",
+      "knowledgeIds": [
+        "oxygen-catalyst"
+      ]
+    },
+    {
+      "id": "L08-P06",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "oxygen-preparation-h2o2",
+      "question": "实验室用过氧化氢制取氧气时，发生装置应选用？",
+      "options": [
+        "固固加热型",
+        "固液常温型",
+        "液液加热型",
+        "any type"
+      ],
+      "answer": 1,
+      "explanation": "过氧化氢是液体，MnO₂是固体，常温反应，选用固液常温型装置。",
+      "knowledgeIds": [
+        "oxygen-preparation-h2o2",
+        "lab-operations"
+      ]
+    },
+    {
+      "id": "L08-P07",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "oxygen-catalyst",
+      "question": "催化剂在化学反应中的作用是？",
+      "options": [
+        "增加生成物质量",
+        "提高生成物纯度",
+        "改变反应速率",
+        "降低反应物浓度"
+      ],
+      "answer": 2,
+      "explanation": "催化剂改变（加快或减慢）反应速率，不改变生成物的质量和纯度。",
+      "knowledgeIds": [
+        "oxygen-catalyst"
+      ]
+    },
+    {
+      "id": "L08-P08",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "oxygen-preparation-h2o2",
+      "question": "使用长颈漏斗制取氧气时，必须注意的操作是？",
+      "options": [
+        "长颈漏斗下端在液面上方",
+        "长颈漏斗下端伸入液面以下",
+        "先加热再加药品",
+        "先加液体再加固体"
+      ],
+      "answer": 1,
+      "explanation": "长颈漏斗下端必须伸入液面以下形成液封，防止气体从漏斗逸出。",
+      "knowledgeIds": [
+        "oxygen-preparation-h2o2",
+        "lab-operations"
+      ]
+    },
+    {
+      "id": "L08-P09",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "oxygen-physical",
+      "question": "检验氧气的方法是？",
+      "options": [
+        "闻气味",
+        "观察颜色",
+        "将带火星木条伸入瓶内",
+        "倒入澄清石灰水"
+      ],
+      "answer": 2,
+      "explanation": "氧气能使带火星木条复燃，这是检验氧气的标准方法。",
+      "knowledgeIds": [
+        "oxygen-physical",
+        "oxygen-chemical"
+      ]
+    },
+    {
+      "id": "L08-P10",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "oxygen-catalyst",
+      "question": "下列关于催化剂的叙述错误的是？",
+      "options": [
+        "催化剂能改变化学反应速率",
+        "催化剂在反应前后质量不变",
+        "催化剂在反应前后化学性质不变",
+        "催化剂可以提高生成物的产量"
+      ],
+      "answer": 3,
+      "explanation": "催化剂只改变反应速率，不改变生成物的产量（理论产量由反应物决定）。",
+      "knowledgeIds": [
+        "oxygen-catalyst"
+      ]
+    },
+    {
+      "id": "L08-P11",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "oxygen-preparation-h2o2",
+      "question": "用过氧化氢制取氧气时，若要控制反应速率，可选择的仪器是？",
+      "options": [
+        "长颈漏斗",
+        "分液漏斗",
+        "直形导管",
+        "球形干燥管"
+      ],
+      "answer": 1,
+      "explanation": "分液漏斗可以控制液体滴加速率，从而控制反应速率；长颈漏斗无法控制。",
+      "knowledgeIds": [
+        "oxygen-preparation-h2o2",
+        "lab-operations"
+      ]
+    },
+    {
+      "id": "L08-P12",
+      "type": "single",
+      "difficulty": "hard",
+      "knowledgePoint": "oxygen-preparation-h2o2",
+      "question": "某同学用双氧水和MnO₂制取氧气，发现反应速率太快，下列改进措施可行的是？",
+      "options": [
+        "增加MnO₂用量",
+        "降低H₂O₂溶液浓度",
+        "加热反应混合物",
+        "改用向下排空气法收集"
+      ],
+      "answer": 1,
+      "explanation": "降低H₂O₂浓度可以减缓反应速率；增加催化剂用量不会减慢速率；加热会加速反应。",
+      "knowledgeIds": [
+        "oxygen-preparation-h2o2",
+        "oxygen-catalyst"
+      ]
+    },
+    {
+      "id": "L08-P13",
+      "type": "single",
+      "difficulty": "hard",
+      "knowledgePoint": "oxygen-catalyst",
+      "question": "关于催化剂，下列说法正确的是？",
+      "options": [
+        "催化剂只能是固体",
+        "一种催化剂只能催化一种反应",
+        "催化剂不参与化学反应",
+        "催化剂可以改变反应速率"
+      ],
+      "answer": 3,
+      "explanation": "催化剂可以是固体、液体或气体；一种催化剂可催化多种反应；催化剂参与反应但反应前后不变；核心作用是改变速率。",
+      "knowledgeIds": [
+        "oxygen-catalyst"
+      ]
+    }
+  ]
+}

@@ -90,7 +90,7 @@ export function createApplication({ state, assessment, experimentEngine, mastery
     const progress = createProgressProjection({ ...state.progress, mastery: masteryService.getState() });
     const lessons = (await contentService.getLessons({ semester: currentTerm() }))
       .filter(day => Boolean(day.canonicalId))
-      .sort((a, b) => Number(a.day || 0) - Number(b.day || 0))
+      .sort((a, b) => (a.displayOrder ?? Number(a.day || 0)) - (b.displayOrder ?? Number(b.day || 0)))
       .map(day => {
         const lessonId = day.canonicalId;
         const release = getLessonReleaseState(day);

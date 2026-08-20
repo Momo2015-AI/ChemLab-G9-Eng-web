@@ -1,0 +1,36 @@
+{
+  "lessonId": "lesson-07-water-purification",
+  "version": "1.0",
+  "mastery": {
+    "threshold": 0.95,
+    "questionCount": 21,
+    "minCorrect": 20,
+    "mode": "unseen-transfer",
+    "questions": [
+      {"id":"L07-M01","type":"single","difficulty":"basic","knowledgePoint":"water-purification","question":"下列净水方法中，净化程度最高的是？","options":["沉淀","过滤","吸附","蒸馏"],"answer":3,"explanation":"蒸馏能除去水中几乎所有杂质，得到纯水，净化程度最高。","knowledgeIds":["water-purification","distillation"]},
+      {"id":"L07-M02","type":"single","difficulty":"basic","knowledgePoint":"filtration-operation","question":"过滤操作中，玻璃棒的作用是？","options":["搅拌","引流","防止液体飞溅","转移固体"],"answer":1,"explanation":"过滤时玻璃棒起引流作用，使液体沿玻璃棒缓慢流入漏斗，防止冲破滤纸。","knowledgeIds":["filtration-operation","lab-operations"]},
+      {"id":"L07-M03","type":"single","difficulty":"basic","knowledgePoint":"hard-soft-water","question":"区分硬水和软水，最好选用？","options":["食盐水","肥皂水","糖水","白醋"],"answer":1,"explanation":"硬水加肥皂水泡沫少浮渣多，软水泡沫多浮渣少，现象明显。","knowledgeIds":["hard-soft-water"]},
+      {"id":"L07-M04","type":"single","difficulty":"basic","knowledgePoint":"adsorption","question":"活性炭在净水中的作用是？","options":["杀菌消毒","吸附色素和异味","除去所有杂质","软化硬水"],"answer":1,"explanation":"活性炭具有疏松多孔结构，能吸附色素和异味，是物理变化。","knowledgeIds":["adsorption"]},
+      {"id":"L07-M05","type":"single","difficulty":"medium","knowledgePoint":"filtration-operation","question":"下列不属于过滤操作要点的是？","options":["一贴","二低","三靠","搅拌加速过滤"],"answer":3,"explanation":"过滤不能用玻璃棒搅拌，否则戳破滤纸导致失败。一贴二低三靠是操作要点。","knowledgeIds":["filtration-operation","lab-operations"]},
+      {"id":"L07-M06","type":"single","difficulty":"medium","knowledgePoint":"water-purification","question":"明矾在净水中的作用是？","options":["杀菌消毒","吸附悬浮杂质使其沉降","除去可溶性杂质","软化硬水"],"answer":1,"explanation":"明矾溶于水生成胶状物，吸附悬浮杂质加速沉降。","knowledgeIds":["water-purification","adsorption"]},
+      {"id":"L07-M07","type":"single","difficulty":"medium","knowledgePoint":"hard-soft-water","question":"生活中降低水硬度的常用方法是？","options":["过滤","吸附","煮沸","蒸馏"],"answer":2,"explanation":"煮沸可使可溶性钙镁化合物转化为沉淀，是生活中最常用的软化方法。","knowledgeIds":["hard-soft-water"]},
+      {"id":"L07-M08","type":"single","difficulty":"medium","knowledgePoint":"water-purification","question":"过滤后滤液仍浑浊，可能的原因是？","options":["滤纸破损","液面低于滤纸边缘","玻璃棒靠在三层滤纸一侧","漏斗下端紧靠烧杯内壁"],"answer":0,"explanation":"滤纸破损会使浑浊液体直接流下；液面高于滤纸边缘也会导致过滤失败。","knowledgeIds":["filtration-operation","lab-operations"]},
+      {"id":"L07-M09","type":"single","difficulty":"medium","knowledgePoint":"water-purification","question":"下列关于水的净化说法正确的是？","options":["过滤能除去所有杂质","蒸馏得到的是纯水","吸附是化学变化","硬水过滤后可变成软水"],"answer":1,"explanation":"蒸馏能得到纯水；过滤只能除去不溶性杂质；活性炭吸附是物理变化；过滤不能软化硬水。","knowledgeIds":["water-purification","distillation","adsorption"]},
+      {"id":"L07-M10","type":"single","difficulty":"medium","knowledgePoint":"water-purification","question":"下列说法正确的是？","options":["自然界的水都是纯净物","自来水是纯水","蒸馏水是最纯净的水","过滤后的水是纯水"],"answer":2,"explanation":"蒸馏水几乎不含杂质，是最纯净的水。自然界的水和自来水都含有可溶性杂质。","knowledgeIds":["water-purification","distillation"]},
+      {"id":"L07-M11","type":"single","difficulty":"hard","knowledgePoint":"water-purification","question":"净化河水的合理顺序是？","options":["①沉淀②过滤③吸附④消毒","①过滤②沉淀③吸附④消毒","①消毒②沉淀③过滤④吸附","①吸附②沉淀③消毒④过滤"],"answer":0,"explanation":"合理顺序：沉淀→过滤→吸附→消毒。先除去大颗粒，再除小颗粒和溶解杂质，最后杀菌。","knowledgeIds":["water-purification"]},
+      {"id":"L07-M12","type":"single","difficulty":"hard","knowledgePoint":"filtration-operation","question":"过滤操作中，不需要用到的仪器是？","options":["漏斗","玻璃棒","蒸发皿","烧杯"],"answer":2,"explanation":"蒸发皿用于蒸发结晶，过滤不需要。过滤需要漏斗、玻璃棒、烧杯、铁架台。","knowledgeIds":["filtration-operation","lab-operations"]},
+      {"id":"L07-M13","type":"single","difficulty":"hard","knowledgePoint":"hard-soft-water","question":"硬水软化的实质是？","options":["除去水中的不溶性杂质","除去或减少水中的可溶性钙镁化合物","除去水中的细菌","除去水中的色素和异味"],"answer":1,"explanation":"硬水软化是除去或减少水中可溶性钙镁化合物，使硬水变成软水。","knowledgeIds":["hard-soft-water"]},
+      {"id":"L07-M14","type":"single","difficulty":"hard","knowledgePoint":"water-purification","question":"下列处理方法中，一定能使硬水软化的是？","options":["沉淀","过滤","吸附","煮沸或蒸馏"],"answer":3,"explanation":"煮沸和蒸馏都能除去水中可溶性钙镁化合物，使硬水软化。沉淀、过滤、吸附都不能软化硬水。","knowledgeIds":["hard-soft-water","distillation"]},
+      {"id":"L07-M15","type":"single","difficulty":"hard","knowledgePoint":"water-purification","question":"下列关于净水过程的叙述错误的是？","options":["沉淀可以使水中的大颗粒杂质沉降","过滤可以除去水中的不溶性杂质","活性炭可以吸附水中的色素和异味","经过净化处理的水是纯净物"],"answer":3,"explanation":"净化后的水中仍含有可溶性杂质，不是纯净物，仍需进一步处理（如蒸馏）才能得到纯水。","knowledgeIds":["water-purification","distillation"]},
+      {"id":"L07-M16","type":"single","difficulty":"basic","knowledgePoint":"water-purification","question":"下列变化中，属于化学变化的是？","options":["水的蒸馏","活性炭吸附","明矾净水","海水晒盐"],"answer":2,"explanation":"明矾净水涉及化学反应生成氢氧化铝胶体。蒸馏、吸附、晒盐都是物理变化。","knowledgeIds":["water-purification","adsorption"]},
+      {"id":"L07-M17","type":"single","difficulty":"medium","knowledgePoint":"filtration-operation","question":"过滤时，下列操作正确的是？","options":["用玻璃棒搅拌漏斗内液体加快过滤","倾倒液体时液面高于滤纸边缘","漏斗下端悬空在烧杯中央","玻璃棒下端靠在三层滤纸一侧"],"answer":3,"explanation":"玻璃棒应靠在三层滤纸一侧引流。搅拌会戳破滤纸；液面应低于滤纸边缘；漏斗下端应紧靠烧杯内壁。","knowledgeIds":["filtration-operation","lab-operations"]},
+      {"id":"L07-M18","type":"single","difficulty":"hard","knowledgePoint":"water-purification","question":"某同学将浑浊的泥水过滤后，发现滤液仍然浑浊，他可能的错误操作是？","options":["滤纸边缘低于漏斗边缘","液面低于滤纸边缘","玻璃棒靠在三层滤纸一侧","滤纸破损或液面高于滤纸边缘"],"answer":3,"explanation":"滤纸破损或液面高于滤纸边缘都会导致浑浊液体不经过滤直接流下，使滤液浑浊。","knowledgeIds":["filtration-operation","lab-operations"]},
+      {"id":"L07-M19","type":"constructed","difficulty":"hard","knowledgePoint":"water-purification","question":"小明家附近有一条河流，河水浑浊有异味。请设计一个简易净水装置，说明各层材料及作用。","rubric":{"modelAnswer":"从上到下：①蓬松棉/纱布——过滤大颗粒杂质；②细沙——过滤小颗粒不溶性杂质；③活性炭——吸附色素和异味；④卵石——支撑上层材料并使水均匀流下。每个材料针对不同杂质，层层净化。","keywords":[["蓬松棉","大颗粒过滤"],["细沙","小颗粒过滤"],["活性炭","吸附色素异味"],["卵石","支撑分流"]],"explanation":"简易净水装置模仿自来水厂的净化流程，通过多层材料逐步除去不同类型杂质。"},"explanation":"简易净水装置：蓬松棉→细沙→活性炭→卵石，逐层除去不同杂质。","knowledgeIds":["water-purification","filtration-operation","adsorption"],"misconceptionIds":["mc-purification-level"]},
+      {"id":"L07-M20","type":"single","difficulty":"hard","knowledgePoint":"hard-soft-water","question":"下列关于硬水和软水的说法正确的是？","options":["硬水就是含有杂质的水","软水是不含任何物质的水","硬水和软水都是混合物","蒸馏得到的水是硬水"],"answer":2,"explanation":"硬水和软水都是混合物，区别在于可溶性钙镁化合物含量不同。蒸馏水是软水。","knowledgeIds":["hard-soft-water"]},
+      {"id":"L07-M21","type":"single","difficulty":"hard","knowledgePoint":"water-purification","question":"下列关于水的说法错误的是？","options":["过滤能除去水中的不溶性杂质","活性炭能吸附水中的色素和异味","蒸馏是净化程度最高的方法","经过净化的水是纯净水"],"answer":3,"explanation":"经过沉淀、过滤、吸附净化后的水仍含有可溶性杂质，不是纯净水。只有蒸馏才能得到接近纯水。","knowledgeIds":["water-purification","distillation"]}
+    ],
+    "requiredKnowledgeIds": ["water-purification","filtration-operation","hard-soft-water","adsorption","distillation"],
+    "criticalMisconceptions": ["mc-filtration-operation","mc-hard-soft-distinguish","mc-purification-level","mc-purification-physical-chemical"],
+    "requireConstructed": true
+  }
+}

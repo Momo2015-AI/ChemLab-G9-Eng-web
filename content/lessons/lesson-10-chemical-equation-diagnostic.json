@@ -1,0 +1,36 @@
+{
+  "lessonId": "lesson-10-chemical-equation",
+  "version": "1.0",
+  "diagnostics": [
+    {
+      "id": "L10-D01",
+      "knowledgePoint": "relative-molecular-mass",
+      "question": "SO₂的相对分子质量是？",
+      "options": ["32","48","64","68"],
+      "answer": 2,
+      "errorType": "mc-relative-mass-calc",
+      "remediationStep": "L10-S02",
+      "knowledgeIds": ["relative-molecular-mass"]
+    },
+    {
+      "id": "L10-D02",
+      "knowledgePoint": "mass-fraction",
+      "question": "NH₄NO₃中氮元素的质量分数约为？",
+      "options": ["17.5%","26.4%","35%","80%"],
+      "answer": 1,
+      "errorType": "mc-mass-fraction",
+      "remediationStep": "L10-S04",
+      "knowledgeIds": ["mass-fraction"]
+    },
+    {
+      "id": "L10-D03",
+      "knowledgePoint": "law-conservation",
+      "question": "下列关于质量守恒定律的说法正确的是？",
+      "options": ["10g水变成10g水蒸气符合质量守恒定律","镁条燃烧后固体质量增加，不符合质量守恒定律","化学反应前后原子种类和数目不变","质量守恒定律适用于所有变化"],
+      "answer": 2,
+      "errorType": "mc-law-conservation",
+      "remediationStep": "L10-S06",
+      "knowledgeIds": ["law-conservation"]
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "lessonId": "lesson-06-water-composition",
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "L06W-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "knowledgePoint": "water-composition",
+      "question": "水电解实验中断开后，正极产生氧气，负极产生氢气。请解释为什么氢气体积是氧气体积的两倍，并写出化学反应方程式。",
+      "rubric": {
+        "modelAnswer": "根据水的化学式H₂O，每个水分子含有2个氢原子和1个氧原子。电解时氢气和氧气的摩尔比为2:1，相同条件下体积比等于摩尔比，所以氢气体积是氧气的2倍。方程式：2H₂O → 2H₂↑ + O₂↑。",
+        "keywords": [
+          [
+            "H₂O",
+            "水分子",
+            "化学式"
+          ],
+          [
+            "2:1",
+            "两倍",
+            "摩尔比"
+          ],
+          [
+            "2H₂O",
+            "方程式",
+            "电解"
+          ]
+        ],
+        "explanation": "水的组成决定电解产物比例。"
+      },
+      "explanation": "水的化学式H₂O决定了氢氧体积比为2:1。",
+      "knowledgeIds": [
+        "water-composition",
+        "electrolysis-experiment"
+      ],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L06W-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledgePoint": "hydrogen-property",
+      "question": "某同学用排水法收集氢气后点燃，发现爆炸声很小。请分析可能的原因，并说明如何改进实验以获得更明显的现象。",
+      "rubric": {
+        "modelAnswer": "原因：氢气不纯（混有空气）。改进：收集前验纯，确保氢气纯净；使用更小试管收集更纯氢气。",
+        "keywords": [
+          [
+            "不纯",
+            "空气",
+            "混合"
+          ],
+          [
+            "验纯",
+            "纯度",
+            "检验"
+          ]
+        ],
+        "explanation": "氢气不纯时点燃声音小或安静燃烧，纯净氢气点燃有爆鸣声。"
+      },
+      "explanation": "氢气不纯会导致点燃时声音小，需要验纯后再实验。",
+      "knowledgeIds": [
+        "hydrogen-property",
+        "lab-operations"
+      ],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L06W-T03",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "create",
+      "knowledgePoint": "element-concept",
+      "question": "设计实验验证水的组成元素，描述实验步骤、预期现象和结论。",
+      "rubric": {
+        "modelAnswer": "实验：水电解。步骤：连接装置，通电，观察两极气泡。现象：正极氧气使带火星木条复燃，负极氢气可燃。结论：水由氢氧元素组成。",
+        "keywords": [
+          [
+            "水电解",
+            "电解水"
+          ],
+          [
+            "正极氧气",
+            "负极氢气"
+          ],
+          [
+            "带火星木条",
+            "复燃"
+          ],
+          [
+            "氢氧元素"
+          ]
+        ],
+        "explanation": "电解水实验证明水由氢氧元素组成。"
+      },
+      "explanation": "电解水实验是验证水组成的经典方法。",
+      "knowledgeIds": [
+        "water-composition",
+        "observation-inference"
+      ],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L06W-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "knowledgePoint": "single-substance-compound",
+      "question": "判断下列物质类别：H₂O、O₂、H₂、CO₂、Fe。哪些是单质？哪些是化合物？",
+      "rubric": {
+        "modelAnswer": "单质：O₂、H₂、Fe（由同种元素组成）。化合物：H₂O、CO₂（由不同种元素组成）。",
+        "keywords": [
+          [
+            "O₂",
+            "H₂",
+            "Fe",
+            "单质"
+          ],
+          [
+            "H₂O",
+            "CO₂",
+            "化合物"
+          ],
+          [
+            "同种元素",
+            "不同元素"
+          ]
+        ],
+        "explanation": "单质由同种元素组成，化合物由不同种元素组成。"
+      },
+      "explanation": "根据组成元素种类判断单质和化合物。",
+      "knowledgeIds": [
+        "single-substance-compound",
+        "element-concept"
+      ],
+      "misconceptionIds": []
+    }
+  ]
+}

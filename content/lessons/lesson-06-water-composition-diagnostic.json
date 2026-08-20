@@ -1,0 +1,56 @@
+{
+  "lessonId": "lesson-06-water-composition",
+  "version": "1.0",
+  "diagnostics": [
+    {
+      "id": "L06-D01",
+      "knowledgePoint": "electrolysis-experiment",
+      "question": "电解水实验中，与电源正极相连的玻璃管内收集到的气体能使带火星的木条复燃，该气体是？",
+      "options": ["氢气", "氧气", "氮气", "二氧化碳"],
+      "answer": 1,
+      "errorType": "mc-water-electrolysis-polarity",
+      "remediationStep": "L06-S03",
+      "knowledgeIds": ["electrolysis-experiment", "oxygen-property"]
+    },
+    {
+      "id": "L06-D02",
+      "knowledgePoint": "water-composition",
+      "question": "关于水的组成，下列说法正确的是？",
+      "options": ["水是由氢气和氧气组成的", "水是由氢原子和氧原子构成的", "水是由氢元素和氧元素组成的", "水是由水原子构成的"],
+      "answer": 2,
+      "errorType": "mc-water-composition",
+      "remediationStep": "L06-S05",
+      "knowledgeIds": ["water-composition", "element-concept"]
+    },
+    {
+      "id": "L06-D03",
+      "knowledgePoint": "single-substance-compound",
+      "question": "下列各组物质中，前者是单质，后者是化合物的是？",
+      "options": ["空气、水", "氧气、二氧化碳", "铁、液态氧", "氢气、矿泉水"],
+      "answer": 1,
+      "errorType": "mc-single-compound-distinguish",
+      "remediationStep": "L06-S06",
+      "knowledgeIds": ["single-substance-compound", "element-concept"]
+    },
+    {
+      "id": "L06-D04",
+      "knowledgePoint": "element-concept",
+      "question": "下列关于元素的说法错误的是？",
+      "options": ["元素是质子数相同的一类原子的总称", "元素只讲种类，不讲个数", "同种元素可以组成不同的单质", "化合物中元素的化合价一定不为零"],
+      "answer": 3,
+      "errorType": "mc-element-misunderstanding",
+      "remediationStep": "L06-S07",
+      "knowledgeIds": ["element-concept"]
+    },
+    {
+      "id": "L06-D05",
+      "knowledgePoint": "hydrogen-property",
+      "question": "下列有关氢气性质的描述中，错误的是？",
+      "options": ["氢气是最轻的气体", "氢气难溶于水", "氢气在空气中燃烧产生蓝色火焰", "点燃氢气前必须验纯"],
+      "answer": 2,
+      "errorType": "mc-hydrogen-burn",
+      "remediationStep": "L06-S04",
+      "knowledgeIds": ["hydrogen-property", "lab-operations"]
+    }
+  ]
+}
