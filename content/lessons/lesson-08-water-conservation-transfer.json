@@ -1,0 +1,85 @@
+{
+  "lessonId": "lesson-08-water-conservation",
+  "version": "1.0",
+  "transfer": {
+    "scenarios": [
+      {
+        "id": "L08-T01",
+        "title": "学校用水量分析",
+        "context": "小明发现学校每天用水量很大，主要用水部位包括：食堂、洗手间、实验室、绿化灌溉。他想调查学校用水情况并提出节水建议。",
+        "question": "以下哪项调查数据最有助于小明制定节水方案？",
+        "options": ["学校总人数","各用水点的日用水量分布","学校所在地区的降水量","学校的占地面积"],
+        "answer": 1,
+        "explanation": "了解各用水点的日用水量分布，才能针对性地制定节水方案，找出用水大户重点改进。",
+        "knowledgeIds": ["water-conservation","sustainable-development"],
+        "misconceptionIds": [],
+        "difficulty": "medium",
+        "source": "校园生活情境",
+        "tags": ["数据分析","方案设计"]
+      },
+      {
+        "id": "L08-T02",
+        "title": "家庭用水账单分析",
+        "context": "小红家的水费账单显示每月用水量15吨，邻居说这个用量偏高。小红想分析家庭成员用水习惯，找出节水空间。",
+        "question": "下列生活习惯中，最可能造成用水量偏高的是？",
+        "options": ["用洗菜水冲厕所","刷牙时关闭水龙头","洗澡时间控制在10分钟内","长时间放水洗碗筷"],
+        "answer": 3,
+        "explanation": "长时间放水洗碗筷会浪费大量水资源。其他选项都是节水好习惯。",
+        "knowledgeIds": ["water-conservation"],
+        "misconceptionIds": [],
+        "difficulty": "basic",
+        "source": "家庭生活情境",
+        "tags": ["习惯养成","行为分析"]
+      },
+      {
+        "id": "L08-T03",
+        "title": "社区水环境调查",
+        "context": "某社区附近有一条小河，居民反映近年来河水变臭、鱼虾减少。社区居委会计划组织居民进行调查。",
+        "question": "下列调查内容中，对判断污染源最有帮助的是？",
+        "options": ["测量河水的pH值","统计沿河建筑物的数量","观察河水的颜色和气味","询问居民的生辰八字"],
+        "answer": 0,
+        "explanation": "pH值可以反映水体的酸碱度变化，是判断污染源性质的重要指标。颜色气味也能提供线索，但pH值更科学。",
+        "knowledgeIds": ["water-pollution","pollution-prevention"],
+        "misconceptionIds": [],
+        "difficulty": "medium",
+        "source": "社区调查情境",
+        "tags": ["调查方法","科学探究"]
+      },
+      {
+        "id": "L08-T04",
+        "title": "干旱地区的生活",
+        "context": "某干旱地区年降水量不足200mm，当地居民长期面临缺水问题。政府计划实施南水北调工程。",
+        "question": "关于南水北调工程，下列说法正确的是？",
+        "options": ["可以彻底解决我国北方缺水问题","调水过程不会产生任何环境问题","需要考虑调水对生态环境的影响","只需要考虑调水成本即可"],
+        "answer": 2,
+        "explanation": "南水北调是大型水利工程，需要考虑生态环境影响、调水成本等多方面因素，不能简单认为能彻底解决问题。",
+        "knowledgeIds": ["water-resources","sustainable-development"],
+        "misconceptionIds": [],
+        "difficulty": "hard",
+        "source": "国家工程情境",
+        "tags": ["工程思维","综合决策"]
+      },
+      {
+        "id": "L08-T05",
+        "title": "工业节水改造",
+        "context": "某化工厂每天用水量10000吨，其中冷却用水占80%。厂长计划进行节水改造。",
+        "question": "下列节水改造方案中，效果最好的是？",
+        "options": ["将冷却水直接排放","改造为循环冷却系统","减少生产规模","停止用水部门运行"],
+        "answer": 1,
+        "explanation": "循环冷却系统可以将冷却水重复利用，大幅减少新鲜水用量，是工业节水最有效的技术手段。",
+        "knowledgeIds": ["water-conservation","pollution-prevention"],
+        "misconceptionIds": [],
+        "difficulty": "hard",
+        "source": "工业生产情境",
+        "tags": ["技术改造","经济效益"]
+      }
+    ],
+    "requiredScenarioCount": 3,
+    "mustIncludeConstructed": true,
+    "scoringCriteria": {
+      "dataAnalysis": "能从用水数据中找出节水空间",
+      "problemSolving": "能分析水污染原因并提出解决方案",
+      "decisionMaking": "能在复杂情境中做出合理决策"
+    }
+  }
+}

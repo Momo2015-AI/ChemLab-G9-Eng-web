@@ -1,0 +1,18 @@
+{
+  "lessonId": "lesson-10-chemical-equation",
+  "version": "1.0",
+  "questions": [
+    {"id":"L10-P01","type":"calculation","difficulty":"basic","knowledgePoint":"relative-molecular-mass","question":"H₂O的相对分子质量是？","options":["16","17","18","32"],"answer":2,"explanation":"H₂O的相对分子质量=1×2+16=18。","knowledgeIds":["relative-molecular-mass"]},
+    {"id":"L10-P02","type":"calculation","difficulty":"basic","knowledgePoint":"mass-ratio","question":"CO₂中碳元素和氧元素的质量比是？","options":["1:1","1:2","3:8","12:16"],"answer":2,"explanation":"CO₂中C:O质量比=12:(16×2)=12:32=3:8。","knowledgeIds":["mass-ratio"]},
+    {"id":"L10-P03","type":"calculation","difficulty":"basic","knowledgePoint":"mass-fraction","question":"CaCO₃中钙元素的质量分数是？","options":["20%","30%","40%","50%"],"answer":2,"explanation":"CaCO₃相对分子质量=40+12+16×3=100，钙元素质量分数=40/100×100%=40%。","knowledgeIds":["mass-fraction"]},
+    {"id":"L10-P04","type":"concept","difficulty":"basic","knowledgePoint":"law-conservation","question":"化学反应前后，一定不变的是？","options":["分子种类","原子种类","物质种类","分子数目"],"answer":1,"explanation":"质量守恒的微观本质：化学反应前后原子的种类、数目、质量都不变。","knowledgeIds":["law-conservation"]},
+    {"id":"L10-P05","type":"concept","difficulty":"medium","knowledgePoint":"law-conservation","question":"下列现象能用质量守恒定律解释的是？","options":["水结冰后质量不变","铁生锈后质量增加","酒精挥发后质量减少","玻璃破碎后质量不变"],"answer":1,"explanation":"铁生锈是化学变化，能用质量守恒定律解释。其他都是物理变化。","knowledgeIds":["law-conservation"]},
+    {"id":"L10-P06","type":"calculation","difficulty":"medium","knowledgePoint":"relative-molecular-mass","question":"H₂SO₄的相对分子质量是？","options":["96","98","100","110"],"answer":1,"explanation":"H₂SO₄的相对分子质量=1×2+32+16×4=98。","knowledgeIds":["relative-molecular-mass"]},
+    {"id":"L10-P07","type":"calculation","difficulty":"medium","knowledgePoint":"mass-fraction","question":"50g CaCO₃中钙元素的质量约为？","options":["10g","20g","40g","50g"],"answer":1,"explanation":"CaCO₃中钙元素质量分数=40/100=40%，50g中含钙20g。","knowledgeIds":["mass-fraction"]},
+    {"id":"L10-P08","type":"calculation","difficulty":"hard","knowledgePoint":"mass-ratio","question":"NH₄NO₃中氮、氢、氧元素的质量比是？","options":["2:4:3","14:2:24","7:1:12","7:1:8"],"answer":2,"explanation":"N:H:O质量比=(14×2):(1×4):(16×3)=28:4:48=7:1:12。","knowledgeIds":["mass-ratio"]},
+    {"id":"L10-P09","type":"concept","difficulty":"hard","knowledgePoint":"law-conservation","question":"下列关于质量守恒定律的说法正确的是？","options":["10g水变成10g水蒸气符合质量守恒定律","镁条燃烧后固体质量增加，不符合质量守恒定律","化学反应前后原子种类和数目不变","质量守恒定律适用于所有变化"],"answer":2,"explanation":"A是物理变化；B中增加的质量来自氧气，总质量守恒；D只适用于化学变化。","knowledgeIds":["law-conservation"]},
+    {"id":"L10-P10","type":"calculation","difficulty":"hard","knowledgePoint":"stoichiometry","question":"10g碳酸钙完全分解，生成二氧化碳的质量约为？","options":["4.4g","5.6g","10g","18g"],"answer":0,"explanation":"CaCO₃→CaO+CO₂↑，100g碳酸钙生成44g二氧化碳，10g生成4.4g。","knowledgeIds":["stoichiometry","law-conservation"]},
+    {"id":"L10-P11","type":"calculation","difficulty":"hard","knowledgePoint":"relative-molecular-mass","question":"Fe₂O₃的相对分子质量是？","options":["72","112","160","232"],"answer":2,"explanation":"Fe₂O₃的相对分子质量=56×2+16×3=112+48=160。","knowledgeIds":["relative-molecular-mass"]},
+    {"id":"L10-P12","type":"constructed","difficulty":"hard","knowledgePoint":"law-conservation","question":"某同学将镁条在空气中点燃，发现燃烧后固体质量增加了。请用质量守恒定律解释这一现象。","rubric":{"modelAnswer":"镁条燃烧是与空气中的氧气反应生成氧化镁：2Mg+O₂→2MgO。根据质量守恒定律，参加反应的镁和氧气的质量总和等于生成的氧化镁的质量。因此燃烧后固体质量增加，增加的部分就是参加反应的氧气的质量。","keywords":[["镁与氧气反应","化学方程式"],["质量守恒","总质量不变"],["增加的质量","氧气的质量"]],"explanation":"镁条燃烧增重是因为结合了空气中的氧气，符合质量守恒定律。"},"explanation":"镁条燃烧增重是因为与氧气反应生成氧化镁，参加反应的镁和氧气总质量等于氧化镁质量。","knowledgeIds":["law-conservation"],"misconceptionIds":["mc-law-conservation"]}
+  ]
+}

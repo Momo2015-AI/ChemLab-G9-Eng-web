@@ -1,0 +1,168 @@
+{
+  "id": "lesson-08-water-conservation",
+  "sequenceNumber": 8,
+  "day": "08",
+  "title": "爱护水资源",
+  "module": "unit-04-natural-water",
+  "semester": "upper",
+  "unitId": "u04",
+  "duration": "30 分钟",
+  "description": "了解我国水资源状况，认识水资源短缺的严重性，掌握节水方法和防治水污染的措施。",
+  "status": "ready",
+  "releaseStatus": "ready",
+  "learningObjectives": [
+    "了解全球和我国水资源状况，认识水资源的宝贵。",
+    "掌握节约用水的方法，养成节水习惯。",
+    "了解水体污染的原因、危害及防治措施。",
+    "树立爱水护水的意识，践行节水行动。"
+  ],
+  "knowledgePoints": [
+    "water-resources",
+    "water-conservation",
+    "water-pollution",
+    "pollution-prevention",
+    "sustainable-development"
+  ],
+  "prerequisites": [
+    "lesson-07-water-purification"
+  ],
+  "guidedLearning": {
+    "stepCount": 6,
+    "steps": [
+      { "id": "L08-S01", "title": "引言：地球上的水" },
+      { "id": "L08-S02", "title": "水资源现状" },
+      { "id": "L08-S03", "title": "节约用水" },
+      { "id": "L08-S04", "title": "水体污染" },
+      { "id": "L08-S05", "title": "防治水污染" },
+      { "id": "L08-S06", "title": "我们的行动" }
+    ]
+  },
+  "resourceRefs": {
+    "experiment": null,
+    "practice": "content/lessons/lesson-08-water-conservation-practice.json",
+    "diagnostic": "content/lessons/lesson-08-water-conservation-diagnostic.json",
+    "mastery": "content/lessons/lesson-08-water-conservation-mastery.json",
+    "transfer": "content/lessons/lesson-08-water-conservation-transfer.json"
+  },
+  "experiments": [],
+  "questions": [
+    {
+      "id": "L08-Q01",
+      "type": "concept",
+      "question": "下列关于水资源的说法正确的是？",
+      "options": ["地球表面约71%被水覆盖，水资源取之不尽", "淡水资源丰富，可以直接利用", "陆地淡水资源约占全球水储量的2.53%", "我国水资源充裕，不需要节水"],
+      "answer": 2,
+      "knowledgeIds": ["water-resources"],
+      "knowledgePoints": ["water-resources"],
+      "explanation": "地球表面约71%被水覆盖，但淡水资源仅占全球水储量的约2.53%，且大部分是冰川和深层地下水，可直接利用的淡水很少。"
+    },
+    {
+      "id": "L08-Q02",
+      "type": "concept",
+      "question": "下列做法不利于节约用水的是？",
+      "options": ["用洗菜水浇花", "随手关闭水龙头", "用淘米水冲厕所", "长时间冲洗餐具"],
+      "answer": 3,
+      "knowledgeIds": ["water-conservation"],
+      "knowledgePoints": ["water-conservation"],
+      "explanation": "长时间冲洗餐具会浪费大量水资源，不利于节约用水。其他选项都是节水的好习惯。"
+    },
+    {
+      "id": "L08-Q03",
+      "type": "concept",
+      "question": "造成水污染的主要原因是？",
+      "options": ["工业废水随意排放", "农业化肥流失", "生活污水排放", "以上都是"],
+      "answer": 3,
+      "knowledgeIds": ["water-pollution"],
+      "knowledgePoints": ["water-pollution"],
+      "explanation": "工业废水、农业化肥农药、生活污水都是水污染的主要来源。"
+    },
+    {
+      "id": "L08-Q04",
+      "type": "concept",
+      "question": "下列防治水体污染的措施中，不合理的是？",
+      "options": ["工业废水处理达标后排放", "合理使用化肥和农药", "生活污水集中处理排放", "禁止使用任何化学物质"],
+      "answer": 3,
+      "knowledgeIds": ["pollution-prevention"],
+      "knowledgePoints": ["pollution-prevention"],
+      "explanation": "禁止使用任何化学物质是不现实的，应该合理使用并妥善处理污染物。"
+    }
+  ],
+  "diagnosticQuestions": [
+    {
+      "id": "L08-D01",
+      "knowledgePoint": "water-resources",
+      "question": "下列关于水资源的叙述正确的是？",
+      "options": ["地球上水储量丰富，淡水取之不尽", "淡水资源占总水量的约97%", "陆地淡水约占全球水储量的2.53%", "我国是水资源丰富的国家"],
+      "answer": 2,
+      "errorType": "mc-water-resource-stat",
+      "remediationStep": "L08-S02",
+      "knowledgeIds": ["water-resources"]
+    },
+    {
+      "id": "L08-D02",
+      "knowledgePoint": "water-pollution",
+      "question": "下列做法会造成水体污染的是？",
+      "options": ["生活污水集中处理", "合理使用化肥农药", "工业废水直接排放", "加强水质监测"],
+      "answer": 2,
+      "errorType": "mc-water-pollution",
+      "remediationStep": "L08-S05",
+      "knowledgeIds": ["water-pollution", "pollution-prevention"]
+    }
+  ],
+  "mastery": {
+    "threshold": 0.95,
+    "questionCount": 15,
+    "minCorrect": 14,
+    "mode": "unseen-transfer",
+    "resourceRef": "content/lessons/lesson-08-water-conservation-mastery.json",
+    "description": "使用情境题验证是否真正理解水资源保护的重要性。",
+    "fallback": "diagnosis"
+  },
+  "misconceptions": [
+    "mc-water-resource-stat",
+    "mc-water-pollution"
+  ],
+  "sections": [
+    {
+      "title": "本节课要掌握什么？",
+      "body": [
+        "了解全球和我国水资源状况。",
+        "掌握节约用水的具体方法。",
+        "了解水体污染的原因和防治措施。"
+      ]
+    },
+    {
+      "title": "核心数据",
+      "body": [
+        "地球表面约71%被水覆盖。",
+        "淡水资源仅占全球水储量的约2.53%。",
+        "可直接利用的淡水资源不足总水量的1%。",
+        "我国人均水资源约为世界平均水平的1/4。"
+      ]
+    },
+    {
+      "title": "节水标志",
+      "body": [
+        "国家节水标志由水滴、人手和地球变形而成。",
+        "绿色圆形代表地球，象征节约用水是保护地球生态的重要措施。",
+        "留白部分像一只手托起一滴水，手是拼音字母JS的变形，寓意节水。"
+      ]
+    }
+  ],
+  "summary": "本课了解水资源状况，认识节约用水的重要性，掌握防治水污染的措施。",
+  "provenance": {
+    "status": "ready",
+    "basis": "人教版九年级化学上册第四单元课题1。",
+    "note": "已完成运行时验证。"
+  },
+  "review": {
+    "curriculum": "pass",
+    "scientific": "pass",
+    "ageSuitability": "pass",
+    "itemQuality": "pass",
+    "knowledgeLinks": "pass",
+    "wuhanAlignment": "pass",
+    "masteryGate": "pass",
+    "blockingIssues": []
+  }
+}

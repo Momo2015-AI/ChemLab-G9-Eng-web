@@ -1,0 +1,209 @@
+{
+  "id": "lesson-10-chemical-equation",
+  "sequenceNumber": 10,
+  "day": "10",
+  "title": "化学式与化合价（下）",
+  "module": "unit-04-natural-water",
+  "semester": "upper",
+  "unitId": "u04",
+  "duration": "45 分钟",
+  "description": "掌握根据化学式计算相对分子质量、元素质量比和元素质量分数的方法，理解质量守恒定律。",
+  "status": "ready",
+  "releaseStatus": "ready",
+  "learningObjectives": [
+    "能根据化学式计算相对分子质量。",
+    "能计算化合物中各元素的质量比。",
+    "能计算化合物中某元素的质量分数。",
+    "理解质量守恒定律的内涵，能运用质量守恒定律解释简单问题。"
+  ],
+  "knowledgePoints": [
+    "relative-molecular-mass",
+    "mass-ratio",
+    "mass-fraction",
+    "law-conservation",
+    "stoichiometry"
+  ],
+  "prerequisites": [
+    "lesson-09-chemical-formula"
+  ],
+  "guidedLearning": {
+    "stepCount": 8,
+    "steps": [
+      { "id": "L10-S01", "title": "引入：定量认识物质" },
+      { "id": "L10-S02", "title": "相对分子质量计算" },
+      { "id": "L10-S03", "title": "元素质量比" },
+      { "id": "L10-S04", "title": "元素质量分数" },
+      { "id": "L10-S05", "title": "质量守恒定律发现" },
+      { "id": "L10-S06", "title": "质量守恒定律内涵" },
+      { "id": "L10-S07", "title": "质量守恒微观解释" },
+      { "id": "L10-S08", "title": "质量守恒应用" }
+    ]
+  },
+  "resourceRefs": {
+    "experiment": "content/lessons/lesson-10-chemical-equation-experiment.json",
+    "practice": "content/lessons/lesson-10-chemical-equation-practice.json",
+    "diagnostic": "content/lessons/lesson-10-chemical-equation-diagnostic.json",
+    "mastery": "content/lessons/lesson-10-chemical-equation-mastery.json",
+    "transfer": "content/lessons/lesson-10-chemical-equation-transfer.json"
+  },
+  "experiments": [
+    {
+      "id": "L10-E01",
+      "title": "验证质量守恒定律",
+      "purpose": "通过实验验证化学反应前后物质总质量不变。",
+      "status": "ready-for-runtime",
+      "resourceRef": "content/lessons/lesson-10-chemical-equation-experiment.json"
+    }
+  ],
+  "questions": [
+    {
+      "id": "L10-Q01",
+      "type": "calculation",
+      "question": "H₂O的相对分子质量是？",
+      "options": ["16", "17", "18", "32"],
+      "answer": 2,
+      "knowledgeIds": ["relative-molecular-mass"],
+      "knowledgePoints": ["relative-molecular-mass"],
+      "explanation": "H₂O的相对分子质量 = 1×2 + 16 = 18。"
+    },
+    {
+      "id": "L10-Q02",
+      "type": "calculation",
+      "question": "CO₂中碳元素和氧元素的质量比是？",
+      "options": ["1:1", "1:2", "3:8", "12:16"],
+      "answer": 2,
+      "knowledgeIds": ["mass-ratio"],
+      "knowledgePoints": ["mass-ratio"],
+      "explanation": "CO₂中C:O质量比 = 12:(16×2) = 12:32 = 3:8。"
+    },
+    {
+      "id": "L10-Q03",
+      "type": "calculation",
+      "question": "CaCO₃中钙元素的质量分数是？",
+      "options": ["20%", "30%", "40%", "50%"],
+      "answer": 2,
+      "knowledgeIds": ["mass-fraction"],
+      "knowledgePoints": ["mass-fraction"],
+      "explanation": "CaCO₃相对分子质量 = 40+12+16×3 = 100，钙元素质量分数 = 40/100 × 100% = 40%。"
+    },
+    {
+      "id": "L10-Q04",
+      "type": "concept",
+      "question": "化学反应前后，一定不变的是？",
+      "options": ["分子种类", "原子种类", "物质种类", "分子数目"],
+      "answer": 1,
+      "knowledgeIds": ["law-conservation"],
+      "knowledgePoints": ["law-conservation"],
+      "explanation": "质量守恒定律：化学反应前后，原子的种类、数目、质量都不变；分子种类和物质种类一定改变。"
+    },
+    {
+      "id": "L10-Q05",
+      "type": "concept",
+      "question": "下列现象能用质量守恒定律解释的是？",
+      "options": ["水结冰后质量不变", "铁生锈后质量增加", "酒精挥发后质量减少", "玻璃破碎后质量不变"],
+      "answer": 1,
+      "knowledgeIds": ["law-conservation"],
+      "knowledgePoints": ["law-conservation"],
+      "explanation": "铁生锈是铁与氧气反应生成氧化铁，属于化学变化，能用质量守恒定律解释。其他都是物理变化。"
+    },
+    {
+      "id": "L10-Q06",
+      "type": "calculation",
+      "question": "10g碳酸钙完全分解，生成二氧化碳的质量约为？",
+      "options": ["4.4g", "5.6g", "10g", "18g"],
+      "answer": 0,
+      "knowledgeIds": ["stoichiometry", "law-conservation"],
+      "knowledgePoints": ["stoichiometry"],
+      "explanation": "CaCO₃ → CaO + CO₂↑，100g碳酸钙生成44g二氧化碳，10g生成4.4g。"
+    }
+  ],
+  "diagnosticQuestions": [
+    {
+      "id": "L10-D01",
+      "knowledgePoint": "relative-molecular-mass",
+      "question": "SO₂的相对分子质量是？",
+      "options": ["32", "48", "64", "68"],
+      "answer": 2,
+      "errorType": "mc-relative-mass-calc",
+      "remediationStep": "L10-S02",
+      "knowledgeIds": ["relative-molecular-mass"]
+    },
+    {
+      "id": "L10-D02",
+      "knowledgePoint": "mass-fraction",
+      "question": "NH₄NO₃中氮元素的质量分数约为？",
+      "options": ["17.5%", "26.4%", "35%", "80%"],
+      "answer": 1,
+      "errorType": "mc-mass-fraction",
+      "remediationStep": "L10-S04",
+      "knowledgeIds": ["mass-fraction"]
+    },
+    {
+      "id": "L10-D03",
+      "knowledgePoint": "law-conservation",
+      "question": "下列关于质量守恒定律的说法正确的是？",
+      "options": ["10g水变成10g水蒸气符合质量守恒定律", "镁条燃烧后固体质量增加，不符合质量守恒定律", "化学反应前后原子种类和数目不变", "质量守恒定律适用于所有变化"],
+      "answer": 2,
+      "errorType": "mc-law-conservation",
+      "remediationStep": "L10-S06",
+      "knowledgeIds": ["law-conservation"]
+    }
+  ],
+  "mastery": {
+    "threshold": 0.95,
+    "questionCount": 21,
+    "minCorrect": 20,
+    "mode": "unseen-transfer",
+    "resourceRef": "content/lessons/lesson-10-chemical-equation-mastery.json",
+    "description": "使用计算题验证是否真正掌握化学式计算和质量守恒定律。",
+    "fallback": "diagnosis"
+  },
+  "misconceptions": [
+    "mc-relative-mass-calc",
+    "mc-mass-fraction",
+    "mc-law-conservation",
+    "mc-physical-chemical-distinguish"
+  ],
+  "sections": [
+    {
+      "title": "本节课要掌握什么？",
+      "body": [
+        "能根据化学式计算相对分子质量。",
+        "能计算元素质量比和质量分数。",
+        "理解质量守恒定律的内涵和应用。"
+      ]
+    },
+    {
+      "title": "核心公式",
+      "body": [
+        "相对分子质量 = 各原子相对原子质量总和",
+        "元素质量比 = (相对原子质量×原子个数)之比",
+        "元素质量分数 = (相对原子质量×原子个数) / 相对分子质量 × 100%"
+      ]
+    },
+    {
+      "title": "质量守恒定律",
+      "body": [
+        "参加化学反应的各物质的质量总和等于反应后生成的各物质的质量总和。",
+        "微观本质：化学反应前后原子的种类、数目、质量都不变。",
+        "适用范围：化学变化，不适用于物理变化。"
+      ]
+    }
+  ],
+  "summary": "本课掌握根据化学式的计算，理解质量守恒定律并能运用其解释简单问题。",
+  "provenance": {
+    "status": "ready",
+    "basis": "人教版九年级化学上册第四单元课题4；武汉中考计算题高频考点。",
+    "note": "已完成运行时验证。"
+  },
+  "review": {
+    "curriculum": "pass",
+    "scientific": "pass",
+    "ageSuitability": "pass",
+    "itemQuality": "pass",
+    "knowledgeLinks": "pass",
+    "wuhanAlignment": "pass",
+    "masteryGate": "pass",
+    "blockingIssues": []
+  }
+}

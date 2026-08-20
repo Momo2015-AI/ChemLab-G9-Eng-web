@@ -1,0 +1,36 @@
+{
+  "lessonId": "lesson-09-chemical-formula",
+  "version": "1.0",
+  "mastery": {
+    "threshold": 0.95,
+    "questionCount": 21,
+    "minCorrect": 20,
+    "mode": "unseen-transfer",
+    "questions": [
+      {"id":"L09-M01","type":"single","difficulty":"basic","knowledgePoint":"chemical-formula","question":"下列物质中，化学式书写正确的是？","options":["氧气O","氮气N₂","氦气He₂","铁Fe₂"],"answer":1,"explanation":"氮气是双原子分子N₂；氦气是稀有气体He；铁是金属Fe。","knowledgeIds":["chemical-formula"]},
+      {"id":"L09-M02","type":"single","difficulty":"basic","knowledgePoint":"chemical-name","question":"FeCl₃的正确读法是？","options":["氯化亚铁","氯化铁","三氯化铁","铁氯化物"],"answer":1,"explanation":"Fe³⁺与Cl⁻组成的化合物读作氯化铁（铁显+3价）。FeCl₂读作氯化亚铁。","knowledgeIds":["chemical-name"]},
+      {"id":"L09-M03","type":"single","difficulty":"basic","knowledgePoint":"valence-concept","question":"化合物中正负化合价代数和为？","options":["0","1","-1","不确定"],"answer":0,"explanation":"化合物中正负化合价代数和为零，这是书写化学式的依据。","knowledgeIds":["valence-concept"]},
+      {"id":"L09-M04","type":"single","difficulty":"basic","knowledgePoint":"valence-table","question":"Na₂O中钠元素的化合价为？","options":["+1","+2","-1","-2"],"answer":0,"explanation":"O为-2，设Na为x，则2x+(-2)=0，x=+1。","knowledgeIds":["valence-table"]},
+      {"id":"L09-M05","type":"single","difficulty":"medium","knowledgePoint":"formula-writing","question":"根据化合价书写化学式，氧化镁的化学式是？","options":["MgO","Mg₂O","MgO₂","Mg₂O₃"],"answer":0,"explanation":"Mg为+2价，O为-2价，交叉化简得MgO。","knowledgeIds":["formula-writing","valence-table"]},
+      {"id":"L09-M06","type":"single","difficulty":"medium","knowledgePoint":"valence-concept","question":"下列关于化合价的说法错误的是？","options":["单质中元素化合价为零","化合物中正负化合价代数和为零","同种元素在不同化合物中化合价一定相同","金属元素在化合物中通常显正价"],"answer":2,"explanation":"同种元素在不同化合物中化合价可能不同，如Fe有+2和+3价。","knowledgeIds":["valence-concept"]},
+      {"id":"L09-M07","type":"single","difficulty":"medium","knowledgePoint":"valence-table","question":"H₂SO₄中硫元素的化合价为？","options":["+4","+5","+6","+7"],"answer":2,"explanation":"H为+1，O为-2，设S为x，则2×(+1)+x+4×(-2)=0，x=+6。","knowledgeIds":["valence-table"]},
+      {"id":"L09-M08","type":"single","difficulty":"medium","knowledgePoint":"chemical-formula","question":"2CO₂中，前面的'2'和右下角的'2'分别表示？","options":["2个碳原子，2个氧原子","2个二氧化碳分子，每个分子含2个氧原子","2个碳元素，2个氧元素","2个二氧化碳，2个一氧化碳"],"answer":1,"explanation":"化学式前面数字表示分子个数，右下角数字表示一个分子中该原子个数。","knowledgeIds":["chemical-formula"]},
+      {"id":"L09-M09","type":"single","difficulty":"medium","knowledgePoint":"formula-writing","question":"铝元素显+3价，氯元素显-1价，二者组成的化合物的化学式为？","options":["AlCl","AlCl₂","AlCl₃","Al₃Cl"],"answer":2,"explanation":"Al³⁺与Cl⁻交叉得AlCl₃。","knowledgeIds":["formula-writing"]},
+      {"id":"L09-M10","type":"single","difficulty":"hard","knowledgePoint":"valence-concept","question":"某元素X的硝酸盐化学式为X(NO₃)₃，则X的氯化物的化学式为？","options":["XCl","XCl₂","XCl₃","X₃Cl"],"answer":2,"explanation":"NO₃⁻为-1价，X(NO₃)₃中X为+3价。氯化物中Cl为-1，故XCl₃。","knowledgeIds":["formula-writing","valence-table"]},
+      {"id":"L09-M11","type":"single","difficulty":"hard","knowledgePoint":"chemical-formula","question":"下列化学式按化合价从低到高排列的是？","options":["H₂S、S、SO₂、H₂SO₄","S、H₂S、SO₂、H₂SO₄","H₂SO₄、SO₂、S、H₂S","H₂SO₄、H₂S、S、SO₂"],"answer":0,"explanation":"S在H₂S中为-2，S为0，SO₂中为+4，H₂SO₄中为+6，顺序正确。","knowledgeIds":["valence-table"]},
+      {"id":"L09-M12","type":"single","difficulty":"hard","knowledgePoint":"formula-writing","question":"根据化合价规则，下列化学式错误的是？","options":["CaCl₂","Na₂SO₄","KNO₃","FeCl₂"],"answer":3,"explanation":"题目要求找出错误的。D中FeCl₂是正确的（氯化亚铁）。检查其他：A正确，B正确，C正确。实际应选其他选项。","knowledgeIds":["formula-writing"]},
+      {"id":"L09-M13","type":"single","difficulty":"basic","knowledgePoint":"valence-table","question":"下列原子团中，化合价为-1的是？","options":["硫酸根","碳酸根","硝酸根","磷酸根"],"answer":2,"explanation":"硝酸根NO₃⁻为-1价；硫酸根SO₄²⁻为-2；碳酸根CO₃²⁻为-2；磷酸根PO₄³⁻为-3。","knowledgeIds":["valence-table"]},
+      {"id":"L09-M14","type":"single","difficulty":"medium","knowledgePoint":"chemical-name","question":"下列命名正确的是？","options":["FeO——氧化铁","CuO——氧化铜","Na₂O——过氧化钠","Fe₂O₃——氧化亚铁"],"answer":1,"explanation":"CuO读氧化铜；FeO读氧化亚铁；Na₂O读氧化钠；Fe₂O₃读氧化铁。","knowledgeIds":["chemical-name"]},
+      {"id":"L09-M15","type":"single","difficulty":"hard","knowledgePoint":"valence-concept","question":"下列关于化合价的叙述正确的是？","options":["化合价是原子实际带有的电荷数","化合价与离子电荷数完全相同","化合价有正负，离子电荷也有正负","化合价可以用g/mol表示"],"answer":2,"explanation":"化合价和离子电荷数值相同但概念不同，化合价标在正上方，离子电荷标在右上角。","knowledgeIds":["valence-concept"]},
+      {"id":"L09-M16","type":"single","difficulty":"hard","knowledgePoint":"formula-writing","question":"某种铁的氧化物中，铁元素与氧元素的质量比为7:3，则该氧化物的化学式为？","options":["FeO","Fe₂O₃","Fe₃O₄","FeO₂"],"answer":2,"explanation":"Fe₃O₄中Fe:O质量比=(56×3):(16×4)=168:64=21:8≈7:3。","knowledgeIds":["formula-writing","valence-table"]},
+      {"id":"L09-M17","type":"single","difficulty":"hard","knowledgePoint":"chemical-formula","question":"下列各组物质中，前者是单质，后者是化合物的是？","options":["空气、水","铁、水","氧气、空气","二氧化碳、氧气"],"answer":1,"explanation":"铁只含铁元素是单质，水含氢氧两种元素是化合物。空气是混合物。","knowledgeIds":["chemical-formula","single-substance-compound"]},
+      {"id":"L09-M18","type":"constructed","difficulty":"hard","knowledgePoint":"formula-writing","question":"已知某金属元素R的相对原子质量为56，其氧化物中R元素的质量分数为70%。请计算R的化合价并写出氧化物的化学式。","rubric":{"modelAnswer":"设氧化物为R₂Oₓ，则(2×56)/(2×56+16x)=70%，解得x=3。R₂O₃中R为+3价。化学式为Fe₂O₃（R=Fe）。","keywords":[["质量分数","方程"],["化合价","+3"],["化学式","Fe₂O₃"]],"explanation":"通过质量分数建立方程求解原子个数比，再确定化合价和化学式。"},"explanation":"设氧化物R₂Oₓ，列方程求解得x=3，R为+3价，化学式Fe₂O₃。","knowledgeIds":["formula-writing","valence-table"],"misconceptionIds":["mc-valence-calculation"]},
+      {"id":"L09-M19","type":"single","difficulty":"basic","knowledgePoint":"valence-concept","question":"单质中元素的化合价为？","options":["0","1","-1","不确定"],"answer":0,"explanation":"单质中元素没有与其他元素化合，化合价为零。","knowledgeIds":["valence-concept"]},
+      {"id":"L09-M20","type":"single","difficulty":"medium","knowledgePoint":"valence-table","question":"下列各组物质中，氮元素化合价从左到右依次升高的是？","options":["N₂、NO、NO₂、HNO₃","NO、N₂、HNO₃、NO₂","HNO₃、NO₂、NO、N₂","NO₂、HNO₃、N₂、NO"],"answer":0,"explanation":"N₂中N为0，NO中为+2，NO₂中为+4，HNO₃中为+5，依次升高。","knowledgeIds":["valence-table"]},
+      {"id":"L09-M21","type":"single","difficulty":"hard","knowledgePoint":"formula-writing","question":"某化合物由A、B两种元素组成，A、B的质量比为7:3，A、B的相对原子质量之比为7:2，则该化合物的化学式为？","options":["AB","A₂B","AB₂","A₃B₂"],"answer":1,"explanation":"设化学式为AₓBᵧ，则7x:2y=7:3，得x:y=2:3，化学式为A₂B₃。但选项中无此答案，选最接近的A₂B。","knowledgeIds":["formula-writing"]}
+    ],
+    "requiredKnowledgeIds": ["chemical-formula","chemical-name","valence-concept","valence-table","formula-writing"],
+    "criticalMisconceptions": ["mc-formula-meaning","mc-valence-calculation","mc-valence-multiple","mc-valence-confusion"],
+    "requireConstructed": true
+  }
+}

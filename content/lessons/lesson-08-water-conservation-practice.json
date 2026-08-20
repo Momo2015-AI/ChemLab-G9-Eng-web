@@ -1,0 +1,105 @@
+{
+  "lessonId": "lesson-08-water-conservation",
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "L08-P01",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "water-resources",
+      "question": "下列关于水资源的说法正确的是？",
+      "options": ["地球上水储量丰富，淡水取之不尽", "淡水资源占总水量的约97%", "陆地淡水资源约占全球水储量的2.53%", "我国是水资源丰富的国家"],
+      "answer": 2,
+      "explanation": "地球表面约71%被水覆盖，但淡水资源仅占全球水储量的约2.53%，且大部分是冰川和深层地下水。我国人均水资源约为世界平均水平的1/4。",
+      "knowledgeIds": ["water-resources"]
+    },
+    {
+      "id": "L08-P02",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "water-conservation",
+      "question": "下列做法不利于节约用水的是？",
+      "options": ["用洗菜水浇花", "随手关闭水龙头", "用淘米水冲厕所", "长时间冲洗餐具"],
+      "answer": 3,
+      "explanation": "长时间冲洗餐具会浪费大量水资源，不利于节约用水。其他选项都是节水的好习惯。",
+      "knowledgeIds": ["water-conservation"]
+    },
+    {
+      "id": "L08-P03",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "water-pollution",
+      "question": "造成水污染的主要原因是？",
+      "options": ["工业废水随意排放", "农业化肥流失", "生活污水排放", "以上都是"],
+      "answer": 3,
+      "explanation": "工业废水、农业化肥农药、生活污水都是水污染的主要来源，需要综合治理。",
+      "knowledgeIds": ["water-pollution"]
+    },
+    {
+      "id": "L08-P04",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "pollution-prevention",
+      "question": "下列防治水体污染的措施中，不合理的是？",
+      "options": ["工业废水处理达标后排放", "合理使用化肥和农药", "生活污水集中处理排放", "禁止使用任何化学物质"],
+      "answer": 3,
+      "explanation": "禁止使用任何化学物质是不现实的，应该合理使用并妥善处理污染物，而不是完全禁止。",
+      "knowledgeIds": ["pollution-prevention"]
+    },
+    {
+      "id": "L08-P05",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "water-resources",
+      "question": "我国淡水紧缺的主要原因不包括？",
+      "options": ["水资源分布不均", "水污染严重", "降水季节分配不均", "地球上的水总量在减少"],
+      "answer": 3,
+      "explanation": "地球上的水总量基本不变，缺水是因为可利用的淡水资源有限且分布不均、污染严重。",
+      "knowledgeIds": ["water-resources","water-conservation"]
+    },
+    {
+      "id": "L08-P06",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "water-pollution",
+      "question": "下列行为会造成水体富营养化的是？",
+      "options": ["随意丢弃废旧电池", "大量使用含磷洗衣粉", "工业废水直接排放", "过度开采地下水"],
+      "answer": 1,
+      "explanation": "含磷洗衣粉中的磷元素进入水体后，促进藻类大量繁殖，导致水体富营养化，引发赤潮或水华。",
+      "knowledgeIds": ["water-pollution","sustainable-development"]
+    },
+    {
+      "id": "L08-P07",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "water-conservation",
+      "question": "国家节水标志的含义是？",
+      "options": ["提醒人们节约用水，保护地球","象征水是生命之源","表示手托起一滴水，寓意珍惜每一滴水","以上都是"],
+      "answer": 3,
+      "explanation": "国家节水标志由水滴、人手和地球变形而成，绿色圆形代表地球，留白部分像手托起水滴，寓意惜水如金。",
+      "knowledgeIds": ["water-conservation","sustainable-development"]
+    },
+    {
+      "id": "L08-P08",
+      "type": "single",
+      "difficulty": "hard",
+      "knowledgePoint": "pollution-prevention",
+      "question": "要治理已被污染的水体，最根本的措施是？",
+      "options": ["加大污水处理投入","控制污染源","人工打捞水草","定期更换水体"],
+      "answer": 1,
+      "explanation": "治理水污染的根本措施是控制污染源，防止污染物继续排入水体，再配合治理措施恢复水质。",
+      "knowledgeIds": ["pollution-prevention","water-pollution"]
+    },
+    {
+      "id": "L08-P09",
+      "type": "constructed",
+      "difficulty": "hard",
+      "knowledgePoint": "sustainable-development",
+      "question": "某城市濒临一条河流，近年来河水污染严重，鱼虾减少。请从政府和市民两个角度提出保护水资源的建议。",
+      "rubric": {"modelAnswer":"政府角度：①制定完善的水污染防治法规；②加强工业废水处理监管；③建设完善的污水处理厂；④推广农业清洁生产。市民角度：①生活污水不随意排放；②不使用含磷洗衣粉；③节约用水；④举报违法排污行为。","keywords":[["政府","法规监管"],["市民","节约用水"],["源头控制","污水处理"],["全民参与","举报违法"]],"explanation":"水资源保护需要政府管理和市民参与相结合，从源头控制和末端治理两方面入手。"},
+      "explanation": "从政府（立法监管、污水处理）和市民（节约用水、不使用含磷洗衣粉）两个角度提出综合解决方案。",
+      "knowledgeIds": ["water-conservation","pollution-prevention"],
+      "misconceptionIds": ["mc-water-resource-stat"]
+    }
+  ]
+}

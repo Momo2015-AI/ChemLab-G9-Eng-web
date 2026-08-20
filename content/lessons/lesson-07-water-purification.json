@@ -1,0 +1,221 @@
+{
+  "id": "lesson-07-water-purification",
+  "sequenceNumber": 7,
+  "day": "07",
+  "title": "水的净化",
+  "module": "unit-04-natural-water",
+  "semester": "upper",
+  "unitId": "u04",
+  "duration": "45 分钟",
+  "description": "了解水的净化方法，掌握过滤操作的原理和技能，理解硬水与软水的区别及软化方法。",
+  "status": "ready",
+  "releaseStatus": "ready",
+  "learningObjectives": [
+    "了解吸附、沉淀、过滤、蒸馏等净水方法的原理和适用范围。",
+    "掌握过滤操作的要点和注意事项，能独立完成过滤实验。",
+    "理解硬水和软水的概念，掌握鉴别硬水和软水的方法。",
+    "了解硬水软化的方法及其在生产生活中的意义。"
+  ],
+  "knowledgePoints": [
+    "water-purification",
+    "filtration-operation",
+    "hard-soft-water",
+    "distillation",
+    "adsorption",
+    "lab-operations",
+    "separation-purification"
+  ],
+  "prerequisites": [
+    "lesson-06-water-composition",
+    "lesson-04-lab-safety-operations"
+  ],
+  "guidedLearning": {
+    "stepCount": 8,
+    "steps": [
+      { "id": "L07-S01", "title": "引入：自然界的水都是纯净的吗" },
+      { "id": "L07-S02", "title": "净水方法概述" },
+      { "id": "L07-S03", "title": "沉淀法" },
+      { "id": "L07-S04", "title": "过滤操作" },
+      { "id": "L07-S05", "title": "过滤操作要点" },
+      { "id": "L07-S06", "title": "吸附法" },
+      { "id": "L07-S07", "title": "硬水与软水" },
+      { "id": "L07-S08", "title": "蒸馏与硬水软化" }
+    ]
+  },
+  "resourceRefs": {
+    "experiment": "content/lessons/lesson-07-water-purification-experiment.json",
+    "practice": "content/lessons/lesson-07-water-purification-practice.json",
+    "diagnostic": "content/lessons/lesson-07-water-purification-diagnostic.json",
+    "mastery": "content/lessons/lesson-07-water-purification-mastery.json",
+    "transfer": "content/lessons/lesson-07-water-purification-transfer.json"
+  },
+  "experiments": [
+    {
+      "id": "L07-E01",
+      "title": "水的过滤",
+      "purpose": "掌握过滤操作的要点，理解过滤能除去水中不溶性杂质。",
+      "status": "ready-for-runtime",
+      "resourceRef": "content/lessons/lesson-07-water-purification-experiment.json"
+    }
+  ],
+  "questions": [
+    {
+      "id": "L07-Q01",
+      "type": "concept",
+      "question": "下列净水方法中，净化程度最高的是？",
+      "options": ["沉淀", "过滤", "吸附", "蒸馏"],
+      "answer": 3,
+      "knowledgeIds": ["water-purification", "distillation"],
+      "knowledgePoints": ["water-purification"],
+      "explanation": "蒸馏能除去水中所有杂质，得到纯水，净化程度最高。"
+    },
+    {
+      "id": "L07-Q02",
+      "type": "concept",
+      "question": "过滤操作中，玻璃棒的作用是？",
+      "options": ["搅拌", "引流", "防止液体飞溅", "转移固体"],
+      "answer": 1,
+      "knowledgeIds": ["filtration-operation", "lab-operations"],
+      "knowledgePoints": ["filtration-operation"],
+      "explanation": "过滤时玻璃棒靠在三层滤纸一侧，起引流作用，防止液体直接冲破滤纸。"
+    },
+    {
+      "id": "L07-Q03",
+      "type": "concept",
+      "question": "下列区分硬水和软水的方法正确的是？",
+      "options": ["观察颜色", "闻气味", "加肥皂水搅拌", "过滤"],
+      "answer": 2,
+      "knowledgeIds": ["hard-soft-water", "separation-purification"],
+      "knowledgePoints": ["hard-soft-water"],
+      "explanation": "硬水加肥皂水泡沫少、浮渣多；软水加肥皂水泡沫多、浮渣少。"
+    },
+    {
+      "id": "L07-Q04",
+      "type": "concept",
+      "question": "下列关于过滤操作的说法错误的是？",
+      "options": ["滤纸边缘要低于漏斗边缘", "液面要低于滤纸边缘", "玻璃棒靠在三层滤纸一侧", "为了加快过滤速度，用玻璃棒搅拌漏斗内的液体"],
+      "answer": 3,
+      "knowledgeIds": ["filtration-operation", "lab-operations"],
+      "knowledgePoints": ["filtration-operation"],
+      "explanation": "过滤时不能用玻璃棒搅拌漏斗内的液体，否则会戳破滤纸，导致过滤失败。"
+    },
+    {
+      "id": "L07-Q05",
+      "type": "concept",
+      "question": "明矾在净水中的作用是？",
+      "options": ["杀菌消毒", "吸附悬浮杂质使其沉降", "除去可溶性杂质", "除去不溶性杂质"],
+      "answer": 1,
+      "knowledgeIds": ["water-purification", "adsorption"],
+      "knowledgePoints": ["adsorption"],
+      "explanation": "明矾溶于水生成胶状物，能吸附悬浮杂质，加速其沉降。"
+    },
+    {
+      "id": "L07-Q06",
+      "type": "concept",
+      "question": "下列净化水的操作中，涉及化学变化的是？",
+      "options": ["沉淀", "过滤", "吸附", "消毒杀菌"],
+      "answer": 3,
+      "knowledgeIds": ["water-purification"],
+      "knowledgePoints": ["water-purification"],
+      "explanation": "消毒杀菌过程中消毒剂与细菌蛋白质反应，生成新物质，属于化学变化。沉淀、过滤、吸附都是物理变化。"
+    }
+  ],
+  "diagnosticQuestions": [
+    {
+      "id": "L07-D01",
+      "knowledgePoint": "filtration-operation",
+      "question": "过滤操作中，下列做法错误的是？",
+      "options": ["滤纸紧贴漏斗内壁", "用玻璃棒引流", "液面高于滤纸边缘", "漏斗下端紧靠烧杯内壁"],
+      "answer": 2,
+      "errorType": "mc-filtration-operation",
+      "remediationStep": "L07-S05",
+      "knowledgeIds": ["filtration-operation", "lab-operations"]
+    },
+    {
+      "id": "L07-D02",
+      "knowledgePoint": "hard-soft-water",
+      "question": "区分硬水和软水，可选用的物质是？",
+      "options": ["食盐水", "肥皂水", "糖水", "白醋"],
+      "answer": 1,
+      "errorType": "mc-hard-soft-distinguish",
+      "remediationStep": "L07-S07",
+      "knowledgeIds": ["hard-soft-water"]
+    },
+    {
+      "id": "L07-D03",
+      "knowledgePoint": "water-purification",
+      "question": "下列净水方法中，一定能使硬水软化的是？",
+      "options": ["沉淀", "过滤", "吸附", "蒸馏"],
+      "answer": 3,
+      "errorType": "mc-purification-level",
+      "remediationStep": "L07-S08",
+      "knowledgeIds": ["water-purification", "distillation"]
+    }
+  ],
+  "mastery": {
+    "threshold": 0.95,
+    "questionCount": 21,
+    "minCorrect": 20,
+    "mode": "unseen-transfer",
+    "resourceRef": "content/lessons/lesson-07-water-purification-mastery.json",
+    "description": "使用陌生情境题验证是否真正掌握水的净化方法和硬水软水鉴别。",
+    "fallback": "diagnosis"
+  },
+  "misconceptions": [
+    "mc-filtration-operation",
+    "mc-hard-soft-distinguish",
+    "mc-purification-level",
+    "mc-purification-physical-chemical"
+  ],
+  "sections": [
+    {
+      "title": "本节课要掌握什么？",
+      "body": [
+        "了解沉淀、过滤、吸附、蒸馏等净水方法的原理。",
+        "掌握过滤操作的'一贴二低三靠'要点。",
+        "理解硬水和软水的区别及鉴别方法。"
+      ]
+    },
+    {
+      "title": "过滤操作要点",
+      "body": [
+        "一贴：滤纸紧贴漏斗内壁。",
+        "二低：滤纸边缘低于漏斗边缘；液面低于滤纸边缘。",
+        "三靠：烧杯紧靠玻璃棒；玻璃棒轻靠三层滤纸一侧；漏斗下端紧靠烧杯内壁。"
+      ]
+    },
+    {
+      "title": "核心概念",
+      "body": [
+        "硬水：含有较多可溶性钙、镁化合物的水。",
+        "软水：不含或含较少可溶性钙、镁化合物的水。",
+        "硬水软化方法：煮沸（生活中）、蒸馏（实验室）。",
+        "活性炭具有吸附性，能吸附色素和异味。"
+      ]
+    },
+    {
+      "title": "常见误区",
+      "body": [
+        "误认为过滤能除去水中所有杂质。",
+        "混淆硬水软化的方法（煮沸 vs 蒸馏）。",
+        "认为净化程度越高，水中杂质越少，导电性越强（实际越弱）。"
+      ]
+    }
+  ],
+  "summary": "本课了解水的净化方法，掌握过滤操作要点，理解硬水与软水的区别及转化方法。",
+  "provenance": {
+    "status": "ready",
+    "basis": "人教版九年级化学上册第四单元课题2。",
+    "note": "已完成运行时验证。"
+  },
+  "review": {
+    "curriculum": "pass",
+    "scientific": "pass",
+    "ageSuitability": "pass",
+    "itemQuality": "pass",
+    "knowledgeLinks": "pass",
+    "wuhanAlignment": "pass",
+    "masteryGate": "pass",
+    "blockingIssues": []
+  }
+}

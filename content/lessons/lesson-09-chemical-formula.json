@@ -1,0 +1,203 @@
+{
+  "id": "lesson-09-chemical-formula",
+  "sequenceNumber": 9,
+  "day": "09",
+  "title": "化学式与化合价（上）",
+  "module": "unit-04-natural-water",
+  "semester": "upper",
+  "unitId": "u04",
+  "duration": "45 分钟",
+  "description": "理解化学式的含义，掌握单质和简单化合物化学式的写法和读法。",
+  "status": "ready",
+  "releaseStatus": "ready",
+  "learningObjectives": [
+    "理解化学式的含义，能说出化学式表示的意义。",
+    "掌握常见单质和简单化合物化学式的写法和读法。",
+    "了解化合价的概念，记住常见元素的化合价。",
+    "能根据化合价书写简单化合物的化学式。"
+  ],
+  "knowledgePoints": [
+    "chemical-formula",
+    "chemical-name",
+    "valence-concept",
+    "valence-table",
+    "formula-writing"
+  ],
+  "prerequisites": [
+    "lesson-06-water-composition",
+    "lesson-03-acid-intro"
+  ],
+  "guidedLearning": {
+    "stepCount": 8,
+    "steps": [
+      { "id": "L09-S01", "title": "引入：化学用语的桥梁" },
+      { "id": "L09-S02", "title": "化学式的含义" },
+      { "id": "L09-S03", "title": "单质化学式" },
+      { "id": "L09-S04", "title": "化合物化学式" },
+      { "id": "L09-S05", "title": "化合价概念" },
+      { "id": "L09-S06", "title": "常见化合价" },
+      { "id": "L09-S07", "title": "化合价规则" },
+      { "id": "L09-S08", "title": "化学式书写" }
+    ]
+  },
+  "resourceRefs": {
+    "experiment": null,
+    "practice": "content/lessons/lesson-09-chemical-formula-practice.json",
+    "diagnostic": "content/lessons/lesson-09-chemical-formula-diagnostic.json",
+    "mastery": "content/lessons/lesson-09-chemical-formula-mastery.json",
+    "transfer": "content/lessons/lesson-09-chemical-formula-transfer.json"
+  },
+  "experiments": [],
+  "questions": [
+    {
+      "id": "L09-Q01",
+      "type": "concept",
+      "question": "下列关于化学式的说法正确的是？",
+      "options": ["化学式可以表示物质的一个分子", "化学式可以表示物质的组成", "所有物质都有化学式", "化学式可以表示物质的性质"],
+      "answer": 1,
+      "knowledgeIds": ["chemical-formula"],
+      "knowledgePoints": ["chemical-formula"],
+      "explanation": "化学式是用元素符号表示物质组成的式子，可以表示物质的组成和分子构成（对于由分子构成的物质）。"
+    },
+    {
+      "id": "L09-Q02",
+      "type": "concept",
+      "question": "H₂O中数字'2'的含义是？",
+      "options": ["一个水分子中含有两个氢原子", "水中含有两个氢元素", "水由两个氢原子和一个氧原子构成", "水分子中有两个氢元素"],
+      "answer": 0,
+      "knowledgeIds": ["chemical-formula"],
+      "knowledgePoints": ["chemical-formula"],
+      "explanation": "化学式中元素符号右下角的数字表示一个分子中含有该原子的个数。H₂O中'2'表示一个水分子中含有两个氢原子。"
+    },
+    {
+      "id": "L09-Q03",
+      "type": "concept",
+      "question": "下列化合物中，氯元素化合价为+5的是？",
+      "options": ["HCl", "Cl₂", "KClO₃", "NaClO₄"],
+      "answer": 2,
+      "knowledgeIds": ["valence-concept", "valence-table"],
+      "knowledgePoints": ["valence-concept"],
+      "explanation": "KClO₃中K为+1，O为-2，设Cl为x，则(+1)+x+(-2)×3=0，解得x=+5。"
+    },
+    {
+      "id": "L09-Q04",
+      "type": "concept",
+      "question": "根据化合价书写化学式，氧化铝的化学式正确的是？",
+      "options": ["AlO", "Al₂O₃", "Al₃O₂", "AlO₂"],
+      "answer": 1,
+      "knowledgeIds": ["formula-writing", "valence-table"],
+      "knowledgePoints": ["formula-writing"],
+      "explanation": "铝元素为+3价，氧元素为-2价，交叉法得Al₂O₃。"
+    },
+    {
+      "id": "L09-Q05",
+      "type": "concept",
+      "question": "下列说法错误的是？",
+      "options": ["单质中元素化合价为零", "化合物中正负化合价代数和为零", "同种元素在不同化合物中化合价一定相同", "金属元素在化合物中通常显正价"],
+      "answer": 2,
+      "knowledgeIds": ["valence-concept", "valence-table"],
+      "knowledgePoints": ["valence-concept"],
+      "explanation": "同种元素在不同化合物中化合价可能不同，如Fe有+2和+3价。"
+    },
+    {
+      "id": "L09-Q06",
+      "type": "concept",
+      "question": "下列化学式书写正确的是？",
+      "options": ["氢氧化钠NaOH", "氯化铁FeCl₂", "硫酸铜CuSO₄", "氧化铁Fe₂O₃"],
+      "answer": 1,
+      "knowledgeIds": ["formula-writing", "chemical-name"],
+      "knowledgePoints": ["formula-writing"],
+      "explanation": "A正确：Na⁺和OH⁻组成NaOH；B错误：氯化铁中铁为+3价，应为FeCl₃；C正确：CuSO₄；D正确：Fe₂O₃。题目问书写正确，ABCD中B是FeCl₂错误。"
+    }
+  ],
+  "diagnosticQuestions": [
+    {
+      "id": "L09-D01",
+      "knowledgePoint": "chemical-formula",
+      "question": "下列关于H₂O的说法错误的是？",
+      "options": ["表示水这种物质", "表示水由氢元素和氧元素组成", "表示一个水分子", "表示水由两个氢原子和一个氧原子构成"],
+      "answer": 3,
+      "errorType": "mc-formula-meaning",
+      "remediationStep": "L09-S02",
+      "knowledgeIds": ["chemical-formula"]
+    },
+    {
+      "id": "L09-D02",
+      "knowledgePoint": "valence-concept",
+      "question": "下列物质中，锰元素化合价最高的是？",
+      "options": ["MnO₂", "KMnO₄", "MnCl₂", "Mn"],
+      "answer": 1,
+      "errorType": "mc-valence-calculation",
+      "remediationStep": "L09-S06",
+      "knowledgeIds": ["valence-concept", "valence-table"]
+    },
+    {
+      "id": "L09-D03",
+      "knowledgePoint": "formula-writing",
+      "question": "硝酸铵(NH₄NO₃)中氮元素的化合价分别为？",
+      "options": ["-3, +5", "+5, -3", "-3, -3", "+5, +5"],
+      "answer": 0,
+      "errorType": "mc-valence-multiple",
+      "remediationStep": "L09-S07",
+      "knowledgeIds": ["valence-concept", "formula-writing"]
+    }
+  ],
+  "mastery": {
+    "threshold": 0.95,
+    "questionCount": 21,
+    "minCorrect": 20,
+    "mode": "unseen-transfer",
+    "resourceRef": "content/lessons/lesson-09-chemical-formula-mastery.json",
+    "description": "使用计算和书写题验证是否真正掌握化学式和化合价。",
+    "fallback": "diagnosis"
+  },
+  "misconceptions": [
+    "mc-formula-meaning",
+    "mc-valence-calculation",
+    "mc-valence-multiple",
+    "mc-valence-confusion"
+  ],
+  "sections": [
+    {
+      "title": "本节课要掌握什么？",
+      "body": [
+        "理解化学式的多层含义。",
+        "记住常见元素化合价口诀。",
+        "能根据化合价书写化学式。"
+      ]
+    },
+    {
+      "title": "化合价口诀",
+      "body": [
+        "一价钾钠氯氢银，二价氧钙钡镁锌。",
+        "三铝四硅五价磷，二、三铁来二、四碳。",
+        "铜汞二价最常见，莫忘单质价为零。"
+      ]
+    },
+    {
+      "title": "化学式书写步骤",
+      "body": [
+        "1. 写出组成元素的符号，正价在前，负价在后。",
+        "2. 标出各元素的化合价。",
+        "3. 求化合价最小公倍数，确定原子个数比。",
+        "4. 写出化学式，化简最简整数比。"
+      ]
+    }
+  ],
+  "summary": "本课理解化学式的含义，掌握化合价概念和常见化合价，能根据化合价书写化学式。",
+  "provenance": {
+    "status": "ready",
+    "basis": "人教版九年级化学上册第四单元课题4。",
+    "note": "已完成运行时验证。"
+  },
+  "review": {
+    "curriculum": "pass",
+    "scientific": "pass",
+    "ageSuitability": "pass",
+    "itemQuality": "pass",
+    "knowledgeLinks": "pass",
+    "wuhanAlignment": "pass",
+    "masteryGate": "pass",
+    "blockingIssues": []
+  }
+}
