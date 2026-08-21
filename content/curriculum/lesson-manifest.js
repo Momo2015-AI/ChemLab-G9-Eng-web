@@ -9,7 +9,7 @@
  *   for ordering or numbering.
  */
 export const lessonManifest = {
-  version: '1.3.0',
+  version: '1.4.0',
   lessons: [
     { day: '01', sequenceNumber: 1, displayOrder: 1, canonicalId: 'lesson-01-material-changes-properties', title: '物质的变化和性质', semester: 'upper', unitId: 'u01', status: 'ready', releaseStatus: 'ready' },
     { day: '02', sequenceNumber: 2, displayOrder: 2, canonicalId: 'lesson-02-chemistry-as-experimental-science', title: '化学是一门以实验为基础的科学', semester: 'upper', unitId: 'u01', status: 'ready', releaseStatus: 'ready' },
@@ -18,12 +18,15 @@ export const lessonManifest = {
     { day: '13', sequenceNumber: 13, displayOrder: 5, canonicalId: 'lesson-08-h2o2-oxygen-preparation', title: '过氧化氢制取氧气与催化剂', semester: 'upper', unitId: 'u02', status: 'ready', releaseStatus: 'ready' },
     { day: '12', sequenceNumber: 12, displayOrder: 6, canonicalId: 'lesson-07-oxygen-preparation-comprehensive', title: '氧气制取综合：高锰酸钾法与装置对比', semester: 'upper', unitId: 'u02', status: 'ready', releaseStatus: 'ready' },
     { day: '11', sequenceNumber: 11, displayOrder: 7, canonicalId: 'lesson-06-molecules-and-atoms', title: '分子和原子', semester: 'upper', unitId: 'u03', status: 'ready', releaseStatus: 'ready' },
-    { day: '06', sequenceNumber: 6, displayOrder: 8, canonicalId: 'lesson-06-water-composition', title: '水的组成', semester: 'upper', unitId: 'u04', status: 'ready', releaseStatus: 'ready' },
-    { day: '07', sequenceNumber: 7, displayOrder: 9, canonicalId: 'lesson-07-water-purification', title: '水的净化', semester: 'upper', unitId: 'u04', status: 'ready', releaseStatus: 'ready' },
-    { day: '08', sequenceNumber: 8, displayOrder: 10, canonicalId: 'lesson-08-water-conservation', title: '爱护水资源', semester: 'upper', unitId: 'u04', status: 'ready', releaseStatus: 'ready' },
-    { day: '09', sequenceNumber: 9, displayOrder: 11, canonicalId: 'lesson-09-chemical-formula', title: '化学式与化合价（上）', semester: 'upper', unitId: 'u04', status: 'ready', releaseStatus: 'ready' },
-    { day: '10', sequenceNumber: 10, displayOrder: 12, canonicalId: 'lesson-10-chemical-equation', title: '化学式与化合价（下）', semester: 'upper', unitId: 'u04', status: 'ready', releaseStatus: 'ready' },
-    { day: '05', sequenceNumber: 5, displayOrder: 13, canonicalId: 'lesson-03-acid-intro', title: '酸入门：初识身边的酸', semester: 'lower', unitId: 'u10', status: 'ready', releaseStatus: 'ready' }
+    { day: '11', sequenceNumber: 11, displayOrder: 8, canonicalId: 'lesson-11-atomic-structure', title: '原子的构成', semester: 'upper', unitId: 'u03', status: 'ready', releaseStatus: 'ready' },
+    { day: '12', sequenceNumber: 12, displayOrder: 9, canonicalId: 'lesson-12-ion-bond', title: '离子与离子键', semester: 'upper', unitId: 'u03', status: 'ready', releaseStatus: 'ready' },
+    { day: '13', sequenceNumber: 13, displayOrder: 10, canonicalId: 'lesson-13-elements', title: '元素', semester: 'upper', unitId: 'u03', status: 'ready', releaseStatus: 'ready' },
+    { day: '06', sequenceNumber: 6, displayOrder: 11, canonicalId: 'lesson-06-water-composition', title: '水的组成', semester: 'upper', unitId: 'u04', status: 'ready', releaseStatus: 'ready' },
+    { day: '07', sequenceNumber: 7, displayOrder: 12, canonicalId: 'lesson-07-water-purification', title: '水的净化', semester: 'upper', unitId: 'u04', status: 'ready', releaseStatus: 'ready' },
+    { day: '08', sequenceNumber: 8, displayOrder: 13, canonicalId: 'lesson-08-water-conservation', title: '爱护水资源', semester: 'upper', unitId: 'u04', status: 'ready', releaseStatus: 'ready' },
+    { day: '09', sequenceNumber: 9, displayOrder: 14, canonicalId: 'lesson-09-chemical-formula', title: '化学式与化合价（上）', semester: 'upper', unitId: 'u04', status: 'ready', releaseStatus: 'ready' },
+    { day: '10', sequenceNumber: 10, displayOrder: 15, canonicalId: 'lesson-10-chemical-equation', title: '化学式与化合价（下）', semester: 'upper', unitId: 'u04', status: 'ready', releaseStatus: 'ready' },
+    { day: '05', sequenceNumber: 5, displayOrder: 16, canonicalId: 'lesson-03-acid-intro', title: '酸入门：初识身边的酸', semester: 'lower', unitId: 'u10', status: 'ready', releaseStatus: 'ready' }
   ]
 };
 export default lessonManifest;

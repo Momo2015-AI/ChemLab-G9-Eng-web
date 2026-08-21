@@ -33,9 +33,9 @@ deployment:       GitHub Pages（runtime-only dist/）
 | lesson-10-chemical-equation 化学式与化合价（下） | ready | 8 step guided, 1 experiment, 12 practice, 3 diagnostic, 21 mastery, 4 transfer |
 | lesson-03-acid-intro 酸入门：初识身边的酸 | ready | 8 step guided, 1 experiment, 13 practice, 3 diagnostic, 21 mastery, 4 transfer |
 
-课程清单：`content/curriculum/lesson-manifest.js`（13/13 课，扩展须逐课过 7-Gate）。
+课程清单：`content/curriculum/lesson-manifest.js`（16/13 课，扩展须逐课过 7-Gate）。
 
-**覆盖广度说明**：当前 13/13 课时、5/5 单元有内容（L01-material-changes-properties/L02-chemistry-as-experimental-science/L04-lab-safety-operations 上册第一单元“走进化学世界”，L05-oxygen/L08-h2o2-oxygen-preparation/L07-oxygen-preparation-comprehensive 上册第二单元“我们周围的空气”，L06-molecules-and-atoms u03，L06-water-composition/L07-water-purification/L08-water-conservation/L09-chemical-formula/L10-chemical-equation u04，L03-acid-intro 下册第十单元“酸和碱”）。这是项目“先做深、再做广”的主动选择——已完成内容完整、判分链路可运行，但覆盖面仍窄；完整性与覆盖广度是两个维度，进度评估需区分看待。
+**覆盖广度说明**：当前 16/13 课时、5/5 单元有内容（L01-material-changes-properties/L02-chemistry-as-experimental-science/L04-lab-safety-operations 上册第一单元“走进化学世界”，L05-oxygen/L08-h2o2-oxygen-preparation/L07-oxygen-preparation-comprehensive 上册第二单元“我们周围的空气”，L06-molecules-and-atoms/L11-atomic-structure/L12-ion-bond/L13-elements u03，L06-water-composition/L07-water-purification/L08-water-conservation/L09-chemical-formula/L10-chemical-equation u04，L03-acid-intro 下册第十单元“酸和碱”）。这是项目“先做深、再做广”的主动选择——已完成内容完整、判分链路可运行，但覆盖面仍窄；完整性与覆盖广度是两个维度，进度评估需区分看待。
 
 ## 学习闭环
 
@@ -51,9 +51,9 @@ deployment:       GitHub Pages（runtime-only dist/）
 
 ## 内容治理状态
 
-- **Source Registry：PARTIAL — S0 designation document awaited from project owner**（`content/sources/source-registry.json`）——状态待确认。当前 13/13 课程有来源标注。
+- **Source Registry：PARTIAL — S0 designation document awaited from project owner**（`content/sources/source-registry.json`）——状态待确认。当前 16/13 课程有来源标注。
 - 知识图谱 v2.1：28 节点（upper 25 / lower 3）/ 277 关系，**全部节点均具备详情内容**（定义 / 补救目标 / 认知层次 / 误解 / 前置）。
-- misconception 词表：54 个 canonical ID + 36 个 alias，`core/assessment/mastery-policy.js` 负责别名解析到 canonical 形式。
+- misconception 词表：57 个 canonical ID + 39 个 alias，`core/assessment/mastery-policy.js` 负责别名解析到 canonical 形式。
 - 全局题池：263 题（CANONICAL_RUNTIME_SOURCE），旧 320 题永久退役。
 
 ## 虚拟实验
@@ -64,9 +64,9 @@ deployment:       GitHub Pages（runtime-only dist/）
 
 ## 已知缺口（按优先级）
 
-1. **Source Registry PARTIAL — S0 designation document awaited from project owner** —— S0 权威来源指定文档待项目所有者签批（需人工决策）。当前 13/13 课程有来源标注。
+1. **Source Registry PARTIAL — S0 designation document awaited from project owner** —— S0 权威来源指定文档待项目所有者签批（需人工决策）。当前 16/13 课程有来源标注。
 2. Browser E2E regression tests missing (Node-only unit/integration tests; innerHTML-based view layer has untestable paths).
-3. 课程覆盖广度仍窄：13/13 课时，5/5 单元。建议按 u03→u04→u05→u06→u07→u08→u09→u11→u12 顺序逐课扩展。
+3. 课程覆盖广度仍窄：16/13 课时，5/5 单元。建议按 u03→u04→u05→u06→u07→u08→u09→u11→u12 顺序逐课扩展。
 
 ## 工程约定
 
