@@ -3,7 +3,7 @@
   "version": "1.0",
   "experiments": [
     {
-      "id": "L08-E01",
+      "id": "L13-E01",
       "title": "过氧化氢分解制取氧气",
       "type": "virtual-laboratory",
       "instruments": [
@@ -66,10 +66,10 @@
       ],
       "conclusion": "MnO₂是H₂O₂分解的催化剂，能加快反应速率，反应前后质量和化学性质不变。固液常温型装置适合H₂O₂制氧，分液漏斗可控制反应速率。",
       "linkedGuidedSteps": [
-        "L08-S02",
-        "L08-S03",
-        "L08-S04",
-        "L08-S05"
+        "L13-S02",
+        "L13-S03",
+        "L13-S04",
+        "L13-S05"
       ]
     }
   ]

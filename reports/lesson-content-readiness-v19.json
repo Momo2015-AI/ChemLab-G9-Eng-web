@@ -6,14 +6,7 @@
   "needsRewrite": 0,
   "duplicateLegacy": false,
   "questionBankState": "CANONICAL_RUNTIME_SOURCE",
-  "issues": [
-    "lesson-07-oxygen-preparation-comprehensive.json: lesson 'lesson-07-oxygen-preparation-comprehensive' is not registered in the canonical lesson manifest",
-    "lesson-07-water-purification.json: released/review lesson 'lesson-07-water-purification' must ship a dedicated transfer pool (lesson-07-water-purification-transfer.json)",
-    "lesson-08-h2o2-oxygen-preparation.json: lesson 'lesson-08-h2o2-oxygen-preparation' is not registered in the canonical lesson manifest",
-    "lesson-08-water-conservation.json: released/review lesson 'lesson-08-water-conservation' must ship a dedicated transfer pool (lesson-08-water-conservation-transfer.json)",
-    "lesson-09-chemical-formula.json: released/review lesson 'lesson-09-chemical-formula' must ship a dedicated transfer pool (lesson-09-chemical-formula-transfer.json)",
-    "lesson-10-chemical-equation.json: released/review lesson 'lesson-10-chemical-equation' must ship a dedicated transfer pool (lesson-10-chemical-equation-transfer.json)"
-  ],
+  "issues": [],
   "lessons": [
     {
       "file": "lesson-01-material-changes-properties.json",
@@ -149,9 +142,7 @@
         "mastery": 21,
         "transfer": 4
       },
-      "contractErrors": [
-        "lesson 'lesson-07-oxygen-preparation-comprehensive' is not registered in the canonical lesson manifest"
-      ]
+      "contractErrors": []
     },
     {
       "file": "lesson-07-water-purification.json",
@@ -165,11 +156,10 @@
         "lesson": 6,
         "practice": 12,
         "diagnostic": 5,
-        "mastery": 21
+        "mastery": 21,
+        "transfer": 5
       },
-      "contractErrors": [
-        "released/review lesson 'lesson-07-water-purification' must ship a dedicated transfer pool (lesson-07-water-purification-transfer.json)"
-      ]
+      "contractErrors": []
     },
     {
       "file": "lesson-08-h2o2-oxygen-preparation.json",
@@ -186,9 +176,7 @@
         "mastery": 21,
         "transfer": 4
       },
-      "contractErrors": [
-        "lesson 'lesson-08-h2o2-oxygen-preparation' is not registered in the canonical lesson manifest"
-      ]
+      "contractErrors": []
     },
     {
       "file": "lesson-08-water-conservation.json",
@@ -202,11 +190,10 @@
         "lesson": 4,
         "practice": 9,
         "diagnostic": 2,
-        "mastery": 10
+        "mastery": 10,
+        "transfer": 5
       },
-      "contractErrors": [
-        "released/review lesson 'lesson-08-water-conservation' must ship a dedicated transfer pool (lesson-08-water-conservation-transfer.json)"
-      ]
+      "contractErrors": []
     },
     {
       "file": "lesson-09-chemical-formula.json",
@@ -220,11 +207,10 @@
         "lesson": 6,
         "practice": 12,
         "diagnostic": 5,
-        "mastery": 21
+        "mastery": 21,
+        "transfer": 4
       },
-      "contractErrors": [
-        "released/review lesson 'lesson-09-chemical-formula' must ship a dedicated transfer pool (lesson-09-chemical-formula-transfer.json)"
-      ]
+      "contractErrors": []
     },
     {
       "file": "lesson-10-chemical-equation.json",
@@ -238,11 +224,10 @@
         "lesson": 6,
         "practice": 12,
         "diagnostic": 3,
-        "mastery": 21
+        "mastery": 21,
+        "transfer": 4
       },
-      "contractErrors": [
-        "released/review lesson 'lesson-10-chemical-equation' must ship a dedicated transfer pool (lesson-10-chemical-equation-transfer.json)"
-      ]
+      "contractErrors": []
     }
   ]
 }

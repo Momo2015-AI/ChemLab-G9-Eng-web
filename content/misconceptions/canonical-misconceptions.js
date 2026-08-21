@@ -8,7 +8,7 @@
  * registered as aliases in ALIAS_MAP so legacy data continues to resolve.
  */
 
-export const canonicalMisconceptions = [
+export const canonicalMisconceptionsBase = [
   {
     id: 'mc-matter-change-vs-property',
     title: '混淆性质与变化',
@@ -475,6 +475,255 @@ export const canonicalMisconceptions = [
     }
   }
 ];
+
+/**
+ * The following entries backfill misconception IDs that were referenced by
+ * the u04 (water / chemical-formula / chemical-equation) lesson batch but
+ * never registered here — discovered via a full-repo reference audit.
+ * knowledgeIds map to the closest existing knowledge-graph node; u04/u05
+ * do not yet have their own dedicated graph nodes (water-purification,
+ * chemical-formula, valence, law-conservation, etc.) — that is a separate,
+ * larger follow-up (see docs/CONTENT-DEV-STANDARD.md反引用完整性 section).
+ */
+const u04BackfillMisconceptions = [
+  {
+    id: 'mc-water-electrolysis-polarity',
+    title: '混淆电解水实验中正负极产生的气体',
+    description: '不清楚电解水时与电源正极相连的玻璃管产生氧气（较少）、与负极相连的玻璃管产生氢气（较多），或记反正负极对应的气体。',
+    knowledgeIds: ['electrolysis-experiment'],
+    signals: ['fact-recall-error'],
+    severity: 'medium',
+    source: 'u04 backfill audit',
+    remediation: { goal: '记住电解水“正氧负氢，氢二氧一”的体积关系与正负极对应关系。', lessonIds: ['lesson-06-water-composition'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-water-composition',
+    title: '对水的组成认识不准确',
+    description: '误认为水是由氢气和氧气直接混合而成，而不理解水是由氢、氧两种元素组成的化合物，电解水是化学变化而非物理混合的逆过程。',
+    knowledgeIds: ['water-composition'],
+    signals: ['concept-confusion'],
+    severity: 'high',
+    source: 'u04 backfill audit',
+    remediation: { goal: '理解水是氢、氧两种元素组成的化合物，电解水是化学变化。', lessonIds: ['lesson-06-water-composition'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-single-compound-distinguish',
+    title: '混淆单质与化合物',
+    description: '不能根据“由一种元素组成”还是“由不同种元素组成”正确区分单质与化合物，容易将纯净物笼统等同于单质。',
+    knowledgeIds: ['single-substance-compound'],
+    signals: ['concept-confusion'],
+    severity: 'medium',
+    source: 'u04 backfill audit',
+    remediation: { goal: '用“组成元素种类”作为判据区分单质与化合物。', lessonIds: ['lesson-06-water-composition'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-element-misunderstanding',
+    title: '元素概念理解偏差',
+    description: '误认为元素是指具体的原子个数或分子，而不理解元素是“质子数相同的一类原子的总称”，且元素只讲种类、不讲个数。',
+    knowledgeIds: ['element-concept'],
+    signals: ['concept-confusion'],
+    severity: 'medium',
+    source: 'u04 backfill audit',
+    remediation: { goal: '理解元素是质子数相同的一类原子的总称，描述物质组成时只讲元素种类。', lessonIds: ['lesson-06-water-composition'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-hydrogen-burn',
+    title: '氢气燃烧性质描述错误',
+    description: '误认为氢气燃烧现象与其他常见气体相同，或不清楚氢气燃烧前需要验纯、纯净氢气安静燃烧产生淡蓝色火焰并生成水。',
+    knowledgeIds: ['hydrogen-property'],
+    signals: ['fact-recall-error'],
+    severity: 'medium',
+    source: 'u04 backfill audit',
+    remediation: { goal: '记住氢气燃烧前必须验纯，纯净氢气安静燃烧、产生淡蓝色火焰、生成水。', lessonIds: ['lesson-06-water-composition'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-filtration-operation',
+    title: '过滤操作规范掌握不准确',
+    description: '不熟悉过滤操作“一贴二低三靠”的规范要点，例如滤纸未紧贴漏斗、液面高于滤纸边缘、玻璃棒引流角度不对等。',
+    knowledgeIds: ['lab-operations'],
+    signals: ['operational-error'],
+    severity: 'medium',
+    source: 'u04 backfill audit',
+    remediation: { goal: '掌握过滤操作“一贴二低三靠”的规范要点。', lessonIds: ['lesson-07-water-purification'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-hard-soft-distinguish',
+    title: '硬水与软水的区分方法掌握不准确',
+    description: '不知道可以用肥皂水检验硬水软水（泡沫少、浮渣多的是硬水），或误认为硬水与软水可以凭肉眼直接分辨。',
+    knowledgeIds: ['water-composition'],
+    signals: ['method-gap'],
+    severity: 'medium',
+    source: 'u04 backfill audit',
+    remediation: { goal: '掌握用肥皂水检验硬水、软水的方法。', lessonIds: ['lesson-07-water-purification'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-purification-level',
+    title: '误认为某净化方法能使硬水彻底软化',
+    description: '误认为过滤、吸附等常规净化方法能把硬水变为软水，而不理解硬水软化通常需要蒸馏等更高级的净化方式。',
+    knowledgeIds: ['water-composition'],
+    signals: ['concept-overreach'],
+    severity: 'medium',
+    source: 'u04 backfill audit',
+    remediation: { goal: '理解过滤、吸附不能软化硬水，蒸馏等方法才能有效降低水的硬度。', lessonIds: ['lesson-07-water-purification'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-purification-complete',
+    title: '误认为净化后的水就是纯净物',
+    description: '误认为经过过滤、吸附等常规净化步骤后得到的水已经是纯净水，忽视了这些方法只能除去部分杂质，净化后的水仍是混合物。',
+    knowledgeIds: ['water-composition'],
+    signals: ['concept-overreach'],
+    severity: 'high',
+    source: 'u04 backfill audit',
+    remediation: { goal: '理解常规净化方法得到的水仍是混合物，只有蒸馏水才接近纯净物。', lessonIds: ['lesson-07-water-purification'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-purification-physical-chemical',
+    title: '混淆净化过程中的物理变化与化学变化',
+    description: '误认为过滤、吸附、蒸馏等净化步骤都是化学变化，而不理解它们都属于物理变化（没有生成新物质），只有加药剂杀菌消毒等步骤才可能涉及化学变化。',
+    knowledgeIds: ['physical-change'],
+    signals: ['concept-confusion'],
+    severity: 'medium',
+    source: 'u04 backfill audit',
+    remediation: { goal: '区分净化步骤中的物理变化（过滤、吸附、蒸馏）与化学变化（消毒杀菌）。', lessonIds: ['lesson-07-water-purification'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-adsorption-limit',
+    title: '夸大或误解活性炭的吸附能力',
+    description: '误认为活性炭能吸附水中所有杂质（包括可溶性盐类）、或误认为活性炭吸附是化学变化，而不理解活性炭吸附主要针对色素和异味物质，且吸附是物理过程。',
+    knowledgeIds: ['physical-change'],
+    signals: ['concept-overreach'],
+    severity: 'medium',
+    source: 'u04 backfill audit',
+    remediation: { goal: '理解活性炭吸附是物理变化，主要用于除去色素和异味，不能除去可溶性杂质。', lessonIds: ['lesson-07-water-purification'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-water-resource-stat',
+    title: '对水资源现状的认识存在偏差',
+    description: '误认为地球上水资源总量丰富就等于淡水资源充足，忽视了淡水（尤其是可直接利用的淡水）在地球总水量中占比很小这一事实。',
+    knowledgeIds: ['water-composition'],
+    signals: ['concept-overreach'],
+    severity: 'low',
+    source: 'u04 backfill audit',
+    remediation: { goal: '理解地球淡水资源、尤其是可直接利用的淡水资源十分有限。', lessonIds: ['lesson-08-water-conservation'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-water-pollution',
+    title: '对造成水污染的行为判断不准确',
+    description: '不能准确识别哪些日常行为会造成水体污染（如随意排放生活污水、过量使用化肥农药），或误认为只有工业排放才算污染。',
+    knowledgeIds: ['water-composition'],
+    signals: ['fact-recall-error'],
+    severity: 'medium',
+    source: 'u04 backfill audit',
+    remediation: { goal: '识别生活污水、农业面源污染等多种水污染来源，不局限于工业排放。', lessonIds: ['lesson-08-water-conservation'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-formula-meaning',
+    title: '化学式意义理解不完整',
+    description: '只能说出化学式表示某种物质，遗漏了化学式同时表示的其他层面含义（该物质由哪些元素组成、一个分子的构成、元素质量比等）。',
+    knowledgeIds: ['element-concept'],
+    signals: ['incomplete-understanding'],
+    severity: 'medium',
+    source: 'u04 backfill audit',
+    remediation: { goal: '从宏观（物质、组成元素）和微观（分子、原子个数）两方面完整表述化学式的意义。', lessonIds: ['lesson-09-chemical-formula'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-formula-writing',
+    title: '化学式书写不规范',
+    description: '书写化学式时不遵循“正价元素在前、负价元素在后”的一般顺序，或不能根据化合价代数和为零的规则正确配平各元素的原子个数。',
+    knowledgeIds: ['element-concept'],
+    signals: ['operational-error'],
+    severity: 'medium',
+    source: 'u04 backfill audit',
+    remediation: { goal: '掌握化学式书写顺序，能根据化合价代数和为零推出正确的原子个数比。', lessonIds: ['lesson-09-chemical-formula'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-valence-calculation',
+    title: '化合价代数和计算错误',
+    description: '在计算化合物中某元素化合价时，代数和计算出错，或忽略了化合物中正负化合价代数和必须为零这一基本规则。',
+    knowledgeIds: ['element-concept'],
+    signals: ['calculation-error'],
+    severity: 'medium',
+    source: 'u04 backfill audit',
+    remediation: { goal: '牢记化合物中各元素化合价代数和为零，据此正确计算未知元素的化合价。', lessonIds: ['lesson-09-chemical-formula'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-valence-multiple',
+    title: '不理解同一元素在不同化合物中可有多种化合价',
+    description: '误认为某种元素在所有化合物中只有一个固定的化合价，而不理解像铁、锰、氮等元素在不同化合物中可以显示不同的化合价。',
+    knowledgeIds: ['element-concept'],
+    signals: ['concept-overreach'],
+    severity: 'medium',
+    source: 'u04 backfill audit',
+    remediation: { goal: '理解同一元素在不同化合物中可以有不同的化合价，需要具体化合物具体计算。', lessonIds: ['lesson-09-chemical-formula'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-valence-confusion',
+    title: '混淆化合价与元素的其他属性',
+    description: '将化合价与原子的核外电子数、离子所带电荷数等概念混为一谈，或误认为化合价是元素固定不变的物理属性。',
+    knowledgeIds: ['element-concept'],
+    signals: ['concept-confusion'],
+    severity: 'medium',
+    source: 'u04 backfill audit',
+    remediation: { goal: '明确化合价是元素在化合物中表现出的一种性质，与最外层电子数相关但不完全等同于电子数或离子电荷数。', lessonIds: ['lesson-09-chemical-formula'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-relative-mass-calc',
+    title: '相对分子质量计算错误',
+    description: '计算相对分子质量时未按化学式中各原子个数正确加和相对原子质量，或漏乘下标数字。',
+    knowledgeIds: ['element-concept'],
+    signals: ['calculation-error'],
+    severity: 'medium',
+    source: 'u04 backfill audit',
+    remediation: { goal: '按化学式中各元素的原子个数，逐项乘以相对原子质量后相加，得到相对分子质量。', lessonIds: ['lesson-10-chemical-equation'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-mass-fraction',
+    title: '元素质量分数计算错误',
+    description: '计算化合物中某元素质量分数时，公式使用错误（例如误用原子个数比代替质量比），或计算过程中相对分子质量算错导致结果错误。',
+    knowledgeIds: ['element-concept'],
+    signals: ['calculation-error'],
+    severity: 'medium',
+    source: 'u04 backfill audit',
+    remediation: { goal: '掌握元素质量分数=（该元素相对原子质量×原子个数）÷相对分子质量×100%的正确计算方法。', lessonIds: ['lesson-10-chemical-equation'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-law-conservation',
+    title: '质量守恒定律理解不准确',
+    description: '误认为化学反应中质量守恒只适用于固体反应物，或不理解质量守恒的微观原因是反应前后原子的种类、数目、质量都不变，只是重新组合。',
+    knowledgeIds: ['chemical-change'],
+    signals: ['concept-confusion'],
+    severity: 'high',
+    source: 'u04 backfill audit',
+    remediation: { goal: '理解质量守恒定律对任何化学反应都成立，其微观原因是反应前后原子种类、数目、质量都不变。', lessonIds: ['lesson-10-chemical-equation'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-physical-chemical-distinguish',
+    title: '质量变化情境下混淆物理变化与化学变化',
+    description: '看到反应后固体质量增加或减少，就直接判断是否符合质量守恒定律，而不先判断该变化是否为化学变化、是否有敞口体系中气体参与等前提条件。',
+    knowledgeIds: ['physical-change'],
+    signals: ['concept-confusion'],
+    severity: 'medium',
+    source: 'u04 backfill audit',
+    remediation: { goal: '应用质量守恒定律前，先确认是化学变化，并考虑敞口体系中气体是否参与反应。', lessonIds: ['lesson-10-chemical-equation'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  },
+  {
+    id: 'mc-element-pure-substance',
+    title: '混淆“元素”与“单质”两个概念',
+    description: '把“元素”和“单质”当成同一个概念混用，例如把“氧元素”和“氧气（单质）”混为一谈；元素是同类原子的总称、只讲种类不讲个数，单质是由同种元素组成的纯净物、可以称量和参与反应。',
+    knowledgeIds: ['element-concept'],
+    signals: ['concept-confusion'],
+    severity: 'high',
+    source: 'u04 backfill audit',
+    remediation: { goal: '区分“元素”（同类原子的总称，描述组成）与“单质”（由同种元素组成的纯净物，是具体物质）。', lessonIds: ['lesson-06-water-composition'], practiceQuestionIds: [], recheckQuestionIds: [] }
+  }
+];
+
+const canonicalMisconceptionsFull = [
+  ...canonicalMisconceptionsBase,
+  ...u04BackfillMisconceptions
+];
+
+export const canonicalMisconceptions = canonicalMisconceptionsFull;
 
 /**
  * Alias map: old/variant ID → canonical ID.

@@ -1,5 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
 import {
   canonicalMisconceptions,
   ALIAS_MAP,
@@ -9,8 +12,12 @@ import {
 } from '../content/misconceptions/canonical-misconceptions.js';
 import { evaluateMastery } from '../core/assessment/mastery-policy.js';
 
-test('canonical vocabulary has 31 entries with required fields', () => {
-  assert.equal(canonicalMisconceptions.length, 31);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const knowledgeGraph = JSON.parse(readFileSync(path.join(__dirname, '../content/knowledge/knowledge-graph.json'), 'utf8'));
+const liveKgNodeIds = new Set(knowledgeGraph.nodes.map(n => n.id));
+
+test('canonical vocabulary has 54 entries with required fields', () => {
+  assert.equal(canonicalMisconceptions.length, 54);
   for (const mc of canonicalMisconceptions) {
     assert.ok(mc.id, 'each entry has id');
     assert.ok(mc.title, 'each entry has title');
@@ -161,16 +168,8 @@ test('canonical IDs do not overlap with knowledge graph node IDs', () => {
 });
 
 test('every canonical misconception maps to at least one knowledge graph node', () => {
-  const validKgNodes = new Set([
-    'acid-intro', 'acid-property', 'chemical-change', 'chemical-property',
-    'control-variables', 'data-integrity', 'evidence-reasoning',
-    'matter-change', 'observation-inference', 'physical-change',
-    'physical-property', 'safety-awareness', 'scientific-inquiry',
-    'lab-operations', 'air-composition', 'oxygen-physical', 'oxygen-chemical', 'oxygen-preparation',
-    'particle-model', 'atomic-structure', 'ion-bond', 'element-classify'
-  ]);
   for (const mc of canonicalMisconceptions) {
-    const allValid = mc.knowledgeIds.every(kid => validKgNodes.has(kid));
-    assert.ok(allValid, `${mc.id} has invalid knowledgeId: ${mc.knowledgeIds.filter(k => !validKgNodes.has(k)).join(', ')}`);
+    const allValid = mc.knowledgeIds.every(kid => liveKgNodeIds.has(kid));
+    assert.ok(allValid, `${mc.id} has invalid knowledgeId: ${mc.knowledgeIds.filter(k => !liveKgNodeIds.has(k)).join(', ')}`);
   }
 });

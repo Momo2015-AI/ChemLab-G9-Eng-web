@@ -1,35 +1,84 @@
 {
   "lessonId": "lesson-09-chemical-formula",
-  "version": "1.0",
-  "transfer": {
-    "scenarios": [
-      {
-        "id": "L09-T01",
-        "title": "药品标签解读",
-        "context": "小明在药店看到一种补钙剂的标签，上面写着主要成分：碳酸钙(CaCO₃)，每片含钙元素500mg。",
-        "question": "下列关于该补钙剂的说法正确的是？",
-        "options": ["碳酸钙中钙元素的质量分数为40%","每片含碳酸钙500mg","碳酸钙由钙、碳、氧三个元素组成","碳酸钙中钙、碳、氧质量比为1:1:3"],
-        "answer": 0,
-        "explanation": "CaCO₃相对分子质量=40+12+16×3=100，钙元素质量分数=40/100×100%=40%。每片含CaCO₃应为500/40%=1250mg。元素只讲种类不讲个数。质量比=40:12:48=10:3:12。",
-        "knowledgeIds": ["mass-fraction","chemical-formula"],
-        "misconceptionIds": [],
-        "difficulty": "medium",
-        "source": "生活应用情境",
-        "tags": ["标签解读","计算应用"]
+  "version": "1.1",
+  "questions": [
+    {
+      "id": "L09-T01",
+      "type": "constructed",
+      "difficulty": "medium",
+      "title": "药品标签解读",
+      "question": "小明在药店看到一种补钙剂的标签，上面写着主要成分：碳酸钙(CaCO₃)，每片含钙元素500mg。请计算碳酸钙中钙元素的质量分数，并据此判断每片药大约含有多少毫克碳酸钙。",
+      "rubric": {
+        "modelAnswer": "碳酸钙的相对分子质量=40+12+16×3=100，钙元素质量分数=40/100×100%=40%。每片含钙元素500mg，设每片含碳酸钙x毫克，则x×40%=500mg，解得x=1250mg，即每片约含碳酸钙1250mg。",
+        "keywords": [
+          ["相对分子质量", "100"],
+          ["质量分数", "40%"],
+          ["1250mg", "碳酸钙含量"]
+        ],
+        "explanation": "先求相对分子质量，再求钙元素质量分数，最后根据钙元素质量倒推碳酸钙质量。"
       },
-      {
-        "id": "L09-T02",
-        "title": "肥料成分分析",
-        "context": "某农田化肥仓库中有碳酸氢铵(NH₄HCO₃)、尿素[CO(NH₂)₂]两种氮肥。",
-        "question": "等质量的碳酸氢铵和尿素中，含氮量较多的是？",
-        "options": ["碳酸氢铵","尿素","一样多","无法比较"],"answer":1,"explanation":"NH₄HCO₃含氮量=14/79≈17.7%；CO(NH₂)₂含氮量=28/60≈46.7%。尿素含氮量更高。","knowledgeIds":["mass-fraction","chemical-formula"],"misconceptionIds":[],"difficulty":"hard","source":"农业生产情境","tags":["计算比较","农业应用"]}
-    ],
-    "requiredScenarioCount": 3,
-    "mustIncludeConstructed": true,
-    "scoringCriteria": {
-      "formulaApplication": "能根据化合价正确书写化学式",
-      "namingSkill": "能正确读写常见化合物名称",
-      "calculation": "能进行简单的化合价计算"
+      "explanation": "碳酸钙中钙元素质量分数为40%，每片约含碳酸钙1250mg。",
+      "knowledgeIds": ["mass-fraction", "chemical-formula"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L09-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "title": "肥料成分分析",
+      "question": "某农田化肥仓库中有碳酸氢铵(NH₄HCO₃)、尿素[CO(NH₂)₂]两种氮肥。请通过计算比较等质量的碳酸氢铵和尿素中，哪一种含氮量更高，并说明这对选择化肥有什么实际意义。",
+      "rubric": {
+        "modelAnswer": "碳酸氢铵含氮量=14/79×100%≈17.7%；尿素含氮量=28/60×100%≈46.7%。尿素的含氮量明显更高。实际意义：等质量的化肥中，尿素能提供更多的氮元素，运输和施用同样质量的化肥时，尿素的增产效果通常更好，也更划算。",
+        "keywords": [
+          ["17.7%", "碳酸氢铵"],
+          ["46.7%", "尿素"],
+          ["尿素含氮量更高"],
+          ["运输施用", "更划算"]
+        ],
+        "explanation": "分别计算两种化肥中氮元素的质量分数并比较，尿素的含氮量更高。"
+      },
+      "explanation": "尿素含氮量约46.7%，明显高于碳酸氢铵的约17.7%。",
+      "knowledgeIds": ["mass-fraction", "chemical-formula"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L09-T03",
+      "type": "constructed",
+      "difficulty": "medium",
+      "title": "化学式CO₂的意义",
+      "question": "请从宏观、微观两个角度，尽可能完整地写出化学式“CO₂”所表示的意义。",
+      "rubric": {
+        "modelAnswer": "宏观意义：①表示二氧化碳这种物质；②表示二氧化碳是由碳元素和氧元素组成的。微观意义：①表示二氧化碳的一个分子；②表示每个二氧化碳分子由1个碳原子和2个氧原子构成。此外还能表示元素之间的质量比等定量关系。",
+        "keywords": [
+          ["表示物质", "二氧化碳"],
+          ["碳元素", "氧元素", "组成"],
+          ["一个分子"],
+          ["1个碳原子", "2个氧原子"]
+        ],
+        "explanation": "化学式的意义需要从宏观（物质、组成元素）和微观（分子、构成分子的原子个数）两个层面完整表述，这是本课的核心考点。"
+      },
+      "explanation": "化学式的意义要从宏观（表示物质及组成元素）和微观（表示分子及分子的原子构成）两方面完整回答。",
+      "knowledgeIds": ["chemical-formula"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L09-T04",
+      "type": "constructed",
+      "difficulty": "medium",
+      "title": "根据化合价书写氧化铝的化学式",
+      "question": "已知铝元素通常显+3价，氧元素通常显-2价。请写出氧化铝的化学式，并说明你书写的依据是什么。",
+      "rubric": {
+        "modelAnswer": "氧化铝的化学式为Al₂O₃。依据是：在化合物中，正负化合价的代数和为零。铝显+3价，氧显-2价，要使正负化合价代数和为零，需要2个铝原子（+3×2=+6）和3个氧原子（-2×3=-6），6-6=0，因此化学式中铝、氧原子个数比为2:3，写作Al₂O₃。",
+        "keywords": [
+          ["Al₂O₃"],
+          ["代数和为零", "化合价规则"],
+          ["2个铝", "3个氧"]
+        ],
+        "explanation": "书写化学式的依据是化合物中各元素正负化合价代数和为零，据此可以推出各原子个数比。"
+      },
+      "explanation": "根据正负化合价代数和为零的规则，氧化铝的化学式为Al₂O₃。",
+      "knowledgeIds": ["chemical-formula", "valence"],
+      "misconceptionIds": []
     }
-  }
+  ]
 }

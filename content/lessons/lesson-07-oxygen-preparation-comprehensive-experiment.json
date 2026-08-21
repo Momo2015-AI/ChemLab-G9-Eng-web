@@ -3,7 +3,7 @@
   "version": "1.0",
   "experiments": [
     {
-      "id": "L07-E01",
+      "id": "L12-E01",
       "title": "高锰酸钾加热制取氧气",
       "type": "virtual-laboratory",
       "instruments": [
@@ -69,9 +69,9 @@
       ],
       "conclusion": "高锰酸钾受热分解生成锰酸钾、二氧化锰和氧气；实验操作顺序'查装定点收离熄'每一步都有科学依据，违反顺序可能导致危险或实验失败。",
       "linkedGuidedSteps": [
-        "L07-S02",
-        "L07-S05",
-        "L07-S07"
+        "L12-S02",
+        "L12-S05",
+        "L12-S07"
       ]
     }
   ]

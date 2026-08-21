@@ -32,35 +32,35 @@
     "stepCount": 8,
     "steps": [
       {
-        "id": "L07-S01",
+        "id": "L12-S01",
         "title": "回顾：两种制氧方法"
       },
       {
-        "id": "L07-S02",
+        "id": "L12-S02",
         "title": "高锰酸钾法装置要点"
       },
       {
-        "id": "L07-S03",
+        "id": "L12-S03",
         "title": "两种方法对比"
       },
       {
-        "id": "L07-S04",
+        "id": "L12-S04",
         "title": "分解反应概念"
       },
       {
-        "id": "L07-S05",
+        "id": "L12-S05",
         "title": "催化剂的综合应用"
       },
       {
-        "id": "L07-S06",
+        "id": "L12-S06",
         "title": "实验装置的选择与设计"
       },
       {
-        "id": "L07-S07",
+        "id": "L12-S07",
         "title": "异常情况分析"
       },
       {
-        "id": "L07-S08",
+        "id": "L12-S08",
         "title": "中考考点总结"
       }
     ]
@@ -74,7 +74,7 @@
   },
   "experiments": [
     {
-      "id": "L07-E01",
+      "id": "L12-E01",
       "title": "高锰酸钾加热制取氧气",
       "purpose": "掌握固固加热型制氧装置的完整操作，理解操作顺序的科学依据。",
       "status": "ready-for-runtime",
@@ -83,7 +83,7 @@
   ],
   "questions": [
     {
-      "id": "L07-Q01",
+      "id": "L12-Q01",
       "type": "concept",
       "question": "用高锰酸钾制取氧气时，试管口需要放一团棉花，目的是？",
       "options": [
@@ -102,7 +102,7 @@
       "explanation": "棉花阻挡高锰酸钾粉末随气流进入导管，避免堵塞。"
     },
     {
-      "id": "L07-Q02",
+      "id": "L12-Q02",
       "type": "concept",
       "question": "下列反应中，属于分解反应的是？",
       "options": [
@@ -121,7 +121,7 @@
       "explanation": "高锰酸钾分解生成三种物质，是一变多的分解反应。"
     },
     {
-      "id": "L07-Q03",
+      "id": "L12-Q03",
       "type": "concept",
       "question": "对比过氧化氢法和高锰酸钾法制氧，下列说法正确的是？",
       "options": [
@@ -143,7 +143,7 @@
   ],
   "diagnosticQuestions": [
     {
-      "id": "L07-D01",
+      "id": "L12-D01",
       "knowledgePoint": "oxygen-preparation",
       "question": "用高锰酸钾制取氧气并收集完毕时，正确的操作顺序是？",
       "options": [
@@ -154,14 +154,14 @@
       ],
       "answer": 1,
       "errorType": "mc-o2-preparation",
-      "remediationStep": "L07-S02",
+      "remediationStep": "L12-S02",
       "knowledgeIds": [
         "oxygen-preparation",
         "lab-operations"
       ]
     },
     {
-      "id": "L07-D02",
+      "id": "L12-D02",
       "knowledgePoint": "decomposition-reaction",
       "question": "下列反应中，属于分解反应的是？",
       "options": [
@@ -172,13 +172,13 @@
       ],
       "answer": 1,
       "errorType": "mc-o2-chemical",
-      "remediationStep": "L07-S04",
+      "remediationStep": "L12-S04",
       "knowledgeIds": [
         "decomposition-reaction"
       ]
     },
     {
-      "id": "L07-D03",
+      "id": "L12-D03",
       "knowledgePoint": "oxygen-preparation-h2o2",
       "question": "下列关于过氧化氢和高锰酸钾制氧的说法正确的是？",
       "options": [
@@ -189,7 +189,7 @@
       ],
       "answer": 2,
       "errorType": "mc-o2-preparation",
-      "remediationStep": "L07-S03",
+      "remediationStep": "L12-S03",
       "knowledgeIds": [
         "oxygen-preparation",
         "oxygen-preparation-h2o2"
@@ -206,7 +206,7 @@
     "fallback": "diagnosis",
     "questions": [
       {
-        "id": "L07-M01",
+        "id": "L12-M01",
         "type": "single",
         "difficulty": "basic",
         "knowledgePoint": "oxygen-preparation",
@@ -225,7 +225,7 @@
         ]
       },
       {
-        "id": "L07-M02",
+        "id": "L12-M02",
         "type": "single",
         "difficulty": "basic",
         "knowledgePoint": "decomposition-reaction",
@@ -243,7 +243,7 @@
         ]
       },
       {
-        "id": "L07-M03",
+        "id": "L12-M03",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-preparation-h2o2",
@@ -262,7 +262,7 @@
         ]
       },
       {
-        "id": "L07-M04",
+        "id": "L12-M04",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-preparation",
@@ -284,7 +284,7 @@
         ]
       },
       {
-        "id": "L07-M05",
+        "id": "L12-M05",
         "type": "single",
         "difficulty": "basic",
         "knowledgePoint": "oxygen-preparation",
@@ -302,7 +302,7 @@
         ]
       },
       {
-        "id": "L07-M06",
+        "id": "L12-M06",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-catalyst",
@@ -320,7 +320,7 @@
         ]
       },
       {
-        "id": "L07-M07",
+        "id": "L12-M07",
         "type": "single",
         "difficulty": "hard",
         "knowledgePoint": "oxygen-preparation-h2o2",
@@ -339,7 +339,7 @@
         ]
       },
       {
-        "id": "L07-M08",
+        "id": "L12-M08",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "decomposition-reaction",
@@ -357,7 +357,7 @@
         ]
       },
       {
-        "id": "L07-M09",
+        "id": "L12-M09",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-preparation",
@@ -379,7 +379,7 @@
         ]
       },
       {
-        "id": "L07-M10",
+        "id": "L12-M10",
         "type": "single",
         "difficulty": "hard",
         "knowledgePoint": "oxygen-preparation",
@@ -401,7 +401,7 @@
         ]
       },
       {
-        "id": "L07-M11",
+        "id": "L12-M11",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-preparation-h2o2",
@@ -421,7 +421,7 @@
         ]
       },
       {
-        "id": "L07-M12",
+        "id": "L12-M12",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-preparation",
@@ -440,7 +440,7 @@
         ]
       },
       {
-        "id": "L07-M13",
+        "id": "L12-M13",
         "type": "single",
         "difficulty": "hard",
         "knowledgePoint": "decomposition-reaction",
@@ -458,7 +458,7 @@
         ]
       },
       {
-        "id": "L07-M14",
+        "id": "L12-M14",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-catalyst",
@@ -477,7 +477,7 @@
         ]
       },
       {
-        "id": "L07-M15",
+        "id": "L12-M15",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-preparation",
@@ -496,7 +496,7 @@
         ]
       },
       {
-        "id": "L07-M16",
+        "id": "L12-M16",
         "type": "single",
         "difficulty": "hard",
         "knowledgePoint": "oxygen-preparation-h2o2",
@@ -515,7 +515,7 @@
         ]
       },
       {
-        "id": "L07-M17",
+        "id": "L12-M17",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-physical",
@@ -533,7 +533,7 @@
         ]
       },
       {
-        "id": "L07-M18",
+        "id": "L12-M18",
         "type": "single",
         "difficulty": "hard",
         "knowledgePoint": "oxygen-preparation",
@@ -552,7 +552,7 @@
         ]
       },
       {
-        "id": "L07-M19",
+        "id": "L12-M19",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "decomposition-reaction",
@@ -570,7 +570,7 @@
         ]
       },
       {
-        "id": "L07-M20",
+        "id": "L12-M20",
         "type": "single",
         "difficulty": "hard",
         "knowledgePoint": "oxygen-preparation-h2o2",
@@ -589,7 +589,7 @@
         ]
       },
       {
-        "id": "L07-M21",
+        "id": "L12-M21",
         "type": "constructed",
         "difficulty": "hard",
         "knowledgePoint": "oxygen-preparation",

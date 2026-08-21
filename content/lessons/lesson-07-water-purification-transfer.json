@@ -1,83 +1,105 @@
 {
   "lessonId": "lesson-07-water-purification",
-  "version": "1.0",
-  "transfer": {
-    "scenarios": [
-      {
-        "id": "L07-T01",
-        "title": "家庭净水器的工作原理",
-        "context": "小明家安装了一台家用净水器，说明书上标注了滤芯结构：第一层是PP棉，第二层是活性炭，第三层是RO反渗透膜。",
-        "question": "下列关于该净水器的说法正确的是？",
-        "options": ["PP棉可以除去水中的可溶性杂质","活性炭能杀死水中的细菌","RO反渗透膜能除去几乎所有的杂质","三个滤芯的顺序可以随意调换"],
-        "answer": 2,
-        "explanation": "PP棉主要过滤大颗粒杂质；活性炭吸附色素异味；RO膜能除去几乎全部杂质包括可溶性盐类。滤芯顺序不能随意调换，否则降低净化效果。",
-        "knowledgeIds": ["water-purification","filtration-operation","adsorption"],
-        "misconceptionIds": ["mc-purification-level"],
-        "difficulty": "medium",
-        "source": "家庭生活应用",
-        "tags": ["生活应用","设备原理"]
+  "version": "1.1",
+  "questions": [
+    {
+      "id": "L07-T01",
+      "type": "constructed",
+      "difficulty": "medium",
+      "title": "家庭净水器的工作原理",
+      "question": "小明家安装了一台家用净水器，滤芯结构为：第一层PP棉、第二层活性炭、第三层RO反渗透膜。请说明这三层滤芯各自的作用，并判断三层的顺序能否随意调换，说明理由。",
+      "rubric": {
+        "modelAnswer": "PP棉主要过滤水中大颗粒不溶性杂质；活性炭利用吸附作用除去色素和异味物质；RO反渗透膜孔径极小，能除去几乎全部杂质，包括可溶性盐类。三层顺序不能随意调换：必须先用PP棉除去大颗粒杂质、再用活性炭吸附色素异味，最后才用精细的RO膜过滤，否则大颗粒杂质会很快堵塞或损坏RO膜，降低净化效果和滤芯寿命。",
+        "keywords": [
+          ["PP棉", "大颗粒", "不溶性杂质"],
+          ["活性炭", "吸附", "色素", "异味"],
+          ["RO反渗透膜", "可溶性杂质"],
+          ["不能调换", "顺序", "堵塞", "损坏"]
+        ],
+        "explanation": "三层滤芯分工不同、由粗到细，调换顺序会导致精细滤芯提前失效。"
       },
-      {
-        "id": "L07-T02",
-        "title": "野外生存净水",
-        "context": "探险队在野外发现一条小溪，水较清澈但可能含有细菌。他们只有一个便携过滤管和一瓶漂白粉（含次氯酸钙）。",
-        "question": "请设计一个安全饮用的方案，并说明每一步的原理。",
-        "rubric": {"modelAnswer":"第一步：用便携过滤管过滤——除去水中不溶性杂质和部分微生物；第二步：加入适量漂白粉——次氯酸钙与水反应生成次氯酸，杀死水中细菌；第三步：静置一段时间后煮沸——进一步杀菌并确保安全。","keywords":[["过滤","不溶性杂质"],["漂白粉","杀菌消毒"],["煮沸","进一步杀菌"]],"explanation":"野外净水需要多级处理，先物理过滤再化学消毒。"},
-        "explanation": "方案设计：过滤→加漂白粉消毒→煮沸。过滤除去不溶性杂质，漂白粉杀菌，煮沸进一步确保消毒效果。",
-        "knowledgeIds": ["water-purification","filtration-operation"],
-        "misconceptionIds": ["mc-purification-complete"],
-        "difficulty": "hard",
-        "source": "野外生存情境",
-        "tags": ["方案设计","多步推理"]
+      "explanation": "PP棉除大颗粒杂质、活性炭吸附色素异味、RO膜除可溶性杂质，顺序由粗到细不可调换。",
+      "knowledgeIds": ["water-purification", "filtration-operation", "adsorption"],
+      "misconceptionIds": ["mc-purification-level"]
+    },
+    {
+      "id": "L07-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "title": "野外生存净水",
+      "question": "探险队在野外发现一条小溪，水较清澈但可能含有细菌。他们只有一个便携过滤管和一瓶漂白粉（含次氯酸钙）。请设计一个安全饮用的方案，并说明每一步的原理。",
+      "rubric": {
+        "modelAnswer": "第一步：用便携过滤管过滤——除去水中不溶性杂质和部分微生物；第二步：加入适量漂白粉——次氯酸钙与水反应生成次氯酸，杀死水中细菌；第三步：静置一段时间后煮沸——进一步杀菌并确保安全。",
+        "keywords": [
+          ["过滤", "不溶性杂质"],
+          ["漂白粉", "杀菌消毒"],
+          ["煮沸", "进一步杀菌"]
+        ],
+        "explanation": "野外净水需要多级处理，先物理过滤再化学消毒。"
       },
-      {
-        "id": "L07-T03",
-        "title": "自来水厂净水流程",
-        "context": "某市自来水厂对江河取水后进行净化处理，主要流程为：江水→加明矾→沉淀池→过滤池→活性炭吸附池→清水池→加氯消毒→用户。",
-        "question": "下列关于自来水厂净水流程的说法正确的是？",
-        "options": ["明矾用于杀菌消毒","过滤池可以除去可溶性杂质","活性炭吸附是化学变化","最后加氯是为了消毒杀菌"],
-        "answer": 3,
-        "explanation": "明矾用于吸附沉降，不是消毒；过滤只能除去不溶性杂质；活性炭吸附是物理变化；加氯消毒是最后的杀菌步骤。",
-        "knowledgeIds": ["water-purification","adsorption"],
-        "misconceptionIds": ["mc-adsorption-limit"],
-        "difficulty": "medium",
-        "source": "工业生产情境",
-        "tags": ["工业流程","实际应用"]
+      "explanation": "方案设计：过滤→加漂白粉消毒→煮沸。过滤除去不溶性杂质，漂白粉杀菌，煮沸进一步确保消毒效果。",
+      "knowledgeIds": ["water-purification", "filtration-operation"],
+      "misconceptionIds": ["mc-purification-complete"]
+    },
+    {
+      "id": "L07-T03",
+      "type": "constructed",
+      "difficulty": "medium",
+      "title": "自来水厂净水流程",
+      "question": "某市自来水厂对江河取水后进行净化处理，主要流程为：江水→加明矾→沉淀池→过滤池→活性炭吸附池→清水池→加氯消毒→用户。请说明流程中加明矾、过滤池、活性炭吸附池、加氯消毒这四步各自的作用，并指出其中哪一步是专门用来杀菌消毒的。",
+      "rubric": {
+        "modelAnswer": "加明矾：明矾溶于水后形成胶状物，能吸附水中悬浮的细小颗粒使其沉降，起吸附沉降作用，不是杀菌。过滤池：除去水中不溶性杂质，但不能除去可溶性杂质。活性炭吸附池：通过物理吸附除去色素和异味物质。加氯消毒：是流程中专门用于杀菌消毒的步骤，通过氯气或次氯酸钠杀灭水中细菌。",
+        "keywords": [
+          ["明矾", "吸附沉降", "不是消毒"],
+          ["过滤池", "不溶性杂质"],
+          ["活性炭", "物理吸附"],
+          ["加氯消毒", "杀菌"]
+        ],
+        "explanation": "净水流程中只有加氯这一步是专门的杀菌消毒步骤，其余步骤各自承担吸附沉降、过滤、除色除味的作用。"
       },
-      {
-        "id": "L07-T04",
-        "title": "硬水对生活的影响",
-        "context": "西北地区某地区居民反映，用当地地下水洗衣时泡沫很少，衣服洗不干净；烧水的水壶底部有大量水垢。",
-        "question": "请分析原因并提出解决方案。",
-        "rubric": {"modelAnswer":"原因：当地地下水硬度大（含较多钙镁化合物），肥皂中的硬脂酸钠与钙镁离子反应生成沉淀，导致泡沫少、洗涤效果差；水垢是钙镁化合物受热分解生成的。解决方案：①洗衣服时用软水或加入软水剂；②烧水前将水煮沸或使用软水；③水垢可用醋酸或稀盐酸浸泡除去。","keywords":[["硬水","钙镁化合物"],["肥皂反应","泡沫少"],["煮沸","软化"],["水垢","醋酸除去"]],"explanation":"硬水中的钙镁离子与肥皂反应生成沉淀，降低洗涤效果；煮沸可部分软化硬水。"},
-        "explanation": "原因是硬水与肥皂反应生成沉淀，降低洗涤效果。解决方案：使用软水或煮沸软化。",
-        "knowledgeIds": ["hard-soft-water"],
-        "misconceptionIds": ["mc-hard-soft-distinguish"],
-        "difficulty": "hard",
-        "source": "生活问题情境",
-        "tags": ["问题分析","生活应用"]
+      "explanation": "明矾吸附沉降、过滤除不溶性杂质、活性炭吸附除色除味，加氯消毒才是专门杀菌的步骤。",
+      "knowledgeIds": ["water-purification", "adsorption"],
+      "misconceptionIds": ["mc-adsorption-limit"]
+    },
+    {
+      "id": "L07-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "title": "硬水对生活的影响",
+      "question": "西北地区某地区居民反映，用当地地下水洗衣时泡沫很少，衣服洗不干净；烧水的水壶底部有大量水垢。请分析原因并提出解决方案。",
+      "rubric": {
+        "modelAnswer": "原因：当地地下水硬度大（含较多钙镁化合物），肥皂中的硬脂酸钠与钙镁离子反应生成沉淀，导致泡沫少、洗涤效果差；水垢是钙镁化合物受热分解生成的。解决方案：①洗衣服时用软水或加入软水剂；②烧水前将水煮沸或使用软水；③水垢可用醋酸或稀盐酸浸泡除去。",
+        "keywords": [
+          ["硬水", "钙镁化合物"],
+          ["肥皂反应", "泡沫少"],
+          ["煮沸", "软化"],
+          ["水垢", "醋酸除去"]
+        ],
+        "explanation": "硬水中的钙镁离子与肥皂反应生成沉淀，降低洗涤效果；煮沸可部分软化硬水。"
       },
-      {
-        "id": "L07-T05",
-        "title": "海水淡化技术",
-        "context": "中东地区严重缺水，以色列大力发展海水淡化技术，其中反渗透法是主流技术之一。反渗透膜只允许水分子通过，不允许盐离子通过。",
-        "question": "下列关于海水淡化的说法正确的是？",
-        "options": ["反渗透法属于物理变化","淡化后的海水是硬水","海水淡化只需要一步操作","反渗透膜可以除去水中的所有杂质包括细菌"],
-        "answer": 0,
-        "explanation": "反渗透是利用压力使水分子通过半透膜，盐离子被截留，属于物理变化。淡化后的水是软水。海水淡化通常需要先预处理再反渗透。",
-        "knowledgeIds": ["water-purification","distillation"],
-        "misconceptionIds": ["mc-purification-level"],
-        "difficulty": "hard",
-        "source": "科技前沿情境",
-        "tags": ["科技应用","原理理解"]
-      }
-    ],
-    "requiredScenarioCount": 3,
-    "mustIncludeConstructed": true,
-    "scoringCriteria": {
-      "conceptApplication": "能将净水原理迁移到生活情境",
-      "procedureReasoning": "能设计合理的净水方案并说明每一步原理",
-      "problemSolving": "能分析硬水问题并提出解决方案"
+      "explanation": "原因是硬水与肥皂反应生成沉淀，降低洗涤效果。解决方案：使用软水或煮沸软化。",
+      "knowledgeIds": ["hard-soft-water"],
+      "misconceptionIds": ["mc-hard-soft-distinguish"]
+    },
+    {
+      "id": "L07-T05",
+      "type": "constructed",
+      "difficulty": "hard",
+      "title": "海水淡化技术",
+      "question": "中东地区严重缺水，以色列大力发展海水淡化技术，其中反渗透法是主流技术之一，反渗透膜只允许水分子通过、不允许盐离子通过。请判断反渗透法属于物理变化还是化学变化，说明理由，并说明淡化后得到的水是硬水还是软水。",
+      "rubric": {
+        "modelAnswer": "反渗透法属于物理变化：利用压力使水分子通过半透膜，盐离子等杂质被截留，过程中没有新物质生成，只是把水分子和溶质分离开。淡化后的水去除了钙镁等离子，属于软水。实际应用中海水淡化通常需要先经过预处理，再进行反渗透，而不是只需一步操作。",
+        "keywords": [
+          ["物理变化", "没有新物质生成"],
+          ["压力", "半透膜", "分子通过"],
+          ["软水", "钙镁离子被截留"],
+          ["预处理", "不止一步"]
+        ],
+        "explanation": "反渗透是物理分离过程，淡化后水中钙镁离子含量低，属于软水。"
+      },
+      "explanation": "反渗透是利用压力使水分子通过半透膜的物理变化，盐离子被截留；淡化后的水是软水。",
+      "knowledgeIds": ["water-purification", "distillation"],
+      "misconceptionIds": ["mc-purification-level"]
     }
-  }
+  ]
 }

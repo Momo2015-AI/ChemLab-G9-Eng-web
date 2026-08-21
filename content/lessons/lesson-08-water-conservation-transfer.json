@@ -1,85 +1,102 @@
 {
   "lessonId": "lesson-08-water-conservation",
-  "version": "1.0",
-  "transfer": {
-    "scenarios": [
-      {
-        "id": "L08-T01",
-        "title": "学校用水量分析",
-        "context": "小明发现学校每天用水量很大，主要用水部位包括：食堂、洗手间、实验室、绿化灌溉。他想调查学校用水情况并提出节水建议。",
-        "question": "以下哪项调查数据最有助于小明制定节水方案？",
-        "options": ["学校总人数","各用水点的日用水量分布","学校所在地区的降水量","学校的占地面积"],
-        "answer": 1,
-        "explanation": "了解各用水点的日用水量分布，才能针对性地制定节水方案，找出用水大户重点改进。",
-        "knowledgeIds": ["water-conservation","sustainable-development"],
-        "misconceptionIds": [],
-        "difficulty": "medium",
-        "source": "校园生活情境",
-        "tags": ["数据分析","方案设计"]
+  "version": "1.1",
+  "questions": [
+    {
+      "id": "L08-T01",
+      "type": "constructed",
+      "difficulty": "medium",
+      "title": "学校用水量分析",
+      "question": "小明发现学校每天用水量很大，主要用水部位包括：食堂、洗手间、实验室、绿化灌溉。他想调查学校用水情况并提出节水建议。请说明他最应该先收集哪一项调查数据，并说明理由。",
+      "rubric": {
+        "modelAnswer": "最应该收集各用水点（食堂、洗手间、实验室、绿化灌溉）的日用水量分布数据。因为只有了解每个用水点具体用了多少水，才能找出用水量最大的部位，从而有针对性地制定节水方案，重点改进用水大户，而不是笼统地节水。",
+        "keywords": [
+          ["各用水点", "用水量分布"],
+          ["找出用水大户", "针对性"],
+          ["制定节水方案"]
+        ],
+        "explanation": "了解各用水点的日用水量分布，才能针对性地制定节水方案，找出用水大户重点改进。"
       },
-      {
-        "id": "L08-T02",
-        "title": "家庭用水账单分析",
-        "context": "小红家的水费账单显示每月用水量15吨，邻居说这个用量偏高。小红想分析家庭成员用水习惯，找出节水空间。",
-        "question": "下列生活习惯中，最可能造成用水量偏高的是？",
-        "options": ["用洗菜水冲厕所","刷牙时关闭水龙头","洗澡时间控制在10分钟内","长时间放水洗碗筷"],
-        "answer": 3,
-        "explanation": "长时间放水洗碗筷会浪费大量水资源。其他选项都是节水好习惯。",
-        "knowledgeIds": ["water-conservation"],
-        "misconceptionIds": [],
-        "difficulty": "basic",
-        "source": "家庭生活情境",
-        "tags": ["习惯养成","行为分析"]
+      "explanation": "应先收集各用水点的日用水量分布数据，才能针对性地制定节水方案。",
+      "knowledgeIds": ["water-conservation", "sustainable-development"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L08-T02",
+      "type": "constructed",
+      "difficulty": "basic",
+      "title": "家庭用水账单分析",
+      "question": "小红家的水费账单显示每月用水量15吨，邻居说这个用量偏高。请分析下列几种生活习惯——用洗菜水冲厕所、刷牙时关闭水龙头、洗澡时间控制在10分钟内、长时间放水洗碗筷——哪一种最可能是造成用水量偏高的原因，并说明为什么其余几种反而是节水好习惯。",
+      "rubric": {
+        "modelAnswer": "长时间放水洗碗筷最可能造成用水量偏高，因为水龙头持续开着，大量水没有被有效利用就直接流走，浪费严重。用洗菜水冲厕所是废水二次利用；刷牙时关闭水龙头能避免水白白流走；洗澡时间控制在10分钟内能减少淋浴用水，这三种都属于节水好习惯。",
+        "keywords": [
+          ["长时间放水洗碗筷", "浪费"],
+          ["废水二次利用", "洗菜水冲厕所"],
+          ["关闭水龙头", "节水习惯"]
+        ],
+        "explanation": "长时间放水洗碗筷会浪费大量水资源，其他选项都是节水好习惯。"
       },
-      {
-        "id": "L08-T03",
-        "title": "社区水环境调查",
-        "context": "某社区附近有一条小河，居民反映近年来河水变臭、鱼虾减少。社区居委会计划组织居民进行调查。",
-        "question": "下列调查内容中，对判断污染源最有帮助的是？",
-        "options": ["测量河水的pH值","统计沿河建筑物的数量","观察河水的颜色和气味","询问居民的生辰八字"],
-        "answer": 0,
-        "explanation": "pH值可以反映水体的酸碱度变化，是判断污染源性质的重要指标。颜色气味也能提供线索，但pH值更科学。",
-        "knowledgeIds": ["water-pollution","pollution-prevention"],
-        "misconceptionIds": [],
-        "difficulty": "medium",
-        "source": "社区调查情境",
-        "tags": ["调查方法","科学探究"]
+      "explanation": "长时间放水洗碗筷最浪费水，其余三种做法都是节水好习惯。",
+      "knowledgeIds": ["water-conservation"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L08-T03",
+      "type": "constructed",
+      "difficulty": "medium",
+      "title": "社区水环境调查",
+      "question": "某社区附近有一条小河，居民反映近年来河水变臭、鱼虾减少。社区居委会计划组织居民进行调查。在“测量河水的pH值”“统计沿河建筑物的数量”“观察河水的颜色和气味”这几项调查内容中，哪一项对判断污染源最有帮助？请说明理由。",
+      "rubric": {
+        "modelAnswer": "测量河水的pH值对判断污染源最有帮助。因为pH值能科学地反映水体的酸碱度变化，不同类型的污染（如工业废水、生活污水）往往伴随特定的酸碱度改变，这是相对客观、可量化的判断依据；观察颜色和气味虽然也能提供线索，但主观性较强，不如pH值科学准确；统计建筑物数量与判断污染源没有直接的科学关联。",
+        "keywords": [
+          ["pH值", "酸碱度", "科学量化"],
+          ["颜色气味", "主观", "线索"],
+          ["建筑物数量", "无直接关联"]
+        ],
+        "explanation": "pH值可以反映水体的酸碱度变化，是判断污染源性质较为科学的指标。"
       },
-      {
-        "id": "L08-T04",
-        "title": "干旱地区的生活",
-        "context": "某干旱地区年降水量不足200mm，当地居民长期面临缺水问题。政府计划实施南水北调工程。",
-        "question": "关于南水北调工程，下列说法正确的是？",
-        "options": ["可以彻底解决我国北方缺水问题","调水过程不会产生任何环境问题","需要考虑调水对生态环境的影响","只需要考虑调水成本即可"],
-        "answer": 2,
-        "explanation": "南水北调是大型水利工程，需要考虑生态环境影响、调水成本等多方面因素，不能简单认为能彻底解决问题。",
-        "knowledgeIds": ["water-resources","sustainable-development"],
-        "misconceptionIds": [],
-        "difficulty": "hard",
-        "source": "国家工程情境",
-        "tags": ["工程思维","综合决策"]
+      "explanation": "测量pH值最有助于判断污染源，因为它是可量化的科学指标。",
+      "knowledgeIds": ["water-pollution", "pollution-prevention"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L08-T04",
+      "title": "干旱地区的生活",
+      "type": "constructed",
+      "difficulty": "hard",
+      "question": "某干旱地区年降水量不足200mm，当地居民长期面临缺水问题，政府计划实施南水北调工程。请评价“南水北调工程可以彻底解决我国北方缺水问题”这种说法是否准确，并说明理由。",
+      "rubric": {
+        "modelAnswer": "这种说法不准确。南水北调是大型水利工程，虽然能缓解北方缺水问题，但不能说“彻底解决”：一方面调水过程需要考虑对沿线及调出地生态环境的影响，另一方面还需要综合考虑调水成本、后续维护等多方面因素。解决缺水问题还需要配合节约用水、水资源循环利用等综合措施，不能仅靠单一工程一劳永逸。",
+        "keywords": [
+          ["不准确", "不能彻底解决"],
+          ["生态环境影响"],
+          ["调水成本", "综合考虑"],
+          ["节约用水", "综合措施"]
+        ],
+        "explanation": "南水北调需要考虑生态环境影响、调水成本等多方面因素，不能简单认为能彻底解决问题。"
       },
-      {
-        "id": "L08-T05",
-        "title": "工业节水改造",
-        "context": "某化工厂每天用水量10000吨，其中冷却用水占80%。厂长计划进行节水改造。",
-        "question": "下列节水改造方案中，效果最好的是？",
-        "options": ["将冷却水直接排放","改造为循环冷却系统","减少生产规模","停止用水部门运行"],
-        "answer": 1,
-        "explanation": "循环冷却系统可以将冷却水重复利用，大幅减少新鲜水用量，是工业节水最有效的技术手段。",
-        "knowledgeIds": ["water-conservation","pollution-prevention"],
-        "misconceptionIds": [],
-        "difficulty": "hard",
-        "source": "工业生产情境",
-        "tags": ["技术改造","经济效益"]
-      }
-    ],
-    "requiredScenarioCount": 3,
-    "mustIncludeConstructed": true,
-    "scoringCriteria": {
-      "dataAnalysis": "能从用水数据中找出节水空间",
-      "problemSolving": "能分析水污染原因并提出解决方案",
-      "decisionMaking": "能在复杂情境中做出合理决策"
+      "explanation": "南水北调只能缓解、不能彻底解决缺水问题，还需综合考虑生态和成本等因素。",
+      "knowledgeIds": ["water-resources", "sustainable-development"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L08-T05",
+      "type": "constructed",
+      "difficulty": "hard",
+      "title": "工业节水改造",
+      "question": "某化工厂每天用水量10000吨，其中冷却用水占80%，厂长计划进行节水改造。请在“将冷却水直接排放”“改造为循环冷却系统”“减少生产规模”“停止用水部门运行”这几种方案中，判断哪一种节水改造效果最好，并说明理由。",
+      "rubric": {
+        "modelAnswer": "改造为循环冷却系统效果最好。循环冷却系统能将使用过的冷却水净化处理后重复利用，大幅减少新鲜水的取用量，是工业节水中既有效又不影响正常生产的技术手段；直接排放冷却水完全没有节水效果；减少生产规模或停止用水部门运行虽然能减少用水，但会牺牲正常生产，不是真正意义上的“节水改造”。",
+        "keywords": [
+          ["循环冷却系统", "重复利用"],
+          ["不影响生产", "技术手段"],
+          ["减少生产规模", "牺牲生产"]
+        ],
+        "explanation": "循环冷却系统可以将冷却水重复利用，大幅减少新鲜水用量，是工业节水最有效的技术手段。"
+      },
+      "explanation": "循环冷却系统能重复利用冷却水，是最有效且不影响生产的节水方案。",
+      "knowledgeIds": ["water-conservation", "pollution-prevention"],
+      "misconceptionIds": []
     }
-  }
+  ]
 }

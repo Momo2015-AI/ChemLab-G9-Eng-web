@@ -30,35 +30,35 @@
     "stepCount": 8,
     "steps": [
       {
-        "id": "L08-S01",
+        "id": "L13-S01",
         "title": "回顾：氧气的实验室制取方法"
       },
       {
-        "id": "L08-S02",
+        "id": "L13-S02",
         "title": "过氧化氢分解原理"
       },
       {
-        "id": "L08-S03",
+        "id": "L13-S03",
         "title": "催化剂的概念"
       },
       {
-        "id": "L08-S04",
+        "id": "L13-S04",
         "title": "固液常温型发生装置"
       },
       {
-        "id": "L08-S05",
+        "id": "L13-S05",
         "title": "实验操作要点"
       },
       {
-        "id": "L08-S06",
+        "id": "L13-S06",
         "title": "催化剂的多样性"
       },
       {
-        "id": "L08-S07",
+        "id": "L13-S07",
         "title": "过氧化氢 vs 高锰酸钾法比较"
       },
       {
-        "id": "L08-S08",
+        "id": "L13-S08",
         "title": "中考考点总结"
       }
     ]
@@ -72,7 +72,7 @@
   },
   "experiments": [
     {
-      "id": "L08-E01",
+      "id": "L13-E01",
       "title": "过氧化氢分解制取氧气",
       "purpose": "掌握固液常温型制氧装置的操作，理解催化剂的作用。",
       "status": "ready-for-runtime",
@@ -81,7 +81,7 @@
   ],
   "questions": [
     {
-      "id": "L08-Q01",
+      "id": "L13-Q01",
       "type": "concept",
       "question": "实验室用过氧化氢制取氧气时，加入的物质是？",
       "options": [
@@ -100,7 +100,7 @@
       "explanation": "过氧化氢分解制氧气用MnO₂作催化剂。"
     },
     {
-      "id": "L08-Q02",
+      "id": "L13-Q02",
       "type": "concept",
       "question": "下列关于催化剂的说法正确的是？",
       "options": [
@@ -119,7 +119,7 @@
       "explanation": "催化剂在反应前后质量和化学性质都不变。"
     },
     {
-      "id": "L08-Q03",
+      "id": "L13-Q03",
       "type": "concept",
       "question": "过氧化氢分解制取氧气的化学方程式为？",
       "options": [
@@ -140,7 +140,7 @@
   ],
   "diagnosticQuestions": [
     {
-      "id": "L08-D01",
+      "id": "L13-D01",
       "knowledgePoint": "oxygen-catalyst",
       "question": "下列关于催化剂的说法中，错误的是？",
       "options": [
@@ -151,13 +151,13 @@
       ],
       "answer": 2,
       "errorType": "mc-o2-preparation",
-      "remediationStep": "L08-S03",
+      "remediationStep": "L13-S03",
       "knowledgeIds": [
         "oxygen-catalyst"
       ]
     },
     {
-      "id": "L08-D02",
+      "id": "L13-D02",
       "knowledgePoint": "oxygen-preparation-h2o2",
       "question": "用过氧化氢制取氧气时，下列操作顺序正确的是？",
       "options": [
@@ -168,14 +168,14 @@
       ],
       "answer": 1,
       "errorType": "mc-o2-preparation",
-      "remediationStep": "L08-S05",
+      "remediationStep": "L13-S05",
       "knowledgeIds": [
         "oxygen-preparation-h2o2",
         "lab-operations"
       ]
     },
     {
-      "id": "L08-D03",
+      "id": "L13-D03",
       "knowledgePoint": "oxygen-physical",
       "question": "下列关于氧气的说法正确的是？",
       "options": [
@@ -186,7 +186,7 @@
       ],
       "answer": 3,
       "errorType": "mc-o2-physical",
-      "remediationStep": "L08-S05",
+      "remediationStep": "L13-S05",
       "knowledgeIds": [
         "oxygen-physical",
         "oxygen-chemical"
@@ -203,7 +203,7 @@
     "fallback": "diagnosis",
     "questions": [
       {
-        "id": "L08-M01",
+        "id": "L13-M01",
         "type": "single",
         "difficulty": "basic",
         "knowledgePoint": "oxygen-preparation-h2o2",
@@ -222,7 +222,7 @@
         ]
       },
       {
-        "id": "L08-M02",
+        "id": "L13-M02",
         "type": "single",
         "difficulty": "basic",
         "knowledgePoint": "oxygen-catalyst",
@@ -240,7 +240,7 @@
         ]
       },
       {
-        "id": "L08-M03",
+        "id": "L13-M03",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-preparation-h2o2",
@@ -259,7 +259,7 @@
         ]
       },
       {
-        "id": "L08-M04",
+        "id": "L13-M04",
         "type": "single",
         "difficulty": "basic",
         "knowledgePoint": "oxygen-catalyst",
@@ -277,7 +277,7 @@
         ]
       },
       {
-        "id": "L08-M05",
+        "id": "L13-M05",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-preparation-h2o2",
@@ -296,7 +296,7 @@
         ]
       },
       {
-        "id": "L08-M06",
+        "id": "L13-M06",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-catalyst",
@@ -314,7 +314,7 @@
         ]
       },
       {
-        "id": "L08-M07",
+        "id": "L13-M07",
         "type": "single",
         "difficulty": "basic",
         "knowledgePoint": "oxygen-preparation-h2o2",
@@ -332,7 +332,7 @@
         ]
       },
       {
-        "id": "L08-M08",
+        "id": "L13-M08",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-physical",
@@ -350,7 +350,7 @@
         ]
       },
       {
-        "id": "L08-M09",
+        "id": "L13-M09",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-catalyst",
@@ -368,7 +368,7 @@
         ]
       },
       {
-        "id": "L08-M10",
+        "id": "L13-M10",
         "type": "single",
         "difficulty": "hard",
         "knowledgePoint": "oxygen-preparation-h2o2",
@@ -390,7 +390,7 @@
         ]
       },
       {
-        "id": "L08-M11",
+        "id": "L13-M11",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-preparation-h2o2",
@@ -409,7 +409,7 @@
         ]
       },
       {
-        "id": "L08-M12",
+        "id": "L13-M12",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-catalyst",
@@ -428,7 +428,7 @@
         ]
       },
       {
-        "id": "L08-M13",
+        "id": "L13-M13",
         "type": "single",
         "difficulty": "hard",
         "knowledgePoint": "oxygen-preparation-h2o2",
@@ -447,7 +447,7 @@
         ]
       },
       {
-        "id": "L08-M14",
+        "id": "L13-M14",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-catalyst",
@@ -465,7 +465,7 @@
         ]
       },
       {
-        "id": "L08-M15",
+        "id": "L13-M15",
         "type": "single",
         "difficulty": "basic",
         "knowledgePoint": "oxygen-preparation-h2o2",
@@ -483,7 +483,7 @@
         ]
       },
       {
-        "id": "L08-M16",
+        "id": "L13-M16",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-physical",
@@ -502,7 +502,7 @@
         ]
       },
       {
-        "id": "L08-M17",
+        "id": "L13-M17",
         "type": "single",
         "difficulty": "hard",
         "knowledgePoint": "oxygen-catalyst",
@@ -520,7 +520,7 @@
         ]
       },
       {
-        "id": "L08-M18",
+        "id": "L13-M18",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-preparation-h2o2",
@@ -539,7 +539,7 @@
         ]
       },
       {
-        "id": "L08-M19",
+        "id": "L13-M19",
         "type": "single",
         "difficulty": "hard",
         "knowledgePoint": "oxygen-preparation-h2o2",
@@ -558,7 +558,7 @@
         ]
       },
       {
-        "id": "L08-M20",
+        "id": "L13-M20",
         "type": "single",
         "difficulty": "medium",
         "knowledgePoint": "oxygen-chemical",
@@ -577,7 +577,7 @@
         ]
       },
       {
-        "id": "L08-M21",
+        "id": "L13-M21",
         "type": "constructed",
         "difficulty": "hard",
         "knowledgePoint": "oxygen-catalyst",

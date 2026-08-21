@@ -72,6 +72,8 @@ test('lesson manifest exposes every released canonical lesson with textbook meta
     'lesson-02-chemistry-as-experimental-science',
     'lesson-04-lab-safety-operations',
     'lesson-05-oxygen',
+    'lesson-08-h2o2-oxygen-preparation',
+    'lesson-07-oxygen-preparation-comprehensive',
     'lesson-06-molecules-and-atoms',
     'lesson-06-water-composition',
     'lesson-07-water-purification',
