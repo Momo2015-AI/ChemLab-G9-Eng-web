@@ -7,7 +7,7 @@
       "type": "constructed",
       "difficulty": "hard",
       "bloomLevel": "evaluate",
-      "knowledgePoint": "oxygen-preparation-h2o2",
+      "knowledgePoint": "oxygen-preparation",
       "question": "实验室需要制取一瓶较纯净的氧气，现有排水法和向上排空气法两种收集方法。请分析两种方法的优缺点，并选择合适的方法说明理由。",
       "rubric": {
         "modelAnswer": "排水法：优点是氧气纯度高，缺点是需要干燥处理；向上排空气法：优点是操作简便，缺点是氧气可能混有空气。建议选用排水法，因为题目要求'较纯净'。",
@@ -31,7 +31,7 @@
       },
       "explanation": "排水法收集氧气更纯净，但含少量水蒸气；排空气法简便但纯度较低。",
       "knowledgeIds": [
-        "oxygen-preparation-h2o2",
+        "oxygen-preparation",
         "oxygen-physical"
       ],
       "misconceptionIds": [
@@ -43,7 +43,7 @@
       "type": "constructed",
       "difficulty": "hard",
       "bloomLevel": "create",
-      "knowledgePoint": "oxygen-catalyst",
+      "knowledgePoint": "catalyst-concept",
       "question": "某同学想验证MnO₂是否是H₂O₂分解的催化剂，请设计实验方案。要求写出实验步骤、预期现象和结论。",
       "rubric": {
         "modelAnswer": "步骤1：取适量H₂O₂溶液于试管中，观察现象（无明显气泡）。步骤2：加入少量MnO₂，观察现象（大量气泡）。步骤3：过滤、洗涤、干燥MnO₂，称重（质量不变）。步骤4：将回收的MnO₂加入新的H₂O₂溶液中，观察现象（仍有大量气泡）。结论：MnO₂是催化剂。",
@@ -69,7 +69,7 @@
       },
       "explanation": "验证催化剂需三步：证明加快反应、证明质量不变、证明化学性质不变。",
       "knowledgeIds": [
-        "oxygen-catalyst",
+        "catalyst-concept",
         "lab-operations"
       ],
       "misconceptionIds": [
@@ -81,7 +81,7 @@
       "type": "constructed",
       "difficulty": "hard",
       "bloomLevel": "analyze",
-      "knowledgePoint": "oxygen-preparation-h2o2",
+      "knowledgePoint": "oxygen-preparation",
       "question": "某同学用双氧水和MnO₂制取氧气，发现反应结束后剩余固体中MnO₂的质量与反应前相同。请分析MnO₂在反应中的作用机制，并说明为什么反应速率会随着反应进行而逐渐降低。",
       "rubric": {
         "modelAnswer": "MnO₂降低H₂O₂分解活化能，提供反应路径但不被消耗。反应速率降低是因为H₂O₂浓度逐渐降低，单位体积内反应物分子数减少，有效碰撞频率下降。",
@@ -101,8 +101,8 @@
       },
       "explanation": "MnO₂降低活化能不消耗；速率降低因H₂O₂浓度下降。",
       "knowledgeIds": [
-        "oxygen-catalyst",
-        "oxygen-preparation-h2o2"
+        "catalyst-concept",
+        "oxygen-preparation"
       ],
       "misconceptionIds": [
         "mc-o2-preparation"
@@ -113,7 +113,7 @@
       "type": "constructed",
       "difficulty": "hard",
       "bloomLevel": "evaluate",
-      "knowledgePoint": "oxygen-catalyst",
+      "knowledgePoint": "catalyst-concept",
       "question": "实验室需要制取较多量氧气且要求操作简便安全。现有高锰酸钾和过氧化氢两种方案，请从安全性、操作简便性、产物环保性三个角度对比两种方案，并给出推荐方案及理由。",
       "rubric": {
         "modelAnswer": "安全性：过氧化氢常温反应更安全（无需加热）；操作简便性：过氧化氢法装置简单（固液常温型）；环保性：过氧化氢法产物为水和氧气无污染。推荐过氧化氢法。",
@@ -138,7 +138,7 @@
       },
       "explanation": "过氧化氢法常温安全、操作简便、产物环保，适合实验室常规制氧。",
       "knowledgeIds": [
-        "oxygen-preparation-h2o2",
+        "oxygen-preparation",
         "oxygen-preparation"
       ],
       "misconceptionIds": [

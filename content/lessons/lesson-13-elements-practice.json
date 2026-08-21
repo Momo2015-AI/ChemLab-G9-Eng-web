@@ -39,12 +39,12 @@
       "id": "L16-P04",
       "type": "single",
       "difficulty": "basic",
-      "knowledgePoint": "element-symbol",
+      "knowledgePoint": "element-concept",
       "question": "下列元素符号书写正确的是？",
       "options": ["mg", "Na", "AL", "fe"],
       "answer": 1,
       "explanation": "元素符号书写：一个字母大写，两个字母首字母大写、第二个小写；Na 正确，应为 Mg、Al、Fe。",
-      "knowledgeIds": ["element-concept", "element-symbol"]
+      "knowledgeIds": ["element-concept", "element-concept"]
     },
     {
       "id": "L16-P05",
@@ -55,7 +55,7 @@
       "options": ["氢元素和一个氢原子", "两个氢原子", "一个氢分子", "氢元素和一个氢分子"],
       "answer": 0,
       "explanation": "元素符号表示一种元素，也表示该元素的一个原子，因此“H”表示氢元素和一个氢原子。",
-      "knowledgeIds": ["element-concept", "element-symbol"]
+      "knowledgeIds": ["element-concept", "element-concept"]
     },
     {
       "id": "L16-P06",

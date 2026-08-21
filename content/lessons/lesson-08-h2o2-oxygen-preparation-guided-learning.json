@@ -14,7 +14,7 @@
       ],
       "knowledgePoints": [
         "oxygen-preparation",
-        "oxygen-preparation-h2o2"
+        "oxygen-preparation"
       ],
       "check": {
         "question": "工业上制取氧气的方法是？",
@@ -39,8 +39,8 @@
         "二氧化锰在该反应中是催化剂，反应前后其质量和化学性质不变。"
       ],
       "knowledgePoints": [
-        "oxygen-preparation-h2o2",
-        "oxygen-catalyst"
+        "oxygen-preparation",
+        "catalyst-concept"
       ],
       "check": {
         "question": "过氧化氢分解制取氧气的化学方程式正确的是？",
@@ -65,7 +65,7 @@
         "不同的反应需要不同的催化剂；同一催化剂可以催化不同的反应。"
       ],
       "knowledgePoints": [
-        "oxygen-catalyst"
+        "catalyst-concept"
       ],
       "check": {
         "question": "下列关于催化剂的说法正确的是？",
@@ -90,7 +90,7 @@
         "分液漏斗可以控制液体滴加速率，从而控制反应速率。"
       ],
       "knowledgePoints": [
-        "oxygen-preparation-h2o2",
+        "oxygen-preparation",
         "lab-operations"
       ],
       "check": {
@@ -116,7 +116,7 @@
         "检验：将带火星木条伸入集气瓶，复燃则是氧气。验满：带火星木条放瓶口，复燃则满。"
       ],
       "knowledgePoints": [
-        "oxygen-preparation-h2o2",
+        "oxygen-preparation",
         "lab-operations",
         "oxygen-physical"
       ],
@@ -143,7 +143,7 @@
         "催化剂能降低反应的活化能，使反应更容易发生，但不改变反应的焓变。"
       ],
       "knowledgePoints": [
-        "oxygen-catalyst"
+        "catalyst-concept"
       ],
       "check": {
         "question": "下列物质中，不能作为过氧化氢分解催化剂的是？",
@@ -168,7 +168,7 @@
         "过氧化氢法是初中化学最常用的氧气制取方法，应重点掌握。"
       ],
       "knowledgePoints": [
-        "oxygen-preparation-h2o2",
+        "oxygen-preparation",
         "oxygen-preparation"
       ],
       "check": {
@@ -195,8 +195,8 @@
         "常见催化剂：MnO₂、FeCl₃、猪肝（过氧化氢酶）。"
       ],
       "knowledgePoints": [
-        "oxygen-preparation-h2o2",
-        "oxygen-catalyst"
+        "oxygen-preparation",
+        "catalyst-concept"
       ],
       "check": {
         "question": "下列关于催化剂的说法错误的是？",

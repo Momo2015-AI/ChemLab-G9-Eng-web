@@ -51,7 +51,7 @@
         "id": "L12-M03",
         "type": "single",
         "difficulty": "medium",
-        "knowledgePoint": "oxygen-preparation-h2o2",
+        "knowledgePoint": "oxygen-preparation",
         "question": "用过氧化氢制取氧气时，关于MnO₂的说法正确的是？",
         "options": [
           "MnO₂是反应物",
@@ -62,8 +62,8 @@
         "answer": 2,
         "explanation": "MnO₂是催化剂，反应前后质量和化学性质不变，不增加产物产量。",
         "knowledgeIds": [
-          "oxygen-catalyst",
-          "oxygen-preparation-h2o2"
+          "catalyst-concept",
+          "oxygen-preparation"
         ]
       },
       {
@@ -110,7 +110,7 @@
         "id": "L12-M06",
         "type": "single",
         "difficulty": "medium",
-        "knowledgePoint": "oxygen-catalyst",
+        "knowledgePoint": "catalyst-concept",
         "question": "下列关于催化剂的说法正确的是？",
         "options": [
           "催化剂在反应前后质量增加",
@@ -121,14 +121,14 @@
         "answer": 2,
         "explanation": "催化剂在反应前后质量和化学性质都不变；可以加快或减慢速率。",
         "knowledgeIds": [
-          "oxygen-catalyst"
+          "catalyst-concept"
         ]
       },
       {
         "id": "L12-M07",
         "type": "single",
         "difficulty": "hard",
-        "knowledgePoint": "oxygen-preparation-h2o2",
+        "knowledgePoint": "oxygen-preparation",
         "question": "用过氧化氢制取氧气时，若要获得平稳气流，最佳方案是？",
         "options": [
           "用长颈漏斗快速加入双氧水",
@@ -139,7 +139,7 @@
         "answer": 1,
         "explanation": "分液漏斗可逐滴加入双氧水，控制反应速率，获得平稳气流。",
         "knowledgeIds": [
-          "oxygen-preparation-h2o2",
+          "oxygen-preparation",
           "lab-operations"
         ]
       },
@@ -209,7 +209,7 @@
         "id": "L12-M11",
         "type": "single",
         "difficulty": "medium",
-        "knowledgePoint": "oxygen-preparation-h2o2",
+        "knowledgePoint": "oxygen-preparation",
         "question": "对比过氧化氢法和高锰酸钾法，下列哪项是两者的共同点？",
         "options": [
           "都需要加热",
@@ -221,7 +221,7 @@
         "explanation": "两种方法产生的氧气都可以用排水法收集（氧气不易溶于水）。",
         "knowledgeIds": [
           "oxygen-preparation",
-          "oxygen-preparation-h2o2",
+          "oxygen-preparation",
           "oxygen-physical"
         ]
       },
@@ -266,7 +266,7 @@
         "id": "L12-M14",
         "type": "single",
         "difficulty": "medium",
-        "knowledgePoint": "oxygen-catalyst",
+        "knowledgePoint": "catalyst-concept",
         "question": "MnO₂可以作为下列哪些反应的催化剂？①过氧化氢分解 ②高锰酸钾分解 ③氯酸钾分解",
         "options": [
           "只有①",
@@ -277,7 +277,7 @@
         "answer": 1,
         "explanation": "MnO₂可催化H₂O₂分解和KClO₃分解；高锰酸钾分解自身产生MnO₂，不需要额外催化。",
         "knowledgeIds": [
-          "oxygen-catalyst",
+          "catalyst-concept",
           "oxygen-preparation"
         ]
       },
@@ -304,7 +304,7 @@
         "id": "L12-M16",
         "type": "single",
         "difficulty": "hard",
-        "knowledgePoint": "oxygen-preparation-h2o2",
+        "knowledgePoint": "oxygen-preparation",
         "question": "某同学用过氧化氢制氧，发现反应一段时间后速率明显减慢，最可能的原因是？",
         "options": [
           "MnO₂被消耗了",
@@ -315,8 +315,8 @@
         "answer": 1,
         "explanation": "随着反应进行，H₂O₂浓度降低，反应速率减慢；MnO₂作为催化剂不被消耗。",
         "knowledgeIds": [
-          "oxygen-preparation-h2o2",
-          "oxygen-catalyst"
+          "oxygen-preparation",
+          "catalyst-concept"
         ]
       },
       {
@@ -378,7 +378,7 @@
         "id": "L12-M20",
         "type": "single",
         "difficulty": "hard",
-        "knowledgePoint": "oxygen-preparation-h2o2",
+        "knowledgePoint": "oxygen-preparation",
         "question": "下列哪种方案可以用来区分氧气和二氧化碳？",
         "options": [
           "闻气味",

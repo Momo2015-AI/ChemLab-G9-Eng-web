@@ -20,8 +20,8 @@
   "knowledgePoints": [
     "atomic-structure",
     "particle-model",
-    "relative-atomic-mass",
-    "nucleus-electron-configuration"
+    "atomic-structure",
+    "atomic-structure"
   ],
   "prerequisites": [
     "lesson-06-molecules-and-atoms"
@@ -101,7 +101,7 @@
       "question": "相对原子质量是？",
       "options": ["原子实际质量的数值，单位是克", "以碳-12原子质量的1/12为基准，原子实际质量与基准相比得到的比值，没有单位", "原子核中质子和中子的质量之和", "原子中电子的质量"],
       "answer": 1,
-      "knowledgeIds": ["atomic-structure", "relative-atomic-mass"],
+      "knowledgeIds": ["atomic-structure", "atomic-structure"],
       "knowledgePoints": ["atomic-structure"],
       "explanation": "相对原子质量是一个比值，以碳-12原子质量的1/12为标准，用原子的实际质量除以该基准所得，单位为1（通常省略不写）。"
     },
@@ -111,7 +111,7 @@
       "question": "钠原子的原子序数为11，中子数为12，则钠原子的相对原子质量约为？",
       "options": ["11", "12", "23", "1"],
       "answer": 2,
-      "knowledgeIds": ["atomic-structure", "relative-atomic-mass"],
+      "knowledgeIds": ["atomic-structure", "atomic-structure"],
       "knowledgePoints": ["atomic-structure"],
       "explanation": "相对原子质量≈质子数+中子数，钠原子的质子数=原子序数=11，加上中子数12，约为23。"
     }
@@ -139,13 +139,13 @@
     },
     {
       "id": "L14-D03",
-      "knowledgePoint": "relative-atomic-mass",
+      "knowledgePoint": "atomic-structure",
       "question": "关于相对原子质量，下列理解正确的是？",
       "options": ["相对原子质量就是原子的实际质量，以克为单位", "相对原子质量是一个比值，以碳-12原子质量的1/12为标准，数值约等于质子数与中子数之和", "相对原子质量就是质子数", "相对原子质量没有基准，任意规定"],
       "answer": 1,
       "errorType": "mc-relative-atomic-mass",
       "remediationStep": "L14-S06",
-      "knowledgeIds": ["atomic-structure", "relative-atomic-mass"]
+      "knowledgeIds": ["atomic-structure", "atomic-structure"]
     }
   ],
   "provenance": {

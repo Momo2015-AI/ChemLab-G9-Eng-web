@@ -4,23 +4,23 @@
   "diagnostics": [
     {
       "id": "L08-D01",
-      "knowledgePoint": "water-resources",
+      "knowledgePoint": "water-resources-conservation",
       "question": "下列关于水资源的叙述正确的是？",
       "options": ["地球上水储量丰富，淡水取之不尽", "淡水资源占总水量的约97%", "陆地淡水资源约占全球水储量的2.53%", "我国是水资源丰富的国家"],
       "answer": 2,
       "errorType": "mc-water-resource-stat",
       "remediationStep": "L08-S02",
-      "knowledgeIds": ["water-resources"]
+      "knowledgeIds": ["water-resources-conservation"]
     },
     {
       "id": "L08-D02",
-      "knowledgePoint": "water-pollution",
+      "knowledgePoint": "water-resources-conservation",
       "question": "下列做法会造成水体污染的是？",
       "options": ["生活污水集中处理", "合理使用化肥农药", "工业废水直接排放", "加强水质监测"],
       "answer": 2,
       "errorType": "mc-water-pollution",
       "remediationStep": "L08-S05",
-      "knowledgeIds": ["water-pollution","pollution-prevention"]
+      "knowledgeIds": ["water-resources-conservation","water-resources-conservation"]
     }
   ]
 }

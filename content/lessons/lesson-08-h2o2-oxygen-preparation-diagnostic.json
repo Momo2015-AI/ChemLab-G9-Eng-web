@@ -4,7 +4,7 @@
   "diagnostics": [
     {
       "id": "L13-D01",
-      "knowledgePoint": "oxygen-catalyst",
+      "knowledgePoint": "catalyst-concept",
       "question": "下列关于催化剂的说法中，错误的是？",
       "options": [
         "催化剂在反应前后质量不变",
@@ -16,12 +16,12 @@
       "errorType": "mc-o2-preparation",
       "remediationStep": "L13-S03",
       "knowledgeIds": [
-        "oxygen-catalyst"
+        "catalyst-concept"
       ]
     },
     {
       "id": "L13-D02",
-      "knowledgePoint": "oxygen-preparation-h2o2",
+      "knowledgePoint": "oxygen-preparation",
       "question": "用过氧化氢制取氧气时，下列操作顺序正确的是？",
       "options": [
         "先加H₂O₂溶液，再加MnO₂固体",
@@ -33,7 +33,7 @@
       "errorType": "mc-o2-preparation",
       "remediationStep": "L13-S05",
       "knowledgeIds": [
-        "oxygen-preparation-h2o2",
+        "oxygen-preparation",
         "lab-operations"
       ]
     },

@@ -71,7 +71,7 @@
         "options": ["核电荷数7，相对原子质量14", "核电荷数14，相对原子质量7", "核电荷数7，相对原子质量7", "核电荷数14，相对原子质量14"],
         "answer": 0,
         "explanation": "核电荷数=质子数=7，相对原子质量≈质子数+中子数=7+7=14。",
-        "knowledgeIds": ["atomic-structure", "relative-atomic-mass"]
+        "knowledgeIds": ["atomic-structure", "atomic-structure"]
       },
       {
         "id": "L14-M07",
@@ -104,7 +104,7 @@
         "options": ["离核较近的电子层", "离核较远的电子层", "原子核内部", "任意位置"],
         "answer": 1,
         "explanation": "能量较低的电子在离核较近的电子层，能量较高的电子在离核较远的电子层。",
-        "knowledgeIds": ["atomic-structure", "nucleus-electron-configuration"]
+        "knowledgeIds": ["atomic-structure", "atomic-structure"]
       },
       {
         "id": "L14-M10",
@@ -143,34 +143,34 @@
         "id": "L14-M13",
         "type": "single",
         "difficulty": "hard",
-        "knowledgePoint": "relative-atomic-mass",
+        "knowledgePoint": "atomic-structure",
         "question": "已知某元素的原子中质子数为20，中子数为20，则该元素的相对原子质量约为？",
         "options": ["20", "40", "10", "200"],
         "answer": 1,
         "explanation": "相对原子质量≈质子数+中子数=20+20=40。",
-        "knowledgeIds": ["atomic-structure", "relative-atomic-mass"]
+        "knowledgeIds": ["atomic-structure", "atomic-structure"]
       },
       {
         "id": "L14-M14",
         "type": "single",
         "difficulty": "hard",
-        "knowledgePoint": "relative-atomic-mass",
+        "knowledgePoint": "atomic-structure",
         "question": "关于相对原子质量的说法，正确的是？",
         "options": ["相对原子质量的单位是克", "相对原子质量是以碳-12原子质量的1/12为基准得到的比值，通常省略单位", "相对原子质量是原子的实际质量", "相对原子质量越大，原子质量越小"],
         "answer": 1,
         "explanation": "相对原子质量是比值，以碳-12原子质量的1/12为基准，单位通常省略；相对原子质量越大，说明原子实际质量越大。",
-        "knowledgeIds": ["atomic-structure", "relative-atomic-mass"]
+        "knowledgeIds": ["atomic-structure", "atomic-structure"]
       },
       {
         "id": "L14-M15",
         "type": "single",
         "difficulty": "hard",
-        "knowledgePoint": "relative-atomic-mass",
+        "knowledgePoint": "atomic-structure",
         "question": "碳原子的原子序数为6，相对原子质量约为12，则碳原子核内的中子数为？",
         "options": ["6", "12", "18", "2"],
         "answer": 0,
         "explanation": "中子数=相对原子质量-质子数=12-6=6。",
-        "knowledgeIds": ["atomic-structure", "relative-atomic-mass"]
+        "knowledgeIds": ["atomic-structure", "atomic-structure"]
       },
       {
         "id": "L14-M16",

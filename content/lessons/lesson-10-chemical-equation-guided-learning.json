@@ -12,7 +12,7 @@
         "要回答这类问题，我们需要掌握相对分子质量的计算和元素质量分数的计算。",
         "今天我们先学习这些基本计算方法，再了解化学反应中的质量关系。"
       ],
-      "knowledgePoints": ["relative-molecular-mass","mass-fraction"],
+      "knowledgePoints": ["mass-fraction-calculation","mass-fraction-calculation"],
       "check": {
         "question": "H₂O的相对分子质量是？",
         "options": ["16","17","18","32"],
@@ -30,7 +30,7 @@
         "例如：Ca(OH)₂的相对分子质量 = 40 + (16+1)×2 = 74。",
         "注意：有括号时，先计算括号内各原子相对原子质量之和，再乘以括号外的原子个数。"
       ],
-      "knowledgePoints": ["relative-molecular-mass"],
+      "knowledgePoints": ["mass-fraction-calculation"],
       "check": {
         "question": "Fe₂O₃的相对分子质量是？",
         "options": ["72","112","160","232"],
@@ -48,7 +48,7 @@
         "例如：CO₂中C:O质量比 = 12:(16×2) = 12:32 = 3:8。",
         "元素质量比与原子个数比不同，要注意区分。"
       ],
-      "knowledgePoints": ["mass-ratio"],
+      "knowledgePoints": ["mass-fraction-calculation"],
       "check": {
         "question": "NH₄NO₃中氮、氢、氧元素的质量比是？",
         "options": ["2:4:3","14:2:24","7:1:12","7:1:8"],
@@ -66,7 +66,7 @@
         "例如：CaCO₃中钙元素质量分数 = (40/100) × 100% = 40%。",
         "应用：已知化合物质量，可求其中某元素的质量。"
       ],
-      "knowledgePoints": ["mass-fraction"],
+      "knowledgePoints": ["mass-fraction-calculation"],
       "check": {
         "question": "50g CaCO₃中钙元素的质量约为？",
         "options": ["10g","20g","40g","50g"],
@@ -84,7 +84,7 @@
         "这一发现推翻了当时的'燃素说'，奠定了现代化学的基础。",
         "质量守恒定律是化学中最基本的定律之一。"
       ],
-      "knowledgePoints": ["law-conservation"],
+      "knowledgePoints": ["law-of-mass-conservation"],
       "check": {
         "question": "质量守恒定律是由哪位科学家首先发现的？",
         "options": ["道尔顿","拉瓦锡","门捷列夫","阿伏伽德罗"],
@@ -102,7 +102,7 @@
         "适用范围：化学变化，不适用于物理变化。",
         "常见误区：镁条燃烧后质量增加，是因为镁与氧气反应，总质量守恒。"
       ],
-      "knowledgePoints": ["law-conservation"],
+      "knowledgePoints": ["law-of-mass-conservation"],
       "check": {
         "question": "下列关于质量守恒定律的说法正确的是？",
         "options": [
@@ -127,7 +127,7 @@
         "化学反应前后一定改变：分子种类、物质种类。",
         "可能改变：分子数目。"
       ],
-      "knowledgePoints": ["law-conservation","particle-model"],
+      "knowledgePoints": ["law-of-mass-conservation","particle-model"],
       "check": {
         "question": "化学反应前后，一定发生改变的是？",
         "options": ["原子种类","原子数目","物质种类","元素种类"],
@@ -145,7 +145,7 @@
         "应用3：解释实验现象。如镁条燃烧后质量增加，是因为与氧气反应。",
         "解题步骤：①写出化学方程式；②找出已知量和未知量的质量关系；③列比例式求解。"
       ],
-      "knowledgePoints": ["law-conservation","stoichiometry"],
+      "knowledgePoints": ["law-of-mass-conservation","law-of-mass-conservation"],
       "check": {
         "question": "10g碳酸钙完全分解，生成二氧化碳的质量约为？",
         "options": ["4.4g","5.6g","10g","18g"],

@@ -18,7 +18,7 @@
         "explanation": "铁粉与氧气反应生成氧化铁是化学变化，反应前后总质量守恒；脱氧剂消耗后不能再生使用。"
       },
       "explanation": "铁粉脱氧是化学变化，符合质量守恒定律，脱氧剂消耗后不能反复使用。",
-      "knowledgeIds": ["law-conservation", "stoichiometry"],
+      "knowledgeIds": ["law-of-mass-conservation", "law-of-mass-conservation"],
       "misconceptionIds": ["mc-law-conservation"]
     },
     {
@@ -37,7 +37,7 @@
         "explanation": "根据化学方程式中各物质的质量比进行计算：316:32 = 15.8g:x，解得x=1.6g。"
       },
       "explanation": "根据化学方程式列比例式计算，15.8g高锰酸钾理论上能生成1.6g氧气。",
-      "knowledgeIds": ["stoichiometry", "relative-molecular-mass"],
+      "knowledgeIds": ["law-of-mass-conservation", "mass-fraction-calculation"],
       "misconceptionIds": []
     },
     {
@@ -57,7 +57,7 @@
         "explanation": "炼铁计算主要依据铁元素质量守恒，从矿石到生铁铁元素总量不变，不需要计算CO₂质量。"
       },
       "explanation": "利用铁元素质量守恒逐步计算，最终可炼得生铁约583t。",
-      "knowledgeIds": ["mass-fraction", "stoichiometry"],
+      "knowledgeIds": ["mass-fraction-calculation", "law-of-mass-conservation"],
       "misconceptionIds": []
     },
     {
@@ -77,7 +77,7 @@
         "explanation": "化学反应中原子的种类、数目、质量都不发生改变，只是重新组合，这是质量守恒定律的微观解释。"
       },
       "explanation": "化学反应前后原子种类、数目、质量均不变，只是重新组合，因此总质量守恒。",
-      "knowledgeIds": ["law-conservation", "particle-model"],
+      "knowledgeIds": ["law-of-mass-conservation", "particle-model"],
       "misconceptionIds": ["mc-law-conservation"]
     }
   ]

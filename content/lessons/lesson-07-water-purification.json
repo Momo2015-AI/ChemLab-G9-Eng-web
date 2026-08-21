@@ -17,13 +17,13 @@
     "了解硬水软化的方法及其在生产生活中的意义。"
   ],
   "knowledgePoints": [
-    "water-purification",
-    "filtration-operation",
+    "water-purification-methods",
+    "filtration-adsorption-operation",
     "hard-soft-water",
-    "distillation",
-    "adsorption",
+    "water-purification-methods",
+    "filtration-adsorption-operation",
     "lab-operations",
-    "separation-purification"
+    "water-purification-methods"
   ],
   "prerequisites": [
     "lesson-06-water-composition",
@@ -65,8 +65,8 @@
       "question": "下列净水方法中，净化程度最高的是？",
       "options": ["沉淀", "过滤", "吸附", "蒸馏"],
       "answer": 3,
-      "knowledgeIds": ["water-purification", "distillation"],
-      "knowledgePoints": ["water-purification"],
+      "knowledgeIds": ["water-purification-methods", "water-purification-methods"],
+      "knowledgePoints": ["water-purification-methods"],
       "explanation": "蒸馏能除去水中所有杂质，得到纯水，净化程度最高。"
     },
     {
@@ -75,8 +75,8 @@
       "question": "过滤操作中，玻璃棒的作用是？",
       "options": ["搅拌", "引流", "防止液体飞溅", "转移固体"],
       "answer": 1,
-      "knowledgeIds": ["filtration-operation", "lab-operations"],
-      "knowledgePoints": ["filtration-operation"],
+      "knowledgeIds": ["filtration-adsorption-operation", "lab-operations"],
+      "knowledgePoints": ["filtration-adsorption-operation"],
       "explanation": "过滤时玻璃棒靠在三层滤纸一侧，起引流作用，防止液体直接冲破滤纸。"
     },
     {
@@ -85,7 +85,7 @@
       "question": "下列区分硬水和软水的方法正确的是？",
       "options": ["观察颜色", "闻气味", "加肥皂水搅拌", "过滤"],
       "answer": 2,
-      "knowledgeIds": ["hard-soft-water", "separation-purification"],
+      "knowledgeIds": ["hard-soft-water", "water-purification-methods"],
       "knowledgePoints": ["hard-soft-water"],
       "explanation": "硬水加肥皂水泡沫少、浮渣多；软水加肥皂水泡沫多、浮渣少。"
     },
@@ -95,8 +95,8 @@
       "question": "下列关于过滤操作的说法错误的是？",
       "options": ["滤纸边缘要低于漏斗边缘", "液面要低于滤纸边缘", "玻璃棒靠在三层滤纸一侧", "为了加快过滤速度，用玻璃棒搅拌漏斗内的液体"],
       "answer": 3,
-      "knowledgeIds": ["filtration-operation", "lab-operations"],
-      "knowledgePoints": ["filtration-operation"],
+      "knowledgeIds": ["filtration-adsorption-operation", "lab-operations"],
+      "knowledgePoints": ["filtration-adsorption-operation"],
       "explanation": "过滤时不能用玻璃棒搅拌漏斗内的液体，否则会戳破滤纸，导致过滤失败。"
     },
     {
@@ -105,8 +105,8 @@
       "question": "明矾在净水中的作用是？",
       "options": ["杀菌消毒", "吸附悬浮杂质使其沉降", "除去可溶性杂质", "除去不溶性杂质"],
       "answer": 1,
-      "knowledgeIds": ["water-purification", "adsorption"],
-      "knowledgePoints": ["adsorption"],
+      "knowledgeIds": ["water-purification-methods", "filtration-adsorption-operation"],
+      "knowledgePoints": ["filtration-adsorption-operation"],
       "explanation": "明矾溶于水生成胶状物，能吸附悬浮杂质，加速其沉降。"
     },
     {
@@ -115,21 +115,21 @@
       "question": "下列净化水的操作中，涉及化学变化的是？",
       "options": ["沉淀", "过滤", "吸附", "消毒杀菌"],
       "answer": 3,
-      "knowledgeIds": ["water-purification"],
-      "knowledgePoints": ["water-purification"],
+      "knowledgeIds": ["water-purification-methods"],
+      "knowledgePoints": ["water-purification-methods"],
       "explanation": "消毒杀菌过程中消毒剂与细菌蛋白质反应，生成新物质，属于化学变化。沉淀、过滤、吸附都是物理变化。"
     }
   ],
   "diagnosticQuestions": [
     {
       "id": "L07-D01",
-      "knowledgePoint": "filtration-operation",
+      "knowledgePoint": "filtration-adsorption-operation",
       "question": "过滤操作中，下列做法错误的是？",
       "options": ["滤纸紧贴漏斗内壁", "用玻璃棒引流", "液面高于滤纸边缘", "漏斗下端紧靠烧杯内壁"],
       "answer": 2,
       "errorType": "mc-filtration-operation",
       "remediationStep": "L07-S05",
-      "knowledgeIds": ["filtration-operation", "lab-operations"]
+      "knowledgeIds": ["filtration-adsorption-operation", "lab-operations"]
     },
     {
       "id": "L07-D02",
@@ -143,13 +143,13 @@
     },
     {
       "id": "L07-D03",
-      "knowledgePoint": "water-purification",
+      "knowledgePoint": "water-purification-methods",
       "question": "下列净水方法中，一定能使硬水软化的是？",
       "options": ["沉淀", "过滤", "吸附", "蒸馏"],
       "answer": 3,
       "errorType": "mc-purification-level",
       "remediationStep": "L07-S08",
-      "knowledgeIds": ["water-purification", "distillation"]
+      "knowledgeIds": ["water-purification-methods", "water-purification-methods"]
     }
   ],
   "mastery": {

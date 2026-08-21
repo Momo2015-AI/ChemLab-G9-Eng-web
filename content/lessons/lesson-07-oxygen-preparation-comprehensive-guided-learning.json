@@ -14,7 +14,7 @@
       ],
       "knowledgePoints": [
         "oxygen-preparation",
-        "oxygen-preparation-h2o2"
+        "oxygen-preparation"
       ],
       "check": {
         "question": "下列哪种方法需要在常温下进行？",
@@ -66,7 +66,7 @@
       ],
       "knowledgePoints": [
         "oxygen-preparation",
-        "oxygen-preparation-h2o2"
+        "oxygen-preparation"
       ],
       "check": {
         "question": "下列哪项是过氧化氢法制氧相比高锰酸钾法的优点？",
@@ -116,7 +116,7 @@
         "催化剂选择原则：效率高、成本低、易回收、环境友好。"
       ],
       "knowledgePoints": [
-        "oxygen-catalyst"
+        "catalyst-concept"
       ],
       "check": {
         "question": "下列有关催化剂的说法正确的是？",
@@ -142,7 +142,7 @@
       ],
       "knowledgePoints": [
         "oxygen-preparation",
-        "oxygen-preparation-h2o2",
+        "oxygen-preparation",
         "lab-operations"
       ],
       "check": {
@@ -169,7 +169,7 @@
       ],
       "knowledgePoints": [
         "oxygen-preparation",
-        "oxygen-preparation-h2o2",
+        "oxygen-preparation",
         "lab-operations"
       ],
       "check": {
@@ -197,9 +197,9 @@
       ],
       "knowledgePoints": [
         "oxygen-preparation",
-        "oxygen-preparation-h2o2",
+        "oxygen-preparation",
         "decomposition-reaction",
-        "oxygen-catalyst"
+        "catalyst-concept"
       ],
       "check": {
         "question": "下列反应中，属于分解反应的是？",

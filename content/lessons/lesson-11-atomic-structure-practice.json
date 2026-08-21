@@ -88,29 +88,29 @@
       "options": ["离核较远的电子层", "离核较近的电子层", "原子核内部", "电子层之间随意分布"],
       "answer": 1,
       "explanation": "能量较低的电子在离核较近的电子层运动，能量较高的电子在离核较远的电子层运动。",
-      "knowledgeIds": ["atomic-structure", "nucleus-electron-configuration"]
+      "knowledgeIds": ["atomic-structure", "atomic-structure"]
     },
     {
       "id": "L14-P09",
       "type": "single",
       "difficulty": "hard",
-      "knowledgePoint": "relative-atomic-mass",
+      "knowledgePoint": "atomic-structure",
       "question": "碳-12原子的相对原子质量为12，那么碳-12原子的实际质量约为（以碳-12原子质量的1/12为基准）？",
       "options": ["1", "12个基准质量之和", "1/12个基准质量", "无法确定"],
       "answer": 1,
       "explanation": "相对原子质量为12，表示该原子实际质量等于12个“碳-12原子质量1/12”之和，即实际质量=12×基准。",
-      "knowledgeIds": ["atomic-structure", "relative-atomic-mass"]
+      "knowledgeIds": ["atomic-structure", "atomic-structure"]
     },
     {
       "id": "L14-P10",
       "type": "single",
       "difficulty": "hard",
-      "knowledgePoint": "relative-atomic-mass",
+      "knowledgePoint": "atomic-structure",
       "question": "铝原子的原子序数为13，中子数为14，则铝原子的相对原子质量约为？",
       "options": ["13", "14", "27", "40"],
       "answer": 2,
       "explanation": "相对原子质量≈质子数+中子数，铝的质子数=原子序数=13，加上中子数14，约为27。",
-      "knowledgeIds": ["atomic-structure", "relative-atomic-mass"]
+      "knowledgeIds": ["atomic-structure", "atomic-structure"]
     },
     {
       "id": "L14-P11",

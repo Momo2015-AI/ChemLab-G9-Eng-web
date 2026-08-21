@@ -18,7 +18,7 @@
         "explanation": "了解各用水点的日用水量分布，才能针对性地制定节水方案，找出用水大户重点改进。"
       },
       "explanation": "应先收集各用水点的日用水量分布数据，才能针对性地制定节水方案。",
-      "knowledgeIds": ["water-conservation", "sustainable-development"],
+      "knowledgeIds": ["water-resources-conservation", "water-resources-conservation"],
       "misconceptionIds": []
     },
     {
@@ -37,7 +37,7 @@
         "explanation": "长时间放水洗碗筷会浪费大量水资源，其他选项都是节水好习惯。"
       },
       "explanation": "长时间放水洗碗筷最浪费水，其余三种做法都是节水好习惯。",
-      "knowledgeIds": ["water-conservation"],
+      "knowledgeIds": ["water-resources-conservation"],
       "misconceptionIds": []
     },
     {
@@ -56,7 +56,7 @@
         "explanation": "pH值可以反映水体的酸碱度变化，是判断污染源性质较为科学的指标。"
       },
       "explanation": "测量pH值最有助于判断污染源，因为它是可量化的科学指标。",
-      "knowledgeIds": ["water-pollution", "pollution-prevention"],
+      "knowledgeIds": ["water-resources-conservation", "water-resources-conservation"],
       "misconceptionIds": []
     },
     {
@@ -76,7 +76,7 @@
         "explanation": "南水北调需要考虑生态环境影响、调水成本等多方面因素，不能简单认为能彻底解决问题。"
       },
       "explanation": "南水北调只能缓解、不能彻底解决缺水问题，还需综合考虑生态和成本等因素。",
-      "knowledgeIds": ["water-resources", "sustainable-development"],
+      "knowledgeIds": ["water-resources-conservation", "water-resources-conservation"],
       "misconceptionIds": []
     },
     {
@@ -95,7 +95,7 @@
         "explanation": "循环冷却系统可以将冷却水重复利用，大幅减少新鲜水用量，是工业节水最有效的技术手段。"
       },
       "explanation": "循环冷却系统能重复利用冷却水，是最有效且不影响生产的节水方案。",
-      "knowledgeIds": ["water-conservation", "pollution-prevention"],
+      "knowledgeIds": ["water-resources-conservation", "water-resources-conservation"],
       "misconceptionIds": []
     }
   ]

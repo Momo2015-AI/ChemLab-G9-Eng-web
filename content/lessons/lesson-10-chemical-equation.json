@@ -2,10 +2,10 @@
   "id": "lesson-10-chemical-equation",
   "sequenceNumber": 10,
   "day": "10",
-  "title": "化学式与化合价（下）",
-  "module": "unit-04-natural-water",
+  "title": "质量守恒定律与化学计算",
+  "module": "unit-05-chemical-equations",
   "semester": "upper",
-  "unitId": "u04",
+  "unitId": "u05",
   "duration": "45 分钟",
   "description": "掌握根据化学式计算相对分子质量、元素质量比和元素质量分数的方法，理解质量守恒定律。",
   "status": "ready",
@@ -17,11 +17,8 @@
     "理解质量守恒定律的内涵，能运用质量守恒定律解释简单问题。"
   ],
   "knowledgePoints": [
-    "relative-molecular-mass",
-    "mass-ratio",
-    "mass-fraction",
-    "law-conservation",
-    "stoichiometry"
+    "mass-fraction-calculation",
+    "law-of-mass-conservation"
   ],
   "prerequisites": [
     "lesson-09-chemical-formula"
@@ -62,8 +59,8 @@
       "question": "H₂O的相对分子质量是？",
       "options": ["16", "17", "18", "32"],
       "answer": 2,
-      "knowledgeIds": ["relative-molecular-mass"],
-      "knowledgePoints": ["relative-molecular-mass"],
+      "knowledgeIds": ["mass-fraction-calculation"],
+      "knowledgePoints": ["mass-fraction-calculation"],
       "explanation": "H₂O的相对分子质量 = 1×2 + 16 = 18。"
     },
     {
@@ -72,8 +69,8 @@
       "question": "CO₂中碳元素和氧元素的质量比是？",
       "options": ["1:1", "1:2", "3:8", "12:16"],
       "answer": 2,
-      "knowledgeIds": ["mass-ratio"],
-      "knowledgePoints": ["mass-ratio"],
+      "knowledgeIds": ["mass-fraction-calculation"],
+      "knowledgePoints": ["mass-fraction-calculation"],
       "explanation": "CO₂中C:O质量比 = 12:(16×2) = 12:32 = 3:8。"
     },
     {
@@ -82,8 +79,8 @@
       "question": "CaCO₃中钙元素的质量分数是？",
       "options": ["20%", "30%", "40%", "50%"],
       "answer": 2,
-      "knowledgeIds": ["mass-fraction"],
-      "knowledgePoints": ["mass-fraction"],
+      "knowledgeIds": ["mass-fraction-calculation"],
+      "knowledgePoints": ["mass-fraction-calculation"],
       "explanation": "CaCO₃相对分子质量 = 40+12+16×3 = 100，钙元素质量分数 = 40/100 × 100% = 40%。"
     },
     {
@@ -92,8 +89,8 @@
       "question": "化学反应前后，一定不变的是？",
       "options": ["分子种类", "原子种类", "物质种类", "分子数目"],
       "answer": 1,
-      "knowledgeIds": ["law-conservation"],
-      "knowledgePoints": ["law-conservation"],
+      "knowledgeIds": ["law-of-mass-conservation"],
+      "knowledgePoints": ["law-of-mass-conservation"],
       "explanation": "质量守恒定律：化学反应前后，原子的种类、数目、质量都不变；分子种类和物质种类一定改变。"
     },
     {
@@ -102,8 +99,8 @@
       "question": "下列现象能用质量守恒定律解释的是？",
       "options": ["水结冰后质量不变", "铁生锈后质量增加", "酒精挥发后质量减少", "玻璃破碎后质量不变"],
       "answer": 1,
-      "knowledgeIds": ["law-conservation"],
-      "knowledgePoints": ["law-conservation"],
+      "knowledgeIds": ["law-of-mass-conservation"],
+      "knowledgePoints": ["law-of-mass-conservation"],
       "explanation": "铁生锈是铁与氧气反应生成氧化铁，属于化学变化，能用质量守恒定律解释。其他都是物理变化。"
     },
     {
@@ -112,41 +109,41 @@
       "question": "10g碳酸钙完全分解，生成二氧化碳的质量约为？",
       "options": ["4.4g", "5.6g", "10g", "18g"],
       "answer": 0,
-      "knowledgeIds": ["stoichiometry", "law-conservation"],
-      "knowledgePoints": ["stoichiometry"],
+      "knowledgeIds": ["law-of-mass-conservation", "law-of-mass-conservation"],
+      "knowledgePoints": ["law-of-mass-conservation"],
       "explanation": "CaCO₃ → CaO + CO₂↑，100g碳酸钙生成44g二氧化碳，10g生成4.4g。"
     }
   ],
   "diagnosticQuestions": [
     {
       "id": "L10-D01",
-      "knowledgePoint": "relative-molecular-mass",
+      "knowledgePoint": "mass-fraction-calculation",
       "question": "SO₂的相对分子质量是？",
       "options": ["32", "48", "64", "68"],
       "answer": 2,
       "errorType": "mc-relative-mass-calc",
       "remediationStep": "L10-S02",
-      "knowledgeIds": ["relative-molecular-mass"]
+      "knowledgeIds": ["mass-fraction-calculation"]
     },
     {
       "id": "L10-D02",
-      "knowledgePoint": "mass-fraction",
+      "knowledgePoint": "mass-fraction-calculation",
       "question": "NH₄NO₃中氮元素的质量分数约为？",
       "options": ["17.5%", "26.4%", "35%", "80%"],
       "answer": 1,
       "errorType": "mc-mass-fraction",
       "remediationStep": "L10-S04",
-      "knowledgeIds": ["mass-fraction"]
+      "knowledgeIds": ["mass-fraction-calculation"]
     },
     {
       "id": "L10-D03",
-      "knowledgePoint": "law-conservation",
+      "knowledgePoint": "law-of-mass-conservation",
       "question": "下列关于质量守恒定律的说法正确的是？",
       "options": ["10g水变成10g水蒸气符合质量守恒定律", "镁条燃烧后固体质量增加，不符合质量守恒定律", "化学反应前后原子种类和数目不变", "质量守恒定律适用于所有变化"],
       "answer": 2,
       "errorType": "mc-law-conservation",
       "remediationStep": "L10-S06",
-      "knowledgeIds": ["law-conservation"]
+      "knowledgeIds": ["law-of-mass-conservation"]
     }
   ],
   "mastery": {

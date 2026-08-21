@@ -1039,6 +1039,230 @@
         "L16-Q03",
         "L16-D01"
       ]
+    },
+    {
+      "id": "water-purification-methods",
+      "name": "水的净化方法与净化程度",
+      "chapter": "第四单元 自然界的水·课题2 水的净化",
+      "domain": "substance",
+      "bloomLevels": [
+        "understand",
+        "apply"
+      ],
+      "semester": "upper",
+      "unitId": "u04",
+      "definition": "沉淀、过滤、吸附、蒸馏等净化方法净化程度依次提高；常规净化（沉淀/过滤/吸附）不能得到纯净物，只有蒸馏水才接近纯净物；净化过程本身属于物理变化，只有杀菌消毒等步骤才涉及化学变化。",
+      "prerequisiteIds": [
+        "water-composition",
+        "single-substance-compound",
+        "physical-change"
+      ],
+      "misconceptionIds": [
+        "mc-purification-level",
+        "mc-purification-complete",
+        "mc-purification-physical-chemical"
+      ],
+      "remediationGoal": "能区分不同净化方法的净化程度，理解常规净化后的水仍是混合物，并区分净化步骤中的物理变化与化学变化。",
+      "questions": []
+    },
+    {
+      "id": "filtration-adsorption-operation",
+      "name": "过滤与吸附的操作及适用范围",
+      "chapter": "第四单元 自然界的水·课题2 水的净化",
+      "domain": "operation",
+      "bloomLevels": [
+        "remember",
+        "apply"
+      ],
+      "semester": "upper",
+      "unitId": "u04",
+      "definition": "过滤操作需遵循“一贴二低三靠”的规范，能除去不溶性杂质；活性炭吸附主要通过物理过程除去色素和异味物质，不能除去可溶性杂质。",
+      "prerequisiteIds": [
+        "lab-operations",
+        "physical-change"
+      ],
+      "misconceptionIds": [
+        "mc-filtration-operation",
+        "mc-adsorption-limit"
+      ],
+      "remediationGoal": "掌握过滤操作规范，理解活性炭吸附的物理本质与适用范围（不能除可溶性杂质）。",
+      "questions": []
+    },
+    {
+      "id": "hard-soft-water",
+      "name": "硬水与软水",
+      "chapter": "第四单元 自然界的水·课题2 水的净化",
+      "domain": "substance",
+      "bloomLevels": [
+        "remember",
+        "understand"
+      ],
+      "semester": "upper",
+      "unitId": "u04",
+      "definition": "含较多可溶性钙、镁化合物的水是硬水，反之是软水；可用肥皂水检验（泡沫少、浮渣多为硬水）；煮沸或蒸馏可以降低水的硬度。",
+      "prerequisiteIds": [
+        "water-composition"
+      ],
+      "misconceptionIds": [
+        "mc-hard-soft-distinguish"
+      ],
+      "remediationGoal": "掌握硬水软水的检验方法（肥皂水）和软化方法（煮沸/蒸馏）。",
+      "questions": []
+    },
+    {
+      "id": "water-resources-conservation",
+      "name": "水资源现状与保护",
+      "chapter": "第四单元 自然界的水·课题1 爱护水资源",
+      "domain": "society",
+      "bloomLevels": [
+        "remember",
+        "understand",
+        "evaluate"
+      ],
+      "semester": "upper",
+      "unitId": "u04",
+      "definition": "地球淡水资源、尤其是可直接利用的淡水资源十分有限；水污染的成因包括工业排放、生活污水、农业面源污染等多种来源，节水与防污需要综合措施。",
+      "prerequisiteIds": [
+        "evidence-reasoning"
+      ],
+      "misconceptionIds": [
+        "mc-water-resource-stat",
+        "mc-water-pollution"
+      ],
+      "remediationGoal": "正确认识淡水资源的稀缺性，识别多种水污染来源，理解节水防污需要综合性措施而非单一手段。",
+      "questions": []
+    },
+    {
+      "id": "chemical-formula-meaning",
+      "name": "化学式的意义",
+      "chapter": "第四单元 自然界的水·课题4 化学式与化合价",
+      "domain": "symbolic",
+      "bloomLevels": [
+        "remember",
+        "understand"
+      ],
+      "semester": "upper",
+      "unitId": "u04",
+      "definition": "化学式从宏观角度表示一种物质及其组成元素，从微观角度表示物质的一个分子及分子的原子构成；同时能表示元素间的质量比等定量关系。",
+      "prerequisiteIds": [
+        "element-concept",
+        "particle-model"
+      ],
+      "misconceptionIds": [
+        "mc-formula-meaning"
+      ],
+      "remediationGoal": "能从宏观（物质、组成元素）和微观（分子、原子个数）两方面完整表述化学式的意义。",
+      "questions": []
+    },
+    {
+      "id": "chemical-formula-writing",
+      "name": "化合价规则与化学式书写",
+      "chapter": "第四单元 自然界的水·课题4 化学式与化合价",
+      "domain": "symbolic",
+      "bloomLevels": [
+        "understand",
+        "apply"
+      ],
+      "semester": "upper",
+      "unitId": "u04",
+      "definition": "化合物中各元素正负化合价代数和为零；同一元素在不同化合物中可显示不同化合价；根据化合价可推出化学式中各原子个数比，书写顺序一般为正价元素在前、负价元素在后。",
+      "prerequisiteIds": [
+        "chemical-formula-meaning",
+        "ion-bond"
+      ],
+      "misconceptionIds": [
+        "mc-formula-writing",
+        "mc-valence-calculation",
+        "mc-valence-multiple",
+        "mc-valence-confusion"
+      ],
+      "remediationGoal": "牢记化合价代数和为零的规则，理解同一元素可有多种化合价，能据此正确书写化学式。",
+      "questions": []
+    },
+    {
+      "id": "mass-fraction-calculation",
+      "name": "相对分子质量与质量分数计算",
+      "chapter": "第四单元 自然界的水·课题4 化学式与化合价",
+      "domain": "quantitative",
+      "bloomLevels": [
+        "apply"
+      ],
+      "semester": "upper",
+      "unitId": "u04",
+      "definition": "相对分子质量等于化学式中各原子的相对原子质量乘以原子个数之和；元素质量分数=（该元素相对原子质量×原子个数）÷相对分子质量×100%。",
+      "prerequisiteIds": [
+        "chemical-formula-writing"
+      ],
+      "misconceptionIds": [
+        "mc-relative-mass-calc",
+        "mc-mass-fraction"
+      ],
+      "remediationGoal": "能正确计算相对分子质量，并据此计算化合物中某元素的质量分数。",
+      "questions": []
+    },
+    {
+      "id": "law-of-mass-conservation",
+      "name": "质量守恒定律",
+      "chapter": "第五单元 化学方程式·课题1 质量守恒定律",
+      "domain": "particle",
+      "bloomLevels": [
+        "understand",
+        "apply"
+      ],
+      "semester": "upper",
+      "unitId": "u05",
+      "definition": "参加化学反应的各物质质量总和，等于反应后生成的各物质质量总和；微观原因是化学反应中原子的种类、数目、质量都不变，只是重新组合；应用时需先判断是否为化学变化，并考虑敞口体系中气体是否参与反应。",
+      "prerequisiteIds": [
+        "chemical-change",
+        "particle-model"
+      ],
+      "misconceptionIds": [
+        "mc-law-conservation",
+        "mc-physical-chemical-distinguish"
+      ],
+      "remediationGoal": "理解质量守恒定律对任何化学反应都成立，能用微观视角解释其成立原因，并能识别应用中的常见陷阱（敞口体系、气体参与）。",
+      "questions": []
+    },
+    {
+      "id": "catalyst-concept",
+      "name": "催化剂",
+      "chapter": "第二单元 我们周围的空气·课题3 制取氧气",
+      "domain": "particle",
+      "bloomLevels": [
+        "remember",
+        "understand"
+      ],
+      "semester": "upper",
+      "unitId": "u02",
+      "definition": "催化剂是能改变（加快或减慢）化学反应速率，而本身的质量和化学性质在反应前后都不发生变化的物质，具有“一变两不变”的特点；同一反应可能存在多种催化剂。",
+      "prerequisiteIds": [
+        "oxygen-preparation",
+        "chemical-change"
+      ],
+      "misconceptionIds": [],
+      "remediationGoal": "掌握催化剂“一变两不变”（改变反应速率，质量、化学性质不变）的定义，纠正“催化剂只能加快反应”等以偏概全的说法。",
+      "questions": []
+    },
+    {
+      "id": "decomposition-reaction",
+      "name": "分解反应",
+      "chapter": "第二单元 我们周围的空气·课题3 制取氧气",
+      "domain": "particle",
+      "bloomLevels": [
+        "remember",
+        "understand",
+        "apply"
+      ],
+      "semester": "upper",
+      "unitId": "u02",
+      "definition": "分解反应是“一种物质生成两种或两种以上其他物质”的反应，可概括为“一变多”；氧气实验室制取的两种方法（高锰酸钾分解、过氧化氢分解）都属于分解反应。",
+      "prerequisiteIds": [
+        "chemical-change",
+        "oxygen-preparation"
+      ],
+      "misconceptionIds": [],
+      "remediationGoal": "能根据反应物、生成物的种类数目判断分解反应，理解分解反应与化合反应互为相对概念。",
+      "questions": []
     }
   ],
   "relations": [
@@ -2551,6 +2775,111 @@
       "source": "element-classify",
       "target": "L16-T03",
       "type": "question"
+    },
+    {
+      "source": "water-composition",
+      "target": "water-purification-methods",
+      "type": "prerequisite"
+    },
+    {
+      "source": "single-substance-compound",
+      "target": "water-purification-methods",
+      "type": "prerequisite"
+    },
+    {
+      "source": "physical-change",
+      "target": "water-purification-methods",
+      "type": "prerequisite"
+    },
+    {
+      "source": "lab-operations",
+      "target": "filtration-adsorption-operation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "physical-change",
+      "target": "filtration-adsorption-operation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "water-purification-methods",
+      "target": "filtration-adsorption-operation",
+      "type": "related"
+    },
+    {
+      "source": "water-composition",
+      "target": "hard-soft-water",
+      "type": "prerequisite"
+    },
+    {
+      "source": "water-purification-methods",
+      "target": "hard-soft-water",
+      "type": "related"
+    },
+    {
+      "source": "evidence-reasoning",
+      "target": "water-resources-conservation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "element-concept",
+      "target": "chemical-formula-meaning",
+      "type": "prerequisite"
+    },
+    {
+      "source": "particle-model",
+      "target": "chemical-formula-meaning",
+      "type": "prerequisite"
+    },
+    {
+      "source": "chemical-formula-meaning",
+      "target": "chemical-formula-writing",
+      "type": "prerequisite"
+    },
+    {
+      "source": "ion-bond",
+      "target": "chemical-formula-writing",
+      "type": "prerequisite"
+    },
+    {
+      "source": "chemical-formula-writing",
+      "target": "mass-fraction-calculation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "chemical-change",
+      "target": "law-of-mass-conservation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "particle-model",
+      "target": "law-of-mass-conservation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "law-of-mass-conservation",
+      "target": "mass-fraction-calculation",
+      "type": "related"
+    },
+    {
+      "source": "oxygen-preparation",
+      "target": "catalyst-concept",
+      "type": "prerequisite"
+    },
+    {
+      "source": "chemical-change",
+      "target": "catalyst-concept",
+      "type": "prerequisite"
+    },
+    {
+      "source": "chemical-change",
+      "target": "decomposition-reaction",
+      "type": "prerequisite"
+    },
+    {
+      "source": "oxygen-preparation",
+      "target": "decomposition-reaction",
+      "type": "related"
     }
   ]
 }

@@ -67,7 +67,7 @@
       "explanation": "通过溶解过滤分离MnO₂，再利用其催化H₂O₂分解的性质验证。",
       "knowledgeIds": [
         "decomposition-reaction",
-        "oxygen-catalyst",
+        "catalyst-concept",
         "lab-operations"
       ],
       "misconceptionIds": [
@@ -105,7 +105,7 @@
       "explanation": "剩余固体含锰酸钾和二氧化锰；通过溶解过滤和催化实验验证MnO₂。",
       "knowledgeIds": [
         "oxygen-preparation",
-        "oxygen-catalyst",
+        "catalyst-concept",
         "lab-operations"
       ],
       "misconceptionIds": [

@@ -39,7 +39,7 @@
     },
     {
       "id": "L12-D03",
-      "knowledgePoint": "oxygen-preparation-h2o2",
+      "knowledgePoint": "oxygen-preparation",
       "question": "下列关于过氧化氢和高锰酸钾制氧的说法正确的是？",
       "options": [
         "两种方法都需要加热",
@@ -52,7 +52,7 @@
       "remediationStep": "L12-S03",
       "knowledgeIds": [
         "oxygen-preparation",
-        "oxygen-preparation-h2o2"
+        "oxygen-preparation"
       ]
     }
   ],

@@ -38,18 +38,18 @@
         "options": ["氮元素和一个氮原子", "两个氮原子", "一个氮分子", "氮离子"],
         "answer": 0,
         "explanation": "元素符号表示一种元素，也表示该元素的一个原子；“N”表示氮元素和一个氮原子。",
-        "knowledgeIds": ["element-concept", "element-symbol"]
+        "knowledgeIds": ["element-concept", "element-concept"]
       },
       {
         "id": "L16-M04",
         "type": "single",
         "difficulty": "basic",
-        "knowledgePoint": "element-symbol",
+        "knowledgePoint": "element-concept",
         "question": "下列元素符号中，书写正确的是？",
         "options": ["fe", "Mg", "AL", "na"],
         "answer": 1,
         "explanation": "元素符号两个字母时首字母大写、第二个小写；Mg 正确，应分别为 Fe、Al、Na。",
-        "knowledgeIds": ["element-concept", "element-symbol"]
+        "knowledgeIds": ["element-concept", "element-concept"]
       },
       {
         "id": "L16-M05",

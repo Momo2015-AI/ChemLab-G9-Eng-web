@@ -1,12 +1,12 @@
 # V1.9 Lesson Content Readiness Audit
 
-Generated: 2026-08-21T00:44:55.853Z
+Generated: 2026-08-21T09:33:33.653Z
 
 ## Baseline
-- Lessons scanned: 13
+- Lessons scanned: 16
 - Template lessons: 0
-- Real-content candidates: 13
-- Ready by automated scan: 13
+- Real-content candidates: 16
+- Ready by automated scan: 16
 - Lessons requiring rewrite/incompletion work: 0
 - Question bank state: CANONICAL_RUNTIME_SOURCE
 - Legacy duplicate day01.json present: NO
@@ -27,7 +27,10 @@ Generated: 2026-08-21T00:44:55.853Z
 | lesson-08-h2o2-oxygen-preparation.json | 06 | 过氧化氢制取氧气与催化剂 | released | ready | 0 | - | 3+13+3+21+4 | - |
 | lesson-08-water-conservation.json | 08 | 爱护水资源 | released | ready | 0 | - | 4+9+2+10+5 | - |
 | lesson-09-chemical-formula.json | 09 | 化学式与化合价（上） | released | ready | 0 | - | 6+12+5+21+4 | - |
-| lesson-10-chemical-equation.json | 10 | 化学式与化合价（下） | released | ready | 0 | - | 6+12+3+21+4 | - |
+| lesson-10-chemical-equation.json | 10 | 质量守恒定律与化学计算 | released | ready | 0 | - | 6+12+3+21+4 | - |
+| lesson-11-atomic-structure.json | 11 | 原子的构成 | released | ready | 0 | - | 6+12+3+20+4 | - |
+| lesson-12-ion-bond.json | 12 | 离子与离子键 | released | ready | 0 | - | 6+12+3+20+4 | - |
+| lesson-13-elements.json | 13 | 元素 | released | ready | 0 | - | 6+12+3+20+4 | - |
 
 ## Issues
 - None

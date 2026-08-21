@@ -12,7 +12,7 @@
         "学习化学式，让我们能用简洁的符号表达复杂的物质组成和变化规律。",
         "今天我们从最简单的物质开始，学会写化学式、读化学式、理解化学式的含义。"
       ],
-      "knowledgePoints": ["chemical-formula"],
+      "knowledgePoints": ["chemical-formula-meaning"],
       "check": {
         "question": "下列化学用语中，既能表示一种物质，又能表示该物质的一个分子的是？",
         "options": ["Fe", "H₂O", "NaCl", "C"],
@@ -30,7 +30,7 @@
         "例如2H₂O：前面的2表示两个水分子，右下角的2表示每个水分子含两个氢原子。",
         "注意：化学式只能表示纯净物，混合物不能用化学式表示。"
       ],
-      "knowledgePoints": ["chemical-formula"],
+      "knowledgePoints": ["chemical-formula-meaning"],
       "check": {
         "question": "3H₂O中数字'3'和'2'的含义分别是？",
         "options": ["3个氢原子，2个氧原子","3个水分子，每个水分子含2个氢原子","3个水分子，2个氧原子","3个氢元素，2个氧元素"],
@@ -49,7 +49,7 @@
         "气态非金属单质：多为双原子分子，如H₂（氢气）、O₂（氧气）、N₂（氮气）、Cl₂（氯气）。",
         "注意：同种元素可组成不同单质（同素异形体），如O₂和O₃、金刚石和石墨。"
       ],
-      "knowledgePoints": ["chemical-formula","chemical-name"],
+      "knowledgePoints": ["chemical-formula-meaning","chemical-formula-writing"],
       "check": {
         "question": "下列化学式书写错误的是？",
         "options": ["氦气 He","氧气 O₂","铁 Fe","氮气 N"],
@@ -68,7 +68,7 @@
         "由两种元素组成的化合物，在某的后读出原子个数（1省略）。如NaCl读作氯化钠。",
         "酸碱盐的化学式书写将在后续课程学习。"
       ],
-      "knowledgePoints": ["chemical-formula","chemical-name"],
+      "knowledgePoints": ["chemical-formula-meaning","chemical-formula-writing"],
       "check": {
         "question": "SO₃的正确读法是？",
         "options": ["三氧化硫","硫化三氧","硫氧化物","硫化物"],
@@ -86,7 +86,7 @@
         "化合物中正负化合价的代数和为零，这是书写化学式的重要依据。",
         "单质中元素的化合价为零。"
       ],
-      "knowledgePoints": ["valence-concept"],
+      "knowledgePoints": ["chemical-formula-writing"],
       "check": {
         "question": "下列关于化合价的说法正确的是？",
         "options": ["化合价就是离子所带的电荷数","化合价可以有正负","单质中元素化合价为1","化合价与原子结构无关"],
@@ -104,7 +104,7 @@
         "金属元素在化合物中通常显正价，非金属元素与金属或氢结合时显负价。",
         "同种元素在不同化合物中化合价可能不同，如Fe有+2和+3价。"
       ],
-      "knowledgePoints": ["valence-table"],
+      "knowledgePoints": ["chemical-formula-writing"],
       "check": {
         "question": "下列物质中，硫元素化合价为+4的是？",
         "options": ["H₂S","S","SO₂","H₂SO₄"],
@@ -123,7 +123,7 @@
         "利用化合价规则，可以：①根据化学式求某元素化合价；②根据化合价书写化学式。",
         "书写化学式的方法：写出元素符号（正价在前，负价在后），标出化合价，交叉法确定原子个数比，化简为最简整数比。"
       ],
-      "knowledgePoints": ["formula-writing"],
+      "knowledgePoints": ["chemical-formula-writing"],
       "check": {
         "question": "氧化铝的化学式正确的是？",
         "options": ["AlO","Al₂O₃","Al₃O₂","AlO₂"],"answer":1,"explanation":"Al为+3价，O为-2价，交叉得Al₂O₃。"
@@ -139,7 +139,7 @@
         "举例：写出氧化镁的化学式。Mg为+2价，O为-2价，交叉化简得MgO。",
         "易错点：不要混淆化合价与离子电荷的书写位置（化合价标在正上方，离子电荷标在右上角）。"
       ],
-      "knowledgePoints": ["formula-writing"],
+      "knowledgePoints": ["chemical-formula-writing"],
       "check": {
         "question": "硝酸根NO₃⁻和钙离子Ca²⁺组成的化合物的化学式是？",
         "options": ["CaNO₃","Ca(NO₃)₂","Ca₂NO₃","Ca₂(NO₃)₃"],

@@ -19,7 +19,7 @@
         "explanation": "三层滤芯分工不同、由粗到细，调换顺序会导致精细滤芯提前失效。"
       },
       "explanation": "PP棉除大颗粒杂质、活性炭吸附色素异味、RO膜除可溶性杂质，顺序由粗到细不可调换。",
-      "knowledgeIds": ["water-purification", "filtration-operation", "adsorption"],
+      "knowledgeIds": ["water-purification-methods", "filtration-adsorption-operation", "filtration-adsorption-operation"],
       "misconceptionIds": ["mc-purification-level"]
     },
     {
@@ -38,7 +38,7 @@
         "explanation": "野外净水需要多级处理，先物理过滤再化学消毒。"
       },
       "explanation": "方案设计：过滤→加漂白粉消毒→煮沸。过滤除去不溶性杂质，漂白粉杀菌，煮沸进一步确保消毒效果。",
-      "knowledgeIds": ["water-purification", "filtration-operation"],
+      "knowledgeIds": ["water-purification-methods", "filtration-adsorption-operation"],
       "misconceptionIds": ["mc-purification-complete"]
     },
     {
@@ -58,7 +58,7 @@
         "explanation": "净水流程中只有加氯这一步是专门的杀菌消毒步骤，其余步骤各自承担吸附沉降、过滤、除色除味的作用。"
       },
       "explanation": "明矾吸附沉降、过滤除不溶性杂质、活性炭吸附除色除味，加氯消毒才是专门杀菌的步骤。",
-      "knowledgeIds": ["water-purification", "adsorption"],
+      "knowledgeIds": ["water-purification-methods", "filtration-adsorption-operation"],
       "misconceptionIds": ["mc-adsorption-limit"]
     },
     {
@@ -98,7 +98,7 @@
         "explanation": "反渗透是物理分离过程，淡化后水中钙镁离子含量低，属于软水。"
       },
       "explanation": "反渗透是利用压力使水分子通过半透膜的物理变化，盐离子被截留；淡化后的水是软水。",
-      "knowledgeIds": ["water-purification", "distillation"],
+      "knowledgeIds": ["water-purification-methods", "water-purification-methods"],
       "misconceptionIds": ["mc-purification-level"]
     }
   ]

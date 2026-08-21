@@ -8,7 +8,7 @@
       "type": "constructed",
       "difficulty": "hard",
       "bloomLevel": "analyze",
-      "knowledgePoint": "ion-formation",
+      "knowledgePoint": "ion-bond",
       "question": "小华说：“钠原子失去1个电子变成钠离子后，质子数少了1个，所以钠元素变成了别的元素。”请判断这个说法是否正确，并说明理由。",
       "rubric": {
         "modelAnswer": "小华的说法不正确。钠原子失去电子形成 Na⁺ 时，失去的是核外电子，核内质子数（核电荷数）并没有改变，仍为11个。元素种类由核内质子数决定，质子数不变，钠仍是钠元素。失电子只改变了核外电子数（由11变为10），使正电荷多于负电荷，因此形成带1个单位正电荷的钠离子 Na⁺。",
@@ -21,7 +21,7 @@
         "explanation": "失电子不改变质子数，元素种类不变；小华混淆了核外电子与核内质子。"
       },
       "explanation": "得失电子只改变核外电子数，质子数不变，元素种类不变。",
-      "knowledgeIds": ["ion-bond", "atomic-structure", "ion-formation"],
+      "knowledgeIds": ["ion-bond", "atomic-structure", "ion-bond"],
       "misconceptionIds": ["mc-atom-electron-loss"]
     },
     {
@@ -50,7 +50,7 @@
       "type": "constructed",
       "difficulty": "medium",
       "bloomLevel": "apply",
-      "knowledgePoint": "ion-compound",
+      "knowledgePoint": "ion-bond",
       "question": "请用“分子、原子、离子”三种粒子分别举出一种由它们构成的常见物质，并说明这些物质在构成方式上的不同。",
       "rubric": {
         "modelAnswer": "由分子构成的物质：水（H₂O），由大量水分子构成，分子保持水的化学性质。由原子直接构成的物质：铁（Fe），由铁原子直接堆积构成，金属中不存在铁分子。由离子构成的物质：氯化钠（NaCl），由钠离子 Na⁺ 和氯离子 Cl⁻ 通过离子键直接结合。三种物质构成方式不同：水以分子为基本单位，铁以原子为基本单位，氯化钠以阴、阳离子为基本单位。",
@@ -63,7 +63,7 @@
         "explanation": "分子、原子、离子均可构成物质，关键是把每种粒子与代表性物质对应清楚。"
       },
       "explanation": "分子、原子、离子是构成物质的三种粒子，分别对应水、铁、氯化钠等典型物质。",
-      "knowledgeIds": ["ion-bond", "ion-compound"],
+      "knowledgeIds": ["ion-bond", "ion-bond"],
       "misconceptionIds": []
     },
     {
@@ -71,7 +71,7 @@
       "type": "constructed",
       "difficulty": "hard",
       "bloomLevel": "analyze",
-      "knowledgePoint": "ion-formation",
+      "knowledgePoint": "ion-bond",
       "question": "请比较钠原子（2、8、1）与钠离子 Na⁺（核外2、8）的异同，至少写出一个相同点和一个不同点，并说明它们在化学性质上的差别及其原因。",
       "rubric": {
         "modelAnswer": "相同点：质子数（核电荷数）相同，都是11，属于同一种元素（钠元素）；核内中子数相同。不同点：核外电子数不同，钠原子有11个电子，钠离子 Na⁺ 只有10个电子，所以钠原子不带电、钠离子带1个单位正电荷。化学性质差别：钠原子最外层只有1个电子，性质活泼、易失电子；Na⁺ 最外层为8个电子（稳定结构），性质稳定、不易得失电子。这正是“最外层电子数决定化学性质”的体现。",
@@ -84,7 +84,7 @@
         "explanation": "原子与离子质子数相同但核外电子数不同，故化学性质不同，最外层电子数决定化学性质。"
       },
       "explanation": "原子和其对应离子的区别在于核外电子数，质子数相同则元素种类相同。",
-      "knowledgeIds": ["ion-bond", "atomic-structure", "ion-formation"],
+      "knowledgeIds": ["ion-bond", "atomic-structure", "ion-bond"],
       "misconceptionIds": ["mc-atom-electron-loss"]
     }
   ]

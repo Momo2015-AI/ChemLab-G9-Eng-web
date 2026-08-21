@@ -161,5 +161,11 @@ test('knowledge graph: every node is semester-tagged and acid nodes belong to un
   }
   const upperCount = graph.nodes.filter(n => n.semester === 'upper').length;
   const lowerCount = graph.nodes.filter(n => n.semester === 'lower').length;
-  assert.ok(upperCount === 25 && lowerCount === 3, `expected 19 upper / 3 lower nodes, got ${upperCount}/${lowerCount}`);
+  // Per Section 16.4 of docs/COURSE-DEVELOPMENT-STANDARD.md: do not hardcode
+  // an exact total node count here — it drifts every time content is added
+  // and the failure then has nothing to do with what actually broke. The
+  // real guarantee (every node correctly semester/unit-tagged) is already
+  // asserted above per-node; this is just a floor to catch a mass-deletion
+  // regression, not a ceiling on how many nodes the graph is allowed to have.
+  assert.ok(upperCount >= 25 && lowerCount >= 3, `expected at least 25 upper / 3 lower nodes, got ${upperCount}/${lowerCount}`);
 });

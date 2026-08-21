@@ -1,8 +1,8 @@
 {
-  "scanned": 13,
+  "scanned": 16,
   "template": 0,
-  "realContent": 13,
-  "ready": 13,
+  "realContent": 16,
+  "ready": 16,
   "needsRewrite": 0,
   "duplicateLegacy": false,
   "questionBankState": "CANONICAL_RUNTIME_SOURCE",
@@ -215,7 +215,7 @@
     {
       "file": "lesson-10-chemical-equation.json",
       "day": "10",
-      "title": "化学式与化合价（下）",
+      "title": "质量守恒定律与化学计算",
       "status": "released",
       "releaseStatus": "ready",
       "templateHits": 0,
@@ -225,6 +225,57 @@
         "practice": 12,
         "diagnostic": 3,
         "mastery": 21,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-11-atomic-structure.json",
+      "day": "11",
+      "title": "原子的构成",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 12,
+        "diagnostic": 3,
+        "mastery": 20,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-12-ion-bond.json",
+      "day": "12",
+      "title": "离子与离子键",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 12,
+        "diagnostic": 3,
+        "mastery": 20,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-13-elements.json",
+      "day": "13",
+      "title": "元素",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 12,
+        "diagnostic": 3,
+        "mastery": 20,
         "transfer": 4
       },
       "contractErrors": []

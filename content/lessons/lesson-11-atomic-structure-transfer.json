@@ -50,7 +50,7 @@
       "type": "constructed",
       "difficulty": "medium",
       "bloomLevel": "apply",
-      "knowledgePoint": "relative-atomic-mass",
+      "knowledgePoint": "atomic-structure",
       "question": "已知硫原子的原子序数为16，相对原子质量约为32。请推算硫原子核内的质子数、中子数以及核外电子数，并写出你的推算过程。",
       "rubric": {
         "modelAnswer": "推算过程：原子序数=质子数=核电荷数=核外电子数。硫的原子序数为16，所以核内质子数为16，核外电子数为16。由相对原子质量≈质子数+中子数，得中子数≈32-16=16。结论：硫原子核内有16个质子、16个中子，核外有16个电子。",
@@ -63,7 +63,7 @@
         "explanation": "运用原子序数=质子数=核外电子数，以及相对原子质量≈质子数+中子数进行推算。"
       },
       "explanation": "质子数=原子序数，中子数≈相对原子质量-质子数，核外电子数=质子数。",
-      "knowledgeIds": ["atomic-structure", "relative-atomic-mass"],
+      "knowledgeIds": ["atomic-structure", "atomic-structure"],
       "misconceptionIds": []
     },
     {

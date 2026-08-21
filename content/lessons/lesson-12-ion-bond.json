@@ -20,8 +20,8 @@
   "knowledgePoints": [
     "ion-bond",
     "atomic-structure",
-    "ion-formation",
-    "ion-compound"
+    "ion-bond",
+    "ion-bond"
   ],
   "prerequisites": [
     "lesson-11-atomic-structure"
@@ -71,7 +71,7 @@
       "question": "钠原子（核外电子排布为2、8、1）在化学反应中容易怎样变化？",
       "options": ["得到1个电子形成阴离子", "失去1个电子形成阳离子", "得到8个电子", "不发生任何变化"],
       "answer": 1,
-      "knowledgeIds": ["ion-bond", "ion-formation"],
+      "knowledgeIds": ["ion-bond", "ion-bond"],
       "knowledgePoints": ["ion-bond"],
       "explanation": "钠原子最外层只有1个电子，易失去这1个电子，使次外层变为最外层（达到8个电子稳定结构），形成带1个单位正电荷的阳离子 Na⁺。"
     },
@@ -81,7 +81,7 @@
       "question": "氯原子（核外电子排布为2、8、7）在化学反应中容易怎样变化？",
       "options": ["失去7个电子", "得到1个电子形成阴离子", "得到7个电子形成阳离子", "不发生变化"],
       "answer": 1,
-      "knowledgeIds": ["ion-bond", "ion-formation"],
+      "knowledgeIds": ["ion-bond", "ion-bond"],
       "knowledgePoints": ["ion-bond"],
       "explanation": "氯原子最外层有7个电子，易得到1个电子达到8个电子的稳定结构，形成带1个单位负电荷的阴离子 Cl⁻。"
     },
@@ -91,7 +91,7 @@
       "question": "下列关于离子的说法，正确的是？",
       "options": ["离子只指金属原子失去电子形成的阳离子", "阴离子和阳离子都是带电的粒子，阴、阳离子可存在于同一种物质中", "离子不带电", "阴离子带正电、阳离子带负电"],
       "answer": 1,
-      "knowledgeIds": ["ion-bond", "ion-compound"],
+      "knowledgeIds": ["ion-bond", "ion-bond"],
       "knowledgePoints": ["ion-bond"],
       "explanation": "离子是带电的原子或原子团，包括阳离子（带正电，失电子形成）和阴离子（带负电，得电子形成）；如氯化钠中 Na⁺ 和 Cl⁻ 共存。"
     },
@@ -111,7 +111,7 @@
       "question": "氯化钠（食盐的主要成分）是由什么粒子直接构成的？",
       "options": ["氯化钠分子", "钠原子和氯原子", "钠离子（Na⁺）和氯离子（Cl⁻）", "钠元素和氯元素"],
       "answer": 2,
-      "knowledgeIds": ["ion-bond", "ion-compound"],
+      "knowledgeIds": ["ion-bond", "ion-bond"],
       "knowledgePoints": ["ion-bond"],
       "explanation": "氯化钠由钠离子和氯离子直接构成，阴、阳离子通过静电作用（离子键）结合在一起，不存在单独的氯化钠分子。"
     }
@@ -129,7 +129,7 @@
     },
     {
       "id": "L15-D02",
-      "knowledgePoint": "ion-formation",
+      "knowledgePoint": "ion-bond",
       "question": "镁原子（2、8、2）变成镁离子（Mg²⁺）的过程中，发生变化的是？",
       "options": ["核内质子数增加", "核外电子数减少（失去2个电子），质子数不变", "质子数和中子数都改变", "核电荷数改变"],
       "answer": 1,
@@ -139,13 +139,13 @@
     },
     {
       "id": "L15-D03",
-      "knowledgePoint": "ion-compound",
+      "knowledgePoint": "ion-bond",
       "question": "下列关于“构成物质的粒子”的说法，正确的是？",
       "options": ["所有物质都由分子构成", "氯化钠由钠离子和氯离子直接构成，水由水分子构成，铁由铁原子构成", "所有物质都由原子构成", "所有物质都由离子构成"],
       "answer": 1,
       "errorType": "mc-ion-only-metal",
       "remediationStep": "L15-S06",
-      "knowledgeIds": ["ion-bond", "ion-compound"]
+      "knowledgeIds": ["ion-bond", "ion-bond"]
     }
   ],
   "provenance": {

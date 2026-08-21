@@ -61,7 +61,7 @@
       "id": "L12-P04",
       "type": "single",
       "difficulty": "medium",
-      "knowledgePoint": "oxygen-preparation-h2o2",
+      "knowledgePoint": "oxygen-preparation",
       "question": "用过氧化氢制取氧气时，若要控制反应速率，最佳仪器是？",
       "options": [
         "长颈漏斗",
@@ -72,7 +72,7 @@
       "answer": 1,
       "explanation": "分液漏斗可通过活塞控制液体滴加速率，从而控制反应速率。",
       "knowledgeIds": [
-        "oxygen-preparation-h2o2",
+        "oxygen-preparation",
         "lab-operations"
       ]
     },
@@ -102,7 +102,7 @@
       "id": "L12-P06",
       "type": "single",
       "difficulty": "medium",
-      "knowledgePoint": "oxygen-catalyst",
+      "knowledgePoint": "catalyst-concept",
       "question": "下列物质中，可作为过氧化氢分解催化剂的是？",
       "options": [
         "NaCl",
@@ -113,7 +113,7 @@
       "answer": 1,
       "explanation": "MnO₂是过氧化氢分解最常用的催化剂。",
       "knowledgeIds": [
-        "oxygen-catalyst"
+        "catalyst-concept"
       ]
     },
     {
@@ -157,7 +157,7 @@
       "id": "L12-P09",
       "type": "single",
       "difficulty": "medium",
-      "knowledgePoint": "oxygen-preparation-h2o2",
+      "knowledgePoint": "oxygen-preparation",
       "question": "对比过氧化氢法和高锰酸钾法制氧，下列说法正确的是？",
       "options": [
         "两种方法都需要加热",
@@ -169,7 +169,7 @@
       "explanation": "过氧化氢法产物是水和氧气，无污染；高锰酸钾法需加热且产物有固体残留。",
       "knowledgeIds": [
         "oxygen-preparation",
-        "oxygen-preparation-h2o2"
+        "oxygen-preparation"
       ]
     },
     {
@@ -194,7 +194,7 @@
       "id": "L12-P11",
       "type": "single",
       "difficulty": "hard",
-      "knowledgePoint": "oxygen-catalyst",
+      "knowledgePoint": "catalyst-concept",
       "question": "某同学用同一份MnO₂多次催化H₂O₂分解，发现每次催化效果逐渐减弱。最可能的原因是？",
       "options": [
         "MnO₂被消耗了",
@@ -205,8 +205,8 @@
       "answer": 1,
       "explanation": "MnO₂作为催化剂理论上不被消耗，但实际使用中可能因产物覆盖表面而活性下降。",
       "knowledgeIds": [
-        "oxygen-catalyst",
-        "oxygen-preparation-h2o2"
+        "catalyst-concept",
+        "oxygen-preparation"
       ]
     },
     {

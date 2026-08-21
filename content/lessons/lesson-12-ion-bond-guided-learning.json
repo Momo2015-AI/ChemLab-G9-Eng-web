@@ -30,7 +30,7 @@
         "失去电子：电子数减少，正电荷多于负电荷，形成带正电的阳离子。",
         "得到电子：电子数增加，负电荷多于正电荷，形成带负电的阴离子。"
       ],
-      "knowledgePoints": ["ion-bond", "ion-formation"],
+      "knowledgePoints": ["ion-bond", "ion-bond"],
       "check": {
         "question": "钠原子失去1个电子形成 Na⁺，下列说法正确的是？",
         "options": ["质子数减少，元素种类改变", "质子数不变，核外电子数减少，形成带1个单位正电荷的阳离子", "质子数增加，形成阴离子", "电子数不变，只是电荷改变"],
@@ -47,7 +47,7 @@
         "阴离子：带负电荷的离子，由原子得到电子形成，如 Cl⁻（氯离子）、O²⁻（氧离子）、S²⁻（硫离子）。",
         "注意：阴离子同样属于离子，并非只有金属形成的阳离子才是离子。"
       ],
-      "knowledgePoints": ["ion-bond", "ion-formation"],
+      "knowledgePoints": ["ion-bond", "ion-bond"],
       "check": {
         "question": "下列粒子中，属于阴离子的是？",
         "options": ["Na⁺", "Cl⁻", "Mg²⁺", "Al³⁺"],
@@ -83,7 +83,7 @@
         "由离子键形成的化合物称为离子化合物，如氯化钠、氯化钙、氧化镁等。",
         "离子化合物中不存在单独的“氯化钠分子”，因此不能说“一个氯化钠分子由……构成”。"
       ],
-      "knowledgePoints": ["ion-bond", "ion-compound"],
+      "knowledgePoints": ["ion-bond", "ion-bond"],
       "check": {
         "question": "氯化钠是由什么粒子直接构成的？",
         "options": ["氯化钠分子", "钠离子和氯离子通过离子键结合", "钠原子和氯原子", "钠元素和氯元素"],
@@ -101,7 +101,7 @@
         "由原子直接构成的物质：铁（Fe）、氦气（He）等金属和稀有气体。",
         "由离子构成的物质：氯化钠（NaCl）等盐类。"
       ],
-      "knowledgePoints": ["ion-bond", "ion-compound"],
+      "knowledgePoints": ["ion-bond", "ion-bond"],
       "check": {
         "question": "下列物质中，由离子直接构成的是？",
         "options": ["水", "氯化钠", "铁", "氦气"],
@@ -119,7 +119,7 @@
         "常见错误认识：原子得失电子会改变元素种类。",
         "正确认识：得失电子只改变核外电子数，质子数（核电荷数）不变，元素种类不变。"
       ],
-      "knowledgePoints": ["ion-bond", "ion-formation"],
+      "knowledgePoints": ["ion-bond", "ion-bond"],
       "check": {
         "question": "下列说法正确的是？",
         "options": ["离子只指金属阳离子", "Cl⁻、O²⁻ 是阴离子，属于离子", "原子失电子后元素种类改变", "离子不带电"],
@@ -136,7 +136,7 @@
         "迁移思考：钠与氯气反应生成氯化钠，微观上就是钠原子把最外层1个电子给了氯原子，形成 Na⁺ 和 Cl⁻，再通过离子键结合。",
         "预告：本课知识将用于后续学习元素与物质分类、化学式等。"
       ],
-      "knowledgePoints": ["ion-bond", "ion-compound"],
+      "knowledgePoints": ["ion-bond", "ion-bond"],
       "check": {
         "question": "钠原子与氯原子反应生成氯化钠的过程，从微观角度描述正确的是？",
         "options": ["钠原子把最外层1个电子给氯原子，形成 Na⁺ 和 Cl⁻，二者通过离子键结合成氯化钠", "钠原子和氯原子直接连在一起，没有电子转移", "钠原子变成氯原子，元素种类改变", "氯化钠由分子构成"],

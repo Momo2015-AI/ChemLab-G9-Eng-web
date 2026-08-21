@@ -66,7 +66,7 @@
         "元素符号表示的意义：①表示一种元素；②表示这种元素的一个原子。如“O”表示氧元素，也表示一个氧原子。",
         "常见元素符号：H 氢、C 碳、O 氧、N 氮、Na 钠、Mg 镁、Al 铝、Cl 氯、Fe 铁、Ca 钙。"
       ],
-      "knowledgePoints": ["element-concept", "element-symbol"],
+      "knowledgePoints": ["element-concept", "element-concept"],
       "check": {
         "question": "元素符号“Na”表示的意义正确的是？",
         "options": ["表示钠元素和一个钠原子", "只表示一个钠分子", "表示两个钠原子", "表示钠离子"],

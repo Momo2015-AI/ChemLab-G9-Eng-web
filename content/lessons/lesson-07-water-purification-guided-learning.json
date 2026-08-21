@@ -12,7 +12,7 @@
         "那么，我们如何将这些不纯的水变成可以饮用的纯净水呢？",
         "今天我们就来学习水的净化方法，了解从浑浊的河水到清澈的自来水经历了哪些处理过程。"
       ],
-      "knowledgePoints": ["water-purification"],
+      "knowledgePoints": ["water-purification-methods"],
       "check": {
         "question": "下列有关水的说法正确的是？",
         "options": ["自然界的水都是纯净物", "自来水厂净水过程只包含物理变化", "海水是混合物，淡水资源是取之不尽的", "过滤可以除去水中的所有杂质"],
@@ -32,7 +32,7 @@
         "吸附：利用活性炭的吸附性，除去色素和异味。",
         "蒸馏：通过加热使水变成水蒸气，再冷凝成液态水，得到几乎纯净的水。"
       ],
-      "knowledgePoints": ["water-purification", "distillation", "adsorption"],
+      "knowledgePoints": ["water-purification-methods", "water-purification-methods", "filtration-adsorption-operation"],
       "check": {
         "question": "下列净水方法中，净化程度最高的是？",
         "options": ["沉淀", "过滤", "吸附", "蒸馏"],
@@ -50,7 +50,7 @@
         "明矾净水原理：Al₂(SO₄)₃ + 6H₂O → 2Al(OH)₃(胶体) + 3H₂SO₄，氢氧化铝胶体具有吸附性。",
         "沉淀法主要用于水的预处理，除去大颗粒悬浮物。"
       ],
-      "knowledgePoints": ["water-purification", "adsorption"],
+      "knowledgePoints": ["water-purification-methods", "filtration-adsorption-operation"],
       "check": {
         "question": "明矾在净水中的作用是？",
         "options": ["杀菌消毒", "吸附悬浮杂质使其沉降", "除去可溶性杂质", "软化硬水"],
@@ -69,7 +69,7 @@
         "将滤纸放入漏斗，用水润湿使滤纸紧贴漏斗内壁，赶走气泡。",
         "过滤操作要点记忆口诀：一贴二低三靠。"
       ],
-      "knowledgePoints": ["filtration-operation", "lab-operations"],
+      "knowledgePoints": ["filtration-adsorption-operation", "lab-operations"],
       "check": {
         "question": "过滤操作中，玻璃棒的作用是？",
         "options": ["搅拌加速溶解", "引流", "防止液体飞溅", "转移固体"],
@@ -87,7 +87,7 @@
         "三靠：①烧杯尖嘴紧靠玻璃棒；②玻璃棒下端轻靠三层滤纸一侧（防止戳破滤纸）；③漏斗下端尖嘴紧靠烧杯内壁（防止液滴飞溅）。",
         "注意：过滤后滤液仍浑浊的可能原因：滤纸破损、液面高于滤纸边缘、仪器不干净。"
       ],
-      "knowledgePoints": ["filtration-operation", "lab-operations"],
+      "knowledgePoints": ["filtration-adsorption-operation", "lab-operations"],
       "check": {
         "question": "过滤后滤液仍然浑浊的原因可能是？",
         "options": ["滤纸破损", "液面低于滤纸边缘", "玻璃棒靠在三层滤纸一侧", "漏斗下端紧靠烧杯内壁"],
@@ -106,7 +106,7 @@
         "吸附是物理变化，活性炭吸附饱和后可以再生（高温烘干）。",
         "注意：吸附不能完全净化水，吸附后的水仍需消毒才能饮用。"
       ],
-      "knowledgePoints": ["adsorption", "water-purification"],
+      "knowledgePoints": ["filtration-adsorption-operation", "water-purification-methods"],
       "check": {
         "question": "下列关于活性炭的说法正确的是？",
         "options": ["活性炭能将硬水软化为软水", "活性炭吸附是化学变化", "活性炭可以除去水中所有的杂质", "活性炭具有疏松多孔的结构，有吸附性"],
@@ -146,7 +146,7 @@
         "蒸馏法硬水软化：蒸馏后得到的水是软水。",
         "注意：蒸馏操作需要加热，注意安全，防止暴沸（可加碎瓷片）。"
       ],
-      "knowledgePoints": ["distillation", "hard-soft-water"],
+      "knowledgePoints": ["water-purification-methods", "hard-soft-water"],
       "check": {
         "question": "下列既能除去不溶性杂质又能除去可溶性杂质的净水方法是？",
         "options": ["沉淀", "过滤", "吸附", "蒸馏"],

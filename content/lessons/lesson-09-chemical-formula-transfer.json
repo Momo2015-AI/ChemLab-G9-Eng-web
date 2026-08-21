@@ -18,7 +18,7 @@
         "explanation": "先求相对分子质量，再求钙元素质量分数，最后根据钙元素质量倒推碳酸钙质量。"
       },
       "explanation": "碳酸钙中钙元素质量分数为40%，每片约含碳酸钙1250mg。",
-      "knowledgeIds": ["mass-fraction", "chemical-formula"],
+      "knowledgeIds": ["mass-fraction-calculation", "chemical-formula-meaning"],
       "misconceptionIds": []
     },
     {
@@ -38,7 +38,7 @@
         "explanation": "分别计算两种化肥中氮元素的质量分数并比较，尿素的含氮量更高。"
       },
       "explanation": "尿素含氮量约46.7%，明显高于碳酸氢铵的约17.7%。",
-      "knowledgeIds": ["mass-fraction", "chemical-formula"],
+      "knowledgeIds": ["mass-fraction-calculation", "chemical-formula-meaning"],
       "misconceptionIds": []
     },
     {
@@ -58,7 +58,7 @@
         "explanation": "化学式的意义需要从宏观（物质、组成元素）和微观（分子、构成分子的原子个数）两个层面完整表述，这是本课的核心考点。"
       },
       "explanation": "化学式的意义要从宏观（表示物质及组成元素）和微观（表示分子及分子的原子构成）两方面完整回答。",
-      "knowledgeIds": ["chemical-formula"],
+      "knowledgeIds": ["chemical-formula-meaning"],
       "misconceptionIds": []
     },
     {
@@ -77,7 +77,7 @@
         "explanation": "书写化学式的依据是化合物中各元素正负化合价代数和为零，据此可以推出各原子个数比。"
       },
       "explanation": "根据正负化合价代数和为零的规则，氧化铝的化学式为Al₂O₃。",
-      "knowledgeIds": ["chemical-formula", "valence"],
+      "knowledgeIds": ["chemical-formula-meaning", "chemical-formula-writing"],
       "misconceptionIds": []
     }
   ]

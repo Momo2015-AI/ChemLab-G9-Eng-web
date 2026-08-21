@@ -22,7 +22,7 @@
     "element-classify",
     "atomic-structure",
     "single-substance-compound",
-    "element-symbol"
+    "element-concept"
   ],
   "prerequisites": [
     "lesson-11-atomic-structure"
@@ -92,7 +92,7 @@
       "question": "元素符号“O”表示的意义是？",
       "options": ["表示氧元素和一个氧原子", "只表示一个氧分子", "表示氧离子", "表示两个氧原子"],
       "answer": 0,
-      "knowledgeIds": ["element-concept", "element-symbol"],
+      "knowledgeIds": ["element-concept", "element-concept"],
       "knowledgePoints": ["element-concept"],
       "explanation": "元素符号表示一种元素，也表示这种元素的一个原子；如“O”表示氧元素，也表示一个氧原子。"
     },

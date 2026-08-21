@@ -81,7 +81,7 @@
         "每一层能容纳的电子数有限：第一层最多2个，第二层最多8个，第三层最多18个（初中阶段主要用到前两层）。",
         "最外层电子数对元素的化学性质有重要影响——这也是下一课“离子”的基础。"
       ],
-      "knowledgePoints": ["atomic-structure", "nucleus-electron-configuration"],
+      "knowledgePoints": ["atomic-structure", "atomic-structure"],
       "check": {
         "question": "关于核外电子的分层排布，下列说法正确的是？",
         "options": ["电子杂乱无章地随意运动，不分层", "能量较低的电子在离核较近的电子层运动，能量较高的在离核较远的电子层运动", "所有电子都集中在原子核上", "电子层只有一层，所有电子都在同一层"],
@@ -98,7 +98,7 @@
         "为了使用方便，科学家以碳-12原子质量的1/12作为基准，用原子的实际质量除以这个基准，得到的比值就是相对原子质量。",
         "相对原子质量是一个比值，单位为1（通常省略不写），不是原子的实际质量，也不以“克”为单位。"
       ],
-      "knowledgePoints": ["atomic-structure", "relative-atomic-mass"],
+      "knowledgePoints": ["atomic-structure", "atomic-structure"],
       "check": {
         "question": "关于相对原子质量，下列说法正确的是？",
         "options": ["相对原子质量是原子的实际质量，单位是克", "相对原子质量是以碳-12原子质量的1/12为基准得到的比值，通常不写单位", "相对原子质量就是质子数", "相对原子质量是电子数"],
@@ -116,7 +116,7 @@
         "举例：钠的原子序数是11，中子数为12，那么钠的相对原子质量约为11+12=23。",
         "反过来，如果已知相对原子质量和原子序数，可以求出中子数：中子数=相对原子质量-质子数。"
       ],
-      "knowledgePoints": ["atomic-structure", "relative-atomic-mass"],
+      "knowledgePoints": ["atomic-structure", "atomic-structure"],
       "check": {
         "question": "氯的原子序数为17，中子数为18，则氯的相对原子质量约为？",
         "options": ["17", "18", "35", "1"],
@@ -135,7 +135,7 @@
         "常见误区3：把相对原子质量当作实际质量，或者认为相对原子质量就是质子数。",
         "本课内容为下一课学习“离子”打下基础——离子就是原子得失电子的结果，得失电子会改变核外电子数，但不改变质子数。"
       ],
-      "knowledgePoints": ["atomic-structure", "relative-atomic-mass"],
+      "knowledgePoints": ["atomic-structure", "atomic-structure"],
       "check": {
         "question": "下列关于原子的说法，完全正确的是？",
         "options": ["原子是实心小球，不可再分", "原子由原子核和核外电子构成，原子核内有质子和中子，原子不显电性", "原子核占据原子体积的绝大部分", "相对原子质量是原子的实际质量，单位是克"],

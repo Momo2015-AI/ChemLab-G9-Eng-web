@@ -24,13 +24,13 @@
     },
     {
       "id": "L14-D03",
-      "knowledgePoint": "relative-atomic-mass",
+      "knowledgePoint": "atomic-structure",
       "question": "关于相对原子质量，下列理解正确的是？",
       "options": ["相对原子质量就是原子的实际质量，以克为单位", "相对原子质量是一个比值，以碳-12原子质量的1/12为标准，数值约等于质子数与中子数之和", "相对原子质量就是质子数", "相对原子质量没有基准，任意规定"],
       "answer": 1,
       "errorType": "mc-relative-atomic-mass",
       "remediationStep": "L14-S06",
-      "knowledgeIds": ["atomic-structure", "relative-atomic-mass"]
+      "knowledgeIds": ["atomic-structure", "atomic-structure"]
     }
   ],
   "remediation": {
