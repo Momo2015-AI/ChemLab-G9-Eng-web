@@ -805,10 +805,23 @@
         "particle-model"
       ],
       "misconceptionIds": [
-        "mc-atom-electron-loss"
+        "mc-atom-electron-loss",
+        "mc-atomic-solid-ball",
+        "mc-atomic-charge-neutrality",
+        "mc-relative-atomic-mass"
       ],
-      "remediationGoal": "理解原子核式结构，知道质子数=核电荷数=原子序数。",
-      "questions": []
+      "remediationGoal": "理解原子核式结构，知道质子数=核电荷数=原子序数；原子不是实心小球，内部大部分是空的。",
+      "questions": [
+        "L14-Q01",
+        "L14-Q02",
+        "L14-Q03",
+        "L14-Q04",
+        "L14-Q05",
+        "L14-Q06",
+        "L14-D01",
+        "L14-D02",
+        "L14-D03"
+      ]
     },
     {
       "id": "ion-bond",
@@ -847,10 +860,16 @@
         "atomic-structure"
       ],
       "misconceptionIds": [
-        "mc-mixture-pure"
+        "mc-mixture-pure",
+        "mc-element-pure-substance",
+        "mc-element-misunderstanding"
       ],
-      "remediationGoal": "能用元素概念区分纯净物与混合物，理解同种元素可组成不同单质。",
-      "questions": []
+      "remediationGoal": "能用元素概念区分纯净物与混合物，理解同种元素可组成不同单质，不将元素与单质混为一谈。",
+      "questions": [
+        "L16-Q05",
+        "L16-Q06",
+        "L16-D03"
+      ]
     },
     {
       "id": "water-composition",
@@ -1014,7 +1033,11 @@
       "remediationGoal": "理解元素的定义和宏观属性，能用电素概念分析物质分类。",
       "questions": [
         "L06-M04",
-        "L06-M10"
+        "L06-M10",
+        "L16-Q01",
+        "L16-Q02",
+        "L16-Q03",
+        "L16-D01"
       ]
     }
   ],
@@ -2403,6 +2426,131 @@
       "source": "observation-inference",
       "target": "electrolysis-experiment",
       "type": "related"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "L14-Q01",
+      "type": "question"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "L14-Q02",
+      "type": "question"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "L14-Q03",
+      "type": "question"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "L14-Q04",
+      "type": "question"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "L14-Q05",
+      "type": "question"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "L14-Q06",
+      "type": "question"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "L14-D01",
+      "type": "question"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "L14-D02",
+      "type": "question"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "L14-D03",
+      "type": "question"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "L14-T01",
+      "type": "question"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "L14-T02",
+      "type": "question"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "L14-T03",
+      "type": "question"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "L14-T04",
+      "type": "question"
+    },
+    {
+      "source": "element-classify",
+      "target": "L16-Q05",
+      "type": "question"
+    },
+    {
+      "source": "element-classify",
+      "target": "L16-Q06",
+      "type": "question"
+    },
+    {
+      "source": "element-classify",
+      "target": "L16-D03",
+      "type": "question"
+    },
+    {
+      "source": "element-concept",
+      "target": "L16-Q01",
+      "type": "question"
+    },
+    {
+      "source": "element-concept",
+      "target": "L16-Q02",
+      "type": "question"
+    },
+    {
+      "source": "element-concept",
+      "target": "L16-Q03",
+      "type": "question"
+    },
+    {
+      "source": "element-concept",
+      "target": "L16-D01",
+      "type": "question"
+    },
+    {
+      "source": "element-concept",
+      "target": "L16-T01",
+      "type": "question"
+    },
+    {
+      "source": "element-concept",
+      "target": "L16-T02",
+      "type": "question"
+    },
+    {
+      "source": "element-concept",
+      "target": "L16-T03",
+      "type": "question"
+    },
+    {
+      "source": "element-concept",
+      "target": "L16-T04",
+      "type": "question"
+    },
+    {
+      "source": "element-classify",
+      "target": "L16-T03",
+      "type": "question"
     }
   ]
 }

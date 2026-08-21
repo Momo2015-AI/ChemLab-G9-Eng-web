@@ -16,8 +16,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const knowledgeGraph = JSON.parse(readFileSync(path.join(__dirname, '../content/knowledge/knowledge-graph.json'), 'utf8'));
 const liveKgNodeIds = new Set(knowledgeGraph.nodes.map(n => n.id));
 
-test('canonical vocabulary has 54 entries with required fields', () => {
-  assert.equal(canonicalMisconceptions.length, 54);
+test('canonical vocabulary has 57 entries with required fields', () => {
+  assert.equal(canonicalMisconceptions.length, 57);
   for (const mc of canonicalMisconceptions) {
     assert.ok(mc.id, 'each entry has id');
     assert.ok(mc.title, 'each entry has title');
@@ -33,8 +33,8 @@ test('canonical vocabulary has 54 entries with required fields', () => {
   }
 });
 
-test('ALIAS_MAP has 36 entries covering all legacy ID variants', () => {
-  assert.equal(Object.keys(ALIAS_MAP).length, 36);
+test('ALIAS_MAP has 39 entries covering all legacy ID variants', () => {
+  assert.equal(Object.keys(ALIAS_MAP).length, 39);
 });
 
 test('resolveMisconceptionId resolves all known aliases to canonical form', () => {

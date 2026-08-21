@@ -1,0 +1,41 @@
+{
+  "lessonId": "lesson-12-ion-bond",
+  "version": "1.0",
+  "diagnostics": [
+    {
+      "id": "L15-D01",
+      "knowledgePoint": "ion-bond",
+      "question": "“离子就是带正电的粒子，只有金属原子失去电子才形成离子。”这种说法的主要错误在于？",
+      "options": ["说法完全正确", "离子包括带正电的阳离子和带负电的阴离子，非金属原子得电子也能形成离子（如 Cl⁻）", "离子不带电", "金属原子不会失去电子"],
+      "answer": 1,
+      "errorType": "mc-ion-only-metal",
+      "remediationStep": "L15-S07",
+      "knowledgeIds": ["ion-bond"]
+    },
+    {
+      "id": "L15-D02",
+      "knowledgePoint": "ion-formation",
+      "question": "镁原子（2、8、2）变成镁离子（Mg²⁺）的过程中，发生变化的是？",
+      "options": ["核内质子数增加", "核外电子数减少（失去2个电子），质子数不变", "质子数和中子数都改变", "核电荷数改变"],
+      "answer": 1,
+      "errorType": "mc-atom-electron-loss",
+      "remediationStep": "L15-S02",
+      "knowledgeIds": ["ion-bond", "atomic-structure"]
+    },
+    {
+      "id": "L15-D03",
+      "knowledgePoint": "ion-compound",
+      "question": "下列关于“构成物质的粒子”的说法，正确的是？",
+      "options": ["所有物质都由分子构成", "氯化钠由钠离子和氯离子直接构成，水由水分子构成，铁由铁原子构成", "所有物质都由原子构成", "所有物质都由离子构成"],
+      "answer": 1,
+      "errorType": "mc-ion-only-metal",
+      "remediationStep": "L15-S06",
+      "knowledgeIds": ["ion-bond", "ion-compound"]
+    }
+  ],
+  "remediation": {
+    "L15-S07": "复习离子分类：离子包括阳离子（带正电，失电子形成）和阴离子（带负电，得电子形成），Cl⁻、O²⁻ 等非金属离子也属于离子。",
+    "L15-S02": "复习离子形成：原子得失电子只改变核外电子数，不改变质子数，故元素种类不变。",
+    "L15-S06": "复习三种构成物质的粒子：分子（水）、原子（铁、氦气）、离子（氯化钠），不能笼统说“所有物质都由分子构成”。"
+  }
+}

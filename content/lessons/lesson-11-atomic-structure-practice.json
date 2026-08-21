@@ -1,0 +1,138 @@
+{
+  "lessonId": "lesson-11-atomic-structure",
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "L14-P01",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "atomic-structure",
+      "question": "原子是由哪两部分构成的？",
+      "options": ["质子和中子", "原子核和核外电子", "分子和原子", "正电荷和负电荷"],
+      "answer": 1,
+      "explanation": "原子由位于中心的原子核（含质子、中子）和围绕核运动的核外电子构成。",
+      "knowledgeIds": ["atomic-structure"]
+    },
+    {
+      "id": "L14-P02",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "atomic-structure",
+      "question": "质子带正电，那么中子带什么电？",
+      "options": ["带正电", "带负电", "不带电", "无法确定"],
+      "answer": 2,
+      "explanation": "中子不带电，质子带正电，核外电子带负电。",
+      "knowledgeIds": ["atomic-structure"]
+    },
+    {
+      "id": "L14-P03",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "atomic-structure",
+      "question": "氢原子的原子核通常由什么构成？",
+      "options": ["质子和中子", "只有质子，没有中子", "只有中子，没有质子", "质子和电子"],
+      "answer": 1,
+      "explanation": "氢原子核最简单，通常只含一个质子，没有中子。",
+      "knowledgeIds": ["atomic-structure"]
+    },
+    {
+      "id": "L14-P04",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "atomic-structure",
+      "question": "原子的核电荷数等于？",
+      "options": ["中子数", "电子数", "质子数", "质子数与中子数之和"],
+      "answer": 2,
+      "explanation": "核电荷数是原子核所带的正电荷数，等于核内质子数；又等于原子序数，也等于核外电子数。",
+      "knowledgeIds": ["atomic-structure"]
+    },
+    {
+      "id": "L14-P05",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "atomic-structure",
+      "question": "某原子的原子序数为6，核外电子数为？",
+      "options": ["2", "4", "6", "8"],
+      "answer": 2,
+      "explanation": "原子序数=质子数=核外电子数，所以核外电子数为6。",
+      "knowledgeIds": ["atomic-structure"]
+    },
+    {
+      "id": "L14-P06",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "atomic-structure",
+      "question": "原子不显电性的原因是？",
+      "options": ["原子内部没有电荷", "质子带的正电荷总数与核外电子带的负电荷总数相等", "原子核不带电", "电子和质子都不带电"],
+      "answer": 1,
+      "explanation": "质子带正电、电子带负电，且质子数等于核外电子数，正负电荷相互抵消，故原子不显电性。",
+      "knowledgeIds": ["atomic-structure"]
+    },
+    {
+      "id": "L14-P07",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "atomic-structure",
+      "question": "把原子比作一个足球场，原子核最接近于以下哪个类比？",
+      "options": ["整个球场", "球场中央的一颗绿豆", "球场的一半", "看台上的观众席"],
+      "answer": 1,
+      "explanation": "原子核只占原子体积的极小部分，用“球场中央的一颗绿豆”作类比，能直观体现原子核之小与原子内部大部分是空的。",
+      "knowledgeIds": ["atomic-structure"]
+    },
+    {
+      "id": "L14-P08",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "atomic-structure",
+      "question": "核外电子分层排布时，能量较低的电子位于？",
+      "options": ["离核较远的电子层", "离核较近的电子层", "原子核内部", "电子层之间随意分布"],
+      "answer": 1,
+      "explanation": "能量较低的电子在离核较近的电子层运动，能量较高的电子在离核较远的电子层运动。",
+      "knowledgeIds": ["atomic-structure", "nucleus-electron-configuration"]
+    },
+    {
+      "id": "L14-P09",
+      "type": "single",
+      "difficulty": "hard",
+      "knowledgePoint": "relative-atomic-mass",
+      "question": "碳-12原子的相对原子质量为12，那么碳-12原子的实际质量约为（以碳-12原子质量的1/12为基准）？",
+      "options": ["1", "12个基准质量之和", "1/12个基准质量", "无法确定"],
+      "answer": 1,
+      "explanation": "相对原子质量为12，表示该原子实际质量等于12个“碳-12原子质量1/12”之和，即实际质量=12×基准。",
+      "knowledgeIds": ["atomic-structure", "relative-atomic-mass"]
+    },
+    {
+      "id": "L14-P10",
+      "type": "single",
+      "difficulty": "hard",
+      "knowledgePoint": "relative-atomic-mass",
+      "question": "铝原子的原子序数为13，中子数为14，则铝原子的相对原子质量约为？",
+      "options": ["13", "14", "27", "40"],
+      "answer": 2,
+      "explanation": "相对原子质量≈质子数+中子数，铝的质子数=原子序数=13，加上中子数14，约为27。",
+      "knowledgeIds": ["atomic-structure", "relative-atomic-mass"]
+    },
+    {
+      "id": "L14-P11",
+      "type": "single",
+      "difficulty": "hard",
+      "knowledgePoint": "atomic-structure",
+      "question": "下列关于原子的说法，正确的是？",
+      "options": ["原子是实心小球，内部没有空隙", "原子的质量主要集中在原子核上", "原子核占原子体积的大部分", "原子不带电，是因为原子内没有电荷"],
+      "answer": 1,
+      "explanation": "原子核集中了原子几乎全部的质量但只占极小体积，电子质量很小；原子不带电是因为正负电荷抵消，而不是没有电荷。",
+      "knowledgeIds": ["atomic-structure"]
+    },
+    {
+      "id": "L14-P12",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "atomic-structure",
+      "question": "下列粒子中，不带电的是？",
+      "options": ["质子", "电子", "中子", "原子核"],
+      "answer": 2,
+      "explanation": "中子不带电；质子带正电、电子带负电、原子核带正电。",
+      "knowledgeIds": ["atomic-structure"]
+    }
+  ]
+}

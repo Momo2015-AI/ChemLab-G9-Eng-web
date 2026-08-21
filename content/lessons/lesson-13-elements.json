@@ -1,0 +1,212 @@
+{
+  "id": "lesson-13-elements",
+  "sequenceNumber": 13,
+  "day": "13",
+  "title": "元素",
+  "module": "unit-03-particle-nature-of-matter",
+  "semester": "upper",
+  "unitId": "u03",
+  "duration": "45 分钟",
+  "description": "理解元素的定义与宏观属性，掌握元素符号的含义，了解地壳中元素分布，能区分元素与原子、元素与单质，认识物质分类中元素的作用。",
+  "status": "ready",
+  "releaseStatus": "ready",
+  "learningObjectives": [
+    "理解元素的定义：元素是具有相同核电荷数（质子数）的一类原子的总称，元素是宏观概念，只讲种类、不讲个数。",
+    "能区分“元素”与“原子”：原子强调微观粒子与个数，元素强调宏观类别；质子数相同的一类原子总称是一种元素。",
+    "知道地壳中含量居前几位的元素及含量顺序，了解生物体中含量较多的元素。",
+    "掌握常见元素符号的书写与含义，理解元素符号既表示一种元素，也表示该元素的一个原子。",
+    "能区分元素、单质、化合物与混合物等概念，理解同种元素可组成不同单质（如氧元素组成氧气和臭氧），纠正“元素=单质”等常见错误。"
+  ],
+  "knowledgePoints": [
+    "element-concept",
+    "element-classify",
+    "atomic-structure",
+    "single-substance-compound",
+    "element-symbol"
+  ],
+  "prerequisites": [
+    "lesson-11-atomic-structure"
+  ],
+  "guidedLearning": {
+    "stepCount": 8,
+    "steps": [
+      { "id": "L16-S01", "title": "元素：质子数相同的一类原子的总称" },
+      { "id": "L16-S02", "title": "元素与原子：宏观与微观" },
+      { "id": "L16-S03", "title": "元素在自然界中的分布" },
+      { "id": "L16-S04", "title": "元素符号：含义与书写" },
+      { "id": "L16-S05", "title": "元素与单质、化合物、混合物" },
+      { "id": "L16-S06", "title": "同种元素可组成不同单质" },
+      { "id": "L16-S07", "title": "常见误区：元素=单质？" },
+      { "id": "L16-S08", "title": "元素知识小结与迁移" }
+    ]
+  },
+  "resourceRefs": {
+    "experiment": "content/lessons/lesson-13-elements-experiment.json",
+    "practice": "content/lessons/lesson-13-elements-practice.json",
+    "diagnostic": "content/lessons/lesson-13-elements-diagnostic.json",
+    "mastery": "content/lessons/lesson-13-elements-mastery.json"
+  },
+  "experiments": [
+    {
+      "id": "L16-E01",
+      "title": "元素与物质分类：给常见物质分类",
+      "purpose": "通过对常见物质（氧气、水、空气、氯化钠、铁、二氧化碳等）进行分类，理解元素、单质、化合物、混合物的关系，体会“同种元素组成不同单质”。",
+      "status": "ready-for-runtime",
+      "resourceRef": "content/lessons/lesson-13-elements-experiment.json"
+    }
+  ],
+  "questions": [
+    {
+      "id": "L16-Q01",
+      "type": "concept",
+      "question": "元素的定义是？",
+      "options": ["具有相同中子数的一类原子的总称", "具有相同核电荷数（质子数）的一类原子的总称", "具有相同相对原子质量的一类原子的总称", "具有相同电子数的一类原子的总称"],
+      "answer": 1,
+      "knowledgeIds": ["element-concept"],
+      "knowledgePoints": ["element-concept"],
+      "explanation": "元素是质子数（核电荷数）相同的一类原子的总称，决定元素种类的是质子数。"
+    },
+    {
+      "id": "L16-Q02",
+      "type": "concept",
+      "question": "下列关于“元素”的说法，正确的是？",
+      "options": ["元素是微观粒子，可以讲个数", "元素是宏观概念，只讲种类、不讲个数", "元素就是原子，二者没有区别", "一种物质只能含有一种元素"],
+      "answer": 1,
+      "knowledgeIds": ["element-concept"],
+      "knowledgePoints": ["element-concept"],
+      "explanation": "元素是宏观概念，用于描述物质的组成，只讲种类、不讲个数；如水由氢元素和氧元素组成。"
+    },
+    {
+      "id": "L16-Q03",
+      "type": "concept",
+      "question": "地壳中含量居前四位的元素依次是？",
+      "options": ["氧、硅、铝、铁", "氧、硅、铁、铝", "硅、氧、铝、铁", "铝、铁、氧、硅"],
+      "answer": 0,
+      "knowledgeIds": ["element-concept"],
+      "knowledgePoints": ["element-concept"],
+      "explanation": "地壳中含量居前四位的元素是氧（约48.6%）、硅（约26.3%）、铝（约7.7%）、铁（约4.7%）。"
+    },
+    {
+      "id": "L16-Q04",
+      "type": "concept",
+      "question": "元素符号“O”表示的意义是？",
+      "options": ["表示氧元素和一个氧原子", "只表示一个氧分子", "表示氧离子", "表示两个氧原子"],
+      "answer": 0,
+      "knowledgeIds": ["element-concept", "element-symbol"],
+      "knowledgePoints": ["element-concept"],
+      "explanation": "元素符号表示一种元素，也表示这种元素的一个原子；如“O”表示氧元素，也表示一个氧原子。"
+    },
+    {
+      "id": "L16-Q05",
+      "type": "concept",
+      "question": "下列关于物质分类的说法，正确的是？",
+      "options": ["氧气是化合物，因为它含有氧元素", "水中含有氢元素和氧元素，所以水是混合物", "二氧化碳由一种元素组成，是单质", "空气中含有多种物质，属于混合物"],
+      "answer": 3,
+      "knowledgeIds": ["element-concept", "element-classify"],
+      "knowledgePoints": ["element-concept"],
+      "explanation": "空气含有氮气、氧气、二氧化碳等多种物质，属于混合物；单质是由同种元素组成的纯净物，化合物是由不同种元素组成的纯净物。"
+    },
+    {
+      "id": "L16-Q06",
+      "type": "concept",
+      "question": "氧元素可以组成氧气（O₂），也可以组成臭氧（O₃），这说明？",
+      "options": ["氧气和臭氧是同一种物质", "同一种元素可以组成不同的单质", "氧元素有两种", "氧气和臭氧都是化合物"],
+      "answer": 1,
+      "knowledgeIds": ["element-concept", "element-classify"],
+      "knowledgePoints": ["element-concept"],
+      "explanation": "同种元素组成的不同单质互为同素异形体，如氧气 O₂ 和臭氧 O₃，说明同一种元素可以组成不同的单质。"
+    }
+  ],
+  "diagnosticQuestions": [
+    {
+      "id": "L16-D01",
+      "knowledgePoint": "element-concept",
+      "question": "“元素是组成物质的基本粒子，所以可以说‘一个氧元素分子由两个氧原子构成’。”这种说法的错误主要在于？",
+      "options": ["说法完全正确", "元素是宏观概念，只讲种类、不讲个数，不能说“一个氧元素分子”，且元素不是粒子", "氧元素不是一个分子", "元素可以讲个数"],
+      "answer": 1,
+      "errorType": "mc-element-misunderstanding",
+      "remediationStep": "L16-S02",
+      "knowledgeIds": ["element-concept"]
+    },
+    {
+      "id": "L16-D02",
+      "knowledgePoint": "element-classify",
+      "question": "“氧气是氧元素组成的，所以氧气是元素；氧气和臭氧都是氧元素组成的单质。”对这两句话的评价正确的是？",
+      "options": ["两句都对", "氧气是氧元素组成的单质，是纯净物；元素是宏观概念，不能说氧气是元素，氧气和臭氧是同种元素组成的不同单质", "氧气是元素这种说法正确", "氧气和臭氧是同一种单质"],
+      "answer": 1,
+      "errorType": "mc-element-pure-substance",
+      "remediationStep": "L16-S07",
+      "knowledgeIds": ["element-concept", "element-classify"]
+    },
+    {
+      "id": "L16-D03",
+      "knowledgePoint": "element-classify",
+      "question": "关于“溶液（如食盐水）属于纯净物”的说法，正确的评价是？",
+      "options": ["食盐水外观均一透明，是纯净物", "食盐水是氯化钠溶解在水中形成的混合物，判断纯净物要看是否由一种物质组成，不能只看外观", "只要透明就是纯净物", "纯净物一定透明"],
+      "answer": 1,
+      "errorType": "mc-mixture-pure",
+      "remediationStep": "L16-S05",
+      "knowledgeIds": ["element-classify"]
+    }
+  ],
+  "provenance": {
+    "status": "ready",
+    "basis": "人教版九年级化学第三单元物质构成的奥秘 课题3《元素》；2022年版义务教育化学课程标准；武汉中考命题范围。",
+    "note": "内容为原创讲解与原创题目，不复制教材原文；核心科学事实（元素定义、元素符号、元素分布、物质分类）为初中化学稳定共识知识。"
+  },
+  "review": {
+    "curriculum": "pass",
+    "scientific": "pass",
+    "ageSuitability": "pass",
+    "itemQuality": "pass",
+    "knowledgeLinks": "pass",
+    "wuhanAlignment": "pass",
+    "masteryGate": "pass",
+    "blockingIssues": []
+  },
+  "sections": [
+    {
+      "title": "本节课要掌握什么？",
+      "body": [
+        "理解元素的定义：具有相同核电荷数（质子数）的一类原子的总称。",
+        "知道元素是宏观概念，只讲种类、不讲个数，能区分元素与原子。",
+        "掌握常见元素符号，能区分单质、化合物与混合物，理解同种元素可组成不同单质。"
+      ]
+    },
+    {
+      "title": "“元素”和“原子”有什么不同？",
+      "body": [
+        "水分子由氢原子和氧原子构成——这里我们讲的是“原子”，是微观粒子，可以讲个数。",
+        "水由氢元素和氧元素组成——这里我们讲的是“元素”，是宏观概念，只讲种类、不讲个数。",
+        "“原子”是从微观构成角度说的，“元素”是从宏观组成角度说的。氢元素是所有质子数为1的一类氢原子的总称，它不是一个具体的粒子。"
+      ]
+    },
+    {
+      "title": "核心概念",
+      "body": [
+        "元素定义：质子数（核电荷数）相同的一类原子的总称；决定元素种类的是质子数。",
+        "元素与原子：元素宏观、只讲种类不讲个数；原子微观、可讲个数。",
+        "元素符号：表示一种元素，也表示这种元素的一个原子；如 H 表示氢元素和一个氢原子。",
+        "地壳中含量前四位：氧、硅、铝、铁；生物体中含量较多的是氧、碳、氢、氮。",
+        "物质分类：纯净物（单质：同种元素组成；化合物：不同种元素组成）与混合物（多种物质组成）。"
+      ]
+    },
+    {
+      "title": "常见误区",
+      "body": [
+        "把“元素”当成微观粒子，说“一个氧元素分子”，混淆了宏观与微观。",
+        "把“元素”和“单质”混为一谈：元素是类别概念，单质是具体纯净物，如“氧元素”与“氧气”不同。",
+        "用“是否透明、是否均匀”判断纯净物，忽略“是否由一种物质组成”这一本质。",
+        "误认为一种元素只能组成一种单质，忽略了氧气 O₂ 与臭氧 O₃ 等例子。"
+      ]
+    },
+    {
+      "title": "学习方法",
+      "body": [
+        "用“水由氢元素和氧元素组成，水分子由氢原子和氧原子构成”对比记忆元素与原子。",
+        "把“决定元素种类的是质子数”当作核心判据，反复检验不同说法。",
+        "画“物质分类树状图”：物质→纯净物（单质/化合物）与混合物，把常见物质填入对应类别。"
+      ]
+    }
+  ]
+}

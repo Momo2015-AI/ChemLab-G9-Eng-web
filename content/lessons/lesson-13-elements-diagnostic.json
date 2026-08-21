@@ -1,0 +1,41 @@
+{
+  "lessonId": "lesson-13-elements",
+  "version": "1.0",
+  "diagnostics": [
+    {
+      "id": "L16-D01",
+      "knowledgePoint": "element-concept",
+      "question": "“元素是组成物质的基本粒子，所以可以说‘一个氧元素分子由两个氧原子构成’。”这种说法的错误主要在于？",
+      "options": ["说法完全正确", "元素是宏观概念，只讲种类、不讲个数，不能说“一个氧元素分子”，且元素不是粒子", "氧元素不是一个分子", "元素可以讲个数"],
+      "answer": 1,
+      "errorType": "mc-element-misunderstanding",
+      "remediationStep": "L16-S02",
+      "knowledgeIds": ["element-concept"]
+    },
+    {
+      "id": "L16-D02",
+      "knowledgePoint": "element-classify",
+      "question": "“氧气是氧元素组成的，所以氧气是元素；氧气和臭氧都是氧元素组成的单质。”对这两句话的评价正确的是？",
+      "options": ["两句都对", "氧气是氧元素组成的单质，是纯净物；元素是宏观概念，不能说氧气是元素，氧气和臭氧是同种元素组成的不同单质", "氧气是元素这种说法正确", "氧气和臭氧是同一种单质"],
+      "answer": 1,
+      "errorType": "mc-element-pure-substance",
+      "remediationStep": "L16-S07",
+      "knowledgeIds": ["element-concept", "element-classify"]
+    },
+    {
+      "id": "L16-D03",
+      "knowledgePoint": "element-classify",
+      "question": "关于“溶液（如食盐水）属于纯净物”的说法，正确的评价是？",
+      "options": ["食盐水外观均一透明，是纯净物", "食盐水是氯化钠溶解在水中形成的混合物，判断纯净物要看是否由一种物质组成，不能只看外观", "只要透明就是纯净物", "纯净物一定透明"],
+      "answer": 1,
+      "errorType": "mc-mixture-pure",
+      "remediationStep": "L16-S05",
+      "knowledgeIds": ["element-classify"]
+    }
+  ],
+  "remediation": {
+    "L16-S02": "复习元素与原子：元素是宏观概念、只讲种类不讲个数，不是具体粒子；原子是微观概念、可讲个数。",
+    "L16-S07": "复习元素与单质：元素是类别概念，单质是具体纯净物；氧气是氧元素组成的单质，不能说氧气是元素。",
+    "L16-S05": "复习纯净物与混合物：判断关键看是否由一种物质组成，不能只看是否透明、均匀。"
+  }
+}

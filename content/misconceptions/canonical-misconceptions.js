@@ -473,6 +473,51 @@ export const canonicalMisconceptionsBase = [
       practiceQuestionIds: [],
       recheckQuestionIds: []
     }
+  },
+  {
+    id: 'mc-atomic-solid-ball',
+    title: '误认为原子是实心小球，内部没有空隙',
+    description: '对原子的直观想象是一个实心的、不可再分的小球，不理解原子内部绝大部分是空的、原子核只占极小体积，以及"化学变化中原子不可再分"的限定条件已被混淆为"原子绝对不可再分"。',
+    knowledgeIds: ['atomic-structure'],
+    signals: ['intuitive-overgeneralization', 'over-extended-definition'],
+    severity: 'high',
+    source: 'lesson-11 atomic-structure production',
+    remediation: {
+      goal: '用原子核式模型（足球场与绿豆类比）建立原子内部大部分是空的直观认识，区分"化学变化中不可再分"与"原子内部仍有结构"两句话的适用范围。',
+      lessonIds: ['lesson-11-atomic-structure'],
+      practiceQuestionIds: [],
+      recheckQuestionIds: ['L14-T02']
+    }
+  },
+  {
+    id: 'mc-atomic-charge-neutrality',
+    title: '误认为原子不带电是因为内部没有电荷',
+    description: '把"原子不显电性"错误地理解为原子内部不存在任何电荷，而非"质子所带正电荷总数与电子所带负电荷总数相等、相互抵消"的结果。',
+    knowledgeIds: ['atomic-structure'],
+    signals: ['reasoning-skip', 'concept-confusion'],
+    severity: 'high',
+    source: 'lesson-11 atomic-structure production',
+    remediation: {
+      goal: '理解原子不显电性的真正原因是正负电荷总数相等相互抵消，而非内部没有电荷；同时明确质子数决定元素种类、得失电子只改变核外电子数。',
+      lessonIds: ['lesson-11-atomic-structure'],
+      practiceQuestionIds: [],
+      recheckQuestionIds: ['L14-T01']
+    }
+  },
+  {
+    id: 'mc-relative-atomic-mass',
+    title: '混淆相对原子质量与原子实际质量',
+    description: '把相对原子质量当作原子的实际质量，给它加上"克"等质量单位；或认为相对原子质量就是质子数。',
+    knowledgeIds: ['atomic-structure'],
+    signals: ['unit-confusion', 'definition-confusion'],
+    severity: 'medium',
+    source: 'lesson-11 atomic-structure production',
+    remediation: {
+      goal: '明确相对原子质量是以碳-12原子质量的1/12为基准得到的比值，单位为1（省略），数值约等于质子数加中子数，不是原子的实际质量。',
+      lessonIds: ['lesson-11-atomic-structure'],
+      practiceQuestionIds: [],
+      recheckQuestionIds: ['L14-T03']
+    }
   }
 ];
 
@@ -774,7 +819,11 @@ export const ALIAS_MAP = {
   'molecule-atom-confusion': 'mc-molecule-atom-distinction',
   'atom-electron-loss': 'mc-atom-electron-loss',
   'ion-only-metal': 'mc-ion-only-metal',
-  'mixture-pure': 'mc-mixture-pure'
+  'mixture-pure': 'mc-mixture-pure',
+  // L11 atomic-structure misconceptions
+  'atomic-solid-ball': 'mc-atomic-solid-ball',
+  'atomic-charge-neutrality': 'mc-atomic-charge-neutrality',
+  'relative-atomic-mass': 'mc-relative-atomic-mass'
 };
 
 /**

@@ -1,0 +1,210 @@
+{
+  "id": "lesson-11-atomic-structure",
+  "sequenceNumber": 11,
+  "day": "11",
+  "title": "原子的构成",
+  "module": "unit-03-particle-nature-of-matter",
+  "semester": "upper",
+  "unitId": "u03",
+  "duration": "45 分钟",
+  "description": "认识原子的内部构成：原子核（质子、中子）与核外电子，理解质子数=核电荷数=原子序数，知道原子不显电性的原因，初步了解核外电子分层排布与相对原子质量。",
+  "status": "ready",
+  "releaseStatus": "ready",
+  "learningObjectives": [
+    "知道原子由原子核和核外电子构成，原子核由质子和中子构成，能用结构示意图描述氢、碳、氧等简单原子的构成。",
+    "理解质子数=核电荷数=原子序数这一等价关系，能根据原子序数推断质子数、核电荷数。",
+    "理解原子不显电性的原因：质子数等于核外电子数，正负电荷相互抵消，并据此说明离子带电与原子呈电中性的本质区别。",
+    "知道相对原子质量是以碳-12原子质量的1/12为标准得出的比值，能利用相对原子质量≈质子数+中子数进行简单计算。",
+    "能纠正“原子是实心小球、不可再分”的直观错误认识，理解原子内部绝大部分是“空”的，并区分“化学变化中不能再分”与“原子内部仍有结构”两句话的适用范围。"
+  ],
+  "knowledgePoints": [
+    "atomic-structure",
+    "particle-model",
+    "relative-atomic-mass",
+    "nucleus-electron-configuration"
+  ],
+  "prerequisites": [
+    "lesson-06-molecules-and-atoms"
+  ],
+  "guidedLearning": {
+    "stepCount": 8,
+    "steps": [
+      { "id": "L14-S01", "title": "从“原子不可再分”到“原子内部有结构”" },
+      { "id": "L14-S02", "title": "原子核：质子和中子" },
+      { "id": "L14-S03", "title": "核外电子与原子不显电性" },
+      { "id": "L14-S04", "title": "质子数=核电荷数=原子序数" },
+      { "id": "L14-S05", "title": "核外电子的分层排布" },
+      { "id": "L14-S06", "title": "相对原子质量" },
+      { "id": "L14-S07", "title": "相对原子质量≈质子数+中子数" },
+      { "id": "L14-S08", "title": "原子构成知识小结与常见误区" }
+    ]
+  },
+  "resourceRefs": {
+    "experiment": "content/lessons/lesson-11-atomic-structure-experiment.json",
+    "practice": "content/lessons/lesson-11-atomic-structure-practice.json",
+    "diagnostic": "content/lessons/lesson-11-atomic-structure-diagnostic.json",
+    "mastery": "content/lessons/lesson-11-atomic-structure-mastery.json"
+  },
+  "experiments": [
+    {
+      "id": "L14-E01",
+      "title": "原子模型的演化：从实心小球到原子核式模型",
+      "purpose": "通过梳理汤姆孙“葡萄干面包模型”与卢瑟福“α粒子散射实验”的推理过程，理解科学模型随证据更新而演化，感受实验证据对模型建构的作用。",
+      "status": "ready-for-runtime",
+      "resourceRef": "content/lessons/lesson-11-atomic-structure-experiment.json"
+    }
+  ],
+  "questions": [
+    {
+      "id": "L14-Q01",
+      "type": "concept",
+      "question": "下列关于原子结构的说法，正确的是？",
+      "options": ["原子是由原子核和核外电子构成的", "原子核只含有中子，不含质子", "原子是一个实心的小球，内部没有空隙", "核外电子是静止不动的"],
+      "answer": 0,
+      "knowledgeIds": ["atomic-structure"],
+      "knowledgePoints": ["atomic-structure"],
+      "explanation": "原子由带正电的原子核和带负电的核外电子构成；原子核内有质子和中子；原子内部绝大部分是“空”的；核外电子在不停地运动。"
+    },
+    {
+      "id": "L14-Q02",
+      "type": "concept",
+      "question": "原子核内的质子带什么电荷？",
+      "options": ["带正电", "带负电", "不带电", "有时带正电，有时带负电"],
+      "answer": 0,
+      "knowledgeIds": ["atomic-structure"],
+      "knowledgePoints": ["atomic-structure"],
+      "explanation": "质子带正电，中子不带电，电子带负电。原子核因含有质子而带正电。"
+    },
+    {
+      "id": "L14-Q03",
+      "type": "concept",
+      "question": "对于氧原子（原子序数为8），下列说法正确的是？",
+      "options": ["氧原子核内有8个质子", "氧原子的核电荷数是16", "氧原子核外有16个电子", "氧原子中有8个中子"],
+      "answer": 0,
+      "knowledgeIds": ["atomic-structure"],
+      "knowledgePoints": ["atomic-structure"],
+      "explanation": "原子序数=质子数=核电荷数=核外电子数，所以氧原子核内有8个质子、核电荷数为8、核外有8个电子；中子数不能仅由原子序数确定，氧原子（氧-16）的中子数为8。"
+    },
+    {
+      "id": "L14-Q04",
+      "type": "concept",
+      "question": "原子不显电性的原因是？",
+      "options": ["原子内不存在电荷", "原子核内质子所带的正电荷总数与核外电子所带的负电荷总数相等", "电子不带电，所以原子不显电性", "原子核不带电，只有电子带电"],
+      "answer": 1,
+      "knowledgeIds": ["atomic-structure"],
+      "knowledgePoints": ["atomic-structure"],
+      "explanation": "原子核内质子带正电，核外电子带负电，且质子数与核外电子数相等，正负电荷总数相等、相互抵消，所以整个原子不显电性。"
+    },
+    {
+      "id": "L14-Q05",
+      "type": "concept",
+      "question": "相对原子质量是？",
+      "options": ["原子实际质量的数值，单位是克", "以碳-12原子质量的1/12为基准，原子实际质量与基准相比得到的比值，没有单位", "原子核中质子和中子的质量之和", "原子中电子的质量"],
+      "answer": 1,
+      "knowledgeIds": ["atomic-structure", "relative-atomic-mass"],
+      "knowledgePoints": ["atomic-structure"],
+      "explanation": "相对原子质量是一个比值，以碳-12原子质量的1/12为标准，用原子的实际质量除以该基准所得，单位为1（通常省略不写）。"
+    },
+    {
+      "id": "L14-Q06",
+      "type": "concept",
+      "question": "钠原子的原子序数为11，中子数为12，则钠原子的相对原子质量约为？",
+      "options": ["11", "12", "23", "1"],
+      "answer": 2,
+      "knowledgeIds": ["atomic-structure", "relative-atomic-mass"],
+      "knowledgePoints": ["atomic-structure"],
+      "explanation": "相对原子质量≈质子数+中子数，钠原子的质子数=原子序数=11，加上中子数12，约为23。"
+    }
+  ],
+  "diagnosticQuestions": [
+    {
+      "id": "L14-D01",
+      "knowledgePoint": "atomic-structure",
+      "question": "“原子是构成物质的最小粒子，它就是一个不可再分的实心小球。”这种说法的错误主要在于？",
+      "options": ["原子确实是实心小球，说法没有错误", "原子内部还有原子核和核外电子等结构，并非实心且不可再分", "原子是由分子构成的，所以说原子是最小粒子不对", "原子非常大，不可能是小球"],
+      "answer": 1,
+      "errorType": "mc-atomic-solid-ball",
+      "remediationStep": "L14-S01",
+      "knowledgeIds": ["atomic-structure"]
+    },
+    {
+      "id": "L14-D02",
+      "knowledgePoint": "atomic-structure",
+      "question": "某原子的原子核内有11个质子、12个中子。下列说法正确的是？",
+      "options": ["该原子带正电，因为质子带正电", "该原子的核电荷数为11，核外有11个电子，整个原子不显电性", "该原子的核电荷数为12", "该原子只有质子，没有中子"],
+      "answer": 1,
+      "errorType": "mc-atomic-charge-neutrality",
+      "remediationStep": "L14-S04",
+      "knowledgeIds": ["atomic-structure"]
+    },
+    {
+      "id": "L14-D03",
+      "knowledgePoint": "relative-atomic-mass",
+      "question": "关于相对原子质量，下列理解正确的是？",
+      "options": ["相对原子质量就是原子的实际质量，以克为单位", "相对原子质量是一个比值，以碳-12原子质量的1/12为标准，数值约等于质子数与中子数之和", "相对原子质量就是质子数", "相对原子质量没有基准，任意规定"],
+      "answer": 1,
+      "errorType": "mc-relative-atomic-mass",
+      "remediationStep": "L14-S06",
+      "knowledgeIds": ["atomic-structure", "relative-atomic-mass"]
+    }
+  ],
+  "provenance": {
+    "status": "ready",
+    "basis": "人教版九年级化学第三单元物质构成的奥秘 课题2《原子的结构》前半部分；2022年版义务教育化学课程标准；武汉中考命题范围。",
+    "note": "内容为原创讲解与原创题目，不复制教材原文；核心科学事实（原子核、质子、中子、核外电子、相对原子质量）为初中化学稳定共识知识。"
+  },
+  "review": {
+    "curriculum": "pass",
+    "scientific": "pass",
+    "ageSuitability": "pass",
+    "itemQuality": "pass",
+    "knowledgeLinks": "pass",
+    "wuhanAlignment": "pass",
+    "masteryGate": "pass",
+    "blockingIssues": []
+  },
+  "sections": [
+    {
+      "title": "本节课要掌握什么？",
+      "body": [
+        "知道原子由原子核和核外电子构成，原子核由质子和中子构成。",
+        "理解质子数=核电荷数=原子序数，原子不显电性。",
+        "知道相对原子质量的概念，会用相对原子质量≈质子数+中子数进行简单计算。"
+      ]
+    },
+    {
+      "title": "原子真的是“最小的粒子”吗？",
+      "body": [
+        "上一课我们说“原子是化学变化中的最小粒子”，这句话必须限定在化学变化范围内。本课我们要深入原子的内部：原子还可以再分。",
+        "原子由带正电的原子核和带负电的核外电子构成；原子核又由质子和中子构成（氢原子核通常只有质子）。",
+        "形象地说，原子核只占原子体积的极小部分，如果把原子比作一个足球场，原子核大约只有足球场中央的一颗绿豆那么大——原子内部绝大部分是空的。"
+      ]
+    },
+    {
+      "title": "核心概念",
+      "body": [
+        "原子结构：原子（原子核（质子+中子）+核外电子）。质子带正电，中子不带电，电子带负电。",
+        "数量关系：质子数=核电荷数=原子序数；原子不显电性，故质子数=核外电子数。",
+        "核外电子分层排布：能量较低的电子在离核较近的电子层运动，能量较高的电子在离核较远的电子层运动（K、L、M……层）。",
+        "相对原子质量：以碳-12原子质量的1/12为基准得到的比值，单位通常省略；相对原子质量≈质子数+中子数。"
+      ]
+    },
+    {
+      "title": "常见误区",
+      "body": [
+        "把原子当作实心的、不可再分的小球，混淆了“化学变化中不能再分”与“原子内部仍有结构”两句话的适用范围。",
+        "误认为原子核占据了原子的大部分体积——实际上原子核极小，原子内部绝大部分是空的。",
+        "误认为“原子不显电性”是因为原子内没有电荷，其实是因为正负电荷总数相等、相互抵消。",
+        "把相对原子质量当成原子的实际质量（克），或者误认为相对原子质量是质子数。"
+      ]
+    },
+    {
+      "title": "学习方法",
+      "body": [
+        "用“足球场与绿豆”等类比建立原子核极小、原子内部大部分是空的直观认识。",
+        "把“质子数=核电荷数=原子序数”这一组等价关系当作工具，反复套用于不同原子（碳、氧、钠、氯等）练习。",
+        "做相对原子质量计算时，先写出“质子数=原子序数、中子数=相对原子质量-质子数”，再代入数据，避免跳步出错。"
+      ]
+    }
+  ]
+}

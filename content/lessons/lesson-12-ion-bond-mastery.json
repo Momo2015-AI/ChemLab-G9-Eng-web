@@ -1,0 +1,232 @@
+{
+  "lessonId": "lesson-12-ion-bond",
+  "version": "1.0",
+  "mastery": {
+    "threshold": 0.95,
+    "questionCount": 20,
+    "minCorrect": 19,
+    "mode": "unseen-transfer",
+    "questions": [
+      {
+        "id": "L15-M01",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "ion-bond",
+        "question": "决定元素原子化学性质的主要因素是？",
+        "options": ["核内质子数", "最外层电子数", "中子数", "相对原子质量"],
+        "answer": 1,
+        "explanation": "元素的化学性质主要由最外层电子数决定。",
+        "knowledgeIds": ["ion-bond", "atomic-structure"]
+      },
+      {
+        "id": "L15-M02",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "ion-bond",
+        "question": "稀有气体化学性质很不活泼，原因是？",
+        "options": ["原子核很小", "最外层达到8个电子（氦为2个）的稳定结构", "不含电子", "不含质子"],
+        "answer": 1,
+        "explanation": "稀有气体原子最外层为8个电子（氦为2个），结构稳定，不易得失电子。",
+        "knowledgeIds": ["ion-bond"]
+      },
+      {
+        "id": "L15-M03",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "ion-formation",
+        "question": "原子失去电子后形成的是？",
+        "options": ["阴离子", "阳离子", "分子", "原子核"],
+        "answer": 1,
+        "explanation": "失电子后正电荷多于负电荷，形成带正电的阳离子。",
+        "knowledgeIds": ["ion-bond", "ion-formation"]
+      },
+      {
+        "id": "L15-M04",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "ion-formation",
+        "question": "原子得到电子后形成的是？",
+        "options": ["阳离子", "阴离子", "质子", "中子"],
+        "answer": 1,
+        "explanation": "得电子后负电荷多于正电荷，形成带负电的阴离子。",
+        "knowledgeIds": ["ion-bond", "ion-formation"]
+      },
+      {
+        "id": "L15-M05",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "ion-formation",
+        "question": "钠原子（2、8、1）失去1个电子后，其核外电子排布变为？",
+        "options": ["2、8", "2、8、1", "2、8、2", "2、7"],
+        "answer": 0,
+        "explanation": "钠原子失去最外层1个电子后，核外电子排布变为 2、8，形成 Na⁺。",
+        "knowledgeIds": ["ion-bond", "ion-formation"]
+      },
+      {
+        "id": "L15-M06",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "ion-formation",
+        "question": "氯原子（2、8、7）得到1个电子后，其核外电子排布变为？",
+        "options": ["2、8、7", "2、8、8", "2、8、6", "2、8、7、1"],
+        "answer": 1,
+        "explanation": "氯原子得到1个电子后，最外层由7个变为8个电子，排布为 2、8、8，形成 Cl⁻。",
+        "knowledgeIds": ["ion-bond", "ion-formation"]
+      },
+      {
+        "id": "L15-M07",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "ion-formation",
+        "question": "镁原子变成 Mg²⁺ 的过程中，下列不变的是？",
+        "options": ["核外电子数", "核内质子数（核电荷数）", "最外层电子数", "电子层数一定不变"],
+        "answer": 1,
+        "explanation": "得失电子只改变核外电子数，核内质子数（核电荷数）不变，元素种类不变。",
+        "knowledgeIds": ["ion-bond", "atomic-structure", "ion-formation"]
+      },
+      {
+        "id": "L15-M08",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "ion-formation",
+        "question": "下列粒子中，带1个单位负电荷的是？",
+        "options": ["Na⁺", "Cl⁻", "Mg²⁺", "Al³⁺"],
+        "answer": 1,
+        "explanation": "Cl⁻ 表示带1个单位负电荷的氯离子；Na⁺ 带正电，Mg²⁺、Al³⁺ 带多个单位正电荷。",
+        "knowledgeIds": ["ion-bond"]
+      },
+      {
+        "id": "L15-M09",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "ion-compound",
+        "question": "离子化合物中阴、阳离子之间的作用力是？",
+        "options": ["万有引力", "静电作用（离子键）", "磁力", "没有作用力"],
+        "answer": 1,
+        "explanation": "阴、阳离子间存在强烈的静电作用，称为离子键，是离子化合物中粒子结合的根本原因。",
+        "knowledgeIds": ["ion-bond", "ion-compound"]
+      },
+      {
+        "id": "L15-M10",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "ion-compound",
+        "question": "下列物质中，由离子直接构成的是？",
+        "options": ["二氧化碳（CO₂）", "氯化钠（NaCl）", "氧气（O₂）", "铁（Fe）"],
+        "answer": 1,
+        "explanation": "氯化钠由 Na⁺、Cl⁻ 离子构成；二氧化碳、氧气由分子构成，铁由原子构成。",
+        "knowledgeIds": ["ion-bond", "ion-compound"]
+      },
+      {
+        "id": "L15-M11",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "ion-formation",
+        "question": "某粒子核内质子数为17，核外电子数为18，该粒子是？",
+        "options": ["氯原子", "氯离子（Cl⁻）", "氯气分子", "氧离子"],
+        "answer": 1,
+        "explanation": "质子数17为氯元素，核外电子18比质子数多1，说明得到1个电子，为氯离子 Cl⁻。",
+        "knowledgeIds": ["ion-bond", "atomic-structure", "ion-formation"]
+      },
+      {
+        "id": "L15-M12",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "ion-formation",
+        "question": "下列关于“得失电子与元素种类”的说法，正确的是？",
+        "options": ["原子失电子后元素种类改变", "原子得失电子只改变核外电子数，核内质子数不变，元素种类不变", "原子得电子后变成另一种元素", "得失电子会使质子数变化"],
+        "answer": 1,
+        "explanation": "元素种类由质子数决定，得失电子只改变核外电子数，质子数不变，故元素种类不变。",
+        "knowledgeIds": ["ion-bond", "atomic-structure", "ion-formation"]
+      },
+      {
+        "id": "L15-M13",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "ion-bond",
+        "question": "下列对“离子”的表述，正确的是？",
+        "options": ["离子只指金属阳离子", "离子是带电的原子或原子团，包括阳离子和阴离子", "离子不带电", "离子就是分子"],
+        "answer": 1,
+        "explanation": "离子是带电的粒子，分阳离子（正电）和阴离子（负电），可由金属或非金属原子得失电子形成。",
+        "knowledgeIds": ["ion-bond"]
+      },
+      {
+        "id": "L15-M14",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "ion-formation",
+        "question": "铝原子（2、8、3）在化学反应中容易？",
+        "options": ["得到5个电子形成阴离子", "失去3个电子形成 Al³⁺", "得到3个电子形成阴离子", "不参与反应"],
+        "answer": 1,
+        "explanation": "铝原子最外层3个电子，失去3个电子后达到稳定结构，形成带3个单位正电荷的铝离子 Al³⁺。",
+        "knowledgeIds": ["ion-bond", "ion-formation"]
+      },
+      {
+        "id": "L15-M15",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "ion-compound",
+        "question": "钠和氯气反应生成氯化钠的过程，从微观角度理解正确的是？",
+        "options": ["钠原子和氯原子直接相连，无电子转移", "钠原子把最外层1个电子转移给氯原子，形成 Na⁺ 和 Cl⁻，二者通过离子键结合", "钠变成氯，元素种类改变", "氯化钠由氯化钠分子构成"],
+        "answer": 1,
+        "explanation": "钠原子失1个电子给氯原子，形成 Na⁺ 和 Cl⁻，阴阳离子经静电作用（离子键）结合成氯化钠，元素种类不变。",
+        "knowledgeIds": ["ion-bond", "ion-compound", "ion-formation"]
+      },
+      {
+        "id": "L15-M16",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "ion-bond",
+        "question": "下列粒子中，最外层达到8个电子稳定结构的是？",
+        "options": ["钠原子（2、8、1）", "氯离子（2、8、8）", "镁原子（2、8、2）", "铝原子（2、8、3）"],
+        "answer": 1,
+        "explanation": "氯离子 Cl⁻ 最外层为8个电子，达到稳定结构；钠、镁、铝原子最外层分别有1、2、3个电子，未达稳定结构。",
+        "knowledgeIds": ["ion-bond"]
+      },
+      {
+        "id": "L15-M17",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "ion-formation",
+        "question": "氧原子（2、6）在化学反应中容易？",
+        "options": ["失去6个电子", "得到2个电子形成 O²⁻", "失去2个电子形成阳离子", "不发生电子变化"],
+        "answer": 1,
+        "explanation": "氧原子最外层6个电子，得到2个电子后达到8个电子稳定结构，形成带2个单位负电荷的氧离子 O²⁻。",
+        "knowledgeIds": ["ion-bond", "ion-formation"]
+      },
+      {
+        "id": "L15-M18",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "ion-bond",
+        "question": "下列关于离子符号的说法，错误的是？",
+        "options": ["Na⁺ 表示钠离子带1个单位正电荷", "Mg²⁺ 表示镁离子带2个单位正电荷", "O²⁻ 表示氧离子带2个单位正电荷", "Cl⁻ 表示氯离子带1个单位负电荷"],
+        "answer": 2,
+        "explanation": "O²⁻ 表示氧离子带2个单位负电荷，不是正电荷；其余说法正确。",
+        "knowledgeIds": ["ion-bond"]
+      },
+      {
+        "id": "L15-M19",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "ion-formation",
+        "question": "钙原子（2、8、8、2）在化学反应中容易？",
+        "options": ["得到6个电子", "失去2个电子形成 Ca²⁺", "得到2个电子形成阴离子", "失去8个电子"],
+        "answer": 1,
+        "explanation": "钙原子最外层2个电子，失去后形成带2个单位正电荷的钙离子 Ca²⁺。",
+        "knowledgeIds": ["ion-bond", "ion-formation"]
+      },
+      {
+        "id": "L15-M20",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "ion-compound",
+        "question": "下列各组物质中，构成粒子种类相同的一组是？",
+        "options": ["水和铁（分子与原子）", "氧气和氯化钠（分子与离子）", "铁和氦气（均由原子直接构成）", "二氧化碳和氯化钠（分子与离子）"],
+        "answer": 2,
+        "explanation": "铁和氦气都由原子直接构成；水由分子构成、氯化钠由离子构成、氧气由分子构成，与其他物质构成粒子不同。",
+        "knowledgeIds": ["ion-bond", "ion-compound"]
+      }
+    ]
+  }
+}

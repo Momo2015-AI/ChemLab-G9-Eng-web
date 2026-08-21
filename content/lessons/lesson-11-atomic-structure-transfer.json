@@ -1,0 +1,91 @@
+{
+  "lessonId": "lesson-11-atomic-structure",
+  "version": "1.0.0",
+  "source": "built from canonical lesson-11 atomic-structure content, modeled on lesson-06 transfer patterns",
+  "questions": [
+    {
+      "id": "L14-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "knowledgePoint": "atomic-structure",
+      "question": "小明看到资料里写着“碳原子核内有6个质子和6个中子，核外有6个电子”。他据此说：“这个碳原子的核电荷数是12。”请判断小明的说法是否正确，并说明理由；如果不对，请给出正确的核电荷数并解释原因。",
+      "rubric": {
+        "modelAnswer": "小明的说法不正确。核电荷数是原子核所带的正电荷数，等于核内质子数，而不等于质子数与中子数之和。碳原子核内有6个质子，所以核电荷数为6；质子数=核电荷数=原子序数。中子不带电，不计入核电荷数。小明把核电荷数误当成了质子数与中子数的总和，实际上质子数与中子数之和约为相对原子质量。",
+        "keywords": [
+          ["不正确", "不对", "错误"],
+          ["核电荷数等于质子数", "核电荷数=质子数"],
+          ["6个质子", "核电荷数为6"],
+          ["中子不带电", "不计入核电荷"]
+        ],
+        "explanation": "核电荷数=质子数，不包含中子；小明混淆了核电荷数与相对原子质量（质子数+中子数）。"
+      },
+      "explanation": "核电荷数等于核内质子数，与中子数无关。",
+      "knowledgeIds": ["atomic-structure"],
+      "misconceptionIds": ["mc-atomic-charge-neutrality"]
+    },
+    {
+      "id": "L14-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledgePoint": "atomic-structure",
+      "question": "小红说：“原子的质量和体积几乎全部集中在原子核上，所以原子核又大又重。”请分析这句话中的科学性错误，并给出正确的认识。",
+      "rubric": {
+        "modelAnswer": "这句话有两处错误。第一，原子的质量几乎全部集中在原子核上，但原子核的体积只占原子体积的极小部分，原子内部绝大部分是空的（可类比足球场中央的绿豆）。第二，原子核“又大”的表述错误，原子核非常小；应该说原子核质量大、体积小。正确认识：原子核集中了原子几乎全部的质量，但体积极小；核外电子质量极小，在原子核外的空间高速运动。",
+        "keywords": [
+          ["质量集中", "质量集中在原子核"],
+          ["体积极小", "占原子体积的极小部分", "大部分是空的"],
+          ["不是又大又重", "原子核小", "原子核体积小"],
+          ["电子质量小", "核外空间"]
+        ],
+        "explanation": "原子核质量大但体积小，原子内部绝大部分是空的，不能把“质量集中”理解为“体积大”。"
+      },
+      "explanation": "原子核质量集中但体积极小，原子内部绝大部分是空的。",
+      "knowledgeIds": ["atomic-structure"],
+      "misconceptionIds": ["mc-atomic-solid-ball"]
+    },
+    {
+      "id": "L14-T03",
+      "type": "constructed",
+      "difficulty": "medium",
+      "bloomLevel": "apply",
+      "knowledgePoint": "relative-atomic-mass",
+      "question": "已知硫原子的原子序数为16，相对原子质量约为32。请推算硫原子核内的质子数、中子数以及核外电子数，并写出你的推算过程。",
+      "rubric": {
+        "modelAnswer": "推算过程：原子序数=质子数=核电荷数=核外电子数。硫的原子序数为16，所以核内质子数为16，核外电子数为16。由相对原子质量≈质子数+中子数，得中子数≈32-16=16。结论：硫原子核内有16个质子、16个中子，核外有16个电子。",
+        "keywords": [
+          ["质子数16", "质子16"],
+          ["中子数16", "32-16", "相对原子质量减质子数"],
+          ["核外电子16"],
+          ["推算过程", "原子序数等于质子数"]
+        ],
+        "explanation": "运用原子序数=质子数=核外电子数，以及相对原子质量≈质子数+中子数进行推算。"
+      },
+      "explanation": "质子数=原子序数，中子数≈相对原子质量-质子数，核外电子数=质子数。",
+      "knowledgeIds": ["atomic-structure", "relative-atomic-mass"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L14-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "knowledgePoint": "atomic-structure",
+      "question": "有人说：“原子既然不带电，说明原子内部没有任何电荷。”请运用本课所学的原子结构知识反驳这一说法，并说明原子不显电性的真正原因。",
+      "rubric": {
+        "modelAnswer": "这种说法是错误的。原子内部带有电荷：质子带正电，核外电子带负电，只是二者数量相等、相互抵消，所以整个原子对外不显电性。原子核带正电（正电荷数等于质子数），核外电子带负电（数量等于质子数），正负电荷总数相等。因此“原子不带电”不等于“原子内部没有电荷”。",
+        "keywords": [
+          ["错误", "不正确"],
+          ["内部有电荷", "质子带正电", "电子带负电"],
+          ["数量相等", "相互抵消", "正负抵消"],
+          ["对外不显电性"]
+        ],
+        "explanation": "原子内部有正负电荷，因数量相等而对外不显电性，不能把“不带电”理解为“无电荷”。"
+      },
+      "explanation": "原子内部存在正负电荷，因数量相等而对外不显电性。",
+      "knowledgeIds": ["atomic-structure"],
+      "misconceptionIds": ["mc-atomic-charge-neutrality"]
+    }
+  ]
+}

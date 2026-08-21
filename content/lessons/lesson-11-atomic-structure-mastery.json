@@ -1,0 +1,232 @@
+{
+  "lessonId": "lesson-11-atomic-structure",
+  "version": "1.0",
+  "mastery": {
+    "threshold": 0.95,
+    "questionCount": 20,
+    "minCorrect": 19,
+    "mode": "unseen-transfer",
+    "questions": [
+      {
+        "id": "L14-M01",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "atomic-structure",
+        "question": "原子由哪些部分构成？",
+        "options": ["质子、中子、电子", "原子核和核外电子", "分子和离子", "质子和电子"],
+        "answer": 1,
+        "explanation": "原子由原子核（含质子、中子）和核外电子构成。",
+        "knowledgeIds": ["atomic-structure"]
+      },
+      {
+        "id": "L14-M02",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "atomic-structure",
+        "question": "下列粒子中带正电的是？",
+        "options": ["电子", "中子", "质子", "核外电子"],
+        "answer": 2,
+        "explanation": "质子带正电，电子带负电，中子不带电。",
+        "knowledgeIds": ["atomic-structure"]
+      },
+      {
+        "id": "L14-M03",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "atomic-structure",
+        "question": "在原子中，体积占绝大部分、几乎集中了原子全部质量的是？",
+        "options": ["原子核体积大、质量大", "原子内部空间大、质量主要集中在原子核", "电子体积大、质量大", "各部分均分体积和质量"],
+        "answer": 1,
+        "explanation": "原子核极小但集中了几乎全部质量，电子质量极小；原子内部绝大部分是空的。",
+        "knowledgeIds": ["atomic-structure"]
+      },
+      {
+        "id": "L14-M04",
+        "type": "single",
+        "difficulty": "basic",
+        "knowledgePoint": "atomic-structure",
+        "question": "下列关于原子不显电性的解释，正确的是？",
+        "options": ["原子内没有电荷", "质子带的正电荷总数与核外电子带的负电荷总数相等，相互抵消", "原子核不带电", "电子数多于质子数"],
+        "answer": 1,
+        "explanation": "质子数与核外电子数相等，正负电荷相互抵消，故原子不显电性。",
+        "knowledgeIds": ["atomic-structure"]
+      },
+      {
+        "id": "L14-M05",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "atomic-structure",
+        "question": "某原子的原子序数为26，它的核电荷数和核外电子数分别是？",
+        "options": ["26 和 26", "52 和 26", "26 和 13", "13 和 26"],
+        "answer": 0,
+        "explanation": "原子序数=核电荷数=质子数=核外电子数，所以均为26。",
+        "knowledgeIds": ["atomic-structure"]
+      },
+      {
+        "id": "L14-M06",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "atomic-structure",
+        "question": "氮原子的原子核内有7个质子、7个中子，则氮原子的核电荷数和相对原子质量约为？",
+        "options": ["核电荷数7，相对原子质量14", "核电荷数14，相对原子质量7", "核电荷数7，相对原子质量7", "核电荷数14，相对原子质量14"],
+        "answer": 0,
+        "explanation": "核电荷数=质子数=7，相对原子质量≈质子数+中子数=7+7=14。",
+        "knowledgeIds": ["atomic-structure", "relative-atomic-mass"]
+      },
+      {
+        "id": "L14-M07",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "atomic-structure",
+        "question": "下列对“原子是化学变化中的最小粒子”这句话的理解，正确的是？",
+        "options": ["原子在化学变化和物理变化中都不能再分", "在化学变化中原子不能再分，但原子内部还有原子核和核外电子等结构", "原子绝对不能再分，因为它是最小的粒子", "原子只由质子构成"],
+        "answer": 1,
+        "explanation": "“原子不可再分”必须限定在化学变化范围内；原子内部还有原子核、核外电子等结构，可进一步研究。",
+        "knowledgeIds": ["atomic-structure"]
+      },
+      {
+        "id": "L14-M08",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "atomic-structure",
+        "question": "根据卢瑟福α粒子散射实验，绝大多数α粒子穿过金箔后方向几乎不变，这说明？",
+        "options": ["原子内部绝大部分是空的", "原子核占原子体积的大部分", "原子是实心小球", "原子中没有带电粒子"],
+        "answer": 0,
+        "explanation": "绝大多数粒子能直接穿过，说明原子内部绝大部分是空的；少数反弹说明存在极小且质量集中的原子核。",
+        "knowledgeIds": ["atomic-structure"]
+      },
+      {
+        "id": "L14-M09",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "atomic-structure",
+        "question": "核外电子分层排布，能量较高的电子位于？",
+        "options": ["离核较近的电子层", "离核较远的电子层", "原子核内部", "任意位置"],
+        "answer": 1,
+        "explanation": "能量较低的电子在离核较近的电子层，能量较高的电子在离核较远的电子层。",
+        "knowledgeIds": ["atomic-structure", "nucleus-electron-configuration"]
+      },
+      {
+        "id": "L14-M10",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "atomic-structure",
+        "question": "下列原子中，核内没有中子的是？",
+        "options": ["碳原子", "氢原子（最常见的氢）", "氧原子", "钠原子"],
+        "answer": 1,
+        "explanation": "最常见的氢原子核通常只有一个质子，没有中子；碳、氧、钠原子核内都有中子。",
+        "knowledgeIds": ["atomic-structure"]
+      },
+      {
+        "id": "L14-M11",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "atomic-structure",
+        "question": "原子核带正电，其电荷量取决于？",
+        "options": ["核内的中子数", "核内的质子数", "核外电子数", "原子的体积"],
+        "answer": 1,
+        "explanation": "质子带正电，原子核所带正电荷数等于核内质子数，即核电荷数。",
+        "knowledgeIds": ["atomic-structure"]
+      },
+      {
+        "id": "L14-M12",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "atomic-structure",
+        "question": "下列关于“原子不可再分”的说法，最准确的是？",
+        "options": ["原子在任何条件下都不可再分", "在化学变化中原子不可再分，原子内部还有原子核和核外电子等结构", "原子只在物理变化中不可再分", "原子不可再分是指原子不能运动"],
+        "answer": 1,
+        "explanation": "“原子不可再分”限定在化学变化范围内；原子内部还有结构，可继续研究。",
+        "knowledgeIds": ["atomic-structure"]
+      },
+      {
+        "id": "L14-M13",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "relative-atomic-mass",
+        "question": "已知某元素的原子中质子数为20，中子数为20，则该元素的相对原子质量约为？",
+        "options": ["20", "40", "10", "200"],
+        "answer": 1,
+        "explanation": "相对原子质量≈质子数+中子数=20+20=40。",
+        "knowledgeIds": ["atomic-structure", "relative-atomic-mass"]
+      },
+      {
+        "id": "L14-M14",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "relative-atomic-mass",
+        "question": "关于相对原子质量的说法，正确的是？",
+        "options": ["相对原子质量的单位是克", "相对原子质量是以碳-12原子质量的1/12为基准得到的比值，通常省略单位", "相对原子质量是原子的实际质量", "相对原子质量越大，原子质量越小"],
+        "answer": 1,
+        "explanation": "相对原子质量是比值，以碳-12原子质量的1/12为基准，单位通常省略；相对原子质量越大，说明原子实际质量越大。",
+        "knowledgeIds": ["atomic-structure", "relative-atomic-mass"]
+      },
+      {
+        "id": "L14-M15",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "relative-atomic-mass",
+        "question": "碳原子的原子序数为6，相对原子质量约为12，则碳原子核内的中子数为？",
+        "options": ["6", "12", "18", "2"],
+        "answer": 0,
+        "explanation": "中子数=相对原子质量-质子数=12-6=6。",
+        "knowledgeIds": ["atomic-structure", "relative-atomic-mass"]
+      },
+      {
+        "id": "L14-M16",
+        "type": "single",
+        "difficulty": "medium",
+        "knowledgePoint": "atomic-structure",
+        "question": "下列微观粒子中，质量最小、带负电的是？",
+        "options": ["质子", "中子", "核外电子", "原子核"],
+        "answer": 2,
+        "explanation": "核外电子质量极小、带负电；质子带正电，中子不带电，原子核带正电。",
+        "knowledgeIds": ["atomic-structure"]
+      },
+      {
+        "id": "L14-M17",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "atomic-structure",
+        "question": "某原子核内有9个质子、10个中子，下列关于该原子的说法，正确的是？",
+        "options": ["该原子核电荷数为10", "该原子核外有9个电子，整个原子不显电性", "该原子带正电", "该原子核内有9个电子"],
+        "answer": 1,
+        "explanation": "核电荷数=质子数=9，核外电子数=质子数=9，正负电荷抵消，原子不显电性；电子在核外，不在核内。",
+        "knowledgeIds": ["atomic-structure"]
+      },
+      {
+        "id": "L14-M18",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "atomic-structure",
+        "question": "元素种类由什么决定？",
+        "options": ["核内中子数", "核内质子数（核电荷数）", "核外电子数", "相对原子质量"],
+        "answer": 1,
+        "explanation": "元素的种类由核内质子数（核电荷数）决定；质子数相同的原子属于同一种元素。",
+        "knowledgeIds": ["atomic-structure"]
+      },
+      {
+        "id": "L14-M19",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "atomic-structure",
+        "question": "氢原子与碳原子属于不同元素，根本原因是？",
+        "options": ["它们的质量不同", "它们的核内质子数（核电荷数）不同", "它们的体积不同", "它们的中子数不同"],
+        "answer": 1,
+        "explanation": "决定元素种类的是核内质子数（核电荷数），氢原子有1个质子，碳原子有6个质子，故属于不同元素。",
+        "knowledgeIds": ["atomic-structure"]
+      },
+      {
+        "id": "L14-M20",
+        "type": "single",
+        "difficulty": "hard",
+        "knowledgePoint": "atomic-structure",
+        "question": "下列关于原子结构模型的演变，排序正确的是？",
+        "options": ["原子核式模型→实心小球模型→葡萄干面包模型", "实心小球模型→葡萄干面包模型→原子核式模型", "葡萄干面包模型→实心小球模型→原子核式模型", "三者没有先后顺序"],
+        "answer": 1,
+        "explanation": "人类对原子的认识经历了道尔顿实心小球模型→汤姆孙葡萄干面包模型→卢瑟福原子核式模型的演化，随着证据增多模型不断更新。",
+        "knowledgeIds": ["atomic-structure"]
+      }
+    ]
+  }
+}

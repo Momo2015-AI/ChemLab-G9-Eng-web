@@ -1,0 +1,41 @@
+{
+  "lessonId": "lesson-11-atomic-structure",
+  "version": "1.0",
+  "diagnostics": [
+    {
+      "id": "L14-D01",
+      "knowledgePoint": "atomic-structure",
+      "question": "“原子是构成物质的最小粒子，它就是一个不可再分的实心小球。”这种说法的错误主要在于？",
+      "options": ["原子确实是实心小球，说法没有错误", "原子内部还有原子核和核外电子等结构，并非实心且不可再分", "原子是由分子构成的，所以说原子是最小粒子不对", "原子非常大，不可能是小球"],
+      "answer": 1,
+      "errorType": "mc-atomic-solid-ball",
+      "remediationStep": "L14-S01",
+      "knowledgeIds": ["atomic-structure"]
+    },
+    {
+      "id": "L14-D02",
+      "knowledgePoint": "atomic-structure",
+      "question": "某原子的原子核内有11个质子、12个中子。下列说法正确的是？",
+      "options": ["该原子带正电，因为质子带正电", "该原子的核电荷数为11，核外有11个电子，整个原子不显电性", "该原子的核电荷数为12", "该原子只有质子，没有中子"],
+      "answer": 1,
+      "errorType": "mc-atomic-charge-neutrality",
+      "remediationStep": "L14-S04",
+      "knowledgeIds": ["atomic-structure"]
+    },
+    {
+      "id": "L14-D03",
+      "knowledgePoint": "relative-atomic-mass",
+      "question": "关于相对原子质量，下列理解正确的是？",
+      "options": ["相对原子质量就是原子的实际质量，以克为单位", "相对原子质量是一个比值，以碳-12原子质量的1/12为标准，数值约等于质子数与中子数之和", "相对原子质量就是质子数", "相对原子质量没有基准，任意规定"],
+      "answer": 1,
+      "errorType": "mc-relative-atomic-mass",
+      "remediationStep": "L14-S06",
+      "knowledgeIds": ["atomic-structure", "relative-atomic-mass"]
+    }
+  ],
+  "remediation": {
+    "L14-S01": "复习原子结构的引入：在化学变化中原子不能再分，但原子内部还有原子核和核外电子等结构，原子并非实心小球。",
+    "L14-S04": "复习质子数=核电荷数=原子序数以及原子不显电性的原因：正负电荷总数相等相互抵消。",
+    "L14-S06": "复习相对原子质量的概念：以碳-12原子质量的1/12为基准得到的比值，数值约等于质子数与中子数之和。"
+  }
+}

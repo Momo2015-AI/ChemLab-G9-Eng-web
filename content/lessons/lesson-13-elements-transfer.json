@@ -1,0 +1,91 @@
+{
+  "lessonId": "lesson-13-elements",
+  "version": "1.0.0",
+  "source": "built from canonical lesson-13 elements content, modeled on lesson-06 transfer patterns",
+  "questions": [
+    {
+      "id": "L16-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "knowledgePoint": "element-concept",
+      "question": "小明说：“水是由两个氢原子和一个氧原子组成的，所以水也是由氢元素和氧元素组成的，这两句话意思完全一样。”请判断这种说法是否准确，并解释“原子”与“元素”两种表述的区别。",
+      "rubric": {
+        "modelAnswer": "这种说法不准确。两句话虽然都描述了水的组成，但角度不同：“水分子由两个氢原子和一个氧原子构成”是从微观角度，描述的是具体的粒子及其个数；“水由氢元素和氧元素组成”是从宏观角度，描述的是水的元素组成，元素只讲种类、不讲个数。因此不能说两句话意思完全一样，它们分别对应微观的原子和宏观的元素。",
+        "keywords": [
+          ["不准确", "不完全一样", "角度不同"],
+          ["微观", "原子", "讲个数"],
+          ["宏观", "元素", "只讲种类"],
+          ["原子构成分子", "元素组成物质"]
+        ],
+        "explanation": "原子是微观概念、可讲个数，元素是宏观概念、只讲种类，两者表述角度不同。"
+      },
+      "explanation": "原子与元素分别从微观和宏观描述水的组成，表述角度不同。",
+      "knowledgeIds": ["element-concept"],
+      "misconceptionIds": ["mc-element-misunderstanding"]
+    },
+    {
+      "id": "L16-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "knowledgePoint": "element-classify",
+      "question": "小红说：“氧气是氧元素，二氧化碳是两种元素。”请指出这段表述中的概念性错误，并用准确的语言重新描述。",
+      "rubric": {
+        "modelAnswer": "表述有两处概念错误。第一，“氧气是氧元素”错误：氧气（O₂）是具体的纯净物（单质），由氧元素组成，不能说“氧气是氧元素”，因为元素是宏观类别概念、单质是具体物质。第二，“二氧化碳是两种元素”错误：二氧化碳（CO₂）是一种化合物（纯净物），它是由碳元素和氧元素两种元素组成，但不能说“二氧化碳就是两种元素”。准确表述：氧气是由氧元素组成的单质；二氧化碳是由碳元素和氧元素组成的化合物。",
+        "keywords": [
+          ["氧气是单质", "由氧元素组成", "不能说氧气是元素"],
+          ["二氧化碳是化合物", "纯净物"],
+          ["由碳元素和氧元素组成", "两种元素组成"],
+          ["元素是类别概念", "单质是具体物质"]
+        ],
+        "explanation": "元素是宏观类别概念，单质/化合物是具体物质，不能将物质与元素等同。"
+      },
+      "explanation": "不能把具体物质（单质、化合物）与元素混为一谈。",
+      "knowledgeIds": ["element-concept", "element-classify"],
+      "misconceptionIds": ["mc-element-pure-substance"]
+    },
+    {
+      "id": "L16-T03",
+      "type": "constructed",
+      "difficulty": "medium",
+      "bloomLevel": "apply",
+      "knowledgePoint": "element-classify",
+      "question": "请把氧气（O₂）、水（H₂O）、空气、铁（Fe）、氯化钠（NaCl）分成单质、化合物、混合物三类，并说明你分类的依据。",
+      "rubric": {
+        "modelAnswer": "单质：氧气（O₂）、铁（Fe）——由一种元素组成的纯净物。化合物：水（H₂O）、氯化钠（NaCl）——由不同种元素组成的纯净物。混合物：空气——由氮气、氧气、二氧化碳等多种物质混合而成。分类依据：先按“是否由一种物质组成”分为纯净物和混合物（空气是混合物，其余是纯净物）；再对纯净物按“是否由一种元素组成”分为单质和化合物。",
+        "keywords": [
+          ["单质", "氧气", "铁"],
+          ["化合物", "水", "氯化钠"],
+          ["混合物", "空气"],
+          ["是否由一种物质组成", "是否由一种元素组成"]
+        ],
+        "explanation": "物质分类先看纯净物/混合物，再看单质/化合物，判据分别是物质种类与元素种类。"
+      },
+      "explanation": "单质、化合物、混合物的分类判据分别是元素种类与物质种类。",
+      "knowledgeIds": ["element-classify", "single-substance-compound"],
+      "misconceptionIds": ["mc-mixture-pure"]
+    },
+    {
+      "id": "L16-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "knowledgePoint": "element-classify",
+      "question": "有人说：“氧气和臭氧都是由氧元素组成的，所以它们是同一种物质。”请判断这个说法是否正确，并结合元素与单质的关系说明理由。",
+      "rubric": {
+        "modelAnswer": "这个说法不正确。氧气（O₂）和臭氧（O₃）虽然都由氧元素组成，但它们是两种不同的单质：分子组成不同（一个氧分子由2个氧原子构成，一个臭氧分子由3个氧原子构成），化学性质也不同。同一种元素可以组成不同的单质，这称为同素异形体。因此，判断物质种类要看具体的物质（分子组成），而不能只看元素组成。",
+        "keywords": [
+          ["不正确", "错误"],
+          ["不同的单质", "分子组成不同", "O₂ 与 O₃"],
+          ["同一种元素组成不同单质", "同素异形体"],
+          ["化学性质不同"]
+        ],
+        "explanation": "同种元素可组成不同单质，不能仅凭元素组成判断物质种类。"
+      },
+      "explanation": "氧气与臭氧是同种元素组成的不同单质，不能视为同一种物质。",
+      "knowledgeIds": ["element-classify", "element-concept"],
+      "misconceptionIds": ["mc-element-pure-substance"]
+    }
+  ]
+}

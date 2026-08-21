@@ -1,0 +1,138 @@
+{
+  "lessonId": "lesson-13-elements",
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "L16-P01",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "element-concept",
+      "question": "决定元素种类的是？",
+      "options": ["核内中子数", "核内质子数（核电荷数）", "核外电子数", "相对原子质量"],
+      "answer": 1,
+      "explanation": "决定元素种类的是核内质子数（核电荷数），质子数相同的原子属于同一种元素。",
+      "knowledgeIds": ["element-concept", "atomic-structure"]
+    },
+    {
+      "id": "L16-P02",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "element-concept",
+      "question": "下列关于元素的说法，正确的是？",
+      "options": ["元素是微观粒子，可以讲个数", "元素是宏观概念，只讲种类、不讲个数", "元素就是原子", "元素是分子的一种"],
+      "answer": 1,
+      "explanation": "元素是宏观概念，用于描述物质组成，只讲种类、不讲个数。",
+      "knowledgeIds": ["element-concept"]
+    },
+    {
+      "id": "L16-P03",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "element-concept",
+      "question": "地壳中含量最多的元素是？",
+      "options": ["硅", "氧", "铝", "铁"],
+      "answer": 1,
+      "explanation": "地壳中含量居前四位的元素依次是氧、硅、铝、铁，最多的是氧元素。",
+      "knowledgeIds": ["element-concept"]
+    },
+    {
+      "id": "L16-P04",
+      "type": "single",
+      "difficulty": "basic",
+      "knowledgePoint": "element-symbol",
+      "question": "下列元素符号书写正确的是？",
+      "options": ["mg", "Na", "AL", "fe"],
+      "answer": 1,
+      "explanation": "元素符号书写：一个字母大写，两个字母首字母大写、第二个小写；Na 正确，应为 Mg、Al、Fe。",
+      "knowledgeIds": ["element-concept", "element-symbol"]
+    },
+    {
+      "id": "L16-P05",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "element-concept",
+      "question": "元素符号“H”表示的意义是？",
+      "options": ["氢元素和一个氢原子", "两个氢原子", "一个氢分子", "氢元素和一个氢分子"],
+      "answer": 0,
+      "explanation": "元素符号表示一种元素，也表示该元素的一个原子，因此“H”表示氢元素和一个氢原子。",
+      "knowledgeIds": ["element-concept", "element-symbol"]
+    },
+    {
+      "id": "L16-P06",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "element-concept",
+      "question": "水（H₂O）由什么组成？",
+      "options": ["由氢原子和氧原子组成，也由氢元素和氧元素组成（前者从微观、后者从宏观角度）", "只由氢元素组成", "只由氧原子组成", "由氢分子和氧分子组成"],
+      "answer": 0,
+      "explanation": "水分子由氢原子和氧原子构成（微观），水由氢元素和氧元素组成（宏观），两种说法分别对应原子与元素。",
+      "knowledgeIds": ["element-concept"]
+    },
+    {
+      "id": "L16-P07",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "element-classify",
+      "question": "下列物质中，属于单质的是？",
+      "options": ["水（H₂O）", "氧气（O₂）", "二氧化碳（CO₂）", "氯化钠（NaCl）"],
+      "answer": 1,
+      "explanation": "单质是由同种元素组成的纯净物；氧气由氧元素组成，是单质；水、二氧化碳、氯化钠都由不同种元素组成，是化合物。",
+      "knowledgeIds": ["element-classify", "single-substance-compound"]
+    },
+    {
+      "id": "L16-P08",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "element-classify",
+      "question": "下列物质中，属于化合物的是？",
+      "options": ["氧气（O₂）", "铁（Fe）", "水（H₂O）", "氦气（He）"],
+      "answer": 2,
+      "explanation": "化合物是由不同种元素组成的纯净物；水由氢、氧两种元素组成，是化合物；氧气、铁、氦气都由一种元素组成，是单质。",
+      "knowledgeIds": ["element-classify", "single-substance-compound"]
+    },
+    {
+      "id": "L16-P09",
+      "type": "single",
+      "difficulty": "medium",
+      "knowledgePoint": "element-classify",
+      "question": "下列物质中，属于混合物的是？",
+      "options": ["氧气（O₂）", "水（H₂O）", "空气", "二氧化碳（CO₂）"],
+      "answer": 2,
+      "explanation": "空气含有氮气、氧气、二氧化碳等多种物质，是混合物；氧气、水、二氧化碳都是纯净物。",
+      "knowledgeIds": ["element-classify", "single-substance-compound"]
+    },
+    {
+      "id": "L16-P10",
+      "type": "single",
+      "difficulty": "hard",
+      "knowledgePoint": "element-classify",
+      "question": "氧气（O₂）和臭氧（O₃）的关系是？",
+      "options": ["是同一种单质", "都是由氧元素组成的不同单质", "一种含氧元素，一种不含", "都是化合物"],
+      "answer": 1,
+      "explanation": "氧气和臭氧都由氧元素组成，是同种元素组成的不同单质（同素异形体）。",
+      "knowledgeIds": ["element-classify", "element-concept"]
+    },
+    {
+      "id": "L16-P11",
+      "type": "single",
+      "difficulty": "hard",
+      "knowledgePoint": "element-concept",
+      "question": "“缺铁性贫血需要补铁”，这里的“铁”指的是？",
+      "options": ["铁原子", "铁元素", "铁单质", "铁分子"],
+      "answer": 1,
+      "explanation": "人体需要的是铁元素，元素是宏观概念，描述物质组成，不是具体的铁原子或铁单质。",
+      "knowledgeIds": ["element-concept"]
+    },
+    {
+      "id": "L16-P12",
+      "type": "single",
+      "difficulty": "hard",
+      "knowledgePoint": "element-concept",
+      "question": "下列关于“元素与原子的关系”的说法，正确的是？",
+      "options": ["元素就是原子，没有区别", "元素是质子数相同的一类原子的总称，原子是构成元素的具体微粒", "原子是宏观概念", "元素是微观粒子，可以讲个数"],
+      "answer": 1,
+      "explanation": "元素是质子数相同的一类原子的总称，是从宏观角度对原子种类的概括；原子是具体的微观粒子。",
+      "knowledgeIds": ["element-concept"]
+    }
+  ]
+}
