@@ -1,0 +1,53 @@
+{
+  "lessonId": "lesson-22-co2-preparation",
+  "questions": [
+    {
+      "id": "L22-D01",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "小华想用稀硫酸与大理石制取 CO₂，发现反应很快停止。原因最可能是？",
+      "options": [
+        "稀硫酸浓度太低",
+        "生成 CaSO₄ 覆盖大理石表面",
+        "大理石纯度不够",
+        "温度太低"
+      ],
+      "answer": 1,
+      "explanation": "生成的 CaSO₄ 微溶，覆盖在大理石表面阻止反应继续。",
+      "errorType": "mc-co2-prep-sulfuric",
+      "remediationStep": "L22-S02"
+    },
+    {
+      "id": "L22-D02",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "下列操作中，用于验满 CO₂ 的是？",
+      "options": [
+        "将石灰水倒入集气瓶",
+        "将燃着木条伸入瓶内",
+        "将燃着木条放在瓶口",
+        "闻集气瓶口气味"
+      ],
+      "answer": 2,
+      "explanation": "验满用燃着木条放在瓶口，检验用石灰水。",
+      "errorType": "mc-co2-verify-method",
+      "remediationStep": "L22-S04"
+    },
+    {
+      "id": "L22-D03",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "某同学用浓盐酸与大理石反应制取 CO₂，收集到的气体使石灰水变浑浊很慢。原因是？",
+      "options": [
+        "浓盐酸不反应",
+        "浓盐酸挥发出的 HCl 干扰了检验",
+        "大理石质量不好",
+        "温度太低"
+      ],
+      "answer": 1,
+      "explanation": "浓盐酸易挥发，HCl 气体混入 CO₂ 中，干扰石灰水检验。",
+      "errorType": "mc-co2-prep-sulfuric",
+      "remediationStep": "L22-S02"
+    }
+  ]
+}

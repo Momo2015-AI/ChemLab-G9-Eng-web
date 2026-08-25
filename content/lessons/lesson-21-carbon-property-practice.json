@@ -1,0 +1,57 @@
+{
+  "lessonId": "lesson-21-carbon-property",
+  "questions": [
+    {
+      "id": "L21-P01",
+      "type": "equation",
+      "difficulty": "medium",
+      "question": "写出下列反应的化学方程式：碳充分燃烧。",
+      "knowledgePoints": [
+        "carbon-chemical-property"
+      ],
+      "knowledgeIds": [
+        "carbon-chemical-property"
+      ]
+    },
+    {
+      "id": "L21-P02",
+      "type": "equation",
+      "difficulty": "medium",
+      "question": "写出下列反应的化学方程式：碳还原氧化铜。",
+      "knowledgePoints": [
+        "carbon-chemical-property"
+      ],
+      "knowledgeIds": [
+        "carbon-chemical-property"
+      ]
+    },
+    {
+      "id": "L21-P03",
+      "type": "mc",
+      "difficulty": "hard",
+      "question": "下列有关碳的化学性质的说法正确的是？",
+      "options": [
+        "碳在常温下易与其他物质反应",
+        "碳燃烧一定生成 CO₂",
+        "碳具有还原性，可用于冶炼金属",
+        "碳只能发生化合反应"
+      ],
+      "answer": 2,
+      "explanation": "碳具有还原性，高温下能还原金属氧化物。"
+    },
+    {
+      "id": "L21-P04",
+      "type": "mc",
+      "difficulty": "hard",
+      "question": "关于 C + 2CuO → 2Cu + CO₂↑，下列说法错误的是？",
+      "options": [
+        "该反应是置换反应",
+        "碳是还原剂",
+        "反应条件是高温",
+        "生成物中只有铜"
+      ],
+      "answer": 3,
+      "explanation": "生成物有铜和二氧化碳两种。"
+    }
+  ]
+}

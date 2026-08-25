@@ -1,0 +1,77 @@
+{
+  "lessonId": "lesson-20-carbon-allotrope",
+  "questions": [
+    {
+      "id": "L20-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "科学家发现了一种新的碳单质，它具有超导性。从「结构决定性质」的角度，推测这种新材料可能具有怎样的原子排列特征？",
+      "rubric": {
+        "modelAnswer": "该材料具有特殊的原子或分子排列结构，可能是层状、管状或笼状结构（如碳纳米管、石墨烯），这种结构使其具有超导性。",
+        "keywords": [
+          ["特殊结构", "排列方式"],
+          ["层状", "管状", "笼状", "纳米管", "石墨烯"],
+          ["结构决定性质"]
+        ],
+        "explanation": "碳单质的性质由碳原子排列方式决定，新性质暗示新结构。"
+      },
+      "knowledgeIds": ["carbon-allotrope"],
+      "misconceptionIds": ["mc-carbon-allotrope-same-element"]
+    },
+    {
+      "id": "L20-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "question": "某品牌活性炭口罩宣称「高效吸附有害气体」。请评价这一宣称的科学依据，并说明需要哪些证据来支持。",
+      "rubric": {
+        "modelAnswer": "活性炭具有吸附性，可以吸附有害气体分子，这是有科学依据的。但需要证据：吸附效率测试数据、对不同气体的吸附选择性、使用寿命等。",
+        "keywords": [
+          ["吸附性", "多孔结构"],
+          ["科学依据合理"],
+          ["需要测试数据", "实验证据"]
+        ],
+        "explanation": "活性炭吸附性是已知性质，但产品宣称需要实验数据支持。"
+      },
+      "knowledgeIds": ["carbon-allotrope"],
+      "misconceptionIds": ["mc-carbon-allotrope-same-element"]
+    },
+    {
+      "id": "L20-T03",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "create",
+      "question": "设计一个实验方案，验证某黑色粉末是石墨而非金刚石粉。写出实验步骤、预期现象和结论。",
+      "rubric": {
+        "modelAnswer": "方案一：导电性测试——连接电路，若能导电则为石墨。方案二：硬度测试——在玻璃上划，能划伤玻璃为金刚石。预期：石墨导电、质软；金刚石不导电、硬度大。",
+        "keywords": [
+          ["导电性测试", "硬度测试"],
+          ["石墨导电/软", "金刚石不导电/硬"],
+          ["实验设计合理"]
+        ],
+        "explanation": "利用金刚石和石墨物理性质的差异设计鉴别实验。"
+      },
+      "knowledgeIds": ["carbon-allotrope"],
+      "misconceptionIds": ["mc-carbon-allotrope-same-element"]
+    },
+    {
+      "id": "L20-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "同一元素组成的物质，物理性质可以完全不同。请举出至少两个其他元素的同素异形体现象，并解释其性质差异的原因。",
+      "rubric": {
+        "modelAnswer": "例子：氧气(O2)和臭氧(O3)，性质不同因为分子构成不同；红磷和白磷，性质不同因为原子排列方式不同。核心原因：结构不同导致性质不同。",
+        "keywords": [
+          ["同素异形体", "结构差异"],
+          ["O2/O3", "红磷/白磷"],
+          ["结构决定性质"]
+        ],
+        "explanation": "同种元素可形成不同单质，结构差异导致性质差异。"
+      },
+      "knowledgeIds": ["carbon-allotrope"],
+      "misconceptionIds": ["mc-carbon-allotrope-same-element"]
+    }
+  ]
+}

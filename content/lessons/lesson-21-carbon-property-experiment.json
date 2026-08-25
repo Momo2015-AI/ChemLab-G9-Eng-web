@@ -1,0 +1,41 @@
+{
+  "lessonId": "lesson-21-carbon-property",
+  "experiments": [
+    {
+      "id": "L21-E01",
+      "title": "木炭还原氧化铜",
+      "type": "demonstration",
+      "instruments": [
+        "试管",
+        "酒精灯",
+        "铁架台",
+        "导管",
+        "石灰水"
+      ],
+      "safety": "高温操作，注意烫伤。",
+      "goal": "验证碳的还原性。",
+      "steps": [
+        {
+          "step": 1,
+          "action": "将木炭粉与氧化铜粉末混合均匀放入试管",
+          "record": "观察混合物颜色"
+        },
+        {
+          "step": 2,
+          "action": "加热混合物",
+          "record": "观察试管内变化"
+        },
+        {
+          "step": 3,
+          "action": "将生成气体通入澄清石灰水",
+          "record": "观察石灰水变化"
+        }
+      ],
+      "observationGuidance": [
+        "黑色粉末变为红色（铜生成）",
+        "石灰水变浑浊（CO₂ 生成）"
+      ],
+      "conclusion": "碳具有还原性，能还原氧化铜：C + 2CuO → 2Cu + CO₂↑（高温）。"
+    }
+  ]
+}

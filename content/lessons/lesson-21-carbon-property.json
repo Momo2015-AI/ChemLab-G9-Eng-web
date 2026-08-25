@@ -1,0 +1,67 @@
+{
+  "id": "lesson-21-carbon-property",
+  "sequenceNumber": 21,
+  "day": "21",
+  "title": "碳的化学性质",
+  "module": "unit-06-carbon-oxides",
+  "semester": "upper",
+  "unitId": "u06",
+  "duration": "45 分钟",
+  "description": "学习碳在常温下的稳定性以及高温下的可燃性和还原性，重点掌握 C+2CuO→2Cu+CO₂ 反应。",
+  "status": "ready",
+  "releaseStatus": "ready",
+  "learningObjectives": [
+    "理解碳在常温下化学性质稳定，可长期保存。",
+    "掌握碳的两种燃烧反应及条件区分（充分/不充分燃烧）。",
+    "掌握碳的还原性：C + 2CuO → 2Cu + CO₂↑，能描述现象与判断产物。"
+  ],
+  "knowledgePoints": ["carbon-chemical-property"],
+  "prerequisites": ["lesson-20-carbon-allotrope", "lesson-05-equation-writing"],
+  "misconceptionIds": ["mc-carbon-reduce-cuo"],
+  "guidedLearning": {
+    "stepCount": 8,
+    "steps": [
+      { "id": "L21-S01", "title": "情境引入：古字画为何能保存千年？", "type": "engage", "body": ["古代字画由墨（主要成分碳）书写，千年不褪色。", "说明碳在常温下化学性质很稳定。"], "knowledgePoints": ["carbon-chemical-property"], "check": { "question": "古代字画能长久保存的原因是？", "options": ["碳在常温下化学性质稳定", "墨的浓度很高", "纸张特别耐用", "墨水有特殊配方"], "answer": 0, "explanation": "墨的主要成分是碳，常温下碳化学性质稳定，不易与其他物质反应。" } },
+      { "id": "L21-S02", "title": "核心概念：碳的稳定性", "type": "content", "body": ["常温下：碳化学性质不活泼。", "应用：古代字画、档案文件用碳素墨水书写可长期保存。"], "knowledgePoints": ["carbon-chemical-property"], "check": { "question": "下列用途中，利用碳常温下稳定性的是？", "options": ["木炭取暖", "焦炭炼铁", "碳素墨水书写档案", "金刚石切割玻璃"], "answer": 2, "explanation": "碳素墨水含碳，常温下稳定，适合书写需长期保存的文件。" } },
+      { "id": "L21-S03", "title": "碳的可燃性", "type": "content", "body": ["充分燃烧：C + O₂ → CO₂（点燃）。", "不充分燃烧：2C + O₂ → 2CO（点燃）。", "氧气充足时生成 CO₂，不足时生成 CO。"], "knowledgePoints": ["carbon-chemical-property"], "check": { "question": "碳在氧气中充分燃烧生成的气体是？", "options": ["CO", "CO₂", "O₂", "H₂"], "answer": 1, "explanation": "碳充分燃烧生成二氧化碳。" } },
+      { "id": "L21-S04", "title": "核心实验：木炭还原氧化铜", "type": "experiment", "body": ["实验：将木炭粉与氧化铜粉末混合加热。", "现象：黑色粉末变红，生成使澄清石灰水变浑浊的气体。", "结论：C + 2CuO → 2Cu + CO₂↑（高温）。", "碳夺去氧化铜中的氧，具有还原性。"], "knowledgePoints": ["carbon-chemical-property"], "check": null },
+      { "id": "L21-S05", "title": "误区警示：还原反应", "type": "misconception", "body": ["误区：认为碳还原氧化铜在高温下进行即可。", "纠正：除了温度条件，还需理解碳是还原剂，氧化铜是氧化剂。"], "knowledgePoints": ["carbon-chemical-property"], "check": { "question": "关于 C + 2CuO → 2Cu + CO₂↑，下列说法错误的是？", "options": ["碳具有还原性", "氧化铜被还原成铜", "反应条件是高温", "碳是氧化剂"], "answer": 3, "explanation": "碳夺去氧，是还原剂；氧化铜失去氧，是氧化剂。" } },
+      { "id": "L21-S06", "title": "碳的还原性应用", "type": "application", "body": ["工业炼铁：C + Fe₂O₃ → Fe + CO₂（高温），焦炭作还原剂。", "冶炼金属：利用碳的还原性从矿石中提取金属。"], "knowledgePoints": ["carbon-chemical-property"], "check": null },
+      { "id": "L21-S07", "title": "应用练习：方程式书写", "type": "practice", "body": ["写出下列反应的化学方程式：", "①碳充分燃烧；②碳不充分燃烧；③碳还原氧化铜。"], "knowledgePoints": ["carbon-chemical-property"], "check": null },
+      { "id": "L21-S08", "title": "知识小结", "type": "summary", "body": ["常温稳定：碳素墨水、字画保存。", "可燃性：C + O₂ → CO₂（充分）；2C + O₂ → 2CO（不充分）。", "还原性：C + 2CuO → 2Cu + CO₂↑（高温）。", "下节课学习二氧化碳的制取。"], "knowledgePoints": ["carbon-chemical-property"], "check": null }
+    ]
+  },
+  "resourceRefs": {
+    "experiment": "content/lessons/lesson-21-carbon-property-experiment.json",
+    "practice": "content/lessons/lesson-21-carbon-property-practice.json",
+    "diagnostic": "content/lessons/lesson-21-carbon-property-diagnostic.json",
+    "mastery": "content/lessons/lesson-21-carbon-property-mastery.json",
+    "guidedLearning": "content/lessons/lesson-21-carbon-property-guided-learning.json",
+    "transfer": "content/lessons/lesson-21-carbon-property-transfer.json"
+  },
+  "experiments": [
+    { "id": "L21-E01", "title": "木炭还原氧化铜", "type": "demonstration", "instruments": ["试管", "酒精灯", "铁架台", "导管", "石灰水"], "safety": "高温操作，注意烫伤。", "goal": "验证碳的还原性。", "steps": [{ "step": 1, "action": "将木炭粉与氧化铜粉末混合均匀放入试管", "record": "观察混合物颜色" }, { "step": 2, "action": "加热混合物", "record": "观察试管内变化" }, { "step": 3, "action": "将生成气体通入澄清石灰水", "record": "观察石灰水变化" }], "observationGuidance": ["黑色粉末变为红色（铜生成）", "石灰水变浑浊（CO₂ 生成）"], "conclusion": "碳具有还原性，能还原氧化铜：C + 2CuO → 2Cu + CO₂↑（高温）。" }
+  ],
+  "questions": [
+    { "id": "L21-Q01", "type": "concept", "difficulty": "basic", "question": "古代字画能保存至今，主要原因是？", "options": ["纸质量好", "碳在常温下化学性质稳定", "墨水很珍贵", "经常观赏"], "answer": 1, "knowledgeIds": ["carbon-chemical-property"], "knowledgePoints": ["carbon-chemical-property"], "explanation": "墨的主要成分是碳，常温下碳化学性质稳定，不易变质。" },
+    { "id": "L21-Q02", "type": "concept", "difficulty": "basic", "question": "碳充分燃烧的产物是？", "options": ["CO", "CO₂", "C", "H₂O"], "answer": 1, "knowledgeIds": ["carbon-chemical-property"], "knowledgePoints": ["carbon-chemical-property"], "explanation": "碳在氧气充足时充分燃烧生成 CO₂。" },
+    { "id": "L21-Q03", "type": "concept", "difficulty": "medium", "question": "C + 2CuO → 2Cu + CO₂↑ 中，还原剂是？", "options": ["CuO", "Cu", "C", "CO₂"], "answer": 2, "knowledgeIds": ["carbon-chemical-property"], "knowledgePoints": ["carbon-chemical-property"], "explanation": "碳夺去氧化铜中的氧，是还原剂。" },
+    { "id": "L21-Q04", "type": "concept", "difficulty": "medium", "question": "下列实验中，能证明碳具有还原性的是？", "options": ["碳在氧气中燃烧", "碳还原氧化铜", "碳素墨水书写", "活性炭吸附"], "answer": 1, "knowledgeIds": ["carbon-chemical-property"], "knowledgePoints": ["carbon-chemical-property"], "explanation": "碳还原氧化铜是典型的还原反应实验。" },
+    { "id": "L21-Q05", "type": "equation", "difficulty": "hard", "question": "写出木炭还原氧化铜的化学方程式。", "answer": "C + 2CuO --高温--> 2Cu + CO2", "knowledgeIds": ["carbon-chemical-property"], "knowledgePoints": ["carbon-chemical-property"], "explanation": "注意条件高温，配平：C + 2CuO → 2Cu + CO₂↑。" },
+    { "id": "L21-Q06", "type": "concept", "difficulty": "hard", "question": "关于 C + 2CuO → 2Cu + CO₂↑，下列说法正确的是？", "options": ["反应中碳被还原", "氧化铜是还原剂", "反应条件是高温", "生成物只有铜"], "answer": 2, "knowledgeIds": ["carbon-chemical-property"], "knowledgePoints": ["carbon-chemical-property"], "explanation": "反应条件是高温，碳是还原剂（被氧化），氧化铜是氧化剂（被还原）。" }
+  ],
+  "diagnosticQuestions": [
+    { "id": "L21-D01", "type": "concept", "difficulty": "medium", "question": "小红在做木炭还原氧化铜实验后总结：黑色粉末变红说明生成了铜。她的结论是否正确？", "options": ["正确，黑色氧化铜变为红色铜", "不正确，红色可能是其他物质", "正确，因为碳过量", "不正确，因为需要高温"], "answer": 0, "knowledgeIds": ["carbon-chemical-property"], "knowledgePoints": ["carbon-chemical-property"], "explanation": "氧化铜（黑色）被还原为铜（红色），这是实验的主要现象之一。", "errorType": "mc-carbon-reduce-cuo", "remediationStep": "L21-S05" },
+    { "id": "L21-D02", "type": "concept", "difficulty": "medium", "question": "在 C + 2CuO → 2Cu + CO₂↑ 反应中，碳体现的性质是？", "options": ["可燃性", "还原性", "稳定性", "吸附性"], "answer": 1, "knowledgeIds": ["carbon-chemical-property"], "knowledgePoints": ["carbon-chemical-property"], "explanation": "碳夺取氧化铜中的氧，体现还原性。", "errorType": "mc-carbon-reduce-cuo", "remediationStep": "L21-S05" },
+    { "id": "L21-D03", "type": "equation", "difficulty": "hard", "question": "下列化学方程式书写正确的是？", "options": ["C + CuO → Cu + CO₂", "C + 2CuO → 2Cu + CO₂↑（高温）", "2C + O₂ → 2CO₂", "C + O₂ → CO₂（点燃）"], "answer": 1, "knowledgeIds": ["carbon-chemical-property"], "knowledgePoints": ["carbon-chemical-property"], "explanation": "碳还原氧化铜需注明高温条件，生成 CO₂ 要标气体符号。", "errorType": "mc-carbon-reduce-cuo", "remediationStep": "L21-S05" }
+  ],
+  "sections": [
+    { "title": "本节课要掌握什么？", "body": ["碳在常温下化学性质稳定。", "碳具有可燃性和还原性。", "木炭还原氧化铜的实验现象与方程式。"] },
+    { "title": "核心实验", "body": ["木炭还原氧化铜：黑色粉末变红，生成使石灰水变浑浊的气体。"] },
+    { "title": "核心概念", "body": ["还原剂：碳（夺氧）。", "氧化剂：氧化铜（失氧）。", "反应条件：高温。"] },
+    { "title": "常见误区", "body": ["混淆碳的还原性和可燃性。", "误认为碳是氧化剂。"] },
+    { "title": "学习方法", "body": ["对比记忆：碳的三种性质（稳定性、可燃性、还原性）。", "实验现象→结论→方程式的完整推导。"] }
+  ],
+  "provenance": { "status": "ready", "basis": "人教版九年级化学上册第六单元课题1第2课时；2022年版义务教育化学课程标准。", "note": "内容原创，不复制教材原文。" },
+  "review": { "curriculum": "pass", "scientific": "pass", "ageSuitability": "pass", "itemQuality": "pass", "knowledgeLinks": "pass", "wuhanAlignment": "pass", "masteryGate": "pass", "blockingIssues": [] }
+}

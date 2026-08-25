@@ -1,0 +1,53 @@
+{
+  "lessonId": "lesson-24-co-property",
+  "questions": [
+    {
+      "id": "L24-D01",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "小明认为 CO 有刺激性气味，这是错误的。CO 的实际气味特征是？",
+      "options": [
+        "有刺激性气味",
+        "有臭味",
+        "无色无味",
+        "有甜味"
+      ],
+      "answer": 2,
+      "explanation": "CO 无色无味，难以察觉，这是它危险的原因。",
+      "errorType": "mc-co-poison-mechanism",
+      "remediationStep": "L24-S04"
+    },
+    {
+      "id": "L24-D02",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "下列关于 CO 和 CO₂ 的说法正确的是？",
+      "options": [
+        "都能使石灰水变浑浊",
+        "CO 有毒，CO₂ 无毒",
+        "都能燃烧",
+        "密度都大于空气"
+      ],
+      "answer": 1,
+      "explanation": "CO 有毒，CO₂ 无毒（浓度过高会窒息但不直接有毒）。",
+      "errorType": "mc-co-co2-distinguish",
+      "remediationStep": "L24-S07"
+    },
+    {
+      "id": "L24-D03",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "CO 还原氧化铜实验结束时的正确操作顺序是？",
+      "options": [
+        "先停止通 CO，再熄灭酒精灯",
+        "先熄灭酒精灯，继续通 CO 至冷却",
+        "同时停止通 CO 和熄灭酒精灯",
+        "先熄灭酒精灯，立即停止通 CO"
+      ],
+      "answer": 1,
+      "explanation": "先熄灭酒精灯，继续通 CO 至冷却，防止热的铜被氧化。",
+      "errorType": "mc-co-poison-mechanism",
+      "remediationStep": "L24-S05"
+    }
+  ]
+}

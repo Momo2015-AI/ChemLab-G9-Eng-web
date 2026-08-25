@@ -1,0 +1,71 @@
+{
+  "lessonId": "lesson-20-carbon-allotrope",
+  "questions": [
+    {
+      "id": "L20-D01",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "小明认为金刚石和石墨是不同的物质，因为它们的物理性质差异很大。他的错误在于？",
+      "options": [
+        "忽略了它们都是由碳元素组成的",
+        "物理性质差异大说明是不同的物质",
+        "金刚石不是碳单质",
+        "石墨不是碳单质"
+      ],
+      "answer": 0,
+      "knowledgeIds": [
+        "carbon-allotrope"
+      ],
+      "knowledgePoints": [
+        "carbon-allotrope"
+      ],
+      "explanation": "金刚石和石墨都是由碳元素组成的单质，互为同素异形体。",
+      "errorType": "mc-carbon-allotrope-same-element",
+      "remediationStep": "L20-S06"
+    },
+    {
+      "id": "L20-D02",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "活性炭能除去水中的色素和异味，这是因为活性炭具有？",
+      "options": [
+        "化学反应性",
+        "吸附性",
+        "导电性",
+        "硬度大"
+      ],
+      "answer": 1,
+      "knowledgeIds": [
+        "carbon-allotrope"
+      ],
+      "knowledgePoints": [
+        "carbon-allotrope"
+      ],
+      "explanation": "活性炭疏松多孔，具有强吸附性。",
+      "errorType": "mc-carbon-allotrope-same-element",
+      "remediationStep": "L20-S04"
+    },
+    {
+      "id": "L20-D03",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "下列碳单质的用途与性质对应错误的是？",
+      "options": [
+        "金刚石—切割玻璃—硬度大",
+        "石墨—电极—导电性",
+        "活性炭—净水—吸附性",
+        "C60—超导材料—稳定性"
+      ],
+      "answer": 3,
+      "knowledgeIds": [
+        "carbon-allotrope"
+      ],
+      "knowledgePoints": [
+        "carbon-allotrope"
+      ],
+      "explanation": "C60 在超导材料方面有应用，但不是利用其稳定性。",
+      "errorType": "mc-carbon-allotrope-same-element",
+      "remediationStep": "L20-S04"
+    }
+  ]
+}

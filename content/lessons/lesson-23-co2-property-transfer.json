@@ -1,0 +1,77 @@
+{
+  "lessonId": "lesson-23-co2-property",
+  "questions": [
+    {
+      "id": "L23-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "久未开启的地窖中CO2浓度可能很高。进入前做灯火试验，火焰熄灭说明CO2浓度过高。请用CO2的性质解释这一检验方法的原理，并说明其安全性。",
+      "rubric": {
+        "modelAnswer": "CO2密度大于空气，积聚在地窖底部；CO2不燃烧也不支持燃烧，火焰熄灭说明CO2浓度高。但灯火试验不能检测CO毒性（CO无味），需注意通风。",
+        "keywords": [
+          ["CO2密度大", "积聚底部"],
+          ["不支持燃烧"],
+          ["火焰熄灭→CO2浓度高"]
+        ],
+        "explanation": "利用CO2的物理和化学性质进行安全检验。"
+      },
+      "knowledgeIds": ["co2-property"],
+      "misconceptionIds": ["mc-co2-limewater"]
+    },
+    {
+      "id": "L23-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "create",
+      "question": "设计一个实验证明CO2密度大于空气。写出实验用品、步骤、预期现象和结论。",
+      "rubric": {
+        "modelAnswer": "用品：烧杯、阶梯蜡烛、CO2发生装置。步骤：点燃阶梯蜡烛，从烧杯高处倾倒CO2。现象：下层蜡烛先熄灭，上层后熄灭。结论：CO2密度大于空气。",
+        "keywords": [
+          ["阶梯蜡烛实验"],
+          ["下层先灭"],
+          ["密度大于空气"]
+        ],
+        "explanation": "通过蜡烛熄灭顺序直观比较气体密度。"
+      },
+      "knowledgeIds": ["co2-property"],
+      "misconceptionIds": ["mc-co2-limewater"]
+    },
+    {
+      "id": "L23-T03",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "question": "某同学将CO2通入紫色石蕊试液，溶液变红。他得出结论：CO2是酸性气体。请评价该结论是否准确，并说明理由。",
+      "rubric": {
+        "modelAnswer": "结论不准确。CO2本身不是酸，是酸性氧化物。使石蕊变红的是CO2与水反应生成的碳酸（H2CO3），不是CO2分子本身。",
+        "keywords": [
+          ["CO2不是酸", "酸性氧化物"],
+          ["碳酸使石蕊变红"],
+          ["CO2与水反应"]
+        ],
+        "explanation": "区分物质的类别和它与水反应产物的性质。"
+      },
+      "knowledgeIds": ["co2-property"],
+      "misconceptionIds": ["mc-co2-limewater"]
+    },
+    {
+      "id": "L23-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "温室效应在维持地球温度方面必不可少，但增强温室效应带来环境问题。请从CO2的性质角度分析温室效应的成因，并提出减少CO2排放的可行措施。",
+      "rubric": {
+        "modelAnswer": "成因：CO2能吸收地面辐射的红外线，使热量不易散失。措施：减少化石燃料使用、植树造林、开发新能源、提高能源利用率。",
+        "keywords": [
+          ["吸收红外线", "热量滞留"],
+          ["减少排放"],
+          ["植树造林/新能源"]
+        ],
+        "explanation": "理解CO2的双重角色：生命必需但过量有害。"
+      },
+      "knowledgeIds": ["co2-property"],
+      "misconceptionIds": ["mc-co2-limewater"]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "lessonId": "lesson-24-co-property",
+  "stepCount": 8,
+  "steps": [
+    {"id": "L24-S01", "title": "情境引入：煤气中毒的真相", "type": "engage", "body": ["冬天用煤炉取暖，关闭门窗容易发生中毒。", "煤气中的一氧化碳有什么危害？"], "knowledgePoints": ["co-property"], "check": {"question": "煤气中毒主要是哪种气体引起的？", "options": ["CO₂", "CO", "O₂", "N₂"], "answer": 1, "explanation": "煤气中的一氧化碳与血红蛋白结合，阻碍氧气运输。"}},
+    {"id": "L24-S02", "title": "物理性质", "type": "content", "body": ["无色无味的气体，密度略小于空气，难溶于水。", "极易与血红蛋白结合，造成中毒。"], "knowledgePoints": ["co-property"], "check": {"question": "CO 的下列性质属于物理性质的是？", "options": ["可燃性", "毒性", "无色无味的气体", "还原性"], "answer": 2, "explanation": "颜色、气味、状态属于物理性质。"}},
+    {"id": "L24-S03", "title": "可燃性", "type": "content", "body": ["2CO + O₂ → 2CO₂（点燃），蓝色火焰。", "燃烧产物是 CO₂，可用于燃料。", "点燃前必须验纯。"], "knowledgePoints": ["co-property"], "check": {"question": "CO 燃烧的现象是？", "options": ["发出白光", "产生蓝色火焰", "产生黄色火焰", "发出淡蓝色火焰"], "answer": 1, "explanation": "CO 燃烧产生蓝色火焰，生成 CO₂。"}},
+    {"id": "L24-S04", "title": "毒性机制", "type": "content", "body": ["CO 与血红蛋白结合能力比 O₂ 强约 200 倍。", "结合后阻碍氧气运输，造成组织缺氧。", "中毒急救：立即通风、转移至空气新鲜处。"], "knowledgePoints": ["co-property"], "check": {"question": "CO 中毒的原理是？", "options": ["CO 腐蚀呼吸道", "CO 与血红蛋白结合阻碍 O₂ 运输", "CO 刺激肺部", "CO 使血液凝固"], "answer": 1, "explanation": "CO 与血红蛋白结合能力比 O₂ 强约 200 倍，阻碍氧气运输。"}},
+    {"id": "L24-S05", "title": "实验演示：CO 还原氧化铜", "type": "experiment", "body": ["CO + CuO → Cu + CO₂（加热）。", "现象：黑色粉末变红，生成使石灰水变浑浊的气体。", "注意：CO 有毒，需要尾气处理（点燃或收集）。"], "knowledgePoints": ["co-property"], "check": null},
+    {"id": "L24-S06", "title": "误区警示：CO 中毒", "type": "misconception", "body": ["误区：CO 有刺激性气味或腐蚀性。", "纠正：CO 无色无味，中毒机制是与血红蛋白结合，而非刺激或腐蚀。"], "knowledgePoints": ["co-property"], "check": {"question": "关于 CO 中毒，下列说法正确的是？", "options": ["CO 有刺激性气味", "CO 腐蚀呼吸道", "CO 与血红蛋白结合阻碍 O₂ 运输", "CO 中毒应立即人工呼吸"], "answer": 2, "explanation": "CO 无色无味，中毒机制是与血红蛋白结合阻碍 O₂ 运输。"}},
+    {"id": "L24-S07", "title": "CO 与 CO₂ 的鉴别", "type": "application", "body": ["方法一：燃着木条——CO 能燃烧（蓝色火焰），CO₂ 使木条熄灭。", "方法二：石灰水——CO 不反应，CO₂ 使石灰水变浑浊。", "方法三：石蕊——CO 不反应，CO₂ 使石蕊变红。"], "knowledgePoints": ["co-property"], "check": {"question": "鉴别 CO 和 CO₂ 不可行的方法是？", "options": ["燃着木条", "澄清石灰水", "闻气味", "紫色石蕊试液"], "answer": 2, "explanation": "CO 和 CO₂ 都是无色无味的气体，无法用闻气味鉴别。"}},
+    {"id": "L24-S08", "title": "知识小结", "type": "summary", "body": ["CO 的物理性质：无色无味、密度略小于空气、难溶于水。", "CO 的化学性质：可燃、有毒、还原。", "CO 与 CO₂ 的鉴别方法。", "安全要求：CO 有毒，尾气需处理。"], "knowledgePoints": ["co-property"], "check": null}
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "lessonId": "lesson-24-co-property",
+  "questions": [
+    {
+      "id": "L24-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "冬天用煤炉取暖时，为什么要在室内安装烟囱并保持通风？请用CO的性质解释这一安全措施的科学依据。",
+      "rubric": {
+        "modelAnswer": "煤不完全燃烧产生CO，CO无色无味有毒，与血红蛋白结合阻碍O2运输。烟囱导出CO，通风降低CO浓度，预防中毒。",
+        "keywords": [
+          ["煤不完全燃烧生成CO"],
+          ["CO与血红蛋白结合"],
+          ["通风降低浓度"]
+        ],
+        "explanation": "理解CO毒性机制，制定针对性的防护措施。"
+      },
+      "knowledgeIds": ["co-property"],
+      "misconceptionIds": ["mc-co-poison-mechanism"]
+    },
+    {
+      "id": "L24-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "create",
+      "question": "现有两瓶无色气体，已知分别是CO和CO2。请设计至少两种不同的鉴别方案，写出实验步骤、预期现象和结论。",
+      "rubric": {
+        "modelAnswer": "方案一：燃着木条——燃烧的是CO，熄灭的是CO2。方案二：石灰水——变浑浊的是CO2，无变化的是CO。方案三：石蕊——变红的是CO2，无变化的是CO。",
+        "keywords": [
+          ["燃着木条/石灰水/石蕊"],
+          ["CO可燃/CO2不支持燃烧"],
+          ["多种鉴别方法"]
+        ],
+        "explanation": "利用CO和CO2性质差异设计鉴别方案。"
+      },
+      "knowledgeIds": ["co-property"],
+      "misconceptionIds": ["mc-co-co2-distinguish"]
+    },
+    {
+      "id": "L24-T03",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "question": "某化工厂尾气中含有少量CO，直接排放会污染空气。请评价以下处理方案的可行性：方案A——直接点燃；方案B——用石灰水吸收；方案C——排放到高空稀释。",
+      "rubric": {
+        "modelAnswer": "方案A可行，CO可燃生成CO2。方案B不可行，CO不与石灰水反应。方案C不可行，高空稀释不能消除污染，且CO有毒。",
+        "keywords": [
+          ["CO可燃性"],
+          ["CO不与碱反应"],
+          ["直接点燃最有效"]
+        ],
+        "explanation": "根据物质性质评价处理方案的合理性。"
+      },
+      "knowledgeIds": ["co-property"],
+      "misconceptionIds": ["mc-co-poison-mechanism"]
+    },
+    {
+      "id": "L24-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "CO和CO2分子组成仅相差一个氧原子，但性质差异巨大。请从分子结构角度解释这种差异，并说明这体现了化学中的什么重要思想。",
+      "rubric": {
+        "modelAnswer": "CO分子含一个碳氧三键，有孤对电子，能与血红蛋白结合；CO2分子是直线型O=C=O，结构对称稳定。体现「结构决定性质」的核心思想。",
+        "keywords": [
+          ["分子结构不同"],
+          ["结构决定性质"],
+          ["微小差异导致巨大性质变化"]
+        ],
+        "explanation": "分子水平的结构差异是宏观性质差异的根本原因。"
+      },
+      "knowledgeIds": ["co-property"],
+      "misconceptionIds": ["mc-co-co2-distinguish"]
+    }
+  ]
+}

@@ -1263,6 +1263,147 @@
       "misconceptionIds": [],
       "remediationGoal": "能根据反应物、生成物的种类数目判断分解反应，理解分解反应与化合反应互为相对概念。",
       "questions": []
+    },
+    {
+      "id": "carbon-allotrope",
+      "name": "碳的单质",
+      "chapter": "第六单元 碳和碳的氧化物",
+      "domain": "substance",
+      "bloomLevels": [
+        "remember",
+        "understand",
+        "analyze"
+      ],
+      "semester": "upper",
+      "unitId": "u06",
+      "definition": "金刚石、石墨、C60等均由碳元素组成的单质，物理性质差异大（源于原子排列方式不同），化学性质相似；木炭、活性炭等无定形碳具有吸附性。",
+      "prerequisiteIds": [
+        "element-concept",
+        "chemical-formula"
+      ],
+      "misconceptionIds": [
+        "mc-carbon-allotrope-same-element"
+      ],
+      "remediationGoal": "理解同种元素可形成不同单质，物理性质由结构决定，化学性质由元素种类决定。",
+      "questions": [
+        "L20-Q01",
+        "L20-Q02",
+        "L20-D01",
+        "L20-T01"
+      ]
+    },
+    {
+      "id": "carbon-chemical-property",
+      "name": "碳的化学性质",
+      "chapter": "第六单元 碳和碳的氧化物",
+      "domain": "reaction",
+      "bloomLevels": [
+        "understand",
+        "apply",
+        "analyze"
+      ],
+      "semester": "upper",
+      "unitId": "u06",
+      "definition": "碳在常温下化学性质稳定；可燃性（C+O2→CO2，2C+O2→2CO）；还原性（C+2CuO→2Cu+CO2↑，高温条件）。",
+      "prerequisiteIds": [
+        "carbon-allotrope",
+        "chemical-change"
+      ],
+      "misconceptionIds": [
+        "mc-carbon-reduce-cuo"
+      ],
+      "remediationGoal": "掌握碳的稳定性、可燃性与还原性，能写方程并描述实验现象。",
+      "questions": [
+        "L21-Q01",
+        "L21-Q02",
+        "L21-D01",
+        "L21-T01"
+      ]
+    },
+    {
+      "id": "co2-preparation",
+      "name": "二氧化碳的制取",
+      "chapter": "第六单元 碳和碳的氧化物",
+      "domain": "operation",
+      "bloomLevels": [
+        "understand",
+        "apply",
+        "analyze"
+      ],
+      "semester": "upper",
+      "unitId": "u06",
+      "definition": "实验室用大理石/石灰石与稀盐酸反应（CaCO3+2HCl→CaCl2+H2O+CO2↑）制取CO2，固液常温型装置，向上排空气法收集，石灰水检验，燃着木条瓶口验满。",
+      "prerequisiteIds": [
+        "lab-operations",
+        "equation-writing"
+      ],
+      "misconceptionIds": [
+        "mc-co2-prep-sulfuric",
+        "mc-co2-verify-method"
+      ],
+      "remediationGoal": "掌握CO2制取的试剂选择、装置原理、收集方法及检验验满的区分。",
+      "questions": [
+        "L22-Q01",
+        "L22-Q02",
+        "L22-D01",
+        "L22-T01"
+      ]
+    },
+    {
+      "id": "co2-property",
+      "name": "二氧化碳的性质",
+      "chapter": "第六单元 碳和碳的氧化物",
+      "domain": "substance",
+      "bloomLevels": [
+        "remember",
+        "understand",
+        "apply"
+      ],
+      "semester": "upper",
+      "unitId": "u06",
+      "definition": "CO2无色无味、密度大于空气、能溶于水；不燃烧也不支持燃烧，与水反应生成碳酸（H2CO3），使澄清石灰水变浑浊；固态CO2即干冰，升华吸热。",
+      "prerequisiteIds": [
+        "co2-preparation"
+      ],
+      "misconceptionIds": [
+        "mc-co2-limewater"
+      ],
+      "remediationGoal": "掌握CO2的物理与化学性质，理解其作为反应物与灭火剂的双重角色。",
+      "questions": [
+        "L23-Q01",
+        "L23-Q02",
+        "L23-D01",
+        "L23-T01"
+      ]
+    },
+    {
+      "id": "co-property",
+      "name": "一氧化碳的性质",
+      "chapter": "第六单元 碳和碳的氧化物",
+      "domain": "substance",
+      "bloomLevels": [
+        "understand",
+        "apply",
+        "analyze"
+      ],
+      "semester": "upper",
+      "unitId": "u06",
+      "definition": "CO无色无味、难溶于水、密度略小于空气；可燃（2CO+O2→2CO2，蓝色火焰）；有毒（与血红蛋白结合，阻碍氧的运输）；有还原性（CO+CuO→Cu+CO2）。",
+      "prerequisiteIds": [
+        "co2-property",
+        "carbon-chemical-property"
+      ],
+      "misconceptionIds": [
+        "mc-co-poison-mechanism",
+        "mc-co-co2-distinguish"
+      ],
+      "remediationGoal": "掌握CO的可燃、毒性、还原三大性质，能与CO2正确鉴别并处理安全问题。",
+      "questions": [
+        "L24-Q01",
+        "L24-Q02",
+        "L24-D01",
+        "L24-T01"
+      ]
     }
   ],
   "relations": [
@@ -2880,6 +3021,46 @@
       "source": "oxygen-preparation",
       "target": "decomposition-reaction",
       "type": "related"
+    },
+    {
+      "source": "carbon-allotrope",
+      "target": "carbon-chemical-property",
+      "type": "prerequisite"
+    },
+    {
+      "source": "carbon-chemical-property",
+      "target": "co2-preparation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "co2-preparation",
+      "target": "co2-property",
+      "type": "prerequisite"
+    },
+    {
+      "source": "co2-property",
+      "target": "co-property",
+      "type": "prerequisite"
+    },
+    {
+      "source": "element-concept",
+      "target": "carbon-allotrope",
+      "type": "prerequisite"
+    },
+    {
+      "source": "chemical-change",
+      "target": "carbon-chemical-property",
+      "type": "prerequisite"
+    },
+    {
+      "source": "lab-operations",
+      "target": "co2-preparation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "carbon-chemical-property",
+      "target": "co-property",
+      "type": "prerequisite"
     }
   ]
 }

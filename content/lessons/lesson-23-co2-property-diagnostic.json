@@ -1,0 +1,51 @@
+{
+  "lessonId": "lesson-23-co2-property",
+  "questions": [
+    {
+      "id": "L23-D01",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "某同学认为 CO₂ 使紫色石蕊变红，这个说法不够准确，原因是？",
+      "options": [
+        "CO₂ 本身能使石蕊变红",
+        "是水使石蕊变红",
+        "是 CO₂ 与水反应生成的碳酸使石蕊变红",
+        "石蕊本身是红色的"
+      ],
+      "answer": 2,
+      "explanation": "干燥的 CO₂ 不能使石蕊变红，是 CO₂ 与水反应生成的碳酸使其变红。",
+      "errorType": "mc-co2-limewater",
+      "remediationStep": "L23-S04"
+    },
+    {
+      "id": "L23-D02",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "向澄清石灰水中通入过量 CO₂，先变浑浊后变澄清，这是因为？",
+      "options": [
+        "CaCO₃ 继续与 CO₂ 反应生成可溶的 Ca(HCO₃)₂",
+        "石灰水变质",
+        "CO₂ 溶于水",
+        "温度变化"
+      ],
+      "answer": 0,
+      "explanation": "过量 CO₂ 与 CaCO₃ 和水反应生成可溶的碳酸氢钙。",
+      "errorType": "mc-co2-limewater",
+      "remediationStep": "L23-S05"
+    },
+    {
+      "id": "L23-D03",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "下列 CO₂ 的用途中，同时利用物理和化学性质的是？",
+      "options": [
+        "干冰人工降雨",
+        "CO₂ 灭火",
+        "CO₂ 制碳酸饮料",
+        "CO₂ 气体肥料"
+      ],
+      "answer": 2,
+      "explanation": "制碳酸饮料利用了 CO₂ 能溶于水（物理）和与水反应（化学）。"
+    }
+  ]
+}

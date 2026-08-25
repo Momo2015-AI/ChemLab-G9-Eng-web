@@ -1,0 +1,53 @@
+{
+  "lessonId": "lesson-21-carbon-property",
+  "questions": [
+    {
+      "id": "L21-D01",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "小红在做木炭还原氧化铜实验后总结：黑色粉末变红说明生成了铜。她的结论是否正确？",
+      "options": [
+        "正确，黑色氧化铜变为红色铜",
+        "不正确，红色可能是其他物质",
+        "正确，因为碳过量",
+        "不正确，因为需要高温"
+      ],
+      "answer": 0,
+      "explanation": "氧化铜（黑色）被还原为铜（红色），这是实验的主要现象之一。",
+      "errorType": "mc-carbon-reduce-cuo",
+      "remediationStep": "L21-S05"
+    },
+    {
+      "id": "L21-D02",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "在 C + 2CuO → 2Cu + CO₂↑ 反应中，碳体现的性质是？",
+      "options": [
+        "可燃性",
+        "还原性",
+        "稳定性",
+        "吸附性"
+      ],
+      "answer": 1,
+      "explanation": "碳夺取氧化铜中的氧，体现还原性。",
+      "errorType": "mc-carbon-reduce-cuo",
+      "remediationStep": "L21-S05"
+    },
+    {
+      "id": "L21-D03",
+      "type": "equation",
+      "difficulty": "hard",
+      "question": "下列化学方程式书写正确的是？",
+      "options": [
+        "C + CuO → Cu + CO₂",
+        "C + 2CuO → 2Cu + CO₂↑（高温）",
+        "2C + O₂ → 2CO₂",
+        "C + O₂ → CO₂（点燃）"
+      ],
+      "answer": 1,
+      "explanation": "碳还原氧化铜需注明高温条件，生成 CO₂ 要标气体符号。",
+      "errorType": "mc-carbon-reduce-cuo",
+      "remediationStep": "L21-S05"
+    }
+  ]
+}

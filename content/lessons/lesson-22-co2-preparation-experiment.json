@@ -1,0 +1,48 @@
+{
+  "lessonId": "lesson-22-co2-preparation",
+  "experiments": [
+    {
+      "id": "L22-E01",
+      "title": "实验室制取二氧化碳",
+      "type": "demonstration",
+      "instruments": [
+        "锥形瓶",
+        "长颈漏斗",
+        "双孔塞",
+        "导管",
+        "集气瓶",
+        "大理石",
+        "稀盐酸"
+      ],
+      "safety": "稀盐酸有腐蚀性，避免接触皮肤。",
+      "goal": "掌握 CO₂ 的制取、收集和检验方法。",
+      "steps": [
+        {
+          "step": 1,
+          "action": "检查装置气密性",
+          "record": "用手捂热锥形瓶，导管口有气泡冒出"
+        },
+        {
+          "step": 2,
+          "action": "加入大理石，从长颈漏斗加入稀盐酸",
+          "record": "观察气泡产生"
+        },
+        {
+          "step": 3,
+          "action": "用向上排空气法收集",
+          "record": "导管伸到集气瓶底部"
+        },
+        {
+          "step": 4,
+          "action": "用燃着木条验满",
+          "record": "瓶口木条熄灭则满"
+        }
+      ],
+      "observationGuidance": [
+        "大理石表面产生大量气泡",
+        "收集时导管伸到集气瓶底部"
+      ],
+      "conclusion": "用向上排空气法收集的 CO₂ 能使燃着木条熄灭，说明已收集满。"
+    }
+  ]
+}

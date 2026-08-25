@@ -1,0 +1,63 @@
+{
+  "lessonId": "lesson-23-co2-property",
+  "experiments": [
+    {
+      "id": "L23-E01",
+      "title": "阶梯蜡烛熄灭实验",
+      "type": "demonstration",
+      "instruments": [
+        "烧杯",
+        "阶梯形蜡烛架",
+        "CO₂ 发生装置",
+        "燃着的蜡烛"
+      ],
+      "safety": "小心倾倒 CO₂，避免烫伤。",
+      "goal": "验证 CO₂ 密度大于空气且不燃烧不支持燃烧。",
+      "steps": [
+        {
+          "step": 1,
+          "action": "将两支蜡烛固定在阶梯形蜡烛架上",
+          "record": "点燃蜡烛"
+        },
+        {
+          "step": 2,
+          "action": "向烧杯中倾倒 CO₂",
+          "record": "观察蜡烛熄灭顺序"
+        }
+      ],
+      "observationGuidance": [
+        "下层蜡烛先熄灭，上层蜡烛后熄灭"
+      ],
+      "conclusion": "CO₂ 密度大于空气，且不燃烧也不支持燃烧。"
+    },
+    {
+      "id": "L23-E02",
+      "title": "CO₂ 与水反应实验",
+      "type": "demonstration",
+      "instruments": [
+        "试管",
+        "石蕊试液",
+        "CO₂ 发生装置",
+        "酒精灯"
+      ],
+      "safety": "注意加热安全。",
+      "goal": "验证 CO₂ 与水反应生成碳酸。",
+      "steps": [
+        {
+          "step": 1,
+          "action": "向试管中加入紫色石蕊试液，通入 CO₂",
+          "record": "观察颜色变化"
+        },
+        {
+          "step": 2,
+          "action": "加热试管",
+          "record": "观察颜色变化"
+        }
+      ],
+      "observationGuidance": [
+        "通入 CO₂ 后溶液变红，加热后红色褪去"
+      ],
+      "conclusion": "CO₂ 与水反应生成碳酸（使石蕊变红），碳酸不稳定受热分解。"
+    }
+  ]
+}

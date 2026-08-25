@@ -1,6 +1,6 @@
 # V1.9 Lesson Content Readiness Audit
 
-Generated: 2026-08-21T09:33:33.653Z
+Generated: 2026-08-25T07:10:57.055Z
 
 ## Baseline
 - Lessons scanned: 16

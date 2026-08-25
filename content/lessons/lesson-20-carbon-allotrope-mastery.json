@@ -1,0 +1,198 @@
+{
+  "lessonId": "lesson-20-carbon-allotrope",
+  "dimensions": [
+    "concept",
+    "laboratory",
+    "application"
+  ],
+  "criteria": [
+    {
+      "dimension": "concept",
+      "items": [
+        "L20-Q01",
+        "L20-Q02",
+        "L20-Q03",
+        "L20-Q04"
+      ],
+      "passingScore": 0.75
+    },
+    {
+      "dimension": "laboratory",
+      "items": [
+        "L20-Q05",
+        "L20-Q06"
+      ],
+      "passingScore": 0.75
+    },
+    {
+      "dimension": "application",
+      "items": [
+        "L20-D01",
+        "L20-D02"
+      ],
+      "passingScore": 0.75
+    }
+  ],
+  "items": [
+    {
+      "id": "L20-Q01",
+      "type": "mc",
+      "question": "金刚石、石墨、C60 的共同点是？",
+      "options": [
+        "都由碳元素组成",
+        "硬度相同",
+        "导电性相同",
+        "都是化合物"
+      ],
+      "answer": 0,
+      "knowledgeIds": [
+        "carbon-allotrope"
+      ],
+      "knowledgePoints": [
+        "carbon-allotrope"
+      ],
+      "explanation": "三者都是由碳元素组成的单质。",
+      "category": "concept"
+    },
+    {
+      "id": "L20-Q02",
+      "type": "mc",
+      "question": "金刚石是天然存在最硬的物质，这利用了它的？",
+      "options": [
+        "导电性",
+        "硬度大",
+        "吸附性",
+        "稳定性"
+      ],
+      "answer": 1,
+      "knowledgeIds": [
+        "carbon-allotrope"
+      ],
+      "knowledgePoints": [
+        "carbon-allotrope"
+      ],
+      "explanation": "金刚石硬度大，用于切割玻璃、制作钻头。",
+      "category": "concept"
+    },
+    {
+      "id": "L20-Q03",
+      "type": "mc",
+      "question": "活性炭净水的原理是？",
+      "options": [
+        "化学反应",
+        "吸附色素和异味",
+        "消毒杀菌",
+        "沉淀杂质"
+      ],
+      "answer": 1,
+      "knowledgeIds": [
+        "carbon-allotrope"
+      ],
+      "knowledgePoints": [
+        "carbon-allotrope"
+      ],
+      "explanation": "活性炭疏松多孔，具有强吸附性。",
+      "category": "concept"
+    },
+    {
+      "id": "L20-Q04",
+      "type": "mc",
+      "question": "金刚石和石墨物理性质差异大的根本原因是？",
+      "options": [
+        "组成元素不同",
+        "碳原子排列方式不同",
+        "原子大小不同",
+        "含有杂质不同"
+      ],
+      "answer": 1,
+      "knowledgeIds": [
+        "carbon-allotrope"
+      ],
+      "knowledgePoints": [
+        "carbon-allotrope"
+      ],
+      "explanation": "碳原子排列方式不同导致物理性质差异大。",
+      "category": "concept"
+    },
+    {
+      "id": "L20-Q05",
+      "type": "mc",
+      "question": "下列有关碳单质的说法正确的是？",
+      "options": [
+        "金刚石和石墨是同种物质",
+        "C60 是化合物",
+        "活性炭吸附是物理变化",
+        "石墨导电是化学性质"
+      ],
+      "answer": 2,
+      "knowledgeIds": [
+        "carbon-allotrope"
+      ],
+      "knowledgePoints": [
+        "carbon-allotrope"
+      ],
+      "explanation": "活性炭吸附是物理变化，没有生成新物质。",
+      "category": "laboratory"
+    },
+    {
+      "id": "L20-Q06",
+      "type": "mc",
+      "question": "下列用途中，利用石墨导电性的是？",
+      "options": [
+        "铅笔芯",
+        "电极",
+        "切割玻璃",
+        "净水"
+      ],
+      "answer": 1,
+      "knowledgeIds": [
+        "carbon-allotrope"
+      ],
+      "knowledgePoints": [
+        "carbon-allotrope"
+      ],
+      "explanation": "石墨导电，用于制作电极。",
+      "category": "laboratory"
+    },
+    {
+      "id": "L20-D01",
+      "type": "mc",
+      "question": "下列用途中，主要利用金刚石硬度大的是？",
+      "options": [
+        "作电极",
+        "作钻头",
+        "作铅笔芯",
+        "作吸附剂"
+      ],
+      "answer": 1,
+      "knowledgeIds": [
+        "carbon-allotrope"
+      ],
+      "knowledgePoints": [
+        "carbon-allotrope"
+      ],
+      "explanation": "金刚石硬度大，可用于制作钻头和切割玻璃。",
+      "category": "application"
+    },
+    {
+      "id": "L20-D02",
+      "type": "mc",
+      "question": "下列关于碳单质的说法错误的是？",
+      "options": [
+        "常温下碳的化学性质稳定",
+        "碳单质都具有导电性",
+        "金刚石和石墨互为同素异形体",
+        "同素异形体的物理性质差异大"
+      ],
+      "answer": 1,
+      "knowledgeIds": [
+        "carbon-allotrope"
+      ],
+      "knowledgePoints": [
+        "carbon-allotrope"
+      ],
+      "explanation": "金刚石不导电，石墨导电，并非所有碳单质都导电。",
+      "category": "application"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "lesson-23-co2-property",
+  "sequenceNumber": 23,
+  "day": "23",
+  "title": "二氧化碳的性质",
+  "module": "unit-06-carbon-oxides",
+  "semester": "upper",
+  "unitId": "u06",
+  "duration": "45 分钟",
+  "description": "学习二氧化碳的物理性质和化学性质，理解其灭火原理、与水的反应以及与石灰水的反应。",
+  "status": "ready",
+  "releaseStatus": "ready",
+  "learningObjectives": [
+    "掌握 CO₂ 的物理性质（无色无味、密度大于空气、能溶于水）与干冰升华吸热。",
+    "掌握 CO₂ 的三类化学性质：不燃烧不支持燃烧、与水反应、与石灰水反应。",
+    "理解 CO₂ 在碳循环与温室效应中的双重角色。"
+  ],
+  "knowledgePoints": ["co2-property"],
+  "prerequisites": ["lesson-22-co2-preparation"],
+  "misconceptionIds": ["mc-co2-limewater"],
+  "guidedLearning": {
+    "stepCount": 8,
+    "steps": [
+      { "id": "L23-S01", "title": "情境引入：人为什么不能在深洞久留？", "type": "engage", "body": ["久未开启的菜窖或深洞中，CO₂ 浓度可能过高。", "CO₂ 本身无毒，但浓度过高会使人窒息。"], "knowledgePoints": ["co2-property"], "check": { "question": "进入久未开启的地窖前，应进行的实验是？", "options": ["检验氧气含量", "灯火试验", "闻气味", "测量温度"], "answer": 1, "explanation": "灯火试验可检测 CO₂ 浓度是否过高（CO₂ 不支持燃烧）。" } },
+      { "id": "L23-S02", "title": "物理性质", "type": "content", "body": ["无色无味的气体，密度比空气大，能溶于水。", "固态 CO₂ 叫干冰，易升华吸热，用于人工降雨。"], "knowledgePoints": ["co2-property"], "check": { "question": "下列关于 CO₂ 物理性质的描述，正确的是？", "options": ["有刺激性气味", "密度比空气小", "能溶于水", "液态呈蓝色"], "answer": 2, "explanation": "CO₂ 无色无味，密度大于空气，能溶于水。" } },
+      { "id": "L23-S03", "title": "实验演示：阶梯蜡烛熄灭", "type": "experiment", "body": ["向烧杯中倾倒 CO₂，观察蜡烛熄灭顺序。", "现象：下层蜡烛先熄灭，上层后熄灭。", "结论：CO₂ 密度大于空气，且不燃烧不支持燃烧。"], "knowledgePoints": ["co2-property"], "check": null },
+      { "id": "L23-S04", "title": "CO₂ 与水的反应", "type": "content", "body": ["CO₂ + H₂O → H₂CO₃（碳酸），使紫色石蕊变红。", "碳酸不稳定：H₂CO₃ → H₂O + CO₂↑（加热后红色褪去）。", "误区：使石蕊变红的是碳酸，不是 CO₂ 分子本身。"], "knowledgePoints": ["co2-property"], "check": { "question": "将 CO₂ 通入紫色石蕊溶液，溶液变红的原因是？", "options": ["CO₂ 使石蕊变红", "生成的碳酸使石蕊变红", "水使石蕊变红", "CO₂ 与水都不反应"], "answer": 1, "explanation": "CO₂ 与水反应生成碳酸，碳酸使紫色石蕊变红。" } },
+      { "id": "L23-S05", "title": "CO₂ 与石灰水的反应", "type": "content", "body": ["CO₂ + Ca(OH)₂ → CaCO₃↓ + H₂O", "现象：澄清石灰水变浑浊。", "这是检验 CO₂ 的原理。"], "knowledgePoints": ["co2-property"], "check": { "question": "检验 CO₂ 的原理是？", "options": ["CO₂ 使石蕊变红", "CO₂ 使澄清石灰水变浑浊", "CO₂ 支持燃烧", "CO₂ 密度大于空气"], "answer": 1, "explanation": "CO₂ 与石灰水反应生成白色沉淀 CaCO₃，使溶液变浑浊。" } },
+      { "id": "L23-S06", "title": "误区警示：石灰水变浑的原因", "type": "misconception", "body": ["误区：CO₂ 分子直接使石灰水变浑浊。", "纠正：CO₂ 与 Ca(OH)₂ 反应生成 CaCO₃ 沉淀。"], "knowledgePoints": ["co2-property"], "check": { "question": "澄清石灰水变浑浊的本质是？", "options": ["CO₂ 溶解在水中", "生成了碳酸钙沉淀", "CO₂ 与氧气反应", "水被蒸发"], "answer": 1, "explanation": "CO₂ 与 Ca(OH)₂ 反应生成难溶的 CaCO₃ 白色沉淀。" } },
+      { "id": "L23-S07", "title": "CO₂ 的用途", "type": "application", "body": ["灭火：密度大、不燃烧不支持燃烧。", "人工降雨：干冰升华吸热。", "气体肥料：促进光合作用。", "制作碳酸饮料。"], "knowledgePoints": ["co2-property"], "check": null },
+      { "id": "L23-S08", "title": "知识小结", "type": "summary", "body": ["物理性质：无色无味、密度大于空气、能溶于水、干冰升华吸热。", "化学性质：不燃烧不支持燃烧、与水反应、与石灰水反应。", "下节课学习 CO 的性质。"], "knowledgePoints": ["co2-property"], "check": null }
+    ]
+  },
+  "resourceRefs": {
+    "experiment": "content/lessons/lesson-23-co2-property-experiment.json",
+    "practice": "content/lessons/lesson-23-co2-property-practice.json",
+    "diagnostic": "content/lessons/lesson-23-co2-property-diagnostic.json",
+    "mastery": "content/lessons/lesson-23-co2-property-mastery.json",
+    "guidedLearning": "content/lessons/lesson-23-co2-property-guided-learning.json",
+    "transfer": "content/lessons/lesson-23-co2-property-transfer.json"
+  },
+  "experiments": [
+    { "id": "L23-E01", "title": "阶梯蜡烛熄灭实验", "type": "demonstration", "instruments": ["烧杯", "阶梯形蜡烛架", "CO₂ 发生装置", "燃着的蜡烛"], "safety": "小心倾倒 CO₂，避免烫伤。", "goal": "验证 CO₂ 密度大于空气且不燃烧不支持燃烧。", "steps": [{ "step": 1, "action": "将两支蜡烛固定在阶梯形蜡烛架上", "record": "点燃蜡烛" }, { "step": 2, "action": "向烧杯中倾倒 CO₂", "record": "观察蜡烛熄灭顺序" }], "observationGuidance": ["下层蜡烛先熄灭，上层蜡烛后熄灭"], "conclusion": "CO₂ 密度大于空气，且不燃烧也不支持燃烧。" },
+    { "id": "L23-E02", "title": "CO₂ 与水反应实验", "type": "demonstration", "instruments": ["试管", "石蕊试液", "CO₂ 发生装置", "酒精灯"], "safety": "注意加热安全。", "goal": "验证 CO₂ 与水反应生成碳酸。", "steps": [{ "step": 1, "action": "向试管中加入紫色石蕊试液，通入 CO₂", "record": "观察颜色变化" }, { "step": 2, "action": "加热试管", "record": "观察颜色变化" }], "observationGuidance": ["通入 CO₂ 后溶液变红，加热后红色褪去"], "conclusion": "CO₂ 与水反应生成碳酸（使石蕊变红），碳酸不稳定受热分解。" }
+  ],
+  "questions": [
+    { "id": "L23-Q01", "type": "concept", "difficulty": "basic", "question": "下列关于 CO₂ 物理性质的说法正确的是？", "options": ["有刺激性气味", "密度比空气小", "能溶于水", "液态为蓝色"], "answer": 2, "knowledgeIds": ["co2-property"], "knowledgePoints": ["co2-property"], "explanation": "CO₂ 无色无味，密度大于空气，能溶于水。" },
+    { "id": "L23-Q02", "type": "concept", "difficulty": "basic", "question": "干冰用于人工降雨的原理是？", "options": ["干冰熔化放热", "干冰升华吸热使水蒸气凝结", "干冰与水反应", "干冰密度小"], "answer": 1, "knowledgeIds": ["co2-property"], "knowledgePoints": ["co2-property"], "explanation": "干冰升华吸收大量热，使周围水蒸气凝结成雨。" },
+    { "id": "L23-Q03", "type": "concept", "difficulty": "medium", "question": "将 CO₂ 通入紫色石蕊溶液，溶液变红是因为？", "options": ["CO₂ 本身呈酸性", "生成的碳酸使石蕊变红", "水使石蕊变红", "CO₂ 与水不反应"], "answer": 1, "knowledgeIds": ["co2-property"], "knowledgePoints": ["co2-property"], "explanation": "CO₂ 与水反应生成碳酸，碳酸使紫色石蕊变红。" },
+    { "id": "L23-Q04", "type": "equation", "difficulty": "medium", "question": "写出 CO₂ 使澄清石灰水变浑浊的化学方程式。", "answer": "CO2 + Ca(OH)2 -> CaCO3 + H2O", "knowledgeIds": ["co2-property"], "knowledgePoints": ["co2-property"], "explanation": "CO₂ + Ca(OH)₂ → CaCO₃↓ + H₂O。" },
+    { "id": "L23-Q05", "type": "concept", "difficulty": "hard", "question": "下列有关 CO₂ 的说法错误的是？", "options": ["CO₂ 能使燃着木条熄灭", "CO₂ 有毒，不能呼吸", "干冰可用于人工降雨", "CO₂ 是光合作用的原料"], "answer": 1, "knowledgeIds": ["co2-property"], "knowledgePoints": ["co2-property"], "explanation": "CO₂ 本身无毒，但浓度过高会导致窒息。" },
+    { "id": "L23-Q06", "type": "concept", "difficulty": "hard", "question": "加热变红的石蕊溶液，红色褪去的原因是？", "options": ["CO₂ 逸出，碳酸分解", "石蕊失效", "水被蒸发", "温度升高变色"], "answer": 0, "knowledgeIds": ["co2-property"], "knowledgePoints": ["co2-property"], "explanation": "碳酸不稳定，受热分解为 CO₂ 和水，酸性消失，石蕊恢复紫色。" }
+  ],
+  "diagnosticQuestions": [
+    { "id": "L23-D01", "type": "concept", "difficulty": "medium", "question": "某同学认为 CO₂ 使紫色石蕊变红，这个说法不够准确，原因是？", "options": ["CO₂ 本身能使石蕊变红", "是水使石蕊变红", "是 CO₂ 与水反应生成的碳酸使石蕊变红", "石蕊本身是红色的"], "answer": 2, "knowledgeIds": ["co2-property"], "knowledgePoints": ["co2-property"], "explanation": "干燥的 CO₂ 不能使石蕊变红，是 CO₂ 与水反应生成的碳酸使其变红。", "errorType": "mc-co2-limewater", "remediationStep": "L23-S04" },
+    { "id": "L23-D02", "type": "concept", "difficulty": "medium", "question": "向澄清石灰水中通入过量 CO₂，先变浑浊后变澄清，这是因为？", "options": ["CaCO₃ 继续与 CO₂ 反应生成可溶的 Ca(HCO₃)₂", "石灰水变质", "CO₂ 溶于水", "温度变化"], "answer": 0, "knowledgeIds": ["co2-property"], "knowledgePoints": ["co2-property"], "explanation": "过量 CO₂ 与 CaCO₃ 和水反应生成可溶的碳酸氢钙。", "errorType": "mc-co2-limewater", "remediationStep": "L23-S05" },
+    { "id": "L23-D03", "type": "concept", "difficulty": "hard", "question": "下列用途中，利用 CO₂ 化学性质的是？", "options": ["干冰人工降雨", "CO₂ 灭火", "CO₂ 制碳酸饮料", "CO₂ 气体肥料"], "answer": 1, "knowledgeIds": ["co2-property"], "knowledgePoints": ["co2-property"], "explanation": "灭火利用了 CO₂ 不燃烧不支持燃烧的化学性质。" }
+  ],
+  "sections": [
+    { "title": "本节课要掌握什么？", "body": ["CO₂ 的物理性质：无色无味、密度大于空气、能溶于水。", "CO₂ 的三类化学性质：不燃烧不支持燃烧、与水反应、与石灰水反应。", "干冰升华吸热的应用。"] },
+    { "title": "核心实验", "body": ["阶梯蜡烛熄灭：验证密度和不可燃性。", "石蕊变色：验证 CO₂ 与水反应。"] },
+    { "title": "核心概念", "body": ["碳酸使石蕊变红，碳酸不稳定受热分解。", "石灰水变浑浊是 CO₂ 的特征检验方法。"] },
+    { "title": "常见误区", "body": ["误认为 CO₂ 直接使石蕊变红。", "误认为 CO₂ 有毒（实际是窒息性）。"] },
+    { "title": "学习方法", "body": ["实验现象→化学原理→实际应用。", "区分物理性质与化学性质。"] }
+  ],
+  "provenance": { "status": "ready", "basis": "人教版九年级化学上册第六单元课题3第1课时；2022年版义务教育化学课程标准。", "note": "内容原创，不复制教材原文。" },
+  "review": { "curriculum": "pass", "scientific": "pass", "ageSuitability": "pass", "itemQuality": "pass", "knowledgeLinks": "pass", "wuhanAlignment": "pass", "masteryGate": "pass", "blockingIssues": [] }
+}

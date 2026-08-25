@@ -1,0 +1,47 @@
+{
+  "lessonId": "lesson-24-co-property",
+  "experiments": [
+    {
+      "id": "L24-E01",
+      "title": "CO 还原氧化铜（安全演示）",
+      "type": "demonstration",
+      "instruments": [
+        "硬质玻璃管",
+        "酒精灯",
+        "CO 气源",
+        "澄清石灰水",
+        "尾气处理装置"
+      ],
+      "safety": "CO 剧毒！实验必须在通风橱中进行，尾气必须点燃或收集。",
+      "goal": "验证 CO 的还原性。",
+      "steps": [
+        {
+          "step": 1,
+          "action": "通入 CO 排尽装置内空气",
+          "record": "观察现象"
+        },
+        {
+          "step": 2,
+          "action": "加热氧化铜",
+          "record": "观察黑色粉末颜色变化"
+        },
+        {
+          "step": 3,
+          "action": "将生成气体通入石灰水",
+          "record": "观察石灰水变化"
+        },
+        {
+          "step": 4,
+          "action": "点燃尾气",
+          "record": "观察蓝色火焰"
+        }
+      ],
+      "observationGuidance": [
+        "黑色粉末变为红色",
+        "石灰水变浑浊",
+        "尾气燃烧产生蓝色火焰"
+      ],
+      "conclusion": "CO 具有还原性：CO + CuO → Cu + CO₂。注意尾气必须处理。"
+    }
+  ]
+}

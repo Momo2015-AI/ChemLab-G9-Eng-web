@@ -1,0 +1,77 @@
+{
+  "lessonId": "lesson-22-co2-preparation",
+  "questions": [
+    {
+      "id": "L22-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "create",
+      "question": "某同学用启普发生器制取CO2，但发现反应开始后无法随时停止。请分析可能的原因，并提出改进方案。",
+      "rubric": {
+        "modelAnswer": "可能原因：①长颈漏斗下端未伸入液面以下，气体从漏斗逸出；②大理石颗粒太小从孔中漏出；③活塞密封不良。改进：检查液封、更换合适颗粒、检查气密性。",
+        "keywords": [
+          ["液封问题", "活塞密封"],
+          ["大理石颗粒大小"],
+          ["检查气密性"]
+        ],
+        "explanation": "启普发生器利用气压差控制反应，任何破坏气压差的缺陷都会导致无法控制。"
+      },
+      "knowledgeIds": ["co2-preparation"],
+      "misconceptionIds": ["mc-co2-prep-sulfuric"]
+    },
+    {
+      "id": "L22-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "question": "某实验报告记载：用浓盐酸与大理石反应制取CO2，用向上排空气法收集，燃着木条伸入瓶内验满。请指出报告中的错误并说明正确做法。",
+      "rubric": {
+        "modelAnswer": "错误1：不能用浓盐酸（挥发出HCl使CO2不纯），应用稀盐酸。错误2：验满时木条应放在瓶口而非伸入瓶内。正确：稀盐酸+大理石，燃着木条放瓶口验满。",
+        "keywords": [
+          ["浓盐酸挥发", "应用稀盐酸"],
+          ["验满位置错误"],
+          ["瓶口验满"]
+        ],
+        "explanation": "试剂选择和操作规范直接影响气体纯度和实验安全。"
+      },
+      "knowledgeIds": ["co2-preparation"],
+      "misconceptionIds": ["mc-co2-prep-sulfuric", "mc-co2-verify-method"]
+    },
+    {
+      "id": "L22-T03",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "实验室需要制取一瓶干燥的CO2气体。现有：大理石、稀盐酸、浓硫酸、NaOH溶液、无水CaCl2。请选择合适的药品和装置，设计制取干燥CO2的方案。",
+      "rubric": {
+        "modelAnswer": "药品：大理石+稀盐酸（不用浓硫酸，不用NaOH）。干燥剂：浓硫酸或无水CaCl2（不用NaOH，会吸收CO2）。装置顺序：发生装置→干燥装置→收集装置。",
+        "keywords": [
+          ["大理石+稀盐酸"],
+          ["浓硫酸干燥/不能用NaOH"],
+          ["向上排空气法收集"]
+        ],
+        "explanation": "干燥CO2需用酸性或中性干燥剂，不能用碱性干燥剂。"
+      },
+      "knowledgeIds": ["co2-preparation"],
+      "misconceptionIds": ["mc-co2-prep-sulfuric"]
+    },
+    {
+      "id": "L22-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "某工厂用石灰石（主要成分CaCO3，杂质不反应）100g制取CO2，理论上最多可制得多少克CO2？若实际制得38g CO2，求石灰石中CaCO3的质量分数。",
+      "rubric": {
+        "modelAnswer": "CaCO3+2HCl→CaCl2+H2O+CO2↑，100g CaCO3生成44g CO2。理论最大值44g。实际38g，CaCO3质量=38×100/44=86.4g，质量分数=86.4%。",
+        "keywords": [
+          ["CaCO3~CO2质量比100:44"],
+          ["理论44g"],
+          ["实际产率计算"]
+        ],
+        "explanation": "根据化学方程式进行简单计算，区分理论产量与实际产量。"
+      },
+      "knowledgeIds": ["co2-preparation"],
+      "misconceptionIds": ["mc-co2-prep-sulfuric"]
+    }
+  ]
+}

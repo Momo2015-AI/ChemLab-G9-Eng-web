@@ -1,0 +1,43 @@
+{
+  "lessonId": "lesson-20-carbon-allotrope",
+  "questions": [
+    {
+      "id": "L20-P01",
+      "type": "matching",
+      "difficulty": "basic",
+      "question": "请将下列碳单质与其主要用途连线",
+      "knowledgePoints": ["carbon-allotrope"],
+      "knowledgeIds": ["carbon-allotrope"]
+    },
+    {
+      "id": "L20-P02",
+      "type": "explanation",
+      "difficulty": "medium",
+      "question": "请用\"结构决定性质\"解释为什么金刚石是天然最硬的物质，而石墨很软。",
+      "knowledgePoints": ["carbon-allotrope"],
+      "knowledgeIds": ["carbon-allotrope"]
+    },
+    {
+      "id": "L20-P03",
+      "type": "mc",
+      "difficulty": "medium",
+      "question": "下列物质中，不能用于净水的是？",
+      "options": ["活性炭", "木炭", "焦炭", "炭黑"],
+      "answer": 2,
+      "knowledgePoints": ["carbon-allotrope"],
+      "knowledgeIds": ["carbon-allotrope"],
+      "explanation": "焦炭主要用于冶金，净水常用活性炭。"
+    },
+    {
+      "id": "L20-P04",
+      "type": "mc",
+      "difficulty": "hard",
+      "question": "下列关于碳单质的说法中，错误的是？",
+      "options": ["金刚石和石墨的物理性质不同是因为碳原子排列方式不同", "C60 是由分子构成的碳单质", "活性炭吸附色素是物理变化", "所有碳单质在常温下都很活泼"],
+      "answer": 3,
+      "knowledgePoints": ["carbon-allotrope"],
+      "knowledgeIds": ["carbon-allotrope"],
+      "explanation": "碳单质在常温下化学性质稳定，高温下活泼。"
+    }
+  ]
+}

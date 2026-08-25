@@ -1,0 +1,14 @@
+{
+  "lessonId": "lesson-23-co2-property",
+  "stepCount": 8,
+  "steps": [
+    {"id": "L23-S01", "title": "情境引入：人为什么不能在深洞久留？", "type": "engage", "body": ["久未开启的菜窖或深洞中，CO₂ 浓度可能过高。", "CO₂ 本身无毒，但浓度过高会使人窒息。"], "knowledgePoints": ["co2-property"], "check": {"question": "进入久未开启的地窖前，应进行的实验是？", "options": ["检验氧气含量", "灯火试验", "闻气味", "测量温度"], "answer": 1, "explanation": "灯火试验可检测 CO₂ 浓度是否过高（CO₂ 不支持燃烧）。"}},
+    {"id": "L23-S02", "title": "物理性质", "type": "content", "body": ["无色无味的气体，密度比空气大，能溶于水。", "固态 CO₂ 叫干冰，易升华吸热，用于人工降雨。"], "knowledgePoints": ["co2-property"], "check": {"question": "下列关于 CO₂ 物理性质的描述，正确的是？", "options": ["有刺激性气味", "密度比空气小", "能溶于水", "液态呈蓝色"], "answer": 2, "explanation": "CO₂ 无色无味，密度大于空气，能溶于水。"}},
+    {"id": "L23-S03", "title": "实验演示：阶梯蜡烛熄灭", "type": "experiment", "body": ["向烧杯中倾倒 CO₂，观察蜡烛熄灭顺序。", "现象：下层蜡烛先熄灭，上层后熄灭。", "结论：CO₂ 密度大于空气，且不燃烧不支持燃烧。"], "knowledgePoints": ["co2-property"], "check": null},
+    {"id": "L23-S04", "title": "CO₂ 与水的反应", "type": "content", "body": ["CO₂ + H₂O → H₂CO₃（碳酸），使紫色石蕊变红。", "碳酸不稳定：H₂CO₃ → H₂O + CO₂↑（加热后红色褪去）。", "误区：使石蕊变红的是碳酸，不是 CO₂ 分子本身。"], "knowledgePoints": ["co2-property"], "check": {"question": "将 CO₂ 通入紫色石蕊溶液，溶液变红的原因是？", "options": ["CO₂ 使石蕊变红", "生成的碳酸使石蕊变红", "水使石蕊变红", "CO₂ 与水都不反应"], "answer": 1, "explanation": "CO₂ 与水反应生成碳酸，碳酸使紫色石蕊变红。"}},
+    {"id": "L23-S05", "title": "CO₂ 与石灰水的反应", "type": "content", "body": ["CO₂ + Ca(OH)₂ → CaCO₃↓ + H₂O", "现象：澄清石灰水变浑浊。", "这是检验 CO₂ 的原理。"], "knowledgePoints": ["co2-property"], "check": {"question": "检验 CO₂ 的原理是？", "options": ["CO₂ 使石蕊变红", "CO₂ 使澄清石灰水变浑浊", "CO₂ 支持燃烧", "CO₂ 密度大于空气"], "answer": 1, "explanation": "CO₂ 与石灰水反应生成白色沉淀 CaCO₃，使溶液变浑浊。"}},
+    {"id": "L23-S06", "title": "误区警示：石灰水变浑的原因", "type": "misconception", "body": ["误区：CO₂ 分子直接使石灰水变浑浊。", "纠正：CO₂ 与 Ca(OH)₂ 反应生成 CaCO₃ 沉淀。"], "knowledgePoints": ["co2-property"], "check": {"question": "澄清石灰水变浑浊的本质是？", "options": ["CO₂ 溶解在水中", "生成了碳酸钙沉淀", "CO₂ 与氧气反应", "水被蒸发"], "answer": 1, "explanation": "CO₂ 与 Ca(OH)₂ 反应生成难溶的 CaCO₃ 白色沉淀。"}},
+    {"id": "L23-S07", "title": "CO₂ 的用途", "type": "application", "body": ["灭火：密度大、不燃烧不支持燃烧。", "人工降雨：干冰升华吸热。", "气体肥料：促进光合作用。", "制作碳酸饮料。"], "knowledgePoints": ["co2-property"], "check": null},
+    {"id": "L23-S08", "title": "知识小结", "type": "summary", "body": ["物理性质：无色无味、密度大于空气、能溶于水、干冰升华吸热。", "化学性质：不燃烧不支持燃烧、与水反应、与石灰水反应。", "下节课学习 CO 的性质。"], "knowledgePoints": ["co2-property"], "check": null}
+  ]
+}

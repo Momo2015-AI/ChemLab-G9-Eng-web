@@ -1,0 +1,67 @@
+{
+  "id": "lesson-24-co-property",
+  "sequenceNumber": 24,
+  "day": "24",
+  "title": "一氧化碳",
+  "module": "unit-06-carbon-oxides",
+  "semester": "upper",
+  "unitId": "u06",
+  "duration": "45 分钟",
+  "description": "学习一氧化碳的可燃性、毒性和还原性，掌握 CO 与 CO₂ 的鉴别方法。",
+  "status": "ready",
+  "releaseStatus": "ready",
+  "learningObjectives": [
+    "掌握 CO 的可燃性、毒性机制、还原性。",
+    "能设计 CO 与 CO₂ 的鉴别实验。",
+    "掌握 CO 中毒急救与尾气处理的安全要求。"
+  ],
+  "knowledgePoints": ["co-property"],
+  "prerequisites": ["lesson-23-co2-property", "lesson-21-carbon-property"],
+  "misconceptionIds": ["mc-co-poison-mechanism", "mc-co-co2-distinguish"],
+  "guidedLearning": {
+    "stepCount": 8,
+    "steps": [
+      { "id": "L24-S01", "title": "情境引入：煤气中毒的真相", "type": "engage", "body": ["冬天用煤炉取暖，关闭门窗容易发生中毒。", "煤气中的一氧化碳有什么危害？"], "knowledgePoints": ["co-property"], "check": { "question": "煤气中毒主要是哪种气体引起的？", "options": ["CO₂", "CO", "O₂", "N₂"], "answer": 1, "explanation": "煤气中的一氧化碳与血红蛋白结合，阻碍氧气运输。" } },
+      { "id": "L24-S02", "title": "物理性质", "type": "content", "body": ["无色无味的气体，密度略小于空气，难溶于水。", "极易与血红蛋白结合，造成中毒。"], "knowledgePoints": ["co-property"], "check": { "question": "CO 的下列性质属于物理性质的是？", "options": ["可燃性", "毒性", "无色无味的气体", "还原性"], "answer": 2, "knowledgeIds": ["co-property"], "knowledgePoints": ["co-property"], "explanation": "颜色、气味、状态属于物理性质。" } },
+      { "id": "L24-S03", "title": "可燃性", "type": "content", "body": ["2CO + O₂ → 2CO₂（点燃），蓝色火焰。", "燃烧产物是 CO₂，可用于燃料。", "点燃前必须验纯。"], "knowledgePoints": ["co-property"], "check": { "question": "CO 燃烧的现象是？", "options": ["发出白光", "产生蓝色火焰", "产生黄色火焰", "发出淡蓝色火焰"], "answer": 1, "explanation": "CO 燃烧产生蓝色火焰，生成 CO₂。" } },
+      { "id": "L24-S04", "title": "毒性机制", "type": "content", "body": ["CO 与血红蛋白结合能力比 O₂ 强约 200 倍。", "结合后阻碍氧气运输，造成组织缺氧。", "中毒急救：立即通风、转移至空气新鲜处。"], "knowledgePoints": ["co-property"], "check": { "question": "CO 中毒的原理是？", "options": ["CO 腐蚀呼吸道", "CO 与血红蛋白结合阻碍 O₂ 运输", "CO 刺激肺部", "CO 使血液凝固"], "answer": 1, "explanation": "CO 与血红蛋白结合能力远强于 O₂，阻碍氧气运输。" } },
+      { "id": "L24-S05", "title": "实验演示：CO 还原氧化铜", "type": "experiment", "body": ["CO + CuO → Cu + CO₂（加热）。", "现象：黑色粉末变红，生成使石灰水变浑浊的气体。", "注意：CO 有毒，需要尾气处理（点燃或收集）。"], "knowledgePoints": ["co-property"], "check": null },
+      { "id": "L24-S06", "title": "误区警示：CO 中毒", "type": "misconception", "body": ["误区：CO 有刺激性气味或腐蚀性。", "纠正：CO 无色无味，中毒机制是与血红蛋白结合，而非刺激或腐蚀。"], "knowledgePoints": ["co-property"], "check": { "question": "关于 CO 中毒，下列说法正确的是？", "options": ["CO 有刺激性气味", "CO 腐蚀呼吸道", "CO 与血红蛋白结合阻碍 O₂ 运输", "CO 中毒应立即人工呼吸"], "answer": 2, "explanation": "CO 无色无味，中毒机制是与血红蛋白结合阻碍 O₂ 运输。" } },
+      { "id": "L24-S07", "title": "CO 与 CO₂ 的鉴别", "type": "application", "body": ["方法一：燃着木条——CO 能燃烧（蓝色火焰），CO₂ 使木条熄灭。", "方法二：石灰水——CO 不反应，CO₂ 使石灰水变浑浊。", "方法三：石蕊——CO 不反应，CO₂ 使石蕊变红。"], "knowledgePoints": ["co-property"], "check": { "question": "鉴别 CO 和 CO₂ 不可行的方法是？", "options": ["燃着木条", "澄清石灰水", "闻气味", "紫色石蕊试液"], "answer": 2, "explanation": "CO 和 CO₂ 都是无色无味的气体，无法用闻气味鉴别。" } },
+      { "id": "L24-S08", "title": "知识小结", "type": "summary", "body": ["CO 的物理性质：无色无味、密度略小于空气、难溶于水。", "CO 的化学性质：可燃性、毒性、还原性。", "CO 与 CO₂ 的鉴别方法。", "安全要求：CO 有毒，尾气需处理。"], "knowledgePoints": ["co-property"], "check": null }
+    ]
+  },
+  "resourceRefs": {
+    "experiment": "content/lessons/lesson-24-co-property-experiment.json",
+    "practice": "content/lessons/lesson-24-co-property-practice.json",
+    "diagnostic": "content/lessons/lesson-24-co-property-diagnostic.json",
+    "mastery": "content/lessons/lesson-24-co-property-mastery.json",
+    "guidedLearning": "content/lessons/lesson-24-co-property-guided-learning.json",
+    "transfer": "content/lessons/lesson-24-co-property-transfer.json"
+  },
+  "experiments": [
+    { "id": "L24-E01", "title": "CO 还原氧化铜（安全演示）", "type": "demonstration", "instruments": ["硬质玻璃管", "酒精灯", "CO 气源", "澄清石灰水", "尾气处理装置"], "safety": "CO 剧毒！实验必须在通风橱中进行，尾气必须点燃或收集。", "goal": "验证 CO 的还原性。", "steps": [{ "step": 1, "action": "通入 CO 排尽装置内空气", "record": "观察现象" }, { "step": 2, "action": "加热氧化铜", "record": "观察黑色粉末颜色变化" }, { "step": 3, "action": "将生成气体通入石灰水", "record": "观察石灰水变化" }, { "step": 4, "action": "点燃尾气", "record": "观察蓝色火焰" }], "observationGuidance": ["黑色粉末变为红色", "石灰水变浑浊", "尾气燃烧产生蓝色火焰"], "conclusion": "CO 具有还原性：CO + CuO → Cu + CO₂。注意尾气必须处理。" }
+  ],
+  "questions": [
+    { "id": "L24-Q01", "type": "concept", "difficulty": "basic", "question": "CO 与 CO₂ 不同的本质原因是？", "options": ["组成元素不同", "分子构成不同", "密度不同", "颜色不同"], "answer": 1, "knowledgeIds": ["co-property"], "knowledgePoints": ["co-property"], "explanation": "CO 和 CO₂ 分子构成不同，导致性质差异。" },
+    { "id": "L24-Q02", "type": "concept", "difficulty": "basic", "question": "CO 燃烧的现象是？", "options": ["发出白光", "产生蓝色火焰", "产生黄色火焰", "产生淡蓝色火焰"], "answer": 1, "knowledgeIds": ["co-property"], "knowledgePoints": ["co-property"], "explanation": "CO 燃烧产生蓝色火焰，生成 CO₂。" },
+    { "id": "L24-Q03", "type": "concept", "difficulty": "medium", "question": "CO 中毒的原理是？", "options": ["CO 腐蚀呼吸道", "CO 与血红蛋白结合阻碍 O₂ 运输", "CO 刺激肺部", "CO 使血液凝固"], "answer": 1, "knowledgeIds": ["co-property"], "knowledgePoints": ["co-property"], "explanation": "CO 与血红蛋白结合能力比 O₂ 强约 200 倍，阻碍氧气运输。" },
+    { "id": "L24-Q04", "type": "equation", "difficulty": "medium", "question": "写出 CO 还原氧化铜的化学方程式。", "answer": "CO + CuO --加热--> Cu + CO2", "knowledgeIds": ["co-property"], "knowledgePoints": ["co-property"], "explanation": "CO + CuO → Cu + CO₂（加热）。" },
+    { "id": "L24-Q05", "type": "concept", "difficulty": "hard", "question": "鉴别 CO 和 CO₂ 不可行的方法是？", "options": ["燃着木条", "澄清石灰水", "闻气味", "紫色石蕊试液"], "answer": 2, "knowledgeIds": ["co-property"], "knowledgePoints": ["co-property"], "explanation": "两者都是无色无味的气体，无法用闻气味鉴别。" },
+    { "id": "L24-Q06", "type": "concept", "difficulty": "hard", "question": "关于 CO 的实验，下列操作正确的是？", "options": ["CO 还原氧化铜时先加热再通 CO", "CO 还原氧化铜时先通 CO 再加热", "CO 还原氧化铜后直接停止通 CO", "CO 实验无需尾气处理"], "answer": 1, "knowledgeIds": ["co-property"], "knowledgePoints": ["co-property"], "explanation": "应先通 CO 排尽装置内空气，防止爆炸。" }
+  ],
+  "diagnosticQuestions": [
+    { "id": "L24-D01", "type": "concept", "difficulty": "medium", "question": "小明认为 CO 有刺激性气味，这是错误的。CO 的实际气味特征是？", "options": ["有刺激性气味", "有臭味", "无色无味", "有甜味"], "answer": 2, "knowledgeIds": ["co-property"], "knowledgePoints": ["co-property"], "explanation": "CO 无色无味，难以察觉，这是它危险的原因。", "errorType": "mc-co-poison-mechanism", "remediationStep": "L24-S04" },
+    { "id": "L24-D02", "type": "concept", "difficulty": "medium", "question": "下列关于 CO 和 CO₂ 的说法正确的是？", "options": ["都能使石灰水变浑浊", "CO 有毒，CO₂ 无毒", "都能燃烧", "密度都大于空气"], "answer": 1, "knowledgeIds": ["co-property"], "knowledgePoints": ["co-property"], "explanation": "CO 有毒，CO₂ 无毒（浓度过高会窒息但不直接有毒）。" },
+    { "id": "L24-D03", "type": "concept", "difficulty": "hard", "question": "CO 还原氧化铜实验结束时的正确操作顺序是？", "options": ["先停止通 CO，再熄灭酒精灯", "先熄灭酒精灯，继续通 CO 至冷却", "同时停止通 CO 和熄灭酒精灯", "先熄灭酒精灯，立即停止通 CO"], "answer": 1, "knowledgeIds": ["co-property"], "knowledgePoints": ["co-property"], "explanation": "先熄灭酒精灯，继续通 CO 至冷却，防止热的铜被氧化。" }
+  ],
+  "sections": [
+    { "title": "本节课要掌握什么？", "body": ["CO 的物理性质与毒性机制。", "CO 的三大化学性质：可燃、有毒、还原。", "CO 与 CO₂ 的鉴别方法。", "CO 实验的安全要求。"] },
+    { "title": "核心实验", "body": ["CO 还原氧化铜：黑色变红，尾气必须处理。"] },
+    { "title": "核心概念", "body": ["CO 毒性：与血红蛋白结合，阻碍 O₂ 运输。", "CO 鉴别：燃着木条、石灰水、石蕊。"] },
+    { "title": "常见误区", "body": ["误认为 CO 有刺激性气味。", "误认为 CO 中毒是刺激所致。"] },
+    { "title": "学习方法", "body": ["对比法：CO vs CO₂ 的性质对比。", "安全第一：CO 实验必须注意尾气处理。"] }
+  ],
+  "provenance": { "status": "ready", "basis": "人教版九年级化学上册第六单元课题3第2课时；2022年版义务教育化学课程标准。", "note": "内容原创，不复制教材原文。" },
+  "review": { "curriculum": "pass", "scientific": "pass", "ageSuitability": "pass", "itemQuality": "pass", "knowledgeLinks": "pass", "wuhanAlignment": "pass", "masteryGate": "pass", "blockingIssues": [] }
+}

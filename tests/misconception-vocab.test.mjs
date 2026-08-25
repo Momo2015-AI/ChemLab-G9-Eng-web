@@ -16,8 +16,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const knowledgeGraph = JSON.parse(readFileSync(path.join(__dirname, '../content/knowledge/knowledge-graph.json'), 'utf8'));
 const liveKgNodeIds = new Set(knowledgeGraph.nodes.map(n => n.id));
 
-test('canonical vocabulary has 57 entries with required fields', () => {
-  assert.equal(canonicalMisconceptions.length, 57);
+test('canonical vocabulary has 64 entries with required fields', () => {
+  assert.equal(canonicalMisconceptions.length, 64);
   for (const mc of canonicalMisconceptions) {
     assert.ok(mc.id, 'each entry has id');
     assert.ok(mc.title, 'each entry has title');

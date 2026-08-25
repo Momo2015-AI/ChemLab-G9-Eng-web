@@ -1,0 +1,45 @@
+{
+  "lessonId": "lesson-22-co2-preparation",
+  "questions": [
+    {
+      "id": "L22-P01",
+      "type": "equation",
+      "difficulty": "basic",
+      "question": "写出实验室制取 CO₂ 的化学方程式。",
+      "knowledgePoints": [
+        "co2-preparation"
+      ],
+      "knowledgeIds": [
+        "co2-preparation"
+      ]
+    },
+    {
+      "id": "L22-P02",
+      "type": "mc",
+      "difficulty": "medium",
+      "question": "下列组合中能用于实验室制取 CO₂ 的是？",
+      "options": [
+        "碳酸钙和稀硫酸",
+        "碳酸钙和稀盐酸",
+        "碳酸钠和稀盐酸",
+        "木炭和氧气"
+      ],
+      "answer": 1,
+      "explanation": "用大理石（CaCO₃）与稀盐酸反应，速率适中且气体纯净。"
+    },
+    {
+      "id": "L22-P03",
+      "type": "mc",
+      "difficulty": "hard",
+      "question": "某同学用向下排空气法收集 CO₂，结果未收集到气体。原因是？",
+      "options": [
+        "CO₂ 密度小于空气",
+        "CO₂ 易溶于水",
+        "CO₂ 与空气反应",
+        "收集时间不够"
+      ],
+      "answer": 0,
+      "explanation": "CO₂ 密度大于空气，应用向上排空气法。"
+    }
+  ]
+}

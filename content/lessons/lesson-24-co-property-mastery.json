@@ -1,0 +1,192 @@
+{
+  "lessonId": "lesson-24-co-property",
+  "dimensions": [
+    "concept",
+    "laboratory",
+    "application"
+  ],
+  "criteria": [
+    {
+      "dimension": "concept",
+      "items": [
+        "L24-Q01",
+        "L24-Q02",
+        "L24-Q03",
+        "L24-Q04"
+      ],
+      "passingScore": 0.75
+    },
+    {
+      "dimension": "laboratory",
+      "items": [
+        "L24-Q05",
+        "L24-Q06"
+      ],
+      "passingScore": 0.75
+    },
+    {
+      "dimension": "application",
+      "items": [
+        "L24-D01",
+        "L24-D02"
+      ],
+      "passingScore": 0.75
+    }
+  ],
+  "items": [
+    {
+      "id": "L24-Q01",
+      "type": "mc",
+      "question": "CO 与 CO₂ 不同的本质原因是？",
+      "options": [
+        "组成元素不同",
+        "分子构成不同",
+        "密度不同",
+        "颜色不同"
+      ],
+      "answer": 1,
+      "knowledgeIds": [
+        "co-property"
+      ],
+      "knowledgePoints": [
+        "co-property"
+      ],
+      "explanation": "CO 和 CO₂ 分子构成不同，导致性质差异。",
+      "category": "concept"
+    },
+    {
+      "id": "L24-Q02",
+      "type": "mc",
+      "question": "CO 燃烧的现象是？",
+      "options": [
+        "发出白光",
+        "产生蓝色火焰",
+        "产生黄色火焰",
+        "产生淡蓝色火焰"
+      ],
+      "answer": 1,
+      "knowledgeIds": [
+        "co-property"
+      ],
+      "knowledgePoints": [
+        "co-property"
+      ],
+      "explanation": "CO 燃烧产生蓝色火焰，生成 CO₂。",
+      "category": "concept"
+    },
+    {
+      "id": "L24-Q03",
+      "type": "mc",
+      "question": "CO 中毒的原理是？",
+      "options": [
+        "CO 腐蚀呼吸道",
+        "CO 与血红蛋白结合阻碍 O₂ 运输",
+        "CO 刺激肺部",
+        "CO 使血液凝固"
+      ],
+      "answer": 1,
+      "knowledgeIds": [
+        "co-property"
+      ],
+      "knowledgePoints": [
+        "co-property"
+      ],
+      "explanation": "CO 与血红蛋白结合能力比 O₂ 强约 200 倍，阻碍氧气运输。",
+      "category": "concept"
+    },
+    {
+      "id": "L24-Q04",
+      "type": "equation",
+      "question": "写出 CO 还原氧化铜的化学方程式。",
+      "answer": "CO + CuO --加热--> Cu + CO2",
+      "knowledgeIds": [
+        "co-property"
+      ],
+      "knowledgePoints": [
+        "co-property"
+      ],
+      "explanation": "CO + CuO → Cu + CO₂（加热）。",
+      "category": "concept"
+    },
+    {
+      "id": "L24-Q05",
+      "type": "mc",
+      "question": "鉴别 CO 和 CO₂ 不可行的方法是？",
+      "options": [
+        "燃着木条",
+        "澄清石灰水",
+        "闻气味",
+        "紫色石蕊试液"
+      ],
+      "answer": 2,
+      "knowledgeIds": [
+        "co-property"
+      ],
+      "knowledgePoints": [
+        "co-property"
+      ],
+      "explanation": "两者都是无色无味的气体，无法用闻气味鉴别。",
+      "category": "laboratory"
+    },
+    {
+      "id": "L24-Q06",
+      "type": "mc",
+      "question": "关于 CO 的实验，下列操作正确的是？",
+      "options": [
+        "CO 还原氧化铜时先加热再通 CO",
+        "CO 还原氧化铜时先通 CO 再加热",
+        "CO 还原氧化铜后直接停止通 CO",
+        "CO 实验无需尾气处理"
+      ],
+      "answer": 1,
+      "knowledgeIds": [
+        "co-property"
+      ],
+      "knowledgePoints": [
+        "co-property"
+      ],
+      "explanation": "应先通 CO 排尽装置内空气，防止爆炸。",
+      "category": "laboratory"
+    },
+    {
+      "id": "L24-D01",
+      "type": "mc",
+      "question": "下列气体中，既有可燃性又有还原性的是？",
+      "options": [
+        "CO₂",
+        "O₂",
+        "CO",
+        "N₂"
+      ],
+      "answer": 2,
+      "knowledgeIds": [
+        "co-property"
+      ],
+      "knowledgePoints": [
+        "co-property"
+      ],
+      "explanation": "CO 既有可燃性又有还原性。",
+      "category": "application"
+    },
+    {
+      "id": "L24-D02",
+      "type": "mc",
+      "question": "冬天用煤炉取暖时，预防 CO 中毒的正确做法是？",
+      "options": [
+        "关闭所有门窗",
+        "保持室内通风",
+        "使用更多煤炭",
+        "安装空气净化器"
+      ],
+      "answer": 1,
+      "knowledgeIds": [
+        "co-property"
+      ],
+      "knowledgePoints": [
+        "co-property"
+      ],
+      "explanation": "保持通风可防止 CO 积聚，预防中毒。",
+      "category": "application"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "lesson-22-co2-preparation",
+  "sequenceNumber": 22,
+  "day": "22",
+  "title": "二氧化碳的制取",
+  "module": "unit-06-carbon-oxides",
+  "semester": "upper",
+  "unitId": "u06",
+  "duration": "45 分钟",
+  "description": "学习实验室制取二氧化碳的原理、装置和收集方法，掌握气体制取的一般思路。",
+  "status": "ready",
+  "releaseStatus": "ready",
+  "learningObjectives": [
+    "掌握 CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂↑ 的原理并解释试剂选择。",
+    "掌握固液常温型装置与向上排空气法收集。",
+    "区分检验（石灰水）与验满（燃着木条于瓶口）操作。"
+  ],
+  "knowledgePoints": ["co2-preparation"],
+  "prerequisites": ["lesson-21-carbon-property", "lesson-16-lab-operations", "lesson-16-equation-writing"],
+  "misconceptionIds": ["mc-co2-prep-sulfuric", "mc-co2-verify-method"],
+  "guidedLearning": {
+    "stepCount": 8,
+    "steps": [
+      { "id": "L22-S01", "title": "情境引入：如何制取一瓶 CO₂？", "type": "engage", "body": ["生活中：汽水、灭火器中都有 CO₂。", "实验室：如何用简单方法制取纯净的 CO₂？"], "knowledgePoints": ["co2-preparation"], "check": { "question": "实验室制取 CO₂ 常用哪种反应？", "options": ["碳燃烧", "大理石与稀盐酸反应", "碳酸钠与硫酸反应", "一氧化碳燃烧"], "answer": 1, "explanation": "实验室用大理石（CaCO₃）与稀盐酸反应制取 CO₂。" } },
+      { "id": "L22-S02", "title": "核心原理：药品选择", "type": "content", "body": ["原理：CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂↑", "为何不用稀硫酸？CaSO₄ 微溶，覆盖大理石表面阻止反应继续。", "为何不用浓盐酸？浓盐酸易挥发，CO₂ 混入 HCl 气体不纯。"], "knowledgePoints": ["co2-preparation"], "check": { "question": "不能用稀硫酸制取 CO₂ 的原因是？", "options": ["反应太慢", "生成 CaSO₄ 覆盖阻止反应", "硫酸太贵", "会产生有毒气体"], "answer": 1, "explanation": "生成的 CaSO₄ 微溶于水，覆盖在大理石表面阻止反应继续。" } },
+      { "id": "L22-S03", "title": "实验装置：固液常温型", "type": "experiment", "body": ["发生装置：固液常温型（试管+长颈漏斗）。", "收集方法：向上排空气法（CO₂ 密度大于空气）。", "装置要点：长颈漏斗下端要伸入液面以下。"], "knowledgePoints": ["co2-preparation"], "check": null },
+      { "id": "L22-S04", "title": "检验与验满", "type": "content", "body": ["检验：将气体通入澄清石灰水，变浑浊即为 CO₂。", "验满：燃着木条放在瓶口，熄灭则已满。", "区分：检验用石灰水，验满用燃着木条。"], "knowledgePoints": ["co2-preparation"], "check": { "question": "检验 CO₂ 的方法是？", "options": ["燃着木条放瓶口", "通入澄清石灰水", "带火星木条", "闻气味"], "answer": 1, "explanation": "检验 CO₂ 用澄清石灰水，变浑浊即为 CO₂。" } },
+      { "id": "L22-S05", "title": "实验操作要点", "type": "experiment", "body": ["检查气密性：先查气密性再装药品。", "加药品顺序：先固后液。", "收集时间：气泡均匀冒出时开始收集。"], "knowledgePoints": ["co2-preparation"], "check": null },
+      { "id": "L22-S06", "title": "误区警示：检验 vs 验满", "type": "misconception", "body": ["误区：检验和验满都用燃着木条。", "纠正：检验用石灰水（确认是什么气体），验满用燃着木条（确认是否收集满）。"], "knowledgePoints": ["co2-preparation"], "check": { "question": "下列操作能验满 CO₂ 的是？", "options": ["将燃着木条伸入瓶内", "将燃着木条放在瓶口", "将石灰水倒入瓶内", "闻瓶口气味"], "answer": 1, "explanation": "验满时燃着木条应放在瓶口，熄灭则已满。" } },
+      { "id": "L22-S07", "title": "气体制取一般思路", "type": "application", "body": ["原理 → 装置 → 收集 → 检验 → 验满", "本方法适用于后续 O₂、H₂ 等气体的学习。"], "knowledgePoints": ["co2-preparation"], "check": null },
+      { "id": "L22-S08", "title": "知识小结", "type": "summary", "body": ["原理：CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂↑", "装置：固液常温型，向上排空气法收集。", "检验：石灰水变浑浊。", "验满：燃着木条放瓶口熄灭。", "下节课学习 CO₂ 的性质。"], "knowledgePoints": ["co2-preparation"], "check": null }
+    ]
+  },
+  "resourceRefs": {
+    "experiment": "content/lessons/lesson-22-co2-preparation-experiment.json",
+    "practice": "content/lessons/lesson-22-co2-preparation-practice.json",
+    "diagnostic": "content/lessons/lesson-22-co2-preparation-diagnostic.json",
+    "mastery": "content/lessons/lesson-22-co2-preparation-mastery.json",
+    "guidedLearning": "content/lessons/lesson-22-co2-preparation-guided-learning.json",
+    "transfer": "content/lessons/lesson-22-co2-preparation-transfer.json"
+  },
+  "experiments": [
+    { "id": "L22-E01", "title": "实验室制取二氧化碳", "type": "demonstration", "instruments": ["锥形瓶", "长颈漏斗", "双孔塞", "导管", "集气瓶", "大理石", "稀盐酸"], "safety": "稀盐酸有腐蚀性，避免接触皮肤。", "goal": "掌握 CO₂ 的制取、收集和检验方法。", "steps": [{ "step": 1, "action": "检查装置气密性", "record": "用手捂热锥形瓶，导管口有气泡冒出" }, { "step": 2, "action": "加入大理石，从长颈漏斗加入稀盐酸", "record": "观察气泡产生" }, { "step": 3, "action": "用向上排空气法收集", "record": "导管伸到集气瓶底部" }, { "step": 4, "action": "用燃着木条验满", "record": "瓶口木条熄灭则满" }], "observationGuidance": ["大理石表面产生大量气泡", "收集时导管伸到集气瓶底部"], "conclusion": "用向上排空气法收集的 CO₂ 能使燃着木条熄灭，说明已收集满。" }
+  ],
+  "questions": [
+    { "id": "L22-Q01", "type": "concept", "difficulty": "basic", "question": "实验室制取 CO₂ 的药品是？", "options": ["大理石和稀硫酸", "大理石和稀盐酸", "碳酸钠和稀盐酸", "木炭和氧气"], "answer": 1, "knowledgeIds": ["co2-preparation"], "knowledgePoints": ["co2-preparation"], "explanation": "实验室用大理石（CaCO₃）与稀盐酸反应制取 CO₂。" },
+    { "id": "L22-Q02", "type": "concept", "difficulty": "basic", "question": "收集 CO₂ 应采用的方法是？", "options": ["排水法", "向下排空气法", "向上排空气法", "任意方法"], "answer": 2, "knowledgeIds": ["co2-preparation"], "knowledgePoints": ["co2-preparation"], "explanation": "CO₂ 密度大于空气且能溶于水，用向上排空气法收集。" },
+    { "id": "L22-Q03", "type": "concept", "difficulty": "medium", "question": "不能用稀硫酸制取 CO₂ 的原因是？", "options": ["反应速率太慢", "生成 CaSO₄ 覆盖大理石表面阻止反应", "稀硫酸不反应", "会产生有毒气体"], "answer": 1, "knowledgeIds": ["co2-preparation"], "knowledgePoints": ["co2-preparation"], "explanation": "生成的 CaSO₄ 微溶于水，覆盖在大理石表面阻止反应继续。" },
+    { "id": "L22-Q04", "type": "concept", "difficulty": "medium", "question": "检验 CO₂ 的正确方法是？", "options": ["燃着木条伸入瓶内", "通入澄清石灰水", "带火星木条", "闻气味"], "answer": 1, "knowledgeIds": ["co2-preparation"], "knowledgePoints": ["co2-preparation"], "explanation": "将气体通入澄清石灰水，变浑浊即为 CO₂。" },
+    { "id": "L22-Q05", "type": "concept", "difficulty": "hard", "question": "验满 CO₂ 时，燃着木条应放在？", "options": ["集气瓶底部", "集气瓶中部", "集气瓶口", "任意位置"], "answer": 2, "knowledgeIds": ["co2-preparation"], "knowledgePoints": ["co2-preparation"], "explanation": "验满时燃着木条应放在集气瓶口，熄灭则已满。" },
+    { "id": "L22-Q06", "type": "equation", "difficulty": "medium", "question": "写出实验室制取 CO₂ 的化学方程式。", "answer": "CaCO3 + 2HCl -> CaCl2 + H2O + CO2", "knowledgeIds": ["co2-preparation"], "knowledgePoints": ["co2-preparation"], "explanation": "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂↑。" }
+  ],
+  "diagnosticQuestions": [
+    { "id": "L22-D01", "type": "concept", "difficulty": "medium", "question": "小华想用稀硫酸与大理石制取 CO₂，发现反应很快停止。原因最可能是？", "options": ["稀硫酸浓度太低", "生成 CaSO₄ 覆盖大理石表面", "大理石纯度不够", "温度太低"], "answer": 1, "knowledgeIds": ["co2-preparation"], "knowledgePoints": ["co2-preparation"], "explanation": "生成的 CaSO₄ 微溶，覆盖在大理石表面阻止反应继续。", "errorType": "mc-co2-prep-sulfuric", "remediationStep": "L22-S02" },
+    { "id": "L22-D02", "type": "concept", "difficulty": "medium", "question": "下列操作中，用于验满 CO₂ 的是？", "options": ["将石灰水倒入集气瓶", "将燃着木条伸入瓶内", "将燃着木条放在瓶口", "闻集气瓶口气味"], "answer": 2, "knowledgeIds": ["co2-preparation"], "knowledgePoints": ["co2-preparation"], "explanation": "验满用燃着木条放在瓶口，检验用石灰水。", "errorType": "mc-co2-verify-method", "remediationStep": "L22-S04" },
+    { "id": "L22-D03", "type": "concept", "difficulty": "hard", "question": "某同学用浓盐酸与大理石反应制取 CO₂，收集到的气体使石灰水变浑浊很慢。原因是？", "options": ["浓盐酸不反应", "浓盐酸挥发出的 HCl 干扰了检验", "大理石质量不好", "温度太低"], "answer": 1, "knowledgeIds": ["co2-preparation"], "knowledgePoints": ["co2-preparation"], "explanation": "浓盐酸易挥发，HCl 气体混入 CO₂ 中，干扰石灰水检验。", "errorType": "mc-co2-prep-sulfuric", "remediationStep": "L22-S02" }
+  ],
+  "sections": [
+    { "title": "本节课要掌握什么？", "body": ["实验室制取 CO₂ 的原理和药品选择。", "固液常温型装置与向上排空气法。", "检验（石灰水）与验满（燃着木条）的区别。"] },
+    { "title": "核心实验", "body": ["实验室制取 CO₂：大理石 + 稀盐酸，向上排空气法收集。"] },
+    { "title": "核心概念", "body": ["气体制取一般思路：原理→装置→收集→检验→验满。", "试剂选择：不用稀硫酸（CaSO₄ 覆盖），不用浓盐酸（挥发）。"] },
+    { "title": "常见误区", "body": ["误用稀硫酸制取 CO₂。", "混淆检验与验满操作。"] },
+    { "title": "学习方法", "body": ["从实验现象推导原理，再从原理设计装置。", "对比记忆：CO₂ 制取 vs O₂ 制取的异同。"] }
+  ],
+  "provenance": { "status": "ready", "basis": "人教版九年级化学上册第六单元课题2；2022年版义务教育化学课程标准。", "note": "内容原创，不复制教材原文。" },
+  "review": { "curriculum": "pass", "scientific": "pass", "ageSuitability": "pass", "itemQuality": "pass", "knowledgeLinks": "pass", "wuhanAlignment": "pass", "masteryGate": "pass", "blockingIssues": [] }
+}

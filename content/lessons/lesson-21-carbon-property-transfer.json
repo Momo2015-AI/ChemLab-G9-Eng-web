@@ -1,0 +1,77 @@
+{
+  "lessonId": "lesson-21-carbon-property",
+  "questions": [
+    {
+      "id": "L21-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "古代铁器表面常有红色锈斑，而古代金器却光亮如新。请从金属活动性和碳的化学性质角度分析这一现象，并说明这对文物保护的启示。",
+      "rubric": {
+        "modelAnswer": "铁在常温下易与氧气、水反应生成铁锈（化学性质活泼），金化学性质稳定不易反应。碳在常温下也稳定。启示：文物保存需隔绝氧气和水分，稳定物质更易保存。",
+        "keywords": [
+          ["金属活动性", "化学稳定性"],
+          ["铁活泼/金稳定", "碳常温稳定"],
+          ["隔绝氧气水分"]
+        ],
+        "explanation": "化学稳定性决定物质是否容易变质，影响文物保护策略。"
+      },
+      "knowledgeIds": ["carbon-chemical-property"],
+      "misconceptionIds": ["mc-carbon-reduce-cuo"]
+    },
+    {
+      "id": "L21-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "question": "工业上用焦炭还原Fe2O3炼铁：Fe2O3 + 3C → 2Fe + 3CO↑。有同学认为该反应中碳只体现还原性。请评价这一说法是否完整，并说明理由。",
+      "rubric": {
+        "modelAnswer": "说法不完整。碳在此反应中既体现还原性（夺取Fe2O3中的氧），也体现可燃性相关性质（生成CO而非CO2，说明氧气不足）。还原性是主要性质，但不能忽略条件的影响。",
+        "keywords": [
+          ["还原性", "主要性质"],
+          ["反应条件影响产物"],
+          ["说法不完整"]
+        ],
+        "explanation": "同一反应中物质可能体现多种性质，需全面分析。"
+      },
+      "knowledgeIds": ["carbon-chemical-property"],
+      "misconceptionIds": ["mc-carbon-reduce-cuo"]
+    },
+    {
+      "id": "L21-T03",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "create",
+      "question": "设计一个实验证明木炭具有还原性。画出装置示意图（文字描述即可），写出实验步骤、预期现象和结论。",
+      "rubric": {
+        "modelAnswer": "装置：试管+酒精灯+导管+石灰水。步骤：①混合木炭粉和CuO粉末放入试管 ②加热 ③将气体通入石灰水。现象：黑色粉末变红，石灰水变浑浊。结论：碳还原CuO生成Cu和CO2，碳具有还原性。",
+        "keywords": [
+          ["C+CuO混合加热", "澄清石灰水"],
+          ["黑色变红", "石灰水浑浊"],
+          ["碳具有还原性"]
+        ],
+        "explanation": "通过还原金属氧化物并检验产物，证明碳的还原性。"
+      },
+      "knowledgeIds": ["carbon-chemical-property"],
+      "misconceptionIds": ["mc-carbon-reduce-cuo"]
+    },
+    {
+      "id": "L21-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "煤炉燃烧时，靠近炉壁处火焰呈蓝色，炉膛中部有红色炽热。请从燃烧条件和反应类型角度解释这一现象。",
+      "rubric": {
+        "modelAnswer": "炉壁处氧气充足，CO充分燃烧产生蓝色火焰（2CO+O2→2CO2）；炉膛中部氧气不足，碳不充分燃烧生成CO，同时碳燃烧放热使炉膛呈红色炽热。",
+        "keywords": [
+          ["氧气充足/不足"],
+          ["充分燃烧/不充分燃烧"],
+          ["蓝色火焰/炽热"]
+        ],
+        "explanation": "同一炉内不同位置氧气浓度不同，导致不同燃烧现象。"
+      },
+      "knowledgeIds": ["carbon-chemical-property"],
+      "misconceptionIds": ["mc-carbon-reduce-cuo"]
+    }
+  ]
+}

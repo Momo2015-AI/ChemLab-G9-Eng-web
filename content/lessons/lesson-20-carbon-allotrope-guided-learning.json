@@ -1,0 +1,14 @@
+{
+  "lessonId": "lesson-20-carbon-allotrope",
+  "stepCount": 8,
+  "steps": [
+    {"id": "L20-S01", "title": "情境引入：钻石与铅笔芯", "type": "engage", "body": ["钻石璀璨昂贵，铅笔芯便宜普通，两者都是碳的单质。", "为什么同一种元素组成的物质，性质却天差地别？"], "knowledgePoints": ["carbon-allotrope"], "check": {"question": "钻石和铅笔芯的共同点是？", "options": ["都是碳单质", "硬度相同", "导电性相同", "颜色相同"], "answer": 0, "explanation": "钻石和石墨（铅笔芯主要成分）都是由碳元素组成的单质。"}},
+    {"id": "L20-S02", "title": "核心概念：金刚石与石墨", "type": "content", "body": ["金刚石：正四面体空间网状结构，硬度最大，不导电。", "石墨：层状结构，质软，导电。", "结构差异导致性质差异。"], "knowledgePoints": ["carbon-allotrope"], "check": {"question": "金刚石和石墨物理性质差异大的原因是？", "options": ["组成元素不同", "碳原子排列方式不同", "原子大小不同", "含有杂质不同"], "answer": 1, "explanation": "金刚石和石墨都是碳单质，物理性质差异源于碳原子排列方式不同。"}},
+    {"id": "L20-S03", "title": "实验演示：石墨导电性", "type": "experiment", "body": ["用石墨电极连接电路，观察灯泡是否发光。", "结论：石墨具有良好的导电性。"], "knowledgePoints": ["carbon-allotrope"], "check": null},
+    {"id": "L20-S04", "title": "扩展内容：C60 与无定形碳", "type": "content", "body": ["C60：足球烯，60 个碳原子组成的分子。", "无定形碳：木炭、活性炭、焦炭、炭黑，具有吸附性。"], "knowledgePoints": ["carbon-allotrope"], "check": {"question": "活性炭净水利用的是？", "options": ["化学反应", "吸附性", "导电性", "硬度大"], "answer": 1, "explanation": "活性炭疏松多孔，具有强吸附性，能吸附色素和异味。"}},
+    {"id": "L20-S05", "title": "关键追问：结构决定性质", "type": "inquiry", "body": ["为什么金刚石硬而石墨软？", "结构不同 → 性质不同 → 用途不同。"], "knowledgePoints": ["carbon-allotrope"], "check": null},
+    {"id": "L20-S06", "title": "误区警示：同素异形体", "type": "misconception", "body": ["误区：金刚石和石墨是不同的物质。纠正：它们是同素异形体，都是碳单质。"], "knowledgePoints": ["carbon-allotrope"], "check": {"question": "关于金刚石和石墨，说法正确的是？", "options": ["是不同的物质", "都是碳单质", "组成元素不同", "化学性质完全不同"], "answer": 1, "explanation": "金刚石和石墨都是由碳元素组成的单质，互为同素异形体。"}},
+    {"id": "L20-S07", "title": "应用练习：性质与用途", "type": "practice", "body": ["金刚石：切割玻璃、钻头。石墨：电极、铅笔芯、润滑剂。活性炭：净水、防毒面具。"], "knowledgePoints": ["carbon-allotrope"], "check": null},
+    {"id": "L20-S08", "title": "知识小结", "type": "summary", "body": ["碳的单质：金刚石、石墨、C60、无定形碳。", "结构决定性质，性质决定用途。", "下节课学习碳的化学性质。"], "knowledgePoints": ["carbon-allotrope"], "check": null}
+  ]
+}

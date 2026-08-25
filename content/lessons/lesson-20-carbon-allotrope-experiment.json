@@ -1,0 +1,60 @@
+{
+  "lessonId": "lesson-20-carbon-allotrope",
+  "experiments": [
+    {
+      "id": "L20-E01",
+      "title": "石墨导电性实验",
+      "type": "demonstration",
+      "instruments": [
+        "石墨电极",
+        "导线",
+        "电池",
+        "小灯泡",
+        "开关"
+      ],
+      "safety": "注意用电安全。",
+      "goal": "验证石墨的导电性。",
+      "steps": [
+        {
+          "step": 1,
+          "action": "按图连接电路",
+          "record": "观察灯泡是否发光"
+        }
+      ],
+      "observationGuidance": [
+        "灯泡发光，说明石墨导电"
+      ],
+      "conclusion": "石墨具有良好的导电性。"
+    },
+    {
+      "id": "L20-E02",
+      "title": "活性炭吸附性实验",
+      "type": "demonstration",
+      "instruments": [
+        "活性炭",
+        "红墨水",
+        "烧杯",
+        "玻璃棒",
+        "滤纸"
+      ],
+      "safety": "避免活性炭接触眼睛。",
+      "goal": "验证活性炭的吸附性。",
+      "steps": [
+        {
+          "step": 1,
+          "action": "向红墨水中加入活性炭，搅拌",
+          "record": "观察颜色变化"
+        },
+        {
+          "step": 2,
+          "action": "过滤",
+          "record": "观察滤液颜色"
+        }
+      ],
+      "observationGuidance": [
+        "滤液颜色变浅或无色，说明活性炭吸附了色素"
+      ],
+      "conclusion": "活性炭具有吸附性，可用于净水。"
+    }
+  ]
+}

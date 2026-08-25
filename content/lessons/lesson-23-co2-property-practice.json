@@ -1,0 +1,45 @@
+{
+  "lessonId": "lesson-23-co2-property",
+  "questions": [
+    {
+      "id": "L23-P01",
+      "type": "mc",
+      "difficulty": "medium",
+      "question": "下列用途中，主要利用 CO₂ 物理性质的是？",
+      "options": [
+        "灭火",
+        "干冰人工降雨",
+        "光合作用",
+        "制碳酸饮料"
+      ],
+      "answer": 1,
+      "explanation": "干冰升华吸热是物理变化，利用的是物理性质。"
+    },
+    {
+      "id": "L23-P02",
+      "type": "equation",
+      "difficulty": "medium",
+      "question": "写出 CO₂ 使澄清石灰水变浑浊的化学方程式。",
+      "knowledgePoints": [
+        "co2-property"
+      ],
+      "knowledgeIds": [
+        "co2-property"
+      ]
+    },
+    {
+      "id": "L23-P03",
+      "type": "mc",
+      "difficulty": "hard",
+      "question": "将充满 CO₂ 的试管倒插入滴有紫色石蕊的水中，现象是？",
+      "options": [
+        "水位不上升，溶液不变色",
+        "水位上升，溶液变红",
+        "水位下降，溶液变蓝",
+        "无变化"
+      ],
+      "answer": 1,
+      "explanation": "CO₂ 溶于水使试管内压强减小，水位上升；生成碳酸使石蕊变红。"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "lessonId": "lesson-22-co2-preparation",
+  "stepCount": 8,
+  "steps": [
+    {"id": "L22-S01", "title": "情境引入：如何制取一瓶 CO₂？", "type": "engage", "body": ["生活中：汽水、灭火器中都有 CO₂。", "实验室：如何用简单方法制取纯净的 CO₂？"], "knowledgePoints": ["co2-preparation"], "check": {"question": "实验室制取 CO₂ 常用哪种反应？", "options": ["碳燃烧", "大理石与稀盐酸反应", "碳酸钠与硫酸反应", "一氧化碳燃烧"], "answer": 1, "explanation": "实验室用大理石（CaCO₃）与稀盐酸反应制取 CO₂。"}},
+    {"id": "L22-S02", "title": "核心原理：药品选择", "type": "content", "body": ["原理：CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂↑", "为何不用稀硫酸？CaSO₄ 微溶，覆盖大理石表面阻止反应继续。", "为何不用浓盐酸？浓盐酸易挥发，CO₂ 混入 HCl 气体不纯。"], "knowledgePoints": ["co2-preparation"], "check": {"question": "不能用稀硫酸制取 CO₂ 的原因是？", "options": ["反应太慢", "生成 CaSO₄ 覆盖阻止反应", "硫酸太贵", "会产生有毒气体"], "answer": 1, "explanation": "生成的 CaSO₄ 微溶于水，覆盖在大理石表面阻止反应继续。"}},
+    {"id": "L22-S03", "title": "实验装置：固液常温型", "type": "experiment", "body": ["发生装置：固液常温型（试管+长颈漏斗）。", "收集方法：向上排空气法（CO₂ 密度大于空气）。", "装置要点：长颈漏斗下端要伸入液面以下。"], "knowledgePoints": ["co2-preparation"], "check": null},
+    {"id": "L22-S04", "title": "检验与验满", "type": "content", "body": ["检验：将气体通入澄清石灰水，变浑浊即为 CO₂。", "验满：燃着木条放在瓶口，熄灭则已满。", "区分：检验用石灰水，验满用燃着木条。"], "knowledgePoints": ["co2-preparation"], "check": {"question": "检验 CO₂ 的方法是？", "options": ["燃着木条放瓶口", "通入澄清石灰水", "带火星木条", "闻气味"], "answer": 1, "explanation": "检验 CO₂ 用澄清石灰水，变浑浊即为 CO₂。"}},
+    {"id": "L22-S05", "title": "实验操作要点", "type": "experiment", "body": ["检查气密性：先查气密性再装药品。", "加药品顺序：先固后液。", "收集时间：气泡均匀冒出时开始收集。"], "knowledgePoints": ["co2-preparation"], "check": null},
+    {"id": "L22-S06", "title": "误区警示：检验 vs 验满", "type": "misconception", "body": ["误区：检验和验满都用燃着木条。", "纠正：检验用石灰水（确认是什么气体），验满用燃着木条（确认是否收集满）。"], "knowledgePoints": ["co2-preparation"], "check": {"question": "下列操作能验满 CO₂ 的是？", "options": ["将燃着木条伸入瓶内", "将燃着木条放在瓶口", "将石灰水倒入瓶内", "闻瓶口气味"], "answer": 1, "explanation": "验满时燃着木条应放在瓶口，熄灭则已满。"}},
+    {"id": "L22-S07", "title": "气体制取一般思路", "type": "application", "body": ["原理 → 装置 → 收集 → 检验 → 验满", "本方法适用于后续 O₂、H₂ 等气体的学习。"], "knowledgePoints": ["co2-preparation"], "check": null},
+    {"id": "L22-S08", "title": "知识小结", "type": "summary", "body": ["原理：CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂↑", "装置：固液常温型，向上排空气法收集。", "检验：石灰水变浑浊。", "验满：燃着木条放瓶口熄灭。", "下节课学习 CO₂ 的性质。"], "knowledgePoints": ["co2-preparation"], "check": null}
+  ]
+}

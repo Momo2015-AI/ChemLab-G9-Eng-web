@@ -1,0 +1,192 @@
+{
+  "lessonId": "lesson-22-co2-preparation",
+  "dimensions": [
+    "concept",
+    "laboratory",
+    "application"
+  ],
+  "criteria": [
+    {
+      "dimension": "concept",
+      "items": [
+        "L22-Q01",
+        "L22-Q02",
+        "L22-Q03",
+        "L22-Q04"
+      ],
+      "passingScore": 0.75
+    },
+    {
+      "dimension": "laboratory",
+      "items": [
+        "L22-Q05",
+        "L22-Q06"
+      ],
+      "passingScore": 0.75
+    },
+    {
+      "dimension": "application",
+      "items": [
+        "L22-D01",
+        "L22-D02"
+      ],
+      "passingScore": 0.75
+    }
+  ],
+  "items": [
+    {
+      "id": "L22-Q01",
+      "type": "mc",
+      "question": "实验室制取 CO₂ 的药品是？",
+      "options": [
+        "大理石和稀硫酸",
+        "大理石和稀盐酸",
+        "碳酸钠和稀盐酸",
+        "木炭和氧气"
+      ],
+      "answer": 1,
+      "knowledgeIds": [
+        "co2-preparation"
+      ],
+      "knowledgePoints": [
+        "co2-preparation"
+      ],
+      "explanation": "实验室用大理石（CaCO₃）与稀盐酸反应制取 CO₂。",
+      "category": "concept"
+    },
+    {
+      "id": "L22-Q02",
+      "type": "mc",
+      "question": "收集 CO₂ 应采用的方法是？",
+      "options": [
+        "排水法",
+        "向下排空气法",
+        "向上排空气法",
+        "任意方法"
+      ],
+      "answer": 2,
+      "knowledgeIds": [
+        "co2-preparation"
+      ],
+      "knowledgePoints": [
+        "co2-preparation"
+      ],
+      "explanation": "CO₂ 密度大于空气且能溶于水，用向上排空气法收集。",
+      "category": "concept"
+    },
+    {
+      "id": "L22-Q03",
+      "type": "mc",
+      "question": "不能用稀硫酸制取 CO₂ 的原因是？",
+      "options": [
+        "反应速率太慢",
+        "生成 CaSO₄ 覆盖大理石表面阻止反应",
+        "稀硫酸不反应",
+        "会产生有毒气体"
+      ],
+      "answer": 1,
+      "knowledgeIds": [
+        "co2-preparation"
+      ],
+      "knowledgePoints": [
+        "co2-preparation"
+      ],
+      "explanation": "生成的 CaSO₄ 微溶于水，覆盖在大理石表面阻止反应继续。",
+      "category": "concept"
+    },
+    {
+      "id": "L22-Q04",
+      "type": "mc",
+      "question": "检验 CO₂ 的正确方法是？",
+      "options": [
+        "燃着木条伸入瓶内",
+        "通入澄清石灰水",
+        "带火星木条",
+        "闻气味"
+      ],
+      "answer": 1,
+      "knowledgeIds": [
+        "co2-preparation"
+      ],
+      "knowledgePoints": [
+        "co2-preparation"
+      ],
+      "explanation": "将气体通入澄清石灰水，变浑浊即为 CO₂。",
+      "category": "concept"
+    },
+    {
+      "id": "L22-Q05",
+      "type": "mc",
+      "question": "验满 CO₂ 时，燃着木条应放在？",
+      "options": [
+        "集气瓶底部",
+        "集气瓶中部",
+        "集气瓶口",
+        "任意位置"
+      ],
+      "answer": 2,
+      "knowledgeIds": [
+        "co2-preparation"
+      ],
+      "knowledgePoints": [
+        "co2-preparation"
+      ],
+      "explanation": "验满时燃着木条应放在集气瓶口，熄灭则已满。",
+      "category": "laboratory"
+    },
+    {
+      "id": "L22-Q06",
+      "type": "equation",
+      "question": "写出实验室制取 CO₂ 的化学方程式。",
+      "answer": "CaCO3 + 2HCl -> CaCl2 + H2O + CO2",
+      "knowledgeIds": [
+        "co2-preparation"
+      ],
+      "knowledgePoints": [
+        "co2-preparation"
+      ],
+      "explanation": "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂↑。",
+      "category": "laboratory"
+    },
+    {
+      "id": "L22-D01",
+      "type": "mc",
+      "question": "下列气体中，能用向上排空气法收集且不与空气反应的是？",
+      "options": [
+        "H₂",
+        "O₂",
+        "NH₃",
+        "CO"
+      ],
+      "answer": 1,
+      "knowledgeIds": [
+        "co2-preparation"
+      ],
+      "knowledgePoints": [
+        "co2-preparation"
+      ],
+      "explanation": "O₂ 密度大于空气，可用向上排空气法收集。",
+      "category": "application"
+    },
+    {
+      "id": "L22-D02",
+      "type": "mc",
+      "question": "实验室制取气体时，不需要考虑的因素是？",
+      "options": [
+        "反应原理",
+        "药品颜色",
+        "收集方法",
+        "气密性检查"
+      ],
+      "answer": 1,
+      "knowledgeIds": [
+        "co2-preparation"
+      ],
+      "knowledgePoints": [
+        "co2-preparation"
+      ],
+      "explanation": "药品颜色不影响气体的制取和收集方法。",
+      "category": "application"
+    }
+  ]
+}

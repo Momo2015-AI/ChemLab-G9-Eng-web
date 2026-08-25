@@ -763,9 +763,118 @@ const u04BackfillMisconceptions = [
   }
 ];
 
+const u06Misconceptions = [
+  {
+    id: 'mc-carbon-allotrope-same-element',
+    title: '误认为金刚石与石墨是不同元素组成的物质',
+    description: '学生观察到金刚石和石墨物理性质差异很大（硬度、导电性等），误以为它们是由不同元素组成的物质，未能理解同素异形体的概念。',
+    knowledgeIds: ['carbon-allotrope'],
+    signals: ['concept-confusion', 'structure-property-gap'],
+    severity: 'high',
+    source: 'unit-06 production',
+    remediation: {
+      goal: '理解同种元素可形成不同单质，物理性质由原子排列方式决定，化学性质由元素种类决定。',
+      lessonIds: ['lesson-20-carbon-allotrope'],
+      practiceQuestionIds: ['L20-P04'],
+      recheckQuestionIds: ['L20-D01']
+    }
+  },
+  {
+    id: 'mc-carbon-reduce-cuo',
+    title: '混淆碳还原氧化铜的条件、现象与产物判断',
+    description: '学生不能正确写出碳还原氧化铜的方程式，或混淆还原剂与氧化剂的角色，或错误判断实验现象。',
+    knowledgeIds: ['carbon-chemical-property'],
+    signals: ['equation-writing-error', 'role-confusion'],
+    severity: 'high',
+    source: 'unit-06 production',
+    remediation: {
+      goal: '掌握碳的还原性，能正确书写方程式并描述实验现象：黑色变红、石灰水变浑浊。',
+      lessonIds: ['lesson-21-carbon-property'],
+      practiceQuestionIds: ['L21-P02'],
+      recheckQuestionIds: ['L21-D03']
+    }
+  },
+  {
+    id: 'mc-co2-prep-sulfuric',
+    title: '误用稀硫酸或浓盐酸制取二氧化碳',
+    description: '学生认为稀硫酸或浓盐酸可以替代稀盐酸制取CO₂，忽略CaSO₄微溶覆盖和HCl挥发的影响。',
+    knowledgeIds: ['co2-preparation'],
+    signals: ['reagent-misuse', 'condition-omission'],
+    severity: 'high',
+    source: 'unit-06 production',
+    remediation: {
+      goal: '理解试剂选择的原因：稀硫酸生成微溶CaSO₄覆盖表面阻止反应；浓盐酸挥发出HCl使气体不纯。',
+      lessonIds: ['lesson-22-co2-preparation'],
+      practiceQuestionIds: ['L22-P02'],
+      recheckQuestionIds: ['L22-D01']
+    }
+  },
+  {
+    id: 'mc-co2-verify-method',
+    title: '混淆CO₂的检验与验满操作',
+    description: '学生将检验（石灰水）与验满（燃着木条）的方法混用，或操作位置错误（伸入瓶内而非瓶口）。',
+    knowledgeIds: ['co2-preparation'],
+    signals: ['procedure-mistake', 'concept-confusion'],
+    severity: 'medium',
+    source: 'unit-06 production',
+    remediation: {
+      goal: '明确区分检验（确认是什么气体）与验满（确认是否收集满）的操作方法和目的。',
+      lessonIds: ['lesson-22-co2-preparation'],
+      practiceQuestionIds: [],
+      recheckQuestionIds: ['L22-D02']
+    }
+  },
+  {
+    id: 'mc-co2-limewater',
+    title: '误认为使石蕊变红的是CO₂分子而非碳酸',
+    description: '学生认为CO₂分子本身使石蕊变红，忽略了CO₂与水反应生成碳酸的中间过程。',
+    knowledgeIds: ['co2-property'],
+    signals: ['mechanism-gap', 'causation-error'],
+    severity: 'medium',
+    source: 'unit-06 production',
+    remediation: {
+      goal: '理解干燥CO₂不能使石蕊变红，是CO₂与水反应生成的碳酸使石蕊变红。',
+      lessonIds: ['lesson-23-co2-property'],
+      practiceQuestionIds: [],
+      recheckQuestionIds: ['L23-D01']
+    }
+  },
+  {
+    id: 'mc-co-poison-mechanism',
+    title: '误认为CO中毒源于刺激或腐蚀，而非血红蛋白结合',
+    description: '学生认为CO通过刺激呼吸道或腐蚀组织导致中毒，不了解CO与血红蛋白结合阻碍O₂运输的真正机制。',
+    knowledgeIds: ['co-property'],
+    signals: ['mechanism-gap', 'cause-misattribution'],
+    severity: 'high',
+    source: 'unit-06 production',
+    remediation: {
+      goal: '理解CO无色无味，中毒机制是与血红蛋白结合能力远强于O₂，阻碍氧气运输。',
+      lessonIds: ['lesson-24-co-property'],
+      practiceQuestionIds: ['L24-P03'],
+      recheckQuestionIds: ['L24-D01']
+    }
+  },
+  {
+    id: 'mc-co-co2-distinguish',
+    title: '混淆CO与CO₂的鉴别方法',
+    description: '学生用相同方法鉴别CO和CO₂，或混淆两者的性质差异（如毒性、可燃性、密度等）。',
+    knowledgeIds: ['co-property'],
+    signals: ['comparison-error', 'property-confusion'],
+    severity: 'high',
+    source: 'unit-06 production',
+    remediation: {
+      goal: '掌握CO与CO₂的物理和化学性质差异，能用多种方法正确鉴别。',
+      lessonIds: ['lesson-24-co-property'],
+      practiceQuestionIds: ['L24-P01'],
+      recheckQuestionIds: ['L24-D02']
+    }
+  }
+];
+
 const canonicalMisconceptionsFull = [
   ...canonicalMisconceptionsBase,
-  ...u04BackfillMisconceptions
+  ...u04BackfillMisconceptions,
+  ...u06Misconceptions
 ];
 
 export const canonicalMisconceptions = canonicalMisconceptionsFull;
