@@ -1,12 +1,14 @@
 {
-  "scanned": 16,
+  "scanned": 25,
   "template": 0,
-  "realContent": 16,
-  "ready": 16,
+  "realContent": 25,
+  "ready": 25,
   "needsRewrite": 0,
   "duplicateLegacy": false,
   "questionBankState": "CANONICAL_RUNTIME_SOURCE",
-  "issues": [],
+  "issues": [
+    "lesson-09-chemical-formula.json: unitId mismatch: manifest='u03' but lesson='u04'"
+  ],
   "lessons": [
     {
       "file": "lesson-01-material-changes-properties.json",
@@ -210,7 +212,9 @@
         "mastery": 21,
         "transfer": 4
       },
-      "contractErrors": []
+      "contractErrors": [
+        "unitId mismatch: manifest='u03' but lesson='u04'"
+      ]
     },
     {
       "file": "lesson-10-chemical-equation.json",
@@ -276,6 +280,149 @@
         "practice": 12,
         "diagnostic": 3,
         "mastery": 20,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-14-combustion-fire-extinguishing.json",
+      "day": "25",
+      "title": "燃烧与灭火",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 6,
+        "diagnostic": 3,
+        "mastery": 23,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-15-fossil-fuels-energy.json",
+      "day": "26",
+      "title": "化石燃料与新能源",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 6,
+        "diagnostic": 3,
+        "mastery": 22,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-16-combustion-safety-explosion.json",
+      "day": "27",
+      "title": "燃烧安全与防爆",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 6,
+        "diagnostic": 3,
+        "mastery": 22,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-17-environment-energy-sustainable.json",
+      "day": "28",
+      "title": "能源与环境",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 6,
+        "diagnostic": 3,
+        "mastery": 22,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-20-carbon-allotrope.json",
+      "day": "20",
+      "title": "碳的单质",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 4,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-21-carbon-property.json",
+      "day": "21",
+      "title": "碳的化学性质",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 4,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-22-co2-preparation.json",
+      "day": "22",
+      "title": "二氧化碳的制取",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 3,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-23-co2-property.json",
+      "day": "23",
+      "title": "二氧化碳的性质",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 3,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-24-co-property.json",
+      "day": "24",
+      "title": "一氧化碳",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 3,
         "transfer": 4
       },
       "contractErrors": []
