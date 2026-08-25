@@ -1135,14 +1135,14 @@
     {
       "id": "chemical-formula-meaning",
       "name": "化学式的意义",
-      "chapter": "第四单元 自然界的水·课题4 化学式与化合价",
+      "chapter": "第三单元 物质构成的奥秘·课题5 化学式与化合价",
       "domain": "symbolic",
       "bloomLevels": [
         "remember",
         "understand"
       ],
       "semester": "upper",
-      "unitId": "u04",
+      "unitId": "u03",
       "definition": "化学式从宏观角度表示一种物质及其组成元素，从微观角度表示物质的一个分子及分子的原子构成；同时能表示元素间的质量比等定量关系。",
       "prerequisiteIds": [
         "element-concept",
@@ -1157,14 +1157,14 @@
     {
       "id": "chemical-formula-writing",
       "name": "化合价规则与化学式书写",
-      "chapter": "第四单元 自然界的水·课题4 化学式与化合价",
+      "chapter": "第三单元 物质构成的奥秘·课题5 化学式与化合价",
       "domain": "symbolic",
       "bloomLevels": [
         "understand",
         "apply"
       ],
       "semester": "upper",
-      "unitId": "u04",
+      "unitId": "u03",
       "definition": "化合物中各元素正负化合价代数和为零；同一元素在不同化合物中可显示不同化合价；根据化合价可推出化学式中各原子个数比，书写顺序一般为正价元素在前、负价元素在后。",
       "prerequisiteIds": [
         "chemical-formula-meaning",
