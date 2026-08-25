@@ -1,0 +1,20 @@
+{
+  "lessonId": "lesson-15-fossil-fuels-energy",
+  "experiments": [
+    {
+      "id": "L18-E01",
+      "title": "甲烷燃烧实验",
+      "type": "demonstration",
+      "instruments": ["甲烷气源", "尖嘴导管", "酒精灯", "干冷烧杯", "澄清石灰水"],
+      "safety": "点燃甲烷前必须验纯，防止爆炸。",
+      "goal": "验证甲烷燃烧的产物。",
+      "steps": [
+        { "step": 1, "action": "点燃纯净的甲烷气体", "record": "观察火焰颜色" },
+        { "step": 2, "action": "在火焰上方罩一个干冷的烧杯", "record": "观察烧杯内壁变化" },
+        { "step": 3, "action": "迅速将烧杯倒转，加入澄清石灰水振荡", "record": "观察石灰水变化" }
+      ],
+      "observationGuidance": ["甲烷燃烧产生淡蓝色火焰", "烧杯内壁出现水雾", "澄清石灰水变浑浊"],
+      "conclusion": "甲烷燃烧生成CO₂和H₂O：CH₄+2O₂→CO₂+2H₂O。"
+    }
+  ]
+}

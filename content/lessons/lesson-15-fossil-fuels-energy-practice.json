@@ -1,0 +1,11 @@
+{
+  "lessonId": "lesson-15-fossil-fuels-energy",
+  "questions": [
+    { "id": "L18-P01", "type": "concept", "difficulty": "basic", "question": "三大化石燃料是？", "options": ["煤、石油、天然气", "煤、酒精、天然气", "石油、氢气、天然气", "煤、石油、氢气"], "answer": 0, "explanation": "三大化石燃料：煤、石油、天然气。" },
+    { "id": "L18-P02", "type": "concept", "difficulty": "basic", "question": "甲烷的化学式是？", "options": ["CH₄", "CO₂", "H₂", "C₂H₅OH"], "answer": 0, "explanation": "甲烷是最简单的有机物，化学式CH₄。" },
+    { "id": "L18-P03", "type": "concept", "difficulty": "medium", "question": "下列燃料燃烧对环境污染最小的是？", "options": ["煤", "石油", "天然气", "氢气"], "answer": 3, "explanation": "氢气燃烧只生成水，无污染。" },
+    { "id": "L18-P04", "type": "concept", "difficulty": "medium", "question": "煤燃烧产生的主要大气污染物不包括？", "options": ["SO₂", "粉尘", "CO₂", "N₂"], "answer": 3, "explanation": "N₂是空气主要成分，不是污染物。" },
+    { "id": "L18-P05", "type": "concept", "difficulty": "hard", "question": "下列关于能源的说法正确的是？", "options": ["化石燃料取之不尽", "新能源已经完全替代化石燃料", "提高化石燃料利用率有助于缓解能源危机", "所有能源都是可再生能源"], "answer": 2, "explanation": "提高利用率是缓解能源危机的重要途径。" },
+    { "id": "L18-P06", "type": "concept", "difficulty": "hard", "question": "点燃氢气前必须验纯，这是因为？", "options": ["氢气有剧毒", "不纯的氢气点燃可能爆炸", "氢气密度太小", "氢气有刺激性气味"], "answer": 1, "explanation": "氢气与空气混合达到爆炸极限时遇火会爆炸。" }
+  ]
+}

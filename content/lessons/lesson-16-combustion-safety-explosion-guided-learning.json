@@ -1,0 +1,14 @@
+{
+  "lessonId": "lesson-16-combustion-safety-explosion",
+  "stepCount": 8,
+  "steps": [
+    { "id": "L19-S01", "title": "情境引入：爆炸的威力", "type": "engage", "body": ["2019年江苏响水化工园区爆炸事故造成重大伤亡。", "爆炸为什么有如此大的破坏力？什么条件下会发生爆炸？"], "knowledgePoints": ["explosive-safety"], "check": { "question": "下列行为中，可能引发爆炸的是？", "options": ["在加油站使用手机", "在面粉厂穿棉质工作服", "在厨房检查燃气泄漏时使用明火", "在煤矿井下打开电灯"], "answer": 2, "explanation": "明火可能引燃泄漏煤气。" } },
+    { "id": "L19-S02", "title": "核心概念：爆炸的条件", "type": "content", "body": ["爆炸是短时间内大量气体膨胀的现象。", "化学爆炸条件：可燃物+氧气+密闭空间+浓度在爆炸极限内+点火源。", "爆炸极限：能发生爆炸的浓度范围。"], "knowledgePoints": ["explosive-safety"], "check": { "question": "下列条件中，不是爆炸必要条件的是？", "options": ["可燃物", "氧气", "高压", "密闭空间"], "answer": 2, "explanation": "高压不是爆炸必要条件。" } },
+    { "id": "L19-S03", "title": "实验演示：面粉粉尘爆炸", "type": "experiment", "body": ["金属筒中放面粉，吹散成粉尘。", "点燃蜡烛置于筒内下方。", "盖紧筒盖吹入粉尘。", "现象：爆炸，筒盖被冲开。"], "knowledgePoints": ["explosive-safety"], "check": { "question": "面粉粉尘爆炸实验中，面粉的作用是？", "options": ["催化剂", "可燃物", "灭火剂", "增氧剂"], "answer": 1, "explanation": "面粉是可燃物，粉尘增大接触面积。" } },
+    { "id": "L19-S04", "title": "核心概念：易燃物和易爆物", "type": "content", "body": ["易燃气体：氢气、甲烷、煤气。", "易燃液体：酒精、汽油。", "易燃固体：硫磺、磷、面粉、煤粉。", "易爆物：炸药、烟花爆竹。"], "knowledgePoints": ["explosive-safety"], "check": null },
+    { "id": "L19-S05", "title": "误区警示：任何气体遇火都爆炸", "type": "misconception", "body": ["误区：任何气体与空气混合遇火都会爆炸。", "纠正：只有可燃气体且在爆炸极限内才会爆炸。"], "knowledgePoints": ["explosive-safety"], "check": { "question": "下列气体与空气混合遇火不会爆炸的是？", "options": ["氢气", "甲烷", "氮气", "煤气"], "answer": 2, "explanation": "氮气不可燃。" } },
+    { "id": "L19-S06", "title": "安全常识：防爆措施", "type": "application", "body": ["可燃性气体使用前验纯。", "面粉厂、煤粉厂严禁烟火。", "通风降低浓度。", "使用防爆电器。"], "knowledgePoints": ["explosive-safety"], "check": { "question": "下列场所必须张贴'严禁烟火'标志的是？", "options": ["超市", "面粉厂", "学校", "公园"], "answer": 1, "explanation": "面粉厂有粉尘爆炸风险。" } },
+    { "id": "L19-S07", "title": "安全标志识别", "type": "content", "body": ["禁止烟火：红色圆形斜杠。", "当心爆炸：黄色三角形感叹号。", "易燃物质：红色火焰菱形。"], "knowledgePoints": ["explosive-safety"], "check": null },
+    { "id": "L19-S08", "title": "知识小结", "type": "summary", "body": ["爆炸五条件：可燃物+氧气+密闭+爆炸极限+点火源。", "不是所有气体遇火都爆炸。", "易燃易爆场所严禁烟火，注意通风和防爆。", "安全意识：预防比处置更重要。"], "knowledgePoints": ["explosive-safety"], "check": null }
+  ]
+}

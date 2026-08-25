@@ -1404,6 +1404,142 @@
         "L24-D01",
         "L24-T01"
       ]
+    },
+    {
+      "id": "combustion-conditions",
+      "name": "燃烧条件",
+      "chapter": "第七单元 燃料及其利用",
+      "domain": "reaction",
+      "bloomLevels": [
+        "remember",
+        "understand",
+        "apply"
+      ],
+      "semester": "upper",
+      "unitId": "u07",
+      "definition": "燃烧需要同时满足三个条件：可燃物、氧气（或空气）、温度达到着火点。缺一不可。",
+      "prerequisiteIds": [
+        "chemical-change",
+        "oxygen-chemical"
+      ],
+      "misconceptionIds": [
+        "mc-combustion-three-condition"
+      ],
+      "remediationGoal": "理解燃烧三条件缺一不可，能判断特定情境下燃烧是否发生。",
+      "questions": [
+        "L17-Q01",
+        "L17-Q02",
+        "L17-D01",
+        "L17-T01"
+      ]
+    },
+    {
+      "id": "fire-extinguishing",
+      "name": "灭火原理",
+      "chapter": "第七单元 燃料及其利用",
+      "domain": "reaction",
+      "bloomLevels": [
+        "understand",
+        "apply"
+      ],
+      "semester": "upper",
+      "unitId": "u07",
+      "definition": "灭火的原理是破坏燃烧条件之一：移除可燃物、隔绝氧气、降温至着火点以下。",
+      "prerequisiteIds": [
+        "combustion-conditions"
+      ],
+      "misconceptionIds": [
+        "mc-fire-extinguish-principle"
+      ],
+      "remediationGoal": "掌握三种灭火原理，能根据火情选择正确的灭火方法。",
+      "questions": [
+        "L17-Q03",
+        "L17-Q04",
+        "L17-D02",
+        "L17-D03",
+        "L17-T02"
+      ]
+    },
+    {
+      "id": "fossil-fuels",
+      "name": "化石燃料与能源",
+      "chapter": "第七单元 燃料及其利用",
+      "domain": "substance",
+      "bloomLevels": [
+        "remember",
+        "understand",
+        "apply"
+      ],
+      "semester": "upper",
+      "unitId": "u07",
+      "definition": "化石燃料包括煤、石油、天然气，均为不可再生能源。燃烧产生CO2、SO2等污染物。新能源包括氢能、太阳能、风能等。",
+      "prerequisiteIds": [
+        "combustion-conditions",
+        "chemical-property"
+      ],
+      "misconceptionIds": [
+        "mc-fossil-fuel-nonrenewable"
+      ],
+      "remediationGoal": "区分化石燃料与新能源，认识化石燃料的不可再生性和环境影响。",
+      "questions": [
+        "L18-Q01",
+        "L18-Q02",
+        "L18-D01",
+        "L18-D02",
+        "L18-T01"
+      ]
+    },
+    {
+      "id": "explosive-safety",
+      "name": "燃烧安全与防爆",
+      "chapter": "第七单元 燃料及其利用",
+      "domain": "reaction",
+      "bloomLevels": [
+        "understand",
+        "apply"
+      ],
+      "semester": "upper",
+      "unitId": "u07",
+      "definition": "可燃气体或粉尘在密闭空间中迅速燃烧引起爆炸。爆炸极限、通风、禁火是防爆关键措施。",
+      "prerequisiteIds": [
+        "combustion-conditions"
+      ],
+      "misconceptionIds": [
+        "mc-explosion-any-gas"
+      ],
+      "remediationGoal": "理解爆炸发生的条件，掌握易燃易爆场所的安全规范。",
+      "questions": [
+        "L19-Q01",
+        "L19-Q02",
+        "L19-D01",
+        "L19-D02",
+        "L19-T01"
+      ]
+    },
+    {
+      "id": "environmental-impact",
+      "name": "能源与环境",
+      "chapter": "第七单元 燃料及其利用",
+      "domain": "substance",
+      "bloomLevels": [
+        "understand",
+        "analyze"
+      ],
+      "semester": "upper",
+      "unitId": "u07",
+      "definition": "化石燃料燃烧产生CO2（温室效应）、SO2和NOx（酸雨）、粉尘（PM2.5）等污染物。使用清洁能源和改善燃烧技术是保护环境的关键。",
+      "prerequisiteIds": [
+        "fossil-fuels",
+        "combustion-conditions"
+      ],
+      "misconceptionIds": [],
+      "remediationGoal": "理解化石燃料燃烧的环境影响，认识清洁能源的重要性。",
+      "questions": [
+        "L25-Q01",
+        "L25-Q02",
+        "L25-D01",
+        "L25-T01"
+      ]
     }
   ],
   "relations": [
@@ -3060,6 +3196,46 @@
     {
       "source": "carbon-chemical-property",
       "target": "co-property",
+      "type": "prerequisite"
+    },
+    {
+      "source": "chemical-change",
+      "target": "combustion-conditions",
+      "type": "prerequisite"
+    },
+    {
+      "source": "oxygen-chemical",
+      "target": "combustion-conditions",
+      "type": "prerequisite"
+    },
+    {
+      "source": "combustion-conditions",
+      "target": "fire-extinguishing",
+      "type": "prerequisite"
+    },
+    {
+      "source": "combustion-conditions",
+      "target": "fossil-fuels",
+      "type": "prerequisite"
+    },
+    {
+      "source": "chemical-property",
+      "target": "fossil-fuels",
+      "type": "prerequisite"
+    },
+    {
+      "source": "combustion-conditions",
+      "target": "explosive-safety",
+      "type": "prerequisite"
+    },
+    {
+      "source": "fossil-fuels",
+      "target": "environmental-impact",
+      "type": "prerequisite"
+    },
+    {
+      "source": "combustion-conditions",
+      "target": "environmental-impact",
       "type": "prerequisite"
     }
   ]

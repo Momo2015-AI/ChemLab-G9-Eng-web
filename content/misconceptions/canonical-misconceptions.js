@@ -871,10 +871,74 @@ const u06Misconceptions = [
   }
 ];
 
+const u07Misconceptions = [
+  {
+    id: 'mc-combustion-three-condition',
+    title: '误认为燃烧只需氧气或只需温度',
+    description: '学生只记住燃烧需要氧气或需要温度达到着火点，忽略了可燃物也是必要条件；或将"氧气"等同于"空气"，认为所有燃烧都需要纯氧。',
+    knowledgeIds: ['combustion-conditions'],
+    signals: ['concept-confusion', 'incomplete-condition'],
+    severity: 'high',
+    source: 'unit-07 production',
+    remediation: {
+      goal: '理解燃烧三条件缺一不可：可燃物、氧气（或空气）、温度达到着火点。',
+      lessonIds: ['lesson-14-combustion-fire-extinguishing'],
+      practiceQuestionIds: ['L17-P01'],
+      recheckQuestionIds: ['L17-D01']
+    }
+  },
+  {
+    id: 'mc-fire-extinguish-principle',
+    title: '混淆灭火原理与燃烧条件的对应关系',
+    description: '学生知道灭火要"破坏燃烧条件"，但不能正确对应具体操作与对应的条件（如用水灭火是降温而非隔绝氧气）。',
+    knowledgeIds: ['fire-extinguishing'],
+    signals: ['reasoning-gap', 'principle-confusion'],
+    severity: 'medium',
+    source: 'unit-07 production',
+    remediation: {
+      goal: '建立"灭火原理-燃烧条件"的一一对应：隔离可燃物、隔绝氧气、降温至着火点以下。',
+      lessonIds: ['lesson-14-combustion-fire-extinguishing'],
+      practiceQuestionIds: ['L17-P03'],
+      recheckQuestionIds: ['L17-D03']
+    }
+  },
+  {
+    id: 'mc-fossil-fuel-nonrenewable',
+    title: '误认为所有能源都来自化石燃料或均可再生',
+    description: '学生不能正确区分化石燃料（煤、石油、天然气）与可再生能源（太阳能、风能、氢能），或将新能源等同于无污染。',
+    knowledgeIds: ['fossil-fuels'],
+    signals: ['classification-error', 'concept-overgeneralization'],
+    severity: 'medium',
+    source: 'unit-07 production',
+    remediation: {
+      goal: '掌握化石燃料的不可再生性，了解新能源的种类及其相对优势与局限。',
+      lessonIds: ['lesson-15-fossil-fuels-energy'],
+      practiceQuestionIds: ['L18-P02'],
+      recheckQuestionIds: ['L18-D02']
+    }
+  },
+  {
+    id: 'mc-explosion-any-gas',
+    title: '误认为任何气体与空气混合遇火都会爆炸',
+    description: '学生将爆炸泛化为所有气体燃烧现象，忽略了爆炸需要密闭空间、气体浓度在爆炸极限内等条件。',
+    knowledgeIds: ['explosive-safety'],
+    signals: ['overgeneralization', 'safety-risk'],
+    severity: 'high',
+    source: 'unit-07 production',
+    remediation: {
+      goal: '理解爆炸的三要素：可燃气体、密闭空间、浓度在爆炸极限内；掌握粉尘和气体的防爆安全规范。',
+      lessonIds: ['lesson-16-combustion-safety-explosion'],
+      practiceQuestionIds: ['L19-P02'],
+      recheckQuestionIds: ['L19-D02']
+    }
+  }
+];
+
 const canonicalMisconceptionsFull = [
   ...canonicalMisconceptionsBase,
   ...u04BackfillMisconceptions,
-  ...u06Misconceptions
+  ...u06Misconceptions,
+  ...u07Misconceptions
 ];
 
 export const canonicalMisconceptions = canonicalMisconceptionsFull;

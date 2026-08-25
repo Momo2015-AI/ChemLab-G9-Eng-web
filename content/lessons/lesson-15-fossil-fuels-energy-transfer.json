@@ -1,0 +1,61 @@
+{
+  "lessonId": "lesson-15-fossil-fuels-energy",
+  "questions": [
+    {
+      "id": "L18-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "question": "某城市计划建设一座新的发电厂，现有三种方案：A.燃煤电厂 B.天然气电厂 C.风电场。请从能源可持续性、环境影响、经济成本三个维度评价各方案的优劣，并给出你的建议。",
+      "rubric": {
+        "modelAnswer": "A方案（燃煤）：成本低但污染大（SO₂、粉尘、CO₂），不可持续。B方案（天然气）：较清洁（CO₂较少，无SO₂），较可持续，成本中等。C方案（风电）：最清洁，可持续，但受地理和天气限制，储能成本高。建议：优先发展风电等新能源，天然气作为过渡能源，逐步淘汰燃煤。",
+        "keywords": [["燃煤污染大/SO₂粉尘CO₂"], ["天然气较清洁/过渡能源"], ["风电最清洁/受限制"], ["逐步淘汰燃煤/优先新能源"]],
+        "explanation": "综合权衡三个维度，体现可持续发展理念。"
+      },
+      "knowledgeIds": ["fossil-fuels"],
+      "misconceptionIds": ["mc-fossil-fuel-nonrenewable"]
+    },
+    {
+      "id": "L18-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "create",
+      "question": "请设计一个家庭节能方案，包括：①至少3条具体措施 ②每条措施的原理 ③预期效果。",
+      "rubric": {
+        "modelAnswer": "①使用LED灯替代白炽灯——LED能效更高，减少电能消耗。②空调温度设为26℃——减少压缩机工作时间。③洗衣机集中洗涤——减少洗涤次数节省水电。④使用太阳能热水器——利用可再生能源替代电能。预期效果：降低家庭能源开支，减少碳排放。",
+        "keywords": [["LED灯/能效高"], ["空调温度控制"], ["集中洗涤/减少次数"], ["太阳能/可再生能源"], ["降低开支减少碳排放"]],
+        "explanation": "将课堂所学能源知识应用于日常生活。"
+      },
+      "knowledgeIds": ["fossil-fuels"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L18-T03",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "某地区发现大量天然气资源，当地政府计划大力发展天然气产业。请分析这一决策可能带来的经济效益和环境效益，以及需要注意的问题。",
+      "rubric": {
+        "modelAnswer": "经济效益：增加就业、带动相关产业、增加财政收入。环境效益：天然气比煤清洁，减少SO₂和粉尘排放。需注意问题：天然气仍产生CO₂，不能解决温室效应；过度依赖单一能源有风险；需配套基础设施建设；应同时发展新能源。",
+        "keywords": [["增加就业/财政收入"], ["比煤清洁/减少SO₂"], ["仍产CO₂/温室效应"], ["发展新能源/多能互补"]],
+        "explanation": "全面分析能源开发的利弊。"
+      },
+      "knowledgeIds": ["fossil-fuels"],
+      "misconceptionIds": ["mc-fossil-fuel-nonrenewable"]
+    },
+    {
+      "id": "L18-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "氢气被认为是最理想的燃料，但至今未能大规模使用。请分析氢能发展的优势、挑战和未来展望。",
+      "rubric": {
+        "modelAnswer": "优势：热值高（单位质量）、燃烧产物只有水（无污染）、原料来源广泛（水）。挑战：制取成本高（电解水耗能大）、储存运输困难（氢气密度小、易泄漏）、基础设施不完善。展望：随着电解水技术进步和燃料电池发展，氢能有望成为重要清洁能源。",
+        "keywords": [["热值高/产物只有水"], ["制取成本高/储存困难"], ["原料来源广/水"], ["技术进步/未来可期"]],
+        "explanation": "全面分析新能源的发展现状与前景。"
+      },
+      "knowledgeIds": ["fossil-fuels"],
+      "misconceptionIds": ["mc-fossil-fuel-nonrenewable"]
+    }
+  ]
+}

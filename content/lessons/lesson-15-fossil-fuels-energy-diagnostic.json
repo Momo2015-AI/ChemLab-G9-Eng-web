@@ -1,0 +1,53 @@
+{
+  "lessonId": "lesson-15-fossil-fuels-energy",
+  "diagnostics": [
+    {
+      "id": "L18-D01",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "小明认为太阳能和风能永远不会有问题。他的错误在于？",
+      "options": [
+        "忽略了新能源也有环境影响",
+        "新能源确实没有任何问题",
+        "太阳能不是清洁能源",
+        "以上都不对"
+      ],
+      "answer": 0,
+      "explanation": "新能源相对清洁但需全面评价环境影响。",
+      "errorType": "mc-fossil-fuel-nonrenewable",
+      "remediationStep": "L18-S05"
+    },
+    {
+      "id": "L18-D02",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "下列能源分类中，全部属于化石燃料的是？",
+      "options": [
+        "煤、石油、太阳能",
+        "石油、天然气、风能",
+        "煤、石油、天然气",
+        "天然气、氢能、核能"
+      ],
+      "answer": 2,
+      "explanation": "三大化石燃料：煤、石油、天然气。",
+      "errorType": "mc-fossil-fuel-nonrenewable",
+      "remediationStep": "L18-S02"
+    },
+    {
+      "id": "L18-D03",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "煤、石油、天然气的共同点是？①混合物②含碳③燃烧产CO₂④可再生",
+      "options": [
+        "①②③",
+        "①②④",
+        "①③④",
+        "②③④"
+      ],
+      "answer": 0,
+      "explanation": "三者都是混合物、含碳、燃烧产CO₂，但都不可再生。",
+      "errorType": "mc-fossil-fuel-nonrenewable",
+      "remediationStep": "L18-S02"
+    }
+  ]
+}

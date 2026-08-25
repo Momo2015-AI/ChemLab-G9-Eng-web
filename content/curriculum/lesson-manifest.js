@@ -31,7 +31,11 @@ export const lessonManifest = {
     { day: '21', sequenceNumber: 21, displayOrder: 18, canonicalId: 'lesson-21-carbon-property', title: '碳的化学性质', semester: 'upper', unitId: 'u06', status: 'ready', releaseStatus: 'ready' },
     { day: '22', sequenceNumber: 22, displayOrder: 19, canonicalId: 'lesson-22-co2-preparation', title: '二氧化碳的制取', semester: 'upper', unitId: 'u06', status: 'ready', releaseStatus: 'ready' },
     { day: '23', sequenceNumber: 23, displayOrder: 20, canonicalId: 'lesson-23-co2-property', title: '二氧化碳的性质', semester: 'upper', unitId: 'u06', status: 'ready', releaseStatus: 'ready' },
-    { day: '24', sequenceNumber: 24, displayOrder: 21, canonicalId: 'lesson-24-co-property', title: '一氧化碳', semester: 'upper', unitId: 'u06', status: 'ready', releaseStatus: 'ready' }
+    { day: '24', sequenceNumber: 24, displayOrder: 21, canonicalId: 'lesson-24-co-property', title: '一氧化碳', semester: 'upper', unitId: 'u06', status: 'ready', releaseStatus: 'ready' },
+    { day: '25', sequenceNumber: 25, displayOrder: 22, canonicalId: 'lesson-14-combustion-fire-extinguishing', title: '燃烧与灭火', semester: 'upper', unitId: 'u07', status: 'ready', releaseStatus: 'ready' },
+    { day: '26', sequenceNumber: 26, displayOrder: 23, canonicalId: 'lesson-15-fossil-fuels-energy', title: '化石燃料与新能源', semester: 'upper', unitId: 'u07', status: 'ready', releaseStatus: 'ready' },
+    { day: '27', sequenceNumber: 27, displayOrder: 24, canonicalId: 'lesson-16-combustion-safety-explosion', title: '燃烧安全与防爆', semester: 'upper', unitId: 'u07', status: 'ready', releaseStatus: 'ready' },
+    { day: '28', sequenceNumber: 28, displayOrder: 25, canonicalId: 'lesson-17-environment-energy-sustainable', title: '能源与环境', semester: 'upper', unitId: 'u07', status: 'ready', releaseStatus: 'ready' }
   ]
 };
 export default lessonManifest;

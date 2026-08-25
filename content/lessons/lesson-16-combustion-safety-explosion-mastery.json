@@ -1,0 +1,445 @@
+{
+  "lessonId": "lesson-16-combustion-safety-explosion",
+  "mastery": {
+    "questions": [
+      {
+        "id": "L19-M01",
+        "type": "mc",
+        "question": "下列情形中可能发生爆炸的是？",
+        "options": [
+          "纯氢气在空气中点燃",
+          "面粉粉尘在密闭容器中遇明火",
+          "氮气在空气中加热",
+          "二氧化碳通入水中"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "面粉粉尘在密闭容器中遇明火达到爆炸极限会爆炸。",
+        "category": "concept"
+      },
+      {
+        "id": "L19-M02",
+        "type": "mc",
+        "question": "点燃氢气前必须验纯，原因是？",
+        "options": [
+          "氢气有毒",
+          "不纯氢气点燃可能爆炸",
+          "氢气密度太小",
+          "氢气有气味"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "氢气与空气混合达爆炸极限遇火爆炸。",
+        "category": "concept"
+      },
+      {
+        "id": "L19-M03",
+        "type": "mc",
+        "question": "下列场所不需要'严禁烟火'标志的是？",
+        "options": [
+          "加油站",
+          "面粉厂",
+          "化工厂",
+          "图书馆"
+        ],
+        "answer": 3,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "图书馆没有易燃易爆物质。",
+        "category": "concept"
+      },
+      {
+        "id": "L19-M04",
+        "type": "mc",
+        "question": "下列关于爆炸的说法正确的是？",
+        "options": [
+          "所有气体遇火都会爆炸",
+          "化学爆炸一定是化学变化",
+          "粉尘不会爆炸",
+          "爆炸只需要可燃物"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "化学爆炸生成新物质，是化学变化。",
+        "category": "concept"
+      },
+      {
+        "id": "L19-M05",
+        "type": "mc",
+        "question": "煤矿矿井中最需要防范的爆炸类型是？",
+        "options": [
+          "汽油蒸气爆炸",
+          "瓦斯和煤尘爆炸",
+          "面粉粉尘爆炸",
+          "氢气爆炸"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "煤矿主要瓦斯和煤尘爆炸风险。",
+        "category": "application"
+      },
+      {
+        "id": "L19-M06",
+        "type": "mc",
+        "question": "下列防爆措施错误的是？",
+        "options": [
+          "面粉厂保持通风",
+          "加油站使用防爆电器",
+          "煤气泄漏时打开排气扇",
+          "煤矿井下严禁烟火"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "煤气泄漏时开排气扇可能产生电火花。",
+        "category": "application"
+      },
+      {
+        "id": "L19-M07",
+        "type": "mc",
+        "question": "下列气体中，属于可燃气体的是？",
+        "options": [
+          "氮气",
+          "氧气",
+          "氢气",
+          "二氧化碳"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "氢气可燃，氮气、氧气、二氧化碳不可燃。",
+        "category": "concept"
+      },
+      {
+        "id": "L19-M08",
+        "type": "mc",
+        "question": "面粉粉尘爆炸实验中，面粉粉尘的作用是？",
+        "options": [
+          "增大与氧气的接触面积",
+          "降低温度",
+          "隔绝氧气",
+          "吸收热量"
+        ],
+        "answer": 0,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "粉尘状态极大增大了与氧气的接触面积。",
+        "category": "concept"
+      },
+      {
+        "id": "L19-M09",
+        "type": "mc",
+        "question": "下列属于易燃固体的是？",
+        "options": [
+          "氢气",
+          "汽油",
+          "硫磺",
+          "天然气"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "硫磺是易燃固体，氢气和天然气是气体，汽油是液体。",
+        "category": "concept"
+      },
+      {
+        "id": "L19-M10",
+        "type": "mc",
+        "question": "爆炸极限是指？",
+        "options": [
+          "气体能够爆炸的温度范围",
+          "气体能够爆炸的浓度范围",
+          "气体能够爆炸的压力范围",
+          "气体能够爆炸的时间范围"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "爆炸极限是可燃气体的浓度范围。",
+        "category": "concept"
+      },
+      {
+        "id": "L19-M11",
+        "type": "mc",
+        "question": "加油站加油时下列做法正确的是？",
+        "options": [
+          "使用手机",
+          "发动汽车引擎",
+          "严禁烟火和使用电子设备",
+          "快速加油不用理会其他事项"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "加油站汽油蒸气易燃，需严禁烟火和电子设备。",
+        "category": "application"
+      },
+      {
+        "id": "L19-M12",
+        "type": "mc",
+        "question": "下列气体与空气混合遇火不会爆炸的是？",
+        "options": [
+          "氢气",
+          "甲烷",
+          "氮气",
+          "一氧化碳"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "氮气不可燃。",
+        "category": "concept"
+      },
+      {
+        "id": "L19-M13",
+        "type": "mc",
+        "question": "煤粉厂 workers 应佩戴的防护用品不包括？",
+        "options": [
+          "防尘口罩",
+          "防静电工作服",
+          "纯棉工作服",
+          "金属鞋"
+        ],
+        "answer": 3,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "金属鞋可能产生火花，应穿防静电鞋。",
+        "category": "safety"
+      },
+      {
+        "id": "L19-M14",
+        "type": "mc",
+        "question": "氢气验纯的方法是？",
+        "options": [
+          "闻气味",
+          "用燃着木条靠近管口，听声音",
+          "观察颜色",
+          "倒入石灰水"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "纯净氢气安静燃烧，不纯氢气发出尖锐爆鸣声。",
+        "category": "application"
+      },
+      {
+        "id": "L19-M15",
+        "type": "mc",
+        "question": "下列变化中，属于化学爆炸的是？",
+        "options": [
+          "气球爆炸",
+          "锅炉爆炸",
+          "炸药爆炸",
+          "轮胎爆炸"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "炸药爆炸生成新物质，是化学变化。其他是物理爆炸。",
+        "category": "concept"
+      },
+      {
+        "id": "L19-M16",
+        "type": "mc",
+        "question": "面粉厂车间地面应保持？",
+        "options": [
+          "有大量积水",
+          "无粉尘积累",
+          "堆放杂物",
+          "温度很高"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "粉尘积累增加爆炸风险，应保持清洁。",
+        "category": "safety"
+      },
+      {
+        "id": "L19-M17",
+        "type": "mc",
+        "question": "下列关于燃烧和爆炸的说法正确的是？",
+        "options": [
+          "燃烧一定会爆炸",
+          "爆炸一定是燃烧引起的",
+          "燃烧和爆炸都是剧烈的氧化反应",
+          "爆炸不一定是化学变化"
+        ],
+        "answer": 3,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "物理爆炸（如锅炉爆炸）不是化学变化。",
+        "category": "concept"
+      },
+      {
+        "id": "L19-M18",
+        "type": "mc",
+        "question": "发现家中煤气泄漏，下列做法正确的是？",
+        "options": [
+          "打开电灯检查",
+          "打开排气扇",
+          "关闭阀门开窗通风",
+          "用明火寻找泄漏点"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "关闭阀门切断气源，开窗通风。开电器可能产生火花。",
+        "category": "application"
+      },
+      {
+        "id": "L19-M19",
+        "type": "mc",
+        "question": "烟花爆竹属于？",
+        "options": [
+          "易燃气体",
+          "易燃液体",
+          "易爆物品",
+          "不易燃物品"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "烟花爆竹含有炸药成分，属于易爆物品。",
+        "category": "concept"
+      },
+      {
+        "id": "L19-M20",
+        "type": "mc",
+        "question": "下列有关爆炸极限的说法正确的是？",
+        "options": [
+          "浓度越高越容易爆炸",
+          "浓度越低越容易爆炸",
+          "在爆炸极限范围内才可能爆炸",
+          "所有气体都有相同的爆炸极限"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "knowledgePoints": [
+          "explosive-safety"
+        ],
+        "explanation": "只有浓度在爆炸极限范围内才可能爆炸。",
+        "category": "concept"
+      },
+      {
+        "id": "L19-D01",
+        "type": "mc",
+        "question": "小明认为任何气体与空气混合遇火都会爆炸。他的错误在于？",
+        "options": [
+          "忽略了需要可燃气体且浓度在爆炸极限内",
+          "所有气体确实都会爆炸",
+          "爆炸不需要氧气",
+          "以上都不对"
+        ],
+        "answer": 0,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "explanation": "只有可燃气体且在爆炸极限范围内才会爆炸。",
+        "errorType": "mc-explosion-any-gas",
+        "remediationStep": "L19-S05",
+        "category": "safety"
+      },
+      {
+        "id": "L19-D02",
+        "type": "mc",
+        "question": "下列气体与空气混合遇火不会爆炸的是？",
+        "options": [
+          "氢气",
+          "甲烷",
+          "氮气",
+          "一氧化碳"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "explosive-safety"
+        ],
+        "explanation": "氮气不可燃。",
+        "errorType": "mc-explosion-any-gas",
+        "remediationStep": "L19-S05",
+        "category": "safety"
+      }
+    ]
+  }
+}

@@ -1,0 +1,460 @@
+{
+  "lessonId": "lesson-14-combustion-fire-extinguishing",
+  "mastery": {
+    "questions": [
+      {
+        "id": "L17-M01",
+        "type": "mc",
+        "question": "燃烧需要的三个条件是？",
+        "options": [
+          "可燃物、氧气、达到着火点",
+          "可燃物、氮气、高温",
+          "氧气、二氧化碳、高温",
+          "水、氧气、可燃物"
+        ],
+        "answer": 0,
+        "knowledgeIds": [
+          "combustion-conditions"
+        ],
+        "knowledgePoints": [
+          "combustion-conditions"
+        ],
+        "explanation": "燃烧需要同时满足三个条件。",
+        "category": "concept"
+      },
+      {
+        "id": "L17-M02",
+        "type": "mc",
+        "question": "下列关于燃烧条件的说法正确的是？",
+        "options": [
+          "只要温度达到着火点就能燃烧",
+          "只要有氧气就能燃烧",
+          "三个条件缺一不可",
+          "可燃物和氧气二选一即可"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "combustion-conditions"
+        ],
+        "knowledgePoints": [
+          "combustion-conditions"
+        ],
+        "explanation": "燃烧三条件缺一不可。",
+        "category": "concept"
+      },
+      {
+        "id": "L17-M03",
+        "type": "mc",
+        "question": "灭火的根本原理是？",
+        "options": [
+          "降低着火点",
+          "清除所有可燃物",
+          "破坏燃烧的一个或多个条件",
+          "增加氧气浓度"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "fire-extinguishing"
+        ],
+        "knowledgePoints": [
+          "fire-extinguishing"
+        ],
+        "explanation": "灭火只需破坏燃烧的一个条件即可。",
+        "category": "concept"
+      },
+      {
+        "id": "L17-M04",
+        "type": "mc",
+        "question": "用灯帽盖灭酒精灯的原理是？",
+        "options": [
+          "清除可燃物",
+          "隔绝氧气",
+          "降温",
+          "降低着火点"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "fire-extinguishing"
+        ],
+        "knowledgePoints": [
+          "fire-extinguishing"
+        ],
+        "explanation": "灯帽隔绝了空气（氧气）。",
+        "category": "concept"
+      },
+      {
+        "id": "L17-M05",
+        "type": "mc",
+        "question": "下列场景中最适合的灭火方法是？（油锅起火）",
+        "options": [
+          "浇水",
+          "用锅盖盖灭",
+          "扇风",
+          "端走油锅"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "fire-extinguishing"
+        ],
+        "knowledgePoints": [
+          "fire-extinguishing"
+        ],
+        "explanation": "锅盖隔绝氧气是最安全的油锅灭火方法。",
+        "category": "application"
+      },
+      {
+        "id": "L17-M06",
+        "type": "mc",
+        "question": "下列关于着火点的说法正确的是？",
+        "options": [
+          "着火点可以人为降低",
+          "着火点是固有属性一般不变",
+          "所有物质着火点相同",
+          "水可以降低着火点"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "combustion-conditions"
+        ],
+        "knowledgePoints": [
+          "combustion-conditions"
+        ],
+        "explanation": "着火点是物质的固有属性，一般不会改变。",
+        "category": "concept"
+      },
+      {
+        "id": "L17-M07",
+        "type": "mc",
+        "question": "将燃着的木柴架空燃烧的更好，原因是？",
+        "options": [
+          "降低着火点",
+          "增大与氧气的接触面积",
+          "提高着火点",
+          "增加木柴质量"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "combustion-conditions"
+        ],
+        "knowledgePoints": [
+          "combustion-conditions"
+        ],
+        "explanation": "架空增大了与氧气的接触面积。",
+        "category": "concept"
+      },
+      {
+        "id": "L17-M08",
+        "type": "mc",
+        "question": "森林火灾开辟隔离带的原理是？",
+        "options": [
+          "隔绝氧气",
+          "清除可燃物",
+          "降温至着火点以下",
+          "降低着火点"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "fire-extinguishing"
+        ],
+        "knowledgePoints": [
+          "fire-extinguishing"
+        ],
+        "explanation": "隔离带移除了可燃物，阻止火势蔓延。",
+        "category": "application"
+      },
+      {
+        "id": "L17-M09",
+        "type": "mc",
+        "question": "电器着火时的正确做法是？",
+        "options": [
+          "立即用水浇",
+          "先断电再用干粉灭火器",
+          "用泡沫灭火器",
+          "用嘴吹灭"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "fire-extinguishing"
+        ],
+        "knowledgePoints": [
+          "fire-extinguishing"
+        ],
+        "explanation": "电器着火先断电防止触电，再用干粉或CO2灭火器。",
+        "category": "safety"
+      },
+      {
+        "id": "L17-M10",
+        "type": "mc",
+        "question": "煤炉生火时，下面塞纸屑上面放木柴更容易点燃，这是因为？",
+        "options": [
+          "纸屑着火点低先燃烧加热木柴",
+          "纸屑隔绝了氧气",
+          "木柴着火点比纸屑低",
+          "纸屑能产生氧气"
+        ],
+        "answer": 0,
+        "knowledgeIds": [
+          "combustion-conditions"
+        ],
+        "knowledgePoints": [
+          "combustion-conditions"
+        ],
+        "explanation": "纸屑着火点低，先燃烧释放热量使木柴温度达到着火点。",
+        "category": "concept"
+      },
+      {
+        "id": "L17-M11",
+        "type": "mc",
+        "question": "用扇子扇蜡烛火焰一扇就灭，扇煤炉火焰反而更旺，原因是？",
+        "options": [
+          "扇子大小不同",
+          "蜡烛火焰小易被吹散热量使温度低于着火点，煤炉热量大扇风补充氧气",
+          "蜡烛怕风煤炉不怕",
+          "两者原理完全不同"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "combustion-conditions"
+        ],
+        "knowledgePoints": [
+          "combustion-conditions"
+        ],
+        "explanation": "扇蜡烛：气流带走热量使温度低于着火点。扇煤炉：补充氧气促进燃烧。",
+        "category": "concept"
+      },
+      {
+        "id": "L17-M12",
+        "type": "mc",
+        "question": "被困火灾现场时，下列逃生方法正确的是？",
+        "options": [
+          "乘电梯快速逃离",
+          "用湿毛巾捂住口鼻低姿匍匐前进",
+          "打开所有门窗通风",
+          "站在阳台大声呼救等待救援不行动"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "fire-extinguishing"
+        ],
+        "knowledgePoints": [
+          "fire-extinguishing"
+        ],
+        "explanation": "湿毛巾过滤有毒烟雾，低姿匍匐避免吸入上层有毒烟气。",
+        "category": "safety"
+      },
+      {
+        "id": "L17-M13",
+        "type": "mc",
+        "question": "下列关于燃烧和灭火的说法错误的是？",
+        "options": [
+          "燃烧一定是化学变化",
+          "灭火只需要破坏一个条件",
+          "所有物质都有着火点",
+          "爆炸一定是化学变化"
+        ],
+        "answer": 3,
+        "knowledgeIds": [
+          "combustion-conditions"
+        ],
+        "knowledgePoints": [
+          "combustion-conditions"
+        ],
+        "explanation": "爆炸不一定是化学变化，如气球爆炸是物理变化。",
+        "category": "concept"
+      },
+      {
+        "id": "L17-M14",
+        "type": "mc",
+        "question": "登山运动员携带氧气瓶是因为高处？",
+        "options": [
+          "温度低",
+          "气压低氧气稀薄",
+          "紫外线强",
+          "风力大"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "combustion-conditions"
+        ],
+        "knowledgePoints": [
+          "combustion-conditions"
+        ],
+        "explanation": "高海拔空气稀薄，氧气含量低，需要 supplemental oxygen。",
+        "category": "application"
+      },
+      {
+        "id": "L17-M15",
+        "type": "mc",
+        "question": "下列情况中，不会发生燃烧的是？",
+        "options": [
+          "镁条在二氧化碳中燃烧",
+          "铁丝在纯氧中燃烧",
+          "木头在氮气中加热",
+          "蜡烛在空气中燃烧"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "combustion-conditions"
+        ],
+        "knowledgePoints": [
+          "combustion-conditions"
+        ],
+        "explanation": "氮气不支持燃烧，木头在氮气中即使加热也无法燃烧。",
+        "category": "concept"
+      },
+      {
+        "id": "L17-M16",
+        "type": "mc",
+        "question": "用扇子扇燃着的炉火，火更旺，主要原因是？",
+        "options": [
+          "降低了着火点",
+          "提供了更多氧气",
+          "带走了热量",
+          "改变了燃料成分"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "combustion-conditions"
+        ],
+        "knowledgePoints": [
+          "combustion-conditions"
+        ],
+        "explanation": "扇风提供了更多氧气，使燃烧更充分更旺。",
+        "category": "concept"
+      },
+      {
+        "id": "L17-M17",
+        "type": "mc",
+        "question": "实验室不慎碰倒酒精灯着火，最好的灭火方法是？",
+        "options": [
+          "用嘴吹",
+          "用水冲",
+          "用湿抹布盖",
+          "跑出实验室"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "fire-extinguishing"
+        ],
+        "knowledgePoints": [
+          "fire-extinguishing"
+        ],
+        "explanation": "湿抹布隔绝氧气是最快最有效的实验室酒精灭火方法。",
+        "category": "safety"
+      },
+      {
+        "id": "L17-M18",
+        "type": "mc",
+        "question": "煤和气化石油气（LPG）作为燃料，共同点是？",
+        "options": [
+          "都是纯净物",
+          "燃烧都生成CO2和H2O",
+          "都是可再生能源",
+          "都不需要氧气"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "combustion-conditions"
+        ],
+        "knowledgePoints": [
+          "combustion-conditions"
+        ],
+        "explanation": "煤主要含碳，LPG主要含丙烷丁烷含C和H，燃烧都生成CO2和H2O。",
+        "category": "concept"
+      },
+      {
+        "id": "L17-M19",
+        "type": "mc",
+        "question": "消防员用水灭火的主要原理是？",
+        "options": [
+          "水与可燃物反应",
+          "水蒸发吸热降温至着火点以下",
+          "水隔绝了所有光线",
+          "水降低了可燃物的着火点"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "fire-extinguishing"
+        ],
+        "knowledgePoints": [
+          "fire-extinguishing"
+        ],
+        "explanation": "水蒸发大量吸热，使温度降至着火点以下。",
+        "category": "application"
+      },
+      {
+        "id": "L17-M20",
+        "type": "mc",
+        "question": "下列有关燃烧和灭火的说法不合理的是？",
+        "options": [
+          "油锅着火盖锅盖——隔绝氧气",
+          "木柴架空燃烧更旺——增大氧气接触面积",
+          "用扇子扇蜡烛——降低着火点",
+          "煤气泄漏关阀门——清除可燃物"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "combustion-conditions",
+          "fire-extinguishing"
+        ],
+        "knowledgePoints": [
+          "combustion-conditions"
+        ],
+        "explanation": "扇蜡烛是降温至着火点以下，不是降低着火点。",
+        "category": "concept"
+      },
+      {
+        "id": "L17-M21",
+        "type": "mc",
+        "question": "下列有关燃烧条件的实验探究，结论正确的是？",
+        "options": [
+          "铜片上白磷燃烧说明燃烧只需要氧气",
+          "铜片上白磷燃烧红磷不燃烧说明燃烧需要温度达着火点",
+          "水中白磷不燃烧说明燃烧不需要氧气",
+          "三个实验无法得出结论"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "combustion-conditions"
+        ],
+        "knowledgePoints": [
+          "combustion-conditions"
+        ],
+        "explanation": "白磷和红磷都是可燃物且都接触氧气，区别在于温度是否达着火点。",
+        "category": "concept"
+      },
+      {
+        "id": "L17-D01",
+        "type": "mc",
+        "question": "小明认为只要温度达到着火点且有氧气就一定能燃烧。他的遗漏是？",
+        "options": [
+          "忽略了可燃物这一条件",
+          "忽略了温度条件",
+          "忽略了氧气条件",
+          "他的说法完全正确"
+        ],
+        "answer": 0,
+        "explanation": "燃烧三条件缺一不可。",
+        "errorType": "mc-combustion-three-condition",
+        "remediationStep": "L17-S02",
+        "category": "safety"
+      },
+      {
+        "id": "L17-D02",
+        "type": "mc",
+        "question": "住宅着火时用水浇灭，其灭火原理是？",
+        "options": [
+          "清除可燃物",
+          "隔绝氧气",
+          "降温至着火点以下",
+          "降低着火点"
+        ],
+        "answer": 2,
+        "explanation": "水蒸发吸热使温度降低至着火点以下。",
+        "errorType": "mc-fire-extinguish-principle",
+        "remediationStep": "L17-S04",
+        "category": "safety"
+      }
+    ]
+  }
+}

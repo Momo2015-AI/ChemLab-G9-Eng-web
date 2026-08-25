@@ -1,0 +1,21 @@
+{
+  "lessonId": "lesson-16-combustion-safety-explosion",
+  "experiments": [
+    {
+      "id": "L19-E01",
+      "title": "面粉粉尘爆炸演示",
+      "type": "demonstration",
+      "instruments": ["金属筒（带盖）", "面粉", "蜡烛", "吹风机", "铁架台"],
+      "safety": "实验由教师演示，学生保持安全距离。金属筒需稳固固定。",
+      "goal": "验证粉尘爆炸的条件和原理。",
+      "steps": [
+        { "step": 1, "action": "在金属筒底部放置点燃的蜡烛", "record": "观察蜡烛火焰" },
+        { "step": 2, "action": "在筒内放入少量面粉", "record": "观察面粉状态" },
+        { "step": 3, "action": "用吹风机将面粉吹散成粉尘", "record": "观察筒内变化" },
+        { "step": 4, "action": "迅速盖紧筒盖", "record": "观察现象" }
+      ],
+      "observationGuidance": ["面粉被吹散成粉尘状", "盖紧筒盖后发生爆炸，筒盖被冲开"],
+      "conclusion": "面粉粉尘与氧气充分接触，遇明火迅速燃烧，气体急剧膨胀导致爆炸。"
+    }
+  ]
+}
