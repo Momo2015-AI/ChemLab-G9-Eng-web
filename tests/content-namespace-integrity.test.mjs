@@ -88,3 +88,70 @@ test('every canonical misconception knowledgeId resolves to a live knowledge-gra
   }
   assert.deepEqual(invalid, [], `Misconception(s) reference a knowledge-graph node that does not exist: ${invalid.join(', ')}`);
 });
+
+// Regression guard for the 2026-08-25 incident: content-integrity-v19.mjs and
+// content-lesson-audit-v19.mjs both crashed / silently under-counted because
+// a batch of lessons shipped -mastery.json and -diagnostic.json files in a
+// shape neither script (nor the actual runtime loader in
+// app/content-loader.js) recognized. The audit Gate still reported PASS.
+// This test asserts the shape directly, independent of the audit scripts,
+// so a shape mismatch fails `npm test` even if someone's local audit-script
+// invocation has a latent bug.
+const SUB_SUFFIXES = ['-diagnostic', '-experiment', '-guided-learning', '-mastery', '-practice', '-transfer'];
+const baseLessonFiles = lessonFiles.filter(f => {
+  const base = f.replace(/\.json$/, '');
+  return !SUB_SUFFIXES.some(s => base.endsWith(s));
+});
+
+test('every -mastery.json is loadable in the runtime-canonical shape (mastery.questions[], non-empty)', () => {
+  const violations = [];
+  for (const base of baseLessonFiles) {
+    const id = base.replace(/\.json$/, '');
+    const masteryFile = `${id}-mastery.json`;
+    if (!lessonFiles.includes(masteryFile)) continue; // absence is a different check (release-contract), not this one
+    const data = readJson(masteryFile);
+    const questions = data?.mastery?.questions;
+    if (!Array.isArray(questions) || questions.length === 0) {
+      violations.push(`${masteryFile}: expected mastery.questions[] to be a non-empty array (app/content-loader.js#loadMastery reads data.mastery, then filters .questions — anything else silently yields an empty mastery pool at runtime)`);
+    }
+  }
+  assert.deepEqual(violations, []);
+});
+
+test('every -diagnostic.json is loadable (diagnostics[] or questions[], non-empty)', () => {
+  const violations = [];
+  for (const base of baseLessonFiles) {
+    const id = base.replace(/\.json$/, '');
+    const diagFile = `${id}-diagnostic.json`;
+    if (!lessonFiles.includes(diagFile)) continue;
+    const data = readJson(diagFile);
+    const questions = Array.isArray(data?.diagnostics) ? data.diagnostics : data?.questions;
+    if (!Array.isArray(questions) || questions.length === 0) {
+      violations.push(`${diagFile}: expected diagnostics[] or questions[] to be a non-empty array`);
+    }
+  }
+  assert.deepEqual(violations, []);
+});
+
+test('every practice/mastery/diagnostic question with options has a resolvable single-index answer', () => {
+  const violations = [];
+  for (const file of lessonFiles) {
+    if (!/(-practice|-mastery|-diagnostic)\.json$/.test(file)) continue;
+    const data = readJson(file);
+    const pools = [
+      data?.questions,
+      data?.diagnostics,
+      data?.mastery?.questions,
+    ].filter(Array.isArray);
+    for (const pool of pools) {
+      for (const q of pool) {
+        if (!Array.isArray(q.options) || q.options.length === 0) continue; // constructed/short-answer items are out of scope here
+        const isSingleIndex = Number.isInteger(q.answer) && q.answer >= 0 && q.answer < q.options.length;
+        if (!isSingleIndex) {
+          violations.push(`${file}: ${q.id} has options[] but answer (${JSON.stringify(q.answer)}) is not a single valid option index — multi-select arrays are not supported by views/quiz-view.js today`);
+        }
+      }
+    }
+  }
+  assert.deepEqual(violations, []);
+});

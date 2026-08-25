@@ -1,192 +1,199 @@
 {
   "lessonId": "lesson-23-co2-property",
-  "dimensions": [
-    "concept",
-    "laboratory",
-    "application"
-  ],
-  "criteria": [
-    {
-      "dimension": "concept",
-      "items": [
-        "L23-Q01",
-        "L23-Q02",
-        "L23-Q03",
-        "L23-Q04"
-      ],
-      "passingScore": 0.75
-    },
-    {
-      "dimension": "laboratory",
-      "items": [
-        "L23-Q05",
-        "L23-Q06"
-      ],
-      "passingScore": 0.75
-    },
-    {
-      "dimension": "application",
-      "items": [
-        "L23-D01",
-        "L23-D02"
-      ],
-      "passingScore": 0.75
-    }
-  ],
-  "items": [
-    {
-      "id": "L23-Q01",
-      "type": "mc",
-      "question": "下列关于 CO₂ 物理性质的说法正确的是？",
-      "options": [
-        "有刺激性气味",
-        "密度比空气小",
-        "能溶于水",
-        "液态为蓝色"
-      ],
-      "answer": 2,
-      "knowledgeIds": [
-        "co2-property"
-      ],
-      "knowledgePoints": [
-        "co2-property"
-      ],
-      "explanation": "CO₂ 无色无味，密度大于空气，能溶于水。",
-      "category": "concept"
-    },
-    {
-      "id": "L23-Q02",
-      "type": "mc",
-      "question": "干冰用于人工降雨的原理是？",
-      "options": [
-        "干冰熔化放热",
-        "干冰升华吸热使水蒸气凝结",
-        "干冰与水反应",
-        "干冰密度小"
-      ],
-      "answer": 1,
-      "knowledgeIds": [
-        "co2-property"
-      ],
-      "knowledgePoints": [
-        "co2-property"
-      ],
-      "explanation": "干冰升华吸收大量热，使周围水蒸气凝结成雨。",
-      "category": "concept"
-    },
-    {
-      "id": "L23-Q03",
-      "type": "mc",
-      "question": "将 CO₂ 通入紫色石蕊溶液，溶液变红是因为？",
-      "options": [
-        "CO₂ 本身呈酸性",
-        "生成的碳酸使石蕊变红",
-        "水使石蕊变红",
-        "CO₂ 与水不反应"
-      ],
-      "answer": 1,
-      "knowledgeIds": [
-        "co2-property"
-      ],
-      "knowledgePoints": [
-        "co2-property"
-      ],
-      "explanation": "CO₂ 与水反应生成碳酸，碳酸使紫色石蕊变红。",
-      "category": "concept"
-    },
-    {
-      "id": "L23-Q04",
-      "type": "equation",
-      "question": "写出 CO₂ 使澄清石灰水变浑浊的化学方程式。",
-      "answer": "CO2 + Ca(OH)2 -> CaCO3 + H2O",
-      "knowledgeIds": [
-        "co2-property"
-      ],
-      "knowledgePoints": [
-        "co2-property"
-      ],
-      "explanation": "CO₂ + Ca(OH)₂ → CaCO₃↓ + H₂O。",
-      "category": "concept"
-    },
-    {
-      "id": "L23-Q05",
-      "type": "mc",
-      "question": "下列有关 CO₂ 的说法错误的是？",
-      "options": [
-        "CO₂ 能使燃着木条熄灭",
-        "CO₂ 有毒，不能呼吸",
-        "干冰可用于人工降雨",
-        "CO₂ 是光合作用的原料"
-      ],
-      "answer": 1,
-      "knowledgeIds": [
-        "co2-property"
-      ],
-      "knowledgePoints": [
-        "co2-property"
-      ],
-      "explanation": "CO₂ 本身无毒，但浓度过高会导致窒息。",
-      "category": "laboratory"
-    },
-    {
-      "id": "L23-Q06",
-      "type": "mc",
-      "question": "加热变红的石蕊溶液，红色褪去的原因是？",
-      "options": [
-        "CO₂ 逸出，碳酸分解",
-        "石蕊失效",
-        "水被蒸发",
-        "温度升高变色"
-      ],
-      "answer": 0,
-      "knowledgeIds": [
-        "co2-property"
-      ],
-      "knowledgePoints": [
-        "co2-property"
-      ],
-      "explanation": "碳酸不稳定，受热分解为 CO₂ 和水，酸性消失，石蕊恢复紫色。",
-      "category": "laboratory"
-    },
-    {
-      "id": "L23-D01",
-      "type": "mc",
-      "question": "下列用途中，利用 CO₂ 化学性质的是？",
-      "options": [
-        "干冰人工降雨",
-        "CO₂ 灭火",
-        "CO₂ 制碳酸饮料",
-        "CO₂ 气体肥料"
-      ],
-      "answer": 1,
-      "knowledgeIds": [
-        "co2-property"
-      ],
-      "knowledgePoints": [
-        "co2-property"
-      ],
-      "explanation": "灭火利用了 CO₂ 不燃烧不支持燃烧的化学性质。",
-      "category": "application"
-    },
-    {
-      "id": "L23-D02",
-      "type": "mc",
-      "question": "下列关于 CO₂ 的说法正确的是？",
-      "options": [
-        "CO₂ 能燃烧",
-        "CO₂ 能使干燥的石蕊试纸变红",
-        "CO₂ 密度比空气大",
-        "CO₂ 易溶于汽油"
-      ],
-      "answer": 2,
-      "knowledgeIds": [
-        "co2-property"
-      ],
-      "knowledgePoints": [
-        "co2-property"
-      ],
-      "explanation": "CO₂ 密度大于空气，不支持燃烧，干燥的 CO₂ 不能使石蕊变红。",
-      "category": "application"
-    }
-  ]
+  "version": "1.1",
+  "mastery": {
+    "threshold": 0.85,
+    "questionCount": 8,
+    "minCorrect": 7,
+    "mode": "unseen-transfer",
+    "dimensions": [
+      "concept",
+      "laboratory",
+      "application"
+    ],
+    "criteria": [
+      {
+        "dimension": "concept",
+        "items": [
+          "L23-MQ01",
+          "L23-MQ02",
+          "L23-MQ03",
+          "L23-MQ04"
+        ],
+        "passingScore": 0.75
+      },
+      {
+        "dimension": "laboratory",
+        "items": [
+          "L23-MQ05",
+          "L23-MQ06"
+        ],
+        "passingScore": 0.75
+      },
+      {
+        "dimension": "application",
+        "items": [
+          "L23-MD01",
+          "L23-MD02"
+        ],
+        "passingScore": 0.75
+      }
+    ],
+    "questions": [
+      {
+        "id": "L23-MQ01",
+        "type": "mc",
+        "question": "下列关于 CO₂ 物理性质的说法正确的是？",
+        "options": [
+          "有刺激性气味",
+          "密度比空气小",
+          "能溶于水",
+          "液态为蓝色"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "co2-property"
+        ],
+        "knowledgePoints": [
+          "co2-property"
+        ],
+        "explanation": "CO₂ 无色无味，密度大于空气，能溶于水。",
+        "category": "concept"
+      },
+      {
+        "id": "L23-MQ02",
+        "type": "mc",
+        "question": "干冰用于人工降雨的原理是？",
+        "options": [
+          "干冰熔化放热",
+          "干冰升华吸热使水蒸气凝结",
+          "干冰与水反应",
+          "干冰密度小"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "co2-property"
+        ],
+        "knowledgePoints": [
+          "co2-property"
+        ],
+        "explanation": "干冰升华吸收大量热，使周围水蒸气凝结成雨。",
+        "category": "concept"
+      },
+      {
+        "id": "L23-MQ03",
+        "type": "mc",
+        "question": "将 CO₂ 通入紫色石蕊溶液，溶液变红是因为？",
+        "options": [
+          "CO₂ 本身呈酸性",
+          "生成的碳酸使石蕊变红",
+          "水使石蕊变红",
+          "CO₂ 与水不反应"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "co2-property"
+        ],
+        "knowledgePoints": [
+          "co2-property"
+        ],
+        "explanation": "CO₂ 与水反应生成碳酸，碳酸使紫色石蕊变红。",
+        "category": "concept"
+      },
+      {
+        "id": "L23-MQ04",
+        "type": "equation",
+        "question": "写出 CO₂ 使澄清石灰水变浑浊的化学方程式。",
+        "answer": "CO2 + Ca(OH)2 -> CaCO3 + H2O",
+        "knowledgeIds": [
+          "co2-property"
+        ],
+        "knowledgePoints": [
+          "co2-property"
+        ],
+        "explanation": "CO₂ + Ca(OH)₂ → CaCO₃↓ + H₂O。",
+        "category": "concept"
+      },
+      {
+        "id": "L23-MQ05",
+        "type": "mc",
+        "question": "下列有关 CO₂ 的说法错误的是？",
+        "options": [
+          "CO₂ 能使燃着木条熄灭",
+          "CO₂ 有毒，不能呼吸",
+          "干冰可用于人工降雨",
+          "CO₂ 是光合作用的原料"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "co2-property"
+        ],
+        "knowledgePoints": [
+          "co2-property"
+        ],
+        "explanation": "CO₂ 本身无毒，但浓度过高会导致窒息。",
+        "category": "laboratory"
+      },
+      {
+        "id": "L23-MQ06",
+        "type": "mc",
+        "question": "加热变红的石蕊溶液，红色褪去的原因是？",
+        "options": [
+          "CO₂ 逸出，碳酸分解",
+          "石蕊失效",
+          "水被蒸发",
+          "温度升高变色"
+        ],
+        "answer": 0,
+        "knowledgeIds": [
+          "co2-property"
+        ],
+        "knowledgePoints": [
+          "co2-property"
+        ],
+        "explanation": "碳酸不稳定，受热分解为 CO₂ 和水，酸性消失，石蕊恢复紫色。",
+        "category": "laboratory"
+      },
+      {
+        "id": "L23-MD01",
+        "type": "mc",
+        "question": "下列用途中，利用 CO₂ 化学性质的是？",
+        "options": [
+          "干冰人工降雨",
+          "CO₂ 灭火",
+          "CO₂ 制碳酸饮料",
+          "CO₂ 气体肥料"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "co2-property"
+        ],
+        "knowledgePoints": [
+          "co2-property"
+        ],
+        "explanation": "灭火利用了 CO₂ 不燃烧不支持燃烧的化学性质。",
+        "category": "application"
+      },
+      {
+        "id": "L23-MD02",
+        "type": "mc",
+        "question": "下列关于 CO₂ 的说法正确的是？",
+        "options": [
+          "CO₂ 能燃烧",
+          "CO₂ 能使干燥的石蕊试纸变红",
+          "CO₂ 密度比空气大",
+          "CO₂ 易溶于汽油"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "co2-property"
+        ],
+        "knowledgePoints": [
+          "co2-property"
+        ],
+        "explanation": "CO₂ 密度大于空气，不支持燃烧，干燥的 CO₂ 不能使石蕊变红。",
+        "category": "application"
+      }
+    ]
+  }
 }

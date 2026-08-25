@@ -25,7 +25,9 @@
       ],
       "knowledgeIds": [
         "co2-property"
-      ]
+      ],
+      "answer": "CO₂ + Ca(OH)₂ = CaCO₃↓ + H₂O",
+      "explanation": "二氧化碳与澄清石灰水中的氢氧化钙反应生成不溶于水的碳酸钙沉淀，使澄清石灰水变浑浊，这是检验二氧化碳最常用的方法。"
     },
     {
       "id": "L23-P03",

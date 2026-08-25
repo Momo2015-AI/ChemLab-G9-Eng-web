@@ -11,7 +11,9 @@
       ],
       "knowledgeIds": [
         "co2-preparation"
-      ]
+      ],
+      "answer": "CaCO₃ + 2HCl = CaCl₂ + H₂O + CO₂↑",
+      "explanation": "实验室通常用大理石（或石灰石）与稀盐酸反应制取二氧化碳，反应不需要加热，属于固液常温型反应。"
     },
     {
       "id": "L22-P02",

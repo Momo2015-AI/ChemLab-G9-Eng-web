@@ -49,13 +49,13 @@ function loadRuntimeQuestions() {
     };
     add(lesson.questions, 'lesson');
     const practice = load(path.join(lessonsPath, name.replace(/\.json$/, '-practice.json')));
-    add(practice?.questions || practice, 'practice');
+    add(Array.isArray(practice?.questions) ? practice.questions : (Array.isArray(practice) ? practice : []), 'practice');
     const diagnostic = load(path.join(lessonsPath, name.replace(/\.json$/, '-diagnostic.json')));
-    add(diagnostic?.diagnostics || diagnostic, 'diagnostic');
+    add(Array.isArray(diagnostic?.diagnostics) ? diagnostic.diagnostics : (Array.isArray(diagnostic?.questions) ? diagnostic.questions : []), 'diagnostic');
     const masteryResource = load(path.join(lessonsPath, name.replace(/\.json$/, '-mastery.json')));
-    add(masteryResource?.mastery?.questions || masteryResource?.questions, 'mastery');
+    add(Array.isArray(masteryResource?.mastery?.questions) ? masteryResource.mastery.questions : (Array.isArray(masteryResource?.questions) ? masteryResource.questions : []), 'mastery');
     const transferResource = load(path.join(lessonsPath, name.replace(/\.json$/, '-transfer.json')));
-    add(transferResource?.questions || transferResource, 'transfer');
+    add(Array.isArray(transferResource?.questions) ? transferResource.questions : [], 'transfer');
   }
   return questions;
 }

@@ -34,10 +34,10 @@ function countRuntimeQuestions(file) {
     if (!resource) continue;
     const suffixKey = suffix.replace(/^\-/, '').replace(/\.json$/, '');
     const questions = suffixKey === 'diagnostic'
-      ? (Array.isArray(resource.diagnostics) ? resource.diagnostics : resource)
+      ? (Array.isArray(resource.diagnostics) ? resource.diagnostics : (Array.isArray(resource.questions) ? resource.questions : []))
       : suffixKey === 'mastery'
-        ? (Array.isArray(resource.mastery?.questions) ? resource.mastery.questions : resource.questions)
-        : (Array.isArray(resource.questions) ? resource.questions : resource);
+        ? (Array.isArray(resource.mastery?.questions) ? resource.mastery.questions : (Array.isArray(resource.questions) ? resource.questions : []))
+        : (Array.isArray(resource.questions) ? resource.questions : (Array.isArray(resource) ? resource : []));
     if (Array.isArray(questions)) counts[suffixKey] = questions.filter(q => q && q.id).length;
   }
   return counts;

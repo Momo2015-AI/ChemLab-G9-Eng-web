@@ -3,29 +3,50 @@
   "questions": [
     {
       "id": "L20-P01",
-      "type": "matching",
+      "type": "short-answer",
       "difficulty": "basic",
       "question": "请将下列碳单质与其主要用途连线",
-      "knowledgePoints": ["carbon-allotrope"],
-      "knowledgeIds": ["carbon-allotrope"]
+      "knowledgePoints": [
+        "carbon-allotrope"
+      ],
+      "knowledgeIds": [
+        "carbon-allotrope"
+      ],
+      "answer": "金刚石——制造钻头/玻璃刀（硬度大）；石墨——铅笔芯/电极（质软、导电）；C60——材料科学研究（特殊笼状结构）",
+      "explanation": "金刚石硬度大用于切割钻孔；石墨质软有滑腻感、能导电，用于铅笔芯和电极；C60具有特殊的笼状分子结构，是材料科学的重要研究对象。三者都是碳的单质，但原子排列方式不同导致物理性质和用途都不同。"
     },
     {
       "id": "L20-P02",
-      "type": "explanation",
+      "type": "short-answer",
       "difficulty": "medium",
       "question": "请用\"结构决定性质\"解释为什么金刚石是天然最硬的物质，而石墨很软。",
-      "knowledgePoints": ["carbon-allotrope"],
-      "knowledgeIds": ["carbon-allotrope"]
+      "knowledgePoints": [
+        "carbon-allotrope"
+      ],
+      "knowledgeIds": [
+        "carbon-allotrope"
+      ],
+      "answer": "金刚石中碳原子按正四面体方式紧密连接成空间网状结构，原子间作用力强，因此硬度大；石墨中碳原子排列成层状结构，层与层之间作用力很弱、容易滑动，因此质地软。二者都是碳元素组成的单质，性质差异的根本原因是原子排列方式（结构）不同。",
+      "explanation": "这是“结构决定性质”的典型例子：组成元素相同，但原子的空间排列方式不同，导致宏观物理性质（硬度）截然不同。"
     },
     {
       "id": "L20-P03",
       "type": "mc",
       "difficulty": "medium",
       "question": "下列物质中，不能用于净水的是？",
-      "options": ["活性炭", "木炭", "焦炭", "炭黑"],
+      "options": [
+        "活性炭",
+        "木炭",
+        "焦炭",
+        "炭黑"
+      ],
       "answer": 2,
-      "knowledgePoints": ["carbon-allotrope"],
-      "knowledgeIds": ["carbon-allotrope"],
+      "knowledgePoints": [
+        "carbon-allotrope"
+      ],
+      "knowledgeIds": [
+        "carbon-allotrope"
+      ],
       "explanation": "焦炭主要用于冶金，净水常用活性炭。"
     },
     {
@@ -33,10 +54,19 @@
       "type": "mc",
       "difficulty": "hard",
       "question": "下列关于碳单质的说法中，错误的是？",
-      "options": ["金刚石和石墨的物理性质不同是因为碳原子排列方式不同", "C60 是由分子构成的碳单质", "活性炭吸附色素是物理变化", "所有碳单质在常温下都很活泼"],
+      "options": [
+        "金刚石和石墨的物理性质不同是因为碳原子排列方式不同",
+        "C60 是由分子构成的碳单质",
+        "活性炭吸附色素是物理变化",
+        "所有碳单质在常温下都很活泼"
+      ],
       "answer": 3,
-      "knowledgePoints": ["carbon-allotrope"],
-      "knowledgeIds": ["carbon-allotrope"],
+      "knowledgePoints": [
+        "carbon-allotrope"
+      ],
+      "knowledgeIds": [
+        "carbon-allotrope"
+      ],
       "explanation": "碳单质在常温下化学性质稳定，高温下活泼。"
     }
   ]

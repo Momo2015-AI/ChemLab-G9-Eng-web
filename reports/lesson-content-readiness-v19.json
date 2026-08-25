@@ -1,8 +1,8 @@
 {
-  "scanned": 16,
+  "scanned": 21,
   "template": 0,
-  "realContent": 16,
-  "ready": 16,
+  "realContent": 21,
+  "ready": 21,
   "needsRewrite": 0,
   "duplicateLegacy": false,
   "questionBankState": "CANONICAL_RUNTIME_SOURCE",
@@ -276,6 +276,91 @@
         "practice": 12,
         "diagnostic": 3,
         "mastery": 20,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-20-carbon-allotrope.json",
+      "day": "20",
+      "title": "碳的单质",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 4,
+        "diagnostic": 3,
+        "mastery": 8,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-21-carbon-property.json",
+      "day": "21",
+      "title": "碳的化学性质",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 4,
+        "diagnostic": 3,
+        "mastery": 8,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-22-co2-preparation.json",
+      "day": "22",
+      "title": "二氧化碳的制取",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 3,
+        "diagnostic": 3,
+        "mastery": 8,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-23-co2-property.json",
+      "day": "23",
+      "title": "二氧化碳的性质",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 3,
+        "diagnostic": 3,
+        "mastery": 8,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-24-co-property.json",
+      "day": "24",
+      "title": "一氧化碳",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 3,
+        "diagnostic": 3,
+        "mastery": 8,
         "transfer": 4
       },
       "contractErrors": []

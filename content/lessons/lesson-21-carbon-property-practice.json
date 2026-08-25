@@ -11,7 +11,9 @@
       ],
       "knowledgeIds": [
         "carbon-chemical-property"
-      ]
+      ],
+      "answer": "C + O₂ --点燃--> CO₂",
+      "explanation": "碳在氧气充足的条件下完全燃烧，生成二氧化碳。"
     },
     {
       "id": "L21-P02",
@@ -23,7 +25,9 @@
       ],
       "knowledgeIds": [
         "carbon-chemical-property"
-      ]
+      ],
+      "answer": "C + 2CuO --高温--> 2Cu + CO₂↑",
+      "explanation": "碳在高温下夺取氧化铜中的氧，将其还原为铜单质，自身被氧化为二氧化碳，体现了碳的还原性。"
     },
     {
       "id": "L21-P03",

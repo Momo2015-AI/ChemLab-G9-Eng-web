@@ -1,12 +1,12 @@
 # V1.9 Lesson Content Readiness Audit
 
-Generated: 2026-08-25T07:10:57.055Z
+Generated: 2026-08-25T09:12:49.652Z
 
 ## Baseline
-- Lessons scanned: 16
+- Lessons scanned: 21
 - Template lessons: 0
-- Real-content candidates: 16
-- Ready by automated scan: 16
+- Real-content candidates: 21
+- Ready by automated scan: 21
 - Lessons requiring rewrite/incompletion work: 0
 - Question bank state: CANONICAL_RUNTIME_SOURCE
 - Legacy duplicate day01.json present: NO
@@ -31,6 +31,11 @@ Generated: 2026-08-25T07:10:57.055Z
 | lesson-11-atomic-structure.json | 11 | 原子的构成 | released | ready | 0 | - | 6+12+3+20+4 | - |
 | lesson-12-ion-bond.json | 12 | 离子与离子键 | released | ready | 0 | - | 6+12+3+20+4 | - |
 | lesson-13-elements.json | 13 | 元素 | released | ready | 0 | - | 6+12+3+20+4 | - |
+| lesson-20-carbon-allotrope.json | 20 | 碳的单质 | released | ready | 0 | - | 6+4+3+8+4 | - |
+| lesson-21-carbon-property.json | 21 | 碳的化学性质 | released | ready | 0 | - | 6+4+3+8+4 | - |
+| lesson-22-co2-preparation.json | 22 | 二氧化碳的制取 | released | ready | 0 | - | 6+3+3+8+4 | - |
+| lesson-23-co2-property.json | 23 | 二氧化碳的性质 | released | ready | 0 | - | 6+3+3+8+4 | - |
+| lesson-24-co-property.json | 24 | 一氧化碳 | released | ready | 0 | - | 6+3+3+8+4 | - |
 
 ## Issues
 - None

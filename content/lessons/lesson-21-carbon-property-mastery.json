@@ -1,192 +1,199 @@
 {
   "lessonId": "lesson-21-carbon-property",
-  "dimensions": [
-    "concept",
-    "laboratory",
-    "application"
-  ],
-  "criteria": [
-    {
-      "dimension": "concept",
-      "items": [
-        "L21-Q01",
-        "L21-Q02",
-        "L21-Q03",
-        "L21-Q04"
-      ],
-      "passingScore": 0.75
-    },
-    {
-      "dimension": "laboratory",
-      "items": [
-        "L21-Q05",
-        "L21-Q06"
-      ],
-      "passingScore": 0.75
-    },
-    {
-      "dimension": "application",
-      "items": [
-        "L21-D01",
-        "L21-D02"
-      ],
-      "passingScore": 0.75
-    }
-  ],
-  "items": [
-    {
-      "id": "L21-Q01",
-      "type": "mc",
-      "question": "古代字画能保存至今，主要原因是？",
-      "options": [
-        "纸质量好",
-        "碳在常温下化学性质稳定",
-        "墨水很珍贵",
-        "经常观赏"
-      ],
-      "answer": 1,
-      "knowledgeIds": [
-        "carbon-chemical-property"
-      ],
-      "knowledgePoints": [
-        "carbon-chemical-property"
-      ],
-      "explanation": "墨的主要成分是碳，常温下碳化学性质稳定，不易变质。",
-      "category": "concept"
-    },
-    {
-      "id": "L21-Q02",
-      "type": "mc",
-      "question": "碳充分燃烧的产物是？",
-      "options": [
-        "CO",
-        "CO₂",
-        "C",
-        "H₂O"
-      ],
-      "answer": 1,
-      "knowledgeIds": [
-        "carbon-chemical-property"
-      ],
-      "knowledgePoints": [
-        "carbon-chemical-property"
-      ],
-      "explanation": "碳在氧气充足时充分燃烧生成 CO₂。",
-      "category": "concept"
-    },
-    {
-      "id": "L21-Q03",
-      "type": "mc",
-      "question": "C + 2CuO → 2Cu + CO₂↑ 中，还原剂是？",
-      "options": [
-        "CuO",
-        "Cu",
-        "C",
-        "CO₂"
-      ],
-      "answer": 2,
-      "knowledgeIds": [
-        "carbon-chemical-property"
-      ],
-      "knowledgePoints": [
-        "carbon-chemical-property"
-      ],
-      "explanation": "碳夺去氧化铜中的氧，是还原剂。",
-      "category": "concept"
-    },
-    {
-      "id": "L21-Q04",
-      "type": "mc",
-      "question": "下列实验中，能证明碳具有还原性的是？",
-      "options": [
-        "碳在氧气中燃烧",
-        "碳还原氧化铜",
-        "碳素墨水书写",
-        "活性炭吸附"
-      ],
-      "answer": 1,
-      "knowledgeIds": [
-        "carbon-chemical-property"
-      ],
-      "knowledgePoints": [
-        "carbon-chemical-property"
-      ],
-      "explanation": "碳还原氧化铜是典型的还原反应实验。",
-      "category": "concept"
-    },
-    {
-      "id": "L21-Q05",
-      "type": "equation",
-      "question": "写出木炭还原氧化铜的化学方程式。",
-      "answer": "C + 2CuO --高温--> 2Cu + CO2",
-      "knowledgeIds": [
-        "carbon-chemical-property"
-      ],
-      "knowledgePoints": [
-        "carbon-chemical-property"
-      ],
-      "explanation": "注意条件高温，配平：C + 2CuO → 2Cu + CO₂↑。",
-      "category": "laboratory"
-    },
-    {
-      "id": "L21-Q06",
-      "type": "mc",
-      "question": "关于 C + 2CuO → 2Cu + CO₂↑，下列说法正确的是？",
-      "options": [
-        "反应中碳被还原",
-        "氧化铜是还原剂",
-        "反应条件是高温",
-        "生成物只有铜"
-      ],
-      "answer": 2,
-      "knowledgeIds": [
-        "carbon-chemical-property"
-      ],
-      "knowledgePoints": [
-        "carbon-chemical-property"
-      ],
-      "explanation": "反应条件是高温，碳是还原剂（被氧化），氧化铜是氧化剂（被还原）。",
-      "category": "laboratory"
-    },
-    {
-      "id": "L21-D01",
-      "type": "mc",
-      "question": "下列用途中，利用碳还原性的是？",
-      "options": [
-        "碳素墨水书写",
-        "冶炼金属",
-        "木炭取暖",
-        "金刚石切割玻璃"
-      ],
-      "answer": 1,
-      "knowledgeIds": [
-        "carbon-chemical-property"
-      ],
-      "knowledgePoints": [
-        "carbon-chemical-property"
-      ],
-      "explanation": "冶炼金属利用碳的还原性将金属氧化物还原为金属。",
-      "category": "application"
-    },
-    {
-      "id": "L21-D02",
-      "type": "mc",
-      "question": "下列关于碳化学性质的说法错误的是？",
-      "options": [
-        "常温下碳稳定",
-        "高温下碳具有还原性",
-        "碳只能生成 CO₂",
-        "碳不充分燃烧生成 CO"
-      ],
-      "answer": 2,
-      "knowledgeIds": [
-        "carbon-chemical-property"
-      ],
-      "knowledgePoints": [
-        "carbon-chemical-property"
-      ],
-      "explanation": "碳不充分燃烧可生成 CO。",
-      "category": "application"
-    }
-  ]
+  "version": "1.1",
+  "mastery": {
+    "threshold": 0.85,
+    "questionCount": 8,
+    "minCorrect": 7,
+    "mode": "unseen-transfer",
+    "dimensions": [
+      "concept",
+      "laboratory",
+      "application"
+    ],
+    "criteria": [
+      {
+        "dimension": "concept",
+        "items": [
+          "L21-MQ01",
+          "L21-MQ02",
+          "L21-MQ03",
+          "L21-MQ04"
+        ],
+        "passingScore": 0.75
+      },
+      {
+        "dimension": "laboratory",
+        "items": [
+          "L21-MQ05",
+          "L21-MQ06"
+        ],
+        "passingScore": 0.75
+      },
+      {
+        "dimension": "application",
+        "items": [
+          "L21-MD01",
+          "L21-MD02"
+        ],
+        "passingScore": 0.75
+      }
+    ],
+    "questions": [
+      {
+        "id": "L21-MQ01",
+        "type": "mc",
+        "question": "古代字画能保存至今，主要原因是？",
+        "options": [
+          "纸质量好",
+          "碳在常温下化学性质稳定",
+          "墨水很珍贵",
+          "经常观赏"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "carbon-chemical-property"
+        ],
+        "knowledgePoints": [
+          "carbon-chemical-property"
+        ],
+        "explanation": "墨的主要成分是碳，常温下碳化学性质稳定，不易变质。",
+        "category": "concept"
+      },
+      {
+        "id": "L21-MQ02",
+        "type": "mc",
+        "question": "碳充分燃烧的产物是？",
+        "options": [
+          "CO",
+          "CO₂",
+          "C",
+          "H₂O"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "carbon-chemical-property"
+        ],
+        "knowledgePoints": [
+          "carbon-chemical-property"
+        ],
+        "explanation": "碳在氧气充足时充分燃烧生成 CO₂。",
+        "category": "concept"
+      },
+      {
+        "id": "L21-MQ03",
+        "type": "mc",
+        "question": "C + 2CuO → 2Cu + CO₂↑ 中，还原剂是？",
+        "options": [
+          "CuO",
+          "Cu",
+          "C",
+          "CO₂"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "carbon-chemical-property"
+        ],
+        "knowledgePoints": [
+          "carbon-chemical-property"
+        ],
+        "explanation": "碳夺去氧化铜中的氧，是还原剂。",
+        "category": "concept"
+      },
+      {
+        "id": "L21-MQ04",
+        "type": "mc",
+        "question": "下列实验中，能证明碳具有还原性的是？",
+        "options": [
+          "碳在氧气中燃烧",
+          "碳还原氧化铜",
+          "碳素墨水书写",
+          "活性炭吸附"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "carbon-chemical-property"
+        ],
+        "knowledgePoints": [
+          "carbon-chemical-property"
+        ],
+        "explanation": "碳还原氧化铜是典型的还原反应实验。",
+        "category": "concept"
+      },
+      {
+        "id": "L21-MQ05",
+        "type": "equation",
+        "question": "写出木炭还原氧化铜的化学方程式。",
+        "answer": "C + 2CuO --高温--> 2Cu + CO2",
+        "knowledgeIds": [
+          "carbon-chemical-property"
+        ],
+        "knowledgePoints": [
+          "carbon-chemical-property"
+        ],
+        "explanation": "注意条件高温，配平：C + 2CuO → 2Cu + CO₂↑。",
+        "category": "laboratory"
+      },
+      {
+        "id": "L21-MQ06",
+        "type": "mc",
+        "question": "关于 C + 2CuO → 2Cu + CO₂↑，下列说法正确的是？",
+        "options": [
+          "反应中碳被还原",
+          "氧化铜是还原剂",
+          "反应条件是高温",
+          "生成物只有铜"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "carbon-chemical-property"
+        ],
+        "knowledgePoints": [
+          "carbon-chemical-property"
+        ],
+        "explanation": "反应条件是高温，碳是还原剂（被氧化），氧化铜是氧化剂（被还原）。",
+        "category": "laboratory"
+      },
+      {
+        "id": "L21-MD01",
+        "type": "mc",
+        "question": "下列用途中，利用碳还原性的是？",
+        "options": [
+          "碳素墨水书写",
+          "冶炼金属",
+          "木炭取暖",
+          "金刚石切割玻璃"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "carbon-chemical-property"
+        ],
+        "knowledgePoints": [
+          "carbon-chemical-property"
+        ],
+        "explanation": "冶炼金属利用碳的还原性将金属氧化物还原为金属。",
+        "category": "application"
+      },
+      {
+        "id": "L21-MD02",
+        "type": "mc",
+        "question": "下列关于碳化学性质的说法错误的是？",
+        "options": [
+          "常温下碳稳定",
+          "高温下碳具有还原性",
+          "碳只能生成 CO₂",
+          "碳不充分燃烧生成 CO"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "carbon-chemical-property"
+        ],
+        "knowledgePoints": [
+          "carbon-chemical-property"
+        ],
+        "explanation": "碳不充分燃烧可生成 CO。",
+        "category": "application"
+      }
+    ]
+  }
 }

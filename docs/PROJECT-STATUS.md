@@ -9,9 +9,9 @@
 ## 质量基线
 
 ```text
-tests:            183 / 183 GREEN
+tests:            186 / 186 GREEN
 runtime audit:    GREEN
-content gates:    FAIL
+content gates:    GREEN
 deployment:       GitHub Pages（runtime-only dist/）
 ```
 
@@ -35,11 +35,11 @@ deployment:       GitHub Pages（runtime-only dist/）
 | lesson-09-chemical-formula 化学式与化合价（上） | ready | 8 step guided, 0 experiment, 12 practice, 5 diagnostic, 21 mastery, 4 transfer |
 | lesson-10-chemical-equation 质量守恒定律与化学计算 | ready | 8 step guided, 1 experiment, 12 practice, 3 diagnostic, 21 mastery, 4 transfer |
 | lesson-03-acid-intro 酸入门：初识身边的酸 | ready | 8 step guided, 1 experiment, 13 practice, 3 diagnostic, 21 mastery, 4 transfer |
-| lesson-20-carbon-allotrope 碳的单质 | ready | 8 step guided, 1 experiment, 4 practice, 0 diagnostic, 0 mastery, 4 transfer |
-| lesson-21-carbon-property 碳的化学性质 | ready | 8 step guided, 1 experiment, 4 practice, 0 diagnostic, 0 mastery, 4 transfer |
-| lesson-22-co2-preparation 二氧化碳的制取 | ready | 8 step guided, 1 experiment, 3 practice, 0 diagnostic, 0 mastery, 4 transfer |
-| lesson-23-co2-property 二氧化碳的性质 | ready | 8 step guided, 2 experiment, 3 practice, 0 diagnostic, 0 mastery, 4 transfer |
-| lesson-24-co-property 一氧化碳 | ready | 8 step guided, 1 experiment, 3 practice, 0 diagnostic, 0 mastery, 4 transfer |
+| lesson-20-carbon-allotrope 碳的单质 | ready | 8 step guided, 1 experiment, 4 practice, 0 diagnostic, 8 mastery, 4 transfer |
+| lesson-21-carbon-property 碳的化学性质 | ready | 8 step guided, 1 experiment, 4 practice, 0 diagnostic, 8 mastery, 4 transfer |
+| lesson-22-co2-preparation 二氧化碳的制取 | ready | 8 step guided, 1 experiment, 3 practice, 0 diagnostic, 8 mastery, 4 transfer |
+| lesson-23-co2-property 二氧化碳的性质 | ready | 8 step guided, 2 experiment, 3 practice, 0 diagnostic, 8 mastery, 4 transfer |
+| lesson-24-co-property 一氧化碳 | ready | 8 step guided, 1 experiment, 3 practice, 0 diagnostic, 8 mastery, 4 transfer |
 
 课程清单：`content/curriculum/lesson-manifest.js`（21/21 课，扩展须逐课过 7-Gate）。
 
@@ -59,7 +59,7 @@ deployment:       GitHub Pages（runtime-only dist/）
 
 ## 内容治理状态
 
-- **Source Registry：PARTIAL — S0 designation document awaited from project owner**（`content/sources/source-registry.json`）——状态待确认。当前 16/21 课程有来源标注。
+- **Source Registry：PARTIAL — S0 designation document awaited from project owner**（`content/sources/source-registry.json`）——状态待确认。当前 21/21 课程有来源标注。
 - 知识图谱 v2.1：43 节点（upper 40 / lower 3）/ 331 关系，**全部节点均具备详情内容**（定义 / 补救目标 / 认知层次 / 误解 / 前置）。
 - misconception 词表：64 个 canonical ID + 39 个 alias，`core/assessment/mastery-policy.js` 负责别名解析到 canonical 形式。
 - 全局题池：263 题（CANONICAL_RUNTIME_SOURCE），旧 320 题永久退役。
@@ -72,7 +72,7 @@ deployment:       GitHub Pages（runtime-only dist/）
 
 ## 已知缺口（按优先级）
 
-1. **Source Registry PARTIAL — S0 designation document awaited from project owner** —— S0 权威来源指定文档待项目所有者签批（需人工决策）。当前 16/21 课程有来源标注。
+1. **Source Registry PARTIAL — S0 designation document awaited from project owner** —— S0 权威来源指定文档待项目所有者签批（需人工决策）。当前 21/21 课程有来源标注。
 2. Browser E2E regression tests missing (Node-only unit/integration tests; innerHTML-based view layer has untestable paths).
 3. 课程覆盖广度仍窄：21/21 课时，7/7 单元。建议按 u03→u04→u05→u06→u07→u08→u09→u11→u12 顺序逐课扩展。
 
