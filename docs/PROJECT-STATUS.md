@@ -43,7 +43,7 @@ deployment:       GitHub Pages（runtime-only dist/）
 
 课程清单：`content/curriculum/lesson-manifest.js`（21/21 课，扩展须逐课过 7-Gate）。
 
-**覆盖广度说明**：当前 21/21 课时、7/7 单元有内容（L01-material-changes-properties/L02-chemistry-as-experimental-science/L04-lab-safety-operations 上册第一单元“走进化学世界”，L05-oxygen/L08-h2o2-oxygen-preparation/L07-oxygen-preparation-comprehensive 上册第二单元“我们周围的空气”，L06-molecules-and-atoms/L11-atomic-structure/L12-ion-bond/L13-elements u03，L06-water-composition/L07-water-purification/L08-water-conservation/L09-chemical-formula u04，L10-chemical-equation u05，L20-carbon-allotrope/L21-carbon-property/L22-co2-preparation/L23-co2-property/L24-co-property u06，L03-acid-intro 下册第十单元“酸和碱”）。这是项目“先做深、再做广”的主动选择——已完成内容完整、判分链路可运行，但覆盖面仍窄；完整性与覆盖广度是两个维度，进度评估需区分看待。
+**覆盖广度说明**：当前 21/21 课时、7/7 单元有内容（L01-material-changes-properties/L02-chemistry-as-experimental-science/L04-lab-safety-operations 上册第一单元“走进化学世界”，L05-oxygen/L08-h2o2-oxygen-preparation/L07-oxygen-preparation-comprehensive 上册第二单元“我们周围的空气”，L06-molecules-and-atoms/L11-atomic-structure/L12-ion-bond/L13-elements/L09-chemical-formula u03，L06-water-composition/L07-water-purification/L08-water-conservation u04，L10-chemical-equation u05，L20-carbon-allotrope/L21-carbon-property/L22-co2-preparation/L23-co2-property/L24-co-property u06，L03-acid-intro 下册第十单元“酸和碱”）。这是项目“先做深、再做广”的主动选择——已完成内容完整、判分链路可运行，但覆盖面仍窄；完整性与覆盖广度是两个维度，进度评估需区分看待。
 
 ## 学习闭环
 
