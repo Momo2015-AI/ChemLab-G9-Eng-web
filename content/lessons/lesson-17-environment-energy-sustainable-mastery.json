@@ -403,7 +403,7 @@
         "category": "sustainability"
       },
       {
-        "id": "L25-D01",
+        "id": "L25-MD01",
         "type": "mc",
         "question": "小明认为天然气完全无污染。他的错误在于？",
         "options": [
@@ -422,7 +422,7 @@
         "category": "sustainability"
       },
       {
-        "id": "L25-D02",
+        "id": "L25-MD02",
         "type": "mc",
         "question": "下列措施不能有效减少CO₂排放的是？",
         "options": [

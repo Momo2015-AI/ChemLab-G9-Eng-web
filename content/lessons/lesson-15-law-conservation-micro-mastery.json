@@ -1,10 +1,166 @@
 {
   "lessonId": "lesson-15-law-conservation-micro",
-  "dimensions": ["concept", "calculation", "explanation"],
-  "criteria": [
-    { "dimension": "concept", "items": ["L27-M01", "L27-M02", "L27-M03", "L27-M04"], "passingScore": 0.75 },
-    { "dimension": "calculation", "items": ["L27-M05", "L27-M06"], "passingScore": 0.75 },
-    { "dimension": "explanation", "items": ["L27-D01", "L27-D02", "L27-D03"], "passingScore": 0.75 }
-  ],
-  "items": []
+  "version": "2.0",
+  "mastery": {
+    "threshold": 0.95,
+    "questionCount": 6,
+    "minCorrect": 6,
+    "mode": "unseen-transfer",
+    "dimensions": [
+      "concept",
+      "calculation",
+      "explanation"
+    ],
+    "criteria": [
+      {
+        "dimension": "concept",
+        "items": [
+          "L27-M01",
+          "L27-M02",
+          "L27-M03",
+          "L27-M04"
+        ],
+        "passingScore": 0.75
+      },
+      {
+        "dimension": "calculation",
+        "items": [
+          "L27-M05",
+          "L27-M06"
+        ],
+        "passingScore": 0.75
+      },
+      {
+        "dimension": "explanation",
+        "items": [
+          "L27-D01",
+          "L27-D02",
+          "L27-D03"
+        ],
+        "passingScore": 0.75
+      }
+    ],
+    "questions": [
+      {
+        "type": "mc",
+        "question": "从微观角度看，质量守恒的原因是？",
+        "options": [
+          "分子种类不变",
+          "原子种类、数目、质量都不变",
+          "电子数目不变",
+          "质子数目改变"
+        ],
+        "answer": 1,
+        "explanation": "化学反应的实质是原子重新组合，原子种类、数目、质量均不变，故总质量守恒。",
+        "knowledgeIds": [
+          "law-conservation"
+        ],
+        "id": "L27-MQ01",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "law-conservation"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "化学反应前后，下列微粒一定改变的是？",
+        "options": [
+          "原子",
+          "元素",
+          "分子",
+          "质子"
+        ],
+        "answer": 2,
+        "explanation": "化学反应中分子分裂成原子，原子重新组合成新分子，分子种类一定改变。",
+        "knowledgeIds": [
+          "law-conservation"
+        ],
+        "id": "L27-MQ02",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "law-conservation"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "化学反应前后，一定不变的是？①原子数目 ②分子数目 ③元素种类 ④物质种类 ⑤总质量",
+        "options": [
+          "①③⑤",
+          "①②③",
+          "②④⑤",
+          "①④⑤"
+        ],
+        "answer": 0,
+        "explanation": "原子数目、元素种类、总质量一定不变；分子数目可能变，物质种类一定变。",
+        "knowledgeIds": [
+          "law-conservation"
+        ],
+        "id": "L27-MQ03",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "law-conservation"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "某物质在氧气中完全燃烧后只生成二氧化碳和水，该物质一定含有？",
+        "options": [
+          "C、H、O三种元素",
+          "C、H两种元素",
+          "C、H两种元素，可能含O",
+          "只有C、H"
+        ],
+        "answer": 2,
+        "explanation": "生成CO₂和H₂O说明含C、H元素，O元素可能来自氧气也可能来自该物质。",
+        "knowledgeIds": [
+          "law-conservation"
+        ],
+        "id": "L27-MQ04",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "law-conservation"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "下列用微观示意图表示的反应（省略氧分子），符合质量守恒定律的是？",
+        "options": [
+          "2H₂ + O₂ → 2H₂O",
+          "H₂ + O₂ → H₂O₂",
+          "CH₄ + O₂ → CO₂ + H₂O（未配平）",
+          "N₂ + O₂ → 2NO₂"
+        ],
+        "answer": 0,
+        "explanation": "2H₂+O₂→2H₂O前后原子种类和数目均相等，符合质量守恒。",
+        "knowledgeIds": [
+          "law-conservation"
+        ],
+        "id": "L27-MQ05",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "law-conservation"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "化学反应前后，下列各项中可能改变的是？",
+        "options": [
+          "原子总数",
+          "元素总数",
+          "分子总数",
+          "物质总质量"
+        ],
+        "answer": 2,
+        "explanation": "分子总数可能改变（如2H₂+O₂→2H₂O，3个分子变2个），原子总数、元素总数、总质量一定不变。",
+        "knowledgeIds": [
+          "law-conservation"
+        ],
+        "id": "L27-MQ06",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "law-conservation"
+        ]
+      }
+    ]
+  }
 }

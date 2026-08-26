@@ -1,6 +1,6 @@
 # V1.9 Lesson Content Readiness Audit
 
-Generated: 2026-08-26T10:20:56.104Z
+Generated: 2026-08-26T10:48:33.020Z
 
 ## Baseline
 - Lessons scanned: 29
@@ -33,17 +33,17 @@ Generated: 2026-08-26T10:20:56.104Z
 | lesson-13-elements.json | 13 | 元素 | released | ready | 0 | - | 6+12+3+20+4 | - |
 | lesson-14-combustion-fire-extinguishing.json | 25 | 燃烧与灭火 | released | ready | 0 | - | 6+6+3+23+4 | - |
 | lesson-15-fossil-fuels-energy.json | 26 | 化石燃料与新能源 | released | ready | 0 | - | 6+6+3+22+4 | - |
-| lesson-15-law-conservation-micro.json | 15 | 质量守恒定律的微观解释与应用 | released | ready | 0 | - | 6+6+4 | - |
+| lesson-15-law-conservation-micro.json | 15 | 质量守恒定律的微观解释与应用 | released | ready | 0 | - | 6+6+3+6+4 | - |
 | lesson-16-combustion-safety-explosion.json | 27 | 燃烧安全与防爆 | released | ready | 0 | - | 6+6+3+22+4 | - |
-| lesson-16-equation-writing.json | 16 | 化学方程式的书写规则 | released | ready | 0 | - | 0+6+4 | - |
+| lesson-16-equation-writing.json | 16 | 化学方程式的书写规则 | released | ready | 0 | - | 0+6+3+6+4 | - |
 | lesson-17-environment-energy-sustainable.json | 28 | 能源与环境 | released | ready | 0 | - | 6+6+3+22+4 | - |
-| lesson-17-equation-balancing.json | 17 | 化学方程式的配平 | released | ready | 0 | - | 0+6+4 | - |
-| lesson-18-stoichiometry-calculation.json | 18 | 基于化学方程式的简单计算 | released | ready | 0 | - | 0+6+4 | - |
-| lesson-20-carbon-allotrope.json | 20 | 碳的单质 | released | ready | 0 | - | 6+4+4 | - |
-| lesson-21-carbon-property.json | 21 | 碳的化学性质 | released | ready | 0 | - | 6+4+4 | - |
-| lesson-22-co2-preparation.json | 22 | 二氧化碳的制取 | released | ready | 0 | - | 6+3+4 | - |
-| lesson-23-co2-property.json | 23 | 二氧化碳的性质 | released | ready | 0 | - | 6+3+4 | - |
-| lesson-24-co-property.json | 24 | 一氧化碳 | released | ready | 0 | - | 6+3+4 | - |
+| lesson-17-equation-balancing.json | 17 | 化学方程式的配平 | released | ready | 0 | - | 0+6+3+6+4 | - |
+| lesson-18-stoichiometry-calculation.json | 18 | 基于化学方程式的简单计算 | released | ready | 0 | - | 0+6+3+6+4 | - |
+| lesson-20-carbon-allotrope.json | 20 | 碳的单质 | released | ready | 0 | - | 6+4+3+8+4 | - |
+| lesson-21-carbon-property.json | 21 | 碳的化学性质 | released | ready | 0 | - | 6+4+3+8+4 | - |
+| lesson-22-co2-preparation.json | 22 | 二氧化碳的制取 | released | ready | 0 | - | 6+3+3+8+4 | - |
+| lesson-23-co2-property.json | 23 | 二氧化碳的性质 | released | ready | 0 | - | 6+3+3+8+4 | - |
+| lesson-24-co-property.json | 24 | 一氧化碳 | released | ready | 0 | - | 6+3+3+8+4 | - |
 
 ## Issues
 - None

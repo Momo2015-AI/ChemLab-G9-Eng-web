@@ -24,7 +24,7 @@ export const lessonManifest = {
     { day: '06', sequenceNumber: 6, displayOrder: 11, canonicalId: 'lesson-06-water-composition', title: '水的组成', semester: 'upper', unitId: 'u04', status: 'ready', releaseStatus: 'ready' },
     { day: '07', sequenceNumber: 7, displayOrder: 12, canonicalId: 'lesson-07-water-purification', title: '水的净化', semester: 'upper', unitId: 'u04', status: 'ready', releaseStatus: 'ready' },
     { day: '08', sequenceNumber: 8, displayOrder: 13, canonicalId: 'lesson-08-water-conservation', title: '爱护水资源', semester: 'upper', unitId: 'u04', status: 'ready', releaseStatus: 'ready' },
-    { day: '09', sequenceNumber: 9, displayOrder: 14, canonicalId: 'lesson-09-chemical-formula', title: '化学式与化合价（上）', semester: 'upper', unitId: 'u03', status: 'ready', releaseStatus: 'ready' },
+    { day: '09', sequenceNumber: 9, displayOrder: 14, canonicalId: 'lesson-09-chemical-formula', title: '化学式与化合价（上）', semester: 'upper', unitId: 'u04', status: 'ready', releaseStatus: 'ready' },
     { day: '10', sequenceNumber: 10, displayOrder: 15, canonicalId: 'lesson-10-chemical-equation', title: '质量守恒定律与化学计算', semester: 'upper', unitId: 'u05', status: 'ready', releaseStatus: 'ready' },
     { day: '05', sequenceNumber: 5, displayOrder: 16, canonicalId: 'lesson-03-acid-intro', title: '酸入门：初识身边的酸', semester: 'lower', unitId: 'u10', status: 'ready', releaseStatus: 'ready' },
     { day: '20', sequenceNumber: 20, displayOrder: 17, canonicalId: 'lesson-20-carbon-allotrope', title: '碳的单质', semester: 'upper', unitId: 'u06', status: 'ready', releaseStatus: 'ready' },

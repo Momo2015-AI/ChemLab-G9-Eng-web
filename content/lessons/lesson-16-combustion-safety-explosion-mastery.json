@@ -403,7 +403,7 @@
         "category": "concept"
       },
       {
-        "id": "L19-D01",
+        "id": "L19-MD01",
         "type": "mc",
         "question": "小明认为任何气体与空气混合遇火都会爆炸。他的错误在于？",
         "options": [
@@ -422,7 +422,7 @@
         "category": "safety"
       },
       {
-        "id": "L19-D02",
+        "id": "L19-MD02",
         "type": "mc",
         "question": "下列气体与空气混合遇火不会爆炸的是？",
         "options": [

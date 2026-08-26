@@ -1,10 +1,166 @@
 {
   "lessonId": "lesson-18-stoichiometry-calculation",
-  "dimensions": ["concept", "calculation", "impure-substance"],
-  "criteria": [
-    { "dimension": "concept", "items": ["L30-M01", "L30-M02", "L30-M03", "L30-M04"], "passingScore": 0.75 },
-    { "dimension": "calculation", "items": ["L30-M05", "L30-M06"], "passingScore": 0.75 },
-    { "dimension": "impure-substance", "items": ["L30-D01", "L30-D02", "L30-D03"], "passingScore": 0.75 }
-  ],
-  "items": []
+  "version": "2.0",
+  "mastery": {
+    "threshold": 0.95,
+    "questionCount": 6,
+    "minCorrect": 6,
+    "mode": "unseen-transfer",
+    "dimensions": [
+      "concept",
+      "calculation",
+      "impure-substance"
+    ],
+    "criteria": [
+      {
+        "dimension": "concept",
+        "items": [
+          "L30-M01",
+          "L30-M02",
+          "L30-M03",
+          "L30-M04"
+        ],
+        "passingScore": 0.75
+      },
+      {
+        "dimension": "calculation",
+        "items": [
+          "L30-M05",
+          "L30-M06"
+        ],
+        "passingScore": 0.75
+      },
+      {
+        "dimension": "impure-substance",
+        "items": [
+          "L30-D01",
+          "L30-D02",
+          "L30-D03"
+        ],
+        "passingScore": 0.75
+      }
+    ],
+    "questions": [
+      {
+        "type": "mc",
+        "question": "根据化学方程式计算的前提是？",
+        "options": [
+          "方程式必须配平",
+          "方程式不用配平",
+          "只需知道反应物",
+          "只需知道生成物"
+        ],
+        "answer": 0,
+        "explanation": "根据化学方程式计算必须以配平的方程式为依据，体现各物质间的质量关系。",
+        "knowledgeIds": [
+          "stoichiometry"
+        ],
+        "id": "L30-MQ01",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "stoichiometry"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "加热分解6.3g高锰酸钾，可以得到氧气的质量约为？",
+        "options": [
+          "0.64g",
+          "6.4g",
+          "0.32g",
+          "3.2g"
+        ],
+        "answer": 0,
+        "explanation": "2KMnO₄→K₂MnO₄+MnO₂+O₂↑，316g KMnO₄生成32g O₂，6.3g生成约0.64g O₂。",
+        "knowledgeIds": [
+          "stoichiometry"
+        ],
+        "id": "L30-MQ02",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "stoichiometry"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "实验室用足量锌与稀硫酸反应制取0.2g氢气，需要锌的质量为？（Zn=65）",
+        "options": [
+          "6.5g",
+          "3.25g",
+          "13g",
+          "1.6g"
+        ],
+        "answer": 0,
+        "explanation": "Zn+H₂SO₄→ZnSO₄+H₂↑，65g Zn生成2g H₂，制取0.2g H₂需6.5g Zn。",
+        "knowledgeIds": [
+          "stoichiometry"
+        ],
+        "id": "L30-MQ03",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "stoichiometry"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "化学反应中各物质间的质量比等于？",
+        "options": [
+          "化学计量数之比",
+          "相对分子质量之比",
+          "化学计量数与相对分子质量乘积之比",
+          "原子个数之比"
+        ],
+        "answer": 2,
+        "explanation": "各物质质量比=化学计量数×相对分子质量之比。",
+        "knowledgeIds": [
+          "stoichiometry"
+        ],
+        "id": "L30-MQ04",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "stoichiometry"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "用含CaCO₃ 80%的石灰石10g与足量稀盐酸反应，最多生成CO₂的质量为？",
+        "options": [
+          "3.52g",
+          "4g",
+          "8g",
+          "2.2g"
+        ],
+        "answer": 0,
+        "explanation": "CaCO₃+2HCl→CaCl₂+H₂O+CO₂↑，80g CaCO₃生成44g CO₂，8g CaCO₃生成3.52g CO₂。",
+        "knowledgeIds": [
+          "stoichiometry"
+        ],
+        "id": "L30-MQ05",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "stoichiometry"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "下列关于化学方程式计算的叙述错误的是？",
+        "options": [
+          "计算结果可以是小数",
+          "参与计算的量必须是纯物质的质量",
+          "气体体积可以直接代入计算",
+          "关系式要正确"
+        ],
+        "answer": 2,
+        "explanation": "气体体积需换算为质量才能代入化学方程式计算，不能直接代入。",
+        "knowledgeIds": [
+          "stoichiometry"
+        ],
+        "id": "L30-MQ06",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "stoichiometry"
+        ]
+      }
+    ]
+  }
 }

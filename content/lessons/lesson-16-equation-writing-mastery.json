@@ -1,10 +1,165 @@
 {
   "lessonId": "lesson-16-equation-writing",
-  "dimensions": ["concept", "notation", "application"],
-  "criteria": [
-    { "dimension": "concept", "items": ["L28-M01", "L28-M02", "L28-M03", "L28-M04"], "passingScore": 0.75 },
-    { "dimension": "notation", "items": ["L28-M05", "L28-M06"], "passingScore": 0.75 },
-    { "dimension": "application", "items": ["L28-D01", "L28-D02"], "passingScore": 0.75 }
-  ],
-  "items": []
+  "version": "2.0",
+  "mastery": {
+    "threshold": 0.95,
+    "questionCount": 6,
+    "minCorrect": 6,
+    "mode": "unseen-transfer",
+    "dimensions": [
+      "concept",
+      "notation",
+      "application"
+    ],
+    "criteria": [
+      {
+        "dimension": "concept",
+        "items": [
+          "L28-M01",
+          "L28-M02",
+          "L28-M03",
+          "L28-M04"
+        ],
+        "passingScore": 0.75
+      },
+      {
+        "dimension": "notation",
+        "items": [
+          "L28-M05",
+          "L28-M06"
+        ],
+        "passingScore": 0.75
+      },
+      {
+        "dimension": "application",
+        "items": [
+          "L28-D01",
+          "L28-D02"
+        ],
+        "passingScore": 0.75
+      }
+    ],
+    "questions": [
+      {
+        "type": "mc",
+        "question": "化学方程式配平的依据是？",
+        "options": [
+          "质量守恒定律",
+          "能量守恒定律",
+          "元素守恒定律",
+          "原子守恒定律"
+        ],
+        "answer": 0,
+        "explanation": "化学方程式配平的依据是质量守恒定律，即反应前后各原子数目相等。",
+        "knowledgeIds": [
+          "equation-writing"
+        ],
+        "id": "L28-MQ01",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "equation-writing"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "下列化学方程式书写正确的是？",
+        "options": [
+          "Fe + O₂ → FeO₂",
+          "2H₂O → 2H₂ + O₂（条件：通电）",
+          "C + O₂ → CO₂↑",
+          "2KMnO₄ → K₂MnO₄ + MnO₂ + O₂"
+        ],
+        "answer": 1,
+        "explanation": "水电解生成氢气和氧气，条件为通电；A未配平且产物错误，C气体符号使用不当，D缺少条件。",
+        "knowledgeIds": [
+          "equation-writing"
+        ],
+        "id": "L28-MQ02",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "equation-writing"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "书写化学方程式时，必须遵循的原则是？",
+        "options": [
+          "以主观臆想为依据",
+          "以实验事实为依据，遵守质量守恒",
+          "以理论推导为依据",
+          "随意书写再配平"
+        ],
+        "answer": 1,
+        "explanation": "化学方程式必须以实验事实为依据，同时遵守质量守恒定律进行配平。",
+        "knowledgeIds": [
+          "equation-writing"
+        ],
+        "id": "L28-MQ03",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "equation-writing"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "下列符号中，表示生成气体的是？",
+        "options": [
+          "↓",
+          "↑",
+          "△",
+          "═"
+        ],
+        "answer": 1,
+        "explanation": "↑表示生成气体，↓表示生成沉淀，△表示加热，═表示等号。",
+        "knowledgeIds": [
+          "equation-writing"
+        ],
+        "id": "L28-MQ04",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "equation-writing"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "下列化学方程式中，反应类型属于分解反应的是？",
+        "options": [
+          "2Mg + O₂ → 2MgO",
+          "CaCO₃ → CaO + CO₂↑",
+          "Fe + CuSO₄ → FeSO₄ + Cu",
+          "HCl + NaOH → NaCl + H₂O"
+        ],
+        "answer": 1,
+        "explanation": "分解反应是一变多，CaCO₃高温分解生成CaO和CO₂属于分解反应。",
+        "knowledgeIds": [
+          "equation-writing"
+        ],
+        "id": "L28-MQ05",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "equation-writing"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "实验室用高锰酸钾制取氧气的化学方程式中，二氧化锰是？",
+        "options": [
+          "反应物",
+          "生成物",
+          "催化剂",
+          "催化剂且生成物"
+        ],
+        "answer": 1,
+        "explanation": "高锰酸钾分解生成锰酸钾、二氧化锰和氧气，二氧化锰是生成物而非催化剂。",
+        "knowledgeIds": [
+          "equation-writing"
+        ],
+        "id": "L28-MQ06",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "equation-writing"
+        ]
+      }
+    ]
+  }
 }

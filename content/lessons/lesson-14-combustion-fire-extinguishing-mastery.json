@@ -424,7 +424,7 @@
         "category": "concept"
       },
       {
-        "id": "L17-D01",
+        "id": "L17-MD01",
         "type": "mc",
         "question": "小明认为只要温度达到着火点且有氧气就一定能燃烧。他的遗漏是？",
         "options": [
@@ -440,7 +440,7 @@
         "category": "safety"
       },
       {
-        "id": "L17-D02",
+        "id": "L17-MD02",
         "type": "mc",
         "question": "住宅着火时用水浇灭，其灭火原理是？",
         "options": [

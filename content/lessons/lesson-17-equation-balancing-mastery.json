@@ -1,10 +1,166 @@
 {
   "lessonId": "lesson-17-equation-balancing",
-  "dimensions": ["concept", "method", "verification"],
-  "criteria": [
-    { "dimension": "concept", "items": ["L29-M01", "L29-M02", "L29-M03", "L29-M04"], "passingScore": 0.75 },
-    { "dimension": "method", "items": ["L29-M05", "L29-M06"], "passingScore": 0.75 },
-    { "dimension": "verification", "items": ["L29-D01", "L29-D02", "L29-D03"], "passingScore": 0.75 }
-  ],
-  "items": []
+  "version": "2.0",
+  "mastery": {
+    "threshold": 0.95,
+    "questionCount": 6,
+    "minCorrect": 6,
+    "mode": "unseen-transfer",
+    "dimensions": [
+      "concept",
+      "method",
+      "verification"
+    ],
+    "criteria": [
+      {
+        "dimension": "concept",
+        "items": [
+          "L29-M01",
+          "L29-M02",
+          "L29-M03",
+          "L29-M04"
+        ],
+        "passingScore": 0.75
+      },
+      {
+        "dimension": "method",
+        "items": [
+          "L29-M05",
+          "L29-M06"
+        ],
+        "passingScore": 0.75
+      },
+      {
+        "dimension": "verification",
+        "items": [
+          "L29-D01",
+          "L29-D02",
+          "L29-D03"
+        ],
+        "passingScore": 0.75
+      }
+    ],
+    "questions": [
+      {
+        "type": "mc",
+        "question": "配平化学方程式时，可以调整的是？",
+        "options": [
+          "化学式前的系数",
+          "化学式中的角标",
+          "反应条件",
+          "生成物"
+        ],
+        "answer": 0,
+        "explanation": "配平只能调整化学式前的系数，不能改变化学式中的角标，否则就改变了物质。",
+        "knowledgeIds": [
+          "equation-balancing"
+        ],
+        "id": "L29-MQ01",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "equation-balancing"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "下列方程式配平正确的是？",
+        "options": [
+          "2H₂ + O₂ → 2H₂O",
+          "H₂ + O₂ → H₂O",
+          "4H₂ + 2O₂ → 4H₂O",
+          "H₂ + O₂ → H₂O₂"
+        ],
+        "answer": 0,
+        "explanation": "2H₂+O₂→2H₂O左右H原子各4个，O原子各2个，已配平。",
+        "knowledgeIds": [
+          "equation-balancing"
+        ],
+        "id": "L29-MQ02",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "equation-balancing"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "配平Fe₂O₃ + CO → Fe + CO₂，各物质系数之和为？",
+        "options": [
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "answer": 1,
+        "explanation": "Fe₂O₃+3CO→2Fe+3CO₂，系数和为1+3+2+3=9... 等等，重新算：1+3=4，2+3=5，总和9。选C。",
+        "knowledgeIds": [
+          "equation-balancing"
+        ],
+        "id": "L29-MQ03",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "equation-balancing"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "配平化学方程式的最小整数比中，O₂的系数为？C₂H₅OH + O₂ → CO₂ + H₂O",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "1"
+        ],
+        "answer": 1,
+        "explanation": "C₂H₅OH+3O₂→2CO₂+3H₂O，O₂系数为3。",
+        "knowledgeIds": [
+          "equation-balancing"
+        ],
+        "id": "L29-MQ04",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "equation-balancing"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "下列配平方法中，适用于复杂有机物燃烧方程式的是？",
+        "options": [
+          "观察法",
+          "奇偶法",
+          "定一法",
+          "试凑法"
+        ],
+        "answer": 2,
+        "explanation": "定一法：将最复杂物质的系数定为1，再依次配平其他物质，适用于有机物燃烧。",
+        "knowledgeIds": [
+          "equation-balancing"
+        ],
+        "id": "L29-MQ05",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "equation-balancing"
+        ]
+      },
+      {
+        "type": "mc",
+        "question": "配平Al + HCl → AlCl₃ + H₂，各物质系数依次为？",
+        "options": [
+          "2,6,2,3",
+          "1,3,1,1.5",
+          "2,3,2,3",
+          "1,2,1,1"
+        ],
+        "answer": 0,
+        "explanation": "2Al+6HCl→2AlCl₃+3H₂，最小整数比为2:6:2:3。",
+        "knowledgeIds": [
+          "equation-balancing"
+        ],
+        "id": "L29-MQ06",
+        "difficulty": "basic",
+        "knowledgePoints": [
+          "equation-balancing"
+        ]
+      }
+    ]
+  }
 }

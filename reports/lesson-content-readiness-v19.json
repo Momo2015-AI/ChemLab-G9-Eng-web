@@ -325,6 +325,8 @@
       "runtimeQuestions": {
         "lesson": 6,
         "practice": 6,
+        "diagnostic": 3,
+        "mastery": 6,
         "transfer": 4
       },
       "contractErrors": []
@@ -357,6 +359,8 @@
       "runtimeQuestions": {
         "lesson": 0,
         "practice": 6,
+        "diagnostic": 3,
+        "mastery": 6,
         "transfer": 4
       },
       "contractErrors": []
@@ -389,6 +393,8 @@
       "runtimeQuestions": {
         "lesson": 0,
         "practice": 6,
+        "diagnostic": 3,
+        "mastery": 6,
         "transfer": 4
       },
       "contractErrors": []
@@ -404,6 +410,8 @@
       "runtimeQuestions": {
         "lesson": 0,
         "practice": 6,
+        "diagnostic": 3,
+        "mastery": 6,
         "transfer": 4
       },
       "contractErrors": []
@@ -419,6 +427,8 @@
       "runtimeQuestions": {
         "lesson": 6,
         "practice": 4,
+        "diagnostic": 3,
+        "mastery": 8,
         "transfer": 4
       },
       "contractErrors": []
@@ -434,6 +444,8 @@
       "runtimeQuestions": {
         "lesson": 6,
         "practice": 4,
+        "diagnostic": 3,
+        "mastery": 8,
         "transfer": 4
       },
       "contractErrors": []
@@ -449,6 +461,8 @@
       "runtimeQuestions": {
         "lesson": 6,
         "practice": 3,
+        "diagnostic": 3,
+        "mastery": 8,
         "transfer": 4
       },
       "contractErrors": []
@@ -464,6 +478,8 @@
       "runtimeQuestions": {
         "lesson": 6,
         "practice": 3,
+        "diagnostic": 3,
+        "mastery": 8,
         "transfer": 4
       },
       "contractErrors": []
@@ -479,6 +495,8 @@
       "runtimeQuestions": {
         "lesson": 6,
         "practice": 3,
+        "diagnostic": 3,
+        "mastery": 8,
         "transfer": 4
       },
       "contractErrors": []

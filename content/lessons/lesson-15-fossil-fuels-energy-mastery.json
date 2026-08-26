@@ -403,7 +403,7 @@
         "category": "sustainability"
       },
       {
-        "id": "L18-D01",
+        "id": "L18-MD01",
         "type": "mc",
         "question": "小明认为新能源永远不会有问题。他的错误在于？",
         "options": [
@@ -422,7 +422,7 @@
         "category": "sustainability"
       },
       {
-        "id": "L18-D02",
+        "id": "L18-MD02",
         "type": "mc",
         "question": "下列全部属于化石燃料的是？",
         "options": [
