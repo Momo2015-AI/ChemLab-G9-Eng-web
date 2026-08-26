@@ -1,0 +1,61 @@
+{
+  "lessonId": "lesson-14-law-conservation-experiment",
+  "questions": [
+    {
+      "id": "L26-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "某同学做铁丝在氧气中燃烧实验后，发现生成物的质量比铁丝质量大。请从质量守恒定律的角度解释这一现象，并说明实验应在何种条件下进行才能准确验证质量守恒。",
+      "rubric": {
+        "modelAnswer": "铁丝燃烧生成四氧化三铁，生成物质量=铁丝质量+参加反应的氧气质量，所以生成物质量更大。这符合质量守恒定律。若在开放容器中进行，部分烟会逸散，无法准确验证。应在密闭容器中进行实验，确保所有反应物和生成物都在系统内。",
+        "keywords": [["生成物=铁丝+氧气"], ["符合质量守恒"], ["开放容器烟逸散"], ["密闭容器验证"]],
+        "explanation": "理解质量守恒的宏观表现和实验验证的关键条件。"
+      },
+      "knowledgeIds": ["law-conservation"],
+      "misconceptionIds": ["mc-law-conservation-open-system"]
+    },
+    {
+      "id": "L26-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "question": "某学生设计了两个实验验证质量守恒：①密闭容器中白磷燃烧 ②开放容器中碳酸钠与稀盐酸反应。请评价这两个实验方案是否能验证质量守恒定律，并说明理由。",
+      "rubric": {
+        "modelAnswer": "实验①可行：密闭容器中白磷燃烧，反应前后总质量不变，能验证质量守恒。实验②不可行：开放容器中碳酸钠与盐酸反应生成CO₂逸散，称量质量减少，不能直接验证。但若将反应放在密闭容器中进行，同样可以验证。",
+        "keywords": [["密闭容器可行"], ["开放容器CO₂逸散"], ["改为密闭可验证"], ["系统设计是关键"]],
+        "explanation": "理解实验设计对验证质量守恒的重要性。"
+      },
+      "knowledgeIds": ["law-conservation"],
+      "misconceptionIds": ["mc-law-conservation-open-system"]
+    },
+    {
+      "id": "L26-T03",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "create",
+      "question": "请设计一个实验方案，在开放容器中验证质量守恒定律（提示：反应不能生成气体或挥发性物质），写出所需药品、仪器、步骤和预期现象。",
+      "rubric": {
+        "modelAnswer": "方案：硫酸铜溶液与氢氧化钠溶液反应。药品：CuSO₄溶液、NaOH溶液、烧杯、天平。步骤：①称量烧杯+CuSO₄溶液质量m₁ ②加入NaOH溶液，观察蓝色沉淀 ③称量总质量m₂。预期：m₁=m₂，验证质量守恒。反应：CuSO₄+2NaOH→Cu(OH)₂↓+Na₂SO₄。",
+        "keywords": [["无气体生成的反应"], ["CuSO₄+NaOH"], ["蓝色沉淀"], ["m₁=m₂"]],
+        "explanation": "设计合理的实验方案验证质量守恒。"
+      },
+      "knowledgeIds": ["law-conservation"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L26-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "蜡烛在密闭容器中燃烧至熄灭，容器内物质的总质量如何变化？请从微观角度解释原因。",
+      "rubric": {
+        "modelAnswer": "总质量不变。蜡烛燃烧是石蜡与氧气反应生成CO₂和H₂O，所有物质都在密闭容器内。从微观角度看，反应前后碳原子、氢原子、氧原子的种类、数目、质量都不变，只是重新组合成新分子。",
+        "keywords": [["总质量不变"], ["原子重新组合"], ["原子三不变"], ["密闭系统无物质进出"]],
+        "explanation": "从微观角度理解质量守恒的本质。"
+      },
+      "knowledgeIds": ["law-conservation"],
+      "misconceptionIds": ["mc-law-conservation-atom-destroyed"]
+    }
+  ]
+}

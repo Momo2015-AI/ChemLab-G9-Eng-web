@@ -1,0 +1,51 @@
+{
+  "lessonId": "lesson-15-law-conservation-micro",
+  "questions": [
+    {
+      "id": "L27-D01",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "小明认为：蜡烛燃烧后质量减少，是因为蜡烛中的原子被消灭了。他的错误在于？",
+      "options": [
+        "忽略了生成的CO₂和H₂O逸散到空气中",
+        "原子确实被消灭了",
+        "蜡烛燃烧不是化学变化",
+        "以上都不对"
+      ],
+      "answer": 0,
+      "explanation": "蜡烛燃烧是石蜡与氧气反应生成CO₂和H₂O，原子重新组合而非被消灭。",
+      "errorType": "mc-law-conservation-atom-destroyed",
+      "remediationStep": "L27-S06"
+    },
+    {
+      "id": "L27-D02",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "下列对化学反应微观本质的理解正确的是？",
+      "options": [
+        "化学反应中原子可以再分",
+        "化学反应前后原子种类可能改变",
+        "化学反应是原子重新组合的过程，原子本身不变",
+        "化学反应中原子数目可能增减"
+      ],
+      "answer": 2,
+      "explanation": "化学反应的微观本质是分子破裂为原子，原子重新组合成新分子，原子本身不变。"
+    },
+    {
+      "id": "L27-D03",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "某反应：X+Y→Z，反应前X有10个原子，Y有6个原子。反应后Z中含有多少个原子？",
+      "options": [
+        "少于16个，部分原子被消灭",
+        "多于16个，有新原子生成",
+        "恰好16个，原子数目守恒",
+        "无法确定"
+      ],
+      "answer": 2,
+      "explanation": "根据原子三不变，反应前后原子总数守恒，10+6=16个原子。",
+      "errorType": "mc-law-conservation-atom-destroyed",
+      "remediationStep": "L27-S04"
+    }
+  ]
+}

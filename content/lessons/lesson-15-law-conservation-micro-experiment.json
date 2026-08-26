@@ -1,0 +1,23 @@
+{
+  "lessonId": "lesson-15-law-conservation-micro",
+  "experiments": [
+    {
+      "id": "L27-E01",
+      "title": "蜡烛燃烧后产物分析",
+      "type": "demonstration",
+      "instruments": ["蜡烛", "干燥烧杯", "澄清石灰水", "火柴"],
+      "safety": "注意防火，烧杯加热后烫手，需戴手套操作。",
+      "goal": "验证蜡烛燃烧产物并理解原子重新组合。",
+      "steps": [
+        { "step": 1, "action": "点燃蜡烛，将干燥冷烧杯罩在火焰上方", "record": "观察烧杯内壁变化" },
+        { "step": 2, "action": "迅速倒入少量澄清石灰水，振荡", "record": "观察石灰水变化" }
+      ],
+      "observationGuidance": [
+        "烧杯内壁出现水雾（证明有水生成）",
+        "澄清石灰水变浑浊（证明有CO₂生成）",
+        "蜡烛燃烧：石蜡+氧气→CO₂+H₂O，原子重新组合"
+      ],
+      "conclusion": "蜡烛燃烧后质量减少是因为CO₂和H₂O逸散到空气中，从微观角度看原子重新组合而非被消灭，总质量仍守恒。"
+    }
+  ]
+}

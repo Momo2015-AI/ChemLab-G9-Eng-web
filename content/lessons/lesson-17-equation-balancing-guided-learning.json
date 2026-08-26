@@ -1,0 +1,14 @@
+{
+  "lessonId": "lesson-17-equation-balancing",
+  "stepCount": 8,
+  "steps": [
+    { "id": "L29-S01", "title": "问题引入：为什么需要配平？", "type": "engage", "body": ["书写H₂+O₂→H₂O，左右氢原子数不等（左2右2，但氧左2右1）。", "这违反了质量守恒定律。", "如何让两边原子数目相等？"], "knowledgePoints": ["equation-balancing"], "check": { "question": "化学方程式H₂+O₂→H₂O未配平的原因是？", "options": ["反应物写错了", "生成物写错了", "氧原子数目不等", "缺少反应条件"], "answer": 2, "explanation": "左边2个氧原子，右边只有1个，原子数目不等。" } },
+    { "id": "L29-S02", "title": "配平的实质：原子守恒", "type": "content", "body": ["配平的目的：使方程式两边每种原子的数目相等。", "配平依据：质量守恒定律（原子三不变）。", "关键：只能调整化学计量数（系数），不得改变化学式下标。"], "knowledgePoints": ["equation-balancing"], "check": { "question": "配平化学方程式时，可以改动的是？", "options": ["化学式中的下标", "反应物或生成物的化学式", "化学式前面的系数", "反应条件"], "answer": 2, "explanation": "配平只能调整系数，不能改变化学式。" } },
+    { "id": "L29-S03", "title": "方法一：最小公倍数法", "type": "content", "body": ["步骤：①找出两边原子数不等最多的元素 ②求最小公倍数 ③确定系数", "示例：P+O₂→P₂O₅", "P：左1右2，O：左2右5", "O的最小公倍数=10，O₂系数=5，P₂O₅系数=2", "P系数=4：4P+5O₂→2P₂O₅"], "knowledgePoints": ["equation-balancing"], "check": { "question": "用最小公倍数法配平P+O₂→P₂O₅，O₂的系数是？", "options": ["1", "2", "3", "5"], "answer": 3, "explanation": "O最小公倍数10，O₂系数=10/2=5。" } },
+    { "id": "L29-S04", "title": "方法二：奇偶法", "type": "content", "body": ["适用：某一元素在一边为奇数个，另一边为偶数个。", "步骤：先将奇数变为偶数，再配平其他元素", "示例：FeS₂+O₂→Fe₂O₃+SO₂", "右边O为奇数（3），左边O为偶数（2）", "先将Fe₂O₃系数配为2，使O为偶数：FeS₂+O₂→2Fe₂O₃+SO₂", "继续配平得：4FeS₂+11O₂→2Fe₂O₃+8SO₂"], "knowledgePoints": ["equation-balancing"], "check": null },
+    { "id": "L29-S05", "title": "误区警示：不能改下标", "type": "misconception", "body": ["错误做法：将H₂O改为H₂O₂来配平氧原子。", "原因：改下标改变了物质的化学性质，违背客观事实。", "正确做法：调整系数，保持化学式不变。", "示例：H₂+O₂→H₂O → 2H₂+O₂→2H₂O（正确）"], "knowledgePoints": ["equation-balancing"], "check": { "question": "下列配平方法正确的是？", "options": ["H₂+O₂→H₂O₂（改下标）", "2H₂+O₂→2H₂O（调系数）", "H₂+O₂→H₂O（不改）", "H₂+2O₂→H₂O₂（改下标）"], "answer": 1, "explanation": "配平只能调系数，不能改下标。" } },
+    { "id": "L29-S06", "title": "配平检查：原子计数验证", "type": "content", "body": ["配平后必须检查：每边每种原子的数目是否相等。", "示例：4P+5O₂→2P₂O₅", "P：左4个=右4个 ✓", "O：左10个=右10个 ✓", "系数是最简整数比：4:5:2 ✓"], "knowledgePoints": ["equation-balancing"], "check": { "question": "配平后检查Fe₃O₄+Al→Fe+Al₂O₃（高温），正确的系数比是？", "options": ["3:4→9:4", "1:2→3:1", "3:2→9:2", "2:3→6:3"], "answer": 0, "explanation": "3Fe₃O₄+8Al→9Fe+4Al₂O₃，最简整数比3:8:9:4。" } },
+    { "id": "L29-S07", "title": "应用练习：常见反应配平", "type": "practice", "body": ["（1）KClO₃→KCl+O₂（MnO₂、△）", "（2）CuSO₄+NaOH→Cu(OH)₂+Na₂SO₄", "（3）Fe₂O₃+CO→Fe+CO₂（高温）", "答案：（1）2KClO₃→2KCl+3O₂↑（2）CuSO₄+2NaOH→Cu(OH)₂↓+Na₂SO₄（3）Fe₂O₃+3CO→2Fe+3CO₂"], "knowledgePoints": ["equation-balancing"], "check": null },
+    { "id": "L29-S08", "title": "知识小结", "type": "summary", "body": ["配平实质：原子守恒，调整系数使两边原子数相等。", "方法：最小公倍数法、奇偶法、观察法。", "禁忌：不能改变化学式下标。", "检查：配平后验证原子数和最简整数比。"], "knowledgePoints": ["equation-balancing"], "check": null }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "lessonId": "lesson-16-equation-writing",
+  "experiments": [
+    {
+      "id": "L28-E01",
+      "title": "过氧化氢分解的化学方程式书写",
+      "type": "demonstration",
+      "instruments": ["试管", "分液漏斗", "MnO₂", "H₂O₂溶液", "带火星木条"],
+      "safety": "MnO₂粉末避免吸入，H₂O₂溶液避免接触皮肤。",
+      "goal": "通过实验观察过氧化氢分解现象，练习书写正确的化学方程式。",
+      "steps": [
+        { "step": 1, "action": "在试管中加入少量MnO₂粉末", "record": "观察MnO₂状态" },
+        { "step": 2, "action": "从分液漏斗滴加H₂O₂溶液", "record": "观察气泡产生" },
+        { "step": 3, "action": "将带火星木条伸入试管口", "record": "木条复燃证明生成O₂" }
+      ],
+      "observationGuidance": [
+        "有大量气泡产生（O₂生成）",
+        "带火星木条复燃（O₂助燃）",
+        "MnO₂作为催化剂，反应前后质量和化学性质不变",
+        "化学方程式：2H₂O₂→2H₂O+O₂↑（MnO₂）"
+      ],
+      "conclusion": "通过实验现象验证了过氧化氢分解生成水和氧气，正确书写化学方程式需注意配平和气体符号。"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "lessonId": "lesson-18-stoichiometry-calculation",
+  "questions": [
+    {
+      "id": "L30-D01",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "小明用2H₂+O₂→2H₂O计算时，认为2gH₂和1gO₂恰好完全反应生成3g水。他的错误在于？",
+      "options": [
+        "忘记了质量守恒",
+        "直接用系数比2:1当作质量比",
+        "没有考虑反应条件",
+        "计算结果不对"
+      ],
+      "answer": 1,
+      "explanation": "系数比2:1≠质量比1:8。2gH₂需要16gO₂才能完全反应。",
+      "errorType": "mc-stoich-coefficient-vs-mass",
+      "remediationStep": "L30-S05"
+    },
+    {
+      "id": "L30-D02",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "用100g含杂质10%的石灰石（CaCO₃）高温煅烧，直接代入100g计算CaO质量，结果会？",
+      "options": [
+        "偏大",
+        "偏小",
+        "准确",
+        "无法判断"
+      ],
+      "answer": 0,
+      "explanation": "应使用纯CaCO₃质量=90g计算，直接用100g会得出偏大结果。",
+      "errorType": "mc-stoich-coefficient-vs-mass",
+      "remediationStep": "L30-S06"
+    },
+    {
+      "id": "L30-D03",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "加热分解一定量KMnO₄，完全反应后测得固体残留物质量为原高锰酸钾质量的84.8%，则生成O₂的质量分数为？",
+      "options": [
+        "15.2%",
+        "21%",
+        "25%",
+        "32%"
+      ],
+      "answer": 0,
+      "explanation": "O₂质量分数=1-84.8%=15.2%。验证：32/316≈10.1%（每mol），但残留固体含K₂MnO₄+MnO₂，总质量分数≈84.8%。",
+      "errorType": "mc-stoich-coefficient-vs-mass",
+      "remediationStep": "L30-S04"
+    }
+  ]
+}

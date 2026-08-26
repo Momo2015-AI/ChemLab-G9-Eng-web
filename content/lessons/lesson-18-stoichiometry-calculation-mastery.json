@@ -1,0 +1,10 @@
+{
+  "lessonId": "lesson-18-stoichiometry-calculation",
+  "dimensions": ["concept", "calculation", "impure-substance"],
+  "criteria": [
+    { "dimension": "concept", "items": ["L30-M01", "L30-M02", "L30-M03", "L30-M04"], "passingScore": 0.75 },
+    { "dimension": "calculation", "items": ["L30-M05", "L30-M06"], "passingScore": 0.75 },
+    { "dimension": "impure-substance", "items": ["L30-D01", "L30-D02", "L30-D03"], "passingScore": 0.75 }
+  ],
+  "items": []
+}

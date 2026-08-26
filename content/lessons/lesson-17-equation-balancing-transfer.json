@@ -1,0 +1,61 @@
+{
+  "lessonId": "lesson-17-equation-balancing",
+  "questions": [
+    {
+      "id": "L29-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "apply",
+      "question": "请配平以下化学方程式，并说明配平依据：（1）__Al+__O₂→__Al₂O₃（点燃）（2）__Fe₂O₃+__H₂→__Fe+__H₂O（加热）",
+      "rubric": {
+        "modelAnswer": "（1）4Al+3O₂→2Al₂O₃（点燃）。（2）Fe₂O₃+3H₂→2Fe+3H₂O（加热）。配平依据：质量守恒定律，反应前后原子种类和数目不变。",
+        "keywords": [["4Al+3O₂→2Al₂O₃"], ["Fe₂O₃+3H₂→2Fe+3H₂O"], ["原子守恒"], ["质量守恒定律"]],
+        "explanation": "掌握最小公倍数法和观察法配平。"
+      },
+      "knowledgeIds": ["equation-balancing"],
+      "misconceptionIds": ["mc-balance-by-subscript"]
+    },
+    {
+      "id": "L29-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "某同学配平KClO₃→KCl+O₂时，得到了KClO₃→KCl+O₂（未配平）。请分析他可能犯了什么错误，并给出正确配平结果。",
+      "rubric": {
+        "modelAnswer": "该同学没有进行配平，左右氧原子数不等（左3右2）。正确配平：2KClO₃→2KCl+3O₂↑（MnO₂、△）。配平方法：O最小公倍数6，KClO₃系数2，O₂系数3，KCl系数2。",
+        "keywords": [["未配平"], ["氧原子不等"], ["2KClO₃→2KCl+3O₂↑"], ["MnO₂催化剂"], ["△条件"]],
+        "explanation": "配平时需检查每种原子数目是否守恒。"
+      },
+      "knowledgeIds": ["equation-balancing"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L29-T03",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "create",
+      "question": "请用最小公倍数法配平以下方程式，写出每一步的思考过程：__P+__O₂→__P₂O₅（点燃）",
+      "rubric": {
+        "modelAnswer": "步骤1：找O原子数，左2右5，最小公倍数10。步骤2：O₂系数=10/2=5。步骤3：P₂O₅系数=10/5=2。步骤4：P原子右4个，左P系数=4。结果：4P+5O₂→2P₂O₅（点燃）。检查：P:4=4，O:10=10。",
+        "keywords": [["O最小公倍数10"], ["O₂系数5"], ["P₂O₅系数2"], ["P系数4"], ["4P+5O₂→2P₂O₅"]],
+        "explanation": "展示最小公倍数法的完整思考过程。"
+      },
+      "knowledgeIds": ["equation-balancing"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L29-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "question": "某学生配平CH₄+O₂→CO₂+H₂O（点燃）时，得到CH₄+2O₂→CO₂+2H₂O。请验证该配平是否正确，并说明检查方法。",
+      "rubric": {
+        "modelAnswer": "正确。检查方法：C:左1=右1 ✓；H:左4=右4 ✓；O:左4=右4 ✓。所有原子数目守恒，系数为最简整数比。",
+        "keywords": [["C守恒:1=1"], ["H守恒:4=4"], ["O守恒:4=4"], ["最简整数比"], ["配平正确"]],
+        "explanation": "掌握配平验证方法：逐一检查每种原子数目。"
+      },
+      "knowledgeIds": ["equation-balancing"],
+      "misconceptionIds": []
+    }
+  ]
+}

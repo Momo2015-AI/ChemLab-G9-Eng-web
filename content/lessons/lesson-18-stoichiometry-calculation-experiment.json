@@ -1,0 +1,20 @@
+{
+  "lessonId": "lesson-18-stoichiometry-calculation",
+  "experiments": [
+    {
+      "id": "L30-E01",
+      "title": "锌与稀硫酸反应制氢气计算验证",
+      "type": "demonstration",
+      "instruments": ["锥形瓶", "分液漏斗", "锌粒", "稀硫酸", "气体收集装置", "天平"],
+      "safety": "稀硫酸避免接触皮肤，氢气远离明火。",
+      "goal": "通过实验测定氢气质量，验证化学方程式计算的正确性。",
+      "steps": [
+        { "step": 1, "action": "称量锌粒质量m(Zn)", "record": "记录锌粒质量" },
+        { "step": 2, "action": "与足量稀硫酸反应，收集氢气", "record": "收集氢气并测量体积" },
+        { "step": 3, "action": "根据Zn质量计算理论H₂质量，与实际比较", "record": "验证计算结果" }
+      ],
+      "observationGuidance": ["锌粒逐渐溶解，产生气泡", "氢气可用排水法收集", "实际产量略低于理论值（装置漏气等）"],
+      "conclusion": "实验数据验证了基于化学方程式的质量计算结果，理论值与实际值接近。"
+    }
+  ]
+}

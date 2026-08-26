@@ -1,0 +1,14 @@
+{
+  "lessonId": "lesson-16-equation-writing",
+  "stepCount": 8,
+  "steps": [
+    { "id": "L28-S01", "title": "情境引入：如何用化学语言描述反应？", "type": "engage", "body": ["镁条燃烧生成氧化镁，如何用化学式表达这个过程？", "简单的文字表达式：镁+氧气→氧化镁（点燃）。", "文字表达式不够精确，需要更标准的化学语言。"], "knowledgePoints": ["equation-writing"], "check": { "question": "文字表达式\"镁+氧气→氧化镁（点燃）\"的不足之处是？", "options": ["没有注明反应条件", "不能体现物质间的定量关系", "没有使用化学式，不精确", "以上都不对"], "answer": 2, "explanation": "文字表达式不能体现物质的微观组成和定量关系，化学方程式更精确。" } },
+    { "id": "L28-S02", "title": "核心概念：化学方程式的定义", "type": "content", "body": ["化学方程式：用化学式表示化学反应的式子。", "格式：反应物→生成物（反应条件）。", "例如：2Mg+O₂→2MgO（点燃）。", "化学方程式包含：反应物、生成物、反应条件、化学计量数。"], "knowledgePoints": ["equation-writing"], "check": { "question": "化学方程式2H₂+O₂→2H₂O（点燃）中，反应条件是？", "options": ["催化剂", "高温", "点燃", "常温"], "answer": 2, "explanation": "氢气燃烧需要点燃条件。" } },
+    { "id": "L28-S03", "title": "书写原则一：以客观事实为基础", "type": "content", "body": ["原则1：以客观事实为基础——反应物和生成物必须真实存在。", "错误示例：Cu+H₂O→CuO+H₂（铜不能置换水中的氢）。", "正确示例：C+O₂→CO₂（点燃）。", "不能臆造不存在的反应或物质。"], "knowledgePoints": ["equation-writing"], "check": { "question": "下列化学方程式书写正确的是？", "options": ["Cu+H₂O→CuO+H₂", "Fe+O₂→Fe₃O₄（未配平）", "C+O₂→CO₂（点燃）", "H₂O→H₂+O₂（未配平且无条件）"], "answer": 2, "explanation": "C+O₂→CO₂（点燃）符合客观事实且已配平。" } },
+    { "id": "L28-S04", "title": "书写原则二：遵守质量守恒（配平）", "type": "content", "body": ["原则2：遵守质量守恒定律——方程式两边各原子数目相等。", "配平方法：调整化学计量数（系数），不得改变化学式下标。", "示例：H₂+O₂→H₂O（未配平）→2H₂+O₂→2H₂O（已配平）。", "配平后检查：氢原子4个=4个，氧原子2个=2个。"], "knowledgePoints": ["equation-writing"], "check": { "question": "下列配平正确的是？", "options": ["H₂+O₂→H₂O₂", "2H₂+O₂→2H₂O", "H₂+O₂→H₂O", "4H₂+2O₂→4H₂O"], "answer": 1, "explanation": "2H₂+O₂→2H₂O是最简整数比配平。" } },
+    { "id": "L28-S05", "title": "反应条件的标注", "type": "content", "body": ["常见反应条件：点燃、加热（△）、催化剂、高温、通电。", "标注位置：箭头（→）上方或下方。", "示例：2KClO₃→2KCl+3O₂↑（MnO₂催化、加热）。", "多个条件同时存在时，可分别标注。"], "knowledgePoints": ["equation-writing"], "check": { "question": "实验室用高锰酸钾制取氧气，反应条件是？", "options": ["催化剂", "点燃", "加热", "通电"], "answer": 2, "explanation": "高锰酸钾分解制氧气需要加热条件。" } },
+    { "id": "L28-S06", "title": "气体符号↑和沉淀符号↓", "type": "content", "body": ["↑（气体符号）：生成物中有气体，且反应物中无气体时标注。", "↓（沉淀符号）：溶液中反应生成不溶性固体时标注。", "注意：反应物中有气体时，生成气体不标↑。", "注意：溶液中的反应，生成气体才标↑。"], "knowledgePoints": ["equation-writing"], "check": { "question": "下列反应中，生成物气体需要标注↑的是？", "options": ["C+O₂→CO₂（点燃）", "2H₂O₂→2H₂O+O₂↑（MnO₂）", "CuSO₄+2NaOH→Cu(OH)₂↓+Na₂SO₄", "CaCO₃→CaO+CO₂↑（高温）"], "answer": 1, "explanation": "H₂O₂分解在溶液中进行，生成O₂气体且反应物无气体，需标↑。" } },
+    { "id": "L28-S07", "title": "完整书写示例：铁在氧气中燃烧", "type": "application", "body": ["步骤1：写出反应物和生成物——Fe+O₂→Fe₃O₄。", "步骤2：配平——3Fe+2O₂→Fe₃O₄。", "步骤3：标注条件——3Fe+2O₂→Fe₃O₄（点燃）。", "检查：Fe:3=3, O:4=4。"], "knowledgePoints": ["equation-writing"], "check": null },
+    { "id": "L28-S08", "title": "知识小结", "type": "summary", "body": ["化学方程式：用化学式表示化学反应的式子。", "两个原则：①以客观事实为基础；②遵守质量守恒（配平）。", "反应条件标注在箭头上下方。", "气体↑：生成气体且反应物无气体；沉淀↓：溶液中生成不溶物。"], "knowledgePoints": ["equation-writing"], "check": null }
+  ]
+}

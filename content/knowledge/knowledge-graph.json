@@ -1540,6 +1540,147 @@
         "L25-D01",
         "L25-T01"
       ]
+    },
+    {
+      "id": "law-conservation",
+      "name": "质量守恒定律",
+      "chapter": "第五单元 化学方程式",
+      "domain": "law",
+      "bloomLevels": [
+        "remember",
+        "understand",
+        "apply",
+        "analyze"
+      ],
+      "semester": "upper",
+      "unitId": "u05",
+      "definition": "参加化学反应的各物质的质量总和等于反应后生成的各物质的质量总和。微观本质：化学反应前后原子的种类、数目、质量均不变，只是重新组合。",
+      "prerequisiteIds": [
+        "particle-model",
+        "atomic-structure"
+      ],
+      "misconceptionIds": [
+        "mc-law-conservation-open-system",
+        "mc-law-conservation-atom-destroyed"
+      ],
+      "remediationGoal": "能从宏观（质量不变）和微观（原子三不变）两个层面理解质量守恒定律，能正确判断开放系统与密闭系统的区别。",
+      "questions": [
+        "L27-Q01",
+        "L27-Q02",
+        "L27-Q03",
+        "L27-Q04",
+        "L27-Q05",
+        "L27-Q06"
+      ]
+    },
+    {
+      "id": "equation-writing",
+      "name": "化学方程式的书写",
+      "chapter": "第五单元 化学方程式",
+      "domain": "notation",
+      "bloomLevels": [
+        "remember",
+        "understand",
+        "apply"
+      ],
+      "semester": "upper",
+      "unitId": "u05",
+      "definition": "用化学式表示化学反应的式子。书写遵循两个原则：以客观事实为基础、遵守质量守恒定律（配平）。需标注反应条件和气体↑/沉淀↓符号。",
+      "prerequisiteIds": [
+        "law-conservation",
+        "chemical-formula"
+      ],
+      "misconceptionIds": [
+        "mc-equation-gas-precipitate-confusion"
+      ],
+      "remediationGoal": "能正确书写常见反应的化学方程式，掌握气体和沉淀符号的使用规则。",
+      "questions": [
+        "L28-P01",
+        "L28-P02",
+        "L28-P03",
+        "L28-P04",
+        "L28-P05",
+        "L28-P06",
+        "L28-D01",
+        "L28-D02",
+        "L28-D03",
+        "L28-T01",
+        "L28-T02",
+        "L28-T03",
+        "L28-T04"
+      ]
+    },
+    {
+      "id": "equation-balancing",
+      "name": "化学方程式的配平",
+      "chapter": "第五单元 化学方程式",
+      "domain": "notation",
+      "bloomLevels": [
+        "understand",
+        "apply",
+        "analyze"
+      ],
+      "semester": "upper",
+      "unitId": "u05",
+      "definition": "通过调整化学计量数（系数）使方程式两边各元素的原子总数相等。配平不能改变化学式下标。",
+      "prerequisiteIds": [
+        "equation-writing"
+      ],
+      "misconceptionIds": [
+        "mc-balance-by-subscript"
+      ],
+      "remediationGoal": "掌握最小整数配平法，理解配平实质是原子守恒，不改变化学式下标。",
+      "questions": [
+        "L29-P01",
+        "L29-P02",
+        "L29-P03",
+        "L29-P04",
+        "L29-P05",
+        "L29-P06",
+        "L29-D01",
+        "L29-D02",
+        "L29-D03",
+        "L29-T01",
+        "L29-T02",
+        "L29-T03",
+        "L29-T04"
+      ]
+    },
+    {
+      "id": "stoichiometry",
+      "name": "基于化学方程式的简单计算",
+      "chapter": "第五单元 化学方程式",
+      "domain": "calculation",
+      "bloomLevels": [
+        "understand",
+        "apply",
+        "analyze"
+      ],
+      "semester": "upper",
+      "unitId": "u05",
+      "definition": "根据配平的化学方程式中各物质的质量比，由已知量求未知量的计算。核心：系数比≠质量比，须通过相对分子质量换算。",
+      "prerequisiteIds": [
+        "equation-balancing"
+      ],
+      "misconceptionIds": [
+        "mc-stoich-coefficient-vs-mass"
+      ],
+      "remediationGoal": "掌握化学方程式计算的三步法，理解系数比与质量比的区别，能正确处理纯度换算。",
+      "questions": [
+        "L30-P01",
+        "L30-P02",
+        "L30-P03",
+        "L30-P04",
+        "L30-P05",
+        "L30-P06",
+        "L30-D01",
+        "L30-D02",
+        "L30-D03",
+        "L30-T01",
+        "L30-T02",
+        "L30-T03",
+        "L30-T04"
+      ]
     }
   ],
   "relations": [
@@ -3236,6 +3377,36 @@
     {
       "source": "combustion-conditions",
       "target": "environmental-impact",
+      "type": "prerequisite"
+    },
+    {
+      "source": "particle-model",
+      "target": "law-conservation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "law-conservation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "law-conservation",
+      "target": "equation-writing",
+      "type": "prerequisite"
+    },
+    {
+      "source": "chemical-formula-meaning",
+      "target": "equation-writing",
+      "type": "prerequisite"
+    },
+    {
+      "source": "equation-writing",
+      "target": "equation-balancing",
+      "type": "prerequisite"
+    },
+    {
+      "source": "equation-balancing",
+      "target": "stoichiometry",
       "type": "prerequisite"
     }
   ]

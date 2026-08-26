@@ -934,11 +934,90 @@ const u07Misconceptions = [
   }
 ];
 
+const u05Misconceptions = [
+  {
+    id: 'mc-law-conservation-open-system',
+    title: '误认为开放系统中质量不守恒违反质量守恒定律',
+    description: '学生观察到开放容器中化学反应前后质量变化（如碳酸钙与盐酸反应质量减少、铁生锈质量增加），误认为质量守恒定律不成立，不能理解气体参与或逸出对质量测定的影响。',
+    knowledgeIds: ['law-conservation'],
+    signals: ['phenomenon-misread', 'concept-confusion'],
+    severity: 'high',
+    source: 'unit-05 production',
+    remediation: {
+      goal: '理解质量守恒定律适用于所有化学反应，开放系统中质量变化是因为气体逸出或空气参与，并非定律失效。',
+      lessonIds: ['lesson-14-law-conservation-experiment', 'lesson-15-law-conservation-micro'],
+      practiceQuestionIds: ['L26-P03'],
+      recheckQuestionIds: ['L26-D01']
+    }
+  },
+  {
+    id: 'mc-law-conservation-atom-destroyed',
+    title: '误认为化学反应中原子被消灭或创生',
+    description: '学生不理解质量守恒的微观本质，认为化学反应中原子可以被创造或消灭，或认为原子种类/数目可能改变。',
+    knowledgeIds: ['law-conservation'],
+    signals: ['concept-confusion', 'reasoning-gap'],
+    severity: 'high',
+    source: 'unit-05 production',
+    remediation: {
+      goal: '从原子角度理解质量守恒：化学反应前后原子的种类、数目、质量均不变，只是重新组合。',
+      lessonIds: ['lesson-15-law-conservation-micro'],
+      practiceQuestionIds: ['L27-P02'],
+      recheckQuestionIds: ['L27-D01']
+    }
+  },
+  {
+    id: 'mc-equation-gas-precipitate-confusion',
+    title: '混淆气体符号↑和沉淀符号↓的使用条件',
+    description: '学生在书写化学方程式时，错误标注气体或沉淀符号：反应物中有气体时生成气体不标↑，溶液中反应生成气体也不标↑；固体反应生成气体该标↑而未标。',
+    knowledgeIds: ['equation-writing'],
+    signals: ['notation-error', 'rule-misapplication'],
+    severity: 'medium',
+    source: 'unit-05 production',
+    remediation: {
+      goal: '掌握气体和沉淀符号的使用规则：反应物中无气体时生成气体标↑，溶液中反应生成不溶性固体标↓。',
+      lessonIds: ['lesson-16-equation-writing'],
+      practiceQuestionIds: ['L28-P03'],
+      recheckQuestionIds: ['L28-D01']
+    }
+  },
+  {
+    id: 'mc-balance-by-subscript',
+    title: '通过改变化学式下标来配平方程式',
+    description: '学生为了配平方程式，修改化学式中的下标（如将H2O改为H2O2），违背了以客观事实为基础的书写原则。',
+    knowledgeIds: ['equation-writing', 'equation-balancing'],
+    signals: ['critical-error', 'rule-violation'],
+    severity: 'high',
+    source: 'unit-05 production',
+    remediation: {
+      goal: '配平只能调整化学计量数（系数），绝不能改变化学式下标，否则改变了物质本身。',
+      lessonIds: ['lesson-17-equation-balancing'],
+      practiceQuestionIds: ['L29-P02'],
+      recheckQuestionIds: ['L29-D01']
+    }
+  },
+  {
+    id: 'mc-stoich-coefficient-vs-mass',
+    title: '直接用化学计量数比代替质量比进行计算',
+    description: '学生在化学方程式计算中，直接用系数比（如2:1）作为质量比代入计算，忽略了相对分子质量的换算。',
+    knowledgeIds: ['stoichiometry'],
+    signals: ['calculation-error', 'concept-confusion'],
+    severity: 'high',
+    source: 'unit-05 production',
+    remediation: {
+      goal: '理解系数比是粒子个数比，质量比需要通过相对分子质量换算：质量比 = 系数×相对分子质量之比。',
+      lessonIds: ['lesson-18-stoichiometry-calculation'],
+      practiceQuestionIds: ['L30-P03'],
+      recheckQuestionIds: ['L30-D01']
+    }
+  }
+];
+
 const canonicalMisconceptionsFull = [
   ...canonicalMisconceptionsBase,
   ...u04BackfillMisconceptions,
   ...u06Misconceptions,
-  ...u07Misconceptions
+  ...u07Misconceptions,
+  ...u05Misconceptions
 ];
 
 export const canonicalMisconceptions = canonicalMisconceptionsFull;

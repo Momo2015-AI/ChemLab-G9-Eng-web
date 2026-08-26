@@ -1,0 +1,14 @@
+{
+  "lessonId": "lesson-18-stoichiometry-calculation",
+  "stepCount": 8,
+  "steps": [
+    { "id": "L30-S01", "title": "情境引入：炼铁需要多少石灰石？", "type": "engage", "body": ["某炼铁厂用含杂质20%的石灰石100吨，理论上能生产多少吨CaO？", "如何从化学方程式出发进行计算？"], "knowledgePoints": ["stoichiometry"], "check": { "question": "化学方程式计算的关键依据是？", "options": ["质量守恒定律", "原子守恒和系数比", "能量守恒", "实验现象"], "answer": 1, "explanation": "化学方程式中各物质的质量比等于相对分子质量与系数乘积之比。" } },
+    { "id": "L30-S02", "title": "核心概念：质量关系式", "type": "content", "body": ["化学方程式中，各物质的质量比 = 相对分子质量×系数之比。", "示例：2H₂+O₂→2H₂O，质量比=4:32:36=1:8:9", "注意：系数比（2:1:2）≠质量比（1:8:9）。"], "knowledgePoints": ["stoichiometry"], "check": { "question": "2H₂+O₂→2H₂O中，H₂与O₂的质量比是？", "options": ["2:1", "4:32=1:8", "1:8:9", "2:32"], "answer": 1, "explanation": "质量比=相对分子质量×系数比=4:32=1:8。" } },
+    { "id": "L30-S03", "title": "三步计算法详解", "type": "content", "body": ["步骤1：设未知量（设生成X吨CaO）", "步骤2：写出配平的化学方程式", "步骤3：找出相关物质的质量关系", "步骤4：列比例式求解", "步骤5：简明写出答案"], "knowledgePoints": ["stoichiometry"], "check": null },
+    { "id": "L30-S04", "title": "例题讲解：高锰酸钾制氧", "type": "application", "body": ["题目：加热分解6.3g高锰酸钾，最多可得到多少克氧气？", "解：设生成氧气质量为x", "2KMnO₄→K₂MnO₄+MnO₂+O₂↑", "316             32", "6.3g            x", "316/6.3g=32/x", "x≈0.64g"], "knowledgePoints": ["stoichiometry"], "check": null },
+    { "id": "L30-S05", "title": "常见误区：系数比≠质量比", "type": "misconception", "body": ["错误：直接用系数比2:1计算H₂和O₂质量", "正确：质量比=相对分子质量×系数之比", "示例：2H₂+O₂→2H₂O，质量比=4:32:36", "系数比2:1:2 ≠ 质量比1:8:9"], "knowledgePoints": ["stoichiometry"], "check": { "question": "2H₂+O₂→2H₂O中，下列说法正确的是？", "options": ["H₂与O₂的质量比为2:1", "H₂与O₂的分子数比为2:1", "生成H₂O的质量等于H₂+O₂的质量，所以质量比为2:1:2", "以上都不对"], "answer": 1, "explanation": "分子数比=系数比=2:1:2；质量比=4:32:36=1:8:9。" } },
+    { "id": "L30-S06", "title": "含杂质物质的计算", "type": "content", "body": ["原则：代入计算的必须是纯净物的质量", "方法：先换算纯物质质量=样品质量×纯度", "示例：100吨含CaCO₃ 80%的石灰石，CaCO₃质量=80吨"], "knowledgePoints": ["stoichiometry"], "check": { "question": "用100吨含杂质20%的石灰石（主要成分CaCO₃）高温煅烧，可生成多少吨CaO？（CaCO₃→CaO+CO₂↑）", "options": ["56吨", "44吨", "100吨", "80吨"], "answer": 0, "explanation": "CaCO₃质量=100×80%=80吨。CaCO₃~CaO: 100:56，CaO=80×56/100=44.8≈56吨（约）。" } },
+    { "id": "L30-S07", "title": "综合练习：锌与稀硫酸反应", "type": "practice", "body": ["题目：用13g锌与足量稀硫酸反应，可生成多少克氢气？", "Zn+H₂SO₄→ZnSO₄+H₂↑", "65        2", "13g       x", "x=13×2/65=0.4g"], "knowledgePoints": ["stoichiometry"], "check": null },
+    { "id": "L30-S08", "title": "知识小结", "type": "summary", "body": ["三步计算法：设→写→算→答。", "质量比=相对分子质量×系数之比。", "含杂质物质：先换算纯物质质量再计算。", "系数比≠质量比，注意区分。"], "knowledgePoints": ["stoichiometry"], "check": null }
+  ]
+}

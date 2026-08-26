@@ -1,0 +1,10 @@
+{
+  "lessonId": "lesson-15-law-conservation-micro",
+  "dimensions": ["concept", "calculation", "explanation"],
+  "criteria": [
+    { "dimension": "concept", "items": ["L27-M01", "L27-M02", "L27-M03", "L27-M04"], "passingScore": 0.75 },
+    { "dimension": "calculation", "items": ["L27-M05", "L27-M06"], "passingScore": 0.75 },
+    { "dimension": "explanation", "items": ["L27-D01", "L27-D02", "L27-D03"], "passingScore": 0.75 }
+  ],
+  "items": []
+}

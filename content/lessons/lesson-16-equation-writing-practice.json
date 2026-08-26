@@ -1,0 +1,11 @@
+{
+  "lessonId": "lesson-16-equation-writing",
+  "questions": [
+    { "id": "L28-P01", "type": "concept", "difficulty": "basic", "question": "化学方程式是用什么表示化学反应的式子？", "options": ["文字", "化学式", "元素符号", "原子结构"], "answer": 1, "explanation": "化学方程式用化学式表示化学反应。" },
+    { "id": "L28-P02", "type": "concept", "difficulty": "basic", "question": "下列书写化学方程式的原则中，错误的是？", "options": ["以客观事实为基础", "可以任意配平", "遵守质量守恒定律", "注明反应条件"], "answer": 1, "explanation": "配平必须遵守质量守恒，不能任意配平。" },
+    { "id": "L28-P03", "type": "concept", "difficulty": "medium", "question": "下列化学方程式中，气体符号↑使用正确的是？", "options": ["C+O₂→CO₂↑（点燃）", "2H₂O₂→2H₂O+O₂↑（MnO₂）", "Cu+O₂→CuO（加热）", "2KClO₃→2KCl+3O₂（MnO₂）"], "answer": 1, "explanation": "H₂O₂分解在溶液中进行，生成O₂气体且反应物无气体，需标↑。" },
+    { "id": "L28-P04", "type": "concept", "difficulty": "medium", "question": "碳酸钙高温分解的化学方程式正确的是？", "options": ["CaCO₃→CaO+CO₂", "CaCO₃→CaO+CO₂↑", "CaCO₃→CaO+CO₂↑（高温）", "CaCO₃→CaO+CO₂（高温）"], "answer": 2, "explanation": "高温分解生成CO₂气体，反应物为固体，需标↑并注明条件。" },
+    { "id": "L28-P05", "type": "concept", "difficulty": "hard", "question": "下列化学方程式书写完全正确的是？", "options": ["Fe+O₂→Fe₂O₃（点燃）", "2H₂+O₂→2H₂O（点燃）", "Cu+AgNO₃→CuNO₃+Ag", "2KMnO₄→K₂MnO₄+MnO₂+O₂（△）"], "answer": 1, "explanation": "2H₂+O₂→2H₂O（点燃）配平正确、条件正确、物质正确。" },
+    { "id": "L28-P06", "type": "concept", "difficulty": "hard", "question": "硫酸铜溶液与氢氧化钠溶液反应的化学方程式中，沉淀符号↓的使用是否正确？", "options": ["正确，Cu(OH)₂是蓝色沉淀", "错误，应该标↑", "错误，溶液中没有沉淀", "错误，两种溶液混合不会有沉淀"], "answer": 0, "explanation": "Cu(OH)₂是不溶于水的蓝色沉淀，溶液中反应生成沉淀应标↓。" }
+  ]
+}

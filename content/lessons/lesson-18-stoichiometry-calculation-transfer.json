@@ -1,0 +1,61 @@
+{
+  "lessonId": "lesson-18-stoichiometry-calculation",
+  "questions": [
+    {
+      "id": "L30-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "apply",
+      "question": "实验室用足量稀盐酸与25g含CaCO₃ 80%的大理石反应，理论上可生成多少克CO₂？（CaCO₃+2HCl→CaCl₂+H₂O+CO₂↑）",
+      "rubric": {
+        "modelAnswer": "纯CaCO₃=25×80%=20g。设生成CO₂质量为x。CaCO₃~CO₂: 100:44=20:x，x=8.8g。答：可生成8.8g CO₂。",
+        "keywords": [["25×80%=20g"], ["CaCO₃+2HCl→CaCl₂+H₂O+CO₂↑"], ["100:44=20:x"], ["x=8.8g"]],
+        "explanation": "掌握含杂质物质的计算：先求纯物质质量，再代入方程式计算。"
+      },
+      "knowledgeIds": ["stoichiometry"],
+      "misconceptionIds": ["mc-stoich-coefficient-vs-mass"]
+    },
+    {
+      "id": "L30-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "某同学计算2H₂+O₂→2H₂O时，认为2gH₂和16gO₂反应生成18g水。请分析他的计算过程是否正确，如有错误请指出并改正。",
+      "rubric": {
+        "modelAnswer": "正确。验证：H₂:O₂质量比=1:8，2gH₂需16gO₂恰好完全反应，生成H₂O=2+16=18g。或使用比例：4:32=2:16=36:18，结果一致。",
+        "keywords": [["质量比1:8"], ["2gH₂需16gO₂"], ["生成18g水"], ["计算正确"]],
+        "explanation": "验证计算时需检查质量比和原子守恒。"
+      },
+      "knowledgeIds": ["stoichiometry"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L30-T03",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "create",
+      "question": "工业上用CO还原Fe₂O₃炼铁：Fe₂O₃+3CO→2Fe+3CO₂（高温）。若要生产1120吨铁，理论上需要多少吨Fe₂O₃？",
+      "rubric": {
+        "modelAnswer": "设需要Fe₂O₃质量为x。Fe₂O₃~2Fe: 160:112=x:1120，x=1600吨。答：需要1600吨Fe₂O₃。",
+        "keywords": [["Fe₂O₃+3CO→2Fe+3CO₂"], ["160:112=x:1120"], ["x=1600吨"], ["工业炼铁"]],
+        "explanation": "掌握炼铁方程式的计算应用。"
+      },
+      "knowledgeIds": ["stoichiometry"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L30-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "question": "某同学用以下方法计算：\"2H₂+O₂→2H₂O，系数比2:1，所以2gH₂需要1gO₂。\"请指出该方法的错误，并说明正确的计算方法。",
+      "rubric": {
+        "modelAnswer": "错误：将系数比2:1当作质量比。正确方法：质量比=相对分子质量×系数之比=4:32=1:8。2gH₂需要16gO₂才能完全反应。",
+        "keywords": [["系数比≠质量比"], ["质量比=4:32=1:8"], ["2gH₂需16gO₂"], ["相对分子质量乘系数"]],
+        "explanation": "区分系数比与质量比是化学方程式计算的关键。"
+      },
+      "knowledgeIds": ["stoichiometry"],
+      "misconceptionIds": ["mc-stoich-coefficient-vs-mass"]
+    }
+  ]
+}

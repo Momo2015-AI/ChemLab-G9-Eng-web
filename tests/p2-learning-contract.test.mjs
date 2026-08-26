@@ -93,6 +93,11 @@ test('lesson manifest exposes every released canonical lesson with textbook meta
     'lesson-15-fossil-fuels-energy',
     'lesson-16-combustion-safety-explosion',
     'lesson-17-environment-energy-sustainable',
+    'lesson-14-law-conservation-experiment',
+    'lesson-15-law-conservation-micro',
+    'lesson-16-equation-writing',
+    'lesson-17-equation-balancing',
+    'lesson-18-stoichiometry-calculation',
   ]);
   for (const lesson of released) {
     assert.ok(['upper', 'lower'].includes(lesson.semester));

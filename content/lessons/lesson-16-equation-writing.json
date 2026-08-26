@@ -1,0 +1,76 @@
+{
+  "id": "lesson-16-equation-writing",
+  "sequenceNumber": 16,
+  "day": "16",
+  "title": "化学方程式的书写规则",
+  "module": "unit-05-chemical-equations",
+  "semester": "upper",
+  "unitId": "u05",
+  "duration": "45 分钟",
+  "description": "掌握化学方程式的书写原则和步骤，正确标注反应条件和气体/沉淀符号。",
+  "status": "ready",
+  "releaseStatus": "ready",
+  "learningObjectives": [
+    "理解化学方程式的含义和读法。",
+    "掌握书写化学方程式的两个基本原则：以客观事实为基础、遵守质量守恒定律。",
+    "能正确标注反应条件（加热、催化剂等）和气体↑/沉淀↓符号。"
+  ],
+  "knowledgePoints": [
+    "equation-writing"
+  ],
+  "prerequisites": [
+    "lesson-14-law-conservation-micro",
+    "lesson-09-chemical-formula"
+  ],
+  "misconceptionIds": [
+    "mc-equation-gas-precipitate-confusion"
+  ],
+  "resourceRefs": {
+    "experiment": "content/lessons/lesson-16-equation-writing-experiment.json",
+    "practice": "content/lessons/lesson-16-equation-writing-practice.json",
+    "diagnostic": "content/lessons/lesson-16-equation-writing-diagnostic.json",
+    "mastery": "content/lessons/lesson-16-equation-writing-mastery.json",
+    "guidedLearning": "content/lessons/lesson-16-equation-writing-guided-learning.json",
+    "transfer": "content/lessons/lesson-16-equation-writing-transfer.json"
+  },
+  "sections": [
+    {
+      "title": "本节课要掌握什么？",
+      "body": [
+        "化学方程式的定义和意义。",
+        "书写化学方程式的两个原则。",
+        "反应条件的标注方法。",
+        "气体↑和沉淀↓符号的使用规则。"
+      ]
+    },
+    {
+      "title": "核心概念",
+      "body": [
+        "化学方程式：用化学式表示化学反应的式子。",
+        "书写原则：以客观事实为基础，遵守质量守恒。"
+      ]
+    },
+    {
+      "title": "常见误区",
+      "body": [
+        "混淆气体符号↑和沉淀符号↓的使用条件。",
+        "反应物中有气体时生成气体仍标↑。"
+      ]
+    }
+  ],
+  "provenance": {
+    "status": "ready",
+    "basis": "人教版九年级化学上册第五单元课题2；2022年版义务教育化学课程标准。",
+    "note": "内容原创，不复制教材原文。"
+  },
+  "review": {
+    "curriculum": "pass",
+    "scientific": "pass",
+    "ageSuitability": "pass",
+    "itemQuality": "pass",
+    "knowledgeLinks": "pass",
+    "wuhanAlignment": "pass",
+    "masteryGate": "pass",
+    "blockingIssues": []
+  }
+}
