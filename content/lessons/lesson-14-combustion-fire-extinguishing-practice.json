@@ -1,0 +1,89 @@
+{
+  "lessonId": "lesson-14-combustion-fire-extinguishing",
+  "questions": [
+    {
+      "id": "L17-P01",
+      "type": "concept",
+      "difficulty": "basic",
+      "question": "下列情形中，能够发生燃烧的是？",
+      "options": [
+        "木条在空气中不加热",
+        "木条在氧气中不加热",
+        "木条在空气中加热到红热",
+        "木头在水中加热"
+      ],
+      "answer": 2,
+      "explanation": "木条是可燃物，在空气中接触氧气，加热到红热达到着火点，三个条件都满足。"
+    },
+    {
+      "id": "L17-P02",
+      "type": "concept",
+      "difficulty": "basic",
+      "question": "炒菜时油锅着火，最快的灭火方法是？",
+      "options": [
+        "浇水",
+        "用锅盖盖灭",
+        "吹气",
+        "端离灶台"
+      ],
+      "answer": 1,
+      "explanation": "用锅盖盖灭是隔绝氧气，操作简单快速。浇水会导致热油飞溅，更危险。"
+    },
+    {
+      "id": "L17-P03",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "下列灭火方法原理与其他不同的是？",
+      "options": [
+        "炒菜时油锅着火用锅盖盖灭",
+        "档案室着火用二氧化碳灭火器",
+        "熄灭酒精灯用灯帽盖灭",
+        "森林火灾设置隔离带"
+      ],
+      "answer": 3,
+      "explanation": "A、B、C都是隔绝氧气，D是清除可燃物。"
+    },
+    {
+      "id": "L17-P04",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "将燃着的木柴架空燃烧的更好，原因是？",
+      "options": [
+        "降低了木柴的着火点",
+        "增大了木柴与氧气的接触面积",
+        "提高了木柴的温度",
+        "增加了木柴的质量"
+      ],
+      "answer": 1,
+      "explanation": "架空木柴增大了与氧气的接触面积，使燃烧更充分。着火点是固有属性不变。"
+    },
+    {
+      "id": "L17-P05",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "在充满煤气的房间里，下列做法正确的是？",
+      "options": [
+        "立即打开电灯查看",
+        "迅速关闭煤气阀门并开窗通风",
+        "用力敲门呼叫邻居",
+        "在现场点火检验煤气泄漏点"
+      ],
+      "answer": 1,
+      "explanation": "关闭阀门切断气源，开窗通风降低煤气浓度。开灯或点火可能产生电火花引发爆炸。"
+    },
+    {
+      "id": "L17-P06",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "篝火晚会时，若火势过旺，下列处理不正确的是？",
+      "options": [
+        "移除部分木柴",
+        "用土覆盖部分火堆",
+        "向火堆浇水直到完全熄灭",
+        "将木柴分散开减小火势"
+      ],
+      "answer": 2,
+      "explanation": "浇水直到完全熄灭是将火彻底扑灭而非控制火势。正确做法是移除部分燃料或分散木柴。"
+    }
+  ]
+}

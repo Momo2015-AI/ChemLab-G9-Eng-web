@@ -168,6 +168,51 @@
       "S0-PEP-CHEM9",
       "S1-CURRICULUM-STD",
       "S1-WUHAN-EXAM"
+    ],
+    "lesson-14-combustion-fire-extinguishing": [
+      "S0-PEP-CHEM9",
+      "S1-CURRICULUM-STD",
+      "S1-WUHAN-EXAM"
+    ],
+    "lesson-15-fossil-fuels-energy": [
+      "S0-PEP-CHEM9",
+      "S1-CURRICULUM-STD",
+      "S1-WUHAN-EXAM"
+    ],
+    "lesson-16-combustion-safety-explosion": [
+      "S0-PEP-CHEM9",
+      "S1-CURRICULUM-STD",
+      "S1-WUHAN-EXAM"
+    ],
+    "lesson-17-environment-energy-sustainable": [
+      "S0-PEP-CHEM9",
+      "S1-CURRICULUM-STD",
+      "S1-WUHAN-EXAM"
+    ],
+    "lesson-14-law-conservation-experiment": [
+      "S0-PEP-CHEM9",
+      "S1-CURRICULUM-STD",
+      "S1-WUHAN-EXAM"
+    ],
+    "lesson-15-law-conservation-micro": [
+      "S0-PEP-CHEM9",
+      "S1-CURRICULUM-STD",
+      "S1-WUHAN-EXAM"
+    ],
+    "lesson-16-equation-writing": [
+      "S0-PEP-CHEM9",
+      "S1-CURRICULUM-STD",
+      "S1-WUHAN-EXAM"
+    ],
+    "lesson-17-equation-balancing": [
+      "S0-PEP-CHEM9",
+      "S1-CURRICULUM-STD",
+      "S1-WUHAN-EXAM"
+    ],
+    "lesson-18-stoichiometry-calculation": [
+      "S0-PEP-CHEM9",
+      "S1-CURRICULUM-STD",
+      "S1-WUHAN-EXAM"
     ]
   },
   "legacyNote": "Retired 320-question dataset is not a source and is excluded from this registry."

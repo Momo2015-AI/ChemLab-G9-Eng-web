@@ -1,0 +1,445 @@
+{
+  "lessonId": "lesson-17-environment-energy-sustainable",
+  "mastery": {
+    "questions": [
+      {
+        "id": "L25-M01",
+        "type": "mc",
+        "question": "导致温室效应的主要气体是？",
+        "options": [
+          "O₂",
+          "N₂",
+          "CO₂",
+          "H₂"
+        ],
+        "answer": 0,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "CO₂是主要温室气体。",
+        "category": "concept"
+      },
+      {
+        "id": "L25-M02",
+        "type": "mc",
+        "question": "酸雨的主要成因是？",
+        "options": [
+          "CO₂",
+          "SO₂和NOx",
+          "N₂",
+          "O₂"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "SO₂和NOx溶于雨水形成酸雨。",
+        "category": "concept"
+      },
+      {
+        "id": "L25-M03",
+        "type": "mc",
+        "question": "最清洁的燃料是？",
+        "options": [
+          "煤",
+          "石油",
+          "天然气",
+          "氢气"
+        ],
+        "answer": 3,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "氢气燃烧只生成水。",
+        "category": "concept"
+      },
+      {
+        "id": "L25-M04",
+        "type": "mc",
+        "question": "我国承诺碳中和的年份是？",
+        "options": [
+          "2030",
+          "2040",
+          "2050",
+          "2060"
+        ],
+        "answer": 3,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "2060年碳中和。",
+        "category": "concept"
+      },
+      {
+        "id": "L25-M05",
+        "type": "mc",
+        "question": "下列做法不利于环保的是？",
+        "options": [
+          "使用公共交通",
+          "大量使用一次性餐具",
+          "植树造林",
+          "节约用电"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "一次性餐具浪费资源。",
+        "category": "application"
+      },
+      {
+        "id": "L25-M06",
+        "type": "mc",
+        "question": "汽车尾气催化转换器的作用是？",
+        "options": [
+          "增加动力",
+          "将CO和NOx转化为无害气体",
+          "降低油耗",
+          "过滤粉尘"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "催化转换器转化有害尾气。",
+        "category": "application"
+      },
+      {
+        "id": "L25-M07",
+        "type": "mc",
+        "question": "下列属于可再生能源的是？",
+        "options": [
+          "煤",
+          "石油",
+          "天然气",
+          "太阳能"
+        ],
+        "answer": 3,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "太阳能可再生，化石燃料不可再生。",
+        "category": "concept"
+      },
+      {
+        "id": "L25-M08",
+        "type": "mc",
+        "question": "PM2.5主要来源于？",
+        "options": [
+          "氧气排放",
+          "化石燃料不完全燃烧和粉尘",
+          "氮气排放",
+          "水蒸气"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "PM2.5主要来自燃烧和粉尘。",
+        "category": "concept"
+      },
+      {
+        "id": "L25-M09",
+        "type": "mc",
+        "question": "下列不属于空气污染物的气体是？",
+        "options": [
+          "SO₂",
+          "NO₂",
+          "CO₂",
+          "CO"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "CO₂是空气正常成分，不是污染物（但过量导致温室效应）。",
+        "category": "concept"
+      },
+      {
+        "id": "L25-M10",
+        "type": "mc",
+        "question": "氢气作为燃料的最大优点是？",
+        "options": [
+          "价格便宜",
+          "燃烧产物只有水",
+          "储存方便",
+          "燃烧温度低"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "氢气燃烧只生成水，最清洁。",
+        "category": "concept"
+      },
+      {
+        "id": "L25-M11",
+        "type": "mc",
+        "question": "下列措施不能减少温室效应的是？",
+        "options": [
+          "植树造林",
+          "开发太阳能",
+          "大量使用煤炭",
+          "提高能源利用率"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "大量使用煤炭增加CO₂排放。",
+        "category": "application"
+      },
+      {
+        "id": "L25-M12",
+        "type": "mc",
+        "question": "正常雨水的pH约为5.6，酸雨的pH？",
+        "options": [
+          "大于5.6",
+          "等于5.6",
+          "小于5.6",
+          "无法确定"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "酸雨pH<5.6。",
+        "category": "concept"
+      },
+      {
+        "id": "L25-M13",
+        "type": "mc",
+        "question": "下列能源中，目前技术最成熟、应用最广泛的新能源是？",
+        "options": [
+          "氢能",
+          "太阳能",
+          "核能",
+          "潮汐能"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "太阳能技术最成熟应用最广泛。",
+        "category": "concept"
+      },
+      {
+        "id": "L25-M14",
+        "type": "mc",
+        "question": "天然气相比煤作为燃料的主要优势是？",
+        "options": [
+          "热值更低",
+          "燃烧更充分、污染物更少",
+          "价格更贵",
+          "更易泄漏"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "天然气燃烧更充分，SO₂和粉尘排放少。",
+        "category": "application"
+      },
+      {
+        "id": "L25-M15",
+        "type": "mc",
+        "question": "碳中和是指？",
+        "options": [
+          "CO₂排放为零",
+          "CO₂排放与吸收达到平衡",
+          "不再使用任何能源",
+          "只使用新能源"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "碳中和指排放与吸收平衡，净排放为零。",
+        "category": "sustainability"
+      },
+      {
+        "id": "L25-M16",
+        "type": "mc",
+        "question": "下列哪种方式不能有效节约能源？",
+        "options": [
+          "使用节能灯",
+          "随手关灯",
+          "长时间开启电器待机",
+          "合理使用空调"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "电器待机仍消耗电能。",
+        "category": "application"
+      },
+      {
+        "id": "L25-M17",
+        "type": "mc",
+        "question": "光化学烟雾的主要成因是？",
+        "options": [
+          "SO₂",
+          "NOx和碳氢化合物在紫外线作用下",
+          "CO₂",
+          "粉尘"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "NOx和碳氢化合物在紫外线作用下形成光化学烟雾。",
+        "category": "concept"
+      },
+      {
+        "id": "L25-M18",
+        "type": "mc",
+        "question": "煤炭脱硫的主要目的是？",
+        "options": [
+          "提高热值",
+          "减少SO₂排放防止酸雨",
+          "增加产量",
+          "改变颜色"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "脱硫减少SO₂排放，防治酸雨。",
+        "category": "application"
+      },
+      {
+        "id": "L25-M19",
+        "type": "mc",
+        "question": "下列不属于三大化石燃料的是？",
+        "options": [
+          "煤",
+          "石油",
+          "沼气",
+          "天然气"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "三大化石燃料：煤、石油、天然气。沼气是生物质能。",
+        "category": "concept"
+      },
+      {
+        "id": "L25-M20",
+        "type": "mc",
+        "question": "下列有关环境保护的说法错误的是？",
+        "options": [
+          "开发新能源有助于环保",
+          "化石燃料应完全禁止使用",
+          "植树造林可以吸收CO₂",
+          "节能减排人人有责"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
+        "explanation": "化石燃料短期内难以完全替代，应逐步减少而非立即禁止。",
+        "category": "sustainability"
+      },
+      {
+        "id": "L25-D01",
+        "type": "mc",
+        "question": "小明认为天然气完全无污染。他的错误在于？",
+        "options": [
+          "忽略了CO₂排放加剧温室效应",
+          "天然气完全无污染",
+          "天然气不是清洁能源",
+          "以上都不对"
+        ],
+        "answer": 0,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "explanation": "天然气燃烧产生CO₂。",
+        "errorType": "mc-fossil-fuel-nonrenewable",
+        "remediationStep": "L25-S02",
+        "category": "sustainability"
+      },
+      {
+        "id": "L25-D02",
+        "type": "mc",
+        "question": "下列措施不能有效减少CO₂排放的是？",
+        "options": [
+          "开发太阳能",
+          "提高燃烧效率",
+          "大量使用煤炭",
+          "植树造林"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "environmental-impact"
+        ],
+        "explanation": "大量使用煤炭增加CO₂排放。",
+        "errorType": "mc-fossil-fuel-nonrenewable",
+        "remediationStep": "L25-S05",
+        "category": "sustainability"
+      }
+    ]
+  }
+}

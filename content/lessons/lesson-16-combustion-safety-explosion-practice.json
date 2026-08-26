@@ -1,0 +1,11 @@
+{
+  "lessonId": "lesson-16-combustion-safety-explosion",
+  "questions": [
+    { "id": "L19-P01", "type": "concept", "difficulty": "basic", "question": "点燃氢气前必须验纯，这是因为？", "options": ["氢气有毒", "不纯氢气点燃可能爆炸", "氢气密度太小", "氢气有气味"], "answer": 1, "explanation": "氢气与空气混合达爆炸极限遇火爆炸。" },
+    { "id": "L19-P02", "type": "concept", "difficulty": "basic", "question": "下列场所必须张贴'严禁烟火'标志的是？", "options": ["超市", "面粉厂", "学校", "公园"], "answer": 1, "explanation": "面粉厂有粉尘爆炸风险。" },
+    { "id": "L19-P03", "type": "concept", "difficulty": "medium", "question": "煤气泄漏时下列做法正确的是？", "options": ["打开排气扇", "打开电灯查看", "关闭阀门并开窗通风", "用明火寻找泄漏点"], "answer": 2, "explanation": "关闭阀门切断气源，开窗通风降低浓度。开电器可能产生电火花。" },
+    { "id": "L19-P04", "type": "concept", "difficulty": "medium", "question": "下列不会发生爆炸的是？", "options": ["氢气与空气混合遇火", "氮气与空气混合遇火", "面粉粉尘在密闭空间遇火", "汽油蒸气与空气混合遇火"], "answer": 1, "explanation": "氮气不可燃，不会爆炸。" },
+    { "id": "L19-P05", "type": "concept", "difficulty": "hard", "question": "煤矿矿井中最需要防范的爆炸类型是？", "options": ["汽油蒸气爆炸", "瓦斯和煤尘爆炸", "面粉粉尘爆炸", "氢气爆炸"], "answer": 1, "explanation": "煤矿主要瓦斯（甲烷）和煤尘爆炸风险。" },
+    { "id": "L19-P06", "type": "concept", "difficulty": "hard", "question": "下列防爆措施错误的是？", "options": ["面粉厂保持通风", "加油站使用防爆电器", "煤气泄漏时打开排气扇", "煤矿井下严禁烟火"], "answer": 2, "explanation": "煤气泄漏时开排气扇可能产生电火花引发爆炸。" }
+  ]
+}

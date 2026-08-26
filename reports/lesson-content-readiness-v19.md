@@ -1,16 +1,16 @@
 # V1.9 Lesson Content Readiness Audit
 
-Generated: 2026-08-25T09:12:49.652Z
+Generated: 2026-08-26T07:45:39.410Z
 
 ## Baseline
-- Lessons scanned: 21
+- Lessons scanned: 29
 - Template lessons: 0
-- Real-content candidates: 21
-- Ready by automated scan: 21
-- Lessons requiring rewrite/incompletion work: 0
+- Real-content candidates: 26
+- Ready by automated scan: 26
+- Lessons requiring rewrite/incompletion work: 3
 - Question bank state: CANONICAL_RUNTIME_SOURCE
 - Legacy duplicate day01.json present: NO
-- Manifest contract violations: 0
+- Manifest contract violations: 1
 
 ## Lesson matrix
 | File | Day | Title | Status | Release status | Template hits | Missing | Runtime questions | Manifest contract |
@@ -26,11 +26,19 @@ Generated: 2026-08-25T09:12:49.652Z
 | lesson-07-water-purification.json | 07 | 水的净化 | released | ready | 0 | - | 6+12+5+21+5 | - |
 | lesson-08-h2o2-oxygen-preparation.json | 06 | 过氧化氢制取氧气与催化剂 | released | ready | 0 | - | 3+13+3+21+4 | - |
 | lesson-08-water-conservation.json | 08 | 爱护水资源 | released | ready | 0 | - | 4+9+2+10+5 | - |
-| lesson-09-chemical-formula.json | 09 | 化学式与化合价（上） | released | ready | 0 | - | 6+12+5+21+4 | - |
+| lesson-09-chemical-formula.json | 09 | 化学式与化合价（上） | released | ready | 0 | - | 6+12+5+21+4 | unitId mismatch: manifest='u03' but lesson='u04' |
 | lesson-10-chemical-equation.json | 10 | 质量守恒定律与化学计算 | released | ready | 0 | - | 6+12+3+21+4 | - |
 | lesson-11-atomic-structure.json | 11 | 原子的构成 | released | ready | 0 | - | 6+12+3+20+4 | - |
 | lesson-12-ion-bond.json | 12 | 离子与离子键 | released | ready | 0 | - | 6+12+3+20+4 | - |
 | lesson-13-elements.json | 13 | 元素 | released | ready | 0 | - | 6+12+3+20+4 | - |
+| lesson-14-combustion-fire-extinguishing.json | 25 | 燃烧与灭火 | released | ready | 0 | - | 6+6+3+23+4 | - |
+| lesson-15-fossil-fuels-energy.json | 26 | 化石燃料与新能源 | released | ready | 0 | - | 6+6+3+22+4 | - |
+| lesson-15-law-conservation-micro.json | 15 | 质量守恒定律的微观解释与应用 | released | ready | 0 | - | 6+6+3+0+4 | - |
+| lesson-16-combustion-safety-explosion.json | 27 | 燃烧安全与防爆 | released | ready | 0 | - | 6+6+3+22+4 | - |
+| lesson-16-equation-writing.json | 16 | 化学方程式的书写规则 | incomplete | ready | 0 | experiments[], questions[] | 6+3+0+4 | - |
+| lesson-17-environment-energy-sustainable.json | 28 | 能源与环境 | released | ready | 0 | - | 6+6+3+22+4 | - |
+| lesson-17-equation-balancing.json | 17 | 化学方程式的配平 | incomplete | ready | 0 | experiments[], questions[] | 6+3+0+4 | - |
+| lesson-18-stoichiometry-calculation.json | 18 | 基于化学方程式的简单计算 | incomplete | ready | 0 | experiments[], questions[] | 6+3+0+4 | - |
 | lesson-20-carbon-allotrope.json | 20 | 碳的单质 | released | ready | 0 | - | 6+4+3+8+4 | - |
 | lesson-21-carbon-property.json | 21 | 碳的化学性质 | released | ready | 0 | - | 6+4+3+8+4 | - |
 | lesson-22-co2-preparation.json | 22 | 二氧化碳的制取 | released | ready | 0 | - | 6+3+3+8+4 | - |
@@ -38,7 +46,10 @@ Generated: 2026-08-25T09:12:49.652Z
 | lesson-24-co-property.json | 24 | 一氧化碳 | released | ready | 0 | - | 6+3+3+8+4 | - |
 
 ## Issues
-- None
+- lesson-09-chemical-formula.json: unitId mismatch: manifest='u03' but lesson='u04'
+- lesson-16-equation-writing.json: missing experiments[], questions[]
+- lesson-17-equation-balancing.json: missing experiments[], questions[]
+- lesson-18-stoichiometry-calculation.json: missing experiments[], questions[]
 
 ## Gate
-- PASS: no template/incomplete lessons and no release contract violations detected.
+- BLOCKED: template/incomplete lessons or release contract violations remain. No lesson may be promoted to ready by this scanner.

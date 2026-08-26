@@ -1,0 +1,14 @@
+{
+  "lessonId": "lesson-15-fossil-fuels-energy",
+  "stepCount": 8,
+  "steps": [
+    { "id": "L18-S01", "title": "情境引入：我们用什么能源？", "type": "engage", "body": ["我们生活中离不开能源：做饭用天然气，汽车用汽油，发电用煤。", "这些能源从哪里来？会用完吗？"], "knowledgePoints": ["fossil-fuels"], "check": { "question": "下列能源中，属于化石燃料的是？", "options": ["太阳能", "风能", "天然气", "氢能"], "answer": 2, "explanation": "天然气是三大化石燃料之一。" } },
+    { "id": "L18-S02", "title": "核心概念：三大化石燃料", "type": "content", "body": ["煤：黑色固体，主要含碳。", "石油：粘稠液体，主要含碳氢。", "天然气：主要成分是甲烷CH₄。", "三者都是不可再生的混合物。"], "knowledgePoints": ["fossil-fuels"], "check": { "question": "下列关于化石燃料的说法正确的是？", "options": ["都是纯净物", "都是可再生能源", "都是混合物", "形成速度很快"], "answer": 2, "explanation": "化石燃料都是复杂的混合物。" } },
+    { "id": "L18-S03", "title": "化石燃料的燃烧产物", "type": "content", "body": ["甲烷燃烧：CH₄+2O₂→CO₂+2H₂O。", "煤燃烧产生CO₂、SO₂、粉尘。", "SO₂导致酸雨，CO₂导致温室效应。"], "knowledgePoints": ["fossil-fuels"], "check": { "question": "煤燃烧产生的哪种气体会导致酸雨？", "options": ["CO₂", "SO₂", "N₂", "O₂"], "answer": 1, "explanation": "SO₂溶于雨水形成酸雨。" } },
+    { "id": "L18-S04", "title": "核心概念：新能源", "type": "content", "body": ["氢能：燃烧产物是水，最清洁。", "太阳能：清洁但受天气影响。", "风能：清洁但受地理影响。", "核能、地热能、潮汐能等也是新能源。"], "knowledgePoints": ["fossil-fuels"], "check": { "question": "下列能源中，燃烧产物只有水的是？", "options": ["煤", "石油", "天然气", "氢气"], "answer": 3, "explanation": "2H₂+O₂→2H₂O，产物只有水。" } },
+    { "id": "L18-S05", "title": "误区警示：新能源=无污染", "type": "misconception", "body": ["误区：所有新能源都完全无污染。", "纠正：新能源相对清洁但并非完全没有环境影响，需全面客观评价。"], "knowledgePoints": ["fossil-fuels"], "check": { "question": "下列关于新能源的说法正确的是？", "options": ["新能源完全没有任何环境影响", "新能源比化石燃料更清洁但需全面评价", "新能源已完全替代化石燃料", "新能源成本已全部低于化石燃料"], "answer": 1, "explanation": "新能源相对清洁但需全面评价其环境影响。" } },
+    { "id": "L18-S06", "title": "应用：化石燃料的综合利用", "type": "application", "body": ["煤干馏得焦炭、煤焦油、煤气。", "石油分馏得汽油、煤油、柴油等。", "提高利用率是节约能源的重要途径。"], "knowledgePoints": ["fossil-fuels"], "check": null },
+    { "id": "L18-S07", "title": "可持续发展与能源未来", "type": "content", "body": ["化石燃料储量有限，本世纪内面临枯竭。", "发展方向：提高利用率+开发新能源+节约能源。", "中国承诺2030碳达峰、2060碳中和。"], "knowledgePoints": ["fossil-fuels"], "check": null },
+    { "id": "L18-S08", "title": "知识小结", "type": "summary", "body": ["三大化石燃料都是不可再生混合物。", "燃烧产生CO₂、SO₂等污染物。", "氢能是最清洁燃料。", "能源发展三方向：提效、开发新能源、节能。"], "knowledgePoints": ["fossil-fuels"], "check": null }
+  ]
+}

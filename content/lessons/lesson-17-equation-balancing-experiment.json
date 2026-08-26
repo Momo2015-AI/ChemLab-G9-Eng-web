@@ -1,0 +1,20 @@
+{
+  "lessonId": "lesson-17-equation-balancing",
+  "experiments": [
+    {
+      "id": "L29-E01",
+      "title": "白磷燃烧方程式配平验证",
+      "type": "demonstration",
+      "instruments": ["锥形瓶", "橡胶塞", "细砂", "白磷", "玻璃棒", "酒精灯", "天平"],
+      "safety": "白磷有毒且易燃，实验由教师演示。",
+      "goal": "通过实验验证配平后的方程式与实验结果一致。",
+      "steps": [
+        { "step": 1, "action": "称量密闭装置+白磷总质量m₁", "record": "记录质量" },
+        { "step": 2, "action": "引燃白磷，冷却后称量m₂", "record": "记录质量" },
+        { "step": 3, "action": "验证：配平方程式4P+5O₂→2P₂O₅，各原子守恒", "record": "P:4=4, O:10=10" }
+      ],
+      "observationGuidance": ["m₁=m₂，质量守恒", "配平方程式原子数目守恒", "系数比4:5:2为最简整数比"],
+      "conclusion": "配平后的化学方程式不仅满足原子守恒，也对应实验观察到的质量守恒现象。"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "lessonId": "lesson-17-environment-energy-sustainable",
+  "questions": [
+    {
+      "id": "L25-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "question": "某城市计划关闭所有燃煤电厂，全部改用天然气发电。请从环境保护、能源安全、经济成本三个角度评价这一决策的合理性。",
+      "rubric": {
+        "modelAnswer": "环境保护：天然气比煤清洁，减少SO₂、粉尘排放，但CO₂排放仍在。能源安全：天然气依赖进口，存在供应风险。经济成本：天然气价格高于煤，发电成本上升。结论：天然气是过渡方案，长期应发展风电、光伏等真正清洁能源。",
+        "keywords": [["天然气比煤清洁/减SO₂粉尘"], ["CO₂排放仍在"], ["进口依赖风险"], ["成本上升"], ["长期应发展真正清洁能源"]],
+        "explanation": "综合权衡环境保护、能源安全、经济成本三个维度。"
+      },
+      "knowledgeIds": ["environmental-impact", "fossil-fuels"],
+      "misconceptionIds": ["mc-fossil-fuel-nonrenewable"]
+    },
+    {
+      "id": "L25-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "create",
+      "question": "请为学校设计一份'绿色校园'行动计划，包括：①至少5条具体措施 ②每条措施的科学原理 ③预期效果。",
+      "rubric": {
+        "modelAnswer": "①安装太阳能路灯——利用太阳能发电，减少电力消耗。②推行垃圾分类——减少填埋，促进资源回收。③建设校园小菜园——吸收CO₂，提供绿色空间。④推广无纸化作业——减少纸张消耗，保护森林。⑤使用节能灯具——LED灯比白炽灯节能80%。预期：降低碳排放，提高环保意识。",
+        "keywords": [["太阳能利用"], ["垃圾分类/资源回收"], ["植树/吸收CO₂"], ["节约用纸/保护森林"], ["节能灯具"]],
+        "explanation": "将课堂所学应用于校园实际，体现可持续发展理念。"
+      },
+      "knowledgeIds": ["environmental-impact"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L25-T03",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "某化工厂位于城市上风向，排放大量SO₂和粉尘。请分析该工厂对城市环境的影响，并提出科学的搬迁或改造方案。",
+      "rubric": {
+        "modelAnswer": "影响：SO₂导致酸雨，损害建筑和植物；粉尘造成PM2.5超标，危害居民健康。方案：①短期：安装脱硫除尘设备，达标排放。②中期：搬迁至城市下风向郊区。③长期：转型生产清洁化工产品。同时加强环境监测和公众参与。",
+        "keywords": [["SO₂致酸雨/粉尘PM2.5"], ["脱硫除尘设备"], ["搬迁至下风向"], ["转型清洁生产"], ["环境监测"]],
+        "explanation": "综合运用化学知识分析环境问题并提出解决方案。"
+      },
+      "knowledgeIds": ["environmental-impact", "combustion-conditions"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L25-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "从化学角度分析，为什么新能源汽车（电动车）被认为比燃油车更环保？电动车真的完全'零排放'吗？请全面评价。",
+      "rubric": {
+        "modelAnswer": "使用阶段：电动车无尾气排放（无CO、NOx），确实更清洁。全生命周期：需考虑发电的排放（如果电力来自煤电厂则间接有排放）、电池生产和回收的环境影响。结论：电动车比燃油车环保，但不是绝对零排放，需要配合清洁能源才能发挥最大环保效益。",
+        "keywords": [["使用阶段无尾气"], ["发电可能有排放"], ["电池生产回收影响"], ["配合清洁能源最优"]],
+        "explanation": "全面客观评价新能源车的环保性，避免简单化的'零排放'认知。"
+      },
+      "knowledgeIds": ["environmental-impact", "fossil-fuels"],
+      "misconceptionIds": ["mc-fossil-fuel-nonrenewable"]
+    }
+  ]
+}

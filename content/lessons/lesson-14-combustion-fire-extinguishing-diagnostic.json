@@ -1,0 +1,53 @@
+{
+  "lessonId": "lesson-14-combustion-fire-extinguishing",
+  "diagnostics": [
+    {
+      "id": "L17-D01",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "小明认为只要温度达到着火点且有氧气就一定能燃烧。他的遗漏是？",
+      "options": [
+        "忽略了可燃物这一条件",
+        "忽略了温度条件",
+        "忽略了氧气条件",
+        "他的说法完全正确"
+      ],
+      "answer": 0,
+      "explanation": "燃烧三条件缺一不可：可燃物、氧气、温度达着火点。石头有氧气和高温也不会燃烧。",
+      "errorType": "mc-combustion-three-condition",
+      "remediationStep": "L17-S02"
+    },
+    {
+      "id": "L17-D02",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "住宅着火时用水浇灭，其灭火原理是？",
+      "options": [
+        "清除可燃物",
+        "隔绝氧气",
+        "降温至着火点以下",
+        "降低着火点"
+      ],
+      "answer": 2,
+      "explanation": "水蒸发吸热使温度降低至可燃物着火点以下，从而灭火。着火点是固有属性不能被降低。",
+      "errorType": "mc-fire-extinguish-principle",
+      "remediationStep": "L17-S04"
+    },
+    {
+      "id": "L17-D03",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "下列灭火措施的原理与其他三项不同的是？",
+      "options": [
+        "酒精灯用灯帽盖灭",
+        "油锅着火用锅盖盖灭",
+        "二氧化碳灭火器灭火",
+        "森林火灾开辟隔离带"
+      ],
+      "answer": 3,
+      "explanation": "A、B、C都是隔绝氧气，D是清除可燃物。",
+      "errorType": "mc-fire-extinguish-principle",
+      "remediationStep": "L17-S06"
+    }
+  ]
+}

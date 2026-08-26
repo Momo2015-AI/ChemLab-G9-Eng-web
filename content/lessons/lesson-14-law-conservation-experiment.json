@@ -1,0 +1,38 @@
+{
+  "id": "lesson-14-law-conservation-experiment",
+  "sequenceNumber": 14,
+  "day": "14",
+  "title": "质量守恒定律的实验探究",
+  "module": "unit-05-chemical-equations",
+  "semester": "upper",
+  "unitId": "u05",
+  "duration": "45 分钟",
+  "description": "通过白磷燃烧实验探究质量守恒定律，理解密闭系统与开放系统的区别。",
+  "status": "ready",
+  "releaseStatus": "ready",
+  "learningObjectives": [
+    "通过实验验证化学反应前后物质总质量不变。",
+    "能正确记录实验数据并得出结论。",
+    "能区分密闭/开放系统对质量测定的影响。"
+  ],
+  "knowledgePoints": ["law-conservation"],
+  "prerequisites": ["lesson-11-atomic-structure", "lesson-09-chemical-formula"],
+  "misconceptionIds": ["mc-law-conservation-open-system"],
+  "resourceRefs": {
+    "experiment": "content/lessons/lesson-14-law-conservation-experiment-experiment.json",
+    "practice": "content/lessons/lesson-14-law-conservation-experiment-practice.json",
+    "diagnostic": "content/lessons/lesson-14-law-conservation-experiment-diagnostic.json",
+    "mastery": "content/lessons/lesson-14-law-conservation-experiment-mastery.json",
+    "guidedLearning": "content/lessons/lesson-14-law-conservation-experiment-guided-learning.json",
+    "transfer": "content/lessons/lesson-14-law-conservation-experiment-transfer.json"
+  },
+  "sections": [
+    { "title": "本节课要掌握什么？", "body": ["质量守恒定律的定义和适用范围。", "通过实验验证质量守恒。", "理解开放系统与密闭系统的区别。", "能用质量守恒解释化学反应中的质量变化。"] },
+    { "title": "核心实验", "body": ["白磷燃烧前后质量测定：密闭容器中m前=m后。"] },
+    { "title": "核心概念", "body": ["质量守恒：参加反应的各物质质量总和=生成的各物质质量总和。", "开放系统中质量变化是气体进出导致，非定律失效。"] },
+    { "title": "常见误区", "body": ["误认为开放系统中质量不守恒违反质量守恒定律。", "误用质量守恒解释物理变化。"] },
+    { "title": "学习方法", "body": ["实验验证→数据分析→结论归纳。", "区分宏观现象与微观本质。"] }
+  ],
+  "provenance": { "status": "ready", "basis": "人教版九年级化学上册第五单元课题1；2022年版义务教育化学课程标准。", "note": "内容原创，不复制教材原文。" },
+  "review": { "curriculum": "pass", "scientific": "pass", "ageSuitability": "pass", "itemQuality": "pass", "knowledgeLinks": "pass", "wuhanAlignment": "pass", "masteryGate": "pass", "blockingIssues": [] }
+}

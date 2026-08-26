@@ -1,0 +1,61 @@
+{
+  "lessonId": "lesson-15-law-conservation-micro",
+  "questions": [
+    {
+      "id": "L27-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "某密闭容器中放入少量白磷，点燃后冷却至室温，发现天平仍平衡。请从微观角度解释为什么反应前后总质量不变，并说明如果用开放容器做同样的实验，天平是否仍然平衡。",
+      "rubric": {
+        "modelAnswer": "化学反应前后，原子的种类、数目、质量都不变，只是原子重新组合成新分子，所以总质量不变。密闭容器中没有物质进出，所以天平平衡。如果用开放容器，生成的P₂O₅白烟会逸散到空气中，天平不平衡。",
+        "keywords": [["原子种类不变"], ["原子数目不变"], ["原子质量不变"], ["密闭容器无物质进出"], ["开放容器烟逸散"]],
+        "explanation": "理解质量守恒的微观本质和实验验证条件。"
+      },
+      "knowledgeIds": ["law-conservation"],
+      "misconceptionIds": ["mc-law-conservation-atom-destroyed"]
+    },
+    {
+      "id": "L27-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "question": "小明认为：\"蜡烛燃烧后质量减少，说明质量守恒定律不成立。\"请评价小明的观点，并从微观角度解释蜡烛燃烧前后质量变化的原因。",
+      "rubric": {
+        "modelAnswer": "小明的观点错误。蜡烛燃烧是石蜡与氧气反应生成CO₂和H₂O，所有产物都逸散到空气中，所以称量质量减少。但从微观角度看，反应前后碳原子、氢原子、氧原子的种类、数目、质量都不变，总质量守恒。若在密闭容器中进行，反应前后总质量不变。",
+        "keywords": [["观点错误"], ["石蜡+氧气→CO₂+H₂O"], ["产物逸散"], ["原子三不变"], ["密闭容器总质量不变"]],
+        "explanation": "区分宏观称量现象与微观守恒本质。"
+      },
+      "knowledgeIds": ["law-conservation"],
+      "misconceptionIds": ["mc-law-conservation-open-system"]
+    },
+    {
+      "id": "L27-T03",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "create",
+      "question": "请设计一个实验方案，在实验室条件下验证质量守恒定律（要求：能直观看到反应现象，且装置能保证质量不损失）。写出实验药品、仪器、步骤、预期现象和结论。",
+      "rubric": {
+        "modelAnswer": "方案一：硫酸铜溶液与氢氧化钠溶液反应。药品：CuSO₄溶液、NaOH溶液、烧杯、天平。步骤：①称量烧杯+CuSO₄溶液质量m₁ ②加入NaOH溶液，观察蓝色沉淀 ③称量总质量m₂。预期：m₁=m₂。结论：化学反应前后质量守恒。方案二：铁钉与硫酸铜溶液反应。铁钉表面析出红色铜，溶液由蓝色变浅绿色，反应前后总质量不变。",
+        "keywords": [["无气体生成的反应"], ["CuSO₄+NaOH→Cu(OH)₂↓"], ["铁+CuSO₄→FeSO₄+Cu"], ["m前=m后"], ["密闭或无气体逸出"]],
+        "explanation": "设计合理的实验验证质量守恒定律。"
+      },
+      "knowledgeIds": ["law-conservation"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L27-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "已知反应：A + B → C + D，10g A与5g B恰好完全反应，生成3g C。求生成D的质量，并说明依据什么化学定律。若改用15g A与5g B反应，生成D的质量是多少？",
+      "rubric": {
+        "modelAnswer": "根据质量守恒定律：参加反应的各物质质量总和=生成的各物质质量总和。10g+5g=3g+m(D)，所以m(D)=12g。若改用15g A与5g B，B完全反应，A有剩余（只有10g参加反应），生成物总质量仍为15g，其中C仍为3g（B量不变），D为12g。",
+        "keywords": [["质量守恒定律"], ["10+5=3+m(D)"], ["D=12g"], ["A过量"], ["B完全反应"]],
+        "explanation": "运用质量守恒定律进行定量计算，理解过量问题。"
+      },
+      "knowledgeIds": ["law-conservation"],
+      "misconceptionIds": ["mc-law-conservation-atom-destroyed"]
+    }
+  ]
+}

@@ -871,10 +871,153 @@ const u06Misconceptions = [
   }
 ];
 
+const u07Misconceptions = [
+  {
+    id: 'mc-combustion-three-condition',
+    title: '误认为燃烧只需氧气或只需温度',
+    description: '学生只记住燃烧需要氧气或需要温度达到着火点，忽略了可燃物也是必要条件；或将"氧气"等同于"空气"，认为所有燃烧都需要纯氧。',
+    knowledgeIds: ['combustion-conditions'],
+    signals: ['concept-confusion', 'incomplete-condition'],
+    severity: 'high',
+    source: 'unit-07 production',
+    remediation: {
+      goal: '理解燃烧三条件缺一不可：可燃物、氧气（或空气）、温度达到着火点。',
+      lessonIds: ['lesson-14-combustion-fire-extinguishing'],
+      practiceQuestionIds: ['L17-P01'],
+      recheckQuestionIds: ['L17-D01']
+    }
+  },
+  {
+    id: 'mc-fire-extinguish-principle',
+    title: '混淆灭火原理与燃烧条件的对应关系',
+    description: '学生知道灭火要"破坏燃烧条件"，但不能正确对应具体操作与对应的条件（如用水灭火是降温而非隔绝氧气）。',
+    knowledgeIds: ['fire-extinguishing'],
+    signals: ['reasoning-gap', 'principle-confusion'],
+    severity: 'medium',
+    source: 'unit-07 production',
+    remediation: {
+      goal: '建立"灭火原理-燃烧条件"的一一对应：隔离可燃物、隔绝氧气、降温至着火点以下。',
+      lessonIds: ['lesson-14-combustion-fire-extinguishing'],
+      practiceQuestionIds: ['L17-P03'],
+      recheckQuestionIds: ['L17-D03']
+    }
+  },
+  {
+    id: 'mc-fossil-fuel-nonrenewable',
+    title: '误认为所有能源都来自化石燃料或均可再生',
+    description: '学生不能正确区分化石燃料（煤、石油、天然气）与可再生能源（太阳能、风能、氢能），或将新能源等同于无污染。',
+    knowledgeIds: ['fossil-fuels'],
+    signals: ['classification-error', 'concept-overgeneralization'],
+    severity: 'medium',
+    source: 'unit-07 production',
+    remediation: {
+      goal: '掌握化石燃料的不可再生性，了解新能源的种类及其相对优势与局限。',
+      lessonIds: ['lesson-15-fossil-fuels-energy'],
+      practiceQuestionIds: ['L18-P02'],
+      recheckQuestionIds: ['L18-D02']
+    }
+  },
+  {
+    id: 'mc-explosion-any-gas',
+    title: '误认为任何气体与空气混合遇火都会爆炸',
+    description: '学生将爆炸泛化为所有气体燃烧现象，忽略了爆炸需要密闭空间、气体浓度在爆炸极限内等条件。',
+    knowledgeIds: ['explosive-safety'],
+    signals: ['overgeneralization', 'safety-risk'],
+    severity: 'high',
+    source: 'unit-07 production',
+    remediation: {
+      goal: '理解爆炸的三要素：可燃气体、密闭空间、浓度在爆炸极限内；掌握粉尘和气体的防爆安全规范。',
+      lessonIds: ['lesson-16-combustion-safety-explosion'],
+      practiceQuestionIds: ['L19-P02'],
+      recheckQuestionIds: ['L19-D02']
+    }
+  }
+];
+
+const u05Misconceptions = [
+  {
+    id: 'mc-law-conservation-open-system',
+    title: '误认为开放系统中质量不守恒违反质量守恒定律',
+    description: '学生观察到开放容器中化学反应前后质量变化（如碳酸钙与盐酸反应质量减少、铁生锈质量增加），误认为质量守恒定律不成立，不能理解气体参与或逸出对质量测定的影响。',
+    knowledgeIds: ['law-conservation'],
+    signals: ['phenomenon-misread', 'concept-confusion'],
+    severity: 'high',
+    source: 'unit-05 production',
+    remediation: {
+      goal: '理解质量守恒定律适用于所有化学反应，开放系统中质量变化是因为气体逸出或空气参与，并非定律失效。',
+      lessonIds: ['lesson-14-law-conservation-experiment', 'lesson-15-law-conservation-micro'],
+      practiceQuestionIds: ['L26-P03'],
+      recheckQuestionIds: ['L26-D01']
+    }
+  },
+  {
+    id: 'mc-law-conservation-atom-destroyed',
+    title: '误认为化学反应中原子被消灭或创生',
+    description: '学生不理解质量守恒的微观本质，认为化学反应中原子可以被创造或消灭，或认为原子种类/数目可能改变。',
+    knowledgeIds: ['law-conservation'],
+    signals: ['concept-confusion', 'reasoning-gap'],
+    severity: 'high',
+    source: 'unit-05 production',
+    remediation: {
+      goal: '从原子角度理解质量守恒：化学反应前后原子的种类、数目、质量均不变，只是重新组合。',
+      lessonIds: ['lesson-15-law-conservation-micro'],
+      practiceQuestionIds: ['L27-P02'],
+      recheckQuestionIds: ['L27-D01']
+    }
+  },
+  {
+    id: 'mc-equation-gas-precipitate-confusion',
+    title: '混淆气体符号↑和沉淀符号↓的使用条件',
+    description: '学生在书写化学方程式时，错误标注气体或沉淀符号：反应物中有气体时生成气体不标↑，溶液中反应生成气体也不标↑；固体反应生成气体该标↑而未标。',
+    knowledgeIds: ['equation-writing'],
+    signals: ['notation-error', 'rule-misapplication'],
+    severity: 'medium',
+    source: 'unit-05 production',
+    remediation: {
+      goal: '掌握气体和沉淀符号的使用规则：反应物中无气体时生成气体标↑，溶液中反应生成不溶性固体标↓。',
+      lessonIds: ['lesson-16-equation-writing'],
+      practiceQuestionIds: ['L28-P03'],
+      recheckQuestionIds: ['L28-D01']
+    }
+  },
+  {
+    id: 'mc-balance-by-subscript',
+    title: '通过改变化学式下标来配平方程式',
+    description: '学生为了配平方程式，修改化学式中的下标（如将H2O改为H2O2），违背了以客观事实为基础的书写原则。',
+    knowledgeIds: ['equation-writing', 'equation-balancing'],
+    signals: ['critical-error', 'rule-violation'],
+    severity: 'high',
+    source: 'unit-05 production',
+    remediation: {
+      goal: '配平只能调整化学计量数（系数），绝不能改变化学式下标，否则改变了物质本身。',
+      lessonIds: ['lesson-17-equation-balancing'],
+      practiceQuestionIds: ['L29-P02'],
+      recheckQuestionIds: ['L29-D01']
+    }
+  },
+  {
+    id: 'mc-stoich-coefficient-vs-mass',
+    title: '直接用化学计量数比代替质量比进行计算',
+    description: '学生在化学方程式计算中，直接用系数比（如2:1）作为质量比代入计算，忽略了相对分子质量的换算。',
+    knowledgeIds: ['stoichiometry'],
+    signals: ['calculation-error', 'concept-confusion'],
+    severity: 'high',
+    source: 'unit-05 production',
+    remediation: {
+      goal: '理解系数比是粒子个数比，质量比需要通过相对分子质量换算：质量比 = 系数×相对分子质量之比。',
+      lessonIds: ['lesson-18-stoichiometry-calculation'],
+      practiceQuestionIds: ['L30-P03'],
+      recheckQuestionIds: ['L30-D01']
+    }
+  }
+];
+
 const canonicalMisconceptionsFull = [
   ...canonicalMisconceptionsBase,
   ...u04BackfillMisconceptions,
-  ...u06Misconceptions
+  ...u06Misconceptions,
+  ...u07Misconceptions,
+  ...u05Misconceptions
 ];
 
 export const canonicalMisconceptions = canonicalMisconceptionsFull;

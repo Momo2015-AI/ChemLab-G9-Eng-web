@@ -1,0 +1,445 @@
+{
+  "lessonId": "lesson-15-fossil-fuels-energy",
+  "mastery": {
+    "questions": [
+      {
+        "id": "L18-M01",
+        "type": "mc",
+        "question": "三大化石燃料是？",
+        "options": [
+          "煤、石油、天然气",
+          "煤、酒精、天然气",
+          "石油、氢气、天然气",
+          "煤、石油、氢气"
+        ],
+        "answer": 0,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "三大化石燃料：煤、石油、天然气。",
+        "category": "concept"
+      },
+      {
+        "id": "L18-M02",
+        "type": "mc",
+        "question": "甲烷燃烧的化学方程式是？",
+        "options": [
+          "CH₄+O₂→C+2H₂",
+          "CH₄+2O₂→CO₂+2H₂O",
+          "2CH₄+3O₂→2CO+4H₂O",
+          "CH₄→C+2H₂"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "甲烷完全燃烧生成CO₂和H₂O。",
+        "category": "concept"
+      },
+      {
+        "id": "L18-M03",
+        "type": "mc",
+        "question": "下列燃烧产物中，会导致酸雨的是？",
+        "options": [
+          "CO₂",
+          "SO₂",
+          "N₂",
+          "O₂"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "SO₂溶于水形成酸雨。",
+        "category": "concept"
+      },
+      {
+        "id": "L18-M04",
+        "type": "mc",
+        "question": "最清洁的燃料是？",
+        "options": [
+          "煤",
+          "石油",
+          "天然气",
+          "氢气"
+        ],
+        "answer": 3,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "氢气燃烧只生成水，最清洁。",
+        "category": "concept"
+      },
+      {
+        "id": "L18-M05",
+        "type": "mc",
+        "question": "点燃氢气前必须验纯，原因是？",
+        "options": [
+          "氢气有毒",
+          "不纯氢气点燃可能爆炸",
+          "氢气密度太小",
+          "氢气有气味"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "氢气与空气混合达爆炸极限遇火爆炸。",
+        "category": "application"
+      },
+      {
+        "id": "L18-M06",
+        "type": "mc",
+        "question": "下列做法不利于环境保护的是？",
+        "options": [
+          "使用太阳能热水器",
+          "大量使用一次性筷子",
+          "推广新能源汽车",
+          "植树造林"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "大量使用一次性筷子破坏森林，不利于环保。",
+        "category": "application"
+      },
+      {
+        "id": "L18-M07",
+        "type": "mc",
+        "question": "化石燃料属于？",
+        "options": [
+          "可再生能源",
+          "不可再生能源",
+          "二次能源",
+          "新能源"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "化石燃料形成需数百万年，属于不可再生能源。",
+        "category": "concept"
+      },
+      {
+        "id": "L18-M08",
+        "type": "mc",
+        "question": "煤干馏属于？",
+        "options": [
+          "物理变化",
+          "化学变化",
+          "既不是物理也不是化学变化",
+          "生物变化"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "煤干馏生成焦炭、煤焦油等新物质，是化学变化。",
+        "category": "concept"
+      },
+      {
+        "id": "L18-M09",
+        "type": "mc",
+        "question": "下列不属于新能源的是？",
+        "options": [
+          "氢能",
+          "太阳能",
+          "核能",
+          "煤"
+        ],
+        "answer": 3,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "煤是传统化石燃料，不是新能源。",
+        "category": "concept"
+      },
+      {
+        "id": "L18-M10",
+        "type": "mc",
+        "question": "温室效应的主要气体是？",
+        "options": [
+          "O₂",
+          "N₂",
+          "CO₂",
+          "H₂"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "CO₂是主要的温室气体。",
+        "category": "concept"
+      },
+      {
+        "id": "L18-M11",
+        "type": "mc",
+        "question": "石油分馏利用的是各组分的？",
+        "options": [
+          "密度不同",
+          "沸点不同",
+          "熔点不同",
+          "颜色不同"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "石油分馏是利用各组分沸点不同进行分离。",
+        "category": "application"
+      },
+      {
+        "id": "L18-M12",
+        "type": "mc",
+        "question": "下列气体中，不属于空气污染物的是？",
+        "options": [
+          "SO₂",
+          "NO₂",
+          "CO₂",
+          "PM2.5"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "CO₂是空气正常成分，不属于污染物（但过量导致温室效应）。",
+        "category": "concept"
+      },
+      {
+        "id": "L18-M13",
+        "type": "mc",
+        "question": "下列关于化石燃料利用的说法错误的是？",
+        "options": [
+          "应提高利用率",
+          "应综合开发利用",
+          "可以无限使用",
+          "应开发替代能源"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "化石燃料储量有限，不能无限使用。",
+        "category": "concept"
+      },
+      {
+        "id": "L18-M14",
+        "type": "mc",
+        "question": "甲烷属于？",
+        "options": [
+          "无机物",
+          "有机物",
+          "单质",
+          "混合物"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "甲烷(CH₄)是最简单的有机物。",
+        "category": "concept"
+      },
+      {
+        "id": "L18-M15",
+        "type": "mc",
+        "question": "氢能源目前未能广泛使用的主要原因是？",
+        "options": [
+          "热值低",
+          "制取成本高、储存困难",
+          "燃烧产物污染环境",
+          "不可再生"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "氢能热值高、产物清洁，但制取和储存技术尚不成熟。",
+        "category": "application"
+      },
+      {
+        "id": "L18-M16",
+        "type": "mc",
+        "question": "下列哪项措施不能减少化石燃料燃烧产生的污染？",
+        "options": [
+          "脱硫煤",
+          "安装除尘装置",
+          "增加化石燃料用量",
+          "开发清洁能源"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "增加化石燃料用量会增加污染。",
+        "category": "application"
+      },
+      {
+        "id": "L18-M17",
+        "type": "mc",
+        "question": "煤、石油、天然气共同特征是？",
+        "options": [
+          "都是纯净物",
+          "都是可再生能源",
+          "燃烧都产生CO₂",
+          "都只含碳元素"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "三者都含碳元素，燃烧都产生CO₂。",
+        "category": "concept"
+      },
+      {
+        "id": "L18-M18",
+        "type": "mc",
+        "question": "下列关于能源问题的说法正确的是？",
+        "options": [
+          "能源问题与化学无关",
+          "化学可以解决所有能源问题",
+          "化学在能源开发中发挥重要作用",
+          "不需要开发新能源"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "化学在燃料研发、新能源开发中发挥重要作用。",
+        "category": "sustainability"
+      },
+      {
+        "id": "L18-M19",
+        "type": "mc",
+        "question": "下列属于二次能源的是？",
+        "options": [
+          "煤",
+          "石油",
+          "电能",
+          "天然气"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "电能是由一次能源（煤、石油等）转化得到的二次能源。",
+        "category": "concept"
+      },
+      {
+        "id": "L18-M20",
+        "type": "mc",
+        "question": "我国'碳达峰'是指？",
+        "options": [
+          "CO₂浓度降到零",
+          "CO₂排放量达到峰值后下降",
+          "停止使用所有化石燃料",
+          "只使用新能源"
+        ],
+        "answer": 1,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
+        "explanation": "碳达峰指CO₂排放量达到历史最高值后开始下降。",
+        "category": "sustainability"
+      },
+      {
+        "id": "L18-D01",
+        "type": "mc",
+        "question": "小明认为新能源永远不会有问题。他的错误在于？",
+        "options": [
+          "忽略了新能源也有环境影响",
+          "新能源确实没有问题",
+          "太阳能不是清洁能源",
+          "以上都不对"
+        ],
+        "answer": 0,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "explanation": "新能源需全面评价环境影响。",
+        "errorType": "mc-fossil-fuel-nonrenewable",
+        "remediationStep": "L18-S05",
+        "category": "sustainability"
+      },
+      {
+        "id": "L18-D02",
+        "type": "mc",
+        "question": "下列全部属于化石燃料的是？",
+        "options": [
+          "煤、石油、太阳能",
+          "石油、天然气、风能",
+          "煤、石油、天然气",
+          "天然气、氢能、核能"
+        ],
+        "answer": 2,
+        "knowledgeIds": [
+          "fossil-fuels"
+        ],
+        "explanation": "三大化石燃料：煤、石油、天然气。",
+        "errorType": "mc-fossil-fuel-nonrenewable",
+        "remediationStep": "L18-S02",
+        "category": "sustainability"
+      }
+    ]
+  }
+}

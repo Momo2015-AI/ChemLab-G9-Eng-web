@@ -1,0 +1,10 @@
+{
+  "lessonId": "lesson-16-equation-writing",
+  "dimensions": ["concept", "notation", "application"],
+  "criteria": [
+    { "dimension": "concept", "items": ["L28-M01", "L28-M02", "L28-M03", "L28-M04"], "passingScore": 0.75 },
+    { "dimension": "notation", "items": ["L28-M05", "L28-M06"], "passingScore": 0.75 },
+    { "dimension": "application", "items": ["L28-D01", "L28-D02"], "passingScore": 0.75 }
+  ],
+  "items": []
+}

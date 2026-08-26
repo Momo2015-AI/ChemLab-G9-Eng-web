@@ -1,0 +1,53 @@
+{
+  "lessonId": "lesson-16-combustion-safety-explosion",
+  "diagnostics": [
+    {
+      "id": "L19-D01",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "小明认为任何气体与空气混合遇火都会爆炸。他的错误在于？",
+      "options": [
+        "忽略了爆炸需要可燃气体且浓度在爆炸极限内",
+        "所有气体确实都会爆炸",
+        "爆炸不需要氧气",
+        "以上都不对"
+      ],
+      "answer": 0,
+      "explanation": "只有可燃气体且在爆炸极限范围内才会爆炸。",
+      "errorType": "mc-explosion-any-gas",
+      "remediationStep": "L19-S05"
+    },
+    {
+      "id": "L19-D02",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "下列气体与空气混合遇火不会爆炸的是？",
+      "options": [
+        "氢气",
+        "甲烷",
+        "氮气",
+        "一氧化碳"
+      ],
+      "answer": 2,
+      "explanation": "氮气不可燃。",
+      "errorType": "mc-explosion-any-gas",
+      "remediationStep": "L19-S05"
+    },
+    {
+      "id": "L19-D03",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "煤矿矿井中出现瓦斯浓度超限报警，下列处理正确的是？",
+      "options": [
+        "立即打开电灯查看",
+        "启动通风机降低瓦斯浓度",
+        "使用明火寻找泄漏点",
+        "继续作业等浓度自然下降"
+      ],
+      "answer": 1,
+      "explanation": "通风机可降低瓦斯浓度。开电灯或明火可能产生电火花。",
+      "errorType": "mc-explosion-any-gas",
+      "remediationStep": "L19-S06"
+    }
+  ]
+}

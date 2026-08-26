@@ -1,0 +1,11 @@
+{
+  "lessonId": "lesson-17-equation-balancing",
+  "questions": [
+    { "id": "L29-P01", "type": "concept", "difficulty": "basic", "question": "配平化学方程式的依据是？", "options": ["质量守恒定律", "能量守恒定律", "元素周期律", "氧化还原原理"], "answer": 0, "explanation": "配平依据质量守恒定律，反应前后原子数目不变。" },
+    { "id": "L29-P02", "type": "concept", "difficulty": "basic", "question": "下列配平化学方程式的操作中，正确的是？", "options": ["改动化学式中的下标", "调整化学式前面的系数", "增减反应物或生成物", "修改反应条件"], "answer": 1, "explanation": "配平只能调整系数，不能改动下标或增减物质。" },
+    { "id": "L29-P03", "type": "concept", "difficulty": "medium", "question": "配平Al+O₂→Al₂O₃，各物质系数比为？", "options": ["2:3:2", "4:3:2", "4:3:2", "1:1:1"], "answer": 1, "explanation": "4Al+3O₂→2Al₂O₃，系数比4:3:2。" },
+    { "id": "L29-P04", "type": "concept", "difficulty": "medium", "question": "下列化学方程式配平正确的是？", "options": ["Fe+O₂→Fe₃O₄（系数1:1:1）", "2H₂+O₂→2H₂O（系数2:1:2）", "C+O₂→CO₂（系数1:2:1）", "Mg+O₂→MgO（系数1:1:1）"], "answer": 1, "explanation": "2H₂+O₂→2H₂O配平正确，系数2:1:2。" },
+    { "id": "L29-P05", "type": "concept", "difficulty": "hard", "question": "配平Fe₂O₃+CO→Fe+CO₂（高温），各物质系数分别是？", "options": ["1,1,1,1", "1,3,2,3", "2,3,2,3", "1,2,2,2"], "answer": 1, "explanation": "Fe₂O₃+3CO→2Fe+3CO₂，系数1:3:2:3。" },
+    { "id": "L29-P06", "type": "concept", "difficulty": "hard", "question": "某学生配平KMnO₄→K₂MnO₄+MnO₂+O₂时，将KMnO₄下标改为K₂MnO₄来配平钾原子。他的错误在于？", "options": ["没有配平氧原子", "改动了化学式下标，违背客观事实", "缺少反应条件", "系数不是最简整数比"], "answer": 1, "explanation": "改下标会改变物质种类，违背客观事实。正确做法：2KMnO₄→K₂MnO₄+MnO₂+O₂↑。" }
+  ]
+}

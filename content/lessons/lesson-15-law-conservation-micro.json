@@ -1,0 +1,296 @@
+{
+  "id": "lesson-15-law-conservation-micro",
+  "sequenceNumber": 15,
+  "day": "15",
+  "title": "质量守恒定律的微观解释与应用",
+  "module": "unit-05-chemical-equations",
+  "semester": "upper",
+  "unitId": "u05",
+  "duration": "45 分钟",
+  "description": "从原子角度解释质量守恒的原因，运用质量守恒定律解释化学现象。",
+  "status": "ready",
+  "releaseStatus": "ready",
+  "learningObjectives": [
+    "从原子角度解释质量守恒的原因。",
+    "能运用质量守恒定律解释生活中的化学现象。",
+    "能判断质量守恒定律的适用边界。"
+  ],
+  "knowledgePoints": ["law-conservation"],
+  "prerequisites": ["lesson-14-law-conservation-experiment", "lesson-11-atomic-structure"],
+  "misconceptionIds": ["mc-law-conservation-atom-destroyed"],
+  "guidedLearning": {
+    "stepCount": 8,
+    "steps": [
+      {
+        "id": "L27-S01",
+        "title": "复习引入：为什么质量守恒？",
+        "type": "engage",
+        "body": [
+          "我们已知道化学反应前后质量守恒。",
+          "但为什么守恒？是什么在反应前后保持不变？"
+        ],
+        "knowledgePoints": ["law-conservation"],
+        "check": {
+          "question": "质量守恒定律的微观本质是？",
+          "options": [
+            "分子种类不变",
+            "原子种类、数目、质量不变",
+            "物质种类不变",
+            "体积不变"
+          ],
+          "answer": 1,
+          "explanation": "化学反应前后，原子的种类、数目、质量都不变，只是重新组合。"
+        }
+      },
+      {
+        "id": "L27-S02",
+        "title": "核心概念：原子是化学变化中的最小粒子",
+        "type": "content",
+        "body": [
+          "化学变化的实质：分子分裂成原子，原子重新组合成新分子。",
+          "原子是化学变化中的最小粒子，反应前后原子本身不变。",
+          "三不变：原子种类不变、原子数目不变、原子质量不变。"
+        ],
+        "knowledgePoints": ["law-conservation"],
+        "check": {
+          "question": "化学反应前后，下列各项一定不变的是？①原子种类②原子数目③分子种类④物质种类",
+          "options": ["①②", "①②③", "③④", "①②③④"],
+          "answer": 0,
+          "explanation": "化学反应前后原子种类和数目不变，分子种类和物质种类一定改变。"
+        }
+      },
+      {
+        "id": "L27-S03",
+        "title": "微观模拟：水电解的反应过程",
+        "type": "content",
+        "body": [
+          "水电解：2H₂O → 2H₂ + O₂。",
+          "反应前：2个水分子（4个H原子+2个O原子）。",
+          "反应后：2个氢分子（4个H原子）+ 1个氧分子（2个O原子）。",
+          "原子重新组合，总数不变。"
+        ],
+        "knowledgePoints": ["law-conservation"],
+        "check": null
+      },
+      {
+        "id": "L27-S04",
+        "title": "误区警示：原子不会被消灭",
+        "type": "misconception",
+        "body": [
+          "误区：化学反应中原子可以被消灭或创生。",
+          "纠正：化学反应只是原子的重新组合，原子本身不会消失或产生。核反应不属于化学反应。"
+        ],
+        "knowledgePoints": ["law-conservation"],
+        "check": {
+          "question": "下列关于化学反应中原子的说法正确的是？",
+          "options": [
+            "原子可以被消灭",
+            "原子可以创生",
+            "原子种类和数目不变",
+            "原子质量可能改变"
+          ],
+          "answer": 2,
+          "explanation": "化学反应前后，原子的种类、数目、质量均不变。"
+        }
+      },
+      {
+        "id": "L27-S05",
+        "title": "应用：解释燃烧后的灰烬质量",
+        "type": "application",
+        "body": [
+          "木柴燃烧后灰烬质量减少：碳转化为CO₂气体逸散。",
+          "镁条燃烧后固体质量增加：镁结合了空气中的氧气。",
+          "两种现象都符合质量守恒——只需考虑所有参与反应的物质。"
+        ],
+        "knowledgePoints": ["law-conservation"],
+        "check": {
+          "question": "镁条燃烧后固体质量增加，这是因为？",
+          "options": [
+            "质量守恒定律不适用于此反应",
+            "镁结合了空气中的氧气",
+            "生成了新的原子",
+            "氧气被消耗所以质量增加"
+          ],
+          "answer": 1,
+          "explanation": "镁与氧气反应生成氧化镁，固体质量 = 镁质量 + 氧质量，总质量守恒。"
+        }
+      },
+      {
+        "id": "L27-S06",
+        "title": "应用边界：质量守恒的适用范围",
+        "type": "content",
+        "body": [
+          "适用范围：所有化学反应。",
+          "不适用：物理变化（如状态变化）、核反应。",
+          "注意：质量守恒指“参加反应”的物质，未参与的不计入。"
+        ],
+        "knowledgePoints": ["law-conservation"],
+        "check": null
+      },
+      {
+        "id": "L27-S07",
+        "title": "练习：根据质量守恒推断物质组成",
+        "type": "practice",
+        "body": [
+          "已知：A + B → C + D，10g A与5g B完全反应生成3g C。",
+          "求生成D的质量：10+5-3 = 12g。",
+          "推断：若D由C和E组成，可根据质量关系推算E的质量。"
+        ],
+        "knowledgePoints": ["law-conservation"],
+        "check": null
+      },
+      {
+        "id": "L27-S08",
+        "title": "知识小结",
+        "type": "summary",
+        "body": [
+          "质量守恒的微观原因：化学反应前后原子三不变。",
+          "化学变化的实质：分子分裂为原子，原子重新组合。",
+          "应用：解释质量变化、推断物质组成。",
+          "适用边界：仅限化学变化。"
+        ],
+        "knowledgePoints": ["law-conservation"],
+        "check": null
+      }
+    ]
+  },
+  "resourceRefs": {
+    "experiment": "content/lessons/lesson-15-law-conservation-micro-experiment.json",
+    "practice": "content/lessons/lesson-15-law-conservation-micro-practice.json",
+    "diagnostic": "content/lessons/lesson-15-law-conservation-micro-diagnostic.json",
+    "mastery": "content/lessons/lesson-15-law-conservation-micro-mastery.json",
+    "guidedLearning": "content/lessons/lesson-15-law-conservation-micro-guided-learning.json",
+    "transfer": "content/lessons/lesson-15-law-conservation-micro-transfer.json"
+  },
+  "experiments": [],
+  "questions": [
+    {
+      "id": "L27-Q01",
+      "type": "concept",
+      "difficulty": "basic",
+      "question": "化学反应前后，一定不变的是？",
+      "options": ["分子种类", "原子种类", "物质种类", "分子数目"],
+      "answer": 1,
+      "knowledgeIds": ["law-conservation"],
+      "knowledgePoints": ["law-conservation"],
+      "explanation": "化学反应前后原子的种类不变。"
+    },
+    {
+      "id": "L27-Q02",
+      "type": "concept",
+      "difficulty": "basic",
+      "question": "下列关于原子的说法正确的是？",
+      "options": [
+        "原子在化学反应中可以被消灭",
+        "原子在化学反应中可以创生",
+        "原子是化学变化中的最小粒子",
+        "原子可以再分为质子和中子"
+      ],
+      "answer": 2,
+      "knowledgeIds": ["law-conservation"],
+      "knowledgePoints": ["law-conservation"],
+      "explanation": "原子是化学变化中的最小粒子，化学反应中原子不可再分。"
+    },
+    {
+      "id": "L27-Q03",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "水电解反应中，反应前后肯定发生变化的是？",
+      "options": ["原子种类", "原子数目", "分子种类", "元素种类"],
+      "answer": 2,
+      "knowledgeIds": ["law-conservation"],
+      "knowledgePoints": ["law-conservation"],
+      "explanation": "水电解后水分子变成了氢分子和氧分子，分子种类改变。"
+    },
+    {
+      "id": "L27-Q04",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "在化学反应A+B→C中，5g A和3g B完全反应，生成C的质量是？",
+      "options": ["8g", "5g", "3g", "2g"],
+      "answer": 0,
+      "knowledgeIds": ["law-conservation"],
+      "knowledgePoints": ["law-conservation"],
+      "explanation": "根据质量守恒，生成C的质量 = 5+3 = 8g。"
+    },
+    {
+      "id": "L27-Q05",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "某物质在氧气中完全燃烧后只生成CO₂和H₂O，则该物质中一定含有？",
+      "options": ["C、H、O三种元素", "C、H元素，可能含O", "C、O元素，可能含H", "只有C和H"],
+      "answer": 1,
+      "knowledgeIds": ["law-conservation"],
+      "knowledgePoints": ["law-conservation"],
+      "explanation": "生成物含C、H、O三种元素，O可能来自氧气，所以该物质一定含C、H，可能含O。"
+    },
+    {
+      "id": "L27-Q06",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "下列用微观观点解释质量守恒的理由中，最准确的是？",
+      "options": [
+        "分子总数不变",
+        "原子种类、数目、质量都不变",
+        "物质总数不变",
+        "体积不变"
+      ],
+      "answer": 1,
+      "knowledgeIds": ["law-conservation"],
+      "knowledgePoints": ["law-conservation"],
+      "explanation": "质量守恒的微观本质是原子三不变。"
+    }
+  ],
+  "diagnosticQuestions": [
+    {
+      "id": "L27-D01",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "小红认为化学反应中原子可以被消灭。她的错误在于？",
+      "options": [
+        "忽略了原子是化学变化中的最小粒子",
+        "原子确实可以被消灭",
+        "化学反应中原子会分裂",
+        "以上都不对"
+      ],
+      "answer": 0,
+      "knowledgeIds": ["law-conservation"],
+      "knowledgePoints": ["law-conservation"],
+      "explanation": "原子是化学变化中的最小粒子，不会在化学反应中被消灭或创生。",
+      "errorType": "mc-law-conservation-atom-destroyed",
+      "remediationStep": "L27-S04"
+    },
+    {
+      "id": "L27-D02",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "在化学反应2H₂+O₂→2H₂O中，反应前后一定改变的是？",
+      "options": ["氢原子数目", "氧原子数目", "分子种类", "原子质量"],
+      "answer": 2,
+      "knowledgeIds": ["law-conservation"],
+      "knowledgePoints": ["law-conservation"],
+      "explanation": "反应前后原子种类、数目、质量都不变，但分子种类从H₂和O₂变为H₂O。"
+    },
+    {
+      "id": "L27-D03",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "已知12g碳在足量氧气中完全燃烧生成44g二氧化碳，则参加反应的氧气质量为？",
+      "options": ["12g", "22g", "32g", "56g"],
+      "answer": 2,
+      "knowledgeIds": ["law-conservation"],
+      "knowledgePoints": ["law-conservation"],
+      "explanation": "根据质量守恒：碳质量+氧气质量=二氧化碳质量，12+x=44，x=32g。",
+      "errorType": "mc-law-conservation-atom-destroyed",
+      "remediationStep": "L27-S02"
+    }
+  ],
+  "sections": [
+    { "title": "本节课要掌握什么？", "body": ["质量守恒的微观本质：原子三不变。", "化学变化的实质是原子重新组合。", "能用质量守恒推断物质组成和质量关系。"] },
+    { "title": "核心概念", "body": ["原子是化学变化中的最小粒子。", "三不变：原子种类、数目、质量。"] },
+    { "title": "常见误区", "body": ["误认为原子可以被消灭或创生。", "误认为分子总数不变。"] },
+    { "title": "学习方法", "body": ["宏观现象→微观解释→定量计算。"] }
+  ],
+  "provenance": { "status": "ready", "basis": "人教版九年级化学上册第五单元课题1；2022年版义务教育化学课程标准。", "note": "内容原创，不复制教材原文。" },
+  "review": { "curriculum": "pass", "scientific": "pass", "ageSuitability": "pass", "itemQuality": "pass", "knowledgeLinks": "pass", "wuhanAlignment": "pass", "masteryGate": "pass", "blockingIssues": [] }
+}

@@ -1,0 +1,393 @@
+{
+  "id": "lesson-14-combustion-fire-extinguishing",
+  "sequenceNumber": 25,
+  "day": "25",
+  "title": "燃烧与灭火",
+  "module": "unit-07-fuels-and-energy",
+  "semester": "upper",
+  "unitId": "u07",
+  "duration": "45 分钟",
+  "description": "探究燃烧的条件，理解灭火的原理，掌握常见灭火方法的应用场景。",
+  "status": "ready",
+  "releaseStatus": "ready",
+  "learningObjectives": [
+    "理解燃烧需要同时满足三个条件：可燃物、氧气（或空气）、温度达到着火点。",
+    "掌握灭火的三种原理：移除可燃物、隔绝氧气、降温至着火点以下。",
+    "能根据火情选择正确的灭火方法。"
+  ],
+  "knowledgePoints": ["combustion-conditions", "fire-extinguishing"],
+  "prerequisites": ["lesson-05-oxygen", "lesson-10-chemical-equation"],
+  "misconceptionIds": ["mc-combustion-three-condition", "mc-fire-extinguish-principle"],
+  "guidedLearning": {
+    "stepCount": 8,
+    "steps": [
+      {
+        "id": "L17-S01",
+        "title": "情境引入：火的双面性",
+        "type": "engage",
+        "body": [
+          "火给人类带来了光明和温暖，但也可能造成灾难性的火灾。",
+          "为什么有的东西能燃烧，有的不能？火焰为什么有时旺盛有时熄灭？"
+        ],
+        "knowledgePoints": ["combustion-conditions"],
+        "check": {
+          "question": "下列物质中，正常情况下不能燃烧的是？",
+          "options": ["木材", "纸张", "石头", "酒精"],
+          "answer": 2,
+          "explanation": "石头不是可燃物，不能燃烧。"
+        }
+      },
+      {
+        "id": "L17-S02",
+        "title": "核心概念：燃烧的三个条件",
+        "type": "content",
+        "body": [
+          "条件一：可燃物——能够燃烧的物质。",
+          "条件二：氧气（或空气）——支持燃烧的气体。",
+          "条件三：温度达到着火点——每种可燃物都有其最低燃烧温度。",
+          "三个条件缺一不可。"
+        ],
+        "knowledgePoints": ["combustion-conditions"],
+        "check": {
+          "question": "燃烧必须同时满足的条件数是？",
+          "options": ["1个", "2个", "3个", "任意2个"],
+          "answer": 2,
+          "explanation": "燃烧必须同时满足三个条件：可燃物、氧气、温度达到着火点。"
+        }
+      },
+      {
+        "id": "L17-S03",
+        "title": "实验探究：燃烧条件",
+        "type": "experiment",
+        "body": [
+          "实验设计：用铜片分别放置白磷和红磷，铜片下加热。",
+          "白磷着火点约40℃，红磷着火点约240℃。",
+          "现象：铜片上的白磷燃烧，红磷不燃烧；水中的白磷不燃烧。",
+          "结论：燃烧需要氧气和温度达到着火点。"
+        ],
+        "knowledgePoints": ["combustion-conditions"],
+        "check": {
+          "question": "实验中，铜片上的白磷燃烧而红磷不燃烧，说明燃烧需要？",
+          "options": ["氧气", "温度达到着火点", "可燃物", "以上都是"],
+          "answer": 1,
+          "explanation": "白磷和红磷都是可燃物且都接触氧气，区别在于温度是否达到各自的着火点。"
+        }
+      },
+      {
+        "id": "L17-S04",
+        "title": "核心概念：灭火的原理",
+        "type": "content",
+        "body": [
+          "原理一：清除或隔离可燃物——如关闭燃气阀门、移走易燃物。",
+          "原理二：隔绝氧气——如用锅盖盖灭油锅火、用二氧化碳灭火器。",
+          "原理三：降温至着火点以下——如用水灭火。",
+          "灭火只需破坏一个条件即可。"
+        ],
+        "knowledgePoints": ["fire-extinguishing"],
+        "check": {
+          "question": "用锅盖盖灭油锅火灾的原理是？",
+          "options": ["清除可燃物", "隔绝氧气", "降温至着火点以下", "降低油的着火点"],
+          "answer": 1,
+          "explanation": "锅盖隔绝了空气（氧气），使火焰因缺氧而熄灭。着火点是物质固有属性，不能被降低。"
+        }
+      },
+      {
+        "id": "L17-S05",
+        "title": "误区警示：着火点与温度",
+        "type": "misconception",
+        "body": [
+          "误区：用水灭火是降低可燃物的着火点。",
+          "纠正：着火点是物质的固有属性，一般不会改变。用水灭火是通过蒸发吸热降低温度至着火点以下。"
+        ],
+        "knowledgePoints": ["fire-extinguishing"],
+        "check": {
+          "question": "下列关于着火点的说法正确的是？",
+          "options": ["着火点可以随外界条件改变", "着火点是物质的固有属性", "水的着火点比酒精低", "所有物质着火点相同"],
+          "answer": 1,
+          "explanation": "着火点是物质的固有属性，一般不会改变。灭火是降温至着火点以下，而非改变着火点。"
+        }
+      },
+      {
+        "id": "L17-S06",
+        "title": "应用：常见灭火方法",
+        "type": "application",
+        "body": [
+          "酒精灯用灯帽盖灭——隔绝氧气。",
+          "森林火灾开辟隔离带——清除可燃物。",
+          "家用电器着火先断电再灭火——防止触电，再用干粉灭火器。",
+          "油锅着火盖锅盖或放蔬菜——隔绝氧气或降温。"
+        ],
+        "knowledgePoints": ["fire-extinguishing"],
+        "check": {
+          "question": "下列灭火方法对应原理错误的是？",
+          "options": ["森林着火开辟隔离带——清除可燃物", "油锅着火盖锅盖——隔绝氧气", "住宅着火用水浇——降低着火点", "煤气着火关阀门——清除可燃物"],
+          "answer": 2,
+          "explanation": "用水浇是降温至着火点以下，而非降低着火点。着火点是物质固有属性，不能被降低。"
+        }
+      },
+      {
+        "id": "L17-S07",
+        "title": "安全常识：不同火灾的灭火选择",
+        "type": "content",
+        "body": [
+          "电器火灾：先断电，用干粉或二氧化碳灭火器，不可用水。",
+          "油类火灾：用锅盖、灭火毯或二氧化碳灭火器，不可用水（油会浮在水面继续燃烧）。",
+          "图书档案火灾：用二氧化碳灭火器，避免水损。",
+          "一般固体火灾：用水、干粉灭火器均可。"
+        ],
+        "knowledgePoints": ["fire-extinguishing"],
+        "check": null
+      },
+      {
+        "id": "L17-S08",
+        "title": "知识小结",
+        "type": "summary",
+        "body": [
+          "燃烧三条件：可燃物、氧气、温度达着火点，缺一不可。",
+          "灭火三原理：清除可燃物、隔绝氧气、降温至着火点以下。",
+          "着火点是物质固有属性，不能被降低。",
+          "不同火灾选择不同灭火方法，安全永远是第一位的。"
+        ],
+        "knowledgePoints": ["combustion-conditions", "fire-extinguishing"],
+        "check": null
+      }
+    ]
+  },
+  "resourceRefs": {
+    "experiment": "content/lessons/lesson-14-combustion-fire-extinguishing-experiment.json",
+    "practice": "content/lessons/lesson-14-combustion-fire-extinguishing-practice.json",
+    "diagnostic": "content/lessons/lesson-14-combustion-fire-extinguishing-diagnostic.json",
+    "mastery": "content/lessons/lesson-14-combustion-fire-extinguishing-mastery.json",
+    "guidedLearning": "content/lessons/lesson-14-combustion-fire-extinguishing-guided-learning.json",
+    "transfer": "content/lessons/lesson-14-combustion-fire-extinguishing-transfer.json"
+  },
+  "experiments": [
+    {
+      "id": "L17-E01",
+      "title": "燃烧条件探究实验",
+      "type": "demonstration",
+      "instruments": ["铜片", "白磷", "红磷", "烧杯", "热水", "滤纸"],
+      "safety": "白磷有毒且易燃，实验由教师演示，学生不得直接接触白磷。热水温度约80℃，注意防烫伤。",
+      "goal": "探究燃烧需要的条件。",
+      "steps": [
+        { "step": 1, "action": "在铜片两端分别放置少量白磷和红磷", "record": "观察两者状态" },
+        { "step": 2, "action": "在铜片下方用酒精灯加热", "record": "观察白磷和红磷的变化" },
+        { "step": 3, "action": "另取一小块白磷放入盛有热水的烧杯中", "record": "观察水中白磷是否燃烧" },
+        { "step": 4, "action": "用导管向热水中的白磷通入氧气", "record": "观察白磷是否燃烧" }
+      ],
+      "observationGuidance": [
+        "铜片上的白磷燃烧，产生白烟；红磷不燃烧",
+        "热水中的白磷不燃烧",
+        "通入氧气后，热水中的白磷燃烧"
+      ],
+      "conclusion": "燃烧需要三个条件：可燃物、氧气、温度达到着火点。铜片上白磷燃烧而红磷不燃烧说明需要温度达着火点；热水中白磷不燃烧说明需要氧气；通入氧气后水中白磷燃烧进一步验证。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "L17-Q01",
+      "type": "concept",
+      "difficulty": "basic",
+      "question": "燃烧需要的三个条件是？",
+      "options": [
+        "可燃物、氧气、达到着火点",
+        "可燃物、氮气、高温",
+        "氧气、二氧化碳、高温",
+        "水、氧气、可燃物"
+      ],
+      "answer": 0,
+      "knowledgeIds": ["combustion-conditions"],
+      "knowledgePoints": ["combustion-conditions"],
+      "explanation": "燃烧需要同时满足三个条件：可燃物、氧气（或空气）、温度达到着火点。"
+    },
+    {
+      "id": "L17-Q02",
+      "type": "concept",
+      "difficulty": "basic",
+      "question": "下列情况中，最容易发生燃烧的是？",
+      "options": [
+        "木头放在空气中",
+        "木屑放在空气中并加热",
+        "木块放在空气中并加热",
+        "木头放在真空中并加热"
+      ],
+      "answer": 1,
+      "knowledgeIds": ["combustion-conditions"],
+      "knowledgePoints": ["combustion-conditions"],
+      "explanation": "木屑与氧气接触面积最大，加热后温度容易达到着火点，最容易燃烧。"
+    },
+    {
+      "id": "L17-Q03",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "用锅盖盖灭油锅火灾的原理是？",
+      "options": [
+        "清除可燃物",
+        "隔绝氧气",
+        "降温至着火点以下",
+        "降低油的着火点"
+      ],
+      "answer": 1,
+      "knowledgeIds": ["fire-extinguishing"],
+      "knowledgePoints": ["fire-extinguishing"],
+      "explanation": "锅盖隔绝了空气（氧气），使火焰因缺氧而熄灭。着火点是物质固有属性，不能被降低。"
+    },
+    {
+      "id": "L17-Q04",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "下列关于灭火方法的说法正确的是？",
+      "options": [
+        "电器着火立即用水浇灭",
+        "森林着火开辟隔离带是隔绝氧气",
+        "档案室着火用二氧化碳灭火器可减少水损",
+        "油锅着火用水浇可以快速降温灭火"
+      ],
+      "answer": 2,
+      "knowledgeIds": ["fire-extinguishing"],
+      "knowledgePoints": ["fire-extinguishing"],
+      "explanation": "二氧化碳灭火器不留残留，适合扑灭图书档案火灾。电器着火用水有触电风险；隔离带是清除可燃物；油锅着火用水会导致油火飞溅。"
+    },
+    {
+      "id": "L17-Q05",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "将燃着的蜡烛用烧杯罩住，火焰逐渐熄灭，原因是？",
+      "options": [
+        "蜡烛的可燃物耗尽",
+        "烧杯内温度降低",
+        "烧杯内氧气被耗尽",
+        "蜡烛着火点升高"
+      ],
+      "answer": 2,
+      "knowledgeIds": ["combustion-conditions", "fire-extinguishing"],
+      "knowledgePoints": ["combustion-conditions"],
+      "explanation": "烧杯罩住后，内部氧气逐渐被消耗，当氧气不足时火焰熄灭。着火点是蜡烛固有属性不变。"
+    },
+    {
+      "id": "L17-Q06",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "下列关于着火点的说法正确的是？",
+      "options": [
+        "着火点随外界条件可以改变",
+        "着火点是物质的固有属性，一般不会改变",
+        "水的着火点比酒精低",
+        "将可燃物粉碎可以降低着火点"
+      ],
+      "answer": 1,
+      "knowledgeIds": ["combustion-conditions"],
+      "knowledgePoints": ["combustion-conditions"],
+      "explanation": "着火点是物质的固有属性，一般不会改变。粉碎可燃物只能增大接触面积使燃烧更充分，但不能降低着火点。"
+    }
+  ],
+  "diagnosticQuestions": [
+    {
+      "id": "L17-D01",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "小明认为只要达到着火点且有氧气就一定能燃烧。他的遗漏是？",
+      "options": [
+        "忽略了可燃物这一条件",
+        "忽略了温度条件",
+        "忽略了氧气条件",
+        "他的说法完全正确"
+      ],
+      "answer": 0,
+      "knowledgeIds": ["combustion-conditions"],
+      "knowledgePoints": ["combustion-conditions"],
+      "explanation": "燃烧三条件缺一不可：可燃物、氧气、温度达着火点。石头有氧气和高温也不会燃烧，因为它不是可燃物。",
+      "errorType": "mc-combustion-three-condition",
+      "remediationStep": "L17-S02"
+    },
+    {
+      "id": "L17-D02",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "住宅着火时用水浇灭，其灭火原理是？",
+      "options": [
+        "清除可燃物",
+        "隔绝氧气",
+        "降温至着火点以下",
+        "降低着火点"
+      ],
+      "answer": 2,
+      "knowledgeIds": ["fire-extinguishing"],
+      "knowledgePoints": ["fire-extinguishing"],
+      "explanation": "水蒸发吸热使温度降低至可燃物着火点以下，从而灭火。着火点是固有属性不能被降低。",
+      "errorType": "mc-fire-extinguish-principle",
+      "remediationStep": "L17-S04"
+    },
+    {
+      "id": "L17-D03",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "下列灭火措施的原理与其他三项不同的是？",
+      "options": [
+        "酒精灯用灯帽盖灭",
+        "油锅着火用锅盖盖灭",
+        "二氧化碳灭火器灭火",
+        "森林火灾开辟隔离带"
+      ],
+      "answer": 3,
+      "knowledgeIds": ["fire-extinguishing"],
+      "knowledgePoints": ["fire-extinguishing"],
+      "explanation": "A、B、C都是隔绝氧气，D是清除可燃物。",
+      "errorType": "mc-fire-extinguish-principle",
+      "remediationStep": "L17-S06"
+    }
+  ],
+  "sections": [
+    {
+      "title": "本节课要掌握什么？",
+      "body": [
+        "燃烧三条件：可燃物、氧气、温度达着火点，缺一不可。",
+        "灭火三原理：清除可燃物、隔绝氧气、降温至着火点以下。",
+        "着火点是物质固有属性，不能被降低。",
+        "不同火灾选择不同灭火方法。"
+      ]
+    },
+    {
+      "title": "核心实验",
+      "body": [
+        "燃烧条件探究：铜片上白磷燃烧、红磷不燃烧；水中白磷不通氧气不燃烧、通氧气后燃烧。"
+      ]
+    },
+    {
+      "title": "核心概念",
+      "body": [
+        "燃烧条件三要素缺一不可。",
+        "灭火只需破坏一个条件。"
+      ]
+    },
+    {
+      "title": "常见误区",
+      "body": [
+        "误认为用水灭火是降低着火点。",
+        "误认为只要满足两个条件就能燃烧。"
+      ]
+    },
+    {
+      "title": "学习方法",
+      "body": [
+        "控制变量法：逐一排除燃烧条件。",
+        "对应法：灭火原理与燃烧条件一一对应。"
+      ]
+    }
+  ],
+  "provenance": {
+    "status": "ready",
+    "basis": "人教版九年级化学上册第七单元课题1；2022年版义务教育化学课程标准。",
+    "note": "内容原创，不复制教材原文。"
+  },
+  "review": {
+    "curriculum": "pass",
+    "scientific": "pass",
+    "ageSuitability": "pass",
+    "itemQuality": "pass",
+    "knowledgeLinks": "pass",
+    "wuhanAlignment": "pass",
+    "masteryGate": "pass",
+    "blockingIssues": []
+  }
+}

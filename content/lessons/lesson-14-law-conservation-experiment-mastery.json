@@ -1,0 +1,10 @@
+{
+  "lessonId": "lesson-14-law-conservation-experiment",
+  "dimensions": ["concept", "application", "safety"],
+  "criteria": [
+    { "dimension": "concept", "items": ["L26-M01", "L26-M02", "L26-M03", "L26-M04"], "passingScore": 0.75 },
+    { "dimension": "application", "items": ["L26-M05", "L26-M06"], "passingScore": 0.75 },
+    { "dimension": "safety", "items": ["L26-D01", "L26-D02"], "passingScore": 0.75 }
+  ],
+  "items": []
+}

@@ -1,0 +1,20 @@
+{
+  "lessonId": "lesson-17-environment-energy-sustainable",
+  "experiments": [
+    {
+      "id": "L25-E01",
+      "title": "模拟酸雨形成实验",
+      "type": "demonstration",
+      "instruments": ["SO₂气源（或亚硫酸钠+稀硫酸）", "pH试纸", "烧杯", "蒸馏水"],
+      "safety": "SO₂有毒，实验在通风橱中进行。",
+      "goal": "模拟酸雨的形成过程。",
+      "steps": [
+        { "step": 1, "action": "制取少量SO₂气体", "record": "观察气体颜色" },
+        { "step": 2, "action": "将SO₂通入盛有蒸馏水的烧杯中", "record": "观察溶液变化" },
+        { "step": 3, "action": "用pH试纸测定溶液pH值", "record": "记录pH值" }
+      ],
+      "observationGuidance": ["SO₂是无色有刺激性气味的气体", "SO₂溶于水形成亚硫酸", "溶液pH小于5.6"],
+      "conclusion": "SO₂溶于水使雨水呈酸性，pH<5.6称为酸雨。化石燃料燃烧产生的SO₂是酸雨的主要成因。"
+    }
+  ]
+}

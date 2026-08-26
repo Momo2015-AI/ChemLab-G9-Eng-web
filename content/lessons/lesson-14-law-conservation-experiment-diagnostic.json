@@ -1,0 +1,8 @@
+{
+  "lessonId": "lesson-14-law-conservation-experiment",
+  "questions": [
+    { "id": "L26-D01", "type": "concept", "difficulty": "medium", "question": "小明认为开放容器中反应后质量减少说明质量守恒不成立。他的错误在于？", "options": ["忽略了CO₂逸散", "质量守恒确实不成立", "反应不充分", "以上都不对"], "answer": 0, "explanation": "生成的CO₂逸散到空气中。", "errorType": "mc-law-conservation-open-system", "remediationStep": "L26-S05" },
+    { "id": "L26-D02", "type": "concept", "difficulty": "medium", "question": "下列变化中，遵守质量守恒定律的是？", "options": ["水结冰", "铁丝燃烧", "酒精挥发", "玻璃破碎"], "answer": 1, "explanation": "只有化学变化才遵守质量守恒。" },
+    { "id": "L26-D03", "type": "concept", "difficulty": "hard", "question": "在开放容器中加热镁条，反应后固体质量增加。这说明？", "options": ["质量守恒不适用", "镁燃烧违反质量守恒", "镁结合了氧气，总质量仍守恒", "质量守恒只适用于密闭系统"], "answer": 2, "explanation": "镁与氧气结合，固体质量增加，总质量仍守恒。", "errorType": "mc-law-conservation-open-system", "remediationStep": "L26-S06" }
+  ]
+}

@@ -17,7 +17,7 @@ const knowledgeGraph = JSON.parse(readFileSync(path.join(__dirname, '../content/
 const liveKgNodeIds = new Set(knowledgeGraph.nodes.map(n => n.id));
 
 test('canonical vocabulary has 64 entries with required fields', () => {
-  assert.equal(canonicalMisconceptions.length, 64);
+  assert.equal(canonicalMisconceptions.length, 73);
   for (const mc of canonicalMisconceptions) {
     assert.ok(mc.id, 'each entry has id');
     assert.ok(mc.title, 'each entry has title');

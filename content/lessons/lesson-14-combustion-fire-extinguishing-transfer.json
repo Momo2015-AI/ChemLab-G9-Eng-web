@@ -1,0 +1,61 @@
+{
+  "lessonId": "lesson-14-combustion-fire-extinguishing",
+  "questions": [
+    {
+      "id": "L17-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "登山队员攀登高峰时需要携带氧气瓶，而正常人在山上较低海拔处不需要。请用燃烧和呼吸的知识，解释高山缺氧的原因，并说明这与燃烧条件的关系。",
+      "rubric": {
+        "modelAnswer": "高山海拔高，空气稀薄，氧气含量低。燃烧需要氧气作为条件之一，氧气不足时燃烧不充分甚至无法燃烧。人体呼吸也需要氧气，缺氧会导致呼吸困难。这与燃烧条件中氧气是必要条件的原理一致。",
+        "keywords": [["氧气含量低/空气稀薄"], ["燃烧需要氧气"], ["呼吸需要氧气"], ["氧气是必要条件"]],
+        "explanation": "理解氧气浓度对燃烧和呼吸的影响，建立与燃烧条件的联系。"
+      },
+      "knowledgeIds": ["combustion-conditions"],
+      "misconceptionIds": ["mc-combustion-three-condition"]
+    },
+    {
+      "id": "L17-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "question": "实验室酒精灯不慎打翻引起小火，请评价以下三种灭火方案的可行性：①用水浇灭 ②用湿抹布盖灭 ③用嘴吹灭。",
+      "rubric": {
+        "modelAnswer": "方案①不可行，酒精密度小于水且与水互溶，浇水会使酒精随水流扩散扩大火势。方案②可行，湿抹布隔绝氧气且降温。方案③不可行，吹气可能使酒精蒸汽扩散引发更大燃烧。",
+        "keywords": [["酒精与水互溶/密度小于水"], ["湿抹布隔绝氧气"], ["吹气扩散酒精蒸汽"], ["正确方案是湿抹布"]],
+        "explanation": "根据物质性质和灭火原理评价方案的合理性。"
+      },
+      "knowledgeIds": ["fire-extinguishing"],
+      "misconceptionIds": ["mc-fire-extinguish-principle"]
+    },
+    {
+      "id": "L17-T03",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "create",
+      "question": "某工厂仓库存放有汽油、酒精和氢氧化钠固体。请设计该仓库的灭火预案，包括：适合的灭火器类型、禁止使用的灭火方法、以及应急处理步骤。",
+      "rubric": {
+        "modelAnswer": "汽油和酒精是易燃液体，应用干粉或二氧化碳灭火器，禁止用水（油类火灾用水会扩散）。氢氧化钠固体遇水放热但本身不燃。应急步骤：①切断电源 ②报警 ③用合适灭火器扑救 ④疏散人员 ⑤隔离可燃物。",
+        "keywords": [["干粉或CO2灭火器"], ["禁止用水灭油类火灾"], ["切断电源"], ["疏散隔离"]],
+        "explanation": "根据仓储物品性质设计针对性的灭火方案。"
+      },
+      "knowledgeIds": ["combustion-conditions", "fire-extinguishing"],
+      "misconceptionIds": ["mc-fire-extinguish-principle"]
+    },
+    {
+      "id": "L17-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "蜡烛火焰分为三层：外焰、内焰和焰心。请分析哪一层温度最高，为什么用火柴梗平放入火焰中片刻后取出，火柴梗两端先变黑？这与灭火原理有何关联？",
+      "rubric": {
+        "modelAnswer": "外焰温度最高，因为外焰与氧气接触最充分，燃烧最完全。火柴梗两端在外焰部分先炭化变黑。这说明了氧气浓度对燃烧剧烈程度的影响——氧气越充足燃烧越剧烈。反之，减少氧气供给（如盖灭）可以灭火。",
+        "keywords": [["外焰氧气充足/温度最高"], ["两端先炭化"], ["氧气浓度影响燃烧程度"], ["隔绝氧气可灭火"]],
+        "explanation": "从实验现象分析燃烧条件与灭火原理的联系。"
+      },
+      "knowledgeIds": ["combustion-conditions", "fire-extinguishing"],
+      "misconceptionIds": ["mc-combustion-three-condition"]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "lessonId": "lesson-17-environment-energy-sustainable",
+  "stepCount": 8,
+  "steps": [
+    { "id": "L25-S01", "title": "情境引入：全球变暖的困扰", "type": "engage", "body": ["近年来极端天气频发：高温、暴雨、冰川融化。", "这些现象与什么有关？"], "knowledgePoints": ["environmental-impact"], "check": { "question": "导致温室效应最主要的气体是？", "options": ["O₂", "N₂", "CO₂", "H₂"], "answer": 2, "explanation": "CO₂是主要的温室气体。" } },
+    { "id": "L25-S02", "title": "核心概念：化石燃料燃烧的环境影响", "type": "content", "body": ["CO₂→温室效应。", "SO₂→酸雨。", "NOx→酸雨、光化学烟雾。", "粉尘→PM2.5。", "不完全燃烧→CO（有毒）。"], "knowledgePoints": ["environmental-impact"], "check": { "question": "主要导致酸雨的污染物是？", "options": ["CO₂", "SO₂", "N₂", "O₂"], "answer": 1, "explanation": "SO₂和NOx导致酸雨。" } },
+    { "id": "L25-S03", "title": "核心概念：汽车尾气的治理", "type": "content", "body": ["主要污染物：CO、NOx、碳氢化合物。", "催化转换器：CO+NOx→CO₂+N₂。", "推广新能源汽车。"], "knowledgePoints": ["environmental-impact"], "check": null },
+    { "id": "L25-S04", "title": "核心概念：清洁能源", "type": "content", "body": ["氢能：产物只有水，最清洁。", "太阳能：取之不尽。", "风能：清洁但受限。", "核能：能量密度高但有废料问题。"], "knowledgePoints": ["environmental-impact"], "check": { "question": "最清洁的燃料是？", "options": ["煤", "石油", "天然气", "氢气"], "answer": 3, "explanation": "氢气燃烧只生成水。" } },
+    { "id": "L25-S05", "title": "核心概念：节能减排措施", "type": "content", "body": ["提高燃烧效率。", "开发新能源。", "植树造林。", "绿色出行。", "节约用电。"], "knowledgePoints": ["environmental-impact"], "check": null },
+    { "id": "L25-S06", "title": "中国承诺：双碳目标", "type": "content", "body": ["2030年前碳达峰。", "2060年前碳中和。", "途径：新能源+提效+CCS+造林。"], "knowledgePoints": ["environmental-impact"], "check": { "question": "我国承诺碳中和的年份是？", "options": ["2030", "2040", "2050", "2060"], "answer": 3, "explanation": "2060年碳中和。" } },
+    { "id": "L25-S07", "title": "讨论：发展与环保的平衡", "type": "inquiry", "body": ["如何在经济发展和环境保护之间找到平衡？", "中学生能做什么？"], "knowledgePoints": ["environmental-impact"], "check": null },
+    { "id": "L25-S08", "title": "知识小结", "type": "summary", "body": ["化石燃料燃烧产生CO₂、SO₂等污染物。", "清洁能源包括氢能、太阳能、风能。", "我国双碳目标：2030碳达峰、2060碳中和。", "节能减排需要全社会共同努力。"], "knowledgePoints": ["environmental-impact"], "check": null }
+  ]
+}

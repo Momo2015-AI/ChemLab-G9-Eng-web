@@ -1,0 +1,358 @@
+{
+  "id": "lesson-16-combustion-safety-explosion",
+  "sequenceNumber": 27,
+  "day": "27",
+  "title": "燃烧安全与防爆",
+  "module": "unit-07-fuels-and-energy",
+  "semester": "upper",
+  "unitId": "u07",
+  "duration": "45 分钟",
+  "description": "理解爆炸发生的条件，掌握易燃易爆场所的安全规范，建立安全意识。",
+  "status": "ready",
+  "releaseStatus": "ready",
+  "learningObjectives": [
+    "理解爆炸发生的条件：可燃物、氧气、密闭空间、浓度在爆炸极限内。",
+    "掌握面粉粉尘爆炸实验的原理和安全意义。",
+    "了解易燃易爆场所的安全标志和防范措施。"
+  ],
+  "knowledgePoints": ["explosive-safety"],
+  "prerequisites": ["lesson-14-combustion-fire-extinguishing"],
+  "misconceptionIds": ["mc-explosion-any-gas"],
+  "guidedLearning": {
+    "stepCount": 8,
+    "steps": [
+      {
+        "id": "L19-S01",
+        "title": "情境引入：爆炸的威力",
+        "type": "engage",
+        "body": [
+          "2019年江苏响水化工园区爆炸事故造成重大人员伤亡和财产损失。",
+          "爆炸为什么有如此大的破坏力？什么条件下会发生爆炸？",
+          "日常生活中哪些行为可能引发爆炸？"
+        ],
+        "knowledgePoints": ["explosive-safety"],
+        "check": {
+          "question": "下列行为中，可能引发爆炸的是？",
+          "options": [
+            "在加油站使用手机",
+            "在面粉厂穿棉质工作服",
+            "在厨房检查燃气泄漏时使用明火",
+            "在煤矿井下打开电灯"
+          ],
+          "answer": 2,
+          "explanation": "用明火检查燃气泄漏可能引燃泄漏的煤气，发生爆炸。"
+        }
+      },
+      {
+        "id": "L19-S02",
+        "title": "核心概念：爆炸的条件",
+        "type": "content",
+        "body": [
+          "爆炸是短时间内大量气体膨胀的现象。",
+          "化学爆炸条件：①可燃物（气体、粉尘）②氧气（空气）③密闭空间④浓度在爆炸极限内⑤明火或高温。",
+          "爆炸极限：可燃气体或粉尘在空气中能发生爆炸的浓度范围。",
+          "低于爆炸下限或高于爆炸上限都不会爆炸。"
+        ],
+        "knowledgePoints": ["explosive-safety"],
+        "check": {
+          "question": "下列条件中，不是爆炸必要条件的是？",
+          "options": [
+            "可燃物",
+            "氧气",
+            "高压",
+            "密闭空间"
+          ],
+          "answer": 2,
+          "explanation": "爆炸需要密闭空间但不是高压，高压反而可能抑制爆炸。"
+        }
+      },
+      {
+        "id": "L19-S03",
+        "title": "实验演示：面粉粉尘爆炸",
+        "type": "experiment",
+        "body": [
+          "在金属筒中放入少量面粉，用吹风机将面粉吹散成粉尘状。",
+          "点燃蜡烛置于筒内下方。",
+          "盖紧筒盖，通入大量面粉粉尘。",
+          "现象：发生爆炸，筒盖被冲开。",
+          "原理：面粉粉尘与氧气充分接触，遇明火迅速燃烧，气体急剧膨胀。"
+        ],
+        "knowledgePoints": ["explosive-safety"],
+        "check": {
+          "question": "面粉粉尘爆炸实验中，面粉的作用是？",
+          "options": [
+            "催化剂",
+            "可燃物",
+            "灭火剂",
+            "增氧剂"
+          ],
+          "answer": 1,
+          "explanation": "面粉是可燃物，粉尘状态增大与氧气的接触面积，使燃烧在瞬间完成。"
+        }
+      },
+      {
+        "id": "L19-S04",
+        "title": "核心概念：易燃物和易爆物",
+        "type": "content",
+        "body": [
+          "易燃气体：氢气、甲烷、煤气等。",
+          "易燃液体：酒精、汽油、油漆等。",
+          "易燃固体：硫磺、磷、面粉、煤粉等。",
+          "易爆物：炸药、烟花爆竹、某些化工厂产品等。"
+        ],
+        "knowledgePoints": ["explosive-safety"],
+        "check": null
+      },
+      {
+        "id": "L19-S05",
+        "title": "误区警示：任何气体遇火都爆炸",
+        "type": "misconception",
+        "body": [
+          "误区：任何气体与空气混合遇火都会爆炸。",
+          "纠正：只有可燃气体且在爆炸极限范围内才会爆炸。如氮气、二氧化碳与空气混合遇火不会爆炸。"
+        ],
+        "knowledgePoints": ["explosive-safety"],
+        "check": {
+          "question": "下列气体与空气混合遇火不会爆炸的是？",
+          "options": ["氢气", "甲烷", "氮气", "煤气"],
+          "answer": 2,
+          "explanation": "氮气不可燃，与空气混合遇火不会爆炸。"
+        }
+      },
+      {
+        "id": "L19-S06",
+        "title": "安全常识：防爆措施",
+        "type": "application",
+        "body": [
+          "可燃性气体使用前后必须验纯。",
+          "面粉厂、煤粉厂等场所严禁烟火。",
+          "加油站、化工厂等场所张贴安全标志。",
+          "通风良好，降低可燃气体/粉尘浓度。",
+          "使用防爆电器，防止电火花。"
+        ],
+        "knowledgePoints": ["explosive-safety"],
+        "check": {
+          "question": "下列场所必须张贴'严禁烟火'标志的是？",
+          "options": ["超市", "面粉厂", "学校", "公园"],
+          "answer": 1,
+          "explanation": "面粉厂有粉尘爆炸风险，必须严禁烟火。"
+        }
+      },
+      {
+        "id": "L19-S07",
+        "title": "安全标志识别",
+        "type": "content",
+        "body": [
+          "禁止烟火：圆形红色斜杠，表示禁止明火。",
+          "当心爆炸：三角形黄色感叹号，表示爆炸风险。",
+          "易燃物质：菱形红色火焰标志。",
+          "防爆电器：专用标识，防止电火花。"
+        ],
+        "knowledgePoints": ["explosive-safety"],
+        "check": null
+      },
+      {
+        "id": "L19-S08",
+        "title": "知识小结",
+        "type": "summary",
+        "body": [
+          "爆炸条件：可燃物+氧气+密闭空间+浓度在爆炸极限内+点火源。",
+          "并非所有气体遇火都爆炸，需满足特定条件。",
+          "易燃易爆场所严禁烟火，注意通风和防爆措施。",
+          "安全意识：预防爆炸比处置爆炸更重要。"
+        ],
+        "knowledgePoints": ["explosive-safety"],
+        "check": null
+      }
+    ]
+  },
+  "resourceRefs": {
+    "experiment": "content/lessons/lesson-16-combustion-safety-explosion-experiment.json",
+    "practice": "content/lessons/lesson-16-combustion-safety-explosion-practice.json",
+    "diagnostic": "content/lessons/lesson-16-combustion-safety-explosion-diagnostic.json",
+    "mastery": "content/lessons/lesson-16-combustion-safety-explosion-mastery.json",
+    "guidedLearning": "content/lessons/lesson-16-combustion-safety-explosion-guided-learning.json",
+    "transfer": "content/lessons/lesson-16-combustion-safety-explosion-transfer.json"
+  },
+  "experiments": [
+    {
+      "id": "L19-E01",
+      "title": "面粉粉尘爆炸演示",
+      "type": "demonstration",
+      "instruments": ["金属筒（带盖）", "面粉", "蜡烛", "吹风机", "铁架台"],
+      "safety": "实验由教师演示，学生保持安全距离。金属筒需稳固固定。实验后确认无复燃。",
+      "goal": "验证粉尘爆炸的条件和原理。",
+      "steps": [
+        { "step": 1, "action": "在金属筒底部放置点燃的蜡烛", "record": "观察蜡烛火焰" },
+        { "step": 2, "action": "在筒内放入少量面粉", "record": "观察面粉状态" },
+        { "step": 3, "action": "用吹风机将面粉吹散成粉尘", "record": "观察筒内变化" },
+        { "step": 4, "action": "迅速盖紧筒盖", "record": "观察现象" }
+      ],
+      "observationGuidance": ["面粉被吹散成粉尘状充满筒内", "盖紧筒盖后发生爆炸，筒盖被冲开"],
+      "conclusion": "面粉粉尘与氧气充分接触，遇明火迅速燃烧，在密闭空间内气体急剧膨胀导致爆炸。这说明了粉尘爆炸的条件和危险性。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "L19-Q01",
+      "type": "concept",
+      "difficulty": "basic",
+      "question": "下列情形中，可能发生爆炸的是？",
+      "options": [
+        "纯氢气在空气中点燃",
+        "面粉粉尘在密闭容器中遇明火",
+        "氮气在空气中加热",
+        "二氧化碳通入水中"
+      ],
+      "answer": 1,
+      "knowledgeIds": ["explosive-safety"],
+      "knowledgePoints": ["explosive-safety"],
+      "explanation": "面粉粉尘在密闭容器中与氧气充分接触，遇明火达到爆炸极限会爆炸。"
+    },
+    {
+      "id": "L19-Q02",
+      "type": "concept",
+      "difficulty": "basic",
+      "question": "点燃氢气前必须验纯，这是因为？",
+      "options": [
+        "氢气有毒",
+        "不纯的氢气点燃可能爆炸",
+        "氢气密度太小",
+        "氢气有刺激性气味"
+      ],
+      "answer": 1,
+      "knowledgeIds": ["explosive-safety"],
+      "knowledgePoints": ["explosive-safety"],
+      "explanation": "氢气与空气混合达到爆炸极限时遇火会爆炸。"
+    },
+    {
+      "id": "L19-Q03",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "下列场所不需要'严禁烟火'标志的是？",
+      "options": [
+        "加油站",
+        "面粉厂",
+        "化工厂",
+        "图书馆"
+      ],
+      "answer": 3,
+      "knowledgeIds": ["explosive-safety"],
+      "knowledgePoints": ["explosive-safety"],
+      "explanation": "图书馆没有易燃易爆物质，不需要严禁烟火标志（但仍需防火）。"
+    },
+    {
+      "id": "L19-Q04",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "下列关于爆炸的说法正确的是？",
+      "options": [
+        "所有气体与空气混合遇火都会爆炸",
+        "爆炸一定是化学变化",
+        "粉尘不会爆炸",
+        "爆炸只需要可燃物"
+      ],
+      "answer": 1,
+      "knowledgeIds": ["explosive-safety"],
+      "knowledgePoints": ["explosive-safety"],
+      "explanation": "化学爆炸一定生成新物质，是化学变化。物理爆炸（如气球爆炸）不是化学变化。"
+    },
+    {
+      "id": "L19-Q05",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "煤矿矿井中需要特别防范的爆炸类型是？",
+      "options": [
+        "煤气爆炸",
+        "瓦斯（甲烷）爆炸和煤尘爆炸",
+        "汽油蒸气爆炸",
+        "面粉粉尘爆炸"
+      ],
+      "answer": 1,
+      "knowledgeIds": ["explosive-safety"],
+      "knowledgePoints": ["explosive-safety"],
+      "explanation": "煤矿中主要瓦斯（主要成分甲烷）和煤尘都有爆炸风险。"
+    },
+    {
+      "id": "L19-Q06",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "下列防爆措施中，错误的是？",
+      "options": [
+        "面粉厂保持通风",
+        "加油站使用防爆电器",
+        "煤气泄漏时打开排气扇",
+        "煤矿井下严禁烟火"
+      ],
+      "answer": 2,
+      "knowledgeIds": ["explosive-safety"],
+      "knowledgePoints": ["explosive-safety"],
+      "explanation": "煤气泄漏时打开排气扇可能产生电火花引发爆炸，应先关闭阀门并开窗通风。"
+    }
+  ],
+  "diagnosticQuestions": [
+    {
+      "id": "L19-D01",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "小明认为任何气体与空气混合遇火都会爆炸。他的错误在于？",
+      "options": [
+        "忽略了爆炸需要可燃气体且浓度在爆炸极限内",
+        "所有气体确实都会爆炸",
+        "爆炸不需要氧气",
+        "以上都不对"
+      ],
+      "answer": 0,
+      "knowledgeIds": ["explosive-safety"],
+      "knowledgePoints": ["explosive-safety"],
+      "explanation": "只有可燃气体且在爆炸极限范围内遇火才会爆炸，如氮气、CO₂不会爆炸。",
+      "errorType": "mc-explosion-any-gas",
+      "remediationStep": "L19-S05"
+    },
+    {
+      "id": "L19-D02",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "下列气体与空气混合遇火不会爆炸的是？",
+      "options": [
+        "氢气",
+        "甲烷",
+        "氮气",
+        "一氧化碳"
+      ],
+      "answer": 2,
+      "knowledgeIds": ["explosive-safety"],
+      "knowledgePoints": ["explosive-safety"],
+      "explanation": "氮气不可燃，与空气混合遇火不会爆炸。",
+      "errorType": "mc-explosion-any-gas",
+      "remediationStep": "L19-S05"
+    },
+    {
+      "id": "L19-D03",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "煤矿矿井中出现瓦斯浓度超限报警，下列处理正确的是？",
+      "options": [
+        "立即打开电灯查看",
+        "启动通风机降低瓦斯浓度",
+        "使用明火寻找泄漏点",
+        "继续作业等浓度自然下降"
+      ],
+      "answer": 1,
+      "knowledgeIds": ["explosive-safety"],
+      "knowledgePoints": ["explosive-safety"],
+      "explanation": "通风机可降低瓦斯浓度至爆炸下限以下。开电灯或明火可能产生电火花引发爆炸。",
+      "errorType": "mc-explosion-any-gas",
+      "remediationStep": "L19-S06"
+    }
+  ],
+  "sections": [
+    { "title": "本节课要掌握什么？", "body": ["爆炸条件：可燃物+氧气+密闭空间+浓度在爆炸极限内+点火源。", "并非所有气体遇火都爆炸。", "易燃易爆场所的防爆措施。"] },
+    { "title": "核心实验", "body": ["面粉粉尘爆炸演示。"] },
+    { "title": "核心概念", "body": ["爆炸极限", "防爆措施"] },
+    { "title": "常见误区", "body": ["误认为任何气体遇火都爆炸。", "误认为爆炸只需要可燃物。"] },
+    { "title": "安全要点", "body": ["严禁烟火", "通风", "防爆电器", "验纯"] }
+  ],
+  "provenance": { "status": "ready", "basis": "人教版九年级化学上册第七单元课题1；2022年版义务教育化学课程标准。", "note": "内容原创，不复制教材原文。" },
+  "review": { "curriculum": "pass", "scientific": "pass", "ageSuitability": "pass", "itemQuality": "pass", "knowledgeLinks": "pass", "wuhanAlignment": "pass", "masteryGate": "pass", "blockingIssues": [] }
+}

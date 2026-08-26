@@ -1,0 +1,61 @@
+{
+  "lessonId": "lesson-16-combustion-safety-explosion",
+  "questions": [
+    {
+      "id": "L19-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "question": "某学校实验室存放有酒精、白磷、过氧化氢溶液和硝酸铵。请评价该实验室的储存方案是否合理，指出存在的问题并提出改进建议。",
+      "rubric": {
+        "modelAnswer": "存在问题：①酒精（易燃液体）应单独存放在阴凉处，远离热源。②白磷（易燃固体）应保存在水中，不能暴露 in air。③过氧化氢（氧化剂）应与可燃物分开存放。④硝酸铵（强氧化剂）不能与易燃物混放。改进：按物质性质分类存放，易燃物、氧化剂分开，设置专门的危化品柜，张贴安全标志。",
+        "keywords": [["酒精远离热源"], ["白磷保存水中"], ["氧化剂与可燃物分开"], ["分类存放/危化品柜"]],
+        "explanation": "根据物质性质合理分类储存，预防火灾爆炸事故。"
+      },
+      "knowledgeIds": ["explosive-safety"],
+      "misconceptionIds": ["mc-explosion-any-gas"]
+    },
+    {
+      "id": "L19-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "create",
+      "question": "请为一家小型面包房设计一份消防安全预案，包括：①潜在爆炸风险点 ②预防措施 ③应急处置步骤。",
+      "rubric": {
+        "modelAnswer": "风险点：①面粉粉尘积聚 ②燃气烤箱 ③ electrical equipment。预防措施：①定期清理粉尘 ②燃气设备定期检修 ③安装烟雾报警器和灭火器。应急处置：①发现火情立即关闭燃气 ②使用灭火器扑救初起火灾 ③疏散人员并报警 ④记录事故经过。",
+        "keywords": [["面粉粉尘清理"], ["燃气检修"], ["烟雾报警器"], ["关闭燃气疏散报警"]],
+        "explanation": "将防爆知识应用于实际生活场景。"
+      },
+      "knowledgeIds": ["explosive-safety"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L19-T03",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "2015年天津港爆炸事故造成重大伤亡。请分析危化品仓库爆炸的可能原因，以及从化学角度应采取哪些预防措施。",
+      "rubric": {
+        "modelAnswer": "可能原因：①不同性质危化品混存（如氧化剂与还原剂） ②仓库温度过高 ③遇水反应物质未做好防水 ④通风不良导致可燃气体积聚。预防措施：①分类分区存放 ②控制仓库温度 ③做好防水防潮 ④安装通风和监测设备 ⑤定期检查。",
+        "keywords": [["分类存放"], ["温度控制"], ["通风监测"], ["定期检查"]],
+        "explanation": "从化学角度分析危化品储存风险及预防措施。"
+      },
+      "knowledgeIds": ["explosive-safety"],
+      "misconceptionIds": ["mc-explosion-any-gas"]
+    },
+    {
+      "id": "L19-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "为什么同样浓度的氢气与空气混合，在开放空间中遇火只安静燃烧，而在密闭容器中遇火会爆炸？请从化学反应速率和能量释放的角度解释。",
+      "rubric": {
+        "modelAnswer": "开放空间：氢气与氧气接触面积有限，反应速率较慢，热量散失到环境中，安静燃烧。密闭容器：氢气与氧气充分混合，反应瞬间完成，热量来不及散失，气体急剧膨胀产生高压，形成爆炸。关键区别在于反应速率和热量能否及时散失。",
+        "keywords": [["开放空间反应慢/散热"], ["密闭空间反应快/热量聚集"], ["气体急剧膨胀"], ["反应速率是关键"]],
+        "explanation": "理解爆炸与燃烧的本质区别在于反应速率和能量释放方式。"
+      },
+      "knowledgeIds": ["explosive-safety", "combustion-conditions"],
+      "misconceptionIds": ["mc-explosion-any-gas"]
+    }
+  ]
+}

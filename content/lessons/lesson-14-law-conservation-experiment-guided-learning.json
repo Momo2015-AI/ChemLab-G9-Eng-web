@@ -1,0 +1,14 @@
+{
+  "lessonId": "lesson-14-law-conservation-experiment",
+  "stepCount": 8,
+  "steps": [
+    { "id": "L26-S01", "title": "情境引入：化学反应前后质量变了吗？", "type": "engage", "body": ["铁钉生锈后质量增加，蜡烛燃烧后质量减少。", "化学反应前后，物质的总质量到底变不变？"], "knowledgePoints": ["law-conservation"], "check": { "question": "下列现象中，反应后质量增加的是？", "options": ["镁条燃烧", "蜡烛燃烧", "木柴燃烧", "水电解"], "answer": 0, "explanation": "镁条燃烧与氧气结合生成氧化镁，固体质量增加。" } },
+    { "id": "L26-S02", "title": "核心概念：质量守恒定律的表述", "type": "content", "body": ["质量守恒定律：参加化学反应的各物质的质量总和等于反应后生成的各物质的质量总和。", "适用范围：所有化学反应。", "关键点：强调\u201c参加化学反应\u201d的物质。"], "knowledgePoints": ["law-conservation"], "check": { "question": "质量守恒定律适用于？", "options": ["所有变化", "化学变化", "物理变化", "核反应"], "answer": 1, "explanation": "质量守恒定律只适用于化学变化。" } },
+    { "id": "L26-S03", "title": "实验探究：白磷燃烧前后质量测定", "type": "experiment", "body": ["锥形瓶底部铺细砂，放白磷，塞紧瓶塞。", "称量装置总质量m₁。", "点燃白磷（加热玻璃棒引燃）。", "冷却后称量m₂。"], "knowledgePoints": ["law-conservation"], "check": { "question": "白磷燃烧实验中，锥形瓶底部铺细砂的目的是？", "options": ["吸收热量", "防止锥形瓶炸裂", "增加反应面积", "固定白磷"], "answer": 1, "explanation": "防止锥形瓶底部受热不均而炸裂。" } },
+    { "id": "L26-S04", "title": "数据分析：反应前后质量对比", "type": "content", "body": ["实验数据：m₁ = m₂（密闭容器）。", "白磷燃烧：4P+5O₂→2P₂O₅。", "反应在密闭容器中进行，没有物质进出。"], "knowledgePoints": ["law-conservation"], "check": null },
+    { "id": "L26-S05", "title": "关键追问：开放系统中的质量变化", "type": "inquiry", "body": ["如果实验在开放容器中进行，质量会守恒吗？", "碳酸钙与盐酸：CaCO₃+2HCl→CaCl₂+H₂O+CO₂↑。", "CO₂逸出，称量质量减少。", "但质量守恒定律仍然成立。"], "knowledgePoints": ["law-conservation"], "check": { "question": "碳酸钙与盐酸在开放容器中反应后质量减少，原因是？", "options": ["质量守恒定律不成立", "生成的CO₂逸散到空气中", "反应不充分", "盐酸挥发"], "answer": 1, "explanation": "CO₂逸散导致称量质量减少。" } },
+    { "id": "L26-S06", "title": "误区警示：开放系统≠质量不守恒", "type": "misconception", "body": ["误区：开放容器中质量变化说明质量守恒定律不成立。", "纠正：质量守恒适用于所有化学反应，开放系统中质量\u201c变化\u201d是因为气体进出。"], "knowledgePoints": ["law-conservation"], "check": { "question": "下列关于质量守恒定律的说法正确的是？", "options": ["只有密闭容器才遵守", "开放容器中质量不守恒", "所有化学反应都遵守", "只适用于固体反应"], "answer": 2, "explanation": "质量守恒定律适用于所有化学反应。" } },
+    { "id": "L26-S07", "title": "应用：质量守恒的解释", "type": "application", "body": ["铁钉生锈质量增加：Fe+O₂+H₂O→Fe₂O₃·xH₂O。", "蜡烛燃烧质量减少：产物逸散。", "镁条燃烧质量增加：结合了氧。"], "knowledgePoints": ["law-conservation"], "check": null },
+    { "id": "L26-S08", "title": "知识小结", "type": "summary", "body": ["质量守恒：参加反应的各物质质量总和=生成的各物质质量总和。", "所有化学反应都遵守。", "开放系统中质量变化是气体进出导致。", "实验验证需考虑系统是否密闭。"], "knowledgePoints": ["law-conservation"], "check": null }
+  ]
+}

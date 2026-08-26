@@ -1,0 +1,61 @@
+{
+  "lessonId": "lesson-16-equation-writing",
+  "questions": [
+    {
+      "id": "L28-T01",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "apply",
+      "question": "某同学用高锰酸钾加热制取氧气，请写出该反应的化学方程式，并说明实验结束时为什么需要先将导管移出水面再熄灭酒精灯。",
+      "rubric": {
+        "modelAnswer": "化学方程式：2KMnO₄→K₂MnO₄+MnO₂+O₂↑（△）。实验结束时先将导管移出水面再熄灭酒精灯，是为了防止水槽中的水倒吸入热的试管，导致试管炸裂。",
+        "keywords": [["2KMnO₄→K₂MnO₄+MnO₂+O₂↑"], ["△条件"], ["防止水倒吸"], ["试管炸裂"]],
+        "explanation": "掌握高锰酸钾制氧气的方程式书写和实验操作注意事项。"
+      },
+      "knowledgeIds": ["equation-writing"],
+      "misconceptionIds": ["mc-equation-gas-precipitate-confusion"]
+    },
+    {
+      "id": "L28-T02",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "evaluate",
+      "question": "下列四个化学方程式中，有几个存在错误？请逐一指出错误并改正：①Cu+O₂→CuO（△）②2H₂+O₂→2H₂O（点燃）③Fe+CuSO₄→FeSO₄+Cu ④2KMnO₄→K₂MnO₄+MnO₂+O₂",
+      "rubric": {
+        "modelAnswer": "①错误：未配平，应为2Cu+O₂→2CuO（△）。②正确。③正确。④错误：缺少气体符号，应为2KMnO₄→K₂MnO₄+MnO₂+O₂↑（△）。共2处错误。",
+        "keywords": [["2Cu+O₂→2CuO"], ["②正确"], ["③正确"], ["O₂↑"], ["△条件"]],
+        "explanation": "能够识别并修正化学方程式中的常见错误。"
+      },
+      "knowledgeIds": ["equation-writing"],
+      "misconceptionIds": ["mc-equation-gas-precipitate-confusion"]
+    },
+    {
+      "id": "L28-T03",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "create",
+      "question": "请根据实验事实写出下列反应的化学方程式，注意配平和符号标注：（1）碳在氧气中燃烧（2）磷在氧气中燃烧（3）铁丝在氧气中燃烧",
+      "rubric": {
+        "modelAnswer": "（1）C+O₂→CO₂（点燃）（2）4P+5O₂→2P₂O₅（点燃）（3）3Fe+2O₂→Fe₃O₄（点燃）。注意：（1）中反应物有O₂气体，CO₂不标↑；（2）（3）生成物为固体，不标↓。",
+        "keywords": [["C+O₂→CO₂（点燃）"], ["4P+5O₂→2P₂O₅（点燃）"], ["3Fe+2O₂→Fe₃O₄（点燃）"], ["CO₂不标↑"], ["固体不标↓"]],
+        "explanation": "能够正确书写常见燃烧反应的化学方程式。"
+      },
+      "knowledgeIds": ["equation-writing"],
+      "misconceptionIds": []
+    },
+    {
+      "id": "L28-T04",
+      "type": "constructed",
+      "difficulty": "hard",
+      "bloomLevel": "analyze",
+      "question": "小明书写氯酸钾制氧气的方程式为：KClO₃→KCl+O₂（MnO₂）。请分析该方程式存在哪些错误，如何改正？",
+      "rubric": {
+        "modelAnswer": "该方程式存在两处错误：（1）未配平，左边3个氧原子，右边只有2个；（2）缺少气体符号。正确写法：2KClO₃→2KCl+3O₂↑（MnO₂、△）。注意MnO₂是催化剂，条件应写加热△。",
+        "keywords": [["未配平"], ["缺O₂↑"], ["2KClO₃→2KCl+3O₂↑"], ["MnO₂催化剂"], ["△条件"]],
+        "explanation": "能够分析化学方程式书写中的常见错误。"
+      },
+      "knowledgeIds": ["equation-writing"],
+      "misconceptionIds": ["mc-equation-gas-precipitate-confusion"]
+    }
+  ]
+}

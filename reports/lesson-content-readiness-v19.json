@@ -1,12 +1,17 @@
 {
-  "scanned": 21,
+  "scanned": 29,
   "template": 0,
-  "realContent": 21,
-  "ready": 21,
-  "needsRewrite": 0,
+  "realContent": 26,
+  "ready": 26,
+  "needsRewrite": 3,
   "duplicateLegacy": false,
   "questionBankState": "CANONICAL_RUNTIME_SOURCE",
-  "issues": [],
+  "issues": [
+    "lesson-09-chemical-formula.json: unitId mismatch: manifest='u03' but lesson='u04'",
+    "lesson-16-equation-writing.json: missing experiments[], questions[]",
+    "lesson-17-equation-balancing.json: missing experiments[], questions[]",
+    "lesson-18-stoichiometry-calculation.json: missing experiments[], questions[]"
+  ],
   "lessons": [
     {
       "file": "lesson-01-material-changes-properties.json",
@@ -210,7 +215,9 @@
         "mastery": 21,
         "transfer": 4
       },
-      "contractErrors": []
+      "contractErrors": [
+        "unitId mismatch: manifest='u03' but lesson='u04'"
+      ]
     },
     {
       "file": "lesson-10-chemical-equation.json",
@@ -276,6 +283,148 @@
         "practice": 12,
         "diagnostic": 3,
         "mastery": 20,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-14-combustion-fire-extinguishing.json",
+      "day": "25",
+      "title": "燃烧与灭火",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 6,
+        "diagnostic": 3,
+        "mastery": 23,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-15-fossil-fuels-energy.json",
+      "day": "26",
+      "title": "化石燃料与新能源",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 6,
+        "diagnostic": 3,
+        "mastery": 22,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-15-law-conservation-micro.json",
+      "day": "15",
+      "title": "质量守恒定律的微观解释与应用",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 6,
+        "diagnostic": 3,
+        "mastery": 0,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-16-combustion-safety-explosion.json",
+      "day": "27",
+      "title": "燃烧安全与防爆",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 6,
+        "diagnostic": 3,
+        "mastery": 22,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-16-equation-writing.json",
+      "day": "16",
+      "title": "化学方程式的书写规则",
+      "status": "incomplete",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [
+        "experiments[]",
+        "questions[]"
+      ],
+      "runtimeQuestions": {
+        "practice": 6,
+        "diagnostic": 3,
+        "mastery": 0,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-17-environment-energy-sustainable.json",
+      "day": "28",
+      "title": "能源与环境",
+      "status": "released",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [],
+      "runtimeQuestions": {
+        "lesson": 6,
+        "practice": 6,
+        "diagnostic": 3,
+        "mastery": 22,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-17-equation-balancing.json",
+      "day": "17",
+      "title": "化学方程式的配平",
+      "status": "incomplete",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [
+        "experiments[]",
+        "questions[]"
+      ],
+      "runtimeQuestions": {
+        "practice": 6,
+        "diagnostic": 3,
+        "mastery": 0,
+        "transfer": 4
+      },
+      "contractErrors": []
+    },
+    {
+      "file": "lesson-18-stoichiometry-calculation.json",
+      "day": "18",
+      "title": "基于化学方程式的简单计算",
+      "status": "incomplete",
+      "releaseStatus": "ready",
+      "templateHits": 0,
+      "missing": [
+        "experiments[]",
+        "questions[]"
+      ],
+      "runtimeQuestions": {
+        "practice": 6,
+        "diagnostic": 3,
+        "mastery": 0,
         "transfer": 4
       },
       "contractErrors": []

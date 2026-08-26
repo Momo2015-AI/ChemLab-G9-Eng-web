@@ -1,0 +1,21 @@
+{
+  "lessonId": "lesson-14-law-conservation-experiment",
+  "experiments": [
+    {
+      "id": "L26-E01",
+      "title": "白磷燃烧前后质量测定",
+      "type": "demonstration",
+      "instruments": ["锥形瓶", "橡胶塞", "细砂", "白磷", "玻璃棒", "酒精灯", "天平"],
+      "safety": "白磷有毒且易燃，实验由教师演示。白磷保存在水中，用镊子夹取。",
+      "goal": "验证化学反应前后物质总质量不变。",
+      "steps": [
+        { "step": 1, "action": "在锥形瓶底部铺细砂，放入少量白磷", "record": "观察白磷状态" },
+        { "step": 2, "action": "塞紧橡胶塞，称量装置总质量m₁", "record": "记录质量m₁" },
+        { "step": 3, "action": "加热玻璃棒引燃白磷", "record": "观察燃烧现象" },
+        { "step": 4, "action": "冷却后再次称量，记录质量m₂", "record": "记录质量m₂" }
+      ],
+      "observationGuidance": ["白磷剧烈燃烧，产生大量白烟", "放热，气球先膨胀后收缩", "m₁=m₂，反应前后总质量不变"],
+      "conclusion": "在密闭容器中，白磷燃烧前后总质量不变，验证了质量守恒定律。"
+    }
+  ]
+}

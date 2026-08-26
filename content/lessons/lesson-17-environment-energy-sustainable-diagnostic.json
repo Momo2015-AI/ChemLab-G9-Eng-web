@@ -1,0 +1,53 @@
+{
+  "lessonId": "lesson-17-environment-energy-sustainable",
+  "diagnostics": [
+    {
+      "id": "L25-D01",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "小明认为使用天然气完全不会污染环境。他的错误在于？",
+      "options": [
+        "天然气燃烧也产生CO₂加剧温室效应",
+        "天然气完全无污染",
+        "天然气不是清洁能源",
+        "以上都不对"
+      ],
+      "answer": 0,
+      "explanation": "天然气燃烧产生CO₂，虽比煤清洁但仍加剧温室效应。",
+      "errorType": "mc-fossil-fuel-nonrenewable",
+      "remediationStep": "L25-S02"
+    },
+    {
+      "id": "L25-D02",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "下列措施不能有效减少CO₂排放的是？",
+      "options": [
+        "开发太阳能",
+        "提高燃烧效率",
+        "大量使用煤炭",
+        "植树造林"
+      ],
+      "answer": 2,
+      "explanation": "大量使用煤炭会增加CO₂排放。",
+      "errorType": "mc-fossil-fuel-nonrenewable",
+      "remediationStep": "L25-S05"
+    },
+    {
+      "id": "L25-D03",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "下列关于'碳达峰'和'碳中和'的说法正确的是？",
+      "options": [
+        "碳达峰意味着停止排放",
+        "碳中和意味着不使用化石燃料",
+        "碳达峰是排放量达峰值后下降",
+        "碳中和与化学无关"
+      ],
+      "answer": 2,
+      "explanation": "碳达峰指排放量达峰值后开始下降。",
+      "errorType": "mc-fossil-fuel-nonrenewable",
+      "remediationStep": "L25-S06"
+    }
+  ]
+}

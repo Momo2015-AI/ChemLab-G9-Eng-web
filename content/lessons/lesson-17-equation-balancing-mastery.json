@@ -1,0 +1,10 @@
+{
+  "lessonId": "lesson-17-equation-balancing",
+  "dimensions": ["concept", "method", "verification"],
+  "criteria": [
+    { "dimension": "concept", "items": ["L29-M01", "L29-M02", "L29-M03", "L29-M04"], "passingScore": 0.75 },
+    { "dimension": "method", "items": ["L29-M05", "L29-M06"], "passingScore": 0.75 },
+    { "dimension": "verification", "items": ["L29-D01", "L29-D02", "L29-D03"], "passingScore": 0.75 }
+  ],
+  "items": []
+}
