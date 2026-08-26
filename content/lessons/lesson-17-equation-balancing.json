@@ -15,9 +15,15 @@
     "掌握最小整数配平法（观察法、奇偶法等）。",
     "能独立配平常见化学反应方程式，不通过改变化学式下标配平。"
   ],
-  "knowledgePoints": ["equation-balancing"],
-  "prerequisites": ["lesson-16-equation-writing"],
-  "misconceptionIds": ["mc-balance-by-subscript"],
+  "knowledgePoints": [
+    "equation-balancing"
+  ],
+  "prerequisites": [
+    "lesson-16-equation-writing"
+  ],
+  "misconceptionIds": [
+    "mc-balance-by-subscript"
+  ],
   "resourceRefs": {
     "experiment": "content/lessons/lesson-17-equation-balancing-experiment.json",
     "practice": "content/lessons/lesson-17-equation-balancing-practice.json",
@@ -27,10 +33,47 @@
     "transfer": "content/lessons/lesson-17-equation-balancing-transfer.json"
   },
   "sections": [
-    { "title": "本节课要掌握什么？", "body": ["配平的实质：原子守恒。", "最小整数配平法。", "不能通过改变化学式下标配平。"] },
-    { "title": "核心方法", "body": ["观察法：从最复杂的化学式入手。", "奇偶法：使奇数原子变为偶数。", "最小公倍数法：找各元素原子数的最小公倍数。"] },
-    { "title": "常见误区", "body": ["通过改变化学式下标来配平。", "系数可以写成分数。", "漏写反应条件。"] }
+    {
+      "title": "本节课要掌握什么？",
+      "body": [
+        "配平的实质：原子守恒。",
+        "最小整数配平法。",
+        "不能通过改变化学式下标配平。"
+      ]
+    },
+    {
+      "title": "核心方法",
+      "body": [
+        "观察法：从最复杂的化学式入手。",
+        "奇偶法：使奇数原子变为偶数。",
+        "最小公倍数法：找各元素原子数的最小公倍数。"
+      ]
+    },
+    {
+      "title": "常见误区",
+      "body": [
+        "通过改变化学式下标来配平。",
+        "系数可以写成分数。",
+        "漏写反应条件。"
+      ]
+    }
   ],
-  "provenance": { "status": "ready", "basis": "人教版九年级化学上册第五单元课题2；2022年版义务教育化学课程标准。", "note": "内容原创，不复制教材原文。" },
-  "review": { "curriculum": "pass", "scientific": "pass", "ageSuitability": "pass", "itemQuality": "pass", "knowledgeLinks": "pass", "wuhanAlignment": "pass", "masteryGate": "pass", "blockingIssues": [] }
+  "provenance": {
+    "status": "ready",
+    "basis": "人教版九年级化学上册第五单元课题2；2022年版义务教育化学课程标准。",
+    "note": "内容原创，不复制教材原文。"
+  },
+  "review": {
+    "curriculum": "pass",
+    "scientific": "pass",
+    "ageSuitability": "pass",
+    "itemQuality": "pass",
+    "knowledgeLinks": "pass",
+    "wuhanAlignment": "pass",
+    "masteryGate": "pass",
+    "blockingIssues": []
+  },
+  "experiments": [],
+  "questions": [],
+  "diagnosticQuestions": []
 }

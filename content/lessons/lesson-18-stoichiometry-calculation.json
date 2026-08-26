@@ -15,9 +15,15 @@
     "理解化学计量数比（系数比）≠质量比，须通过相对分子质量换算。",
     "能正确处理含杂质物质的计算，先换算为纯物质质量。"
   ],
-  "knowledgePoints": ["stoichiometry"],
-  "prerequisites": ["lesson-17-equation-balancing"],
-  "misconceptionIds": ["mc-stoich-coefficient-vs-mass"],
+  "knowledgePoints": [
+    "stoichiometry"
+  ],
+  "prerequisites": [
+    "lesson-17-equation-balancing"
+  ],
+  "misconceptionIds": [
+    "mc-stoich-coefficient-vs-mass"
+  ],
   "resourceRefs": {
     "experiment": "content/lessons/lesson-18-stoichiometry-calculation-experiment.json",
     "practice": "content/lessons/lesson-18-stoichiometry-calculation-practice.json",
@@ -27,10 +33,44 @@
     "transfer": "content/lessons/lesson-18-stoichiometry-calculation-transfer.json"
   },
   "sections": [
-    { "title": "本节课要掌握什么？", "body": ["基于化学方程式的质量计算三步法。", "系数比≠质量比，需通过相对分子质量换算。", "含杂质物质的纯度换算。"] },
-    { "title": "核心方法", "body": ["设未知量→写方程式→找关系量→列比例式→求解→答。"] },
-    { "title": "常见误区", "body": ["直接用系数比代替质量比计算。", "忽略物质纯度直接代入计算。"] }
+    {
+      "title": "本节课要掌握什么？",
+      "body": [
+        "基于化学方程式的质量计算三步法。",
+        "系数比≠质量比，需通过相对分子质量换算。",
+        "含杂质物质的纯度换算。"
+      ]
+    },
+    {
+      "title": "核心方法",
+      "body": [
+        "设未知量→写方程式→找关系量→列比例式→求解→答。"
+      ]
+    },
+    {
+      "title": "常见误区",
+      "body": [
+        "直接用系数比代替质量比计算。",
+        "忽略物质纯度直接代入计算。"
+      ]
+    }
   ],
-  "provenance": { "status": "ready", "basis": "人教版九年级化学上册第五单元课题2；2022年版义务教育化学课程标准。", "note": "内容原创，不复制教材原文。" },
-  "review": { "curriculum": "pass", "scientific": "pass", "ageSuitability": "pass", "itemQuality": "pass", "knowledgeLinks": "pass", "wuhanAlignment": "pass", "masteryGate": "pass", "blockingIssues": [] }
+  "provenance": {
+    "status": "ready",
+    "basis": "人教版九年级化学上册第五单元课题2；2022年版义务教育化学课程标准。",
+    "note": "内容原创，不复制教材原文。"
+  },
+  "review": {
+    "curriculum": "pass",
+    "scientific": "pass",
+    "ageSuitability": "pass",
+    "itemQuality": "pass",
+    "knowledgeLinks": "pass",
+    "wuhanAlignment": "pass",
+    "masteryGate": "pass",
+    "blockingIssues": []
+  },
+  "experiments": [],
+  "questions": [],
+  "diagnosticQuestions": []
 }

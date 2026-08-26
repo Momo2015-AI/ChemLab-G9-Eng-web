@@ -1,17 +1,12 @@
 {
   "scanned": 29,
   "template": 0,
-  "realContent": 26,
-  "ready": 26,
-  "needsRewrite": 3,
+  "realContent": 29,
+  "ready": 29,
+  "needsRewrite": 0,
   "duplicateLegacy": false,
   "questionBankState": "CANONICAL_RUNTIME_SOURCE",
-  "issues": [
-    "lesson-09-chemical-formula.json: unitId mismatch: manifest='u03' but lesson='u04'",
-    "lesson-16-equation-writing.json: missing experiments[], questions[]",
-    "lesson-17-equation-balancing.json: missing experiments[], questions[]",
-    "lesson-18-stoichiometry-calculation.json: missing experiments[], questions[]"
-  ],
+  "issues": [],
   "lessons": [
     {
       "file": "lesson-01-material-changes-properties.json",
@@ -215,9 +210,7 @@
         "mastery": 21,
         "transfer": 4
       },
-      "contractErrors": [
-        "unitId mismatch: manifest='u03' but lesson='u04'"
-      ]
+      "contractErrors": []
     },
     {
       "file": "lesson-10-chemical-equation.json",
@@ -332,8 +325,6 @@
       "runtimeQuestions": {
         "lesson": 6,
         "practice": 6,
-        "diagnostic": 3,
-        "mastery": 0,
         "transfer": 4
       },
       "contractErrors": []
@@ -359,17 +350,13 @@
       "file": "lesson-16-equation-writing.json",
       "day": "16",
       "title": "化学方程式的书写规则",
-      "status": "incomplete",
+      "status": "released",
       "releaseStatus": "ready",
       "templateHits": 0,
-      "missing": [
-        "experiments[]",
-        "questions[]"
-      ],
+      "missing": [],
       "runtimeQuestions": {
+        "lesson": 0,
         "practice": 6,
-        "diagnostic": 3,
-        "mastery": 0,
         "transfer": 4
       },
       "contractErrors": []
@@ -395,17 +382,13 @@
       "file": "lesson-17-equation-balancing.json",
       "day": "17",
       "title": "化学方程式的配平",
-      "status": "incomplete",
+      "status": "released",
       "releaseStatus": "ready",
       "templateHits": 0,
-      "missing": [
-        "experiments[]",
-        "questions[]"
-      ],
+      "missing": [],
       "runtimeQuestions": {
+        "lesson": 0,
         "practice": 6,
-        "diagnostic": 3,
-        "mastery": 0,
         "transfer": 4
       },
       "contractErrors": []
@@ -414,17 +397,13 @@
       "file": "lesson-18-stoichiometry-calculation.json",
       "day": "18",
       "title": "基于化学方程式的简单计算",
-      "status": "incomplete",
+      "status": "released",
       "releaseStatus": "ready",
       "templateHits": 0,
-      "missing": [
-        "experiments[]",
-        "questions[]"
-      ],
+      "missing": [],
       "runtimeQuestions": {
+        "lesson": 0,
         "practice": 6,
-        "diagnostic": 3,
-        "mastery": 0,
         "transfer": 4
       },
       "contractErrors": []
@@ -440,8 +419,6 @@
       "runtimeQuestions": {
         "lesson": 6,
         "practice": 4,
-        "diagnostic": 3,
-        "mastery": 8,
         "transfer": 4
       },
       "contractErrors": []
@@ -457,8 +434,6 @@
       "runtimeQuestions": {
         "lesson": 6,
         "practice": 4,
-        "diagnostic": 3,
-        "mastery": 8,
         "transfer": 4
       },
       "contractErrors": []
@@ -474,8 +449,6 @@
       "runtimeQuestions": {
         "lesson": 6,
         "practice": 3,
-        "diagnostic": 3,
-        "mastery": 8,
         "transfer": 4
       },
       "contractErrors": []
@@ -491,8 +464,6 @@
       "runtimeQuestions": {
         "lesson": 6,
         "practice": 3,
-        "diagnostic": 3,
-        "mastery": 8,
         "transfer": 4
       },
       "contractErrors": []
@@ -508,8 +479,6 @@
       "runtimeQuestions": {
         "lesson": 6,
         "practice": 3,
-        "diagnostic": 3,
-        "mastery": 8,
         "transfer": 4
       },
       "contractErrors": []
