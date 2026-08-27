@@ -1063,3 +1063,43 @@ Source Registry 登记；上册第 3 课（空气/氧气，可复用实验库）
 ### Next
 
 Source Registry 登记（`exp-001-oxygen.json` / `oxygen.js` 等 legacy 素材 pending）；第二单元"空气/氧气"按课程地图生产顺序补位（可复用实验库氧气素材）；Playwright e2e（完整学习闭环验证）随下一批内容产出推进。
+
+---
+
+## 2026-08-27 — Sprint 0 止血：四道坏题修复 + 语义内容审计门禁（INTEGRATED-REPAIR-PLAN-V1.1）
+
+### Conversation / decision
+
+外部双维度审查（`docs/roadmap/REVIEW-2026-08-27-ARCH-CONTENT.md`）发现：内容门禁只校验结构、不校验语义，导致带着未解决审查意见的坏题进入生产。审查另发现 C4-C5 计划（V1.0）缺止血安排。据此制定融合版整改计划 `docs/roadmap/INTEGRATED-REPAIR-PLAN-V1.1.md` 并执行 Sprint 0。
+
+### Actions
+
+**四道坏题修复**（审查报告发现 3 道，语义审计落地时新发现 1 道 L05-M14）：
+- `L30-P06`（lesson-18 practice）：答案键错误——2g H₂ + 16g O₂ 恰好完全反应，生成水 18g（选项 A），原答案键标 16g 且解析自曝"正确答案：18g"。修复：answer 1→0，解析改为质量守恒推理。
+- `L12-P08`（lesson-07 practice）：无有效答案——"操作错误的是"四个选项全是正确操作。修复：选项 D 按原解析既定方案改为"试管口向上倾斜"（真正的错误操作），解析重写。
+- `L05-Q03`（lesson-05 主文件）：无有效答案且与同课 L05-D02 自相矛盾（"液氧淡蓝色"在一题判错、一题判对）。修复：选项 D 改为"氧气易溶于水"（真正错误），解析重写。
+- `L05-M14`（lesson-05 mastery，新发现）：硫燃烧题答案键错误——瓶底放水的目的是吸收 SO₂ 防污染，未放水后果是"生成物会污染空气"（选项 B），原答案键标"瓶底可能炸裂"（那是铁丝燃烧的风险）。修复：answer 2→1，解析重写。
+
+**语义内容审计门禁**：新增 `scripts/content-semantic-audit.mjs` 并入 `npm run audit:content`：
+- S1 解析含未解决审查标记（需检查/实际应为/无错误选项/修正：/待确认/TODO 等）→ BLOCKER（本轮 4 处归零）
+- S2 答案键必须解析为有效选项索引 → BLOCKER
+- S3 同题目 ID 跨文件不得漂移 → 过渡期 WARN（当前 33 处，Sprint 1 副本对齐后升 BLOCKER）
+- S4 每道运行时题目必须自带知识点链接（再检测匹配依赖题目自身 knowledgeIds，课程级 fallback 不生效）→ 过渡期 WARN（当前 103 处，Sprint 1 回填后升 BLOCKER）
+- S5 重复 ID 台账（当前 83 处一致副本；主文件内嵌副本 vs split 资源文件双源维护，Sprint 1 收敛）
+- S6 practice/mastery/transfer 题必须有解析 → 过渡期 WARN（当前 104 处，Sprint 1 回填后升 BLOCKER；diagnostic 题豁免——其补救走 remediationStep）
+- 报告输出至 `reports/content-semantic-audit.md`。
+
+**测试**：新增 `tests/content-semantic-audit.test.mjs`（10 项：S1 标记词全覆盖、S2 索引解析、S4 无 fallback 语义、S3 规范化比较防键序误报、生产内容树基线断言——锁定 Sprint 1 backlog 33/103 数量，防静默回归）。
+
+**工程修复**：`package.json` test 脚本 `node --test tests/*.test.mjs` → `node --test tests/`（Windows cmd 下 glob 不展开导致 npm test 本地不可用；CI 在 Linux 正常）。
+
+### Verification
+
+- `npm test`：**196/196 全绿**（基线 186 + 新增 10）。
+- `npm run audit:content`：integrity + lesson audit Gate PASS + **语义审计 0 blocker**。
+- `node scripts/runtime-audit.mjs`：PASS。
+- 语义审计基线统计：扫描 1256 题 / S3 漂移 33 / S4 缺链接 103 / S6 缺解析 104——全部为 Sprint 1 既定 backlog，与外部审查报告独立扫描结果一致。
+
+### Next
+
+Sprint 1（内容语义收敛）：① 33 处副本漂移对齐（split 文件确立为唯一事实源）；② 103 题知识点链接回填（恢复 lesson-14~18/21~24 的再检测链路）；③ 104 题解析回填；④ 知识点中文名显示走知识图谱。随后 S3/S4/S6 规则升为 BLOCKER。

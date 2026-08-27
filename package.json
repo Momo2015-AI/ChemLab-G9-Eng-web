@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test tests/*.test.mjs",
-    "audit:content": "node scripts/content-integrity-v19.mjs && node scripts/content-lesson-audit-v19.mjs",
+    "test": "node --test tests/",
+    "audit:content": "node scripts/content-integrity-v19.mjs && node scripts/content-lesson-audit-v19.mjs && node scripts/content-semantic-audit.mjs",
     "audit:lessons": "node scripts/content-lesson-audit-v19.mjs",
     "gen:docs": "node scripts/gen-project-status.mjs"
   }
