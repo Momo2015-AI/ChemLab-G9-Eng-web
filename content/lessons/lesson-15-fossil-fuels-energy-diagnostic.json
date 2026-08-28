@@ -15,7 +15,11 @@
       "answer": 0,
       "explanation": "新能源相对清洁但需全面评价环境影响。",
       "errorType": "mc-fossil-fuel-nonrenewable",
-      "remediationStep": "L18-S05"
+      "remediationStep": "L18-S05",
+      "knowledgeIds": [
+        "fossil-fuels",
+        "environmental-impact"
+      ]
     },
     {
       "id": "L18-D02",
@@ -31,7 +35,10 @@
       "answer": 2,
       "explanation": "三大化石燃料：煤、石油、天然气。",
       "errorType": "mc-fossil-fuel-nonrenewable",
-      "remediationStep": "L18-S02"
+      "remediationStep": "L18-S02",
+      "knowledgeIds": [
+        "fossil-fuels"
+      ]
     },
     {
       "id": "L18-D03",
@@ -47,7 +54,10 @@
       "answer": 0,
       "explanation": "三者都是混合物、含碳、燃烧产CO₂，但都不可再生。",
       "errorType": "mc-fossil-fuel-nonrenewable",
-      "remediationStep": "L18-S02"
+      "remediationStep": "L18-S02",
+      "knowledgeIds": [
+        "fossil-fuels"
+      ]
     }
   ]
 }

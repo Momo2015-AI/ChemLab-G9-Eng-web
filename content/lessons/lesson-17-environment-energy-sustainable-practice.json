@@ -1,11 +1,109 @@
 {
   "lessonId": "lesson-17-environment-energy-sustainable",
   "questions": [
-    { "id": "L25-P01", "type": "concept", "difficulty": "basic", "question": "导致温室效应的主要气体是？", "options": ["O₂", "N₂", "CO₂", "H₂"], "answer": 2, "explanation": "CO₂是主要温室气体。" },
-    { "id": "L25-P02", "type": "concept", "difficulty": "basic", "question": "下列能源中属于清洁能源的是？", "options": ["煤", "石油", "太阳能", "天然气"], "answer": 2, "explanation": "太阳能清洁无污染。" },
-    { "id": "L25-P03", "type": "concept", "difficulty": "medium", "question": "酸雨的主要成因是？", "options": ["CO₂排放", "SO₂和NOx排放", "O₂排放", "N₂排放"], "answer": 1, "explanation": "SO₂和NOx溶于雨水形成酸雨。" },
-    { "id": "L25-P04", "type": "concept", "difficulty": "medium", "question": "下列做法有利于减少空气污染的是？", "options": ["大量使用私家车", "露天焚烧垃圾", "推广新能源汽车", "多使用一次性用品"], "answer": 2, "explanation": "新能源汽车减少尾气排放。" },
-    { "id": "L25-P05", "type": "concept", "difficulty": "hard", "question": "下列关于能源和环境的说法正确的是？", "options": ["化石燃料取之不尽", "使用天然气完全无污染", "开发新能源有助于环境保护", "空气污染与化学无关"], "answer": 2, "explanation": "开发新能源是解决环境问题的重要途径。" },
-    { "id": "L25-P06", "type": "concept", "difficulty": "hard", "question": "我国'碳达峰'是指？", "options": ["CO₂降到零", "CO₂排放达到峰值后下降", "停止使用化石燃料", "只使用新能源"], "answer": 1, "explanation": "碳达峰指排放量达到峰值后开始下降。" }
+    {
+      "id": "L25-P01",
+      "type": "concept",
+      "difficulty": "basic",
+      "question": "导致温室效应的主要气体是？",
+      "options": [
+        "O₂",
+        "N₂",
+        "CO₂",
+        "H₂"
+      ],
+      "answer": 2,
+      "explanation": "CO₂是主要温室气体。",
+      "knowledgeIds": [
+        "environmental-impact"
+      ]
+    },
+    {
+      "id": "L25-P02",
+      "type": "concept",
+      "difficulty": "basic",
+      "question": "下列能源中属于清洁能源的是？",
+      "options": [
+        "煤",
+        "石油",
+        "太阳能",
+        "天然气"
+      ],
+      "answer": 2,
+      "explanation": "太阳能清洁无污染。",
+      "knowledgeIds": [
+        "fossil-fuels",
+        "environmental-impact"
+      ]
+    },
+    {
+      "id": "L25-P03",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "酸雨的主要成因是？",
+      "options": [
+        "CO₂排放",
+        "SO₂和NOx排放",
+        "O₂排放",
+        "N₂排放"
+      ],
+      "answer": 1,
+      "explanation": "SO₂和NOx溶于雨水形成酸雨。",
+      "knowledgeIds": [
+        "environmental-impact"
+      ]
+    },
+    {
+      "id": "L25-P04",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "下列做法有利于减少空气污染的是？",
+      "options": [
+        "大量使用私家车",
+        "露天焚烧垃圾",
+        "推广新能源汽车",
+        "多使用一次性用品"
+      ],
+      "answer": 2,
+      "explanation": "新能源汽车减少尾气排放。",
+      "knowledgeIds": [
+        "environmental-impact"
+      ]
+    },
+    {
+      "id": "L25-P05",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "下列关于能源和环境的说法正确的是？",
+      "options": [
+        "化石燃料取之不尽",
+        "使用天然气完全无污染",
+        "开发新能源有助于环境保护",
+        "空气污染与化学无关"
+      ],
+      "answer": 2,
+      "explanation": "开发新能源是解决环境问题的重要途径。",
+      "knowledgeIds": [
+        "fossil-fuels",
+        "environmental-impact"
+      ]
+    },
+    {
+      "id": "L25-P06",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "我国'碳达峰'是指？",
+      "options": [
+        "CO₂降到零",
+        "CO₂排放达到峰值后下降",
+        "停止使用化石燃料",
+        "只使用新能源"
+      ],
+      "answer": 1,
+      "explanation": "碳达峰指排放量达到峰值后开始下降。",
+      "knowledgeIds": [
+        "environmental-impact"
+      ]
+    }
   ]
 }

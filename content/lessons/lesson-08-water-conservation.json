@@ -29,12 +29,30 @@
   "guidedLearning": {
     "stepCount": 6,
     "steps": [
-      { "id": "L08-S01", "title": "引言：地球上的水" },
-      { "id": "L08-S02", "title": "水资源现状" },
-      { "id": "L08-S03", "title": "节约用水" },
-      { "id": "L08-S04", "title": "水体污染" },
-      { "id": "L08-S05", "title": "防治水污染" },
-      { "id": "L08-S06", "title": "我们的行动" }
+      {
+        "id": "L08-S01",
+        "title": "引言：地球上的水"
+      },
+      {
+        "id": "L08-S02",
+        "title": "水资源现状"
+      },
+      {
+        "id": "L08-S03",
+        "title": "节约用水"
+      },
+      {
+        "id": "L08-S04",
+        "title": "水体污染"
+      },
+      {
+        "id": "L08-S05",
+        "title": "防治水污染"
+      },
+      {
+        "id": "L08-S06",
+        "title": "我们的行动"
+      }
     ]
   },
   "resourceRefs": {
@@ -50,40 +68,76 @@
       "id": "L08-Q01",
       "type": "concept",
       "question": "下列关于水资源的说法正确的是？",
-      "options": ["地球表面约71%被水覆盖，水资源取之不尽", "淡水资源丰富，可以直接利用", "陆地淡水资源约占全球水储量的2.53%", "我国水资源充裕，不需要节水"],
+      "options": [
+        "地球表面约71%被水覆盖，水资源取之不尽",
+        "淡水资源丰富，可以直接利用",
+        "陆地淡水资源约占全球水储量的2.53%",
+        "我国水资源充裕，不需要节水"
+      ],
       "answer": 2,
-      "knowledgeIds": ["water-resources-conservation"],
-      "knowledgePoints": ["water-resources-conservation"],
+      "knowledgeIds": [
+        "water-resources-conservation"
+      ],
+      "knowledgePoints": [
+        "water-resources-conservation"
+      ],
       "explanation": "地球表面约71%被水覆盖，但淡水资源仅占全球水储量的约2.53%，且大部分是冰川和深层地下水，可直接利用的淡水很少。"
     },
     {
       "id": "L08-Q02",
       "type": "concept",
       "question": "下列做法不利于节约用水的是？",
-      "options": ["用洗菜水浇花", "随手关闭水龙头", "用淘米水冲厕所", "长时间冲洗餐具"],
+      "options": [
+        "用洗菜水浇花",
+        "随手关闭水龙头",
+        "用淘米水冲厕所",
+        "长时间冲洗餐具"
+      ],
       "answer": 3,
-      "knowledgeIds": ["water-resources-conservation"],
-      "knowledgePoints": ["water-resources-conservation"],
+      "knowledgeIds": [
+        "water-resources-conservation"
+      ],
+      "knowledgePoints": [
+        "water-resources-conservation"
+      ],
       "explanation": "长时间冲洗餐具会浪费大量水资源，不利于节约用水。其他选项都是节水的好习惯。"
     },
     {
       "id": "L08-Q03",
       "type": "concept",
       "question": "造成水污染的主要原因是？",
-      "options": ["工业废水随意排放", "农业化肥流失", "生活污水排放", "以上都是"],
+      "options": [
+        "工业废水随意排放",
+        "农业化肥流失",
+        "生活污水排放",
+        "以上都是"
+      ],
       "answer": 3,
-      "knowledgeIds": ["water-resources-conservation"],
-      "knowledgePoints": ["water-resources-conservation"],
+      "knowledgeIds": [
+        "water-resources-conservation"
+      ],
+      "knowledgePoints": [
+        "water-resources-conservation"
+      ],
       "explanation": "工业废水、农业化肥农药、生活污水都是水污染的主要来源。"
     },
     {
       "id": "L08-Q04",
       "type": "concept",
       "question": "下列防治水体污染的措施中，不合理的是？",
-      "options": ["工业废水处理达标后排放", "合理使用化肥和农药", "生活污水集中处理排放", "禁止使用任何化学物质"],
+      "options": [
+        "工业废水处理达标后排放",
+        "合理使用化肥和农药",
+        "生活污水集中处理排放",
+        "禁止使用任何化学物质"
+      ],
       "answer": 3,
-      "knowledgeIds": ["water-resources-conservation"],
-      "knowledgePoints": ["water-resources-conservation"],
+      "knowledgeIds": [
+        "water-resources-conservation"
+      ],
+      "knowledgePoints": [
+        "water-resources-conservation"
+      ],
       "explanation": "禁止使用任何化学物质是不现实的，应该合理使用并妥善处理污染物。"
     }
   ],
@@ -92,21 +146,36 @@
       "id": "L08-D01",
       "knowledgePoint": "water-resources-conservation",
       "question": "下列关于水资源的叙述正确的是？",
-      "options": ["地球上水储量丰富，淡水取之不尽", "淡水资源占总水量的约97%", "陆地淡水约占全球水储量的2.53%", "我国是水资源丰富的国家"],
+      "options": [
+        "地球上水储量丰富，淡水取之不尽",
+        "淡水资源占总水量的约97%",
+        "陆地淡水资源约占全球水储量的2.53%",
+        "我国是水资源丰富的国家"
+      ],
       "answer": 2,
       "errorType": "mc-water-resource-stat",
       "remediationStep": "L08-S02",
-      "knowledgeIds": ["water-resources-conservation"]
+      "knowledgeIds": [
+        "water-resources-conservation"
+      ]
     },
     {
       "id": "L08-D02",
       "knowledgePoint": "water-resources-conservation",
       "question": "下列做法会造成水体污染的是？",
-      "options": ["生活污水集中处理", "合理使用化肥农药", "工业废水直接排放", "加强水质监测"],
+      "options": [
+        "生活污水集中处理",
+        "合理使用化肥农药",
+        "工业废水直接排放",
+        "加强水质监测"
+      ],
       "answer": 2,
       "errorType": "mc-water-pollution",
       "remediationStep": "L08-S05",
-      "knowledgeIds": ["water-resources-conservation", "water-resources-conservation"]
+      "knowledgeIds": [
+        "water-resources-conservation",
+        "water-resources-conservation"
+      ]
     }
   ],
   "mastery": {

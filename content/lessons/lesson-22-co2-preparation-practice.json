@@ -27,7 +27,11 @@
         "木炭和氧气"
       ],
       "answer": 1,
-      "explanation": "用大理石（CaCO₃）与稀盐酸反应，速率适中且气体纯净。"
+      "explanation": "用大理石（CaCO₃）与稀盐酸反应，速率适中且气体纯净。",
+      "knowledgeIds": [
+        "co2-preparation",
+        "co2-property"
+      ]
     },
     {
       "id": "L22-P03",
@@ -41,7 +45,11 @@
         "收集时间不够"
       ],
       "answer": 0,
-      "explanation": "CO₂ 密度大于空气，应用向上排空气法。"
+      "explanation": "CO₂ 密度大于空气，应用向上排空气法。",
+      "knowledgeIds": [
+        "co2-preparation",
+        "lab-operations"
+      ]
     }
   ]
 }

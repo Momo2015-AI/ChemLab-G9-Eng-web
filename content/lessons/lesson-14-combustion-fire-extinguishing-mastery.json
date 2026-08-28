@@ -434,7 +434,13 @@
           "他的说法完全正确"
         ],
         "answer": 0,
-        "explanation": "燃烧三条件缺一不可。",
+        "knowledgeIds": [
+          "combustion-conditions"
+        ],
+        "knowledgePoints": [
+          "combustion-conditions"
+        ],
+        "explanation": "燃烧三条件缺一不可：可燃物、氧气（空气）、温度达到着火点。石头虽与氧气接触且温度高，但不是可燃物，仍不能燃烧。",
         "errorType": "mc-combustion-three-condition",
         "remediationStep": "L17-S02",
         "category": "safety"
@@ -450,7 +456,13 @@
           "降低着火点"
         ],
         "answer": 2,
-        "explanation": "水蒸发吸热使温度降低至着火点以下。",
+        "knowledgeIds": [
+          "fire-extinguishing"
+        ],
+        "knowledgePoints": [
+          "fire-extinguishing"
+        ],
+        "explanation": "水蒸发时大量吸热，使可燃物表面温度降至其着火点以下，燃烧反应无法继续。着火点是物质固有属性，不能被降低。",
         "errorType": "mc-fire-extinguish-principle",
         "remediationStep": "L17-S04",
         "category": "safety"

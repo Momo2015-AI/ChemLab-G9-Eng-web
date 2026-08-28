@@ -15,7 +15,10 @@
       "answer": 0,
       "explanation": "只有可燃气体且在爆炸极限范围内才会爆炸。",
       "errorType": "mc-explosion-any-gas",
-      "remediationStep": "L19-S05"
+      "remediationStep": "L19-S05",
+      "knowledgeIds": [
+        "explosive-safety"
+      ]
     },
     {
       "id": "L19-D02",
@@ -31,7 +34,10 @@
       "answer": 2,
       "explanation": "氮气不可燃。",
       "errorType": "mc-explosion-any-gas",
-      "remediationStep": "L19-S05"
+      "remediationStep": "L19-S05",
+      "knowledgeIds": [
+        "explosive-safety"
+      ]
     },
     {
       "id": "L19-D03",
@@ -47,7 +53,10 @@
       "answer": 1,
       "explanation": "通风机可降低瓦斯浓度。开电灯或明火可能产生电火花。",
       "errorType": "mc-explosion-any-gas",
-      "remediationStep": "L19-S06"
+      "remediationStep": "L19-S06",
+      "knowledgeIds": [
+        "explosive-safety"
+      ]
     }
   ]
 }

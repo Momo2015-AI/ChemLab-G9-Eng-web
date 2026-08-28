@@ -155,8 +155,11 @@ export function createApplication({ state, assessment, experimentEngine, mastery
     const phase = controllers.learning.getLessonPhase(lessonId);
     const stages = controllers.learning.getStageAvailability(lesson, guidedLearning);
     const masteryState = controllers.learning.getLessonMastery(lessonId);
+    const knowledgeGraph = await contentService.getKnowledgeGraphViewModel().catch(() => ({ nodes: [], relations: [] }));
+    const knowledgeNames = Object.fromEntries((knowledgeGraph.nodes || []).map(node => [node.id, node.name || node.id]));
     return views.renderCourse({
       root, lesson, guidedLearning, lessonState, phase, stages,
+      knowledgeNames,
       progress: controllers.learning.getProgress(lessonId),
       masteryPassed: masteryState?.status === 'passed',
       diagnosis: lessonState.diagnosis || {},

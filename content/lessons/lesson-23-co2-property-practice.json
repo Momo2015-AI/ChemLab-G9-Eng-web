@@ -13,7 +13,10 @@
         "制碳酸饮料"
       ],
       "answer": 1,
-      "explanation": "干冰升华吸热是物理变化，利用的是物理性质。"
+      "explanation": "干冰升华吸热是物理变化，利用的是物理性质。",
+      "knowledgeIds": [
+        "co2-property"
+      ]
     },
     {
       "id": "L23-P02",
@@ -41,7 +44,11 @@
         "无变化"
       ],
       "answer": 1,
-      "explanation": "CO₂ 溶于水使试管内压强减小，水位上升；生成碳酸使石蕊变红。"
+      "explanation": "CO₂ 溶于水使试管内压强减小，水位上升；生成碳酸使石蕊变红。",
+      "knowledgeIds": [
+        "co2-property",
+        "carbon-chemical-property"
+      ]
     }
   ]
 }

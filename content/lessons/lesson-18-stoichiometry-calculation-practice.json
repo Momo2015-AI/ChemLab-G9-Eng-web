@@ -1,11 +1,107 @@
 {
   "lessonId": "lesson-18-stoichiometry-calculation",
   "questions": [
-    { "id": "L30-P01", "type": "concept", "difficulty": "basic", "question": "化学方程式计算的根本依据是？", "options": ["质量守恒定律", "原子种类不变", "化学计量数之比等于质量之比", "化学反应前后分子数不变"], "answer": 0, "explanation": "化学方程式计算依据质量守恒定律和方程式中各物质的质量关系。" },
-    { "id": "L30-P02", "type": "concept", "difficulty": "basic", "question": "2H₂+O₂→2H₂O中，H₂、O₂、H₂O的质量比是？", "options": ["2:1:2", "4:32:36=1:8:9", "1:8:9（质量）=2:1:2（分子数）", "2:32:36"], "answer": 1, "explanation": "质量比=相对分子质量×系数之比=4:32:36=1:8:9。" },
-    { "id": "L30-P03", "type": "concept", "difficulty": "medium", "question": "加热分解31.6g KMnO₄，可生成多少克O₂？（2KMnO₄→K₂MnO₄+MnO₂+O₂↑）", "options": ["1.6g", "3.2g", "6.4g", "32g"], "answer": 1, "explanation": "316:32=31.6:x，x=3.2g。" },
-    { "id": "L30-P04", "type": "concept", "difficulty": "medium", "question": "100g含CaCO₃ 80%的石灰石，高温煅烧可生成CaO多少克？（CaCO₃→CaO+CO₂↑）", "options": ["44.8g", "56g", "80g", "100g"], "answer": 0, "explanation": "纯CaCO₃=80g，100:56=80:x，x=44.8g。" },
-    { "id": "L30-P05", "type": "concept", "difficulty": "hard", "question": "用足量稀硫酸与13g锌反应，生成氢气的质量是？（Zn+H₂SO₄→ZnSO₄+H₂↑）", "options": ["0.2g", "0.4g", "1.0g", "2.0g"], "answer": 1, "explanation": "65:2=13:x，x=0.4g。" },
-    { "id": "L30-P06", "type": "concept", "difficulty": "hard", "question": "某同学将2gH₂和16gO₂混合点燃，充分反应后生成水的质量是？", "options": ["18g", "16g", "14g", "12g"], "answer": 0, "explanation": "质量守恒：H₂与O₂按1:8的质量比恰好完全反应（2g:16g），生成水的质量=2g+16g=18g，无反应物剩余。" }
+    {
+      "id": "L30-P01",
+      "type": "concept",
+      "difficulty": "basic",
+      "question": "化学方程式计算的根本依据是？",
+      "options": [
+        "质量守恒定律",
+        "原子种类不变",
+        "化学计量数之比等于质量之比",
+        "化学反应前后分子数不变"
+      ],
+      "answer": 0,
+      "explanation": "化学方程式计算依据质量守恒定律和方程式中各物质的质量关系。",
+      "knowledgeIds": [
+        "stoichiometry"
+      ]
+    },
+    {
+      "id": "L30-P02",
+      "type": "concept",
+      "difficulty": "basic",
+      "question": "2H₂+O₂→2H₂O中，H₂、O₂、H₂O的质量比是？",
+      "options": [
+        "2:1:2",
+        "4:32:36=1:8:9",
+        "1:8:9（质量）=2:1:2（分子数）",
+        "2:32:36"
+      ],
+      "answer": 1,
+      "explanation": "质量比=相对分子质量×系数之比=4:32:36=1:8:9。",
+      "knowledgeIds": [
+        "stoichiometry"
+      ]
+    },
+    {
+      "id": "L30-P03",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "加热分解31.6g KMnO₄，可生成多少克O₂？（2KMnO₄→K₂MnO₄+MnO₂+O₂↑）",
+      "options": [
+        "1.6g",
+        "3.2g",
+        "6.4g",
+        "32g"
+      ],
+      "answer": 1,
+      "explanation": "316:32=31.6:x，x=3.2g。",
+      "knowledgeIds": [
+        "stoichiometry"
+      ]
+    },
+    {
+      "id": "L30-P04",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "100g含CaCO₃ 80%的石灰石，高温煅烧可生成CaO多少克？（CaCO₃→CaO+CO₂↑）",
+      "options": [
+        "44.8g",
+        "56g",
+        "80g",
+        "100g"
+      ],
+      "answer": 0,
+      "explanation": "纯CaCO₃=80g，100:56=80:x，x=44.8g。",
+      "knowledgeIds": [
+        "stoichiometry"
+      ]
+    },
+    {
+      "id": "L30-P05",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "用足量稀硫酸与13g锌反应，生成氢气的质量是？（Zn+H₂SO₄→ZnSO₄+H₂↑）",
+      "options": [
+        "0.2g",
+        "0.4g",
+        "1.0g",
+        "2.0g"
+      ],
+      "answer": 1,
+      "explanation": "65:2=13:x，x=0.4g。",
+      "knowledgeIds": [
+        "stoichiometry"
+      ]
+    },
+    {
+      "id": "L30-P06",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "某同学将2gH₂和16gO₂混合点燃，充分反应后生成水的质量是？",
+      "options": [
+        "18g",
+        "16g",
+        "14g",
+        "12g"
+      ],
+      "answer": 0,
+      "explanation": "质量守恒：H₂与O₂按1:8的质量比恰好完全反应（2g:16g），生成水的质量=2g+16g=18g，无反应物剩余。",
+      "knowledgeIds": [
+        "stoichiometry"
+      ]
+    }
   ]
 }
