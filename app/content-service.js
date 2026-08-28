@@ -59,15 +59,32 @@ class ContentService {
   async getInstruments() { return this.loader.loadInstruments(); }
   async getExperimentCatalog({ semester = null } = {}) {
     const lessons = await this.getLessons({ semester });
-    const experiments = [];
-    for (const entry of lessons.filter(day => day?.canonicalId)) {
-      const lesson = await this.loader.loadLesson(entry.canonicalId).catch(() => null);
-      for (const item of lesson?.experiments || []) {
-        const experiment = await this.getExperiment(item.id);
-        if (experiment) experiments.push({ ...experiment, lessonId: lesson.id, lessonTitle: lesson.title, lessonStatus: lesson.status });
-      }
-    }
-    return experiments;
+    // Parallelise the lesson loads — the previous serial loop produced an
+    // N+1 fetch chain that was the primary cause of the lab portal's slow
+    // first paint (Sprint 2 fix, 2026-08-28).
+    const loaded = await Promise.all(
+      lessons.filter(day => day?.canonicalId).map(entry => this.loader.loadLesson(entry.canonicalId).catch(() => null))
+    );
+    const flatExperiments = loaded
+      .filter(Boolean)
+      .flatMap(lesson => (lesson.experiments || []).map(item => ({ lesson, item })));
+    // Resolve experiments in parallel too; previously each one awaited
+    // getExperiment which itself did a full-manifest scan on miss.
+    const resolved = await Promise.all(
+      flatExperiments.map(({ lesson, item }) =>
+        this.getExperiment(item.id).then(detail => ({ lesson, item, detail }))
+      )
+    );
+    return resolved
+      .filter(({ detail }) => Boolean(detail))
+      .map(({ lesson, item, detail }) => ({
+        ...detail,
+        lessonId: lesson.id,
+        lessonTitle: lesson.title,
+        lessonStatus: lesson.status,
+        itemId: item.id,
+        resourceRef: item.resourceRef || null,
+      }));
   }
 
   registerLessonQuestions(data, lesson) {

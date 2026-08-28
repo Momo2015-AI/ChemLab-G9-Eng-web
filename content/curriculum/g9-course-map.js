@@ -16,13 +16,13 @@ export const g9CourseMap = {
       title: '九年级化学上册',
       term: 'upper',
       units: [
-        { id: 'u01', title: '走进化学世界', semester: 'upper', status: 'planned' },
-        { id: 'u02', title: '我们周围的空气', semester: 'upper', status: 'planned' },
-        { id: 'u03', title: '物质构成的奥秘', semester: 'upper', status: 'planned' },
-        { id: 'u04', title: '自然界的水', semester: 'upper', status: 'planned' },
-        { id: 'u05', title: '化学方程式', semester: 'upper', status: 'planned' },
-        { id: 'u06', title: '碳和碳的氧化物', semester: 'upper', status: 'planned' },
-        { id: 'u07', title: '燃料及其利用', semester: 'upper', status: 'planned' }
+        { id: 'u01', title: '走进化学世界', semester: 'upper', status: 'built' },
+        { id: 'u02', title: '我们周围的空气', semester: 'upper', status: 'built' },
+        { id: 'u03', title: '物质构成的奥秘', semester: 'upper', status: 'built' },
+        { id: 'u04', title: '自然界的水', semester: 'upper', status: 'built' },
+        { id: 'u05', title: '化学方程式', semester: 'upper', status: 'built' },
+        { id: 'u06', title: '碳和碳的氧化物', semester: 'upper', status: 'built' },
+        { id: 'u07', title: '燃料及其利用', semester: 'upper', status: 'built' }
       ]
     },
     {
@@ -32,7 +32,7 @@ export const g9CourseMap = {
       units: [
         { id: 'u08', title: '金属和金属材料', semester: 'lower', status: 'planned' },
         { id: 'u09', title: '溶液', semester: 'lower', status: 'planned' },
-        { id: 'u10', title: '酸和碱', semester: 'lower', status: 'planned' },
+        { id: 'u10', title: '酸和碱', semester: 'lower', status: 'partially-built' },
         { id: 'u11', title: '盐 化肥', semester: 'lower', status: 'planned' },
         { id: 'u12', title: '化学与生活', semester: 'lower', status: 'planned' }
       ]

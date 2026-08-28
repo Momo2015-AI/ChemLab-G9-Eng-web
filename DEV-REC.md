@@ -1148,3 +1148,40 @@ Sprint 0 止血后，按计划执行 Sprint 1：消除副本漂移、回填 103 
 ### Next
 
 Sprint 2（Runtime 差距分析）：按 INTEGRATED-REPAIR-PLAN-V1.1 §4 的逐条核验表执行——多数 Phase 0/1 条目已实现，只需补真实缺口（`state.currentLessonId` 隐藏 bug、Shell↔App 全局契约收敛、Lab 加载瀑布、30 个死内容登记、mastery 阈值的可验证 Blueprint）。
+
+---
+
+## 2026-08-28 — Sprint 2 Runtime 收敛（INTEGRATED-REPAIR-PLAN-V1.1）
+
+### Conversation / decision
+
+按计划执行 Sprint 2（Runtime 差距分析，1 周）。与 C4-C5 V1.0 不同：本 Sprint 不重写已实现架构，而是按 §4.1 核验表找出真实缺口并补齐。Sprint 0/1/2 三次提交共同把内容门禁从「结构绿」推进到「语义绿 + 架构契约收敛」。
+
+### Actions
+
+**已逐条核验 C4-C5 Phase 0/1**（无代码改动，结论记录在 INTEGRATED-REPAIR-PLAN-V1.1 §4.1）：P0.1–P0.4、P1.1–P1.5、P1.7、P1.8 全部已实现（运行时回归测试 + `content-integrity-v19` 守住）；P1.3 答案协议：内容层 1242 题全部数字索引、0 字母答案——运行时无需改。
+
+**ARCH-3 `state.currentLessonId` 隐藏 bug 修复**：`renderKnowledgeDetailRoute` 读取 `state.currentLessonId` 用于「返回当前课」导航，但全代码库无任何写入。修复：在 `renderCourseRoute` 进入时立即写入 `state.currentLessonId = lessonId`。新单测 `tests/application-term-service.test.mjs` 锁定行为。
+
+**P1.6 重检测策略裁决**（C4-C5 V1.0 vs 当前实现分歧）：C4-C5 写「Recheck 必须用全新题」，运行时实际「错题优先 + 同知识点未做题」。经过评估，**保留现行实现**——理由三条（错题本来就是 unseen、Sprint 1 暴露 lesson 池小不足以支持纯 unseen、两种策略在池子增长后趋同）。裁决已写入 `docs/MASTERY-STANDARD.md`，C4-C5 该条规则被实际行为覆盖。
+
+**ARCH-3 进一步收敛 Shell↔App 全局契约**：原契约 4 个 window 全局（`chemLabTextbookTerm` / `chemLabSetTerm` / `chemLabApplication` / `chemLabState`）。Sprint 2 用闭包 + `Object.defineProperty` 把 term 状态私有化：application.js 暴露 `term: { current, set, onChange }` API；保留 `window.chemLabTextbookTerm` 为只读属性（向后兼容 shell / devtools / 第三方脚本）；shell 通过事件订阅自动同步，不再依赖「写全局」的副作用。`start()` 中旧 `window.addEventListener('chemlab:term-change', ...)` 改用 `onTermChange(...)`。
+
+**ARCH-2 Lab 门户加载性能优化**：
+- `content-service.getExperimentCatalog`：原版双重串行循环（30 个 lesson × N 个实验），约 30+ 串行 fetch。改为 `Promise.all` 并行加载 lesson，并行 resolve experiment。
+- `content-loader.loadExperiment`：原版对直接路径 miss 后做 O(N) 全 manifest 顺序扫描 + 30+ 串行 fetch。改为先在 manifest 上做 `entries.map().filter()` 索引（O(N) 但零 fetch），再并行加载 lesson + 详情。
+
+**死内容登记**：
+- `content/sources/source-registry.json` 新增 `pendingLowerSemesterAssets` 区，登记 `content/experiments/` 下 30 个未引用 JSON + `content/knowledge/` 下 8 个未引用 JSON 知识内容文件。明确这是下册课程（u08–u12）建设的"已登记待用资源池"，**不删除**，并由 policy 字段声明 owner sign-off 前不退役。
+- `content/curriculum/g9-course-map.js`：12 单元 status 全部对齐实况（u01–u07 = `built`，u10 = `partially-built` 因 lesson-03-acid-intro 已发布，其他下册 = `planned`）。修复先前 12 单元全标 `planned` 的元数据漂移。
+
+### Verification
+
+- `npm test`：**203/203 全绿**（基线 200 + 3 个 Sprint 2 新单测：term API 默认值/转换/事件、状态写入回归）。
+- `npm run audit:content`：integrity + lesson + semantic Gate PASS，0 blocker（S3/S4/S6 仍为 0）。
+- `node scripts/runtime-audit.mjs`：PASS。
+- `node scripts/build-pages.mjs`：282 文件组装成功。
+
+### Next
+
+Sprint 3（Browser E2E 发布门禁）：按计划落实 16 条 E2E 路径（其中路径 16 用 3 道坏题所在课做答案键回归），E2E 引入 Playwright，CI 串联为发布门禁。

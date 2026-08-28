@@ -35,21 +35,26 @@ class ContentLoader {
   async loadExperiment(id) {
     const direct = await this.fetchJSON(assetUrl(`content/experiments/${id}.json`)).catch(() => null);
     if (direct) return direct;
+    // Sprint 2: replace the previous O(N) full-manifest scan with a single
+    // manifest-derived index. We never want a miss in direct lookup to fall
+    // through to 30+ sequential fetches across the lesson tree.
     const lessons = Array.isArray(lessonManifest.lessons) ? lessonManifest.lessons : [];
-    for (const entry of lessons) {
+    const indexed = lessons
+      .map(entry => ({ entry, ref: (entry.experiments || []).find(exp => exp?.id === id) || null }))
+      .filter(item => item.ref);
+    if (!indexed.length) return null;
+    const targets = await Promise.all(indexed.map(async ({ entry, ref }) => {
       const lesson = await this.fetchJSON(canonicalLessonUrl(entry.canonicalId)).catch(() => null);
-      const embedded = lesson?.experiments?.find(experiment => experiment?.id === id);
-      if (embedded) {
-        const resource = embedded.resourceRef || lesson.resourceRefs?.experiment;
-        const detail = resource ? await this.fetchJSON(assetUrl(resource)).catch(() => null) : null;
-        if (detail?.experiments) {
-          const resolved = detail.experiments.find(experiment => experiment?.id === id) || embedded;
-          return { ...resolved, lessonId: lesson.id, knowledgeIds: resolved.knowledgeIds || resolved.knowledge || lesson.knowledgePoints || [] };
-        }
-        return { ...(detail || embedded), lessonId: lesson.id, knowledgeIds: (detail || embedded).knowledgeIds || (detail || embedded).knowledge || lesson.knowledgePoints || [] };
+      if (!lesson) return null;
+      const resource = ref.resourceRef || lesson.resourceRefs?.experiment;
+      const detail = resource ? await this.fetchJSON(assetUrl(resource)).catch(() => null) : null;
+      if (detail?.experiments) {
+        const resolved = detail.experiments.find(experiment => experiment?.id === id) || ref;
+        return { ...resolved, lessonId: lesson.id, knowledgeIds: resolved.knowledgeIds || resolved.knowledge || lesson.knowledgePoints || [] };
       }
-    }
-    return null;
+      return { ...(detail || ref), lessonId: lesson.id, knowledgeIds: (detail || ref).knowledgeIds || (detail || ref).knowledge || lesson.knowledgePoints || [] };
+    }));
+    return targets.find(Boolean) || null;
   }
   async loadKnowledgeContent(id) { return this.fetchJSON(assetUrl(`content/knowledge/${id}.json`)).catch(() => null); }
   async loadInstruments() { const data = await this.fetchJSON(assetUrl('content/equipment/instruments.json')).catch(() => null); return Array.isArray(data?.instruments) ? data.instruments : []; }
