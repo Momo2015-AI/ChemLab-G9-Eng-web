@@ -270,12 +270,24 @@ export function runAudit({ lessonsDir = LESSONS_DIR, day01Modules = null, skipS8
   stats.missingExplanations = blockers.filter(w => w.startsWith('S6')).length;
   stats.unknownKnowledgeIds = blockers.filter(w => w.startsWith('S7')).length;
 
-  // S8 — graph node.questions[] must equal the aggregation from the
-  // question side. Computed by canonical-key diffing. Idempotent; the
-  // generator script (gen-graph-questions.mjs) calls this function and
-  // writes the result back, so the runtime audit can re-verify.
+  // S8 — knowledge graph question-type relations must equal the aggregation
+  // from the question side. (Remote schema: `node.questions[]` is forbidden;
+  // the only authoritative way to record "this question references this
+  // knowledge node" is a relation of type 'question'.) Drift in either
+  // direction is a blocker. The generator script (gen-graph-questions.mjs)
+  // calls this function and writes the result back, so the audit can
+  // re-verify the file is in sync.
   if (!skipS8) {
-    const aggregated = new Map(); // nodeId -> Set(questionId)
+    const declared = new Map(); // nodeId -> Set<questionId>
+    for (const r of KNOWLEDGE_GRAPH.relations || []) {
+      if ((r.type || r.relation) !== 'question') continue;
+      const src = r.source || r.from;
+      const tgt = r.target || r.to;
+      if (!src || !tgt) continue;
+      if (!declared.has(src)) declared.set(src, new Set());
+      declared.get(src).add(tgt);
+    }
+    const aggregated = new Map();
     for (const { question } of collected) {
       if (!question?.id) continue;
       for (const kid of ownKnowledgeIds(question)) {
@@ -285,14 +297,20 @@ export function runAudit({ lessonsDir = LESSONS_DIR, day01Modules = null, skipS8
         aggregated.get(resolved).add(question.id);
       }
     }
-    for (const node of KNOWLEDGE_GRAPH.nodes || []) {
-      const declared = new Set(node.questions || []);
-      const actual = aggregated.get(node.id) || new Set();
+    for (const [nodeId, actual] of aggregated) {
+      const d = declared.get(nodeId) || new Set();
       for (const missing of actual) {
-        if (!declared.has(missing)) blockers.push(`S8 node "${node.id}": question "${missing}" links to this node but is not listed in node.questions[]`);
+        if (!d.has(missing)) blockers.push(`S8 node "${nodeId}": question "${missing}" links to this node but no 'question' relation exists in the graph`);
       }
-      for (const stale of declared) {
-        if (!actual.has(stale)) blockers.push(`S8 node "${node.id}": question "${stale}" is listed in node.questions[] but the question no longer references this node`);
+      for (const stale of d) {
+        if (!actual.has(stale)) blockers.push(`S8 node "${nodeId}": relation targets question "${stale}" but the question no longer references this node`);
+      }
+    }
+    // Inverse check: a question relation pointing to a node that is
+    // not in our aggregated set (and not aliased to one) is also drift.
+    for (const [nodeId, d] of declared) {
+      if (!aggregated.has(nodeId)) {
+        for (const stale of d) blockers.push(`S8 node "${nodeId}": orphan question relation (no aggregate target) for "${stale}"`);
       }
     }
     stats.s8Drift = blockers.filter(w => w.startsWith('S8')).length;

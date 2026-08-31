@@ -10,7 +10,7 @@ function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
 }
 
-export function renderKnowledgeDetail({ root, node = null, lessonId = '', onBack, onLearn } = {}) {
+export function renderKnowledgeDetail({ root, node = null, prerequisiteNodes = [], lessonId = '', onBack, onLearn } = {}) {
   if (!root) return;
   if (!node) {
     root.innerHTML = `<section class="page kd-page"><div class="kd-empty"><h2>知识点未找到</h2><p>该知识节点暂无详细内容。</p><button type="button" class="kd-back-btn" data-back>返回知识图谱</button></div></section>`;
@@ -19,7 +19,7 @@ export function renderKnowledgeDetail({ root, node = null, lessonId = '', onBack
   }
   const domainLabel = DOMAIN_LABEL[node.domain] || node.domain;
   const misconceptions = (node.misconceptionIds || []).map(id => getCanonicalMisconception(id)).filter(Boolean);
-  const prerequisites = (node.prerequisiteIds || []).map(id => ({ id, ...({ name: id, domain: '' }) })).filter(p => p.id);
+  const prerequisites = (prerequisiteNodes || []).filter(p => p?.id);
   const relatedLessons = lessonId ? [{ id: lessonId, title: '当前课程' }] : [];
   const colorVar = node.domain === 'matter' ? 'var(--spec-violet)' :
                    node.domain === 'method' ? 'var(--spec-indigo)' :
@@ -52,7 +52,7 @@ export function renderKnowledgeDetail({ root, node = null, lessonId = '', onBack
           <div class="kd-prereq-list">${prerequisites.map(p => `
             <button type="button" class="kd-prereq-btn" data-node-id="${escapeHtml(p.id)}">
               <span class="kd-prereq-arrow">→</span>
-              <span>${escapeHtml(p.id)}</span>
+              <span>${escapeHtml(p.name || p.id)}</span>
             </button>`).join('')}</div>
         </article>` : '<article class="kd-card"><h3>前置知识</h3><p class="kd-muted">无，这是基础知识点。</p></article>'}
         ${misconceptions.length ? `

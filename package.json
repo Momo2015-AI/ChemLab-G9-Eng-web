@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test tests/",
-    "audit:content": "node scripts/gen-graph-questions.mjs && node scripts/content-integrity-v19.mjs && node scripts/content-lesson-audit-v19.mjs && node scripts/content-semantic-audit.mjs",
+    "audit:content": "node scripts/gen-graph-questions.mjs && node scripts/content-integrity-v19.mjs && node scripts/content-lesson-audit-v19.mjs && node scripts/content-semantic-audit.mjs && node scripts/content-graph-schema-audit.mjs",
     "audit:lessons": "node scripts/content-lesson-audit-v19.mjs",
     "gen:docs": "node scripts/gen-project-status.mjs"
   }

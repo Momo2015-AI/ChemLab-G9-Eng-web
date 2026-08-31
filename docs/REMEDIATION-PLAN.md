@@ -99,6 +99,19 @@ u05（`L26-L30` 前缀）和 u07（`L17/L18/L19/L25` 前缀）两批课完全并
 
 从第一轮审查到现在，`u10` 一直只有"酸入门"一门课，中间至少三次在审查报告里提出要补碱、pH、中和反应，均未被采纳；这期间新开了 u05、u06、u07 三个单元。**这不是技术问题，是排期优先级的问题，写在这里是为了明确记录这个模式，不是继续用同样的话再提一遍**——如果这次还是被跳过，说明"先完成已开工单元再开新单元"这条建议本身需要项目所有者重新评估是否采纳，而不是我继续在审查报告里重复。
 
+### B5. 〔DONE，记录用〕知识图谱悬空引用——v19 隔离题目的遗留关系
+
+**发现**：2026-08-28 落地 `docs/KNOWLEDGE-GRAPH-UPGRADE-PLAN.md` Sprint A 时，新增的 `scripts/content-graph-schema-audit.mjs` 首跑即抓到 19 处悬空引用（此前 `content-integrity-v19.mjs` 与 `npm test` 均不校验图谱引用，属审计盲区）：
+- 14 条 `question` 关系指向 `q-acid-*` 旧题 ID——这些题目已被 v19 隔离（见 `content/review/question-quarantine-v19.json` 与 `content-review-registry.json`），题目不在运行时池中，关系成死链。
+- 3 条 `commonMistake` 关系使用无前缀旧别名（`single-phenomenon-overgeneralization` 等），canonical-misconceptions.js 的 ALIAS_MAP 已给出规范 ID 映射。
+- 1 处节点 `misconceptionIds` 引用 `mc-pure-mixture`，注册表无此 ID。
+
+**修复**（commit 见 git log 2026-08-28）：删除 14 条死链（acid-intro/acid-property 仍保留 L03-* 存活关联）；3 条关系改写为 ALIAS_MAP 规范 ID；删除 `mc-pure-mixture` 引用（该节点保留语义正确的 `mc-single-compound-distinguish`；`mc-mixture-pure` 已归属 element-classify，不做语义拉伸替换）。
+
+**防复发**：`content-graph-schema-audit.mjs` 已接入 `npm run audit:content` 链，question/experiment/commonMistake/misconceptionIds 引用无法解析即 Gate BLOCKED；`tests/graph-schema-integrity.test.mjs` 在 `npm test` 层做同类断言。
+
+**教训**：题目被隔离/重命名时，知识图谱的引用关系必须同步清理——此前两轮 mastery schema 事故都是"改了一边漏了另一边"，本次是同一模式的第三个变体。
+
 ---
 
 ## C. 处理顺序建议

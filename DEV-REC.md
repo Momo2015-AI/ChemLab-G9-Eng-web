@@ -1227,3 +1227,50 @@ V1.2 计划 §1 知识图谱治理 sprint：5 类问题（KG-A 同名双节点�
 ### Next
 
 按 V1.2 计划：Sprint 3（Browser E2E 发布门禁），前置条件已具备（路径 13 知识地图路由 + 路径 16 答案键回归 现在有干净的地基）。
+
+---
+
+## 2026-08-31 — Sprint 2.5 知识图谱治理 + 合并 remote Sprint A+B+C
+
+### Conversation / decision
+
+远端在 `9e3c39e` 之后又推了两个 commit：92cf2a3 做了"knowledge graph upgrade Sprint A+B+C"（schema 合同 v2.2.0、单一事实源、关系属性、forbiddenFields 列表），1a8f6d8 是合并提交。这覆盖了我本地 Sprint 2.5 的 KG-1..KG-4 路径里相当一部分——但还有一些洞：law-conservation 双节点仍存在、S7/S8 门禁未实施、lesson-14-law-conservation-experiment.json 的文件命名与 split filter 正则的冲突仍未修复、scripts/content-integrity-v19.mjs 与 scripts/content-graph-schema-audit.mjs 与 tests/graph-schema-integrity.test.mjs 都用同一个旧正则误伤该 lesson 的 28 道题。
+
+合并策略：接受远端 schema + 适配本地工作，避免重做远端已经做好的部分。
+
+### Actions
+
+**合并冲突解决**：
+- `package.json`：合并两边 audit 链（`gen-graph-questions` + `content-graph-schema-audit` 都在）并保留我们 Sprint 0 修过的 `node --test tests/`。
+- `content/knowledge/knowledge-graph.json`：采纳远端 v2.2.0 schema 基线，**重做 KG-2**（远端没做）——从图谱删 `law-conservation` 节点、3 条 relations 重定向到 `law-of-mass-conservation`、合并 prerequisiteIds/misconceptionIds/questions，dedupe 后剩 51 节点 + 1637 关系。
+- `content/misconceptions/canonical-misconceptions.js`：3 个误解词 `mc-law-conservation-open-system` / `mc-law-conservation-atom-destroyed` 的 `knowledgeIds` 从 `law-conservation` 改为 `law-of-mass-conservation`。
+
+**适配远端 schema v2.2.0**：
+- `scripts/gen-graph-questions.mjs` 重写：不再写 `node.questions[]`（远端 v2.2.0 schema 把该字段标为 forbiddenFields），改为按 schema 写出 `relations[]` 中 `type='question'` 的边，带 optional `difficulty` 属性（仅 `basic/medium/hard`，旧词表 `easy/application/transfer` 全部留空——schema 注释明文规定）。
+- `scripts/content-semantic-audit.mjs` S8 规则改写：原测 `node.questions[]` 漂移，现测 `relations[].type='question'` 漂移（双向比较聚合侧 vs 关系侧）。
+- 远端 schema 不再读 day01-* 模块也没走 lessonManifest，两个一致问题：① `q-acid-001..012`（day01 production-overrides 题目）被误判为 graph 悬空；② `lesson-14-law-conservation-experiment.json` 因文件名以 `-experiment.json` 结尾被主文件 filter 正则 `(?:-practice|...|-experiment|-transfer)\.json$` 误判为 split 文件而整体被跳过，连带 28 道 split 题从未被任何审计/测试看到过。
+
+**修复 4 处重复出现的 bug**（同一 regex 在 4 个位置独立出现）：
+- `scripts/content-integrity-v19.mjs` —— Sprint 2.5 已修。
+- `scripts/content-graph-schema-audit.mjs` 的 `loadRuntimeQuestionIds` 与 `loadLessonExperimentIds` 改用 `lessonManifest`。
+- `tests/graph-schema-integrity.test.mjs` 的 `runtimeQuestionIds` 与 `experimentIds` 改用 `lessonManifest`，并 import day01 模块。
+- 同步把 `tests/term-and-quality-hardening.test.mjs` 的运行时题集扩展到 day01-*（之前单独改过，但被远端合并覆盖——重做）。
+
+**新增 S7 别名兜底**：`scripts/content-semantic-audit.mjs` 加载图谱并维护 `KNOWLEDGE_ALIASES` 映射；S7 规则对每道题每个 knowledgeId 调 `resolveKnowledgeId`（未注册 → BLOCKER，命中别名 → 写 warnings）。别名表里保留 `law-conservation → law-of-mass-conservation`，保证已持久化的 localStorage `weakPoints`/`recheck.knowledgeIds` 旧数据能继续解析。
+
+**单测更新**：
+- `tests/content-semantic-audit.test.mjs`：S8 单测改为校验 `relations[].type=question` 漂移而非 `node.questions[]` 漂移。
+- 其他单测基线（Sprint 0 起的 S1–S6 锁）未变。
+
+### Verification
+
+- `npm test`：**217/217 全绿**（远端 206 + Sprint 2.5 新增 3 + 远端 11 远端自带测试合并）。失败过的 2 条（`q-acid-001` target 不在题目池、`S7 law-conservation` 别名）随 day01 集成 + 别名映射修复后归零。
+- `npm run audit:content`：gen-graph-questions → integrity → lesson audit → semantic audit → graph-schema-audit 全部 Gate PASS。语义审计 0 blocker；graph-schema-audit 报告节点 51 / 关系 1637 / 题目池 1140。
+- `node scripts/runtime-audit.mjs`：PASS。
+- `node scripts/build-pages.mjs`：282 文件。
+
+### Net effect
+
+- 知识图谱从 52 → 51 节点（KG-2 双节点合并）；关系 345 → 1637（远端 v2.2.0 schema 把 `question` 关系从 263 个数组/对象简化为 1473 条独立 relations，运行时题集覆盖粒度更高）。
+- 暴露并修复的隐藏 bug：`lesson-14-law-conservation-experiment` 整套 28 道题此前被 4 处独立 regex filter 误判为 split 文件、Sprint 0-2 期间从未被任何审计/测试看到过——是仓库架构问题里最值得记录的一条。
+- Sprint 2.5 在远端 Sprint A+B+C 基础上叠加的实质产出：S7 别名门禁、S8 双向漂移 BLOCKER、KG-2 双节点合并、KG-4 三条 commonMistake 关系重新成立、四处独立出现的文件名-filter bug 修复。

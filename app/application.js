@@ -271,10 +271,12 @@ export function createApplication({ state, assessment, experimentEngine, mastery
     const graph = await contentService.getKnowledgeGraphViewModel().catch(() => ({ nodes: [], relations: [] }));
     const homeData = await getHomeData();
     const node = (graph?.nodes || []).find(n => n.id === nodeId);
+    const prerequisiteNodes = node ? await contentService.getPrerequisites(nodeId).catch(() => []) : [];
     const lessons = Array.isArray(homeData?.lessons) ? homeData.lessons : [];
     return renderKnowledgeDetail({
       root,
       node,
+      prerequisiteNodes,
       lessonId: state.currentLessonId || '',
       onBack: () => router.navigate('knowledge-map'),
       onLearn: lessonId => router.navigate('course', lessonId),

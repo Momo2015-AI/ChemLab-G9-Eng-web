@@ -1,9 +1,107 @@
 {
-  "id": "knowledge-id",
-  "name": "知识点名称",
-  "chapter": "章节",
-  "level": "basic|advanced|challenge",
-  "relatedExperiments": [],
-  "relatedQuestions": [],
-  "mastery": 0
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChemLab-G9 Knowledge Graph Data Contract",
+  "version": "1.0.0",
+  "established": "2026-08-28",
+  "description": "content/knowledge/knowledge-graph.json 的唯一权威结构契约。本文件定义节点/关系的必填字段、枚举取值与引用完整性规则；scripts/content-graph-schema-audit.mjs 与 tests/graph-schema-integrity.test.mjs 按本契约校验。新增字段或枚举值必须先改本文件，再改数据。",
+  "graph": {
+    "requiredKeys": ["version", "source", "nodes", "relations"],
+    "notes": "version 采用语义化版本（当前 2.2.0）；source 指向数据文件自身路径。"
+  },
+  "node": {
+    "requiredFields": {
+      "id": "string，全图唯一，slug 格式",
+      "name": "string，知识点中文名",
+      "chapter": "string，所属章节（人教版单元课题表述）",
+      "domain": "enum: domainEnum",
+      "bloomLevels": "array<string>，非空，取值见 bloomLevelsEnum",
+      "semester": "enum: semesterEnum",
+      "unitId": "enum: unitIdEnum",
+      "definition": "string，非空，知识点定义",
+      "remediationGoal": "string，非空，补救目标"
+    },
+    "optionalFields": {
+      "misconceptionIds": "array<string>，关联 canonical-misconceptions.js 的误解 ID"
+    },
+    "forbiddenFields": {
+      "questions": "Sprint B 起禁止：题目关联以 relations[] 的 question 关系为唯一事实源",
+      "prerequisiteIds": "Sprint B 起禁止：前置关系以 relations[] 的 prerequisite 关系为唯一事实源",
+      "prerequisites": "旧版内联前置数组，Sprint B 起禁止"
+    }
+  },
+  "relation": {
+    "requiredFields": {
+      "source": "string，必须解析到已存在的节点 id（所有关系类型均要求）",
+      "target": "string，question 关系指向题目 ID，其余类型必须解析到已存在的节点 id",
+      "type": "enum: relationTypeEnum"
+    },
+    "optionalAttributes": {
+      "question.difficulty": "enum: difficultyEnum（basic/medium/hard），从题目池 difficulty 字段同步；题目字段缺失或为旧词表（application/transfer）时关系侧留空",
+      "prerequisite.weight": "number 0-1，边强度，缺省视为 1；显式低于 1 表示软依赖，供学习路径排序消费（数值须经教研评审后填充）",
+      "prerequisite.required": "boolean，缺省视为 true；false 表示软前置，供学习路径排序消费",
+      "related.description": "string，关联语义说明，可选",
+      "contrast.description": "string，对比辨析说明，可选（如'物理变化无新物质，化学变化有新物质'）"
+    },
+    "attributeMountPolicy": "属性只能挂载在声明的关系类型上（如 difficulty 仅限 question 关系）；声明外的属性一律 ERROR；contrast 关系为无向语义（source ↔ target 可互换）",
+    "notes": "关系本体仍为三元组；属性为 Sprint C 引入的可选扩展。"
+  },
+  "enums": {
+    "domainEnum": [
+      "matter",
+      "method",
+      "substance",
+      "reaction",
+      "acid",
+      "particle",
+      "operation",
+      "society",
+      "symbolic",
+      "quantitative",
+      "law",
+      "notation",
+      "calculation"
+    ],
+    "bloomLevelsEnum": [
+      "remember",
+      "understand",
+      "apply",
+      "analyze",
+      "evaluate"
+    ],
+    "semesterEnum": [
+      "upper",
+      "lower"
+    ],
+    "unitIdEnum": [
+      "u01",
+      "u02",
+      "u03",
+      "u04",
+      "u05",
+      "u06",
+      "u07",
+      "u10"
+    ],
+    "relationTypeEnum": [
+      "prerequisite",
+      "related",
+      "question",
+      "experiment",
+      "commonMistake",
+      "contrast"
+    ],
+    "difficultyEnum": [
+      "basic",
+      "medium",
+      "hard"
+    ]
+  },
+  "referentialIntegrity": {
+    "nodeNodeRelations": "type 为 prerequisite/related 的关系，source 与 target 都必须是已存在的节点 id",
+    "questionRelations": "type 为 question 的关系，source 必须是已存在的节点 id，target 必须解析到运行时题目池（lesson base + practice + diagnostic + mastery + transfer）中的真实题目 ID",
+    "experimentRelations": "type 为 experiment 的关系，source 必须是已存在的节点 id，target 必须解析到实验资源（lesson 内嵌 experiments[].id 或 content/experiments/ 注册表 id）",
+    "commonMistakeRelations": "type 为 commonMistake 的关系，source 必须是已存在的节点 id，target 必须解析到 canonical-misconceptions.js 的规范误解 ID（mc- 前缀；旧别名禁止回填）",
+    "misconceptionIdsField": "节点 misconceptionIds 字段的每个取值都必须解析到 canonical-misconceptions.js 的规范误解 ID",
+    "danglingPolicy": "任何悬空引用都是 ERROR 级，Gate BLOCKED；不得以 warning 放行"
+  }
 }

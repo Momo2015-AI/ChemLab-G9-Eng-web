@@ -197,12 +197,11 @@ test('S7: every knowledge id must resolve to a graph node (Sprint 2.5 KG-1)', ()
   assert.equal(resolveKnowledgeId(ownKnowledgeIds(q)[0]), 'law-of-mass-conservation');
 });
 
-test('S8: graph node.questions[] drifts are reported against the live tree', () => {
-  // Skip the production graph; use a hand-rolled mini-tree to keep the
-  // test hermetic. The runAudit S8 path joins by canonical-key diffing.
-  // Here we drive the production runAudit (which uses the real graph) and
-  // assert that, after the Sprint 2.5 generation step, S8 drift is zero
-  // — i.e. node.questions[] matches the question-side aggregation.
+test('S8: graph question relations drift against the live tree', () => {
+  // Remote schema (commit 92cf2a3) forbids `node.questions[]`; the
+  // authoritative way to record a question-to-node reference is a
+  // relation of type 'question'. The production graph + the live
+  // question tree must agree, in both directions.
   const { blockers, stats } = runAudit();
   assert.equal(blockers.filter(b => b.startsWith('S8')).length, 0,
     `unexpected S8 drift: ${blockers.filter(b => b.startsWith('S8')).slice(0, 3).join(' | ')}`);
