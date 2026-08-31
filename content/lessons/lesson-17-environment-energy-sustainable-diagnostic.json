@@ -15,7 +15,11 @@
       "answer": 0,
       "explanation": "天然气燃烧产生CO₂，虽比煤清洁但仍加剧温室效应。",
       "errorType": "mc-fossil-fuel-nonrenewable",
-      "remediationStep": "L25-S02"
+      "remediationStep": "L25-S02",
+      "knowledgeIds": [
+        "fossil-fuels",
+        "environmental-impact"
+      ]
     },
     {
       "id": "L25-D02",
@@ -31,7 +35,10 @@
       "answer": 2,
       "explanation": "大量使用煤炭会增加CO₂排放。",
       "errorType": "mc-fossil-fuel-nonrenewable",
-      "remediationStep": "L25-S05"
+      "remediationStep": "L25-S05",
+      "knowledgeIds": [
+        "environmental-impact"
+      ]
     },
     {
       "id": "L25-D03",
@@ -47,7 +54,10 @@
       "answer": 2,
       "explanation": "碳达峰指排放量达峰值后开始下降。",
       "errorType": "mc-fossil-fuel-nonrenewable",
-      "remediationStep": "L25-S06"
+      "remediationStep": "L25-S06",
+      "knowledgeIds": [
+        "environmental-impact"
+      ]
     }
   ]
 }

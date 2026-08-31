@@ -15,7 +15,10 @@
       "answer": 2,
       "explanation": "CO 无色无味，难以察觉，这是它危险的原因。",
       "errorType": "mc-co-poison-mechanism",
-      "remediationStep": "L24-S04"
+      "remediationStep": "L24-S04",
+      "knowledgeIds": [
+        "co-property"
+      ]
     },
     {
       "id": "L24-D02",
@@ -31,7 +34,11 @@
       "answer": 1,
       "explanation": "CO 有毒，CO₂ 无毒（浓度过高会窒息但不直接有毒）。",
       "errorType": "mc-co-co2-distinguish",
-      "remediationStep": "L24-S07"
+      "remediationStep": "L24-S07",
+      "knowledgeIds": [
+        "co-property",
+        "carbon-chemical-property"
+      ]
     },
     {
       "id": "L24-D03",
@@ -47,7 +54,11 @@
       "answer": 1,
       "explanation": "先熄灭酒精灯，继续通 CO 至冷却，防止热的铜被氧化。",
       "errorType": "mc-co-poison-mechanism",
-      "remediationStep": "L24-S05"
+      "remediationStep": "L24-S05",
+      "knowledgeIds": [
+        "co-property",
+        "explosive-safety"
+      ]
     }
   ]
 }

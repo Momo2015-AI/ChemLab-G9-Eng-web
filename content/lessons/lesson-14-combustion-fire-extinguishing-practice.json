@@ -4,7 +4,7 @@
     {
       "id": "L17-P01",
       "type": "concept",
-      "difficulty": "basic",
+      "difficulty": "medium",
       "question": "下列情形中，能够发生燃烧的是？",
       "options": [
         "木条在空气中不加热",
@@ -13,12 +13,16 @@
         "木头在水中加热"
       ],
       "answer": 2,
-      "explanation": "木条是可燃物，在空气中接触氧气，加热到红热达到着火点，三个条件都满足。"
+      "knowledgeIds": [
+        "combustion-conditions"
+      ],
+      "knowledgePoint": "combustion-conditions",
+      "explanation": "燃烧三条件：可燃物（木条）、与氧气接触（空气中含 O₂）、温度达到着火点（加热到红热）。三者同时满足才能燃烧。"
     },
     {
       "id": "L17-P02",
       "type": "concept",
-      "difficulty": "basic",
+      "difficulty": "medium",
       "question": "炒菜时油锅着火，最快的灭火方法是？",
       "options": [
         "浇水",
@@ -27,7 +31,11 @@
         "端离灶台"
       ],
       "answer": 1,
-      "explanation": "用锅盖盖灭是隔绝氧气，操作简单快速。浇水会导致热油飞溅，更危险。"
+      "knowledgeIds": [
+        "fire-extinguishing"
+      ],
+      "knowledgePoint": "fire-extinguishing",
+      "explanation": "用锅盖盖灭属于隔绝氧气灭火法，操作简单快速。浇水会导致热油飞溅，更危险；吹气补充氧气会助燃；端离灶台不能立即切断氧气供应。"
     },
     {
       "id": "L17-P03",
@@ -41,7 +49,11 @@
         "森林火灾设置隔离带"
       ],
       "answer": 3,
-      "explanation": "A、B、C都是隔绝氧气，D是清除可燃物。"
+      "knowledgeIds": [
+        "fire-extinguishing"
+      ],
+      "knowledgePoint": "fire-extinguishing",
+      "explanation": "A（盖锅盖）、B（CO₂灭火器）、C（灯帽）都是隔绝氧气；D（隔离带）是通过清除可燃物使火势无法蔓延，原理与其他三项不同。"
     },
     {
       "id": "L17-P04",
@@ -55,7 +67,11 @@
         "增加了木柴的质量"
       ],
       "answer": 1,
-      "explanation": "架空木柴增大了与氧气的接触面积，使燃烧更充分。着火点是固有属性不变。"
+      "knowledgeIds": [
+        "combustion-conditions"
+      ],
+      "knowledgePoint": "combustion-conditions",
+      "explanation": "架空木柴使其与氧气（空气）接触面积增大，氧气供应更充足，燃烧更充分。着火点是物质的固有属性，不能被改变。"
     },
     {
       "id": "L17-P05",
@@ -69,12 +85,16 @@
         "在现场点火检验煤气泄漏点"
       ],
       "answer": 1,
-      "explanation": "关闭阀门切断气源，开窗通风降低煤气浓度。开灯或点火可能产生电火花引发爆炸。"
+      "knowledgeIds": [
+        "explosive-safety"
+      ],
+      "knowledgePoint": "explosive-safety",
+      "explanation": "煤气与空气混合达到一定比例遇明火或电火花会爆炸。正确做法：先关闭阀门切断气源，再开窗通风降低煤气浓度；切勿开灯、点火或操作电器开关以免产生电火花引发爆炸。"
     },
     {
       "id": "L17-P06",
       "type": "concept",
-      "difficulty": "hard",
+      "difficulty": "medium",
       "question": "篝火晚会时，若火势过旺，下列处理不正确的是？",
       "options": [
         "移除部分木柴",
@@ -83,7 +103,11 @@
         "将木柴分散开减小火势"
       ],
       "answer": 2,
-      "explanation": "浇水直到完全熄灭是将火彻底扑灭而非控制火势。正确做法是移除部分燃料或分散木柴。"
+      "knowledgeIds": [
+        "fire-extinguishing"
+      ],
+      "knowledgePoint": "fire-extinguishing",
+      "explanation": "篝火晚会控制火势不应彻底浇灭。A（移除可燃物）、B（覆盖部分隔绝氧气）、D（分散减小可燃物密度）都可行；C（彻底浇灭）违背篝火晚会保留火源的初衷，且会浪费大量水并产生大量水蒸气。"
     }
   ]
 }

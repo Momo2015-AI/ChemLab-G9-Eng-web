@@ -41,7 +41,10 @@
         "碳只能发生化合反应"
       ],
       "answer": 2,
-      "explanation": "碳具有还原性，高温下能还原金属氧化物。"
+      "explanation": "碳具有还原性，高温下能还原金属氧化物。",
+      "knowledgeIds": [
+        "carbon-chemical-property"
+      ]
     },
     {
       "id": "L21-P04",
@@ -55,7 +58,11 @@
         "生成物中只有铜"
       ],
       "answer": 3,
-      "explanation": "生成物有铜和二氧化碳两种。"
+      "explanation": "生成物有铜和二氧化碳两种。",
+      "knowledgeIds": [
+        "carbon-chemical-property",
+        "combustion-conditions"
+      ]
     }
   ]
 }

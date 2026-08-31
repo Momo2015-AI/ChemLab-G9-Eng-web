@@ -15,9 +15,16 @@
     "能运用质量守恒定律解释生活中的化学现象。",
     "能判断质量守恒定律的适用边界。"
   ],
-  "knowledgePoints": ["law-conservation"],
-  "prerequisites": ["lesson-14-law-conservation-experiment", "lesson-11-atomic-structure"],
-  "misconceptionIds": ["mc-law-conservation-atom-destroyed"],
+  "knowledgePoints": [
+    "law-conservation"
+  ],
+  "prerequisites": [
+    "lesson-14-law-conservation-experiment",
+    "lesson-11-atomic-structure"
+  ],
+  "misconceptionIds": [
+    "mc-law-conservation-atom-destroyed"
+  ],
   "guidedLearning": {
     "stepCount": 8,
     "steps": [
@@ -29,7 +36,9 @@
           "我们已知道化学反应前后质量守恒。",
           "但为什么守恒？是什么在反应前后保持不变？"
         ],
-        "knowledgePoints": ["law-conservation"],
+        "knowledgePoints": [
+          "law-conservation"
+        ],
         "check": {
           "question": "质量守恒定律的微观本质是？",
           "options": [
@@ -51,10 +60,17 @@
           "原子是化学变化中的最小粒子，反应前后原子本身不变。",
           "三不变：原子种类不变、原子数目不变、原子质量不变。"
         ],
-        "knowledgePoints": ["law-conservation"],
+        "knowledgePoints": [
+          "law-conservation"
+        ],
         "check": {
           "question": "化学反应前后，下列各项一定不变的是？①原子种类②原子数目③分子种类④物质种类",
-          "options": ["①②", "①②③", "③④", "①②③④"],
+          "options": [
+            "①②",
+            "①②③",
+            "③④",
+            "①②③④"
+          ],
           "answer": 0,
           "explanation": "化学反应前后原子种类和数目不变，分子种类和物质种类一定改变。"
         }
@@ -69,7 +85,9 @@
           "反应后：2个氢分子（4个H原子）+ 1个氧分子（2个O原子）。",
           "原子重新组合，总数不变。"
         ],
-        "knowledgePoints": ["law-conservation"],
+        "knowledgePoints": [
+          "law-conservation"
+        ],
         "check": null
       },
       {
@@ -80,7 +98,9 @@
           "误区：化学反应中原子可以被消灭或创生。",
           "纠正：化学反应只是原子的重新组合，原子本身不会消失或产生。核反应不属于化学反应。"
         ],
-        "knowledgePoints": ["law-conservation"],
+        "knowledgePoints": [
+          "law-conservation"
+        ],
         "check": {
           "question": "下列关于化学反应中原子的说法正确的是？",
           "options": [
@@ -102,7 +122,9 @@
           "镁条燃烧后固体质量增加：镁结合了空气中的氧气。",
           "两种现象都符合质量守恒——只需考虑所有参与反应的物质。"
         ],
-        "knowledgePoints": ["law-conservation"],
+        "knowledgePoints": [
+          "law-conservation"
+        ],
         "check": {
           "question": "镁条燃烧后固体质量增加，这是因为？",
           "options": [
@@ -124,7 +146,9 @@
           "不适用：物理变化（如状态变化）、核反应。",
           "注意：质量守恒指“参加反应”的物质，未参与的不计入。"
         ],
-        "knowledgePoints": ["law-conservation"],
+        "knowledgePoints": [
+          "law-conservation"
+        ],
         "check": null
       },
       {
@@ -136,7 +160,9 @@
           "求生成D的质量：10+5-3 = 12g。",
           "推断：若D由C和E组成，可根据质量关系推算E的质量。"
         ],
-        "knowledgePoints": ["law-conservation"],
+        "knowledgePoints": [
+          "law-conservation"
+        ],
         "check": null
       },
       {
@@ -149,7 +175,9 @@
           "应用：解释质量变化、推断物质组成。",
           "适用边界：仅限化学变化。"
         ],
-        "knowledgePoints": ["law-conservation"],
+        "knowledgePoints": [
+          "law-conservation"
+        ],
         "check": null
       }
     ]
@@ -169,10 +197,19 @@
       "type": "concept",
       "difficulty": "basic",
       "question": "化学反应前后，一定不变的是？",
-      "options": ["分子种类", "原子种类", "物质种类", "分子数目"],
+      "options": [
+        "分子种类",
+        "原子种类",
+        "物质种类",
+        "分子数目"
+      ],
       "answer": 1,
-      "knowledgeIds": ["law-conservation"],
-      "knowledgePoints": ["law-conservation"],
+      "knowledgeIds": [
+        "law-conservation"
+      ],
+      "knowledgePoints": [
+        "law-conservation"
+      ],
       "explanation": "化学反应前后原子的种类不变。"
     },
     {
@@ -187,8 +224,12 @@
         "原子可以再分为质子和中子"
       ],
       "answer": 2,
-      "knowledgeIds": ["law-conservation"],
-      "knowledgePoints": ["law-conservation"],
+      "knowledgeIds": [
+        "law-conservation"
+      ],
+      "knowledgePoints": [
+        "law-conservation"
+      ],
       "explanation": "原子是化学变化中的最小粒子，化学反应中原子不可再分。"
     },
     {
@@ -196,10 +237,19 @@
       "type": "concept",
       "difficulty": "medium",
       "question": "水电解反应中，反应前后肯定发生变化的是？",
-      "options": ["原子种类", "原子数目", "分子种类", "元素种类"],
+      "options": [
+        "原子种类",
+        "原子数目",
+        "分子种类",
+        "元素种类"
+      ],
       "answer": 2,
-      "knowledgeIds": ["law-conservation"],
-      "knowledgePoints": ["law-conservation"],
+      "knowledgeIds": [
+        "law-conservation"
+      ],
+      "knowledgePoints": [
+        "law-conservation"
+      ],
       "explanation": "水电解后水分子变成了氢分子和氧分子，分子种类改变。"
     },
     {
@@ -207,10 +257,19 @@
       "type": "concept",
       "difficulty": "medium",
       "question": "在化学反应A+B→C中，5g A和3g B完全反应，生成C的质量是？",
-      "options": ["8g", "5g", "3g", "2g"],
+      "options": [
+        "8g",
+        "5g",
+        "3g",
+        "2g"
+      ],
       "answer": 0,
-      "knowledgeIds": ["law-conservation"],
-      "knowledgePoints": ["law-conservation"],
+      "knowledgeIds": [
+        "law-conservation"
+      ],
+      "knowledgePoints": [
+        "law-conservation"
+      ],
       "explanation": "根据质量守恒，生成C的质量 = 5+3 = 8g。"
     },
     {
@@ -218,10 +277,19 @@
       "type": "concept",
       "difficulty": "hard",
       "question": "某物质在氧气中完全燃烧后只生成CO₂和H₂O，则该物质中一定含有？",
-      "options": ["C、H、O三种元素", "C、H元素，可能含O", "C、O元素，可能含H", "只有C和H"],
+      "options": [
+        "C、H、O三种元素",
+        "C、H元素，可能含O",
+        "C、O元素，可能含H",
+        "只有C和H"
+      ],
       "answer": 1,
-      "knowledgeIds": ["law-conservation"],
-      "knowledgePoints": ["law-conservation"],
+      "knowledgeIds": [
+        "law-conservation"
+      ],
+      "knowledgePoints": [
+        "law-conservation"
+      ],
       "explanation": "生成物含C、H、O三种元素，O可能来自氧气，所以该物质一定含C、H，可能含O。"
     },
     {
@@ -236,8 +304,12 @@
         "体积不变"
       ],
       "answer": 1,
-      "knowledgeIds": ["law-conservation"],
-      "knowledgePoints": ["law-conservation"],
+      "knowledgeIds": [
+        "law-conservation"
+      ],
+      "knowledgePoints": [
+        "law-conservation"
+      ],
       "explanation": "质量守恒的微观本质是原子三不变。"
     }
   ],
@@ -246,51 +318,110 @@
       "id": "L27-D01",
       "type": "concept",
       "difficulty": "medium",
-      "question": "小红认为化学反应中原子可以被消灭。她的错误在于？",
+      "question": "小明认为：蜡烛燃烧后质量减少，是因为蜡烛中的原子被消灭了。他的错误在于？",
       "options": [
-        "忽略了原子是化学变化中的最小粒子",
-        "原子确实可以被消灭",
-        "化学反应中原子会分裂",
+        "忽略了生成的CO₂和H₂O逸散到空气中",
+        "原子确实被消灭了",
+        "蜡烛燃烧不是化学变化",
         "以上都不对"
       ],
       "answer": 0,
-      "knowledgeIds": ["law-conservation"],
-      "knowledgePoints": ["law-conservation"],
-      "explanation": "原子是化学变化中的最小粒子，不会在化学反应中被消灭或创生。",
+      "knowledgeIds": [
+        "law-of-mass-conservation"
+      ],
+      "knowledgePoints": [
+        "law-conservation"
+      ],
+      "explanation": "蜡烛燃烧是石蜡与氧气反应生成CO₂和H₂O，原子重新组合而非被消灭。",
       "errorType": "mc-law-conservation-atom-destroyed",
-      "remediationStep": "L27-S04"
+      "remediationStep": "L27-S06"
     },
     {
       "id": "L27-D02",
       "type": "concept",
       "difficulty": "medium",
-      "question": "在化学反应2H₂+O₂→2H₂O中，反应前后一定改变的是？",
-      "options": ["氢原子数目", "氧原子数目", "分子种类", "原子质量"],
+      "question": "下列对化学反应微观本质的理解正确的是？",
+      "options": [
+        "化学反应中原子可以再分",
+        "化学反应前后原子种类可能改变",
+        "化学反应是原子重新组合的过程，原子本身不变",
+        "化学反应中原子数目可能增减"
+      ],
       "answer": 2,
-      "knowledgeIds": ["law-conservation"],
-      "knowledgePoints": ["law-conservation"],
-      "explanation": "反应前后原子种类、数目、质量都不变，但分子种类从H₂和O₂变为H₂O。"
+      "knowledgeIds": [
+        "law-of-mass-conservation"
+      ],
+      "knowledgePoints": [
+        "law-conservation"
+      ],
+      "explanation": "化学反应的微观本质是分子破裂为原子，原子重新组合成新分子，原子本身不变。"
     },
     {
       "id": "L27-D03",
       "type": "concept",
       "difficulty": "hard",
-      "question": "已知12g碳在足量氧气中完全燃烧生成44g二氧化碳，则参加反应的氧气质量为？",
-      "options": ["12g", "22g", "32g", "56g"],
+      "question": "某反应：X+Y→Z，反应前X有10个原子，Y有6个原子。反应后Z中含有多少个原子？",
+      "options": [
+        "少于16个，部分原子被消灭",
+        "多于16个，有新原子生成",
+        "恰好16个，原子数目守恒",
+        "无法确定"
+      ],
       "answer": 2,
-      "knowledgeIds": ["law-conservation"],
-      "knowledgePoints": ["law-conservation"],
-      "explanation": "根据质量守恒：碳质量+氧气质量=二氧化碳质量，12+x=44，x=32g。",
+      "knowledgeIds": [
+        "law-of-mass-conservation"
+      ],
+      "knowledgePoints": [
+        "law-conservation"
+      ],
+      "explanation": "根据原子三不变，反应前后原子总数守恒，10+6=16个原子。",
       "errorType": "mc-law-conservation-atom-destroyed",
-      "remediationStep": "L27-S02"
+      "remediationStep": "L27-S04"
     }
   ],
   "sections": [
-    { "title": "本节课要掌握什么？", "body": ["质量守恒的微观本质：原子三不变。", "化学变化的实质是原子重新组合。", "能用质量守恒推断物质组成和质量关系。"] },
-    { "title": "核心概念", "body": ["原子是化学变化中的最小粒子。", "三不变：原子种类、数目、质量。"] },
-    { "title": "常见误区", "body": ["误认为原子可以被消灭或创生。", "误认为分子总数不变。"] },
-    { "title": "学习方法", "body": ["宏观现象→微观解释→定量计算。"] }
+    {
+      "title": "本节课要掌握什么？",
+      "body": [
+        "质量守恒的微观本质：原子三不变。",
+        "化学变化的实质是原子重新组合。",
+        "能用质量守恒推断物质组成和质量关系。"
+      ]
+    },
+    {
+      "title": "核心概念",
+      "body": [
+        "原子是化学变化中的最小粒子。",
+        "三不变：原子种类、数目、质量。"
+      ]
+    },
+    {
+      "title": "常见误区",
+      "body": [
+        "误认为原子可以被消灭或创生。",
+        "误认为分子总数不变。"
+      ]
+    },
+    {
+      "title": "学习方法",
+      "body": [
+        "宏观现象→微观解释→定量计算。"
+      ]
+    }
   ],
-  "provenance": { "status": "ready", "basis": "人教版九年级化学上册第五单元课题1；2022年版义务教育化学课程标准。", "note": "内容原创，不复制教材原文。" },
-  "review": { "curriculum": "pass", "scientific": "pass", "ageSuitability": "pass", "itemQuality": "pass", "knowledgeLinks": "pass", "wuhanAlignment": "pass", "masteryGate": "pass", "blockingIssues": [] }
+  "provenance": {
+    "status": "ready",
+    "basis": "人教版九年级化学上册第五单元课题1；2022年版义务教育化学课程标准。",
+    "note": "内容原创，不复制教材原文。"
+  },
+  "review": {
+    "curriculum": "pass",
+    "scientific": "pass",
+    "ageSuitability": "pass",
+    "itemQuality": "pass",
+    "knowledgeLinks": "pass",
+    "wuhanAlignment": "pass",
+    "masteryGate": "pass",
+    "blockingIssues": []
+  }
 }

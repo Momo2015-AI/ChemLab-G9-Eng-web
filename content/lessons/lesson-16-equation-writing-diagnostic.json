@@ -15,7 +15,10 @@
       "answer": 0,
       "explanation": "左边2个O，右边3个O（H₂O中1个+O₂中2个），未配平。正确应为2H₂O₂→2H₂O+O₂↑。",
       "errorType": "mc-equation-gas-precipitate-confusion",
-      "remediationStep": "L28-S04"
+      "remediationStep": "L28-S04",
+      "knowledgeIds": [
+        "equation-writing"
+      ]
     },
     {
       "id": "L28-D02",
@@ -31,7 +34,10 @@
       "answer": 0,
       "explanation": "C+O₂→CO₂中反应物已有气体O₂，生成CO₂不需要标↑。",
       "errorType": "mc-equation-gas-precipitate-confusion",
-      "remediationStep": "L28-S06"
+      "remediationStep": "L28-S06",
+      "knowledgeIds": [
+        "equation-writing"
+      ]
     },
     {
       "id": "L28-D03",
@@ -47,7 +53,10 @@
       "answer": 2,
       "explanation": "三处错误：①生成物应为Fe₃O₄不是FeO₂；②未配平；③条件虽写了但方程式整体错误。",
       "errorType": "mc-equation-gas-precipitate-confusion",
-      "remediationStep": "L28-S03"
+      "remediationStep": "L28-S03",
+      "knowledgeIds": [
+        "equation-writing"
+      ]
     }
   ]
 }

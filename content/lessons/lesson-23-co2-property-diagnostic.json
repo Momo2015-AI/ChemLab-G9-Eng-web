@@ -15,7 +15,10 @@
       "answer": 2,
       "explanation": "干燥的 CO₂ 不能使石蕊变红，是 CO₂ 与水反应生成的碳酸使其变红。",
       "errorType": "mc-co2-limewater",
-      "remediationStep": "L23-S04"
+      "remediationStep": "L23-S04",
+      "knowledgeIds": [
+        "co2-property"
+      ]
     },
     {
       "id": "L23-D02",
@@ -31,7 +34,10 @@
       "answer": 0,
       "explanation": "过量 CO₂ 与 CaCO₃ 和水反应生成可溶的碳酸氢钙。",
       "errorType": "mc-co2-limewater",
-      "remediationStep": "L23-S05"
+      "remediationStep": "L23-S05",
+      "knowledgeIds": [
+        "co2-property"
+      ]
     },
     {
       "id": "L23-D03",
@@ -45,7 +51,11 @@
         "CO₂ 气体肥料"
       ],
       "answer": 2,
-      "explanation": "制碳酸饮料利用了 CO₂ 能溶于水（物理）和与水反应（化学）。"
+      "explanation": "制碳酸饮料利用了 CO₂ 能溶于水（物理）和与水反应（化学）。",
+      "knowledgeIds": [
+        "co2-property",
+        "environmental-impact"
+      ]
     }
   ]
 }

@@ -15,7 +15,10 @@
       "answer": 1,
       "explanation": "系数比2:1≠质量比1:8。2gH₂需要16gO₂才能完全反应。",
       "errorType": "mc-stoich-coefficient-vs-mass",
-      "remediationStep": "L30-S05"
+      "remediationStep": "L30-S05",
+      "knowledgeIds": [
+        "stoichiometry"
+      ]
     },
     {
       "id": "L30-D02",
@@ -31,7 +34,10 @@
       "answer": 0,
       "explanation": "应使用纯CaCO₃质量=90g计算，直接用100g会得出偏大结果。",
       "errorType": "mc-stoich-coefficient-vs-mass",
-      "remediationStep": "L30-S06"
+      "remediationStep": "L30-S06",
+      "knowledgeIds": [
+        "stoichiometry"
+      ]
     },
     {
       "id": "L30-D03",
@@ -47,7 +53,10 @@
       "answer": 0,
       "explanation": "O₂质量分数=1-84.8%=15.2%。验证：32/316≈10.1%（每mol），但残留固体含K₂MnO₄+MnO₂，总质量分数≈84.8%。",
       "errorType": "mc-stoich-coefficient-vs-mass",
-      "remediationStep": "L30-S04"
+      "remediationStep": "L30-S04",
+      "knowledgeIds": [
+        "stoichiometry"
+      ]
     }
   ]
 }

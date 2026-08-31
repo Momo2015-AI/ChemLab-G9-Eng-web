@@ -273,40 +273,49 @@
       "remediationStep": "L02-S02/L02-S03",
       "knowledgeIds": [
         "observation-inference"
+      ],
+      "misconceptionIds": [
+        "mc-method-observation-inference"
       ]
     },
     {
       "id": "L02-D02",
       "knowledgePoint": "control-variables",
       "question": "比较温度对溶解快慢的影响时，同时改变温度和水量，问题出在哪里？",
-      "answer": 0,
+      "answer": 1,
       "options": [
+        "溶解快慢无法比较",
         "改变的因素多于一个，无法判断是哪个因素导致差异",
         "应该只改变水量",
-        "温度不需要控制",
-        "溶解快慢无法比较"
+        "温度不需要控制"
       ],
       "errorType": "mc-method-control-variable",
       "remediationStep": "L02-S04",
       "knowledgeIds": [
         "control-variables"
+      ],
+      "misconceptionIds": [
+        "mc-method-control-variable"
       ]
     },
     {
       "id": "L02-D03",
       "knowledgePoint": "data-integrity",
       "question": "实验数据与预测不符时，把数据改成符合预测的值，这种做法主要违背了什么？",
-      "answer": 0,
+      "answer": 2,
       "options": [
-        "数据真实性原则",
-        "控制变量原则",
         "观察的客观性",
-        "结论的可检验性"
+        "结论的可检验性",
+        "数据真实性原则",
+        "控制变量原则"
       ],
       "errorType": "mc-method-data-integrity",
       "remediationStep": "L02-S06/L02-S07",
       "knowledgeIds": [
         "data-integrity"
+      ],
+      "misconceptionIds": [
+        "mc-method-data-integrity"
       ]
     }
   ],

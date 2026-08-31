@@ -1,11 +1,109 @@
 {
   "lessonId": "lesson-15-law-conservation-micro",
   "questions": [
-    { "id": "L27-P01", "type": "concept", "difficulty": "basic", "question": "化学反应前后，一定不变的是？", "options": ["分子种类", "物质种类", "原子种类和数目", "物质状态"], "answer": 2, "explanation": "化学反应前后，原子的种类和数目不变，分子种类和物质种类改变。" },
-    { "id": "L27-P02", "type": "concept", "difficulty": "basic", "question": "水电解反应中，发生改变的是？", "options": ["氢原子数目", "氧原子数目", "水分子种类", "氢氧原子总数"], "answer": 2, "explanation": "水电解时水分子破裂，氢原子和氧原子重新组合成氢分子和氧分子。" },
-    { "id": "L27-P03", "type": "concept", "difficulty": "medium", "question": "某反应：2A+B→C，10g A与5g B恰好完全反应，生成C的质量是？", "options": ["5g", "10g", "15g", "20g"], "answer": 2, "explanation": "根据质量守恒：10g+5g=15g C。" },
-    { "id": "L27-P04", "type": "concept", "difficulty": "medium", "question": "下列变化中，从微观角度看，原子总数发生变化的是？", "options": ["碘升华", "水电解", "铁生锈", "干冰升华"], "answer": 1, "explanation": "水电解是化学变化，分子重组但原子总数不变；其他选项为物理变化。", "trick": true },
-    { "id": "L27-P05", "type": "concept", "difficulty": "hard", "question": "镁条在空气中燃烧，生成氧化镁的质量比镁条质量大。从原子角度看，原因是？", "options": ["产生了新原子", "镁原子质量增加了", "镁原子与氧原子结合，原子总数增加但每个原子质量不变", "原子被创生"], "answer": 2, "explanation": "镁与氧原子结合，原子总数变多（增加了氧原子），但每个原子质量不变。" },
-    { "id": "L27-P06", "type": "concept", "difficulty": "hard", "question": "密闭容器中加热铜粉，反应前后容器内各物质总质量不变。这是因为？", "options": ["铜原子质量不变", "反应前后原子总数不变且每个原子质量不变", "没有发生化学反应", "容器密闭阻止了反应"], "answer": 1, "explanation": "原子三不变（种类、数目、质量）决定了总质量不变。" }
+    {
+      "id": "L27-P01",
+      "type": "concept",
+      "difficulty": "basic",
+      "question": "化学反应前后，一定不变的是？",
+      "options": [
+        "分子种类",
+        "物质种类",
+        "原子种类和数目",
+        "物质状态"
+      ],
+      "answer": 2,
+      "explanation": "化学反应前后，原子的种类和数目不变，分子种类和物质种类改变。",
+      "knowledgeIds": [
+        "law-of-mass-conservation"
+      ]
+    },
+    {
+      "id": "L27-P02",
+      "type": "concept",
+      "difficulty": "basic",
+      "question": "水电解反应中，发生改变的是？",
+      "options": [
+        "氢原子数目",
+        "氧原子数目",
+        "水分子种类",
+        "氢氧原子总数"
+      ],
+      "answer": 2,
+      "explanation": "水电解时水分子破裂，氢原子和氧原子重新组合成氢分子和氧分子。",
+      "knowledgeIds": [
+        "law-of-mass-conservation",
+        "electrolysis-experiment"
+      ]
+    },
+    {
+      "id": "L27-P03",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "某反应：2A+B→C，10g A与5g B恰好完全反应，生成C的质量是？",
+      "options": [
+        "5g",
+        "10g",
+        "15g",
+        "20g"
+      ],
+      "answer": 2,
+      "explanation": "根据质量守恒：10g+5g=15g C。",
+      "knowledgeIds": [
+        "law-of-mass-conservation"
+      ]
+    },
+    {
+      "id": "L27-P04",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "下列变化中，从微观角度看，原子总数发生变化的是？",
+      "options": [
+        "碘升华",
+        "水电解",
+        "铁生锈",
+        "干冰升华"
+      ],
+      "answer": 1,
+      "explanation": "水电解是化学变化，分子重组但原子总数不变；其他选项为物理变化。",
+      "trick": true,
+      "knowledgeIds": [
+        "law-of-mass-conservation"
+      ]
+    },
+    {
+      "id": "L27-P05",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "镁条在空气中燃烧，生成氧化镁的质量比镁条质量大。从原子角度看，原因是？",
+      "options": [
+        "产生了新原子",
+        "镁原子质量增加了",
+        "镁原子与氧原子结合，原子总数增加但每个原子质量不变",
+        "原子被创生"
+      ],
+      "answer": 2,
+      "explanation": "镁与氧原子结合，原子总数变多（增加了氧原子），但每个原子质量不变。",
+      "knowledgeIds": [
+        "law-of-mass-conservation"
+      ]
+    },
+    {
+      "id": "L27-P06",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "密闭容器中加热铜粉，反应前后容器内各物质总质量不变。这是因为？",
+      "options": [
+        "铜原子质量不变",
+        "反应前后原子总数不变且每个原子质量不变",
+        "没有发生化学反应",
+        "容器密闭阻止了反应"
+      ],
+      "answer": 1,
+      "explanation": "原子三不变（种类、数目、质量）决定了总质量不变。",
+      "knowledgeIds": [
+        "law-of-mass-conservation"
+      ]
+    }
   ]
 }

@@ -34,14 +34,38 @@
   "guidedLearning": {
     "stepCount": 8,
     "steps": [
-      { "id": "L06-S01", "title": "引入：水是什么物质" },
-      { "id": "L06-S02", "title": "电解水实验装置" },
-      { "id": "L06-S03", "title": "实验现象观察" },
-      { "id": "L06-S04", "title": "气体检验方法" },
-      { "id": "L06-S05", "title": "实验结论分析" },
-      { "id": "L06-S06", "title": "单质与化合物" },
-      { "id": "L06-S07", "title": "元素概念建立" },
-      { "id": "L06-S08", "title": "微观实质理解" }
+      {
+        "id": "L06-S01",
+        "title": "引入：水是什么物质"
+      },
+      {
+        "id": "L06-S02",
+        "title": "电解水实验装置"
+      },
+      {
+        "id": "L06-S03",
+        "title": "实验现象观察"
+      },
+      {
+        "id": "L06-S04",
+        "title": "气体检验方法"
+      },
+      {
+        "id": "L06-S05",
+        "title": "实验结论分析"
+      },
+      {
+        "id": "L06-S06",
+        "title": "单质与化合物"
+      },
+      {
+        "id": "L06-S07",
+        "title": "元素概念建立"
+      },
+      {
+        "id": "L06-S08",
+        "title": "微观实质理解"
+      }
     ]
   },
   "resourceRefs": {
@@ -65,60 +89,120 @@
       "id": "L06-Q01",
       "type": "concept",
       "question": "电解水实验中，正极产生的气体是？",
-      "options": ["氢气", "氧气", "氮气", "二氧化碳"],
+      "options": [
+        "氢气",
+        "氧气",
+        "氮气",
+        "二氧化碳"
+      ],
       "answer": 1,
-      "knowledgeIds": ["electrolysis-experiment", "oxygen-property"],
-      "knowledgePoints": ["electrolysis-experiment"],
+      "knowledgeIds": [
+        "electrolysis-experiment",
+        "oxygen-property"
+      ],
+      "knowledgePoints": [
+        "electrolysis-experiment"
+      ],
       "explanation": "电解水时，正极产生氧气，负极产生氢气，体积比约为1:2。"
     },
     {
       "id": "L06-Q02",
       "type": "concept",
       "question": "下列物质中属于单质的是？",
-      "options": ["水", "二氧化碳", "氧气", "氯化钠"],
+      "options": [
+        "水",
+        "二氧化碳",
+        "氧气",
+        "氯化钠"
+      ],
       "answer": 2,
-      "knowledgeIds": ["single-substance-compound", "element-concept"],
-      "knowledgePoints": ["single-substance-compound"],
+      "knowledgeIds": [
+        "single-substance-compound",
+        "element-concept"
+      ],
+      "knowledgePoints": [
+        "single-substance-compound"
+      ],
       "explanation": "氧气只由一种元素组成，属于单质；水、二氧化碳、氯化钠都由多种元素组成，属于化合物。"
     },
     {
       "id": "L06-Q03",
       "type": "concept",
       "question": "电解水实验说明水是由什么组成的？",
-      "options": ["氢原子和氧原子", "氢分子和氧分子", "氢元素和氧元素", "氢气和氧气"],
+      "options": [
+        "氢原子和氧原子",
+        "氢分子和氧分子",
+        "氢元素和氧元素",
+        "氢气和氧气"
+      ],
       "answer": 2,
-      "knowledgeIds": ["water-composition", "element-concept"],
-      "knowledgePoints": ["water-composition"],
+      "knowledgeIds": [
+        "water-composition",
+        "element-concept"
+      ],
+      "knowledgePoints": [
+        "water-composition"
+      ],
       "explanation": "电解水生成氢气和氧气，根据质量守恒定律，反应前后元素种类不变，说明水是由氢元素和氧元素组成的。"
     },
     {
       "id": "L06-Q04",
       "type": "concept",
       "question": "检验氢气的方法正确的是？",
-      "options": ["用带火星的木条伸入气体中", "用燃着的木条伸入气体中，气体能燃烧", "通入澄清石灰水", "闻气体气味"],
+      "options": [
+        "用带火星的木条伸入气体中",
+        "用燃着的木条伸入气体中，气体能燃烧",
+        "通入澄清石灰水",
+        "闻气体气味"
+      ],
       "answer": 1,
-      "knowledgeIds": ["hydrogen-property", "oxygen-property"],
-      "knowledgePoints": ["hydrogen-property"],
+      "knowledgeIds": [
+        "hydrogen-property",
+        "oxygen-property"
+      ],
+      "knowledgePoints": [
+        "hydrogen-property"
+      ],
       "explanation": "氢气具有可燃性，能在空气中燃烧，产生淡蓝色火焰；氧气能使带火星的木条复燃。"
     },
     {
       "id": "L06-Q05",
       "type": "concept",
       "question": "关于电解水实验，下列说法正确的是？",
-      "options": ["正极产生氢气", "负极产生氧气", "水是由氢气和氧气组成的", "水是由氢元素和氧元素组成的"],
+      "options": [
+        "正极产生氢气",
+        "负极产生氧气",
+        "水是由氢气和氧气组成的",
+        "水是由氢元素和氧元素组成的"
+      ],
       "answer": 3,
-      "knowledgeIds": ["water-composition", "electrolysis-experiment"],
-      "knowledgePoints": ["water-composition"],
+      "knowledgeIds": [
+        "water-composition",
+        "electrolysis-experiment"
+      ],
+      "knowledgePoints": [
+        "water-composition"
+      ],
       "explanation": "电解水时正极产生氧气，负极产生氢气；水是由氢元素和氧元素组成的纯净物，不是由氢气和氧气混合而成。"
     },
     {
       "id": "L06-Q06",
       "type": "concept",
       "question": "下列物质中，属于化合物的是？",
-      "options": ["铁", "氧气", "水", "氮气"],
+      "options": [
+        "铁",
+        "氧气",
+        "水",
+        "氮气"
+      ],
       "answer": 2,
-      "knowledgeIds": ["single-substance-compound", "element-concept"],
-      "knowledgePoints": ["single-substance-compound"],
+      "knowledgeIds": [
+        "single-substance-compound",
+        "element-concept"
+      ],
+      "knowledgePoints": [
+        "single-substance-compound"
+      ],
       "explanation": "水是由氢元素和氧元素组成的纯净物，属于化合物；铁、氧气、氮气都只由一种元素组成，属于单质。"
     }
   ],
@@ -126,32 +210,56 @@
     {
       "id": "L06-D01",
       "knowledgePoint": "electrolysis-experiment",
-      "question": "电解水实验中，与电源正极相连的玻璃管内收集到的气体是？",
-      "options": ["氢气", "氧气", "氮气", "二氧化碳"],
+      "question": "电解水实验中，与电源正极相连的玻璃管内收集到的气体能使带火星的木条复燃，该气体是？",
+      "options": [
+        "氢气",
+        "氧气",
+        "氮气",
+        "二氧化碳"
+      ],
       "answer": 1,
       "errorType": "mc-water-electrolysis-polarity",
       "remediationStep": "L06-S03",
-      "knowledgeIds": ["electrolysis-experiment"]
+      "knowledgeIds": [
+        "electrolysis-experiment",
+        "oxygen-property"
+      ]
     },
     {
       "id": "L06-D02",
       "knowledgePoint": "water-composition",
       "question": "关于水的组成，下列说法正确的是？",
-      "options": ["水是由氢气和氧气组成的", "水是由两个氢原子和一个氧原子构成的", "水是由氢元素和氧元素组成的", "水是由水原子构成的"],
+      "options": [
+        "水是由氢气和氧气组成的",
+        "水是由氢原子和氧原子构成的",
+        "水是由氢元素和氧元素组成的",
+        "水是由水原子构成的"
+      ],
       "answer": 2,
       "errorType": "mc-water-composition",
       "remediationStep": "L06-S05",
-      "knowledgeIds": ["water-composition", "element-concept"]
+      "knowledgeIds": [
+        "water-composition",
+        "element-concept"
+      ]
     },
     {
       "id": "L06-D03",
       "knowledgePoint": "single-substance-compound",
       "question": "下列各组物质中，前者是单质，后者是化合物的是？",
-      "options": ["空气、水", "氧气、二氧化碳", "铁、液态氧", "氢气、矿泉水"],
+      "options": [
+        "空气、水",
+        "氧气、二氧化碳",
+        "铁、液态氧",
+        "氢气、矿泉水"
+      ],
       "answer": 1,
       "errorType": "mc-single-compound-distinguish",
       "remediationStep": "L06-S06",
-      "knowledgeIds": ["single-substance-compound", "element-concept"]
+      "knowledgeIds": [
+        "single-substance-compound",
+        "element-concept"
+      ]
     }
   ],
   "mastery": {

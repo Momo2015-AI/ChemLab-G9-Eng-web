@@ -1,0 +1,155 @@
+{
+  "_comment": "Sprint 1 S4 (knowledge links) + S6 (explanations) batch patches. knowledgeIds is required; explanation is only provided where the original was missing/empty.",
+
+  "lesson-14-law-conservation-experiment-practice.json": [
+    { "id": "L26-P01", "knowledgeIds": ["law-of-mass-conservation"], "explanation": "质量守恒定律只适用于化学变化，不适用于物理变化（如质量因形状改变而变化）。" },
+    { "id": "L26-P02", "knowledgeIds": ["law-of-mass-conservation"], "explanation": "铁丝燃烧生成四氧化三铁，是化学变化，遵守质量守恒定律。纸张燃烧、矿石粉碎是物理或质量转移，水结冰是物理变化。" },
+    { "id": "L26-P03", "knowledgeIds": ["law-of-mass-conservation"], "explanation": "碳酸钙与盐酸反应生成 CO₂ 气体，开放容器中 CO₂ 逸散到空气中，所以体系质量减少；若用密闭容器则总质量不变。" },
+    { "id": "L26-P04", "knowledgeIds": ["law-of-mass-conservation"], "explanation": "铁生锈是铁与氧气、水发生的缓慢氧化，固体增重是因为结合了空气中的氧元素，符合质量守恒。" },
+    { "id": "L26-P05", "knowledgeIds": ["law-of-mass-conservation"], "explanation": "密闭系统无物质进出，无论发生什么反应，反应前后容器内总质量相等（铜粉与氧气反应生成氧化铜，总质量不变）。" },
+    { "id": "L26-P06", "knowledgeIds": ["law-of-mass-conservation", "lab-operations"], "explanation": "白磷燃烧放出大量热，锥形瓶底部铺细砂可使热量均匀分布，防止玻璃受热不均而炸裂。" }
+  ],
+  "lesson-14-law-conservation-experiment-diagnostic.json": [
+    { "id": "L26-D01", "knowledgeIds": ["law-of-mass-conservation"], "explanation": "开放容器中生成的 CO₂ 等气体逸散到空气中，导致容器内物质总质量减少，并不是质量守恒不成立。密闭容器中质量守恒。" },
+    { "id": "L26-D02", "knowledgeIds": ["law-of-mass-conservation"], "explanation": "只有化学变化遵守质量守恒定律；物理变化（如水结冰、矿石粉碎）物质本身不变，'反应前后质量'是同义词。" },
+    { "id": "L26-D03", "knowledgeIds": ["law-of-mass-conservation"], "explanation": "镁条在空气中燃烧：2Mg + O₂ → 2MgO。固体增重是因为结合了空气中的氧元素，体系总质量（含氧气）仍守恒。" }
+  ],
+
+  "lesson-15-fossil-fuels-energy-practice.json": [
+    { "id": "L18-P01", "knowledgeIds": ["fossil-fuels"], "explanation": "三大化石燃料：煤（主要含碳）、石油（多种烃的混合物）、天然气（主要成分甲烷 CH₄）。均为不可再生资源。" },
+    { "id": "L18-P02", "knowledgeIds": ["fossil-fuels"], "explanation": "甲烷是最简单的有机物，一个碳原子与四个氢原子以共价键结合，化学式 CH₄。" },
+    { "id": "L18-P03", "knowledgeIds": ["fossil-fuels", "environmental-impact"], "explanation": "氢气燃烧只生成水（H₂+O₂→H₂O），不产生 CO₂、SO₂ 等污染物，对环境最友好。" },
+    { "id": "L18-P04", "knowledgeIds": ["fossil-fuels", "environmental-impact"], "explanation": "煤燃烧主要污染物有 SO₂（导致酸雨）、NOx、粉尘、CO₂（温室效应）等；N₂ 是空气主要成分，化学性质稳定，不属于大气污染物。" },
+    { "id": "L18-P05", "knowledgeIds": ["fossil-fuels"], "explanation": "煤、石油、天然气不可再生，提高能源利用率可延缓资源枯竭，是缓解能源危机的重要途径。" },
+    { "id": "L18-P06", "knowledgeIds": ["explosive-safety"], "explanation": "氢气与空气按一定比例（爆炸极限 4%~74.2%）混合时，遇明火会发生爆炸，点燃前必须验纯。" }
+  ],
+  "lesson-15-fossil-fuels-energy-diagnostic.json": [
+    { "id": "L18-D01", "knowledgeIds": ["fossil-fuels", "environmental-impact"], "explanation": "太阳能、风能虽清洁，但太阳能电池板生产和风电机组制造有能耗和材料影响；新能源需从全生命周期评价其环境影响。" },
+    { "id": "L18-D02", "knowledgeIds": ["fossil-fuels"], "explanation": "三大化石燃料：煤、石油、天然气。酒精、氢气、太阳能不是化石燃料（酒精是生物质能，氢气是二次能源，太阳能是新能源）。" },
+    { "id": "L18-D03", "knowledgeIds": ["fossil-fuels"], "explanation": "三者共同点：①都是混合物；②都含碳元素；③燃烧都生成 CO₂；④都是不可再生资源。" }
+  ],
+
+  "lesson-15-law-conservation-micro-practice.json": [
+    { "id": "L27-P01", "knowledgeIds": ["law-of-mass-conservation"], "explanation": "化学反应前后原子的种类、数目、质量一定不变；分子种类、物质种类一定改变；元素种类不变；分子数目可能改变。" },
+    { "id": "L27-P02", "knowledgeIds": ["law-of-mass-conservation", "electrolysis-experiment"], "explanation": "水电解：2H₂O → 2H₂↑+O₂↑（通电），反应中水分子破裂为氢、氧原子，原子重新组合成新分子 H₂、O₂，分子种类改变。" },
+    { "id": "L27-P03", "knowledgeIds": ["law-of-mass-conservation"], "explanation": "根据质量守恒定律：参加反应的物质总质量 = 生成物总质量，故 10g + 5g = 15g C。" },
+    { "id": "L27-P04", "knowledgeIds": ["law-of-mass-conservation"], "explanation": "化学反应中原子总数不变（原子是化学变化中的最小粒子）。物理变化中原子也不变（原子是化学变化中的最小粒子）。该题在原解析下选项设置存在争议，应理解为化学变化中原子总数不变。" },
+    { "id": "L27-P05", "knowledgeIds": ["law-of-mass-conservation"], "explanation": "镁条在空气中燃烧：2Mg + O₂ → 2MgO，反应后固体质量增加是因为结合了空气中的氧原子；从原子角度看，反应后增加了参与反应的氧原子，每个原子质量不变，原子总数变多。" },
+    { "id": "L27-P06", "knowledgeIds": ["law-of-mass-conservation"], "explanation": "化学反应前后原子三不变：种类不变、数目不变、质量不变；密闭容器中各物质总质量不变正是原子三不变的宏观体现。" }
+  ],
+  "lesson-15-law-conservation-micro-diagnostic.json": [
+    { "id": "L27-D01", "knowledgeIds": ["law-of-mass-conservation"], "explanation": "化学反应中原子不会被消灭，只是重新组合成新分子。蜡烛燃烧后质量减少是因为生成的 CO₂ 和 H₂O 逸散到空气中，并非原子消失。" },
+    { "id": "L27-D02", "knowledgeIds": ["law-of-mass-conservation"], "explanation": "化学反应的微观本质：反应物的分子破裂成原子，原子重新组合成新的分子，原子本身（种类、数目、质量）不变。" },
+    { "id": "L27-D03", "knowledgeIds": ["law-of-mass-conservation"], "explanation": "化学反应前后原子总数守恒（原子三不变之一）。反应前 X 与 Y 共 10+6=16 个原子，故生成物 Z 中也含 16 个原子。" }
+  ],
+
+  "lesson-16-combustion-safety-explosion-practice.json": [
+    { "id": "L19-P01", "knowledgeIds": ["explosive-safety"], "explanation": "氢气与空气按 4%~74.2% 体积比混合（爆炸极限）时，遇明火会发生剧烈爆炸。点燃前必须验纯，确保是纯净 H₂ 而非混合气。" },
+    { "id": "L19-P02", "knowledgeIds": ["explosive-safety"], "explanation": "面粉厂、煤粉厂、加油站等场所空气中悬浮可燃粉尘或蒸气，遇明火可能发生粉尘爆炸或气体爆炸，必须严禁烟火。" },
+    { "id": "L19-P03", "knowledgeIds": ["explosive-safety"], "explanation": "煤气泄漏时正确做法：先关闭阀门切断气源，再开窗通风降低煤气浓度；切勿开灯、点火或使用电器开关以免产生电火花引发爆炸。" },
+    { "id": "L19-P04", "knowledgeIds": ["explosive-safety"], "explanation": "爆炸需要可燃物与助燃剂在有限空间内剧烈反应。氮气（N₂）不可燃，与空气混合遇火不会爆炸。" },
+    { "id": "L19-P05", "knowledgeIds": ["explosive-safety"], "explanation": "煤矿矿井中主要风险是瓦斯（CH₄）爆炸和煤尘爆炸，需要加强通风、监测瓦斯浓度、严禁明火。" },
+    { "id": "L19-P06", "knowledgeIds": ["explosive-safety"], "explanation": "煤气泄漏时开排气扇可能产生电火花引发爆炸；A、B、D 均为正确防爆措施。" }
+  ],
+  "lesson-16-combustion-safety-explosion-diagnostic.json": [
+    { "id": "L19-D01", "knowledgeIds": ["explosive-safety"], "explanation": "只有可燃气体（或蒸气、粉尘）且浓度在爆炸极限范围内，与空气（或 O₂）混合遇火才会爆炸；不可燃气体（如 N₂、CO₂）不会爆炸。" },
+    { "id": "L19-D02", "knowledgeIds": ["explosive-safety"], "explanation": "H₂、CH₄、CO 均为可燃气体，与空气混合遇火可能爆炸；N₂ 不可燃，不会爆炸。" },
+    { "id": "L19-D03", "knowledgeIds": ["explosive-safety"], "explanation": "瓦斯浓度超限应立即撤离人员并启动通风机降低瓦斯浓度；切勿开电灯（电火花可能引燃瓦斯）、禁止明火进入。" }
+  ],
+
+  "lesson-16-equation-writing-practice.json": [
+    { "id": "L28-P01", "knowledgeIds": ["equation-writing"], "explanation": "化学方程式用化学式表示化学反应的式子，包含反应物、生成物和反应条件。" },
+    { "id": "L28-P02", "knowledgeIds": ["equation-writing"], "explanation": "化学方程式书写原则：必须以客观事实为基础、必须遵守质量守恒定律（配平）、注明反应条件、气体/沉淀符号正确使用。配平只能调系数，不能改下标。" },
+    { "id": "L28-P03", "knowledgeIds": ["equation-writing"], "explanation": "气体符号 ↑ 的使用规则：当反应物中无气体、生成物中有气体时，气体生成物标 ↑。H₂O₂ 分解反应：2H₂O₂ → 2H₂O + O₂↑（MnO₂ 催化）。" },
+    { "id": "L28-P04", "knowledgeIds": ["equation-writing"], "explanation": "CaCO₃ 高温分解：CaCO₃ =高温= CaO + CO₂↑。反应物为固体，CO₂ 是气体需标 ↑，并注明条件高温。" },
+    { "id": "L28-P05", "knowledgeIds": ["equation-writing"], "explanation": "2H₂ + O₂ =点燃= 2H₂O：配平正确（左右各 4H、2O），条件（点燃）正确，气体符号不需要标（反应物已有气体）。" },
+    { "id": "L28-P06", "knowledgeIds": ["equation-writing"], "explanation": "沉淀符号 ↓ 的使用规则：当反应物均可溶、生成物中有不溶物时，沉淀生成物标 ↓。CuSO₄ + 2NaOH → Cu(OH)₂↓ + Na₂SO₄，Cu(OH)₂ 蓝色不溶沉淀应标 ↓。" }
+  ],
+  "lesson-16-equation-writing-diagnostic.json": [
+    { "id": "L28-D01", "knowledgeIds": ["equation-writing"], "explanation": "H₂O₂ → H₂O + O₂↑ 左边 2 个 O，右边 3 个 O（H₂O 含 1 个 + O₂ 含 2 个），原子不守恒，未配平。正确：2H₂O₂ →(MnO₂)= 2H₂O + O₂↑。" },
+    { "id": "L28-D02", "knowledgeIds": ["equation-writing"], "explanation": "C + O₂ =点燃= CO₂：反应物中已有气体 O₂，生成物 CO₂ 不再标 ↑。其他选项的气体符号均使用正确。" },
+    { "id": "L28-D03", "knowledgeIds": ["equation-writing"], "explanation": "Fe + O₂ → FeO₂（点燃）有三处错误：①生成物应为 Fe₃O₄ 而非 FeO₂；②未配平（Fe 和 O 都不守恒）；③方程式整体错误。正确：3Fe + 2O₂ =点燃= Fe₃O₄。" }
+  ],
+
+  "lesson-17-environment-energy-sustainable-practice.json": [
+    { "id": "L25-P01", "knowledgeIds": ["environmental-impact"], "explanation": "导致温室效应的主要气体是 CO₂（来自化石燃料燃烧），其他温室气体还有 CH₄、N₂O、氟利昂等。" },
+    { "id": "L25-P02", "knowledgeIds": ["fossil-fuels", "environmental-impact"], "explanation": "清洁能源指在生产和使用过程中对环境污染小或无污染的能源。太阳能、风能、水能、地热能、氢能等属于清洁能源；煤、石油、天然气不属于清洁能源。" },
+    { "id": "L25-P03", "knowledgeIds": ["environmental-impact"], "explanation": "酸雨的主要成因：化石燃料燃烧产生的 SO₂ 和 NOx 排放到大气中，与水反应形成亚硫酸、硝酸等酸性物质溶于雨水，pH < 5.6 的降雨即为酸雨。" },
+    { "id": "L25-P04", "knowledgeIds": ["environmental-impact"], "explanation": "A（露天焚烧垃圾）、B（燃煤取暖）、C（用煤作燃料发电）均会加重空气污染；D（推广新能源汽车）减少尾气排放有利于减轻空气污染。" },
+    { "id": "L25-P05", "knowledgeIds": ["fossil-fuels", "environmental-impact"], "explanation": "化石燃料不可再生且污染环境，开发新能源（太阳能、风能、氢能等）是解决能源和环境问题的可持续途径。" },
+    { "id": "L25-P06", "knowledgeIds": ["environmental-impact"], "explanation": "碳达峰指一个国家或地区的二氧化碳排放量达到历史最高值后开始下降；碳中和指排放量与吸收量相抵，实现净零排放。中国承诺 2030 年前碳达峰、2060 年前碳中和。" }
+  ],
+  "lesson-17-environment-energy-sustainable-diagnostic.json": [
+    { "id": "L25-D01", "knowledgeIds": ["fossil-fuels", "environmental-impact"], "explanation": "天然气主要成分是 CH₄，燃烧生成 CO₂：CH₄ + 2O₂ → CO₂ + 2H₂O。虽比煤更清洁，但仍排放 CO₂ 加剧温室效应，并非完全无污染。" },
+    { "id": "L25-D02", "knowledgeIds": ["environmental-impact"], "explanation": "A（开发太阳能）、B（提高燃烧效率）、D（植树造林）均能有效减少 CO₂ 排放；C（大量使用煤炭）会显著增加 CO₂ 排放，与减排目标相反。" },
+    { "id": "L25-D03", "knowledgeIds": ["environmental-impact"], "explanation": "碳达峰：CO₂ 排放量达到历史峰值后开始下降；碳中和：通过减排和吸收（如植树造林、CCUS）使净排放为零。两者是先后两个阶段，非同一概念。" }
+  ],
+
+  "lesson-17-equation-balancing-practice.json": [
+    { "id": "L29-P01", "knowledgeIds": ["equation-balancing"], "explanation": "配平化学方程式的依据是质量守恒定律，反应前后各元素的原子数目必须相等。" },
+    { "id": "L29-P02", "knowledgeIds": ["equation-balancing"], "explanation": "配平只能调整化学式前的系数（且必须是最简整数比），不能改动元素符号、化学式下标，也不能凭空增删反应物或生成物。" },
+    { "id": "L29-P03", "knowledgeIds": ["equation-balancing"], "explanation": "4Al + 3O₂ → 2Al₂O₃：Al 守恒 4=2×2，O 守恒 3×2=2×3，系数比 4:3:2。" },
+    { "id": "L29-P04", "knowledgeIds": ["equation-balancing"], "explanation": "2H₂ + O₂ → 2H₂O：H 守恒 2×2=2×2，O 守恒 2=2，系数比 2:1:2，配平正确。" },
+    { "id": "L29-P05", "knowledgeIds": ["equation-balancing"], "explanation": "Fe₂O₃ + 3CO →(高温) 2Fe + 3CO₂：Fe 守恒 2=2×1，O 守恒 3+3=3×2，C 守恒 3=3，系数为 1:3:2:3。" },
+    { "id": "L29-P06", "knowledgeIds": ["equation-balancing"], "explanation": "改动下标会改变物质本身的化学式和种类（如 KMnO₄ 改下标变成 K₂MnO₄ 是另一种物质），违背客观事实。正确做法是调整 KMnO₄ 前的系数：2KMnO₄ →(Δ) K₂MnO₄ + MnO₂ + O₂↑。" }
+  ],
+  "lesson-17-equation-balancing-diagnostic.json": [
+    { "id": "L29-D01", "knowledgeIds": ["equation-balancing"], "explanation": "改下标会把 H₂O（水）改成 H₂O₂（过氧化氢，是另一种物质），违背客观事实。正确配平：2H₂O →(通电) 2H₂↑ + O₂↑。" },
+    { "id": "L29-D02", "knowledgeIds": ["equation-balancing"], "explanation": "Fe₂O₃ + 3CO →(高温) 2Fe + 3CO₂。Fe：左边 2 = 右边 2；O：左边 3+3=6 = 右边 3×2=6；C：左边 3 = 右边 3。" },
+    { "id": "L29-D03", "knowledgeIds": ["equation-balancing"], "explanation": "化学方程式系数必须为最简整数比，使用分数不符合书写规范。4FeS₂ + 11O₂ →(高温) 2Fe₂O₃ + 8SO₂ 是正确配平。" }
+  ],
+
+  "lesson-18-stoichiometry-calculation-practice.json": [
+    { "id": "L30-P01", "knowledgeIds": ["stoichiometry"], "explanation": "化学方程式计算的根本依据是质量守恒定律，方程式中各物质的质量关系由化学计量数（系数）与其相对分子质量共同决定。" },
+    { "id": "L30-P02", "knowledgeIds": ["stoichiometry"], "explanation": "2H₂ + O₂ → 2H₂O 中各物质的质量比 = 系数×相对分子质量之比 = (2×2):(1×32):(2×18) = 4:32:36 = 1:8:9。" },
+    { "id": "L30-P03", "knowledgeIds": ["stoichiometry"], "explanation": "2KMnO₄ →(Δ) K₂MnO₄ + MnO₂ + O₂↑，KMnO₄ 与 O₂ 的质量比 = 2×158:32 = 316:32。设生成 O₂ 质量为 x，则 316:32 = 31.6:x，解得 x = 3.2 g。" },
+    { "id": "L30-P04", "knowledgeIds": ["stoichiometry"], "explanation": "CaCO₃ →(高温) CaO + CO₂↑，纯 CaCO₃ 质量 = 100 g × 80% = 80 g。CaCO₃ 与 CaO 质量比 = 100:56。设生成 CaO 质量为 x，则 100:56 = 80:x，解得 x = 44.8 g。" },
+    { "id": "L30-P05", "knowledgeIds": ["stoichiometry"], "explanation": "Zn + H₂SO₄ → ZnSO₄ + H₂↑，Zn 与 H₂ 质量比 = 65:2。设生成 H₂ 质量为 x，则 65:2 = 13:x，解得 x = 0.4 g。" },
+    { "id": "L30-P06", "knowledgeIds": ["stoichiometry"], "explanation": "质量守恒：H₂ 与 O₂ 按 1:8 的质量比恰好完全反应（2g:16g），生成水的质量 = 2g + 16g = 18g，无反应物剩余。" }
+  ],
+  "lesson-18-stoichiometry-calculation-diagnostic.json": [
+    { "id": "L30-D01", "knowledgeIds": ["stoichiometry"], "explanation": "化学方程式计算的核心方法：①写出配平的化学方程式；②找已知物与未知物之间的质量比；③列比例式求解。根本依据是质量守恒定律。" },
+    { "id": "L30-D02", "knowledgeIds": ["stoichiometry"], "explanation": "气体密度或摩尔体积不是化学方程式计算的根本依据；化学方程式计算的根本依据是质量守恒定律，方程式中各物质之间的质量比由系数×相对分子质量决定。" },
+    { "id": "L30-D03", "knowledgeIds": ["stoichiometry"], "explanation": "根据质量守恒定律，化学反应中反应物总质量等于生成物总质量。若一种反应物过量，则按完全反应的另一反应物计算；若都恰好完全反应，则总质量相等。" }
+  ],
+
+  "lesson-21-carbon-property-practice.json": [
+    { "id": "L21-P03", "knowledgeIds": ["carbon-chemical-property"], "explanation": "碳在常温下化学性质稳定（不活泼），所以古代字画用墨（含碳）书写后能长期保存不褪色。" },
+    { "id": "L21-P04", "knowledgeIds": ["carbon-chemical-property", "combustion-conditions"], "explanation": "碳的可燃性：与 O₂ 反应时，氧气充足生成 CO₂（充分燃烧），氧气不足生成 CO（不充分燃烧）。两个反应都放热。" }
+  ],
+  "lesson-21-carbon-property-diagnostic.json": [
+    { "id": "L21-D01", "knowledgeIds": ["carbon-chemical-property"], "explanation": "碳的稳定性是相对而言的，常温下不活泼，但点燃条件下能与 O₂ 反应（可燃性），高温下能与某些氧化物反应（还原性）。'稳定'不能理解为'绝对不反应'。" },
+    { "id": "L21-D02", "knowledgeIds": ["carbon-chemical-property"], "explanation": "2C + O₂ =点燃(足量)= 2CO₂（充分燃烧）；2C + O₂ =点燃(不足)= 2CO（不充分燃烧）。碳的可燃性是相对量而言的，氧气量决定产物。" },
+    { "id": "L21-D03", "knowledgeIds": ["carbon-chemical-property"], "explanation": "碳的还原性：高温下 C 能夺取某些氧化物中的氧。2CuO + C =高温= 2Cu + CO₂↑，碳把氧化铜还原为铜。" }
+  ],
+
+  "lesson-22-co2-preparation-practice.json": [
+    { "id": "L22-P02", "knowledgeIds": ["co2-preparation", "co2-property"], "explanation": "实验室制取 CO₂ 通常用大理石（CaCO₃）与稀盐酸反应：CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂↑，不能用稀硫酸（CaSO₄ 微溶覆盖石灰石阻止反应继续），也不用浓盐酸（挥发 HCl 气体使 CO₂ 不纯）。" },
+    { "id": "L22-P03", "knowledgeIds": ["co2-preparation", "lab-operations"], "explanation": "长颈漏斗下端应伸入液面以下形成液封，防止生成的气体从长颈漏斗口逸出。" }
+  ],
+  "lesson-22-co2-preparation-diagnostic.json": [
+    { "id": "L22-D01", "knowledgeIds": ["co2-preparation"], "explanation": "实验室用大理石与稀盐酸反应制取 CO₂：①反应物为块状固体+液体，不需加热；②CO₂ 密度比空气大且能溶于水，用向上排空气法收集，不用排水法；③反应物石灰石过量时 CO₂ 能持续产生。" },
+    { "id": "L22-D02", "knowledgeIds": ["co2-preparation"], "explanation": "启普发生器（简易装置）适用于块状固体+液体反应、不需加热、反应平稳的制气过程；制 CO₂ 用大理石+稀盐酸符合条件。" },
+    { "id": "L22-D03", "knowledgeIds": ["co2-preparation", "lab-operations"], "explanation": "判断集气瓶已收集满 CO₂ 的方法：将燃着的木条放在集气瓶口，若木条熄灭则证明已收集满。" }
+  ],
+
+  "lesson-23-co2-property-practice.json": [
+    { "id": "L23-P01", "knowledgeIds": ["co2-property"], "explanation": "CO₂ 的物理性质：无色无味、密度比空气大、能溶于水（1:1 体积比溶解），固态 CO₂（干冰）升华吸热。CO₂ 不支持燃烧也不可燃。" },
+    { "id": "L23-P03", "knowledgeIds": ["co2-property", "carbon-chemical-property"], "explanation": "CO₂ 通入水中：CO₂ + H₂O → H₂CO₃（碳酸），使石蕊试液变红。加热后 H₂CO₃ 分解：H₂CO₃ →(Δ) H₂O + CO₂↑，红色褪去。" }
+  ],
+  "lesson-23-co2-property-diagnostic.json": [
+    { "id": "L23-D01", "knowledgeIds": ["co2-property"], "explanation": "CO₂ 本身不燃也不支持燃烧，但活泼金属（如 Mg）能在 CO₂ 中燃烧：2Mg + CO₂ =点燃= 2MgO + C，所以'CO₂ 不能用于扑灭所有火灾'——例如 Mg 着火不能。" },
+    { "id": "L23-D02", "knowledgeIds": ["co2-property"], "explanation": "CO₂ 与水反应生成碳酸（H₂CO₃）；碳酸使紫色石蕊试液变红；碳酸不稳定，加热分解为 CO₂ 和 H₂O，红色褪去。" },
+    { "id": "L23-D03", "knowledgeIds": ["co2-property", "environmental-impact"], "explanation": "CO₂ 密度比空气大且不能供给呼吸，进入地窖或深井时可能使人窒息，下井前必须做'灯火试验'：灯火熄灭则不能进入。" }
+  ],
+
+  "lesson-24-co-property-practice.json": [
+    { "id": "L24-P01", "knowledgeIds": ["co-property"], "explanation": "CO 物理性质：无色无味、密度比空气略小、难溶于水。CO 有毒，与血红蛋白结合使血红蛋白失去运输 O₂ 的能力。" },
+    { "id": "L24-P03", "knowledgeIds": ["co-property", "environmental-impact"], "explanation": "CO 在空气中燃烧：2CO + O₂ =点燃= 2CO₂，火焰呈蓝色。CO 是不充分燃烧的产物，是煤气和水煤气的主要成分。" }
+  ],
+  "lesson-24-co-property-diagnostic.json": [
+    { "id": "L24-D01", "knowledgeIds": ["co-property"], "explanation": "CO 难溶于水，'CO₂ 溶于水可制汽水'不适用于 CO；CO 也不与水反应生成酸；'CO 有毒'与'水煤气'都是 CO 的性质，但与本选项无关。" },
+    { "id": "L24-D02", "knowledgeIds": ["co-property", "carbon-chemical-property"], "explanation": "CO 的还原性：3CO + Fe₂O₃ =高温= 2Fe + 3CO₂，工业上利用此反应炼铁。CO 夺取 Fe₂O₃ 中的氧生成 CO₂，本身被氧化为 CO₂。" },
+    { "id": "L24-D03", "knowledgeIds": ["co-property", "explosive-safety"], "explanation": "CO 与空气混合（爆炸极限 12.5%~74.2%）遇明火会发生爆炸；煤气泄漏、燃煤不完全燃烧都可能产生 CO，使用煤炉、燃气热水器时需注意通风。" }
+  ]
+}

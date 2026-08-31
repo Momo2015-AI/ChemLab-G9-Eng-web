@@ -15,7 +15,10 @@
       "answer": 1,
       "explanation": "改下标改变了水的化学式，H₂O₂是过氧化氢而非水。正确：2H₂O→2H₂↑+O₂↑（通电）。",
       "errorType": "mc-balance-by-subscript",
-      "remediationStep": "L29-S05"
+      "remediationStep": "L29-S05",
+      "knowledgeIds": [
+        "equation-balancing"
+      ]
     },
     {
       "id": "L29-D02",
@@ -29,7 +32,10 @@
         "1,2,2,2"
       ],
       "answer": 1,
-      "explanation": "Fe₂O₃+3CO→2Fe+3CO₂。Fe守恒：左边2个→右边2Fe；O守恒：3+3=6→右边3×2=6。"
+      "explanation": "Fe₂O₃+3CO→2Fe+3CO₂。Fe守恒：左边2个→右边2Fe；O守恒：3+3=6→右边3×2=6。",
+      "knowledgeIds": [
+        "equation-balancing"
+      ]
     },
     {
       "id": "L29-D03",
@@ -45,7 +51,10 @@
       "answer": 3,
       "explanation": "化学方程式系数应为最简整数比，不应使用分数。正确：4FeS₂+11O₂→2Fe₂O₃+8SO₂。",
       "errorType": "mc-balance-by-subscript",
-      "remediationStep": "L29-S06"
+      "remediationStep": "L29-S06",
+      "knowledgeIds": [
+        "equation-balancing"
+      ]
     }
   ]
 }

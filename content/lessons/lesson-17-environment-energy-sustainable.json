@@ -15,8 +15,13 @@
     "认识清洁能源的种类和优势。",
     "树立节约能源、保护环境的可持续发展理念。"
   ],
-  "knowledgePoints": ["environmental-impact"],
-  "prerequisites": ["lesson-15-fossil-fuels-energy", "lesson-14-combustion-fire-extinguishing"],
+  "knowledgePoints": [
+    "environmental-impact"
+  ],
+  "prerequisites": [
+    "lesson-15-fossil-fuels-energy",
+    "lesson-14-combustion-fire-extinguishing"
+  ],
   "misconceptionIds": [],
   "guidedLearning": {
     "stepCount": 8,
@@ -30,10 +35,17 @@
           "这些现象与什么有关？人类活动如何影响地球环境？",
           "化学在解决环境问题中扮演什么角色？"
         ],
-        "knowledgePoints": ["environmental-impact"],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
         "check": {
           "question": "下列气体中，导致温室效应最主要的是？",
-          "options": ["O₂", "N₂", "CO₂", "H₂"],
+          "options": [
+            "O₂",
+            "N₂",
+            "CO₂",
+            "H₂"
+          ],
           "answer": 2,
           "explanation": "CO₂是主要的温室气体，过量排放导致全球变暖。"
         }
@@ -49,10 +61,17 @@
           "粉尘（PM2.5）：呼吸系统疾病，能见度下降。",
           "不完全燃烧产生CO：有毒气体。"
         ],
-        "knowledgePoints": ["environmental-impact"],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
         "check": {
           "question": "下列污染物中，主要导致酸雨的是？",
-          "options": ["CO₂", "SO₂", "N₂", "O₂"],
+          "options": [
+            "CO₂",
+            "SO₂",
+            "N₂",
+            "O₂"
+          ],
           "answer": 1,
           "explanation": "SO₂和NOx溶于雨水形成酸雨。"
         }
@@ -67,7 +86,9 @@
           "使用无铅汽油：保护催化转换器。",
           "推广新能源汽车：从源头减少污染。"
         ],
-        "knowledgePoints": ["environmental-impact"],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
         "check": null
       },
       {
@@ -81,10 +102,17 @@
           "核能：能量密度高，但有核废料处理问题。",
           "生物质能：可再生，但燃烧仍有排放。"
         ],
-        "knowledgePoints": ["environmental-impact"],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
         "check": {
           "question": "下列能源中，最清洁的是？",
-          "options": ["煤", "石油", "天然气", "氢气"],
+          "options": [
+            "煤",
+            "石油",
+            "天然气",
+            "氢气"
+          ],
           "answer": 3,
           "explanation": "氢气燃烧只生成水，是最清洁的燃料。"
         }
@@ -100,7 +128,9 @@
           "绿色出行：骑自行车、乘坐公共交通。",
           "节约用电：减少发电的化石燃料消耗。"
         ],
-        "knowledgePoints": ["environmental-impact"],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
         "check": null
       },
       {
@@ -113,10 +143,17 @@
           "途径：发展新能源、提高能效、碳捕获与封存（CCS）、植树造林。",
           "这是中国的庄严承诺，也是全球气候治理的重要举措。"
         ],
-        "knowledgePoints": ["environmental-impact"],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
         "check": {
           "question": "我国承诺实现碳中和的年份是？",
-          "options": ["2030年", "2040年", "2050年", "2060年"],
+          "options": [
+            "2030年",
+            "2040年",
+            "2050年",
+            "2060年"
+          ],
           "answer": 3,
           "explanation": "中国承诺2030年碳达峰、2060年碳中和。"
         }
@@ -130,7 +167,9 @@
           "如何在发展和环保之间找到平衡？",
           "作为中学生，我们能做什么？"
         ],
-        "knowledgePoints": ["environmental-impact"],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
         "check": null
       },
       {
@@ -143,7 +182,9 @@
           "我国承诺2030碳达峰、2060碳中和。",
           "节能减排需要从政府、企业到个人的共同努力。"
         ],
-        "knowledgePoints": ["environmental-impact"],
+        "knowledgePoints": [
+          "environmental-impact"
+        ],
         "check": null
       }
     ]
@@ -161,15 +202,36 @@
       "id": "L25-E01",
       "title": "模拟酸雨形成实验",
       "type": "demonstration",
-      "instruments": ["SO₂气源（或亚硫酸钠+稀硫酸）", "pH试纸", "烧杯", "蒸馏水"],
+      "instruments": [
+        "SO₂气源（或亚硫酸钠+稀硫酸）",
+        "pH试纸",
+        "烧杯",
+        "蒸馏水"
+      ],
       "safety": "SO₂有毒，实验在通风橱中进行。",
       "goal": "模拟酸雨的形成过程。",
       "steps": [
-        { "step": 1, "action": "制取少量SO₂气体", "record": "观察气体颜色" },
-        { "step": 2, "action": "将SO₂通入盛有蒸馏水的烧杯中", "record": "观察溶液变化" },
-        { "step": 3, "action": "用pH试纸测定溶液pH值", "record": "记录pH值" }
+        {
+          "step": 1,
+          "action": "制取少量SO₂气体",
+          "record": "观察气体颜色"
+        },
+        {
+          "step": 2,
+          "action": "将SO₂通入盛有蒸馏水的烧杯中",
+          "record": "观察溶液变化"
+        },
+        {
+          "step": 3,
+          "action": "用pH试纸测定溶液pH值",
+          "record": "记录pH值"
+        }
       ],
-      "observationGuidance": ["SO₂是无色有刺激性气味的气体", "SO₂溶于水形成亚硫酸", "溶液pH小于5.6（正常雨水约5.6）"],
+      "observationGuidance": [
+        "SO₂是无色有刺激性气味的气体",
+        "SO₂溶于水形成亚硫酸",
+        "溶液pH小于5.6（正常雨水约5.6）"
+      ],
       "conclusion": "SO₂溶于水形成亚硫酸，使雨水呈酸性。当pH<5.6时称为酸雨。化石燃料燃烧产生的SO₂是酸雨的主要成因之一。"
     }
   ],
@@ -179,10 +241,19 @@
       "type": "concept",
       "difficulty": "basic",
       "question": "导致温室效应的主要气体是？",
-      "options": ["O₂", "N₂", "CO₂", "H₂"],
+      "options": [
+        "O₂",
+        "N₂",
+        "CO₂",
+        "H₂"
+      ],
       "answer": 2,
-      "knowledgeIds": ["environmental-impact"],
-      "knowledgePoints": ["environmental-impact"],
+      "knowledgeIds": [
+        "environmental-impact"
+      ],
+      "knowledgePoints": [
+        "environmental-impact"
+      ],
       "explanation": "CO₂是主要的温室气体。"
     },
     {
@@ -190,10 +261,19 @@
       "type": "concept",
       "difficulty": "basic",
       "question": "下列污染物中，主要导致酸雨的是？",
-      "options": ["CO₂", "SO₂", "N₂", "O₂"],
+      "options": [
+        "CO₂",
+        "SO₂",
+        "N₂",
+        "O₂"
+      ],
       "answer": 1,
-      "knowledgeIds": ["environmental-impact"],
-      "knowledgePoints": ["environmental-impact"],
+      "knowledgeIds": [
+        "environmental-impact"
+      ],
+      "knowledgePoints": [
+        "environmental-impact"
+      ],
       "explanation": "SO₂和NOx溶于雨水形成酸雨。"
     },
     {
@@ -201,10 +281,19 @@
       "type": "concept",
       "difficulty": "medium",
       "question": "下列能源中，最清洁的是？",
-      "options": ["煤", "石油", "天然气", "氢气"],
+      "options": [
+        "煤",
+        "石油",
+        "天然气",
+        "氢气"
+      ],
       "answer": 3,
-      "knowledgeIds": ["environmental-impact"],
-      "knowledgePoints": ["environmental-impact"],
+      "knowledgeIds": [
+        "environmental-impact"
+      ],
+      "knowledgePoints": [
+        "environmental-impact"
+      ],
       "explanation": "氢气燃烧只生成水，最清洁。"
     },
     {
@@ -212,10 +301,19 @@
       "type": "concept",
       "difficulty": "medium",
       "question": "我国承诺实现碳中和的年份是？",
-      "options": ["2030年", "2040年", "2050年", "2060年"],
+      "options": [
+        "2030年",
+        "2040年",
+        "2050年",
+        "2060年"
+      ],
       "answer": 3,
-      "knowledgeIds": ["environmental-impact"],
-      "knowledgePoints": ["environmental-impact"],
+      "knowledgeIds": [
+        "environmental-impact"
+      ],
+      "knowledgePoints": [
+        "environmental-impact"
+      ],
       "explanation": "中国承诺2030碳达峰、2060碳中和。"
     },
     {
@@ -230,8 +328,12 @@
         "植树造林"
       ],
       "answer": 1,
-      "knowledgeIds": ["environmental-impact"],
-      "knowledgePoints": ["environmental-impact"],
+      "knowledgeIds": [
+        "environmental-impact"
+      ],
+      "knowledgePoints": [
+        "environmental-impact"
+      ],
       "explanation": "大量使用一次性餐具浪费资源，增加环境污染。"
     },
     {
@@ -246,8 +348,12 @@
         "过滤粉尘"
       ],
       "answer": 0,
-      "knowledgeIds": ["environmental-impact"],
-      "knowledgePoints": ["environmental-impact"],
+      "knowledgeIds": [
+        "environmental-impact"
+      ],
+      "knowledgePoints": [
+        "environmental-impact"
+      ],
       "explanation": "催化转换器将CO和NOx转化为CO₂和N₂，减少污染。"
     }
   ],
@@ -258,14 +364,19 @@
       "difficulty": "medium",
       "question": "小明认为使用天然气完全不会污染环境。他的错误在于？",
       "options": [
-        "天然气燃烧也产生CO₂，加剧温室效应",
+        "天然气燃烧也产生CO₂加剧温室效应",
         "天然气完全无污染",
         "天然气不是清洁能源",
         "以上都不对"
       ],
       "answer": 0,
-      "knowledgeIds": ["environmental-impact"],
-      "knowledgePoints": ["environmental-impact"],
+      "knowledgeIds": [
+        "fossil-fuels",
+        "environmental-impact"
+      ],
+      "knowledgePoints": [
+        "environmental-impact"
+      ],
       "explanation": "天然气燃烧产生CO₂，虽比煤清洁但仍加剧温室效应。",
       "errorType": "mc-fossil-fuel-nonrenewable",
       "remediationStep": "L25-S02"
@@ -274,17 +385,21 @@
       "id": "L25-D02",
       "type": "concept",
       "difficulty": "medium",
-      "question": "下列哪种措施不能有效减少CO₂排放？",
+      "question": "下列措施不能有效减少CO₂排放的是？",
       "options": [
         "开发太阳能",
-        "提高化石燃料燃烧效率",
-        "大量使用煤炭发电",
+        "提高燃烧效率",
+        "大量使用煤炭",
         "植树造林"
       ],
       "answer": 2,
-      "knowledgeIds": ["environmental-impact"],
-      "knowledgePoints": ["environmental-impact"],
-      "explanation": "大量使用煤炭发电会增加CO₂排放。",
+      "knowledgeIds": [
+        "environmental-impact"
+      ],
+      "knowledgePoints": [
+        "environmental-impact"
+      ],
+      "explanation": "大量使用煤炭会增加CO₂排放。",
       "errorType": "mc-fossil-fuel-nonrenewable",
       "remediationStep": "L25-S05"
     },
@@ -294,26 +409,76 @@
       "difficulty": "hard",
       "question": "下列关于'碳达峰'和'碳中和'的说法正确的是？",
       "options": [
-        "碳达峰意味着停止排放CO₂",
-        "碳中和意味着不再使用任何化石燃料",
-        "碳达峰是CO₂排放量达到峰值后开始下降",
+        "碳达峰意味着停止排放",
+        "碳中和意味着不使用化石燃料",
+        "碳达峰是排放量达峰值后下降",
         "碳中和与化学无关"
       ],
       "answer": 2,
-      "knowledgeIds": ["environmental-impact"],
-      "knowledgePoints": ["environmental-impact"],
-      "explanation": "碳达峰指排放量达到峰值后下降，碳中和指排放与吸收平衡。",
+      "knowledgeIds": [
+        "environmental-impact"
+      ],
+      "knowledgePoints": [
+        "environmental-impact"
+      ],
+      "explanation": "碳达峰指排放量达峰值后开始下降。",
       "errorType": "mc-fossil-fuel-nonrenewable",
       "remediationStep": "L25-S06"
     }
   ],
   "sections": [
-    { "title": "本节课要掌握什么？", "body": ["化石燃料燃烧的主要污染物及环境影响。", "清洁能源的种类和优势。", "我国双碳目标：2030碳达峰、2060碳中和。", "节能减排从我做起。"] },
-    { "title": "核心实验", "body": ["模拟酸雨形成：SO₂溶于水使pH<5.6。"] },
-    { "title": "核心概念", "body": ["温室效应（CO₂）", "酸雨（SO₂、NOx）", "清洁能源", "双碳目标"] },
-    { "title": "常见误区", "body": ["误认为天然气完全无污染。", "误认为新能源可以立即完全替代化石燃料。"] },
-    { "title": "学习方法", "body": ["数据分析：对比不同能源的环境影响。", "综合思维：平衡发展与环保的关系。"] }
+    {
+      "title": "本节课要掌握什么？",
+      "body": [
+        "化石燃料燃烧的主要污染物及环境影响。",
+        "清洁能源的种类和优势。",
+        "我国双碳目标：2030碳达峰、2060碳中和。",
+        "节能减排从我做起。"
+      ]
+    },
+    {
+      "title": "核心实验",
+      "body": [
+        "模拟酸雨形成：SO₂溶于水使pH<5.6。"
+      ]
+    },
+    {
+      "title": "核心概念",
+      "body": [
+        "温室效应（CO₂）",
+        "酸雨（SO₂、NOx）",
+        "清洁能源",
+        "双碳目标"
+      ]
+    },
+    {
+      "title": "常见误区",
+      "body": [
+        "误认为天然气完全无污染。",
+        "误认为新能源可以立即完全替代化石燃料。"
+      ]
+    },
+    {
+      "title": "学习方法",
+      "body": [
+        "数据分析：对比不同能源的环境影响。",
+        "综合思维：平衡发展与环保的关系。"
+      ]
+    }
   ],
-  "provenance": { "status": "ready", "basis": "人教版九年级化学上册第七单元课题2；2022年版义务教育化学课程标准。", "note": "内容原创，不复制教材原文。" },
-  "review": { "curriculum": "pass", "scientific": "pass", "ageSuitability": "pass", "itemQuality": "pass", "knowledgeLinks": "pass", "wuhanAlignment": "pass", "masteryGate": "pass", "blockingIssues": [] }
+  "provenance": {
+    "status": "ready",
+    "basis": "人教版九年级化学上册第七单元课题2；2022年版义务教育化学课程标准。",
+    "note": "内容原创，不复制教材原文。"
+  },
+  "review": {
+    "curriculum": "pass",
+    "scientific": "pass",
+    "ageSuitability": "pass",
+    "itemQuality": "pass",
+    "knowledgeLinks": "pass",
+    "wuhanAlignment": "pass",
+    "masteryGate": "pass",
+    "blockingIssues": []
+  }
 }

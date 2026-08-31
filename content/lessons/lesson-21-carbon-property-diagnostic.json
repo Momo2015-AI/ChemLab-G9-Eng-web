@@ -15,7 +15,10 @@
       "answer": 0,
       "explanation": "氧化铜（黑色）被还原为铜（红色），这是实验的主要现象之一。",
       "errorType": "mc-carbon-reduce-cuo",
-      "remediationStep": "L21-S05"
+      "remediationStep": "L21-S05",
+      "knowledgeIds": [
+        "carbon-chemical-property"
+      ]
     },
     {
       "id": "L21-D02",
@@ -31,7 +34,10 @@
       "answer": 1,
       "explanation": "碳夺取氧化铜中的氧，体现还原性。",
       "errorType": "mc-carbon-reduce-cuo",
-      "remediationStep": "L21-S05"
+      "remediationStep": "L21-S05",
+      "knowledgeIds": [
+        "carbon-chemical-property"
+      ]
     },
     {
       "id": "L21-D03",
@@ -47,7 +53,10 @@
       "answer": 1,
       "explanation": "碳还原氧化铜需注明高温条件，生成 CO₂ 要标气体符号。",
       "errorType": "mc-carbon-reduce-cuo",
-      "remediationStep": "L21-S05"
+      "remediationStep": "L21-S05",
+      "knowledgeIds": [
+        "carbon-chemical-property"
+      ]
     }
   ]
 }

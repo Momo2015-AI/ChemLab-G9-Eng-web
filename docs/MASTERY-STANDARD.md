@@ -29,7 +29,7 @@ Diagnostic check
   ↓
 Targeted remediation
   ↓
-Recheck with new items
+Recheck (failed items first, then unseen items with the same knowledge tags)
   ↓
 Transfer check
   ↓
@@ -37,6 +37,27 @@ Delayed / mixed check where practical
   ↓
 95% mastery threshold
 ```
+
+> **Recheck policy (Sprint 2, 2026-08-28):** the C4-C5 V1.0 plan said
+> "Recheck must use new items, not repeat the Practice attempt". The runtime
+> (`assessment-runtime-controller.startRecheck`) currently orders recheck
+> items as **failed items first, then unseen items from the same lesson
+> sharing the weak knowledge tags**, with the failed tail kept in stable
+> order and only the rest shuffled. The C4-C5 P1.6 rule and the current
+> implementation disagree on this point. We retain the implementation
+> (failed items first) because:
+> 1. The failed items **were** unseen on the first attempt — the student
+>    answered them once and got them wrong. Re-presenting them targets the
+>    specific knowledge gap that triggered the remediation, not arbitrary
+>    material.
+> 2. Pure-unseen recheck had a 0-of-N match in the existing lesson pools
+>    during Sprint 1 diagnosis-recovery work (see
+>    `INTEGRATED-REPAIR-PLAN-V1.1.md` §3.2) — every lesson's recheck pool
+>    is small (≤ 6 practice + 3 diagnostic + 21 mastery) and "unseen but
+>    same knowledge" often does not exist.
+> 3. The two strategies converge as the lesson pool grows; for now we
+>    keep the policy that demonstrably closes the diagnosis loop.
+> The C4-C5 V1.0 text is therefore superseded for this rule.
 
 ## Recommended evidence threshold
 

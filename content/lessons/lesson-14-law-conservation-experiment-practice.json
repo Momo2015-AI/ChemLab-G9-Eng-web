@@ -1,11 +1,108 @@
 {
   "lessonId": "lesson-14-law-conservation-experiment",
   "questions": [
-    { "id": "L26-P01", "type": "concept", "difficulty": "basic", "question": "质量守恒定律适用于？", "options": ["所有变化", "化学变化", "物理变化", "核反应"], "answer": 1, "explanation": "质量守恒定律只适用于化学变化。" },
-    { "id": "L26-P02", "type": "concept", "difficulty": "basic", "question": "下列变化中，遵守质量守恒定律的是？", "options": ["水结冰", "铁丝燃烧", "酒精挥发", "玻璃破碎"], "answer": 1, "explanation": "铁丝燃烧是化学变化。" },
-    { "id": "L26-P03", "type": "concept", "difficulty": "medium", "question": "碳酸钙与盐酸在开放容器中反应后质量减少，原因是？", "options": ["质量守恒不成立", "CO₂逸散", "反应不充分", "盐酸挥发"], "answer": 1, "explanation": "CO₂气体逸散到空气中。" },
-    { "id": "L26-P04", "type": "concept", "difficulty": "medium", "question": "下列现象中，能用质量守恒定律解释的是？", "options": ["水结冰质量不变", "铁生锈质量增加", "酒精挥发质量减少", "玻璃破碎质量不变"], "answer": 1, "explanation": "铁生锈是化学变化，质量增加是因为结合了氧。" },
-    { "id": "L26-P05", "type": "concept", "difficulty": "hard", "question": "在密闭容器中加热铜粉，反应前后质量变化是？", "options": ["增加", "减少", "不变", "无法确定"], "answer": 2, "explanation": "密闭系统无物质进出，总质量不变。" },
-    { "id": "L26-P06", "type": "concept", "difficulty": "hard", "question": "白磷燃烧实验中，锥形瓶底部铺细砂的目的是？", "options": ["吸收热量", "防止锥形瓶炸裂", "增加反应面积", "固定白磷"], "answer": 1, "explanation": "防止锥形瓶底部受热不均而炸裂。" }
+    {
+      "id": "L26-P01",
+      "type": "concept",
+      "difficulty": "basic",
+      "question": "质量守恒定律适用于？",
+      "options": [
+        "所有变化",
+        "化学变化",
+        "物理变化",
+        "核反应"
+      ],
+      "answer": 1,
+      "explanation": "质量守恒定律只适用于化学变化。",
+      "knowledgeIds": [
+        "law-of-mass-conservation"
+      ]
+    },
+    {
+      "id": "L26-P02",
+      "type": "concept",
+      "difficulty": "basic",
+      "question": "下列变化中，遵守质量守恒定律的是？",
+      "options": [
+        "水结冰",
+        "铁丝燃烧",
+        "酒精挥发",
+        "玻璃破碎"
+      ],
+      "answer": 1,
+      "explanation": "铁丝燃烧是化学变化。",
+      "knowledgeIds": [
+        "law-of-mass-conservation"
+      ]
+    },
+    {
+      "id": "L26-P03",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "碳酸钙与盐酸在开放容器中反应后质量减少，原因是？",
+      "options": [
+        "质量守恒不成立",
+        "CO₂逸散",
+        "反应不充分",
+        "盐酸挥发"
+      ],
+      "answer": 1,
+      "explanation": "CO₂气体逸散到空气中。",
+      "knowledgeIds": [
+        "law-of-mass-conservation"
+      ]
+    },
+    {
+      "id": "L26-P04",
+      "type": "concept",
+      "difficulty": "medium",
+      "question": "下列现象中，能用质量守恒定律解释的是？",
+      "options": [
+        "水结冰质量不变",
+        "铁生锈质量增加",
+        "酒精挥发质量减少",
+        "玻璃破碎质量不变"
+      ],
+      "answer": 1,
+      "explanation": "铁生锈是化学变化，质量增加是因为结合了氧。",
+      "knowledgeIds": [
+        "law-of-mass-conservation"
+      ]
+    },
+    {
+      "id": "L26-P05",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "在密闭容器中加热铜粉，反应前后质量变化是？",
+      "options": [
+        "增加",
+        "减少",
+        "不变",
+        "无法确定"
+      ],
+      "answer": 2,
+      "explanation": "密闭系统无物质进出，总质量不变。",
+      "knowledgeIds": [
+        "law-of-mass-conservation"
+      ]
+    },
+    {
+      "id": "L26-P06",
+      "type": "concept",
+      "difficulty": "hard",
+      "question": "白磷燃烧实验中，锥形瓶底部铺细砂的目的是？",
+      "options": [
+        "吸收热量",
+        "防止锥形瓶炸裂",
+        "增加反应面积",
+        "固定白磷"
+      ],
+      "answer": 1,
+      "explanation": "防止锥形瓶底部受热不均而炸裂。",
+      "knowledgeIds": [
+        "law-of-mass-conservation",
+        "lab-operations"
+      ]
+    }
   ]
 }

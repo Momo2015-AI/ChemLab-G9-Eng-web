@@ -15,9 +15,16 @@
     "了解化石燃料燃烧产物及其环境影响。",
     "认识氢能、太阳能、风能等新能源的特点和应用前景。"
   ],
-  "knowledgePoints": ["fossil-fuels"],
-  "prerequisites": ["lesson-14-combustion-fire-extinguishing", "lesson-09-chemical-formula"],
-  "misconceptionIds": ["mc-fossil-fuel-nonrenewable"],
+  "knowledgePoints": [
+    "fossil-fuels"
+  ],
+  "prerequisites": [
+    "lesson-14-combustion-fire-extinguishing",
+    "lesson-09-chemical-formula"
+  ],
+  "misconceptionIds": [
+    "mc-fossil-fuel-nonrenewable"
+  ],
   "guidedLearning": {
     "stepCount": 8,
     "steps": [
@@ -29,10 +36,17 @@
           "我们的生活中离不开能源：做饭用天然气，汽车用汽油，发电用煤。",
           "这些能源从哪里来？会用完吗？有没有替代能源？"
         ],
-        "knowledgePoints": ["fossil-fuels"],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
         "check": {
           "question": "下列能源中，属于化石燃料的是？",
-          "options": ["太阳能", "风能", "天然气", "氢能"],
+          "options": [
+            "太阳能",
+            "风能",
+            "天然气",
+            "氢能"
+          ],
           "answer": 2,
           "explanation": "天然气是三大化石燃料之一（煤、石油、天然气）。"
         }
@@ -47,7 +61,9 @@
           "天然气：主要成分是甲烷（CH₄），是最简单的有机物。",
           "三者都是不可再生能源，形成需要数百万年。"
         ],
-        "knowledgePoints": ["fossil-fuels"],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
         "check": {
           "question": "下列关于化石燃料的说法正确的是？",
           "options": [
@@ -70,10 +86,17 @@
           "石油燃烧产生CO₂、NOx（酸雨）、未燃尽碳氢化合物等。",
           "化石燃料燃烧是全球CO₂排放的主要来源。"
         ],
-        "knowledgePoints": ["fossil-fuels"],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
         "check": {
           "question": "煤燃烧产生的哪种气体会导致酸雨？",
-          "options": ["CO₂", "SO₂", "N₂", "O₂"],
+          "options": [
+            "CO₂",
+            "SO₂",
+            "N₂",
+            "O₂"
+          ],
           "answer": 1,
           "explanation": "煤中含有硫元素，燃烧生成SO₂，SO₂溶于雨水形成酸雨。"
         }
@@ -88,10 +111,17 @@
           "风能：清洁可再生；但受地理位置和季节影响。",
           "核能、地热能、潮汐能等也是重要的新能源。"
         ],
-        "knowledgePoints": ["fossil-fuels"],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
         "check": {
           "question": "下列能源中，燃烧产物只有水的是？",
-          "options": ["煤", "石油", "天然气", "氢气"],
+          "options": [
+            "煤",
+            "石油",
+            "天然气",
+            "氢气"
+          ],
           "answer": 3,
           "explanation": "氢气燃烧：2H₂ + O₂ → 2H₂O，产物只有水，是最清洁的燃料。"
         }
@@ -104,7 +134,9 @@
           "误区：所有新能源都是完全无污染的。",
           "纠正：新能源相对化石燃料污染小，但并非完全没有环境影响。如太阳能电池板生产有污染，风力发电影响鸟类迁徙等。应全面客观评价。"
         ],
-        "knowledgePoints": ["fossil-fuels"],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
         "check": {
           "question": "下列关于新能源的说法正确的是？",
           "options": [
@@ -127,7 +159,9 @@
           "天然气重整：将甲烷转化为氢气和一氧化碳，用于化工生产。",
           "提高化石燃料利用率是节约能源的重要途径。"
         ],
-        "knowledgePoints": ["fossil-fuels"],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
         "check": null
       },
       {
@@ -140,7 +174,9 @@
           "发展方向：提高利用率 + 开发新能源 + 节约能源。",
           "中国承诺2030年前碳达峰、2060年前碳中和。"
         ],
-        "knowledgePoints": ["fossil-fuels"],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
         "check": null
       },
       {
@@ -153,7 +189,9 @@
           "氢能是最清洁燃料，燃烧只生成水。",
           "能源发展：提高利用率 + 开发新能源 + 节能减排。"
         ],
-        "knowledgePoints": ["fossil-fuels"],
+        "knowledgePoints": [
+          "fossil-fuels"
+        ],
         "check": null
       }
     ]
@@ -171,13 +209,31 @@
       "id": "L18-E01",
       "title": "甲烷燃烧实验",
       "type": "demonstration",
-      "instruments": ["甲烷气源", "尖嘴导管", "酒精灯", "干冷烧杯", "澄清石灰水"],
+      "instruments": [
+        "甲烷气源",
+        "尖嘴导管",
+        "酒精灯",
+        "干冷烧杯",
+        "澄清石灰水"
+      ],
       "safety": "点燃甲烷前必须验纯，防止爆炸。",
       "goal": "验证甲烷燃烧的产物。",
       "steps": [
-        { "step": 1, "action": "点燃纯净的甲烷气体", "record": "观察火焰颜色" },
-        { "step": 2, "action": "在火焰上方罩一个干冷的烧杯", "record": "观察烧杯内壁变化" },
-        { "step": 3, "action": "迅速将烧杯倒转，加入少量澄清石灰水振荡", "record": "观察石灰水变化" }
+        {
+          "step": 1,
+          "action": "点燃纯净的甲烷气体",
+          "record": "观察火焰颜色"
+        },
+        {
+          "step": 2,
+          "action": "在火焰上方罩一个干冷的烧杯",
+          "record": "观察烧杯内壁变化"
+        },
+        {
+          "step": 3,
+          "action": "迅速将烧杯倒转，加入少量澄清石灰水振荡",
+          "record": "观察石灰水变化"
+        }
       ],
       "observationGuidance": [
         "甲烷燃烧产生淡蓝色火焰",
@@ -193,10 +249,19 @@
       "type": "concept",
       "difficulty": "basic",
       "question": "下列属于化石燃料的是？",
-      "options": ["太阳能", "风能", "石油", "氢能"],
+      "options": [
+        "太阳能",
+        "风能",
+        "石油",
+        "氢能"
+      ],
       "answer": 2,
-      "knowledgeIds": ["fossil-fuels"],
-      "knowledgePoints": ["fossil-fuels"],
+      "knowledgeIds": [
+        "fossil-fuels"
+      ],
+      "knowledgePoints": [
+        "fossil-fuels"
+      ],
       "explanation": "三大化石燃料：煤、石油、天然气。"
     },
     {
@@ -211,8 +276,12 @@
         "CH₄ → C + 2H₂"
       ],
       "answer": 1,
-      "knowledgeIds": ["fossil-fuels"],
-      "knowledgePoints": ["fossil-fuels"],
+      "knowledgeIds": [
+        "fossil-fuels"
+      ],
+      "knowledgePoints": [
+        "fossil-fuels"
+      ],
       "explanation": "甲烷完全燃烧生成CO₂和H₂O。"
     },
     {
@@ -220,10 +289,19 @@
       "type": "concept",
       "difficulty": "medium",
       "question": "下列能源中，燃烧产物对环境最友好的是？",
-      "options": ["煤", "石油", "天然气", "氢气"],
+      "options": [
+        "煤",
+        "石油",
+        "天然气",
+        "氢气"
+      ],
       "answer": 3,
-      "knowledgeIds": ["fossil-fuels"],
-      "knowledgePoints": ["fossil-fuels"],
+      "knowledgeIds": [
+        "fossil-fuels"
+      ],
+      "knowledgePoints": [
+        "fossil-fuels"
+      ],
       "explanation": "氢气燃烧只生成水，不产生CO₂、SO₂等污染物。"
     },
     {
@@ -231,10 +309,19 @@
       "type": "concept",
       "difficulty": "medium",
       "question": "煤燃烧产生的哪种污染物会导致酸雨？",
-      "options": ["CO₂", "SO₂", "粉尘", "N₂"],
+      "options": [
+        "CO₂",
+        "SO₂",
+        "粉尘",
+        "N₂"
+      ],
       "answer": 1,
-      "knowledgeIds": ["fossil-fuels"],
-      "knowledgePoints": ["fossil-fuels"],
+      "knowledgeIds": [
+        "fossil-fuels"
+      ],
+      "knowledgePoints": [
+        "fossil-fuels"
+      ],
       "explanation": "煤中含硫，燃烧生成SO₂，SO₂溶于水形成酸雨。"
     },
     {
@@ -249,8 +336,12 @@
         "所有新能源都完全没有环境影响"
       ],
       "answer": 2,
-      "knowledgeIds": ["fossil-fuels"],
-      "knowledgePoints": ["fossil-fuels"],
+      "knowledgeIds": [
+        "fossil-fuels"
+      ],
+      "knowledgePoints": [
+        "fossil-fuels"
+      ],
       "explanation": "化石燃料有限，新能源尚未完全替代，提高利用率是重要途径。"
     },
     {
@@ -265,8 +356,12 @@
         "甲烷是天然气的主要成分"
       ],
       "answer": 1,
-      "knowledgeIds": ["fossil-fuels"],
-      "knowledgePoints": ["fossil-fuels"],
+      "knowledgeIds": [
+        "fossil-fuels"
+      ],
+      "knowledgePoints": [
+        "fossil-fuels"
+      ],
       "explanation": "甲烷燃烧产物是CO₂和H₂O，不只CO₂。"
     }
   ],
@@ -275,17 +370,22 @@
       "id": "L18-D01",
       "type": "concept",
       "difficulty": "medium",
-      "question": "小明认为太阳能和风能都是无限的清洁能源，永远不会有问题。他的错误在于？",
+      "question": "小明认为太阳能和风能永远不会有问题。他的错误在于？",
       "options": [
         "忽略了新能源也有环境影响",
         "新能源确实没有任何问题",
         "太阳能不是清洁能源",
-        "风能只在白天有"
+        "以上都不对"
       ],
       "answer": 0,
-      "knowledgeIds": ["fossil-fuels"],
-      "knowledgePoints": ["fossil-fuels"],
-      "explanation": "新能源虽然相对清洁，但生产、安装过程中可能有环境影响，需全面评价。",
+      "knowledgeIds": [
+        "fossil-fuels",
+        "environmental-impact"
+      ],
+      "knowledgePoints": [
+        "fossil-fuels"
+      ],
+      "explanation": "新能源相对清洁但需全面评价环境影响。",
       "errorType": "mc-fossil-fuel-nonrenewable",
       "remediationStep": "L18-S05"
     },
@@ -301,9 +401,13 @@
         "天然气、氢能、核能"
       ],
       "answer": 2,
-      "knowledgeIds": ["fossil-fuels"],
-      "knowledgePoints": ["fossil-fuels"],
-      "explanation": "三大化石燃料：煤、石油、天然气。太阳能、风能、氢能、核能都不是化石燃料。",
+      "knowledgeIds": [
+        "fossil-fuels"
+      ],
+      "knowledgePoints": [
+        "fossil-fuels"
+      ],
+      "explanation": "三大化石燃料：煤、石油、天然气。",
       "errorType": "mc-fossil-fuel-nonrenewable",
       "remediationStep": "L18-S02"
     },
@@ -311,23 +415,76 @@
       "id": "L18-D03",
       "type": "concept",
       "difficulty": "hard",
-      "question": "煤、石油、天然气作为燃料的共同点是？①都是混合物 ②都含碳元素 ③燃烧都产生CO₂ ④都是可再生能源",
-      "options": ["①②③", "①②④", "①③④", "②③④"],
+      "question": "煤、石油、天然气的共同点是？①混合物②含碳③燃烧产CO₂④可再生",
+      "options": [
+        "①②③",
+        "①②④",
+        "①③④",
+        "②③④"
+      ],
       "answer": 0,
-      "knowledgeIds": ["fossil-fuels"],
-      "knowledgePoints": ["fossil-fuels"],
-      "explanation": "三者都是混合物，都含碳元素，燃烧都产生CO₂，但都不是可再生能源。",
+      "knowledgeIds": [
+        "fossil-fuels"
+      ],
+      "knowledgePoints": [
+        "fossil-fuels"
+      ],
+      "explanation": "三者都是混合物、含碳、燃烧产CO₂，但都不可再生。",
       "errorType": "mc-fossil-fuel-nonrenewable",
       "remediationStep": "L18-S02"
     }
   ],
   "sections": [
-    { "title": "本节课要掌握什么？", "body": ["三大化石燃料：煤、石油、天然气，都是不可再生混合物。", "化石燃料燃烧产物及环境影响。", "氢能是最清洁燃料，燃烧只生成水。", "能源发展：提高利用率+开发新能源+节能减排。"] },
-    { "title": "核心实验", "body": ["甲烷燃烧实验：验证产物为CO₂和H₂O。"] },
-    { "title": "核心概念", "body": ["化石燃料：不可再生，混合物。", "新能源：氢能、太阳能、风能等。"] },
-    { "title": "常见误区", "body": ["误认为新能源完全无污染。", "误认为新能源已完全替代化石燃料。"] },
-    { "title": "学习方法", "body": ["对比分析：化石燃料vs新能源的优劣。", "综合分析：全面客观评价能源问题。"] }
+    {
+      "title": "本节课要掌握什么？",
+      "body": [
+        "三大化石燃料：煤、石油、天然气，都是不可再生混合物。",
+        "化石燃料燃烧产物及环境影响。",
+        "氢能是最清洁燃料，燃烧只生成水。",
+        "能源发展：提高利用率+开发新能源+节能减排。"
+      ]
+    },
+    {
+      "title": "核心实验",
+      "body": [
+        "甲烷燃烧实验：验证产物为CO₂和H₂O。"
+      ]
+    },
+    {
+      "title": "核心概念",
+      "body": [
+        "化石燃料：不可再生，混合物。",
+        "新能源：氢能、太阳能、风能等。"
+      ]
+    },
+    {
+      "title": "常见误区",
+      "body": [
+        "误认为新能源完全无污染。",
+        "误认为新能源已完全替代化石燃料。"
+      ]
+    },
+    {
+      "title": "学习方法",
+      "body": [
+        "对比分析：化石燃料vs新能源的优劣。",
+        "综合分析：全面客观评价能源问题。"
+      ]
+    }
   ],
-  "provenance": { "status": "ready", "basis": "人教版九年级化学上册第七单元课题2；2022年版义务教育化学课程标准。", "note": "内容原创，不复制教材原文。" },
-  "review": { "curriculum": "pass", "scientific": "pass", "ageSuitability": "pass", "itemQuality": "pass", "knowledgeLinks": "pass", "wuhanAlignment": "pass", "masteryGate": "pass", "blockingIssues": [] }
+  "provenance": {
+    "status": "ready",
+    "basis": "人教版九年级化学上册第七单元课题2；2022年版义务教育化学课程标准。",
+    "note": "内容原创，不复制教材原文。"
+  },
+  "review": {
+    "curriculum": "pass",
+    "scientific": "pass",
+    "ageSuitability": "pass",
+    "itemQuality": "pass",
+    "knowledgeLinks": "pass",
+    "wuhanAlignment": "pass",
+    "masteryGate": "pass",
+    "blockingIssues": []
+  }
 }

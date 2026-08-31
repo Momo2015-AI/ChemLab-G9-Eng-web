@@ -15,7 +15,10 @@
       "answer": 0,
       "explanation": "蜡烛燃烧是石蜡与氧气反应生成CO₂和H₂O，原子重新组合而非被消灭。",
       "errorType": "mc-law-conservation-atom-destroyed",
-      "remediationStep": "L27-S06"
+      "remediationStep": "L27-S06",
+      "knowledgeIds": [
+        "law-of-mass-conservation"
+      ]
     },
     {
       "id": "L27-D02",
@@ -29,7 +32,10 @@
         "化学反应中原子数目可能增减"
       ],
       "answer": 2,
-      "explanation": "化学反应的微观本质是分子破裂为原子，原子重新组合成新分子，原子本身不变。"
+      "explanation": "化学反应的微观本质是分子破裂为原子，原子重新组合成新分子，原子本身不变。",
+      "knowledgeIds": [
+        "law-of-mass-conservation"
+      ]
     },
     {
       "id": "L27-D03",
@@ -45,7 +51,10 @@
       "answer": 2,
       "explanation": "根据原子三不变，反应前后原子总数守恒，10+6=16个原子。",
       "errorType": "mc-law-conservation-atom-destroyed",
-      "remediationStep": "L27-S04"
+      "remediationStep": "L27-S04",
+      "knowledgeIds": [
+        "law-of-mass-conservation"
+      ]
     }
   ]
 }

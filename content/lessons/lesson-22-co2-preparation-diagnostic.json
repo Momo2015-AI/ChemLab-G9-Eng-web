@@ -15,7 +15,10 @@
       "answer": 1,
       "explanation": "生成的 CaSO₄ 微溶，覆盖在大理石表面阻止反应继续。",
       "errorType": "mc-co2-prep-sulfuric",
-      "remediationStep": "L22-S02"
+      "remediationStep": "L22-S02",
+      "knowledgeIds": [
+        "co2-preparation"
+      ]
     },
     {
       "id": "L22-D02",
@@ -31,7 +34,10 @@
       "answer": 2,
       "explanation": "验满用燃着木条放在瓶口，检验用石灰水。",
       "errorType": "mc-co2-verify-method",
-      "remediationStep": "L22-S04"
+      "remediationStep": "L22-S04",
+      "knowledgeIds": [
+        "co2-preparation"
+      ]
     },
     {
       "id": "L22-D03",
@@ -47,7 +53,11 @@
       "answer": 1,
       "explanation": "浓盐酸易挥发，HCl 气体混入 CO₂ 中，干扰石灰水检验。",
       "errorType": "mc-co2-prep-sulfuric",
-      "remediationStep": "L22-S02"
+      "remediationStep": "L22-S02",
+      "knowledgeIds": [
+        "co2-preparation",
+        "lab-operations"
+      ]
     }
   ]
 }

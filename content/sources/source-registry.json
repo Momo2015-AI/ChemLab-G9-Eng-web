@@ -215,5 +215,23 @@
       "S1-WUHAN-EXAM"
     ]
   },
-  "legacyNote": "Retired 320-question dataset is not a source and is excluded from this registry."
+  "legacyNote": "Retired 320-question dataset is not a source and is excluded from this registry.",
+  "pendingLowerSemesterAssets": {
+    "policy": "These content files exist in the repository and are reserved for the upcoming lower-semester (下册) curriculum expansion. They are not referenced by any released lesson and therefore do not appear in any production runtime path; they will be reclassified into lesson files as u08 (金属与金属材料) / u09 (溶液) / u10 (酸碱) / u11 (盐化肥) courses are built. Do not retire without an owner sign-off.",
+    "experimentFiles": [
+      "exp-001-oxygen.json", "exp-acid-copper-oxide.json", "exp-acid-iron.json", "exp-acid-rust.json",
+      "exp-base-cuSO4.json", "exp-calculation.json", "exp-carbs.json", "exp-comprehensive-01.json",
+      "exp-eq-balancing.json", "exp-fertilizer.json", "exp-gas-co2.json", "exp-hcl-fe.json",
+      "exp-ion-test.json", "exp-ion-test-cl.json", "exp-iron-protection.json", "exp-iron-rust.json",
+      "exp-mass-conservation.json", "exp-metal-acid.json", "exp-metal-conductivity.json",
+      "exp-metal-cuSO4.json", "exp-metal-hcl.json", "exp-metal-reactivity.json", "exp-metal-salt.json",
+      "exp-nacl-nahco3.json", "exp-naoh-na2co3.json", "exp-neutralization.json", "exp-neutralization-temp.json",
+      "exp-ph-test.json", "exp-salt-agNO3.json", "exp-synthetic.json"
+    ],
+    "knowledgeContentFiles": [
+      "acid-intro.json", "acid-property.json", "equation-writing.json", "fertilizer-intro.json",
+      "iron-rust.json", "metal-reactivity.json", "salt-test.json", "unit-04-natural-water.json"
+    ],
+    "registeredAt": "2026-08-28 (Sprint 2 cleanup)"
+  }
 }

@@ -44,15 +44,45 @@ export function createApplication({ state, assessment, experimentEngine, mastery
   let stopped = false;
   let knowledgeScope = 'term';
   const router = createRouter({ onRoute: route => { state.route = route; }, render: route => renderRoute(route) });
-  const currentTerm = () => (typeof window !== 'undefined' && window.chemLabTextbookTerm === 'lower' ? 'lower' : 'upper');
+  // Sprint 2: the term used to live only on window.chemLabTextbookTerm, with
+  // shell ↔ app coupled through `window.chemLabSetTerm` (a function the
+  // shell exposed for the app to call). The shell wrote the term; the app
+  // read it. That was the only path for the app to react to the shell's
+  // textbook toggle, but it left the contract in window scope and made the
+  // term unobservable from tests. We now own a closure-scoped term and an
+  // explicit setter; bootstrap.js still injects the matching shell setter
+  // so deep links can drive the term change without touching window.
+  const termSubscribers = new Set();
+  let currentTermValue = (typeof window !== 'undefined' && window.chemLabTextbookTerm === 'lower') ? 'lower' : 'upper';
+  const currentTerm = () => currentTermValue;
+  const setTerm = (semester) => {
+    if (semester !== 'upper' && semester !== 'lower') return;
+    if (semester === currentTermValue) return;
+    currentTermValue = semester;
+    for (const fn of termSubscribers) {
+      try { fn(semester); } catch (error) { console.warn('[chemlab] term subscriber failed', error); }
+    }
+  };
+  const onTermChange = (fn) => { termSubscribers.add(fn); return () => termSubscribers.delete(fn); };
+  if (typeof window !== 'undefined') {
+    // Backward-compat: external scripts and devtools can still read the
+    // current term from the canonical window property, and existing deep
+    // links / shell call sites continue to work.
+    Object.defineProperty(window, 'chemLabTextbookTerm', {
+      configurable: true,
+      get: () => currentTermValue,
+      set: (value) => setTerm(value === 'lower' ? 'lower' : 'upper'),
+    });
+    window.chemLabSetTerm = (value) => setTerm(value);
+    window.addEventListener('chemlab:term-change', event => setTerm(event?.detail?.term));
+  }
 
   // Deep links may target a lesson from the other semester; follow the user's
   // intent by switching the whole UI to that semester (lists, portals and the
   // shell toggle all re-sync through the term-change event).
   function switchTermFor(semester) {
     if (typeof window === 'undefined' || semester === currentTerm()) return;
-    if (typeof window.chemLabSetTerm === 'function') { window.chemLabSetTerm(semester); return; }
-    window.chemLabTextbookTerm = semester;
+    setTerm(semester);
   }
 
   function renderHomeMessage(subtitle) {
@@ -155,8 +185,15 @@ export function createApplication({ state, assessment, experimentEngine, mastery
     const phase = controllers.learning.getLessonPhase(lessonId);
     const stages = controllers.learning.getStageAvailability(lesson, guidedLearning);
     const masteryState = controllers.learning.getLessonMastery(lessonId);
+    const knowledgeGraph = await contentService.getKnowledgeGraphViewModel().catch(() => ({ nodes: [], relations: [] }));
+    const knowledgeNames = Object.fromEntries((knowledgeGraph.nodes || []).map(node => [node.id, node.name || node.id]));
+    // The knowledge-detail route uses this to scope its "back to current
+    // lesson" navigation; the field was previously never written anywhere
+    // (see Sprint 2 fix in DEV-REC 2026-08-28).
+    state.currentLessonId = lessonId;
     return views.renderCourse({
       root, lesson, guidedLearning, lessonState, phase, stages,
+      knowledgeNames,
       progress: controllers.learning.getProgress(lessonId),
       masteryPassed: masteryState?.status === 'passed',
       diagnosis: lessonState.diagnosis || {},
@@ -469,13 +506,14 @@ export function createApplication({ state, assessment, experimentEngine, mastery
 
   return {
     state, router, contentService, masteryService, controllers, views, hydrateContent,
+    // Exposed for tests / future shell injection — the term channel is no
+    // longer a window-global only.
+    term: { current: currentTerm, set: setTerm, onChange: onTermChange },
     start() {
       stopped = false;
-      if (typeof window !== 'undefined') {
-        window.addEventListener('chemlab:term-change', () => {
-          if (['home', 'course', 'lab', 'assessment', 'knowledge-map', 'progress'].includes(router.current().page)) void renderRoute(router.current());
-        });
-      }
+      onTermChange(() => {
+        if (['home', 'course', 'lab', 'assessment', 'knowledge-map', 'progress'].includes(router.current().page)) void renderRoute(router.current());
+      });
       router.start();
       void hydrateContent().catch(() => undefined);
     },
