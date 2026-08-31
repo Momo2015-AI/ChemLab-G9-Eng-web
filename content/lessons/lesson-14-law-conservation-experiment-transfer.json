@@ -12,7 +12,7 @@
         "keywords": [["生成物=铁丝+氧气"], ["符合质量守恒"], ["开放容器烟逸散"], ["密闭容器验证"]],
         "explanation": "理解质量守恒的宏观表现和实验验证的关键条件。"
       },
-      "knowledgeIds": ["law-conservation"],
+      "knowledgeIds": ["law-of-mass-conservation"],
       "misconceptionIds": ["mc-law-conservation-open-system"]
     },
     {
@@ -26,7 +26,7 @@
         "keywords": [["密闭容器可行"], ["开放容器CO₂逸散"], ["改为密闭可验证"], ["系统设计是关键"]],
         "explanation": "理解实验设计对验证质量守恒的重要性。"
       },
-      "knowledgeIds": ["law-conservation"],
+      "knowledgeIds": ["law-of-mass-conservation"],
       "misconceptionIds": ["mc-law-conservation-open-system"]
     },
     {
@@ -40,7 +40,7 @@
         "keywords": [["无气体生成的反应"], ["CuSO₄+NaOH"], ["蓝色沉淀"], ["m₁=m₂"]],
         "explanation": "设计合理的实验方案验证质量守恒。"
       },
-      "knowledgeIds": ["law-conservation"],
+      "knowledgeIds": ["law-of-mass-conservation"],
       "misconceptionIds": []
     },
     {
@@ -54,7 +54,7 @@
         "keywords": [["总质量不变"], ["原子重新组合"], ["原子三不变"], ["密闭系统无物质进出"]],
         "explanation": "从微观角度理解质量守恒的本质。"
       },
-      "knowledgeIds": ["law-conservation"],
+      "knowledgeIds": ["law-of-mass-conservation"],
       "misconceptionIds": ["mc-law-conservation-atom-destroyed"]
     }
   ]

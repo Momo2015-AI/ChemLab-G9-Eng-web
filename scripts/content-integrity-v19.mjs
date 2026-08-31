@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { day01DiagnosticQuestions } from '../content/questions/day01-diagnostics.js';
 import { day01ProductionOverrides } from '../content/questions/day01-production-overrides.js';
+import { lessonManifest } from '../content/curriculum/lesson-manifest.js';
 
 const root = process.cwd();
 const graphPath = path.join(root, 'content/knowledge/knowledge-graph.json');
@@ -37,8 +38,18 @@ function normalizeLessonQuestion(question, lesson, source = 'lesson') {
 function loadRuntimeQuestions() {
   if (!fs.existsSync(lessonsPath)) return [];
   const questions = [];
-  const lessonFiles = fs.readdirSync(lessonsPath).filter(file => file.endsWith('.json') && !/(?:-practice|-mastery|-diagnostic|-guided-learning|-experiment|-transfer)\.json$/.test(file));
-  for (const name of lessonFiles) {
+  // Sprint 2.5: the previous regex-based filter (?!-practice|...|experiment|...)
+  // wrongly excluded main lesson files whose canonical id happened to end in
+  // "-experiment" (e.g. lesson-14-law-conservation-experiment.json). Use the
+  // canonical lesson manifest to enumerate main files instead, which is the
+  // authoritative source per INTEGRATED-REPAIR-PLAN-V1.1 P0.2.
+  const mainFileNames = new Set();
+  for (const entry of lessonManifest.lessons || []) {
+    if (!entry.canonicalId) continue;
+    const mainPath = path.join(lessonsPath, `${entry.canonicalId}.json`);
+    if (fs.existsSync(mainPath)) mainFileNames.add(`${entry.canonicalId}.json`);
+  }
+  for (const name of mainFileNames) {
     const lesson = load(path.join(lessonsPath, name));
     if (!lesson) continue;
     const add = (list, source) => {

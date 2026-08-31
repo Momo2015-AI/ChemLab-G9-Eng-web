@@ -1185,3 +1185,45 @@ Sprint 2（Runtime 差距分析）：按 INTEGRATED-REPAIR-PLAN-V1.1 §4 的逐�
 ### Next
 
 Sprint 3（Browser E2E 发布门禁）：按计划落实 16 条 E2E 路径（其中路径 16 用 3 道坏题所在课做答案键回归），E2E 引入 Playwright，CI 串联为发布门禁。
+
+---
+
+## 2026-08-31 — Sprint 2.5 知识图谱治理（REPAIR-PLAN-V1.2 §1）
+
+### Conversation / decision
+
+V1.2 计划 §1 知识图谱治理 sprint：5 类问题（KG-A 同名双节点、KG-B 反向引用失同步、KG-C 5 条悬空关系、KG-D 263 条 question 类型关系与 node.questions[] 重复、KG-E 无"knowledgeId 必须存在"门禁）。一次性治理。
+
+### Actions
+
+**KG-1 S7 门禁 + KG-2 节点合并**：
+- `content-semantic-audit.mjs` 加载知识图谱（`loadKnowledgeGraph` 模块顶层）并维护 `KNOWLEDGE_ALIASES` 映射；S7 规则对每道题每个 knowledgeId 调 `resolveKnowledgeId`（未注册 ID → BLOCKER；命中别名 → 写 warnings）。
+- 把 `law-conservation` 节点从图谱删除（合并到 `law-of-mass-conservation`），3 条相关 relations 全部重定向到主节点并去重，关联的 `prerequisiteIds`/`misconceptionIds`/`questions` 全部并入。
+- 8 个课程文件 `knowledgeIds` 中 `'law-conservation'` 全部替换为 `'law-of-mass-conservation'`（用 lookahead `(?<!-)` 防止误伤 lesson-15-law-conservation-micro 等路径前缀）。
+- 2 个误解词 `mc-law-conservation-open-system` / `mc-law-conservation-atom-destroyed` 的 `knowledgeIds` 同步从 `law-conservation` 改为 `law-of-mass-conservation`。
+- 别名映射仍保留在 `KNOWLEDGE_ALIASES`（`law-conservation` → `law-of-mass-conservation`），保证已持久化的 localStorage `weakPoints`/`recheck.knowledgeIds` 旧数据能继续解析。
+
+**KG-3 单一事实源（node.questions[] 改为生成物）**：
+- 新增 `scripts/gen-graph-questions.mjs`，从所有题目聚合 `knowledgeIds` → 按 canonical 节点写回 `node.questions[]`。
+- 内容审计新增 S8 规则：题目→节点反向往返漂移 BLOCKER（题目引用了节点但节点未列入 / 节点列了但题目已不引用）。`npm run audit:content` 改为先 gen-graph-questions 再跑内容审计。
+- 首跑生成器：51 节点再生 1473 个题目引用（之前 52 节点只有 ~427 个引用，反向漂移 1046+ → 0）。
+- 修 `tests/term-and-quality-hardening.test.mjs`：把 `runtimeIds` 集合扩展到 `content/questions/day01-*.js` 模块（`q-acid-*` 题在那），否则 acid-intro 节点的 q-acid-001 引用被错判为 stale。
+
+**KG-4 悬空关系清理**：
+- 2 条 `experiment` 关系（`matter-change → L01-E01`、`scientific-inquiry → L02-E01`）删除——schema 只支持节点↔节点引用，实验 ID 是字符串而非节点 ID，关系无意义。
+- 3 条 `commonMistake` 关系（`observation-inference → single-phenomenon-overgeneralization` 等）保留：在 `canonical-misconceptions.js` 注册 3 个新误解词（`single-phenomenon-overgeneralization` / `control-variable-violation` / `data-fabrication`），让关系重新成立。
+- `tests/misconception-vocab.test.mjs` 词汇表期望值 73 → 76。
+
+**KG-1 → KG-2 串接发现**：整合修复暴露了**第三类隐藏 bug**——`scripts/content-integrity-v19.mjs` 的主文件 filter 正则 `(?:-practice|-mastery|-diagnostic|-guided-learning|-experiment|-transfer)\.json$` 误伤了文件名以 `-experiment.json` 结尾的 lesson-14-law-conservation-experiment 主文件。修复：filter 改为走 `lessonManifest`（manifest 是 canonical lesson id 注册表，V1.1 P0.2），不再用文件名猜测主文件。这一改动使 `lesson-14-law-conservation-experiment` 的 28 道 split 题（之前 filter 误伤整个主文件）重新被 integrity 收集。
+
+### Verification
+
+- `npm test`：**206/206 全绿**（基线 203 + 3 个新增 S7/S8 单测，含 S7 红样注入测试）。
+- `npm run audit:content`：gen-graph-questions 报告 0/51 节点需重生成（idempotent）；integrity Errors: None；semantic audit 0 blocker。
+- `node scripts/runtime-audit.mjs`：PASS。
+- `node scripts/build-pages.mjs`：282 文件。
+- 图谱规模：52 → 51 节点（合并去重 1）；关系 345 → 342（删 2 条 experiment + 3 条 dedupe）；1473 个题目→节点引用 100% 覆盖；`node.questions[]` 与题目侧聚合零漂移。
+
+### Next
+
+按 V1.2 计划：Sprint 3（Browser E2E 发布门禁），前置条件已具备（路径 13 知识地图路由 + 路径 16 答案键回归 现在有干净的地基）。

@@ -7,13 +7,12 @@
  *
  *   S1  contradiction markers inside explanations        (BLOCKER)
  *   S2  answer key resolves to a valid option index      (BLOCKER)
- *   S3  same question id must not diverge across files   (WARN until Sprint 1
- *       copy alignment lands, then BLOCKER)
- *   S4  every runtime question carries its own knowledge (WARN until Sprint 1
- *       knowledge-link backfill, then BLOCKER — recheck matching relies on it)
- *   S5  duplicate id registry (informational, pairs with S3)
- *   S6  choice questions in practice/mastery/transfer    (WARN until Sprint 1
- *       explanation backfill, then BLOCKER)
+ *   S3  same question id must not diverge in content     (BLOCKER post-Sprint 1)
+ *   S4  every runtime question carries own knowledge     (BLOCKER post-Sprint 1)
+ *   S5  duplicate id registry (informational)
+ *   S6  choice questions in practice/mastery need explanation (BLOCKER post-Sprint 1)
+ *   S7  every knowledgeId must resolve to a graph node   (BLOCKER post-Sprint 2.5)
+ *   S8  graph node.questions[] must equal the question-side aggregation (BLOCKER post-Sprint 2.5)
  *
  * Diagnostic-pool questions are exempt from S6: they route students back to
  * guided-learning steps via remediationStep instead of inline explanations.
@@ -26,6 +25,49 @@ import { day01ProductionOverrides } from '../content/questions/day01-production-
 
 export const CONTRADICTION_MARKERS = ['需检查', '实际应为', '无错误选项', '修正：', '待确认', '待补充', '待核实', 'TODO', 'FIXME'];
 export const EXPLANATION_POOLS = new Set(['practice', 'mastery', 'transfer', 'lesson-main']);
+
+/**
+ * Knowledge graph loader + alias map. Aliases mirror the misconception
+ * vocabulary pattern (content/misconceptions/canonical-misconceptions.js
+ * ALIAS_MAP) so that question knowledgeIds authored before a graph-node
+ * rename can still be resolved by the runtime. Adding an entry here is a
+ * one-line fix for legacy data and is logged at module load time.
+ */
+function loadKnowledgeGraph() {
+  if (typeof process === 'undefined') return { nodes: [], relations: [] };
+  const cwd = process.cwd();
+  const file = `${cwd}/content/knowledge/knowledge-graph.json`;
+  if (!fs.existsSync(file)) return { nodes: [], relations: [] };
+  try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch { return { nodes: [], relations: [] }; }
+}
+export const KNOWLEDGE_GRAPH = loadKnowledgeGraph();
+export const KNOWLEDGE_NODE_IDS = new Set((KNOWLEDGE_GRAPH.nodes || []).map(n => n.id));
+// Sprint 2.5 KG-2: alias map for legacy knowledgeIds that have been merged
+// into a canonical node. Format: 'legacy-id' -> 'canonical-id'. Keep entries
+// in the order they were applied. New merges must be added before the
+// canonical run that retires the legacy id.
+export const KNOWLEDGE_ALIASES = Object.freeze({
+  'law-conservation': 'law-of-mass-conservation',
+});
+const RESOLVED_ALIASES = new Map();
+for (const [legacy, canonical] of Object.entries(KNOWLEDGE_ALIASES)) {
+  if (!KNOWLEDGE_NODE_IDS.has(canonical)) {
+    // Misconfiguration: alias points to a non-existent node. Surface loudly.
+    console.warn(`[semantic-audit] knowledge alias '${legacy}' -> '${canonical}' but target is not in the graph`);
+  } else {
+    RESOLVED_ALIASES.set(legacy, canonical);
+  }
+}
+/** Resolve a knowledge id through the alias map. */
+export function resolveKnowledgeId(id) {
+  if (KNOWLEDGE_NODE_IDS.has(id)) return id;
+  if (RESOLVED_ALIASES.has(id)) return RESOLVED_ALIASES.get(id);
+  return null;
+}
+/** Knowledge ids that resolve to a real graph node (after aliasing). */
+export function knownKnowledgeIds(question = {}) {
+  return ownKnowledgeIds(question).map(resolveKnowledgeId).filter(Boolean);
+}
 /** Per-pool overrides applied after collection: lesson-main questions that
  * carry a remediationStep are diagnostic questions embedded in the main
  * lesson file; they route students back to guided steps and are exempt
@@ -193,7 +235,7 @@ export function findDivergentDuplicates(collected) {
   return { divergent, identical };
 }
 
-export function runAudit({ lessonsDir = LESSONS_DIR, day01Modules = null } = {}) {
+export function runAudit({ lessonsDir = LESSONS_DIR, day01Modules = null, skipS8 = false } = {}) {
   const collected = collectQuestions({ lessonsDir, day01Modules });
   const blockers = [];
   const warnings = [];
@@ -208,6 +250,16 @@ export function runAudit({ lessonsDir = LESSONS_DIR, day01Modules = null } = {})
     if (badIndex !== null) blockers.push(`S2 ${question.id} (${file}): answer ${JSON.stringify(question.answer)} does not resolve to a valid option index (resolved: ${badIndex})`);
     if (checkKnowledgeLinks(question)) blockers.push(`S4 ${question.id} (${file}, ${effectivePool}): no own knowledge link — recheck matching cannot attribute this question`);
     if (EXPLANATION_POOLS.has(effectivePool) && !isConstructed(question) && !checkExplanation(question)) blockers.push(`S6 ${question.id} (${file}, ${effectivePool}): choice question without explanation`);
+    // S7 — every knowledgeId must resolve to a graph node (after aliasing).
+    for (const id of ownKnowledgeIds(question)) {
+      if (!resolveKnowledgeId(id)) {
+        blockers.push(`S7 ${question.id} (${file}): knowledgeId "${id}" does not resolve to any graph node (and no alias applies)`);
+      } else if (id !== resolveKnowledgeId(id)) {
+        // Legacy id is routed through an alias — informational so authors
+        // know to migrate, but not a blocker.
+        warnings.push(`S7 ${question.id} (${file}): knowledgeId "${id}" is aliased to "${resolveKnowledgeId(id)}"; update the source file when convenient`);
+      }
+    }
   }
 
   const { divergent, identical } = findDivergentDuplicates(collected);
@@ -216,6 +268,36 @@ export function runAudit({ lessonsDir = LESSONS_DIR, day01Modules = null } = {})
   stats.identicalDuplicates = identical.length;
   stats.missingKnowledgeLinks = blockers.filter(w => w.startsWith('S4')).length;
   stats.missingExplanations = blockers.filter(w => w.startsWith('S6')).length;
+  stats.unknownKnowledgeIds = blockers.filter(w => w.startsWith('S7')).length;
+
+  // S8 — graph node.questions[] must equal the aggregation from the
+  // question side. Computed by canonical-key diffing. Idempotent; the
+  // generator script (gen-graph-questions.mjs) calls this function and
+  // writes the result back, so the runtime audit can re-verify.
+  if (!skipS8) {
+    const aggregated = new Map(); // nodeId -> Set(questionId)
+    for (const { question } of collected) {
+      if (!question?.id) continue;
+      for (const kid of ownKnowledgeIds(question)) {
+        const resolved = resolveKnowledgeId(kid);
+        if (!resolved) continue;
+        if (!aggregated.has(resolved)) aggregated.set(resolved, new Set());
+        aggregated.get(resolved).add(question.id);
+      }
+    }
+    for (const node of KNOWLEDGE_GRAPH.nodes || []) {
+      const declared = new Set(node.questions || []);
+      const actual = aggregated.get(node.id) || new Set();
+      for (const missing of actual) {
+        if (!declared.has(missing)) blockers.push(`S8 node "${node.id}": question "${missing}" links to this node but is not listed in node.questions[]`);
+      }
+      for (const stale of declared) {
+        if (!actual.has(stale)) blockers.push(`S8 node "${node.id}": question "${stale}" is listed in node.questions[] but the question no longer references this node`);
+      }
+    }
+    stats.s8Drift = blockers.filter(w => w.startsWith('S8')).length;
+  }
+
   return { blockers, warnings, stats };
 }
 

@@ -148,6 +148,15 @@ test('knowledge graph: every node is semester-tagged and acid nodes belong to un
     for (const key of ['questions', 'diagnostics']) for (const q of data[key] || []) runtimeIds.add(q.id);
     for (const q of data.mastery?.questions || []) runtimeIds.add(q.id);
   }
+  // Sprint 2.5 KG-3: graph node.questions[] now mirrors the full
+  // runtime question pool, which includes the day01 production-overrides
+  // and day01 diagnostics modules (e.g. q-acid-001..q-acid-012). Pull
+  // their ids into runtimeIds so the "stale question ref" check stays
+  // authoritative.
+  for (const file of fs.readdirSync(path.join(ROOT, 'content/questions')).filter(f => f.endsWith('.js'))) {
+    const src = fs.readFileSync(path.join(ROOT, 'content/questions', file), 'utf8');
+    for (const match of src.matchAll(/id:\s*'([A-Za-z0-9_-]+)'/g)) runtimeIds.add(match[1]);
+  }
   for (const node of graph.nodes) {
     assert.ok(['upper', 'lower'].includes(node.semester), `${node.id}: semester tag required`);
     assert.equal(unitSemester.get(node.unitId), node.semester, `${node.id}: unitId/semester mismatch`);

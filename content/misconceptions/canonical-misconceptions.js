@@ -129,6 +129,54 @@ export const canonicalMisconceptionsBase = [
       recheckQuestionIds: ['L02-M08']
     }
   },
+  // Sprint 2.5 KG-4: registered to support dangling knowledge-graph
+  // commonMistake relations. Each maps an observation / control-variables /
+  // data-integrity failure to a teachable misconception pattern.
+  {
+    id: 'single-phenomenon-overgeneralization',
+    title: '单次现象过度推广为普遍规律',
+    description: '学生在观察中只看到一次现象就把它推广为一般规律，忽视重复实验和例外情况。',
+    knowledgeIds: ['observation-inference', 'scientific-inquiry'],
+    signals: ['reasoning-gap', 'overgeneralization'],
+    severity: 'medium',
+    source: 'lesson-02 audit (Sprint 2.5 KG-4)',
+    remediation: {
+      goal: '理解"一次现象"与"普遍规律"的区别，养成多角度、多样本验证的习惯。',
+      lessonIds: ['lesson-02-chemistry-as-experimental-science'],
+      practiceQuestionIds: ['L02-P10'],
+      recheckQuestionIds: ['L02-M05']
+    }
+  },
+  {
+    id: 'control-variable-violation',
+    title: '控制变量原则被破坏',
+    description: '实验中同时改变多个变量（既改温度又改水量），导致无法判断哪个变量引起了结果差异。',
+    knowledgeIds: ['control-variables', 'scientific-inquiry'],
+    signals: ['design-flaw', 'incomplete-condition'],
+    severity: 'high',
+    source: 'lesson-02 audit (Sprint 2.5 KG-4)',
+    remediation: {
+      goal: '在对比实验中只改变一个变量，其它条件保持一致。',
+      lessonIds: ['lesson-02-chemistry-as-experimental-science'],
+      practiceQuestionIds: ['L02-D02'],
+      recheckQuestionIds: ['L02-M07']
+    }
+  },
+  {
+    id: 'data-fabrication',
+    title: '伪造或篡改实验数据',
+    description: '当实验数据与预测不符时，伪造数据或改写数据以使结论"成立"，违背科学诚信。',
+    knowledgeIds: ['data-integrity', 'scientific-inquiry'],
+    signals: ['integrity-violation'],
+    severity: 'high',
+    source: 'lesson-02 audit (Sprint 2.5 KG-4)',
+    remediation: {
+      goal: '理解"数据真实性原则"是科学探究的底线，异常数据恰恰是新的发现起点。',
+      lessonIds: ['lesson-02-chemistry-as-experimental-science'],
+      practiceQuestionIds: ['L02-D03'],
+      recheckQuestionIds: ['L02-M09']
+    }
+  },
   {
     id: 'mc-method-evidence-logic',
     title: '证据与逻辑推理差距',
@@ -939,7 +987,7 @@ const u05Misconceptions = [
     id: 'mc-law-conservation-open-system',
     title: '误认为开放系统中质量不守恒违反质量守恒定律',
     description: '学生观察到开放容器中化学反应前后质量变化（如碳酸钙与盐酸反应质量减少、铁生锈质量增加），误认为质量守恒定律不成立，不能理解气体参与或逸出对质量测定的影响。',
-    knowledgeIds: ['law-conservation'],
+    knowledgeIds: ['law-of-mass-conservation'],
     signals: ['phenomenon-misread', 'concept-confusion'],
     severity: 'high',
     source: 'unit-05 production',
@@ -954,7 +1002,7 @@ const u05Misconceptions = [
     id: 'mc-law-conservation-atom-destroyed',
     title: '误认为化学反应中原子被消灭或创生',
     description: '学生不理解质量守恒的微观本质，认为化学反应中原子可以被创造或消灭，或认为原子种类/数目可能改变。',
-    knowledgeIds: ['law-conservation'],
+    knowledgeIds: ['law-of-mass-conservation'],
     signals: ['concept-confusion', 'reasoning-gap'],
     severity: 'high',
     source: 'unit-05 production',

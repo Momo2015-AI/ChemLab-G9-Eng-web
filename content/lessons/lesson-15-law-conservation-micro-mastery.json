@@ -53,12 +53,12 @@
         "answer": 1,
         "explanation": "化学反应的实质是原子重新组合，原子种类、数目、质量均不变，故总质量守恒。",
         "knowledgeIds": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ],
         "id": "L27-MQ01",
         "difficulty": "basic",
         "knowledgePoints": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ]
       },
       {
@@ -73,12 +73,12 @@
         "answer": 2,
         "explanation": "化学反应中分子分裂成原子，原子重新组合成新分子，分子种类一定改变。",
         "knowledgeIds": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ],
         "id": "L27-MQ02",
         "difficulty": "basic",
         "knowledgePoints": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ]
       },
       {
@@ -93,12 +93,12 @@
         "answer": 0,
         "explanation": "原子数目、元素种类、总质量一定不变；分子数目可能变，物质种类一定变。",
         "knowledgeIds": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ],
         "id": "L27-MQ03",
         "difficulty": "basic",
         "knowledgePoints": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ]
       },
       {
@@ -113,12 +113,12 @@
         "answer": 2,
         "explanation": "生成CO₂和H₂O说明含C、H元素，O元素可能来自氧气也可能来自该物质。",
         "knowledgeIds": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ],
         "id": "L27-MQ04",
         "difficulty": "basic",
         "knowledgePoints": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ]
       },
       {
@@ -133,12 +133,12 @@
         "answer": 0,
         "explanation": "2H₂+O₂→2H₂O前后原子种类和数目均相等，符合质量守恒。",
         "knowledgeIds": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ],
         "id": "L27-MQ05",
         "difficulty": "basic",
         "knowledgePoints": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ]
       },
       {
@@ -153,12 +153,12 @@
         "answer": 2,
         "explanation": "分子总数可能改变（如2H₂+O₂→2H₂O，3个分子变2个），原子总数、元素总数、总质量一定不变。",
         "knowledgeIds": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ],
         "id": "L27-MQ06",
         "difficulty": "basic",
         "knowledgePoints": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ]
       }
     ]

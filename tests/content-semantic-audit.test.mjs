@@ -16,6 +16,9 @@ import {
   poolOf,
   findDivergentDuplicates,
   runAudit,
+  KNOWLEDGE_ALIASES,
+  KNOWLEDGE_NODE_IDS,
+  resolveKnowledgeId,
 } from '../scripts/content-semantic-audit.mjs';
 
 test('S1: contradiction markers are detected in explanations', () => {
@@ -170,4 +173,62 @@ test('runAudit blocks the same id appearing with divergent content fields', () =
   const { divergent } = findDivergentDuplicates(collected);
   assert.equal(divergent.length, 1);
   assert.equal(divergent[0].id, 'Dup');
+});
+
+test('S7: every knowledge id must resolve to a graph node (Sprint 2.5 KG-1)', () => {
+  // The graph loaded by the audit must include the alias target.
+  assert.ok(KNOWLEDGE_NODE_IDS.has('law-of-mass-conservation'),
+    'precondition: canonical mass-conservation node must exist');
+  assert.ok(Object.keys(KNOWLEDGE_ALIASES).includes('law-conservation'),
+    'precondition: law-conservation alias must be registered for legacy data');
+  // The alias target must be the canonical id.
+  assert.equal(resolveKnowledgeId('law-of-mass-conservation'), 'law-of-mass-conservation');
+  // Legacy id must be resolved to the canonical target.
+  assert.equal(resolveKnowledgeId('law-conservation'), 'law-of-mass-conservation');
+  // Unknown id returns null (S7 fires).
+  assert.equal(resolveKnowledgeId('not-a-real-knowledge-id'), null);
+  // A question carrying a legacy id is not S7-blocked: it is warned about
+  // but resolves to the canonical node.
+  const q = { id: 'LX', knowledgeIds: ['law-conservation'], options: ['a'], answer: 0 };
+  // Direct rule call: ownKnowledgeIds surfaces the legacy id; the resolver
+  // maps it. S7 is fired per-id in runAudit, not here, so we assert the
+  // resolver contract only.
+  assert.deepEqual(ownKnowledgeIds(q), ['law-conservation']);
+  assert.equal(resolveKnowledgeId(ownKnowledgeIds(q)[0]), 'law-of-mass-conservation');
+});
+
+test('S8: graph node.questions[] drifts are reported against the live tree', () => {
+  // Skip the production graph; use a hand-rolled mini-tree to keep the
+  // test hermetic. The runAudit S8 path joins by canonical-key diffing.
+  // Here we drive the production runAudit (which uses the real graph) and
+  // assert that, after the Sprint 2.5 generation step, S8 drift is zero
+  // — i.e. node.questions[] matches the question-side aggregation.
+  const { blockers, stats } = runAudit();
+  assert.equal(blockers.filter(b => b.startsWith('S8')).length, 0,
+    `unexpected S8 drift: ${blockers.filter(b => b.startsWith('S8')).slice(0, 3).join(' | ')}`);
+  assert.ok(stats.questions > 1200, 'full runtime question tree must be scanned');
+});
+
+test('S7 blocks unknown knowledgeIds in runAudit', () => {
+  // Inject a fake question with an unknown knowledgeId through the
+  // day01Modules channel so we can drive the audit without touching the
+  // content tree.
+  const fakeQuestion = {
+    id: 's7-test-001',
+    type: 'choice',
+    options: ['a', 'b'],
+    answer: 0,
+    knowledgeIds: ['not-a-real-knowledge-id'],
+    explanation: 'test',
+  };
+  const { blockers } = runAudit({
+    day01Modules: {
+      overrides: [fakeQuestion],
+      diagnostics: [],
+    },
+    skipS8: true,
+  });
+  const s7 = blockers.filter(b => b.startsWith('S7'));
+  assert.ok(s7.length > 0, 'unknown knowledgeId must produce an S7 blocker');
+  assert.ok(s7.some(b => b.includes('s7-test-001') && b.includes('not-a-real-knowledge-id')));
 });

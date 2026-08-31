@@ -16,7 +16,7 @@
     "能判断质量守恒定律的适用边界。"
   ],
   "knowledgePoints": [
-    "law-conservation"
+    "law-of-mass-conservation"
   ],
   "prerequisites": [
     "lesson-14-law-conservation-experiment",
@@ -37,7 +37,7 @@
           "但为什么守恒？是什么在反应前后保持不变？"
         ],
         "knowledgePoints": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ],
         "check": {
           "question": "质量守恒定律的微观本质是？",
@@ -61,7 +61,7 @@
           "三不变：原子种类不变、原子数目不变、原子质量不变。"
         ],
         "knowledgePoints": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ],
         "check": {
           "question": "化学反应前后，下列各项一定不变的是？①原子种类②原子数目③分子种类④物质种类",
@@ -86,7 +86,7 @@
           "原子重新组合，总数不变。"
         ],
         "knowledgePoints": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ],
         "check": null
       },
@@ -99,7 +99,7 @@
           "纠正：化学反应只是原子的重新组合，原子本身不会消失或产生。核反应不属于化学反应。"
         ],
         "knowledgePoints": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ],
         "check": {
           "question": "下列关于化学反应中原子的说法正确的是？",
@@ -123,7 +123,7 @@
           "两种现象都符合质量守恒——只需考虑所有参与反应的物质。"
         ],
         "knowledgePoints": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ],
         "check": {
           "question": "镁条燃烧后固体质量增加，这是因为？",
@@ -147,7 +147,7 @@
           "注意：质量守恒指“参加反应”的物质，未参与的不计入。"
         ],
         "knowledgePoints": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ],
         "check": null
       },
@@ -161,7 +161,7 @@
           "推断：若D由C和E组成，可根据质量关系推算E的质量。"
         ],
         "knowledgePoints": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ],
         "check": null
       },
@@ -176,7 +176,7 @@
           "适用边界：仅限化学变化。"
         ],
         "knowledgePoints": [
-          "law-conservation"
+          "law-of-mass-conservation"
         ],
         "check": null
       }
@@ -205,10 +205,10 @@
       ],
       "answer": 1,
       "knowledgeIds": [
-        "law-conservation"
+        "law-of-mass-conservation"
       ],
       "knowledgePoints": [
-        "law-conservation"
+        "law-of-mass-conservation"
       ],
       "explanation": "化学反应前后原子的种类不变。"
     },
@@ -225,10 +225,10 @@
       ],
       "answer": 2,
       "knowledgeIds": [
-        "law-conservation"
+        "law-of-mass-conservation"
       ],
       "knowledgePoints": [
-        "law-conservation"
+        "law-of-mass-conservation"
       ],
       "explanation": "原子是化学变化中的最小粒子，化学反应中原子不可再分。"
     },
@@ -245,10 +245,10 @@
       ],
       "answer": 2,
       "knowledgeIds": [
-        "law-conservation"
+        "law-of-mass-conservation"
       ],
       "knowledgePoints": [
-        "law-conservation"
+        "law-of-mass-conservation"
       ],
       "explanation": "水电解后水分子变成了氢分子和氧分子，分子种类改变。"
     },
@@ -265,10 +265,10 @@
       ],
       "answer": 0,
       "knowledgeIds": [
-        "law-conservation"
+        "law-of-mass-conservation"
       ],
       "knowledgePoints": [
-        "law-conservation"
+        "law-of-mass-conservation"
       ],
       "explanation": "根据质量守恒，生成C的质量 = 5+3 = 8g。"
     },
@@ -285,10 +285,10 @@
       ],
       "answer": 1,
       "knowledgeIds": [
-        "law-conservation"
+        "law-of-mass-conservation"
       ],
       "knowledgePoints": [
-        "law-conservation"
+        "law-of-mass-conservation"
       ],
       "explanation": "生成物含C、H、O三种元素，O可能来自氧气，所以该物质一定含C、H，可能含O。"
     },
@@ -305,10 +305,10 @@
       ],
       "answer": 1,
       "knowledgeIds": [
-        "law-conservation"
+        "law-of-mass-conservation"
       ],
       "knowledgePoints": [
-        "law-conservation"
+        "law-of-mass-conservation"
       ],
       "explanation": "质量守恒的微观本质是原子三不变。"
     }
@@ -330,7 +330,7 @@
         "law-of-mass-conservation"
       ],
       "knowledgePoints": [
-        "law-conservation"
+        "law-of-mass-conservation"
       ],
       "explanation": "蜡烛燃烧是石蜡与氧气反应生成CO₂和H₂O，原子重新组合而非被消灭。",
       "errorType": "mc-law-conservation-atom-destroyed",
@@ -352,7 +352,7 @@
         "law-of-mass-conservation"
       ],
       "knowledgePoints": [
-        "law-conservation"
+        "law-of-mass-conservation"
       ],
       "explanation": "化学反应的微观本质是分子破裂为原子，原子重新组合成新分子，原子本身不变。"
     },
@@ -372,7 +372,7 @@
         "law-of-mass-conservation"
       ],
       "knowledgePoints": [
-        "law-conservation"
+        "law-of-mass-conservation"
       ],
       "explanation": "根据原子三不变，反应前后原子总数守恒，10+6=16个原子。",
       "errorType": "mc-law-conservation-atom-destroyed",

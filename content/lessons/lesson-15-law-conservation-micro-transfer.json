@@ -12,7 +12,7 @@
         "keywords": [["原子种类不变"], ["原子数目不变"], ["原子质量不变"], ["密闭容器无物质进出"], ["开放容器烟逸散"]],
         "explanation": "理解质量守恒的微观本质和实验验证条件。"
       },
-      "knowledgeIds": ["law-conservation"],
+      "knowledgeIds": ["law-of-mass-conservation"],
       "misconceptionIds": ["mc-law-conservation-atom-destroyed"]
     },
     {
@@ -26,7 +26,7 @@
         "keywords": [["观点错误"], ["石蜡+氧气→CO₂+H₂O"], ["产物逸散"], ["原子三不变"], ["密闭容器总质量不变"]],
         "explanation": "区分宏观称量现象与微观守恒本质。"
       },
-      "knowledgeIds": ["law-conservation"],
+      "knowledgeIds": ["law-of-mass-conservation"],
       "misconceptionIds": ["mc-law-conservation-open-system"]
     },
     {
@@ -40,7 +40,7 @@
         "keywords": [["无气体生成的反应"], ["CuSO₄+NaOH→Cu(OH)₂↓"], ["铁+CuSO₄→FeSO₄+Cu"], ["m前=m后"], ["密闭或无气体逸出"]],
         "explanation": "设计合理的实验验证质量守恒定律。"
       },
-      "knowledgeIds": ["law-conservation"],
+      "knowledgeIds": ["law-of-mass-conservation"],
       "misconceptionIds": []
     },
     {
@@ -54,7 +54,7 @@
         "keywords": [["质量守恒定律"], ["10+5=3+m(D)"], ["D=12g"], ["A过量"], ["B完全反应"]],
         "explanation": "运用质量守恒定律进行定量计算，理解过量问题。"
       },
-      "knowledgeIds": ["law-conservation"],
+      "knowledgeIds": ["law-of-mass-conservation"],
       "misconceptionIds": ["mc-law-conservation-atom-destroyed"]
     }
   ]

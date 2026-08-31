@@ -15,7 +15,7 @@
     "能正确记录实验数据并得出结论。",
     "能区分密闭/开放系统对质量测定的影响。"
   ],
-  "knowledgePoints": ["law-conservation"],
+  "knowledgePoints": ["law-of-mass-conservation"],
   "prerequisites": ["lesson-11-atomic-structure", "lesson-09-chemical-formula"],
   "misconceptionIds": ["mc-law-conservation-open-system"],
   "resourceRefs": {
