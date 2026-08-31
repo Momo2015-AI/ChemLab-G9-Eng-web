@@ -2708,6 +2708,426 @@
       "source": "equation-balancing",
       "target": "stoichiometry",
       "type": "prerequisite"
+    },
+    {
+      "source": "matter-change",
+      "target": "mc-matter-change-vs-property",
+      "type": "commonMistake"
+    },
+    {
+      "source": "matter-change",
+      "target": "mc-matter-physical-vs-chemical",
+      "type": "commonMistake"
+    },
+    {
+      "source": "physical-change",
+      "target": "mc-matter-physical-vs-chemical",
+      "type": "commonMistake"
+    },
+    {
+      "source": "physical-change",
+      "target": "mc-method-single-phenomenon-overgeneralization",
+      "type": "commonMistake"
+    },
+    {
+      "source": "chemical-change",
+      "target": "mc-matter-physical-vs-chemical",
+      "type": "commonMistake"
+    },
+    {
+      "source": "chemical-change",
+      "target": "mc-method-single-phenomenon-overgeneralization",
+      "type": "commonMistake"
+    },
+    {
+      "source": "physical-property",
+      "target": "mc-matter-change-vs-property",
+      "type": "commonMistake"
+    },
+    {
+      "source": "chemical-property",
+      "target": "mc-matter-change-vs-property",
+      "type": "commonMistake"
+    },
+    {
+      "source": "observation-inference",
+      "target": "mc-method-observation-inference",
+      "type": "commonMistake"
+    },
+    {
+      "source": "evidence-reasoning",
+      "target": "mc-method-single-phenomenon-overgeneralization",
+      "type": "commonMistake"
+    },
+    {
+      "source": "evidence-reasoning",
+      "target": "mc-method-evidence-logic",
+      "type": "commonMistake"
+    },
+    {
+      "source": "scientific-inquiry",
+      "target": "mc-method-observation-inference",
+      "type": "commonMistake"
+    },
+    {
+      "source": "acid-intro",
+      "target": "mc-acid-hcl-solution",
+      "type": "commonMistake"
+    },
+    {
+      "source": "acid-intro",
+      "target": "mc-acid-property",
+      "type": "commonMistake"
+    },
+    {
+      "source": "acid-intro",
+      "target": "mc-method-single-phenomenon-overgeneralization",
+      "type": "commonMistake"
+    },
+    {
+      "source": "acid-property",
+      "target": "mc-acid-metal-overgeneralization",
+      "type": "commonMistake"
+    },
+    {
+      "source": "acid-property",
+      "target": "mc-acid-observation-inference",
+      "type": "commonMistake"
+    },
+    {
+      "source": "safety-awareness",
+      "target": "mc-acid-safety-dilution",
+      "type": "commonMistake"
+    },
+    {
+      "source": "safety-awareness",
+      "target": "mc-acid-safety-violation",
+      "type": "commonMistake"
+    },
+    {
+      "source": "lab-operations",
+      "target": "mc-lab-sense-safety",
+      "type": "commonMistake"
+    },
+    {
+      "source": "lab-operations",
+      "target": "mc-lab-alcohol-lamp",
+      "type": "commonMistake"
+    },
+    {
+      "source": "lab-operations",
+      "target": "mc-lab-heating-safety",
+      "type": "commonMistake"
+    },
+    {
+      "source": "lab-operations",
+      "target": "mc-lab-measurement",
+      "type": "commonMistake"
+    },
+    {
+      "source": "air-composition",
+      "target": "mc-o2-composition",
+      "type": "commonMistake"
+    },
+    {
+      "source": "oxygen-physical",
+      "target": "mc-o2-physical",
+      "type": "commonMistake"
+    },
+    {
+      "source": "oxygen-chemical",
+      "target": "mc-o2-chemical",
+      "type": "commonMistake"
+    },
+    {
+      "source": "oxygen-preparation",
+      "target": "mc-o2-preparation",
+      "type": "commonMistake"
+    },
+    {
+      "source": "particle-model",
+      "target": "mc-particle-physical",
+      "type": "commonMistake"
+    },
+    {
+      "source": "particle-model",
+      "target": "mc-molecule-atom-distinction",
+      "type": "commonMistake"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "mc-atom-electron-loss",
+      "type": "commonMistake"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "mc-atomic-solid-ball",
+      "type": "commonMistake"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "mc-atomic-charge-neutrality",
+      "type": "commonMistake"
+    },
+    {
+      "source": "atomic-structure",
+      "target": "mc-relative-atomic-mass",
+      "type": "commonMistake"
+    },
+    {
+      "source": "ion-bond",
+      "target": "mc-ion-only-metal",
+      "type": "commonMistake"
+    },
+    {
+      "source": "element-classify",
+      "target": "mc-mixture-pure",
+      "type": "commonMistake"
+    },
+    {
+      "source": "element-classify",
+      "target": "mc-element-pure-substance",
+      "type": "commonMistake"
+    },
+    {
+      "source": "element-classify",
+      "target": "mc-element-misunderstanding",
+      "type": "commonMistake"
+    },
+    {
+      "source": "water-composition",
+      "target": "mc-water-composition",
+      "type": "commonMistake"
+    },
+    {
+      "source": "water-composition",
+      "target": "mc-water-electrolysis-polarity",
+      "type": "commonMistake"
+    },
+    {
+      "source": "electrolysis-experiment",
+      "target": "mc-water-electrolysis-polarity",
+      "type": "commonMistake"
+    },
+    {
+      "source": "hydrogen-property",
+      "target": "mc-hydrogen-burn",
+      "type": "commonMistake"
+    },
+    {
+      "source": "oxygen-property",
+      "target": "mc-o2-physical",
+      "type": "commonMistake"
+    },
+    {
+      "source": "single-substance-compound",
+      "target": "mc-single-compound-distinguish",
+      "type": "commonMistake"
+    },
+    {
+      "source": "element-concept",
+      "target": "mc-element-pure-substance",
+      "type": "commonMistake"
+    },
+    {
+      "source": "element-concept",
+      "target": "mc-element-misunderstanding",
+      "type": "commonMistake"
+    },
+    {
+      "source": "water-purification-methods",
+      "target": "mc-purification-level",
+      "type": "commonMistake"
+    },
+    {
+      "source": "water-purification-methods",
+      "target": "mc-purification-complete",
+      "type": "commonMistake"
+    },
+    {
+      "source": "water-purification-methods",
+      "target": "mc-purification-physical-chemical",
+      "type": "commonMistake"
+    },
+    {
+      "source": "filtration-adsorption-operation",
+      "target": "mc-filtration-operation",
+      "type": "commonMistake"
+    },
+    {
+      "source": "filtration-adsorption-operation",
+      "target": "mc-adsorption-limit",
+      "type": "commonMistake"
+    },
+    {
+      "source": "hard-soft-water",
+      "target": "mc-hard-soft-distinguish",
+      "type": "commonMistake"
+    },
+    {
+      "source": "water-resources-conservation",
+      "target": "mc-water-resource-stat",
+      "type": "commonMistake"
+    },
+    {
+      "source": "water-resources-conservation",
+      "target": "mc-water-pollution",
+      "type": "commonMistake"
+    },
+    {
+      "source": "chemical-formula-meaning",
+      "target": "mc-formula-meaning",
+      "type": "commonMistake"
+    },
+    {
+      "source": "chemical-formula-writing",
+      "target": "mc-formula-writing",
+      "type": "commonMistake"
+    },
+    {
+      "source": "chemical-formula-writing",
+      "target": "mc-valence-calculation",
+      "type": "commonMistake"
+    },
+    {
+      "source": "chemical-formula-writing",
+      "target": "mc-valence-multiple",
+      "type": "commonMistake"
+    },
+    {
+      "source": "chemical-formula-writing",
+      "target": "mc-valence-confusion",
+      "type": "commonMistake"
+    },
+    {
+      "source": "mass-fraction-calculation",
+      "target": "mc-relative-mass-calc",
+      "type": "commonMistake"
+    },
+    {
+      "source": "mass-fraction-calculation",
+      "target": "mc-mass-fraction",
+      "type": "commonMistake"
+    },
+    {
+      "source": "law-of-mass-conservation",
+      "target": "mc-law-conservation",
+      "type": "commonMistake"
+    },
+    {
+      "source": "law-of-mass-conservation",
+      "target": "mc-physical-chemical-distinguish",
+      "type": "commonMistake"
+    },
+    {
+      "source": "carbon-allotrope",
+      "target": "mc-carbon-allotrope-same-element",
+      "type": "commonMistake"
+    },
+    {
+      "source": "carbon-chemical-property",
+      "target": "mc-carbon-reduce-cuo",
+      "type": "commonMistake"
+    },
+    {
+      "source": "co2-preparation",
+      "target": "mc-co2-prep-sulfuric",
+      "type": "commonMistake"
+    },
+    {
+      "source": "co2-preparation",
+      "target": "mc-co2-verify-method",
+      "type": "commonMistake"
+    },
+    {
+      "source": "co2-property",
+      "target": "mc-co2-limewater",
+      "type": "commonMistake"
+    },
+    {
+      "source": "co-property",
+      "target": "mc-co-poison-mechanism",
+      "type": "commonMistake"
+    },
+    {
+      "source": "co-property",
+      "target": "mc-co-co2-distinguish",
+      "type": "commonMistake"
+    },
+    {
+      "source": "combustion-conditions",
+      "target": "mc-combustion-three-condition",
+      "type": "commonMistake"
+    },
+    {
+      "source": "fire-extinguishing",
+      "target": "mc-fire-extinguish-principle",
+      "type": "commonMistake"
+    },
+    {
+      "source": "fossil-fuels",
+      "target": "mc-fossil-fuel-nonrenewable",
+      "type": "commonMistake"
+    },
+    {
+      "source": "explosive-safety",
+      "target": "mc-explosion-any-gas",
+      "type": "commonMistake"
+    },
+    {
+      "source": "law-conservation",
+      "target": "mc-law-conservation-open-system",
+      "type": "commonMistake"
+    },
+    {
+      "source": "law-conservation",
+      "target": "mc-law-conservation-atom-destroyed",
+      "type": "commonMistake"
+    },
+    {
+      "source": "equation-writing",
+      "target": "mc-equation-gas-precipitate-confusion",
+      "type": "commonMistake"
+    },
+    {
+      "source": "equation-balancing",
+      "target": "mc-balance-by-subscript",
+      "type": "commonMistake"
+    },
+    {
+      "source": "stoichiometry",
+      "target": "mc-stoich-coefficient-vs-mass",
+      "type": "commonMistake"
+    },
+    {
+      "source": "physical-change",
+      "target": "chemical-change",
+      "type": "contrast",
+      "description": "物理变化无新物质生成，化学变化有新物质生成"
+    },
+    {
+      "source": "physical-property",
+      "target": "chemical-property",
+      "type": "contrast",
+      "description": "物理性质不需化学变化表现，化学性质需化学变化表现"
+    },
+    {
+      "source": "oxygen-physical",
+      "target": "oxygen-chemical",
+      "type": "contrast",
+      "description": "氧气的物理性质（色态味密度溶解性）vs 化学性质（助燃性氧化性）"
+    },
+    {
+      "source": "element-concept",
+      "target": "ion-bond",
+      "type": "contrast",
+      "description": "元素是宏观概念（质子数决定），离子是微观粒子（带电原子）"
+    },
+    {
+      "source": "single-substance-compound",
+      "target": "element-concept",
+      "type": "contrast",
+      "description": "单质和化合物是纯净物分类，元素是组成物质的宏观概念"
     }
   ]
 }

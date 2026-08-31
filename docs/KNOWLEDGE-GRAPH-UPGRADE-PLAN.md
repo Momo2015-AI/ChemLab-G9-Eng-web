@@ -94,14 +94,17 @@
 
 ### Sprint D：关系语义补全
 
+**Status:** DONE — 2026-08-28 完成。
+
 **问题**：缺 contains/contrast，commonMistake 严重不足。
 
 **改动范围**：
-- 新增 `contains` 关系：知识节点-子知识点（配合粒度拆分）。
-- 新增 `contrast` 关系：易混淆辨析对（如 physical-change vs chemical-change）。
-- `commonMistake` 从 3 条对齐到 `canonical-misconceptions.js` 的存量误解 ID，确保每条误解至少挂一个节点。
+- schema.json 枚举新增 `contrast` 关系类型及 `contrast.description` 可选属性；引擎新增 `contrasts(id)` 方法；审计/测试同步更新。
+- commonMistake 关系从 3 条增至 81 条——按每个节点的 `misconceptionIds` 字段机械生成对应关系（78 条新增），实现 misconceptionIds 字段与 commonMistake 关系的 1:1 覆盖。
+- contrast 关系 5 条：physical-change ↔ chemical-change、physical-property ↔ chemical-property、oxygen-physical ↔ oxygen-chemical、element-concept ↔ ion-bond、single-substance-compound ↔ element-concept——均为化学经典易混淆对，按课程图谱构建指南"质量优先"原则人工筛选。
+- contains 关系推迟到 Sprint E（当前 52 节点同 chapter 内并列，无自然父子层级；拆到知识点级后才有 contains 语义场景）。
 
-**验收**：三类新关系数量非零且全部可解析；commonMistake 覆盖率达 100%。
+**验收结果**：`npm test` 214/214；`npm run audit:content` Gate PASS；关系总数 331 → 414（+78 commonMistake + 5 contrast）。
 
 ### Sprint E：粒度演进试点（u01/u02）
 

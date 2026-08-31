@@ -39,9 +39,10 @@
       "question.difficulty": "enum: difficultyEnum（basic/medium/hard），从题目池 difficulty 字段同步；题目字段缺失或为旧词表（application/transfer）时关系侧留空",
       "prerequisite.weight": "number 0-1，边强度，缺省视为 1；显式低于 1 表示软依赖，供学习路径排序消费（数值须经教研评审后填充）",
       "prerequisite.required": "boolean，缺省视为 true；false 表示软前置，供学习路径排序消费",
-      "related.description": "string，关联语义说明，可选"
+      "related.description": "string，关联语义说明，可选",
+      "contrast.description": "string，对比辨析说明，可选（如'物理变化无新物质，化学变化有新物质'）"
     },
-    "attributeMountPolicy": "属性只能挂载在声明的关系类型上（如 difficulty 仅限 question 关系）；声明外的属性一律 ERROR",
+    "attributeMountPolicy": "属性只能挂载在声明的关系类型上（如 difficulty 仅限 question 关系）；声明外的属性一律 ERROR；contrast 关系为无向语义（source ↔ target 可互换）",
     "notes": "关系本体仍为三元组；属性为 Sprint C 引入的可选扩展。"
   },
   "enums": {
@@ -86,7 +87,8 @@
       "related",
       "question",
       "experiment",
-      "commonMistake"
+      "commonMistake",
+      "contrast"
     ],
     "difficultyEnum": [
       "basic",

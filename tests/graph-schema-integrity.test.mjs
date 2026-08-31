@@ -125,6 +125,7 @@ test('every relation declares a valid type and resolves its references per contr
     question: new Set(['difficulty']),
     prerequisite: new Set(['weight', 'required']),
     related: new Set(['description']),
+    contrast: new Set(['description']),
   };
   for (const relation of graph.relations) {
     const label = `${relation.source} -> ${relation.target} (${relation.type})`;

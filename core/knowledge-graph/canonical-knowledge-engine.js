@@ -67,6 +67,7 @@ export class KnowledgeEngine {
   experiments(id) { return this.relatedRefs(id, 'experiment'); }
   questions(id) { return this.relatedRefs(id, 'question'); }
   commonMistakes(id) { return this.relatedRefs(id, 'commonMistake'); }
+  contrasts(id) { return this.related(id, 'contrast'); }
 
   relatedRefs(id, type) {
     return this.findRelations(id, type)

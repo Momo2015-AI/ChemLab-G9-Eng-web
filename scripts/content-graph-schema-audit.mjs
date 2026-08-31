@@ -98,6 +98,7 @@ if (report.errors.length === 0) {
     question: new Set(['difficulty']),
     prerequisite: new Set(['weight', 'required']),
     related: new Set(['description']),
+    contrast: new Set(['description']),
   };
   for (const relation of graph.relations || []) {
     if (!relation?.source || !relation?.target) {
