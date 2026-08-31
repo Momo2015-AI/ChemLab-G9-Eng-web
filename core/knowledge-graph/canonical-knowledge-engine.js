@@ -49,6 +49,13 @@ export class KnowledgeEngine {
     return (node?.relations?.prerequisite || []).map(ref => this.get(ref) || ref);
   }
 
+  prerequisiteEntries(id) {
+    return this.relations
+      .filter(r => r.type === 'prerequisite' && r.target === id)
+      .map(r => ({ node: this.get(r.source), relation: r }))
+      .filter(entry => entry.node);
+  }
+
   dependents(id) {
     return this.relations
       .filter(r => r.type === 'prerequisite' && r.source === id)
@@ -57,9 +64,14 @@ export class KnowledgeEngine {
   }
 
   relatedNodes(id) { return this.related(id, 'related'); }
-  experiments(id) { return this.related(id, 'experiment'); }
-  questions(id) { return this.related(id, 'question'); }
-  commonMistakes(id) { return this.related(id, 'commonMistake'); }
+  experiments(id) { return this.relatedRefs(id, 'experiment'); }
+  questions(id) { return this.relatedRefs(id, 'question'); }
+  commonMistakes(id) { return this.relatedRefs(id, 'commonMistake'); }
+
+  relatedRefs(id, type) {
+    return this.findRelations(id, type)
+      .map(r => this.get(r.source === id ? r.target : r.source) || (r.source === id ? r.target : r.source));
+  }
 
   traverse(id, direction, visited = new Set()) {
     if (visited.has(id)) return [];
@@ -80,5 +92,26 @@ export class KnowledgeEngine {
   learningPath(id) {
     const prerequisites = this.ancestors(id);
     return [...prerequisites, this.get(id)].filter(Boolean);
+  }
+
+  sortedLearningPath(id) {
+    const ancestors = this.traverse(id, 'up');
+    const ancestorIds = new Set(ancestors.map(node => node?.id).filter(Boolean));
+    const decorated = ancestors
+      .filter(Boolean)
+      .map(node => ({
+        node,
+        relation: this.relations.find(r => r.type === 'prerequisite' && r.source === node.id && (r.target === id || ancestorIds.has(r.target))) || null,
+      }));
+    decorated.sort((a, b) => {
+      const aRequired = a.relation?.required !== false;
+      const bRequired = b.relation?.required !== false;
+      if (aRequired !== bRequired) return aRequired ? -1 : 1;
+      const aWeight = typeof a.relation?.weight === 'number' ? a.relation.weight : 1;
+      const bWeight = typeof b.relation?.weight === 'number' ? b.relation.weight : 1;
+      return bWeight - aWeight;
+    });
+    const self = this.get(id);
+    return [...decorated.map(entry => entry.node), self].filter(Boolean);
   }
 }

@@ -11,23 +11,9 @@
         "remember",
         "understand"
       ],
-      "questions": [
-        "L01-Q01",
-        "L01-Q02",
-        "L01-Q07",
-        "L01-P06",
-        "L01-P08",
-        "L01-D03",
-        "L01-M05",
-        "L01-M10",
-        "L01-M15",
-        "L01-M16",
-        "L01-M19"
-      ],
       "semester": "upper",
       "unitId": "u01",
       "definition": "物质发生变化时，可能产生新物质（化学变化），也可能不产生新物质（物理变化）。判断依据是是否有新物质生成。",
-      "prerequisiteIds": [],
       "misconceptionIds": [
         "mc-matter-change-vs-property",
         "mc-matter-physical-vs-chemical"
@@ -43,24 +29,9 @@
         "remember",
         "understand"
       ],
-      "questions": [
-        "L01-Q01",
-        "L01-Q07",
-        "L01-P01",
-        "L01-P02",
-        "L01-D01",
-        "L01-M01",
-        "L01-M06",
-        "L01-M11",
-        "L01-M18",
-        "L01-M21"
-      ],
       "semester": "upper",
       "unitId": "u01",
       "definition": "没有生成其他物质的变化，如状态改变、形状改变、破碎等，变化前后物质的化学组成不变。",
-      "prerequisiteIds": [
-        "matter-change"
-      ],
       "misconceptionIds": [
         "mc-matter-physical-vs-chemical",
         "mc-method-single-phenomenon-overgeneralization"
@@ -76,24 +47,9 @@
         "remember",
         "understand"
       ],
-      "questions": [
-        "L01-Q02",
-        "L01-P01",
-        "L01-P02",
-        "L01-D01",
-        "L01-M01",
-        "L01-M06",
-        "L01-M11",
-        "L01-M18",
-        "L01-M21",
-        "L01-T02"
-      ],
       "semester": "upper",
       "unitId": "u01",
       "definition": "生成其他物质的变化，常伴随发光、发热、颜色改变、产生气体或沉淀等现象，但现象只是证据，本质是生成新物质。",
-      "prerequisiteIds": [
-        "matter-change"
-      ],
       "misconceptionIds": [
         "mc-matter-physical-vs-chemical",
         "mc-method-single-phenomenon-overgeneralization"
@@ -110,26 +66,9 @@
         "understand",
         "apply"
       ],
-      "questions": [
-        "L01-Q03",
-        "L01-P03",
-        "L01-D03",
-        "L01-M02",
-        "L01-M08",
-        "L01-M13",
-        "L01-T03",
-        "L03-Q03",
-        "L03-Q04",
-        "L03-P02",
-        "L03-P07",
-        "L03-M02"
-      ],
       "semester": "upper",
       "unitId": "u01",
       "definition": "物质不需要发生化学变化就能表现出来的性质，如颜色、状态、气味、熔点、沸点、密度、硬度、导电性等。",
-      "prerequisiteIds": [
-        "physical-change"
-      ],
       "misconceptionIds": [
         "mc-matter-change-vs-property"
       ],
@@ -144,41 +83,9 @@
         "understand",
         "apply"
       ],
-      "questions": [
-        "L01-Q04",
-        "L01-P04",
-        "L01-D03",
-        "L01-M03",
-        "L01-M07",
-        "L01-M14",
-        "L01-T03",
-        "L03-Q02",
-        "L03-Q05",
-        "L03-P03",
-        "L03-P04",
-        "L03-P05",
-        "L03-P09",
-        "L03-P10",
-        "L03-P11",
-        "L03-P13",
-        "L03-D03",
-        "L03-M03",
-        "L03-M04",
-        "L03-M07",
-        "L03-M09",
-        "L03-M11",
-        "L03-M12",
-        "L03-M13",
-        "L03-M15",
-        "L03-M18",
-        "L03-M19"
-      ],
       "semester": "upper",
       "unitId": "u01",
       "definition": "物质在化学变化中表现出来的性质，如可燃性、氧化性、还原性、酸碱性、稳定性等。",
-      "prerequisiteIds": [
-        "chemical-change"
-      ],
       "misconceptionIds": [
         "mc-matter-change-vs-property"
       ],
@@ -194,48 +101,9 @@
         "apply",
         "analyze"
       ],
-      "questions": [
-        "L01-Q05",
-        "L01-Q06",
-        "L01-Q08",
-        "L01-P06",
-        "L01-P08",
-        "L01-M05",
-        "L01-M10",
-        "L01-M15",
-        "L01-M16",
-        "L01-M19",
-        "L01-M20",
-        "L01-T01",
-        "L01-T02",
-        "L02-Q02",
-        "L02-Q06",
-        "L02-P01",
-        "L02-P06",
-        "L02-P10",
-        "L02-P12",
-        "L02-D01",
-        "L02-M02",
-        "L02-M06",
-        "L02-M11",
-        "L02-M15",
-        "L02-M19",
-        "L02-M20",
-        "L02-T02",
-        "L03-Q04",
-        "L03-P03",
-        "L03-D01",
-        "L03-M03",
-        "L03-M06",
-        "L03-M13",
-        "L03-M20"
-      ],
       "semester": "upper",
       "unitId": "u01",
       "definition": "观察是直接用感官或仪器获取信息（证据），推断是根据证据得出结论。两者不可混为一谈。",
-      "prerequisiteIds": [
-        "scientific-inquiry"
-      ],
       "misconceptionIds": [
         "mc-method-observation-inference"
       ],
@@ -251,59 +119,9 @@
         "analyze",
         "evaluate"
       ],
-      "questions": [
-        "L01-Q05",
-        "L01-Q06",
-        "L01-Q08",
-        "L01-P05",
-        "L01-P07",
-        "L01-D02",
-        "L01-M04",
-        "L01-M09",
-        "L01-M12",
-        "L01-M17",
-        "L01-M20",
-        "L01-M21",
-        "L01-T01",
-        "L01-T04",
-        "L02-Q05",
-        "L02-Q08",
-        "L02-P05",
-        "L02-P08",
-        "L02-P09",
-        "L02-P10",
-        "L02-P11",
-        "L02-P12",
-        "L02-M05",
-        "L02-M10",
-        "L02-M18",
-        "L02-M20",
-        "L02-M21",
-        "L02-T02",
-        "L02-T04",
-        "L03-Q05",
-        "L03-P05",
-        "L03-P07",
-        "L03-P09",
-        "L03-P10",
-        "L03-P11",
-        "L03-P13",
-        "L03-M06",
-        "L03-M07",
-        "L03-M09",
-        "L03-M11",
-        "L03-M12",
-        "L03-M16",
-        "L03-M18",
-        "L03-M19",
-        "L03-M20"
-      ],
       "semester": "upper",
       "unitId": "u01",
       "definition": "以证据为基础进行推理，结论必须能被证据支撑；单一现象不足以得出确定结论，需要多角度证据验证。",
-      "prerequisiteIds": [
-        "observation-inference"
-      ],
       "misconceptionIds": [
         "mc-method-single-phenomenon-overgeneralization",
         "mc-method-evidence-logic"
@@ -320,21 +138,9 @@
         "apply",
         "analyze"
       ],
-      "questions": [
-        "L01-T04",
-        "L02-Q01",
-        "L02-P02",
-        "L02-P11",
-        "L02-M01",
-        "L02-M07",
-        "L02-M13",
-        "L02-T03",
-        "L03-M16"
-      ],
       "semester": "upper",
       "unitId": "u01",
       "definition": "科学探究的基本过程：提出问题→作出假设→设计实验→收集证据→得出结论→反思评价，强调证据驱动和逻辑推理。",
-      "prerequisiteIds": [],
       "misconceptionIds": [
         "mc-method-observation-inference"
       ],
@@ -349,25 +155,9 @@
         "understand",
         "apply"
       ],
-      "questions": [
-        "L02-Q03",
-        "L02-Q07",
-        "L02-P03",
-        "L02-P07",
-        "L02-P13",
-        "L02-D02",
-        "L02-M03",
-        "L02-M08",
-        "L02-M12",
-        "L02-M16",
-        "L02-M21",
-        "L02-T01",
-        "L03-P13"
-      ],
       "semester": "upper",
       "unitId": "u01",
       "definition": "对照实验中只改变一个因素（自变量），其他因素保持不变（控制变量），以确保实验结果的变化确实由该因素引起。",
-      "prerequisiteIds": [],
       "misconceptionIds": [
         "mc-method-control-variable"
       ],
@@ -383,24 +173,9 @@
         "apply",
         "evaluate"
       ],
-      "questions": [
-        "L02-Q04",
-        "L02-P04",
-        "L02-P13",
-        "L02-D03",
-        "L02-M04",
-        "L02-M09",
-        "L02-M14",
-        "L02-M17",
-        "L02-T03",
-        "L02-T04",
-        "L03-P12",
-        "L03-D02"
-      ],
       "semester": "upper",
       "unitId": "u01",
       "definition": "实验数据必须真实、完整、可重复；不能选择性记录或编造数据，异常数据需要如实记录并分析原因。",
-      "prerequisiteIds": [],
       "misconceptionIds": [
         "mc-method-data-integrity"
       ],
@@ -415,21 +190,9 @@
         "remember",
         "understand"
       ],
-      "questions": [
-        "L03-P08",
-        "L03-M01",
-        "L03-M08",
-        "L03-M14"
-      ],
-      "prerequisites": [
-        "physical-property",
-        "chemical-property",
-        "safety-awareness"
-      ],
       "semester": "lower",
       "unitId": "u10",
       "definition": "酸在水溶液中都能电离出氢离子（H⁺），这是酸的共性；不同酸的强弱由电离程度决定，与浓度是两个独立概念。",
-      "prerequisiteIds": [],
       "misconceptionIds": [
         "mc-acid-hcl-solution",
         "mc-acid-property",
@@ -447,20 +210,9 @@
         "apply",
         "analyze"
       ],
-      "questions": [
-        "L03-Q01",
-        "L03-P01",
-        "L03-D01",
-        "L03-M01",
-        "L03-M08",
-        "L03-M21"
-      ],
       "semester": "lower",
       "unitId": "u10",
       "definition": "酸能与活泼金属反应生成盐和氢气，能与金属氧化物反应生成盐和水，能使指示剂变色；不同酸的特殊性质由酸根离子决定。",
-      "prerequisiteIds": [
-        "acid-intro"
-      ],
       "misconceptionIds": [
         "mc-acid-metal-overgeneralization",
         "mc-acid-observation-inference"
@@ -476,20 +228,9 @@
         "understand",
         "apply"
       ],
-      "questions": [
-        "L03-Q06",
-        "L03-P06",
-        "L03-P12",
-        "L03-D02",
-        "L03-M05",
-        "L03-M10",
-        "L03-M17",
-        "L03-M21"
-      ],
       "semester": "lower",
       "unitId": "u10",
       "definition": "化学实验安全规范：佩戴护目镜和手套、酸入水而非水入酸、在通风处操作、正确处理意外泄漏。",
-      "prerequisiteIds": [],
       "misconceptionIds": [
         "mc-acid-safety-dilution",
         "mc-acid-safety-violation"
@@ -507,64 +248,9 @@
         "apply",
         "evaluate"
       ],
-      "questions": [
-        "L04-Q01",
-        "L04-Q02",
-        "L04-Q03",
-        "L04-Q04",
-        "L04-Q05",
-        "L04-Q06",
-        "L04-P01",
-        "L04-P02",
-        "L04-P03",
-        "L04-P04",
-        "L04-P05",
-        "L04-P06",
-        "L04-P07",
-        "L04-P08",
-        "L04-P09",
-        "L04-P10",
-        "L04-P11",
-        "L04-P12",
-        "L04-P13",
-        "L04-P14",
-        "L04-P15",
-        "L04-P16",
-        "L04-D01",
-        "L04-D02",
-        "L04-D03",
-        "L04-M01",
-        "L04-M02",
-        "L04-M03",
-        "L04-M04",
-        "L04-M05",
-        "L04-M06",
-        "L04-M07",
-        "L04-M08",
-        "L04-M09",
-        "L04-M10",
-        "L04-M11",
-        "L04-M12",
-        "L04-M13",
-        "L04-M14",
-        "L04-M15",
-        "L04-M16",
-        "L04-M17",
-        "L04-M18",
-        "L04-M19",
-        "L04-M20",
-        "L04-M21",
-        "L04-T01",
-        "L04-T02",
-        "L04-T03",
-        "L04-T04"
-      ],
       "semester": "upper",
       "unitId": "u01",
       "definition": "实验安全守则与基本实验操作规范，包括药品取用、酒精灯使用、加热、测量读数以及意外事故的正确处理。",
-      "prerequisiteIds": [
-        "observation-inference"
-      ],
       "misconceptionIds": [
         "mc-lab-sense-safety",
         "mc-lab-alcohol-lamp",
@@ -582,38 +268,9 @@
         "remember",
         "understand"
       ],
-      "questions": [
-        "L05-Q01",
-        "L05-Q02",
-        "L05-Q03",
-        "L05-Q04",
-        "L05-Q05",
-        "L05-Q06",
-        "L05-P01",
-        "L05-P02",
-        "L05-P03",
-        "L05-P04",
-        "L05-P05",
-        "L05-P06",
-        "L05-P07",
-        "L05-P08",
-        "L05-P09",
-        "L05-P10",
-        "L05-D01",
-        "L05-M01",
-        "L05-M02",
-        "L05-M03",
-        "L05-M04",
-        "L05-M05",
-        "L05-M06",
-        "L05-T01"
-      ],
       "semester": "upper",
       "unitId": "u02",
       "definition": "空气是一种混合物，主要由氮气（约78%）和氧气（约21%）组成，还含有稀有气体、二氧化碳和其他杂质。",
-      "prerequisiteIds": [
-        "physical-change"
-      ],
       "misconceptionIds": [
         "mc-o2-composition"
       ],
@@ -628,25 +285,9 @@
         "remember",
         "understand"
       ],
-      "questions": [
-        "L05-Q05",
-        "L05-Q06",
-        "L05-P05",
-        "L05-P06",
-        "L05-P07",
-        "L05-P08",
-        "L05-D02",
-        "L05-M07",
-        "L05-M08",
-        "L05-M09",
-        "L05-T02"
-      ],
       "semester": "upper",
       "unitId": "u02",
       "definition": "氧气是无色无味的气体，密度略大于空气，不易溶于水；液态氧呈淡蓝色。",
-      "prerequisiteIds": [
-        "air-composition"
-      ],
       "misconceptionIds": [
         "mc-o2-physical"
       ],
@@ -663,30 +304,9 @@
         "apply",
         "analyze"
       ],
-      "questions": [
-        "L05-Q04",
-        "L05-Q05",
-        "L05-P09",
-        "L05-P10",
-        "L05-P11",
-        "L05-P12",
-        "L05-P13",
-        "L05-P14",
-        "L05-D02",
-        "L05-M10",
-        "L05-M11",
-        "L05-M12",
-        "L05-M13",
-        "L05-M14",
-        "L05-T03"
-      ],
       "semester": "upper",
       "unitId": "u02",
       "definition": "氧气具有助燃性，能与多种金属（如铁、镁、铜）、非金属（如碳、硫、磷）及化合物发生氧化反应，生成相应的氧化物。",
-      "prerequisiteIds": [
-        "oxygen-physical",
-        "chemical-property"
-      ],
       "misconceptionIds": [
         "mc-o2-chemical"
       ],
@@ -702,30 +322,9 @@
         "apply",
         "evaluate"
       ],
-      "questions": [
-        "L05-Q01",
-        "L05-Q02",
-        "L05-Q03",
-        "L05-P01",
-        "L05-P02",
-        "L05-P03",
-        "L05-P04",
-        "L05-D03",
-        "L05-M15",
-        "L05-M16",
-        "L05-M17",
-        "L05-M18",
-        "L05-M19",
-        "L05-M20",
-        "L05-T04"
-      ],
       "semester": "upper",
       "unitId": "u02",
       "definition": "高锰酸钾加热分解制取氧气：2KMnO4 → K2MnO4 + MnO2 + O2↑；采用固固加热型装置，用排水法或向上排空气法收集；实验结束先移导管后熄灭酒精灯。",
-      "prerequisiteIds": [
-        "lab-operations",
-        "oxygen-physical"
-      ],
       "misconceptionIds": [
         "mc-o2-preparation"
       ],
@@ -743,51 +342,11 @@
       "semester": "upper",
       "unitId": "u03",
       "definition": "物质由微小的粒子（分子、原子、离子）构成，粒子在不断运动，粒子之间有间隔。",
-      "prerequisiteIds": [
-        "matter-change"
-      ],
       "misconceptionIds": [
         "mc-particle-physical",
         "mc-molecule-atom-distinction"
       ],
-      "remediationGoal": "理解物质由微观粒子构成，粒子间存在间隔且永不停息地运动；能用化学变化中能否再分区分分子与原子。",
-      "questions": [
-        "L11-Q01",
-        "L11-Q02",
-        "L11-Q03",
-        "L11-Q04",
-        "L11-Q05",
-        "L11-Q06",
-        "L11-P01",
-        "L11-P02",
-        "L11-P03",
-        "L11-P04",
-        "L11-P05",
-        "L11-P06",
-        "L11-P07",
-        "L11-P08",
-        "L11-P09",
-        "L11-P10",
-        "L11-D01",
-        "L11-D02",
-        "L11-M01",
-        "L11-M02",
-        "L11-M03",
-        "L11-M04",
-        "L11-M05",
-        "L11-M06",
-        "L11-M07",
-        "L11-M08",
-        "L11-M09",
-        "L11-M10",
-        "L11-M11",
-        "L11-M12",
-        "L11-M13",
-        "L11-M21",
-        "L11-T01",
-        "L11-T02",
-        "L11-T03"
-      ]
+      "remediationGoal": "理解物质由微观粒子构成，粒子间存在间隔且永不停息地运动；能用化学变化中能否再分区分分子与原子。"
     },
     {
       "id": "atomic-structure",
@@ -801,27 +360,13 @@
       "semester": "upper",
       "unitId": "u03",
       "definition": "原子由原子核（含质子和中子）和核外电子构成；质子数决定元素种类。",
-      "prerequisiteIds": [
-        "particle-model"
-      ],
       "misconceptionIds": [
         "mc-atom-electron-loss",
         "mc-atomic-solid-ball",
         "mc-atomic-charge-neutrality",
         "mc-relative-atomic-mass"
       ],
-      "remediationGoal": "理解原子核式结构，知道质子数=核电荷数=原子序数；原子不是实心小球，内部大部分是空的。",
-      "questions": [
-        "L14-Q01",
-        "L14-Q02",
-        "L14-Q03",
-        "L14-Q04",
-        "L14-Q05",
-        "L14-Q06",
-        "L14-D01",
-        "L14-D02",
-        "L14-D03"
-      ]
+      "remediationGoal": "理解原子核式结构，知道质子数=核电荷数=原子序数；原子不是实心小球，内部大部分是空的。"
     },
     {
       "id": "ion-bond",
@@ -835,14 +380,10 @@
       "semester": "upper",
       "unitId": "u03",
       "definition": "原子得失电子形成离子；阴阳离子通过静电作用形成离子化合物。",
-      "prerequisiteIds": [
-        "atomic-structure"
-      ],
       "misconceptionIds": [
         "mc-ion-only-metal"
       ],
-      "remediationGoal": "理解离子是带电原子或原子团，阴阳离子均可形成离子化合物。",
-      "questions": []
+      "remediationGoal": "理解离子是带电原子或原子团，阴阳离子均可形成离子化合物。"
     },
     {
       "id": "element-classify",
@@ -856,20 +397,12 @@
       "semester": "upper",
       "unitId": "u03",
       "definition": "元素是质子数相同的一类原子的总称；物质可分为纯净物和混合物。",
-      "prerequisiteIds": [
-        "atomic-structure"
-      ],
       "misconceptionIds": [
         "mc-mixture-pure",
         "mc-element-pure-substance",
         "mc-element-misunderstanding"
       ],
-      "remediationGoal": "能用元素概念区分纯净物与混合物，理解同种元素可组成不同单质，不将元素与单质混为一谈。",
-      "questions": [
-        "L16-Q05",
-        "L16-Q06",
-        "L16-D03"
-      ]
+      "remediationGoal": "能用元素概念区分纯净物与混合物，理解同种元素可组成不同单质，不将元素与单质混为一谈。"
     },
     {
       "id": "water-composition",
@@ -884,23 +417,11 @@
       "semester": "upper",
       "unitId": "u04",
       "definition": "水是由氢元素和氧元素组成的化合物，化学式为H₂O。电解水实验证明水由氢、氧两种元素组成。",
-      "prerequisiteIds": [
-        "chemical-change",
-        "evidence-reasoning"
-      ],
       "misconceptionIds": [
         "mc-water-composition",
         "mc-water-electrolysis-polarity"
       ],
-      "remediationGoal": "能从电解水实验现象推理出水的组成，区分宏观（元素）与微观（分子原子）描述角度。",
-      "questions": [
-        "L06-Q01",
-        "L06-Q03",
-        "L06-D02",
-        "L06-M02",
-        "L06-M08",
-        "L06-M12"
-      ]
+      "remediationGoal": "能从电解水实验现象推理出水的组成，区分宏观（元素）与微观（分子原子）描述角度。"
     },
     {
       "id": "electrolysis-experiment",
@@ -915,23 +436,10 @@
       "semester": "upper",
       "unitId": "u04",
       "definition": "通电条件下水分解为氢气和氧气：2H₂O → 2H₂↑ + O₂↑。正极产生氧气（体积小），负极产生氢气（体积大），体积比约1:2。",
-      "prerequisiteIds": [
-        "lab-operations",
-        "observation-inference"
-      ],
       "misconceptionIds": [
         "mc-water-electrolysis-polarity"
       ],
-      "remediationGoal": "准确描述电解水实验现象，正确检验两种气体，从实验现象得出水组成的结论。",
-      "questions": [
-        "L06-Q01",
-        "L06-D01",
-        "L06-M01",
-        "L06-M06",
-        "L06-M11",
-        "L06-M15",
-        "L06-M21"
-      ]
+      "remediationGoal": "准确描述电解水实验现象，正确检验两种气体，从实验现象得出水组成的结论。"
     },
     {
       "id": "hydrogen-property",
@@ -945,19 +453,10 @@
       "semester": "upper",
       "unitId": "u04",
       "definition": "氢气是无色无味的气体，密度最小，难溶于水；具有可燃性，燃烧产生淡蓝色火焰，产物是水。点燃前必须验纯。",
-      "prerequisiteIds": [
-        "physical-property",
-        "chemical-property"
-      ],
       "misconceptionIds": [
         "mc-hydrogen-burn"
       ],
-      "remediationGoal": "掌握氢气物理性质和化学性质，能正确检验氢气纯度。",
-      "questions": [
-        "L06-Q04",
-        "L06-M05",
-        "L06-M13"
-      ]
+      "remediationGoal": "掌握氢气物理性质和化学性质，能正确检验氢气纯度。"
     },
     {
       "id": "oxygen-property",
@@ -971,16 +470,10 @@
       "semester": "upper",
       "unitId": "u02",
       "definition": "氧气是无色无味的气体，密度略大于空气，不易溶于水；具有助燃性，能使带火星的木条复燃。",
-      "prerequisiteIds": [
-        "air-composition"
-      ],
       "misconceptionIds": [
         "mc-o2-physical"
       ],
-      "remediationGoal": "准确记忆氧气的物理性质和助燃性，不混淆助燃性与可燃性。",
-      "questions": [
-        "L06-M06"
-      ]
+      "remediationGoal": "准确记忆氧气的物理性质和助燃性，不混淆助燃性与可燃性。"
     },
     {
       "id": "single-substance-compound",
@@ -995,21 +488,10 @@
       "semester": "upper",
       "unitId": "u04",
       "definition": "单质是由同种元素组成的纯净物；化合物是由不同种元素组成的纯净物。根本区别是组成元素的种类数。",
-      "prerequisiteIds": [
-        "element-concept"
-      ],
       "misconceptionIds": [
-        "mc-single-compound-distinguish",
-        "mc-pure-mixture"
+        "mc-single-compound-distinguish"
       ],
-      "remediationGoal": "能用元素种类数区分单质和化合物，不将混合物与化合物混淆。",
-      "questions": [
-        "L06-Q02",
-        "L06-P05",
-        "L06-D03",
-        "L06-M03",
-        "L06-M07"
-      ]
+      "remediationGoal": "能用元素种类数区分单质和化合物，不将混合物与化合物混淆。"
     },
     {
       "id": "element-concept",
@@ -1023,22 +505,11 @@
       "semester": "upper",
       "unitId": "u03",
       "definition": "元素是具有相同核电荷数（质子数）的一类原子的总称。元素是宏观概念，只讲种类不讲个数。",
-      "prerequisiteIds": [
-        "atomic-structure"
-      ],
       "misconceptionIds": [
         "mc-element-pure-substance",
         "mc-element-misunderstanding"
       ],
-      "remediationGoal": "理解元素的定义和宏观属性，能用电素概念分析物质分类。",
-      "questions": [
-        "L06-M04",
-        "L06-M10",
-        "L16-Q01",
-        "L16-Q02",
-        "L16-Q03",
-        "L16-D01"
-      ]
+      "remediationGoal": "理解元素的定义和宏观属性，能用电素概念分析物质分类。"
     },
     {
       "id": "water-purification-methods",
@@ -1052,18 +523,12 @@
       "semester": "upper",
       "unitId": "u04",
       "definition": "沉淀、过滤、吸附、蒸馏等净化方法净化程度依次提高；常规净化（沉淀/过滤/吸附）不能得到纯净物，只有蒸馏水才接近纯净物；净化过程本身属于物理变化，只有杀菌消毒等步骤才涉及化学变化。",
-      "prerequisiteIds": [
-        "water-composition",
-        "single-substance-compound",
-        "physical-change"
-      ],
       "misconceptionIds": [
         "mc-purification-level",
         "mc-purification-complete",
         "mc-purification-physical-chemical"
       ],
-      "remediationGoal": "能区分不同净化方法的净化程度，理解常规净化后的水仍是混合物，并区分净化步骤中的物理变化与化学变化。",
-      "questions": []
+      "remediationGoal": "能区分不同净化方法的净化程度，理解常规净化后的水仍是混合物，并区分净化步骤中的物理变化与化学变化。"
     },
     {
       "id": "filtration-adsorption-operation",
@@ -1077,16 +542,11 @@
       "semester": "upper",
       "unitId": "u04",
       "definition": "过滤操作需遵循“一贴二低三靠”的规范，能除去不溶性杂质；活性炭吸附主要通过物理过程除去色素和异味物质，不能除去可溶性杂质。",
-      "prerequisiteIds": [
-        "lab-operations",
-        "physical-change"
-      ],
       "misconceptionIds": [
         "mc-filtration-operation",
         "mc-adsorption-limit"
       ],
-      "remediationGoal": "掌握过滤操作规范，理解活性炭吸附的物理本质与适用范围（不能除可溶性杂质）。",
-      "questions": []
+      "remediationGoal": "掌握过滤操作规范，理解活性炭吸附的物理本质与适用范围（不能除可溶性杂质）。"
     },
     {
       "id": "hard-soft-water",
@@ -1100,14 +560,10 @@
       "semester": "upper",
       "unitId": "u04",
       "definition": "含较多可溶性钙、镁化合物的水是硬水，反之是软水；可用肥皂水检验（泡沫少、浮渣多为硬水）；煮沸或蒸馏可以降低水的硬度。",
-      "prerequisiteIds": [
-        "water-composition"
-      ],
       "misconceptionIds": [
         "mc-hard-soft-distinguish"
       ],
-      "remediationGoal": "掌握硬水软水的检验方法（肥皂水）和软化方法（煮沸/蒸馏）。",
-      "questions": []
+      "remediationGoal": "掌握硬水软水的检验方法（肥皂水）和软化方法（煮沸/蒸馏）。"
     },
     {
       "id": "water-resources-conservation",
@@ -1122,15 +578,11 @@
       "semester": "upper",
       "unitId": "u04",
       "definition": "地球淡水资源、尤其是可直接利用的淡水资源十分有限；水污染的成因包括工业排放、生活污水、农业面源污染等多种来源，节水与防污需要综合措施。",
-      "prerequisiteIds": [
-        "evidence-reasoning"
-      ],
       "misconceptionIds": [
         "mc-water-resource-stat",
         "mc-water-pollution"
       ],
-      "remediationGoal": "正确认识淡水资源的稀缺性，识别多种水污染来源，理解节水防污需要综合性措施而非单一手段。",
-      "questions": []
+      "remediationGoal": "正确认识淡水资源的稀缺性，识别多种水污染来源，理解节水防污需要综合性措施而非单一手段。"
     },
     {
       "id": "chemical-formula-meaning",
@@ -1144,15 +596,10 @@
       "semester": "upper",
       "unitId": "u03",
       "definition": "化学式从宏观角度表示一种物质及其组成元素，从微观角度表示物质的一个分子及分子的原子构成；同时能表示元素间的质量比等定量关系。",
-      "prerequisiteIds": [
-        "element-concept",
-        "particle-model"
-      ],
       "misconceptionIds": [
         "mc-formula-meaning"
       ],
-      "remediationGoal": "能从宏观（物质、组成元素）和微观（分子、原子个数）两方面完整表述化学式的意义。",
-      "questions": []
+      "remediationGoal": "能从宏观（物质、组成元素）和微观（分子、原子个数）两方面完整表述化学式的意义。"
     },
     {
       "id": "chemical-formula-writing",
@@ -1166,18 +613,13 @@
       "semester": "upper",
       "unitId": "u03",
       "definition": "化合物中各元素正负化合价代数和为零；同一元素在不同化合物中可显示不同化合价；根据化合价可推出化学式中各原子个数比，书写顺序一般为正价元素在前、负价元素在后。",
-      "prerequisiteIds": [
-        "chemical-formula-meaning",
-        "ion-bond"
-      ],
       "misconceptionIds": [
         "mc-formula-writing",
         "mc-valence-calculation",
         "mc-valence-multiple",
         "mc-valence-confusion"
       ],
-      "remediationGoal": "牢记化合价代数和为零的规则，理解同一元素可有多种化合价，能据此正确书写化学式。",
-      "questions": []
+      "remediationGoal": "牢记化合价代数和为零的规则，理解同一元素可有多种化合价，能据此正确书写化学式。"
     },
     {
       "id": "mass-fraction-calculation",
@@ -1190,15 +632,11 @@
       "semester": "upper",
       "unitId": "u04",
       "definition": "相对分子质量等于化学式中各原子的相对原子质量乘以原子个数之和；元素质量分数=（该元素相对原子质量×原子个数）÷相对分子质量×100%。",
-      "prerequisiteIds": [
-        "chemical-formula-writing"
-      ],
       "misconceptionIds": [
         "mc-relative-mass-calc",
         "mc-mass-fraction"
       ],
-      "remediationGoal": "能正确计算相对分子质量，并据此计算化合物中某元素的质量分数。",
-      "questions": []
+      "remediationGoal": "能正确计算相对分子质量，并据此计算化合物中某元素的质量分数。"
     },
     {
       "id": "law-of-mass-conservation",
@@ -1212,16 +650,11 @@
       "semester": "upper",
       "unitId": "u05",
       "definition": "参加化学反应的各物质质量总和，等于反应后生成的各物质质量总和；微观原因是化学反应中原子的种类、数目、质量都不变，只是重新组合；应用时需先判断是否为化学变化，并考虑敞口体系中气体是否参与反应。",
-      "prerequisiteIds": [
-        "chemical-change",
-        "particle-model"
-      ],
       "misconceptionIds": [
         "mc-law-conservation",
         "mc-physical-chemical-distinguish"
       ],
-      "remediationGoal": "理解质量守恒定律对任何化学反应都成立，能用微观视角解释其成立原因，并能识别应用中的常见陷阱（敞口体系、气体参与）。",
-      "questions": []
+      "remediationGoal": "理解质量守恒定律对任何化学反应都成立，能用微观视角解释其成立原因，并能识别应用中的常见陷阱（敞口体系、气体参与）。"
     },
     {
       "id": "catalyst-concept",
@@ -1235,13 +668,8 @@
       "semester": "upper",
       "unitId": "u02",
       "definition": "催化剂是能改变（加快或减慢）化学反应速率，而本身的质量和化学性质在反应前后都不发生变化的物质，具有“一变两不变”的特点；同一反应可能存在多种催化剂。",
-      "prerequisiteIds": [
-        "oxygen-preparation",
-        "chemical-change"
-      ],
       "misconceptionIds": [],
-      "remediationGoal": "掌握催化剂“一变两不变”（改变反应速率，质量、化学性质不变）的定义，纠正“催化剂只能加快反应”等以偏概全的说法。",
-      "questions": []
+      "remediationGoal": "掌握催化剂“一变两不变”（改变反应速率，质量、化学性质不变）的定义，纠正“催化剂只能加快反应”等以偏概全的说法。"
     },
     {
       "id": "decomposition-reaction",
@@ -1256,13 +684,8 @@
       "semester": "upper",
       "unitId": "u02",
       "definition": "分解反应是“一种物质生成两种或两种以上其他物质”的反应，可概括为“一变多”；氧气实验室制取的两种方法（高锰酸钾分解、过氧化氢分解）都属于分解反应。",
-      "prerequisiteIds": [
-        "chemical-change",
-        "oxygen-preparation"
-      ],
       "misconceptionIds": [],
-      "remediationGoal": "能根据反应物、生成物的种类数目判断分解反应，理解分解反应与化合反应互为相对概念。",
-      "questions": []
+      "remediationGoal": "能根据反应物、生成物的种类数目判断分解反应，理解分解反应与化合反应互为相对概念。"
     },
     {
       "id": "carbon-allotrope",
@@ -1277,20 +700,10 @@
       "semester": "upper",
       "unitId": "u06",
       "definition": "金刚石、石墨、C60等均由碳元素组成的单质，物理性质差异大（源于原子排列方式不同），化学性质相似；木炭、活性炭等无定形碳具有吸附性。",
-      "prerequisiteIds": [
-        "element-concept",
-        "chemical-formula"
-      ],
       "misconceptionIds": [
         "mc-carbon-allotrope-same-element"
       ],
-      "remediationGoal": "理解同种元素可形成不同单质，物理性质由结构决定，化学性质由元素种类决定。",
-      "questions": [
-        "L20-Q01",
-        "L20-Q02",
-        "L20-D01",
-        "L20-T01"
-      ]
+      "remediationGoal": "理解同种元素可形成不同单质，物理性质由结构决定，化学性质由元素种类决定。"
     },
     {
       "id": "carbon-chemical-property",
@@ -1305,20 +718,10 @@
       "semester": "upper",
       "unitId": "u06",
       "definition": "碳在常温下化学性质稳定；可燃性（C+O2→CO2，2C+O2→2CO）；还原性（C+2CuO→2Cu+CO2↑，高温条件）。",
-      "prerequisiteIds": [
-        "carbon-allotrope",
-        "chemical-change"
-      ],
       "misconceptionIds": [
         "mc-carbon-reduce-cuo"
       ],
-      "remediationGoal": "掌握碳的稳定性、可燃性与还原性，能写方程并描述实验现象。",
-      "questions": [
-        "L21-Q01",
-        "L21-Q02",
-        "L21-D01",
-        "L21-T01"
-      ]
+      "remediationGoal": "掌握碳的稳定性、可燃性与还原性，能写方程并描述实验现象。"
     },
     {
       "id": "co2-preparation",
@@ -1333,21 +736,11 @@
       "semester": "upper",
       "unitId": "u06",
       "definition": "实验室用大理石/石灰石与稀盐酸反应（CaCO3+2HCl→CaCl2+H2O+CO2↑）制取CO2，固液常温型装置，向上排空气法收集，石灰水检验，燃着木条瓶口验满。",
-      "prerequisiteIds": [
-        "lab-operations",
-        "equation-writing"
-      ],
       "misconceptionIds": [
         "mc-co2-prep-sulfuric",
         "mc-co2-verify-method"
       ],
-      "remediationGoal": "掌握CO2制取的试剂选择、装置原理、收集方法及检验验满的区分。",
-      "questions": [
-        "L22-Q01",
-        "L22-Q02",
-        "L22-D01",
-        "L22-T01"
-      ]
+      "remediationGoal": "掌握CO2制取的试剂选择、装置原理、收集方法及检验验满的区分。"
     },
     {
       "id": "co2-property",
@@ -1362,19 +755,10 @@
       "semester": "upper",
       "unitId": "u06",
       "definition": "CO2无色无味、密度大于空气、能溶于水；不燃烧也不支持燃烧，与水反应生成碳酸（H2CO3），使澄清石灰水变浑浊；固态CO2即干冰，升华吸热。",
-      "prerequisiteIds": [
-        "co2-preparation"
-      ],
       "misconceptionIds": [
         "mc-co2-limewater"
       ],
-      "remediationGoal": "掌握CO2的物理与化学性质，理解其作为反应物与灭火剂的双重角色。",
-      "questions": [
-        "L23-Q01",
-        "L23-Q02",
-        "L23-D01",
-        "L23-T01"
-      ]
+      "remediationGoal": "掌握CO2的物理与化学性质，理解其作为反应物与灭火剂的双重角色。"
     },
     {
       "id": "co-property",
@@ -1389,21 +773,11 @@
       "semester": "upper",
       "unitId": "u06",
       "definition": "CO无色无味、难溶于水、密度略小于空气；可燃（2CO+O2→2CO2，蓝色火焰）；有毒（与血红蛋白结合，阻碍氧的运输）；有还原性（CO+CuO→Cu+CO2）。",
-      "prerequisiteIds": [
-        "co2-property",
-        "carbon-chemical-property"
-      ],
       "misconceptionIds": [
         "mc-co-poison-mechanism",
         "mc-co-co2-distinguish"
       ],
-      "remediationGoal": "掌握CO的可燃、毒性、还原三大性质，能与CO2正确鉴别并处理安全问题。",
-      "questions": [
-        "L24-Q01",
-        "L24-Q02",
-        "L24-D01",
-        "L24-T01"
-      ]
+      "remediationGoal": "掌握CO的可燃、毒性、还原三大性质，能与CO2正确鉴别并处理安全问题。"
     },
     {
       "id": "combustion-conditions",
@@ -1418,20 +792,10 @@
       "semester": "upper",
       "unitId": "u07",
       "definition": "燃烧需要同时满足三个条件：可燃物、氧气（或空气）、温度达到着火点。缺一不可。",
-      "prerequisiteIds": [
-        "chemical-change",
-        "oxygen-chemical"
-      ],
       "misconceptionIds": [
         "mc-combustion-three-condition"
       ],
-      "remediationGoal": "理解燃烧三条件缺一不可，能判断特定情境下燃烧是否发生。",
-      "questions": [
-        "L17-Q01",
-        "L17-Q02",
-        "L17-D01",
-        "L17-T01"
-      ]
+      "remediationGoal": "理解燃烧三条件缺一不可，能判断特定情境下燃烧是否发生。"
     },
     {
       "id": "fire-extinguishing",
@@ -1445,20 +809,10 @@
       "semester": "upper",
       "unitId": "u07",
       "definition": "灭火的原理是破坏燃烧条件之一：移除可燃物、隔绝氧气、降温至着火点以下。",
-      "prerequisiteIds": [
-        "combustion-conditions"
-      ],
       "misconceptionIds": [
         "mc-fire-extinguish-principle"
       ],
-      "remediationGoal": "掌握三种灭火原理，能根据火情选择正确的灭火方法。",
-      "questions": [
-        "L17-Q03",
-        "L17-Q04",
-        "L17-D02",
-        "L17-D03",
-        "L17-T02"
-      ]
+      "remediationGoal": "掌握三种灭火原理，能根据火情选择正确的灭火方法。"
     },
     {
       "id": "fossil-fuels",
@@ -1473,21 +827,10 @@
       "semester": "upper",
       "unitId": "u07",
       "definition": "化石燃料包括煤、石油、天然气，均为不可再生能源。燃烧产生CO2、SO2等污染物。新能源包括氢能、太阳能、风能等。",
-      "prerequisiteIds": [
-        "combustion-conditions",
-        "chemical-property"
-      ],
       "misconceptionIds": [
         "mc-fossil-fuel-nonrenewable"
       ],
-      "remediationGoal": "区分化石燃料与新能源，认识化石燃料的不可再生性和环境影响。",
-      "questions": [
-        "L18-Q01",
-        "L18-Q02",
-        "L18-D01",
-        "L18-D02",
-        "L18-T01"
-      ]
+      "remediationGoal": "区分化石燃料与新能源，认识化石燃料的不可再生性和环境影响。"
     },
     {
       "id": "explosive-safety",
@@ -1501,20 +844,10 @@
       "semester": "upper",
       "unitId": "u07",
       "definition": "可燃气体或粉尘在密闭空间中迅速燃烧引起爆炸。爆炸极限、通风、禁火是防爆关键措施。",
-      "prerequisiteIds": [
-        "combustion-conditions"
-      ],
       "misconceptionIds": [
         "mc-explosion-any-gas"
       ],
-      "remediationGoal": "理解爆炸发生的条件，掌握易燃易爆场所的安全规范。",
-      "questions": [
-        "L19-Q01",
-        "L19-Q02",
-        "L19-D01",
-        "L19-D02",
-        "L19-T01"
-      ]
+      "remediationGoal": "理解爆炸发生的条件，掌握易燃易爆场所的安全规范。"
     },
     {
       "id": "environmental-impact",
@@ -1528,18 +861,8 @@
       "semester": "upper",
       "unitId": "u07",
       "definition": "化石燃料燃烧产生CO2（温室效应）、SO2和NOx（酸雨）、粉尘（PM2.5）等污染物。使用清洁能源和改善燃烧技术是保护环境的关键。",
-      "prerequisiteIds": [
-        "fossil-fuels",
-        "combustion-conditions"
-      ],
       "misconceptionIds": [],
-      "remediationGoal": "理解化石燃料燃烧的环境影响，认识清洁能源的重要性。",
-      "questions": [
-        "L25-Q01",
-        "L25-Q02",
-        "L25-D01",
-        "L25-T01"
-      ]
+      "remediationGoal": "理解化石燃料燃烧的环境影响，认识清洁能源的重要性。"
     },
     {
       "id": "law-conservation",
@@ -1555,23 +878,11 @@
       "semester": "upper",
       "unitId": "u05",
       "definition": "参加化学反应的各物质的质量总和等于反应后生成的各物质的质量总和。微观本质：化学反应前后原子的种类、数目、质量均不变，只是重新组合。",
-      "prerequisiteIds": [
-        "particle-model",
-        "atomic-structure"
-      ],
       "misconceptionIds": [
         "mc-law-conservation-open-system",
         "mc-law-conservation-atom-destroyed"
       ],
-      "remediationGoal": "能从宏观（质量不变）和微观（原子三不变）两个层面理解质量守恒定律，能正确判断开放系统与密闭系统的区别。",
-      "questions": [
-        "L27-Q01",
-        "L27-Q02",
-        "L27-Q03",
-        "L27-Q04",
-        "L27-Q05",
-        "L27-Q06"
-      ]
+      "remediationGoal": "能从宏观（质量不变）和微观（原子三不变）两个层面理解质量守恒定律，能正确判断开放系统与密闭系统的区别。"
     },
     {
       "id": "equation-writing",
@@ -1586,29 +897,10 @@
       "semester": "upper",
       "unitId": "u05",
       "definition": "用化学式表示化学反应的式子。书写遵循两个原则：以客观事实为基础、遵守质量守恒定律（配平）。需标注反应条件和气体↑/沉淀↓符号。",
-      "prerequisiteIds": [
-        "law-conservation",
-        "chemical-formula"
-      ],
       "misconceptionIds": [
         "mc-equation-gas-precipitate-confusion"
       ],
-      "remediationGoal": "能正确书写常见反应的化学方程式，掌握气体和沉淀符号的使用规则。",
-      "questions": [
-        "L28-P01",
-        "L28-P02",
-        "L28-P03",
-        "L28-P04",
-        "L28-P05",
-        "L28-P06",
-        "L28-D01",
-        "L28-D02",
-        "L28-D03",
-        "L28-T01",
-        "L28-T02",
-        "L28-T03",
-        "L28-T04"
-      ]
+      "remediationGoal": "能正确书写常见反应的化学方程式，掌握气体和沉淀符号的使用规则。"
     },
     {
       "id": "equation-balancing",
@@ -1623,28 +915,10 @@
       "semester": "upper",
       "unitId": "u05",
       "definition": "通过调整化学计量数（系数）使方程式两边各元素的原子总数相等。配平不能改变化学式下标。",
-      "prerequisiteIds": [
-        "equation-writing"
-      ],
       "misconceptionIds": [
         "mc-balance-by-subscript"
       ],
-      "remediationGoal": "掌握最小整数配平法，理解配平实质是原子守恒，不改变化学式下标。",
-      "questions": [
-        "L29-P01",
-        "L29-P02",
-        "L29-P03",
-        "L29-P04",
-        "L29-P05",
-        "L29-P06",
-        "L29-D01",
-        "L29-D02",
-        "L29-D03",
-        "L29-T01",
-        "L29-T02",
-        "L29-T03",
-        "L29-T04"
-      ]
+      "remediationGoal": "掌握最小整数配平法，理解配平实质是原子守恒，不改变化学式下标。"
     },
     {
       "id": "stoichiometry",
@@ -1659,28 +933,10 @@
       "semester": "upper",
       "unitId": "u05",
       "definition": "根据配平的化学方程式中各物质的质量比，由已知量求未知量的计算。核心：系数比≠质量比，须通过相对分子质量换算。",
-      "prerequisiteIds": [
-        "equation-balancing"
-      ],
       "misconceptionIds": [
         "mc-stoich-coefficient-vs-mass"
       ],
-      "remediationGoal": "掌握化学方程式计算的三步法，理解系数比与质量比的区别，能正确处理纯度换算。",
-      "questions": [
-        "L30-P01",
-        "L30-P02",
-        "L30-P03",
-        "L30-P04",
-        "L30-P05",
-        "L30-P06",
-        "L30-D01",
-        "L30-D02",
-        "L30-D03",
-        "L30-T01",
-        "L30-T02",
-        "L30-T03",
-        "L30-T04"
-      ]
+      "remediationGoal": "掌握化学方程式计算的三步法，理解系数比与质量比的区别，能正确处理纯度换算。"
     }
   ],
   "relations": [
@@ -1852,12 +1108,14 @@
     {
       "source": "physical-change",
       "target": "L01-P01",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "physical-change",
       "target": "L01-P02",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "physical-change",
@@ -1892,12 +1150,14 @@
     {
       "source": "chemical-change",
       "target": "L01-P01",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "chemical-change",
       "target": "L01-P02",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "chemical-change",
@@ -1927,7 +1187,8 @@
     {
       "source": "physical-property",
       "target": "L01-P03",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "physical-property",
@@ -1957,7 +1218,8 @@
     {
       "source": "chemical-property",
       "target": "L01-P04",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "chemical-property",
@@ -2062,7 +1324,8 @@
     {
       "source": "observation-inference",
       "target": "L02-P01",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "observation-inference",
@@ -2192,7 +1455,8 @@
     {
       "source": "scientific-inquiry",
       "target": "L02-P02",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "scientific-inquiry",
@@ -2232,7 +1496,8 @@
     {
       "source": "control-variables",
       "target": "L02-P03",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "control-variables",
@@ -2272,7 +1537,8 @@
     {
       "source": "data-integrity",
       "target": "L02-P04",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "data-integrity",
@@ -2280,88 +1546,18 @@
       "type": "question"
     },
     {
-      "source": "acid-intro",
-      "target": "q-acid-001",
-      "type": "question"
-    },
-    {
-      "source": "acid-intro",
-      "target": "q-acid-003",
-      "type": "question"
-    },
-    {
-      "source": "acid-intro",
-      "target": "q-acid-004",
-      "type": "question"
-    },
-    {
-      "source": "acid-intro",
-      "target": "q-acid-005",
-      "type": "question"
-    },
-    {
-      "source": "acid-intro",
-      "target": "q-acid-dx-001",
-      "type": "question"
-    },
-    {
-      "source": "acid-intro",
-      "target": "q-acid-dx-004",
-      "type": "question"
-    },
-    {
-      "source": "acid-intro",
-      "target": "q-acid-rx-001",
-      "type": "question"
-    },
-    {
-      "source": "acid-intro",
-      "target": "q-acid-rx-004",
-      "type": "question"
-    },
-    {
-      "source": "acid-property",
-      "target": "q-acid-011",
-      "type": "question"
-    },
-    {
-      "source": "acid-property",
-      "target": "q-acid-012",
-      "type": "question"
-    },
-    {
-      "source": "acid-property",
-      "target": "q-acid-dx-002",
-      "type": "question"
-    },
-    {
-      "source": "acid-property",
-      "target": "q-acid-dx-003",
-      "type": "question"
-    },
-    {
-      "source": "acid-property",
-      "target": "q-acid-rx-002",
-      "type": "question"
-    },
-    {
-      "source": "acid-property",
-      "target": "q-acid-rx-003",
-      "type": "question"
-    },
-    {
       "source": "observation-inference",
-      "target": "single-phenomenon-overgeneralization",
+      "target": "mc-method-single-phenomenon-overgeneralization",
       "type": "commonMistake"
     },
     {
       "source": "control-variables",
-      "target": "control-variable-violation",
+      "target": "mc-method-control-variable",
       "type": "commonMistake"
     },
     {
       "source": "data-integrity",
-      "target": "data-fabrication",
+      "target": "mc-method-data-integrity",
       "type": "commonMistake"
     },
     {
@@ -2407,112 +1603,134 @@
     {
       "source": "acid-property",
       "target": "L03-P01",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "physical-property",
       "target": "L03-P02",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "chemical-property",
       "target": "L03-P03",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "observation-inference",
       "target": "L03-P03",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "chemical-property",
       "target": "L03-P04",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "chemical-property",
       "target": "L03-P05",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "evidence-reasoning",
       "target": "L03-P05",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "safety-awareness",
       "target": "L03-P06",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "physical-property",
       "target": "L03-P07",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "evidence-reasoning",
       "target": "L03-P07",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "acid-intro",
       "target": "L03-P08",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "chemical-property",
       "target": "L03-P09",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "evidence-reasoning",
       "target": "L03-P09",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "chemical-property",
       "target": "L03-P10",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "evidence-reasoning",
       "target": "L03-P10",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "chemical-property",
       "target": "L03-P11",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "evidence-reasoning",
       "target": "L03-P11",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "safety-awareness",
       "target": "L03-P12",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "data-integrity",
       "target": "L03-P12",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "chemical-property",
       "target": "L03-P13",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "evidence-reasoning",
       "target": "L03-P13",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "control-variables",
       "target": "L03-P13",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "acid-property",
@@ -2542,252 +1760,302 @@
     {
       "source": "acid-intro",
       "target": "L03-M01",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "acid-property",
       "target": "L03-M01",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "physical-property",
       "target": "L03-M02",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "chemical-property",
       "target": "L03-M03",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "observation-inference",
       "target": "L03-M03",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "chemical-property",
       "target": "L03-M04",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "safety-awareness",
       "target": "L03-M05",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "evidence-reasoning",
       "target": "L03-M06",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "observation-inference",
       "target": "L03-M06",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "chemical-property",
       "target": "L03-M07",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "evidence-reasoning",
       "target": "L03-M07",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "acid-intro",
       "target": "L03-M08",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "acid-property",
       "target": "L03-M08",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "evidence-reasoning",
       "target": "L03-M09",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "chemical-property",
       "target": "L03-M09",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "safety-awareness",
       "target": "L03-M10",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "chemical-property",
       "target": "L03-M11",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "evidence-reasoning",
       "target": "L03-M11",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "chemical-property",
       "target": "L03-M12",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "evidence-reasoning",
       "target": "L03-M12",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "chemical-property",
       "target": "L03-M13",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "observation-inference",
       "target": "L03-M13",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "acid-intro",
       "target": "L03-M14",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "chemical-property",
       "target": "L03-M15",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "evidence-reasoning",
       "target": "L03-M16",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "scientific-inquiry",
       "target": "L03-M16",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "safety-awareness",
       "target": "L03-M17",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "chemical-property",
       "target": "L03-M18",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "evidence-reasoning",
       "target": "L03-M18",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "chemical-property",
       "target": "L03-M19",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "evidence-reasoning",
       "target": "L03-M19",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "observation-inference",
       "target": "L03-M20",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "evidence-reasoning",
       "target": "L03-M20",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "safety-awareness",
       "target": "L03-M21",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "acid-property",
       "target": "L03-M21",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "evidence-reasoning",
       "target": "L01-T01",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "observation-inference",
       "target": "L01-T01",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "chemical-change",
       "target": "L01-T02",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "observation-inference",
       "target": "L01-T02",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "chemical-property",
       "target": "L01-T03",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "physical-property",
       "target": "L01-T03",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "evidence-reasoning",
       "target": "L01-T04",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "scientific-inquiry",
       "target": "L01-T04",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "control-variables",
       "target": "L02-T01",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "observation-inference",
       "target": "L02-T02",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "evidence-reasoning",
       "target": "L02-T02",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "data-integrity",
       "target": "L02-T03",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "scientific-inquiry",
       "target": "L02-T03",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "data-integrity",
       "target": "L02-T04",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "evidence-reasoning",
       "target": "L02-T04",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "observation-inference",
@@ -2812,7 +2080,8 @@
     {
       "source": "lab-operations",
       "target": "L04-P01",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "lab-operations",
@@ -2822,12 +2091,14 @@
     {
       "source": "lab-operations",
       "target": "L04-M01",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "lab-operations",
       "target": "L04-T01",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "physical-change",
@@ -2872,7 +2143,8 @@
     {
       "source": "air-composition",
       "target": "L05-P01",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "air-composition",
@@ -2882,12 +2154,14 @@
     {
       "source": "air-composition",
       "target": "L05-M01",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "air-composition",
       "target": "L05-T01",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "matter-change",
@@ -2927,12 +2201,14 @@
     {
       "source": "water-composition",
       "target": "L06-M02",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "water-composition",
       "target": "L06-M08",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "electrolysis-experiment",
@@ -2947,27 +2223,32 @@
     {
       "source": "electrolysis-experiment",
       "target": "L06-M01",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "electrolysis-experiment",
       "target": "L06-M06",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "electrolysis-experiment",
       "target": "L06-M11",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "electrolysis-experiment",
       "target": "L06-M15",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "electrolysis-experiment",
       "target": "L06-M21",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "hydrogen-property",
@@ -2977,17 +2258,20 @@
     {
       "source": "hydrogen-property",
       "target": "L06-M05",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "hydrogen-property",
       "target": "L06-M13",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "oxygen-property",
       "target": "L06-M06",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "single-substance-compound",
@@ -2997,7 +2281,8 @@
     {
       "source": "single-substance-compound",
       "target": "L06-P05",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "single-substance-compound",
@@ -3007,12 +2292,14 @@
     {
       "source": "single-substance-compound",
       "target": "L06-M03",
-      "type": "question"
+      "type": "question",
+      "difficulty": "basic"
     },
     {
       "source": "single-substance-compound",
       "target": "L06-M07",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "element-concept",
@@ -3022,17 +2309,20 @@
     {
       "source": "element-concept",
       "target": "L06-M04",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "element-concept",
       "target": "L06-M10",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "element-concept",
       "target": "L06-M14",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "evidence-reasoning",
@@ -3042,7 +2332,8 @@
     {
       "source": "particle-model",
       "target": "L06-M19",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "water-composition",
@@ -3117,22 +2408,26 @@
     {
       "source": "atomic-structure",
       "target": "L14-T01",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "atomic-structure",
       "target": "L14-T02",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "atomic-structure",
       "target": "L14-T03",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "atomic-structure",
       "target": "L14-T04",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "element-classify",
@@ -3172,27 +2467,32 @@
     {
       "source": "element-concept",
       "target": "L16-T01",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "element-concept",
       "target": "L16-T02",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "element-concept",
       "target": "L16-T03",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "element-concept",
       "target": "L16-T04",
-      "type": "question"
+      "type": "question",
+      "difficulty": "hard"
     },
     {
       "source": "element-classify",
       "target": "L16-T03",
-      "type": "question"
+      "type": "question",
+      "difficulty": "medium"
     },
     {
       "source": "water-composition",

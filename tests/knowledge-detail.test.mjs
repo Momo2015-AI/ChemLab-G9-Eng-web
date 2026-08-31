@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { renderKnowledgeDetail } from '../views/knowledge-detail-view.js';
+import { KnowledgeEngine } from '../core/knowledge-graph/canonical-knowledge-engine.js';
 
 function createRoot() {
   return {
@@ -65,12 +66,25 @@ test('renderKnowledgeDetail shows prerequisites section', () => {
       name: '测试节点',
       domain: 'matter',
       definition: '测试定义。',
-      prerequisiteIds: ['mc-matter-atom'],
     },
+    prerequisiteNodes: [{ id: 'matter-atom', name: '原子', domain: 'particle' }],
     onBack: () => {},
   });
   assert.match(root.innerHTML, /前置知识/);
-  assert.match(root.innerHTML, /mc-matter-atom/);
+  assert.match(root.innerHTML, /原子/);
+});
+
+test('renderKnowledgeDetail derives prerequisites from engine relations at runtime', () => {
+  const engine = new KnowledgeEngine({
+    nodes: [
+      { id: 'a', name: 'A' },
+      { id: 'b', name: 'B' },
+    ],
+    relations: [{ source: 'a', target: 'b', type: 'prerequisite' }],
+  });
+  const resolved = engine.prerequisites('b');
+  assert.equal(resolved.length, 1);
+  assert.equal(resolved[0].id, 'a');
 });
 
 test('renderKnowledgeDetail renders remediationGoal', () => {
